@@ -1,7 +1,7 @@
 {
   "name": "toolbox",
   "version": "0.7.0",
-  "description": "Adrian's personal skills toolbox — independent, self-contained agent skills for planning, building, and shipping.",
+  "description": "Self-contained agent skills for planning, building, reviewing, and shipping software.",
   "author": {
     "name": "Adrian",
     "email": "hello@adrianmartin.dev"

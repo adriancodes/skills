@@ -5,7 +5,7 @@ Skill updates change your agent's behavior — treat them like dependency upgrad
 ## Unreleased
 
 - Reconciled Work Discipline's authority and execution rules: agents proceed with safe, reversible, in-scope work, while consequential actions and outcome-changing ambiguity still require approval.
-- Corrected the current `understand-codebase` record. After its original narrow brief was abandoned, a confirmed replacement brief passed its Tier 2 suite within the authorized budget and shipped with support limited to force-loaded behavior and explicit invocation; autonomous triggering remains untested.
+- Re-scoped and shipped `understand-codebase` after its original narrow brief was abandoned. Its preserved Tier 2 results support an earlier revision (`663493fa…`), not the current skill body; the current revision and autonomous triggering remain untested.
 - Renamed `brevity` to `be-concise` and updated its active documentation and eval harness references.
 - Renamed `spec-plan`, `slice-spec`, `implement-slice`, and `ship-feature` to `create-spec`, `create-tasks`, `implement-task`, and `deliver-feature` so the pipeline uses clear verb–object names familiar to engineers.
 - Added `simplify-code`, a model-invoked, deletion-first technique for explicit simplification requests. It directly condenses the requested scope, preserves observable contracts, asks before contract changes or scope expansion, reports missing test coverage without generating tests unasked, and provides concrete reduction plus verification evidence. It is locally validated from a confirmed adaptive interview without a Tier-2 comparative claim yet.
