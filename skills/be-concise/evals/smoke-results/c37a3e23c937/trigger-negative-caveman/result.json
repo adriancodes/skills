@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "case_id": "trigger-negative-caveman",
+  "kind": "trigger",
+  "subject_sha256": "c37a3e23c937880d94cc985f9bcedc9ede1a23d388f03fa6d247e0999fc76bc9",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "output": {
+    "path": "smoke-results/c37a3e23c937/trigger-negative-caveman/output.md",
+    "sha256": "ee40b9fd5b0ec0dbd51cca21ddcc28c0491d5a75d27514a4815401dce14f34c9"
+  },
+  "trace": {
+    "path": "smoke-results/c37a3e23c937/trigger-negative-caveman/trace.jsonl",
+    "sha256": "70ce683520feca9314c41d11bf32b716c6ffc861b05db982f360764ff516ea0c"
+  },
+  "observed_trigger": false,
+  "total_tokens": 27176
+}

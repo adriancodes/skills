@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deployment Safety"
+  short_description: "Plan and verify safer software deployments"
+  default_prompt: "Use $deployment-safety to assess this release and produce a safe deployment plan."

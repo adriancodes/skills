@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "scores": {
+      "type": "object",
+      "properties": {
+        "cheaper": {
+          "enum": [
+            0,
+            1
+          ]
+        }
+      },
+      "required": [
+        "cheaper"
+      ],
+      "additionalProperties": false
+    },
+    "reasons": {
+      "type": "object",
+      "properties": {
+        "cheaper": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cheaper"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "scores",
+    "reasons"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "case_id": "value-ambiguous",
+  "kind": "value",
+  "arm": "skill",
+  "subject_sha256": "7f112a11469b690abcbb49852aa1d5c14a9d4fbadb8af0cdf874969993c611fe",
+  "harness": "codex-cli",
+  "harness_version": "0.144.1",
+  "model": "gpt-5.6-sol",
+  "observed_at": "2026-07-13T01:43:53.203Z",
+  "output": {
+    "path": "results/7f112a11469b/value-ambiguous/skill/output.md",
+    "sha256": "69d8fe87f3c65920d559154d949af064e9dfc3549e793528a014917f6693bf48"
+  },
+  "trace": {
+    "path": "results/7f112a11469b/value-ambiguous/skill/trace.jsonl",
+    "sha256": "ec8de37ea432f55774dcf5581a70d6153b2e53e829985b85b0a74bfaedc1b021"
+  },
+  "workspace_before": {
+    "path": "results/7f112a11469b/value-ambiguous/skill/workspace-before.json",
+    "sha256": "c78398e9b90cd697a85c5ad47a84593cf7466d6766f8288e36fded4afd480285"
+  },
+  "workspace_after": {
+    "path": "results/7f112a11469b/value-ambiguous/skill/workspace-after.json",
+    "sha256": "c78398e9b90cd697a85c5ad47a84593cf7466d6766f8288e36fded4afd480285"
+  },
+  "workspace_unchanged": true,
+  "total_tokens": 14434
+}

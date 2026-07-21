@@ -1,0 +1,95 @@
+{
+  "case_id": "discovery-normal",
+  "arm": "none",
+  "started_at": "2026-07-10T22:34:03.526Z",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "output": {
+    "path": "results/opportunity/discovery-normal/none/run-1/actor-output.md",
+    "sha256": "5d760e47c984a33ae04cf5b00d400bf37c5d785cc469b75fb877fc78b027be9c"
+  },
+  "tool_trace": {
+    "path": "results/opportunity/discovery-normal/none/run-1/actor-trace.jsonl",
+    "sha256": "4856aebb7e9e843f285068b2eef11de296cdece879cff682785389d2830d8a68"
+  },
+  "artifacts": [
+    {
+      "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/SKILL.md",
+      "sha256": "cb884884de610351707cb352580d277f23add6de5d1ce6b12c34af21eb63bcef"
+    },
+    {
+      "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/agents/openai.yaml",
+      "sha256": "67fc1a7f8b60db1c5fb1fa4a78a85f0365615c9b72e4a87ef18dc20eaa2306e3"
+    },
+    {
+      "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/references/failure-patterns.md",
+      "sha256": "97937e3614993b0fd15992176bcad28a45cef6583cff82434fded238c1beafab"
+    }
+  ],
+  "assertions": {
+    "opportunity": {
+      "score": 0,
+      "method": "blinded-judge",
+      "evidence": [
+        {
+          "path": "results/opportunity/discovery-normal/none/run-1/actor-output.md",
+          "sha256": "5d760e47c984a33ae04cf5b00d400bf37c5d785cc469b75fb877fc78b027be9c"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/SKILL.md",
+          "sha256": "cb884884de610351707cb352580d277f23add6de5d1ce6b12c34af21eb63bcef"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/agents/openai.yaml",
+          "sha256": "67fc1a7f8b60db1c5fb1fa4a78a85f0365615c9b72e4a87ef18dc20eaa2306e3"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/references/failure-patterns.md",
+          "sha256": "97937e3614993b0fd15992176bcad28a45cef6583cff82434fded238c1beafab"
+        }
+      ],
+      "judge_prompt": {
+        "path": "results/opportunity/discovery-normal/none/run-1/judge-prompt.md",
+        "sha256": "a90d0bb1fce75e27c75bfa9589087063cebd773f712fd791d5fcf961af5694f8"
+      },
+      "judge_output": {
+        "path": "results/opportunity/discovery-normal/none/run-1/judge-output.json",
+        "sha256": "939151c4108db3bedd2757aabfc126b4f25e4bc09f1d184f3b6fa2b4f2f61903"
+      }
+    },
+    "mechanism": {
+      "score": 0,
+      "method": "blinded-judge",
+      "evidence": [
+        {
+          "path": "results/opportunity/discovery-normal/none/run-1/actor-output.md",
+          "sha256": "5d760e47c984a33ae04cf5b00d400bf37c5d785cc469b75fb877fc78b027be9c"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/SKILL.md",
+          "sha256": "cb884884de610351707cb352580d277f23add6de5d1ce6b12c34af21eb63bcef"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/agents/openai.yaml",
+          "sha256": "67fc1a7f8b60db1c5fb1fa4a78a85f0365615c9b72e4a87ef18dc20eaa2306e3"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/references/failure-patterns.md",
+          "sha256": "97937e3614993b0fd15992176bcad28a45cef6583cff82434fded238c1beafab"
+        }
+      ],
+      "judge_prompt": {
+        "path": "results/opportunity/discovery-normal/none/run-1/judge-prompt.md",
+        "sha256": "a90d0bb1fce75e27c75bfa9589087063cebd773f712fd791d5fcf961af5694f8"
+      },
+      "judge_output": {
+        "path": "results/opportunity/discovery-normal/none/run-1/judge-output.json",
+        "sha256": "939151c4108db3bedd2757aabfc126b4f25e4bc09f1d184f3b6fa2b4f2f61903"
+      }
+    }
+  },
+  "tokens": 191879,
+  "actor_sessions": 2
+}

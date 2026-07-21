@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write PR Description"
+  short_description: "Draft PR descriptions from repository context"
+  default_prompt: "Use $write-pr-description to draft a standard PR description for my current changes."

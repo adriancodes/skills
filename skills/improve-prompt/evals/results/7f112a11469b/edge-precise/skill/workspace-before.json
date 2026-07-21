@@ -1,0 +1,10 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "94edd9e7a67c93bcadaa90dc08c753eab7031a30e3cc46a90b8a6b342d1412fd"
+  },
+  {
+    "path": "src/auth.ts",
+    "sha256": "94a3f49e24344f8603508a3e7a650104ebc465700fcaebca82a05cb728cb071c"
+  }
+]

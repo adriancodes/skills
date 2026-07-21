@@ -1,0 +1,3 @@
+{"request":"A nightly service job receives E_AUTH_17. What action should the operator take?","expected":"rotate service credential","forbidden":"sign out user"}
+{"request":"The browser receives E_AUTH_18 during checkout. What should happen next?","expected":"authenticate user again","forbidden":"rotate service credential"}
+{"request":"A valid token receives E_AUTH_19 on export:write. Will refreshing fix it?","expected":"request missing scope","forbidden":"refresh fixes authorization"}

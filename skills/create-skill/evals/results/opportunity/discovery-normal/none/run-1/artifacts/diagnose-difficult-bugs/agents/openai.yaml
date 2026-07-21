@@ -1,0 +1,4 @@
+interface:
+  display_name: "Difficult Bug Diagnosis"
+  short_description: "Find root causes in difficult software bugs"
+  default_prompt: "Use $diagnose-difficult-bugs to investigate this bug and produce an evidence-backed root-cause diagnosis."

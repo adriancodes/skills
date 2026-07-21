@@ -1,0 +1,15 @@
+{
+  "name": "skills",
+  "description": "Agent skills for planning, building, reviewing, and delivering engineering work.",
+  "owner": {
+    "name": "Adrian",
+    "url": "https://github.com/adriancodes"
+  },
+  "plugins": [
+    {
+      "name": "toolbox",
+      "source": "./",
+      "description": "Adrian's personal skills toolbox — independent, self-contained agent skills for planning, building, and shipping."
+    }
+  ]
+}

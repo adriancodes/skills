@@ -1,0 +1,1 @@
+Explain why HTTP cursor pagination usually behaves better than offset pagination when rows are inserted concurrently.

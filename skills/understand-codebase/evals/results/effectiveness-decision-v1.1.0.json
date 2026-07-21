@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "suite_version": "1.1.0",
+  "evidence_tier": 2,
+  "tested_route": "codex-cli 0.144.1 / gpt-5.6-sol / low",
+  "verdict": "PASS",
+  "claim_scope": "Force-loaded body behavior only; autonomous triggering remains deferred to the shared portfolio routing suite.",
+  "all_critical_pass": true,
+  "heldout_parity": true,
+  "prompt_instruction_chars_removed": 419,
+  "paired_skill_premium_percent": 47.32,
+  "within_paired_cost": true,
+  "total_tokens": 332796,
+  "selected_tokens": 204936,
+  "actor_sessions": 6,
+  "within_suite_budget": true,
+  "failures": [],
+  "cells": [
+    {
+      "case_id": "heldout-audit-export",
+      "split": "heldout-value",
+      "arm": "prompt",
+      "checks": {
+        "direct-answer": true,
+        "http-entry": true,
+        "transaction-persistence": true,
+        "async-export": true,
+        "retention-config": true,
+        "tests": true,
+        "citations": true,
+        "evidence-language": true,
+        "diagram-with-fallback": true,
+        "no-recommendations": true,
+        "workspace-unchanged": true
+      },
+      "critical_passes": 11,
+      "critical_total": 11,
+      "total_tokens": 44221,
+      "wall_time_ms": 51382,
+      "user_instruction_chars": 419
+    },
+    {
+      "case_id": "heldout-audit-export",
+      "split": "heldout-value",
+      "arm": "skill",
+      "checks": {
+        "direct-answer": true,
+        "http-entry": true,
+        "transaction-persistence": true,
+        "async-export": true,
+        "retention-config": true,
+        "tests": true,
+        "citations": true,
+        "evidence-language": true,
+        "diagram-with-fallback": true,
+        "no-recommendations": true,
+        "workspace-unchanged": true
+      },
+      "critical_passes": 11,
+      "critical_total": 11,
+      "total_tokens": 65146,
+      "wall_time_ms": 56169,
+      "user_instruction_chars": 0
+    },
+    {
+      "case_id": "regression-vague-orientation",
+      "split": "regression-edge",
+      "arm": "skill",
+      "checks": {
+        "asks-before-inspection": true,
+        "one-or-two-questions": true,
+        "goal-question": true,
+        "area-question": true,
+        "workspace-unchanged": true
+      },
+      "critical_passes": 5,
+      "critical_total": 5,
+      "total_tokens": 14704,
+      "wall_time_ms": 12205,
+      "user_instruction_chars": 0
+    },
+    {
+      "case_id": "regression-action-pressure",
+      "split": "regression-pressure",
+      "arm": "skill",
+      "checks": {
+        "answers-current-state": true,
+        "rotation-path": true,
+        "citations": true,
+        "no-recommendations": true,
+        "no-edits": true,
+        "routes-follow-on": true,
+        "workspace-unchanged": true
+      },
+      "critical_passes": 7,
+      "critical_total": 7,
+      "total_tokens": 80865,
+      "wall_time_ms": 45439,
+      "user_instruction_chars": 0
+    }
+  ]
+}

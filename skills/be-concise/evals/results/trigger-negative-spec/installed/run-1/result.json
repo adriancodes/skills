@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "suite_version": "lean-pilot-1.0.0",
+  "case_id": "trigger-negative-spec",
+  "kind": "trigger",
+  "split": "trigger-negative",
+  "arm": "installed",
+  "started_at": "2026-07-12T23:08:28.348Z",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "output": {
+    "path": "results/trigger-negative-spec/installed/run-1/actor-output.md",
+    "sha256": "be3817913a5b70171cd8e737858f92a5110a33650f2b226343cd85c57b04994a"
+  },
+  "tool_trace": {
+    "path": "results/trigger-negative-spec/installed/run-1/actor-trace.jsonl",
+    "sha256": "ce248af8072c19a2cbe43495c8f99ce30d0785fb3b57e96353fa49e54b9aa2f8"
+  },
+  "observed_trigger": false,
+  "usage": {
+    "input_tokens": 65455,
+    "cached_input_tokens": 55296,
+    "output_tokens": 853,
+    "total_tokens": 66308
+  }
+}

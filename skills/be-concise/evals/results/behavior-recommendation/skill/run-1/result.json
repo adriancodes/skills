@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "suite_version": "lean-pilot-1.0.0",
+  "case_id": "behavior-recommendation",
+  "kind": "behavior",
+  "split": "heldout",
+  "arm": "skill",
+  "started_at": "2026-07-12T23:06:48.308Z",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "output": {
+    "path": "results/behavior-recommendation/skill/run-1/actor-output.md",
+    "sha256": "d619cbed55b053f4c7ef6347ac71f686cb1313e5dc6a860e0a9cfec5cfa7af1d"
+  },
+  "tool_trace": {
+    "path": "results/behavior-recommendation/skill/run-1/actor-trace.jsonl",
+    "sha256": "4df9f403a2cf5ed7394b3a3b95e1773555cdeeb8f9246d49ab0b30bd2ab74476"
+  },
+  "observed_trigger": null,
+  "usage": {
+    "input_tokens": 13797,
+    "cached_input_tokens": 9984,
+    "output_tokens": 35,
+    "total_tokens": 13832
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "scores": {
+      "type": "object",
+      "properties": {
+        "no-false-ship": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "verdict": {
+          "enum": [
+            0,
+            1
+          ]
+        }
+      },
+      "required": [
+        "no-false-ship",
+        "verdict"
+      ],
+      "additionalProperties": false
+    },
+    "reasons": {
+      "type": "object",
+      "properties": {
+        "no-false-ship": {
+          "type": "string"
+        },
+        "verdict": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "no-false-ship",
+        "verdict"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "scores",
+    "reasons"
+  ],
+  "additionalProperties": false
+}

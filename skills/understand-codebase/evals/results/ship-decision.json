@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "verdict": "SHIP",
+  "accepted_at": "2026-07-17",
+  "evidence_tier": 2,
+  "evidence_label": "targeted comparative support",
+  "tested_route": "codex-cli 0.144.1 / gpt-5.6-sol / low",
+  "effectiveness_record": "effectiveness-decision-v1.1.0.json",
+  "claim_scope": "Force-loaded body behavior and explicit invocation; autonomous triggering remains deferred to the shared portfolio routing suite.",
+  "user_acceptance": true
+}

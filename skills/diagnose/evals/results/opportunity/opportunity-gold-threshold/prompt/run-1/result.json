@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "suite_version": "1.0.0",
+  "case_id": "opportunity-gold-threshold",
+  "split": "discovery",
+  "arm": "prompt",
+  "harness": "codex-cli",
+  "harness_version": "0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "snapshot_policy": "opaque-time-bounded",
+  "reasoning_effort": "low",
+  "observed_at": "2026-07-17T17:23:39.178Z",
+  "wall_time_ms": 94603,
+  "total_tokens": 132543,
+  "turns": 1,
+  "user_instruction_chars": 564,
+  "workspace_unchanged": true,
+  "output": {
+    "path": "results/opportunity/opportunity-gold-threshold/prompt/run-1/output.md",
+    "sha256": "41341534745bee377a79e156337660d52b3b996bd7ad752ff127acf38f959861"
+  },
+  "trace": {
+    "path": "results/opportunity/opportunity-gold-threshold/prompt/run-1/trace.jsonl",
+    "sha256": "72b6c8283e958a460a7a9cf76683f482251ce975ffdff54f069b3d54d48a7487"
+  },
+  "workspace_before": {
+    "path": "results/opportunity/opportunity-gold-threshold/prompt/run-1/workspace-before.json",
+    "sha256": "c81ddd8eab4544b527e4d5eb17ee2477001519b00ffbdd2d7549c2019b08cb6e"
+  },
+  "workspace_after": {
+    "path": "results/opportunity/opportunity-gold-threshold/prompt/run-1/workspace-after.json",
+    "sha256": "c81ddd8eab4544b527e4d5eb17ee2477001519b00ffbdd2d7549c2019b08cb6e"
+  }
+}

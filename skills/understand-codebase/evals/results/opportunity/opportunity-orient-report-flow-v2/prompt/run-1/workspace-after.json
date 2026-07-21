@@ -1,0 +1,42 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "082609e9aa06f2839abfc5dae99dc8009915c0820359fd6337e0f646acc3aabe"
+  },
+  {
+    "path": "src/http/router.ts",
+    "sha256": "527df01fda2b9054c00aafea2ae286478bdf02c903813fbd60d08641dd7c3879"
+  },
+  {
+    "path": "src/jobs/queue.ts",
+    "sha256": "90cc028a78fc57a17c21f10cfecb33c3231a3890e0ab0593b0fabdf3c63215b3"
+  },
+  {
+    "path": "src/notifications/email.ts",
+    "sha256": "fbbd4770d9512ea29e191db52b7fe8bd6fb32c6347a54f642b488bb2e22b0d35"
+  },
+  {
+    "path": "src/reports/repository.ts",
+    "sha256": "b7e34a05932c27a9734a53ea9d5e85486eb724ad2de9fc65556ccfd4d021f84a"
+  },
+  {
+    "path": "src/reports/service.ts",
+    "sha256": "da41bd16ade034c4c42018ed3381f19b9987fdbbe6c9a8a199769c5ca3cce524"
+  },
+  {
+    "path": "src/server.ts",
+    "sha256": "3805e9889d6b8d75abcf5aff8da6926fdb5920417d2f13288063ce5133530a0d"
+  },
+  {
+    "path": "src/storage/database.ts",
+    "sha256": "f7ea616c20f0c1a551013cd887f66485dd5b05886b9ce513fedb4eb47a772c30"
+  },
+  {
+    "path": "src/worker.ts",
+    "sha256": "cd191bb7fc9ee27992edff4b3045252cdf6881f3aa6370b730aca607e9f6accf"
+  },
+  {
+    "path": "tests/report-flow.test.ts",
+    "sha256": "d149ced808256cfce252a579f2c48ad92c7a6ff7b08e1a84ff7f08e17c3c81de"
+  }
+]

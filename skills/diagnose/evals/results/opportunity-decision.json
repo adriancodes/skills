@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "suite_version": "1.0.0",
+  "evidence_tier": 2,
+  "verdict": "ITERATE",
+  "opportunity_type": null,
+  "rationale": "The frozen discovery budget was exceeded.",
+  "prompt_failures": [
+    "root-cause"
+  ],
+  "none_failures": [
+    "ranked-falsifiable-hypotheses",
+    "alternatives-tested",
+    "source-citation"
+  ],
+  "total_tokens": 202899,
+  "actor_sessions": 2,
+  "turns": 2,
+  "within_budget": false,
+  "arms": [
+    {
+      "arm": "none",
+      "checks": {
+        "exact-reproduction": true,
+        "minimal-boundary-probe": true,
+        "ranked-falsifiable-hypotheses": false,
+        "alternatives-tested": false,
+        "root-cause": true,
+        "source-citation": false,
+        "no-fix": true,
+        "workspace-unchanged": true
+      },
+      "critical_passes": 5,
+      "critical_total": 8,
+      "total_tokens": 70356,
+      "wall_time_ms": 43963,
+      "user_instruction_chars": 0
+    },
+    {
+      "arm": "prompt",
+      "checks": {
+        "exact-reproduction": true,
+        "minimal-boundary-probe": true,
+        "ranked-falsifiable-hypotheses": true,
+        "alternatives-tested": true,
+        "root-cause": false,
+        "source-citation": true,
+        "no-fix": true,
+        "workspace-unchanged": true
+      },
+      "critical_passes": 7,
+      "critical_total": 8,
+      "total_tokens": 132543,
+      "wall_time_ms": 94603,
+      "user_instruction_chars": 564
+    }
+  ]
+}

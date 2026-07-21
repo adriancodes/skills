@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "case_id": "trigger-positive-tldr",
+  "kind": "trigger",
+  "subject_sha256": "c37a3e23c937880d94cc985f9bcedc9ede1a23d388f03fa6d247e0999fc76bc9",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "output": {
+    "path": "smoke-results/c37a3e23c937/trigger-positive-tldr/output.md",
+    "sha256": "80032c5b13241c2e33f895f5e05fd58cdb5d1dcdd90a38e458748b90044c2810"
+  },
+  "trace": {
+    "path": "smoke-results/c37a3e23c937/trigger-positive-tldr/trace.jsonl",
+    "sha256": "8a9fb76994972c4908836d64ba4aa17c28a6343a283c5869fdc63bef3af2b3fa"
+  },
+  "observed_trigger": true,
+  "total_tokens": 28829
+}

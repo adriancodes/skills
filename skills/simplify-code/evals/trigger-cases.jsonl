@@ -1,0 +1,4 @@
+{"id":"trigger-simplify","expected":"trigger","request":"Simplify this code and remove the fluff without changing behavior."}
+{"id":"trigger-bloat","expected":"trigger","request":"This module is bloated and over-abstracted. Make it more concise."}
+{"id":"negative-feature","expected":"no-trigger","request":"Add pagination to this endpoint and update its response contract."}
+{"id":"negative-debug","expected":"no-trigger","request":"This endpoint intermittently returns 500. Find out why."}

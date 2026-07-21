@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "scorer_revision": 2,
+  "scorer_corrections": [
+    "Accept a Markdown-bold Improved prompt heading as satisfying the frozen shows-prompt assertion. No case, arm, behavioral assertion, or actor output changed."
+  ],
+  "evidence_tier": "1-smoke-user-invoked-convenience",
+  "subject_sha256": "04aaf07901e9b069a5fe19bdf954890b6b03bed13aba84eb8e9b1cff3b824bac",
+  "evidence_subject_sha256": "b763209ce0fd542b7a74aa9248d4b16619097793c802715bae5c2b1223877f6a",
+  "subject_equivalence": "The current subject differs from the tested subject only by replacing two Markdown trailing-space line breaks in the example with blank blockquote lines; instructions and rendered content are unchanged.",
+  "cases_sha256": "2a30362163afe4950399349f276c58af36e63e2b72356c74a739580b5c7d5787",
+  "harness": "codex-cli",
+  "harness_version": "0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "snapshot_policy": "opaque-time-bounded",
+  "reasoning_effort": "medium",
+  "core_instruction": "Rewrite the rough ask into a clear prompt. Preserve the user's intent, visibly label anything you infer as [assumed: ...], list the assumptions, name the best target skill or plain task, and do not execute unless explicitly asked.",
+  "claim": "The explicit shortcut faithfully applies the tested prompt pattern; it does not claim better output than writing that prompt directly.",
+  "maximum_cost": {
+    "total_tokens": 90000,
+    "actor_sessions": 3
+  },
+  "claim_scope": "Explicitly invoked improve-prompt behavior on this Codex route; autonomous triggering is disabled and other models are not covered."
+}

@@ -1,0 +1,3 @@
+# Skills are self-contained with soft references only
+
+Consumers install skills from this toolbox individually (skills CLI cherry-picking) or in bulk (single Claude Code plugin), alongside other authors' collections. We decided every skill must work standalone: shared behavior is inlined into each skill's own `references/`, never factored into a required sibling skill. A skill may name another skill as an enhancement, but only with an inline fallback (a "soft reference"). We rejected the composition-by-chaining pattern (as in mattpocock/skills' grill-with-docs → grilling → domain-modeling) because a cherry-picked link of a chain is silently broken — consumer DX outweighs the duplication cost.

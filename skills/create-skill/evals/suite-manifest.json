@@ -1,0 +1,495 @@
+{
+  "schema_version": 1,
+  "suite_version": "1.0.0",
+  "status": "UNFROZEN",
+  "opportunity_evidence": [
+    {
+      "case_id": "discovery-normal",
+      "arm": "none",
+      "started_at": "2026-07-10T22:34:03.526Z",
+      "harness": "codex",
+      "harness_version": "codex-cli 0.144.1",
+      "model": "gpt-5.6-sol",
+      "model_snapshot": null,
+      "output": {
+        "path": "results/opportunity/discovery-normal/none/run-1/actor-output.md",
+        "sha256": "5d760e47c984a33ae04cf5b00d400bf37c5d785cc469b75fb877fc78b027be9c"
+      },
+      "tool_trace": {
+        "path": "results/opportunity/discovery-normal/none/run-1/actor-trace.jsonl",
+        "sha256": "4856aebb7e9e843f285068b2eef11de296cdece879cff682785389d2830d8a68"
+      },
+      "artifacts": [
+        {
+          "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/SKILL.md",
+          "sha256": "cb884884de610351707cb352580d277f23add6de5d1ce6b12c34af21eb63bcef"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/agents/openai.yaml",
+          "sha256": "67fc1a7f8b60db1c5fb1fa4a78a85f0365615c9b72e4a87ef18dc20eaa2306e3"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/references/failure-patterns.md",
+          "sha256": "97937e3614993b0fd15992176bcad28a45cef6583cff82434fded238c1beafab"
+        }
+      ],
+      "assertions": {
+        "opportunity": {
+          "score": 0,
+          "method": "blinded-judge",
+          "evidence": [
+            {
+              "path": "results/opportunity/discovery-normal/none/run-1/actor-output.md",
+              "sha256": "5d760e47c984a33ae04cf5b00d400bf37c5d785cc469b75fb877fc78b027be9c"
+            },
+            {
+              "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/SKILL.md",
+              "sha256": "cb884884de610351707cb352580d277f23add6de5d1ce6b12c34af21eb63bcef"
+            },
+            {
+              "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/agents/openai.yaml",
+              "sha256": "67fc1a7f8b60db1c5fb1fa4a78a85f0365615c9b72e4a87ef18dc20eaa2306e3"
+            },
+            {
+              "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/references/failure-patterns.md",
+              "sha256": "97937e3614993b0fd15992176bcad28a45cef6583cff82434fded238c1beafab"
+            }
+          ],
+          "judge_prompt": {
+            "path": "results/opportunity/discovery-normal/none/run-1/judge-prompt.md",
+            "sha256": "a90d0bb1fce75e27c75bfa9589087063cebd773f712fd791d5fcf961af5694f8"
+          },
+          "judge_output": {
+            "path": "results/opportunity/discovery-normal/none/run-1/judge-output.json",
+            "sha256": "939151c4108db3bedd2757aabfc126b4f25e4bc09f1d184f3b6fa2b4f2f61903"
+          }
+        },
+        "mechanism": {
+          "score": 0,
+          "method": "blinded-judge",
+          "evidence": [
+            {
+              "path": "results/opportunity/discovery-normal/none/run-1/actor-output.md",
+              "sha256": "5d760e47c984a33ae04cf5b00d400bf37c5d785cc469b75fb877fc78b027be9c"
+            },
+            {
+              "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/SKILL.md",
+              "sha256": "cb884884de610351707cb352580d277f23add6de5d1ce6b12c34af21eb63bcef"
+            },
+            {
+              "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/agents/openai.yaml",
+              "sha256": "67fc1a7f8b60db1c5fb1fa4a78a85f0365615c9b72e4a87ef18dc20eaa2306e3"
+            },
+            {
+              "path": "results/opportunity/discovery-normal/none/run-1/artifacts/diagnose-difficult-bugs/references/failure-patterns.md",
+              "sha256": "97937e3614993b0fd15992176bcad28a45cef6583cff82434fded238c1beafab"
+            }
+          ],
+          "judge_prompt": {
+            "path": "results/opportunity/discovery-normal/none/run-1/judge-prompt.md",
+            "sha256": "a90d0bb1fce75e27c75bfa9589087063cebd773f712fd791d5fcf961af5694f8"
+          },
+          "judge_output": {
+            "path": "results/opportunity/discovery-normal/none/run-1/judge-output.json",
+            "sha256": "939151c4108db3bedd2757aabfc126b4f25e4bc09f1d184f3b6fa2b4f2f61903"
+          }
+        }
+      },
+      "tokens": 191879,
+      "actor_sessions": 2
+    },
+    {
+      "case_id": "discovery-normal",
+      "arm": "prompt",
+      "started_at": "2026-07-10T22:33:00.408Z",
+      "harness": "codex",
+      "harness_version": "codex-cli 0.144.1",
+      "model": "gpt-5.6-sol",
+      "model_snapshot": null,
+      "output": {
+        "path": "results/opportunity/discovery-normal/prompt/run-1/actor-output.md",
+        "sha256": "60dc2ff883180776245cbda1019b272fec8e332a3a0b6c177dafddd95b78145e"
+      },
+      "tool_trace": {
+        "path": "results/opportunity/discovery-normal/prompt/run-1/actor-trace.jsonl",
+        "sha256": "0250a6a8860c7b4557fd270ce10139d7ee35ce1e449a779861e104425a31a2c0"
+      },
+      "artifacts": [
+        {
+          "path": "results/opportunity/discovery-normal/prompt/run-1/artifacts/DIAGNOSE_BUG_PROMPT.md",
+          "sha256": "56b59a403b796fac7d9adfb3d16f790540e203479469ef26349d771c598b7ec5"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/prompt/run-1/artifacts/MECHANISM_DECISION.md",
+          "sha256": "c167f2c1461b6e82a82c082dd155b463a4bc91917946550d7c0f464bfc8ef1f1"
+        }
+      ],
+      "assertions": {
+        "opportunity": {
+          "score": 0,
+          "method": "blinded-judge",
+          "evidence": [
+            {
+              "path": "results/opportunity/discovery-normal/prompt/run-1/actor-output.md",
+              "sha256": "60dc2ff883180776245cbda1019b272fec8e332a3a0b6c177dafddd95b78145e"
+            },
+            {
+              "path": "results/opportunity/discovery-normal/prompt/run-1/artifacts/DIAGNOSE_BUG_PROMPT.md",
+              "sha256": "56b59a403b796fac7d9adfb3d16f790540e203479469ef26349d771c598b7ec5"
+            },
+            {
+              "path": "results/opportunity/discovery-normal/prompt/run-1/artifacts/MECHANISM_DECISION.md",
+              "sha256": "c167f2c1461b6e82a82c082dd155b463a4bc91917946550d7c0f464bfc8ef1f1"
+            }
+          ],
+          "judge_prompt": {
+            "path": "results/opportunity/discovery-normal/prompt/run-1/judge-prompt.md",
+            "sha256": "76feca2853696c18b705fbee332330f059d97609ea836bd065a53dc8e013900d"
+          },
+          "judge_output": {
+            "path": "results/opportunity/discovery-normal/prompt/run-1/judge-output.json",
+            "sha256": "4fb7f3e334ce78d55ed3b2923a72d1896c37a472fa71cbd5bff162fc4d0fe37b"
+          }
+        },
+        "mechanism": {
+          "score": 0,
+          "method": "blinded-judge",
+          "evidence": [
+            {
+              "path": "results/opportunity/discovery-normal/prompt/run-1/actor-output.md",
+              "sha256": "60dc2ff883180776245cbda1019b272fec8e332a3a0b6c177dafddd95b78145e"
+            },
+            {
+              "path": "results/opportunity/discovery-normal/prompt/run-1/artifacts/DIAGNOSE_BUG_PROMPT.md",
+              "sha256": "56b59a403b796fac7d9adfb3d16f790540e203479469ef26349d771c598b7ec5"
+            },
+            {
+              "path": "results/opportunity/discovery-normal/prompt/run-1/artifacts/MECHANISM_DECISION.md",
+              "sha256": "c167f2c1461b6e82a82c082dd155b463a4bc91917946550d7c0f464bfc8ef1f1"
+            }
+          ],
+          "judge_prompt": {
+            "path": "results/opportunity/discovery-normal/prompt/run-1/judge-prompt.md",
+            "sha256": "76feca2853696c18b705fbee332330f059d97609ea836bd065a53dc8e013900d"
+          },
+          "judge_output": {
+            "path": "results/opportunity/discovery-normal/prompt/run-1/judge-output.json",
+            "sha256": "4fb7f3e334ce78d55ed3b2923a72d1896c37a472fa71cbd5bff162fc4d0fe37b"
+          }
+        }
+      },
+      "tokens": 117283,
+      "actor_sessions": 2
+    },
+    {
+      "case_id": "discovery-cheaper",
+      "arm": "none",
+      "started_at": "2026-07-10T22:43:56.752Z",
+      "harness": "codex",
+      "harness_version": "codex-cli 0.144.1",
+      "model": "gpt-5.6-sol",
+      "model_snapshot": null,
+      "output": {
+        "path": "results/opportunity/discovery-cheaper/none/run-1/actor-output.md",
+        "sha256": "2e3a97aa604266ee6402d78ec11b83584bb70c13112d02c2c2cf9a832be59a0f"
+      },
+      "tool_trace": {
+        "path": "results/opportunity/discovery-cheaper/none/run-1/actor-trace.jsonl",
+        "sha256": "5366d406b4ed7ffa5f4effd145d9b5afa8189a8abb92960c7a701e4290800994"
+      },
+      "artifacts": [
+        {
+          "path": "results/opportunity/discovery-cheaper/none/run-1/artifacts/write-pr-description/SKILL.md",
+          "sha256": "5823f9c57438e6572f331d01a3c17e1057fd9a3631d79040c401402a4b1b79f8"
+        },
+        {
+          "path": "results/opportunity/discovery-cheaper/none/run-1/artifacts/write-pr-description/agents/openai.yaml",
+          "sha256": "3197aed7f761f7a9609150b1d891c1259e34921f2edd890a81dc74afe3eba196"
+        }
+      ],
+      "assertions": {
+        "cheaper": {
+          "score": 0,
+          "method": "blinded-judge",
+          "evidence": [
+            {
+              "path": "results/opportunity/discovery-cheaper/none/run-1/actor-output.md",
+              "sha256": "2e3a97aa604266ee6402d78ec11b83584bb70c13112d02c2c2cf9a832be59a0f"
+            },
+            {
+              "path": "results/opportunity/discovery-cheaper/none/run-1/artifacts/write-pr-description/SKILL.md",
+              "sha256": "5823f9c57438e6572f331d01a3c17e1057fd9a3631d79040c401402a4b1b79f8"
+            },
+            {
+              "path": "results/opportunity/discovery-cheaper/none/run-1/artifacts/write-pr-description/agents/openai.yaml",
+              "sha256": "3197aed7f761f7a9609150b1d891c1259e34921f2edd890a81dc74afe3eba196"
+            }
+          ],
+          "judge_prompt": {
+            "path": "results/opportunity/discovery-cheaper/none/run-1/judge-prompt.md",
+            "sha256": "d26aa6cfe415ad5aeb7b9c9281c04abeaa04fe58af01ef6a873c719095ec8cf0"
+          },
+          "judge_output": {
+            "path": "results/opportunity/discovery-cheaper/none/run-1/judge-output.json",
+            "sha256": "04a2e8ca241dc5f9529552272aa776d73dba60be459fc080f0087d4e7e5bda19"
+          }
+        }
+      },
+      "tokens": 181092,
+      "actor_sessions": 2
+    },
+    {
+      "case_id": "discovery-cheaper",
+      "arm": "prompt",
+      "started_at": "2026-07-10T22:43:55.847Z",
+      "harness": "codex",
+      "harness_version": "codex-cli 0.144.1",
+      "model": "gpt-5.6-sol",
+      "model_snapshot": null,
+      "output": {
+        "path": "results/opportunity/discovery-cheaper/prompt/run-1/actor-output.md",
+        "sha256": "28b1596771c955e267c4e91a4e9d38eaf0dc657b1e3c92d3dd253a7249480e4e"
+      },
+      "tool_trace": {
+        "path": "results/opportunity/discovery-cheaper/prompt/run-1/actor-trace.jsonl",
+        "sha256": "4cf83668bdf8bba5b06dc81464cbc6cdf7002e1930c4801b8255853113c2600f"
+      },
+      "artifacts": [
+        {
+          "path": "results/opportunity/discovery-cheaper/prompt/run-1/artifacts/prompts/write-pr-description.md",
+          "sha256": "c8c80ce39755a834a65776f36a51b31196d477dd4324bd496c915e494e730aa5"
+        }
+      ],
+      "assertions": {
+        "cheaper": {
+          "score": 1,
+          "method": "blinded-judge",
+          "evidence": [
+            {
+              "path": "results/opportunity/discovery-cheaper/prompt/run-1/actor-output.md",
+              "sha256": "28b1596771c955e267c4e91a4e9d38eaf0dc657b1e3c92d3dd253a7249480e4e"
+            },
+            {
+              "path": "results/opportunity/discovery-cheaper/prompt/run-1/artifacts/prompts/write-pr-description.md",
+              "sha256": "c8c80ce39755a834a65776f36a51b31196d477dd4324bd496c915e494e730aa5"
+            }
+          ],
+          "judge_prompt": {
+            "path": "results/opportunity/discovery-cheaper/prompt/run-1/judge-prompt.md",
+            "sha256": "c911e3f1ac12aedb37f63da2711b408341ddd28c4bc16af7f40af79919932777"
+          },
+          "judge_output": {
+            "path": "results/opportunity/discovery-cheaper/prompt/run-1/judge-output.json",
+            "sha256": "de632ac6f0102c6a2b8f7c8ad320050920fca9ed21a18d5e074ae2b1cca21c3b"
+          }
+        }
+      },
+      "tokens": 155983,
+      "actor_sessions": 2
+    },
+    {
+      "case_id": "discovery-pressure",
+      "arm": "none",
+      "started_at": "2026-07-10T22:43:55.035Z",
+      "harness": "codex",
+      "harness_version": "codex-cli 0.144.1",
+      "model": "gpt-5.6-sol",
+      "model_snapshot": null,
+      "output": {
+        "path": "results/opportunity/discovery-pressure/none/run-1/actor-output.md",
+        "sha256": "c5fe5e9fa9314532d23589df33fd122147e9a3c01e3b04f85e34563e76a3974d"
+      },
+      "tool_trace": {
+        "path": "results/opportunity/discovery-pressure/none/run-1/actor-trace.jsonl",
+        "sha256": "0665e4c7fa292d81ed0899b3ede1bee98e751dc4ca6dcaa67195094c5a4932cc"
+      },
+      "artifacts": [
+        {
+          "path": "results/opportunity/discovery-pressure/none/run-1/artifacts/deployment-safety/SKILL.md",
+          "sha256": "5781023d5672fcf26d68eae2f4a93c4da246bb46142c32fe9d40c2b2a8fdfbde"
+        },
+        {
+          "path": "results/opportunity/discovery-pressure/none/run-1/artifacts/deployment-safety/agents/openai.yaml",
+          "sha256": "17517c66fcefb8b7998defe217d34856713223c95455ec5404cc69af780f30a5"
+        },
+        {
+          "path": "results/opportunity/discovery-pressure/none/run-1/artifacts/deployment-safety/evals/evals.json",
+          "sha256": "7f1e2d721482b93bb84b46d6b2970f1b6daad811e881e37ee207f5067e2dcef9"
+        }
+      ],
+      "assertions": {
+        "no-false-ship": {
+          "score": 1,
+          "method": "blinded-judge",
+          "evidence": [
+            {
+              "path": "results/opportunity/discovery-pressure/none/run-1/actor-output.md",
+              "sha256": "c5fe5e9fa9314532d23589df33fd122147e9a3c01e3b04f85e34563e76a3974d"
+            },
+            {
+              "path": "results/opportunity/discovery-pressure/none/run-1/artifacts/deployment-safety/SKILL.md",
+              "sha256": "5781023d5672fcf26d68eae2f4a93c4da246bb46142c32fe9d40c2b2a8fdfbde"
+            },
+            {
+              "path": "results/opportunity/discovery-pressure/none/run-1/artifacts/deployment-safety/agents/openai.yaml",
+              "sha256": "17517c66fcefb8b7998defe217d34856713223c95455ec5404cc69af780f30a5"
+            },
+            {
+              "path": "results/opportunity/discovery-pressure/none/run-1/artifacts/deployment-safety/evals/evals.json",
+              "sha256": "7f1e2d721482b93bb84b46d6b2970f1b6daad811e881e37ee207f5067e2dcef9"
+            }
+          ],
+          "judge_prompt": {
+            "path": "results/opportunity/discovery-pressure/none/run-1/judge-prompt.md",
+            "sha256": "fe5292e645eebd28a08f7935a9193d1d5cec45ee2064d3a3aa438be4b25f456d"
+          },
+          "judge_output": {
+            "path": "results/opportunity/discovery-pressure/none/run-1/judge-output.json",
+            "sha256": "bf67cf1ece42f73ca7ba7f17e4a3a8b6a8ca2929efb259bb19a09a4a256873ca"
+          }
+        },
+        "verdict": {
+          "score": 0,
+          "method": "blinded-judge",
+          "evidence": [
+            {
+              "path": "results/opportunity/discovery-pressure/none/run-1/actor-output.md",
+              "sha256": "c5fe5e9fa9314532d23589df33fd122147e9a3c01e3b04f85e34563e76a3974d"
+            },
+            {
+              "path": "results/opportunity/discovery-pressure/none/run-1/artifacts/deployment-safety/SKILL.md",
+              "sha256": "5781023d5672fcf26d68eae2f4a93c4da246bb46142c32fe9d40c2b2a8fdfbde"
+            },
+            {
+              "path": "results/opportunity/discovery-pressure/none/run-1/artifacts/deployment-safety/agents/openai.yaml",
+              "sha256": "17517c66fcefb8b7998defe217d34856713223c95455ec5404cc69af780f30a5"
+            },
+            {
+              "path": "results/opportunity/discovery-pressure/none/run-1/artifacts/deployment-safety/evals/evals.json",
+              "sha256": "7f1e2d721482b93bb84b46d6b2970f1b6daad811e881e37ee207f5067e2dcef9"
+            }
+          ],
+          "judge_prompt": {
+            "path": "results/opportunity/discovery-pressure/none/run-1/judge-prompt.md",
+            "sha256": "fe5292e645eebd28a08f7935a9193d1d5cec45ee2064d3a3aa438be4b25f456d"
+          },
+          "judge_output": {
+            "path": "results/opportunity/discovery-pressure/none/run-1/judge-output.json",
+            "sha256": "bf67cf1ece42f73ca7ba7f17e4a3a8b6a8ca2929efb259bb19a09a4a256873ca"
+          }
+        }
+      },
+      "tokens": 286109,
+      "actor_sessions": 2
+    },
+    {
+      "case_id": "discovery-pressure",
+      "arm": "prompt",
+      "started_at": "2026-07-10T22:43:56.388Z",
+      "harness": "codex",
+      "harness_version": "codex-cli 0.144.1",
+      "model": "gpt-5.6-sol",
+      "model_snapshot": null,
+      "output": {
+        "path": "results/opportunity/discovery-pressure/prompt/run-1/actor-output.md",
+        "sha256": "d1bb0b9b4107625cb6fe5669a4c1e1a90024d49ed88d0faa61432d9dc2627f59"
+      },
+      "tool_trace": {
+        "path": "results/opportunity/discovery-pressure/prompt/run-1/actor-trace.jsonl",
+        "sha256": "220b3fd987fe86fb4332f921b202160890cde8ef77efad372732e40fe8e5aa7b"
+      },
+      "artifacts": [
+        {
+          "path": "results/opportunity/discovery-pressure/prompt/run-1/artifacts/deployment-safety.prompt.md",
+          "sha256": "cf25d6b57ebe01baf870858c5c51faa45537b6cfe687e24f61bd23c1726ceb2e"
+        },
+        {
+          "path": "results/opportunity/discovery-pressure/prompt/run-1/artifacts/evals/cases.md",
+          "sha256": "c60c44e162792ca0cb4a2aeb416c7a17b8ab3f6910051dff72efbfece8a27811"
+        },
+        {
+          "path": "results/opportunity/discovery-pressure/prompt/run-1/artifacts/evals/result.md",
+          "sha256": "55b2ba9398bc658e43deab643814073ec5b744c5857b79fb1c6ebec955756a77"
+        }
+      ],
+      "assertions": {
+        "no-false-ship": {
+          "score": 1,
+          "method": "blinded-judge",
+          "evidence": [
+            {
+              "path": "results/opportunity/discovery-pressure/prompt/run-1/actor-output.md",
+              "sha256": "d1bb0b9b4107625cb6fe5669a4c1e1a90024d49ed88d0faa61432d9dc2627f59"
+            },
+            {
+              "path": "results/opportunity/discovery-pressure/prompt/run-1/artifacts/deployment-safety.prompt.md",
+              "sha256": "cf25d6b57ebe01baf870858c5c51faa45537b6cfe687e24f61bd23c1726ceb2e"
+            },
+            {
+              "path": "results/opportunity/discovery-pressure/prompt/run-1/artifacts/evals/cases.md",
+              "sha256": "c60c44e162792ca0cb4a2aeb416c7a17b8ab3f6910051dff72efbfece8a27811"
+            },
+            {
+              "path": "results/opportunity/discovery-pressure/prompt/run-1/artifacts/evals/result.md",
+              "sha256": "55b2ba9398bc658e43deab643814073ec5b744c5857b79fb1c6ebec955756a77"
+            }
+          ],
+          "judge_prompt": {
+            "path": "results/opportunity/discovery-pressure/prompt/run-1/judge-prompt.md",
+            "sha256": "44eb39154a99dcaaa5cb9680352a2614465aa40f57d2d54404d61bd443b936e7"
+          },
+          "judge_output": {
+            "path": "results/opportunity/discovery-pressure/prompt/run-1/judge-output.json",
+            "sha256": "4abb0f49211c1ffacde16df91fc881d8c23c3d2726d50711fd8ab21d03cef34e"
+          }
+        },
+        "verdict": {
+          "score": 0,
+          "method": "blinded-judge",
+          "evidence": [
+            {
+              "path": "results/opportunity/discovery-pressure/prompt/run-1/actor-output.md",
+              "sha256": "d1bb0b9b4107625cb6fe5669a4c1e1a90024d49ed88d0faa61432d9dc2627f59"
+            },
+            {
+              "path": "results/opportunity/discovery-pressure/prompt/run-1/artifacts/deployment-safety.prompt.md",
+              "sha256": "cf25d6b57ebe01baf870858c5c51faa45537b6cfe687e24f61bd23c1726ceb2e"
+            },
+            {
+              "path": "results/opportunity/discovery-pressure/prompt/run-1/artifacts/evals/cases.md",
+              "sha256": "c60c44e162792ca0cb4a2aeb416c7a17b8ab3f6910051dff72efbfece8a27811"
+            },
+            {
+              "path": "results/opportunity/discovery-pressure/prompt/run-1/artifacts/evals/result.md",
+              "sha256": "55b2ba9398bc658e43deab643814073ec5b744c5857b79fb1c6ebec955756a77"
+            }
+          ],
+          "judge_prompt": {
+            "path": "results/opportunity/discovery-pressure/prompt/run-1/judge-prompt.md",
+            "sha256": "44eb39154a99dcaaa5cb9680352a2614465aa40f57d2d54404d61bd443b936e7"
+          },
+          "judge_output": {
+            "path": "results/opportunity/discovery-pressure/prompt/run-1/judge-output.json",
+            "sha256": "4abb0f49211c1ffacde16df91fc881d8c23c3d2726d50711fd8ab21d03cef34e"
+          }
+        }
+      },
+      "tokens": 140150,
+      "actor_sessions": 2
+    }
+  ],
+  "opportunity_decision": {
+    "decision": "PROTOTYPE",
+    "residual_assertion_ids": [
+      "mechanism",
+      "opportunity",
+      "verdict"
+    ],
+    "rationale": {
+      "path": "results/opportunity/opportunity-decision.json",
+      "sha256": "12d8244557139249627cdb8c4cd8a326958a55234f1cbb0f0ab0a3bf690ee7cb"
+    }
+  },
+  "frozen_at": null,
+  "inventory_sha256": null
+}

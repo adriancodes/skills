@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019f5883-eb75-7bd1-8b85-48d986409d6c"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"PostgreSQL. A multi-user todo app benefits from relational data, constraints, transactions, and straightforward querying. MongoDB is reasonable only if your data is highly variable or your team already depends on its ecosystem. For most small apps, PostgreSQL is the safer default."}}
+{"type":"turn.completed","usage":{"input_tokens":12024,"cached_input_tokens":9984,"output_tokens":58,"reasoning_output_tokens":0}}

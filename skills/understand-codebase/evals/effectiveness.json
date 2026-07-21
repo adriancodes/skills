@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "suite_version": "1.1.0",
+  "status": "FROZEN",
+  "subject": "../SKILL.md",
+  "subject_sha256": "663493fa5f775ea65f92a4f6d9ac25e30415121088d7518b607f819d83a1ba59",
+  "cases": "effectiveness-cases.jsonl",
+  "files": {
+    "effectiveness-cases.jsonl": "168060ab898aa05b07501f99da946424ab0f3a2a0f262988de9f384ef72a0ba3",
+    "run-effectiveness.mjs": "a6b6f8405b8efbca6483e8cfb5c9c9d268d33c4c7c96280b7a6f45f33e0397df",
+    "score-effectiveness.mjs": "2c1835f8211b7522d6e664ae110bd3baffdeacf09af91b9f2760ef87db6afe3d",
+    "fixtures/audit-service/README.md": "8ac3cc128dffe7774b8eb243e5f6125f6c08dd7a454735579e53b2ccc8de7573",
+    "fixtures/audit-service/src/server.ts": "22a6fecb4af15cc9e9cbfc8eec8cac23cf8d17a95763abc280064ed8e5f014a0",
+    "fixtures/audit-service/src/config.ts": "8722b07fc65deebb96142504b96226c71e82df7979a28dafb45d73c1cb1173cb",
+    "fixtures/audit-service/src/storage/database.ts": "df1e091100887d1e803b94a512ca45338e1fc15f3b6c5184842c3154e5f1af37",
+    "fixtures/audit-service/src/audit/router.ts": "3728ea90a77dd225091b77a3880887243e35bd753f4c251e5a0188e56d655463",
+    "fixtures/audit-service/src/audit/service.ts": "eb6494884e1b3237e9cea8090c1078111e0a17d05ed87a54d81162d82c1b44b6",
+    "fixtures/audit-service/src/audit/repository.ts": "c41fcef91a2ff3033495dd458f168ae07fc8cd6d843f3a5942637db7b87d2b88",
+    "fixtures/audit-service/src/export/queue.ts": "8986ac57fc7ad68d77bf91fbc5ed76f0f2740515cb2d24361b7015cca674f778",
+    "fixtures/audit-service/src/export/worker.ts": "223a92212d638a46b0cfeae7d7d04e2531e45d6fcd5399a9af17abafe6e67239",
+    "fixtures/audit-service/src/export/sink.ts": "9dd76eb540ee1c3b696f1a606a36cda5932309f27841f457dbb279909088398a",
+    "fixtures/audit-service/src/keys/router.ts": "8c52e7d20aa16a5374a4e80c4fc86227e781bfa3aa24e0fcf32b608529fa4361",
+    "fixtures/audit-service/src/keys/service.ts": "5cb9f35b9a17f95e48fd553ee57ba1951d69f7f3ddb53aba7c434ee646b197b4",
+    "fixtures/audit-service/src/keys/repository.ts": "5f2c4ef79d45da4595c4bc9e49d27626ee3afa8f0d198255a0e40f92093cca57",
+    "fixtures/audit-service/src/keys/cache.ts": "adb1d35461e1c699afe32c4143a03102b52aabddce26590c734671566d561d03",
+    "fixtures/audit-service/tests/audit-flow.test.ts": "3276350cb40eed5daed165fbe0e15ab6f06b342c177a2330ba107fb3add812e3",
+    "fixtures/audit-service/tests/key-rotation.test.ts": "18553a133d84d98de6dc5ca95088e4f2a266699b9fca0c94c4cffd2f4c8e1af4"
+  },
+  "strongest_prompt": "Act as a read-only codebase-understanding guide. Explore only the paths, dependencies, configuration, and tests needed for the question. Answer first, then trace the code path with file and symbol citations. Separate confirmed facts, inference, and unknowns. Use Mermaid plus a compact text fallback when a flow is materially clearer visually. Do not recommend changes, modify files, or create persistent documentation.",
+  "minimum_meaningful_improvement": "The skill arm matches or exceeds the prompt arm on every critical held-out assertion, passes both regressions, removes the repeated strongest-prompt instruction burden, and consumes no more than 50% additional tokens in the paired value case.",
+  "harness": "codex-cli",
+  "harness_version": "0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "snapshot_policy": "opaque-time-bounded",
+  "reasoning_effort": "low",
+  "iteration_budget": 2,
+  "result_runs": {
+    "heldout-audit-export": { "prompt": "run-1", "skill": "run-2" },
+    "regression-vague-orientation": { "skill": "run-1" },
+    "regression-action-pressure": { "skill": "run-2" }
+  },
+  "prior_replaced_cells": {
+    "actor_sessions": 2,
+    "total_tokens": 127860
+  },
+  "maximum_cost": {
+    "actor_sessions": 6,
+    "total_tokens": 380000,
+    "paired_skill_premium_percent": 50
+  },
+  "trigger_evidence": "Deferred to the shared portfolio routing suite; this suite supports force-loaded body behavior only."
+}

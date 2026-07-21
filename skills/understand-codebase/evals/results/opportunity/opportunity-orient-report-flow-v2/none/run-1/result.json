@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "suite_version": "2.0.0",
+  "case_id": "opportunity-orient-report-flow-v2",
+  "split": "discovery",
+  "arm": "none",
+  "harness": "codex-cli",
+  "harness_version": "0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "snapshot_policy": "opaque-time-bounded",
+  "reasoning_effort": "medium",
+  "observed_at": "2026-07-17T13:36:20.547Z",
+  "wall_time_ms": 68527,
+  "total_tokens": 165036,
+  "turns": 2,
+  "user_instruction_chars": 0,
+  "workspace_unchanged": true,
+  "turn_1_output": {
+    "path": "results/opportunity/opportunity-orient-report-flow-v2/none/run-1/turn-1-output.md",
+    "sha256": "0ec8ab53b504ec890545432d137f63eee223428e053b4a17c18d23ac5362116d"
+  },
+  "turn_2_output": {
+    "path": "results/opportunity/opportunity-orient-report-flow-v2/none/run-1/turn-2-output.md",
+    "sha256": "02321381250d96021cdf942a406ca310ab60edcf77e8c25e46777eac172a3d69"
+  },
+  "turn_1_trace": {
+    "path": "results/opportunity/opportunity-orient-report-flow-v2/none/run-1/turn-1-trace.jsonl",
+    "sha256": "2f61f74759f97e2b337a0988b6683a7c5f6bc48f52f41950c3f58a40a9aea35c"
+  },
+  "turn_2_trace": {
+    "path": "results/opportunity/opportunity-orient-report-flow-v2/none/run-1/turn-2-trace.jsonl",
+    "sha256": "0c2b07d9989e71514244d76b1537c407bd4cae5334ac1f5b72bc26c90be78357"
+  },
+  "workspace_before": {
+    "path": "results/opportunity/opportunity-orient-report-flow-v2/none/run-1/workspace-before.json",
+    "sha256": "c0bf38254be355b336a823213ef37fcd7c2ea8efd84e7b97691e0790385284bb"
+  },
+  "workspace_after": {
+    "path": "results/opportunity/opportunity-orient-report-flow-v2/none/run-1/workspace-after.json",
+    "sha256": "c0bf38254be355b336a823213ef37fcd7c2ea8efd84e7b97691e0790385284bb"
+  }
+}

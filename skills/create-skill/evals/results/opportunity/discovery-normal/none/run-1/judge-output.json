@@ -1,0 +1,10 @@
+{
+  "scores": {
+    "opportunity": 0,
+    "mechanism": 0
+  },
+  "reasons": {
+    "opportunity": "No observable none-vs-prompt behavioral comparison or residual failure was identified before drafting; the response proceeded from assumed usage patterns.",
+    "mechanism": "The artifact is primarily a generic debugging workflow and checklist. It provides no concrete reusable machinery, executable tooling, or specialized context beyond broadly applicable debugging advice."
+  }
+}

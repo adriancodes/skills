@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "evidence_tier": "1-smoke",
+  "status": "FROZEN",
+  "subject_sha256": "c37a3e23c937880d94cc985f9bcedc9ede1a23d388f03fa6d247e0999fc76bc9",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "claim_scope": "Three behavior and four discovery smoke probes on the observed Codex route; no comparative effectiveness claim.",
+  "files": {
+    "../SKILL.md": "c37a3e23c937880d94cc985f9bcedc9ede1a23d388f03fa6d247e0999fc76bc9",
+    "smoke-cases.jsonl": "987902395ac47a9668d3f728df2a2fbeb0536880f4ba404b0babd32a031b58f7",
+    "smoke-codex.mjs": "a0aef2a73cf314c9ec7a85100cd66e8ca18e61316874abc9f99cd7a02914f960",
+    "smoke-score.mjs": "3491ae64d4c5cb5225b8d7d0bb504df1330b99213c902ef1772ed5cccfa73973",
+    "fixtures/caveman/SKILL.md": "6ceaea81d1279fa6a8a6eb4880046a2abb5c2b476b30f50bbc8a5c2806093f01"
+  }
+}

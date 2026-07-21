@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "suite_version": "lean-pilot-1.0.0",
+  "case_id": "behavior-depth-override",
+  "kind": "behavior",
+  "split": "heldout",
+  "arm": "skill",
+  "started_at": "2026-07-12T23:06:48.306Z",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "output": {
+    "path": "results/behavior-depth-override/skill/run-1/actor-output.md",
+    "sha256": "a310bb3d0515b1c0ffd1c7e1bfdeb6a33035d65dc9495e5288d88802f8a2b574"
+  },
+  "tool_trace": {
+    "path": "results/behavior-depth-override/skill/run-1/actor-trace.jsonl",
+    "sha256": "1a0a87af84119ccdb41ea853bb801fd1e8ef678c446af7babc2fc7a1d49a29f8"
+  },
+  "observed_trigger": null,
+  "usage": {
+    "input_tokens": 13815,
+    "cached_input_tokens": 9984,
+    "output_tokens": 3611,
+    "total_tokens": 17426
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "scores": {
+      "type": "object",
+      "properties": {
+        "opportunity": {
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "mechanism": {
+          "enum": [
+            0,
+            1
+          ]
+        }
+      },
+      "required": [
+        "opportunity",
+        "mechanism"
+      ],
+      "additionalProperties": false
+    },
+    "reasons": {
+      "type": "object",
+      "properties": {
+        "opportunity": {
+          "type": "string"
+        },
+        "mechanism": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "opportunity",
+        "mechanism"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "scores",
+    "reasons"
+  ],
+  "additionalProperties": false
+}

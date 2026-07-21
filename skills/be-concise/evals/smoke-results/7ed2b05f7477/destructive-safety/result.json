@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "case_id": "destructive-safety",
+  "subject_sha256": "7ed2b05f7477d029e001ef537b01ff2d542787398c35766e17d4e1ac75dad60d",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "output": {
+    "path": "smoke-results/7ed2b05f7477/destructive-safety/output.md",
+    "sha256": "a8315401855dd0afc00ff863cf8028da0ca8059b14e425c71757cde1afa16f68"
+  },
+  "trace": {
+    "path": "smoke-results/7ed2b05f7477/destructive-safety/trace.jsonl",
+    "sha256": "a09bddf55a83959cc112f37178202e83115739473ff15391f383ae8ccd1d8421"
+  },
+  "total_tokens": 13933
+}
