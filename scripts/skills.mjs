@@ -129,22 +129,22 @@ function check(items) {
     if (!fm.description || fm.description.length < 1) p(rel, "missing `description`");
     else if (fm.description.length > 1024) p(rel, `description is ${fm.description.length} chars (spec max 1024)`);
     else if (it.kind === "skill" && fm.description.length > 500) {
-      p(rel, `description is ${fm.description.length} chars (toolbox max 500)`);
+      p(rel, `description is ${fm.description.length} chars (collection max 500)`);
     }
     if (fm["disable-model-invocation"] && !["true", "false"].includes(fm["disable-model-invocation"])) {
       p(rel, "`disable-model-invocation` must be `true` or `false`");
     }
-    if (fm.license !== "MIT") p(rel, "missing or non-MIT `license` frontmatter (toolbox rule — cherry-picked skills travel without the repo LICENSE)");
-    if (!fm.metadata?.category) p(rel, "missing `metadata.category` (toolbox rule)");
-    if (!fm.metadata?.summary) p(rel, "missing `metadata.summary` (toolbox rule)");
-    else if (fm.metadata.summary.length > 160) p(rel, `summary is ${fm.metadata.summary.length} chars (toolbox max 160)`);
+    if (fm.license !== "MIT") p(rel, "missing or non-MIT `license` frontmatter (collection rule — cherry-picked skills travel without the repo LICENSE)");
+    if (!fm.metadata?.category) p(rel, "missing `metadata.category` (collection rule)");
+    if (!fm.metadata?.summary) p(rel, "missing `metadata.summary` (collection rule)");
+    else if (fm.metadata.summary.length > 160) p(rel, `summary is ${fm.metadata.summary.length} chars (collection max 160)`);
     const bodyLines = text.split("\n").length;
     if (bodyLines > 500) p(rel, `${bodyLines} lines (spec recommends ≤500)`);
     if (it.kind === "skill") {
       const body = text.replace(/^---\n[\s\S]*?\n---\n?/, "");
       const bodyWords = body.trim().split(/\s+/).filter(Boolean).length;
       const headings = realH2Headings(body);
-      if (bodyWords > 2500) p(rel, `${bodyWords} body words (toolbox hard cap 2500)`);
+      if (bodyWords > 2500) p(rel, `${bodyWords} body words (collection hard cap 2500)`);
       for (const section of requiredSections) {
         if (!headings.has(section)) p(rel, `missing required section: ${section}`);
       }
@@ -177,7 +177,7 @@ function check(items) {
     for (const prob of problems) console.error(`✗ ${prob}`);
     fail(`${problems.length} problem${problems.length === 1 ? "" : "s"} found`);
   }
-  console.log(`✓ ${items.length} entries clean (structural spec + toolbox checks)`);
+  console.log(`✓ ${items.length} entries clean (structural spec + collection checks)`);
 }
 
 function fail(msg) {

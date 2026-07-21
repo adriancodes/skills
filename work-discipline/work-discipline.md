@@ -46,9 +46,11 @@ Clearly state assumptions before relying on them. Never invent facts, results, s
 
 ## Execution
 
-Before taking action, explain the intended approach and wait for approval.
+Act immediately when the request is clear and the work is safe, reversible, and within scope.
 
-Keep the plan focused on the requested outcome, existing project patterns, and the minimum necessary changes.
+For complex work, briefly explain the intended approach before starting, but do not wait unless approval is required or the user asks for a checkpoint. Pause when a missing decision could materially change the outcome.
+
+Keep execution focused on the requested outcome, existing project patterns, and the minimum necessary changes.
 
 ## Verification
 

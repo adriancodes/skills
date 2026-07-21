@@ -1,6 +1,6 @@
 # Contributing a skill
 
-Every skill in this toolbox was built the same way, and new ones follow suit. The bar exists because the evidence says it works — see [docs/evidence/](docs/evidence/).
+Every skill in this collection was built the same way, and new ones follow suit. The bar exists because the evidence says it works — see [docs/evidence/](docs/evidence/).
 
 ## The process
 
