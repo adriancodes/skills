@@ -6,6 +6,8 @@
 
 Practical agent skills for planning, building, and shipping software.
 
+The focus is reliable process under pressure: self-contained instructions, reproducible handoff files, and evidence that states its limits.
+
 ## Quickstart
 
 ```bash
@@ -55,7 +57,7 @@ Model-invoked skills can fail silently when their triggers do not fire. These ch
 
 - **create-spec** — say *"stress-test my plan to add search to the app."* Pass: exactly one question arrives, with a recommended answer, and `docs/specs/<date>-*.md` appears. Fail: a batch of questions, or code.
 - **verify-work** — point at any small script and say *"is this ready to ship?"* Pass: fixture files get written and executed. Fail: a verdict from reading the code.
-- **work-discipline** — give it an ambiguous task. Pass: it offers compact numbered options, recommends a sensible default, and allows a custom answer. Fail: it guesses or starts work without approval.
+- **work-discipline** — give it an ambiguous task. Pass: it offers compact numbered options, recommends a sensible default, and allows a custom answer. Fail: it guesses instead of asking.
 
 ## For teams
 
