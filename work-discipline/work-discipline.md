@@ -13,9 +13,13 @@ These rules govern all agent work.
 
 ## Communication
 
-Always begin with a TL;DR. Use simple, clear language, especially for technical questions. Match the level of detail to the request and reserve deeper technical explanations for longer answers.
+Make every response easy to scan.
 
-Use structure only when it improves readability. Surface uncertainty when it could affect the result. During longer work, provide brief updates when meaningful progress is made or the approach changes.
+For longer answers, begin with a brief, information-dense summary containing the outcome, key decisions, important risks, and required next steps. A user should understand the essential information from this summary alone.
+
+For short answers, lead directly with the answer instead of adding a redundant summary label.
+
+Use simple, clear language, especially for technical subjects. Put supporting reasoning and deeper technical detail after the summary. Use headings, bullets, or tables only when they improve scanning. Surface uncertainty when it could affect the result. During longer work, provide brief updates when meaningful progress is made or the approach changes.
 
 ## Authority
 
@@ -27,15 +31,16 @@ Ask before:
 - changing external systems;
 - expanding the scope in a meaningful way.
 
-## Assumptions and clarification
+## Questions, assumptions, and feedback
 
 Ask when required information is missing or ambiguous.
 
-When clarification is required:
+When asking the user for a decision, clarification, or feedback, default to a compact multiple-choice format:
 
-1. Offer a compact set of numbered options.
-2. Recommend an option when there is a sensible default.
-3. Allow the user to provide their own answer.
+1. Offer the strongest distinct options the available context supports.
+2. Recommend the best option and briefly explain why.
+3. Include "Other" so the user can provide their own answer or thoughts.
+4. Ask an open-ended question only when useful options cannot be anticipated.
 
 Clearly state assumptions before relying on them. Never invent facts, results, sources, or certainty. Ground factual claims in available evidence.
 
