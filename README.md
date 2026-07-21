@@ -18,8 +18,7 @@ Choose the skills you want during installation. Each works independently in any 
 
 | You're about to… | Reach for |
 |------------------|-----------|
-| Build from a plan that "feels settled" | [`create-spec`](skills/create-spec/SKILL.md) — it usually isn't |
-| Write down a design you already discussed | [`create-spec`](skills/create-spec/SKILL.md) — capture mode, zero questions |
+| Define, challenge, or record a software plan | [`create-spec`](skills/create-spec/SKILL.md) |
 | Turn a confirmed spec into work items | [`create-tasks`](skills/create-tasks/SKILL.md) |
 | Build the next task | [`implement-task`](skills/implement-task/SKILL.md) |
 | Build or fix behavior test-first | [`tdd`](skills/tdd/SKILL.md) |
