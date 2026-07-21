@@ -50,14 +50,13 @@ Retroactive scope interview (15 user-answered questions; docs/specs/2026-07-10-r
 
 ## 0.5.0 — 2026-07-09
 
-- Benchmark round 2: the five remaining working skills, 45 scored runs, same 3-arm design (`docs/evidence/benchmark-2026-07-09/round2.md`). Every artifact-convention measure went 0/6 → 3/3; individual behaviors were often recoverable by strong one-liners — stated plainly in the README.
-- Evidence correction from the benchmark: build-loop's rationalization table now states its self-report provenance (behavioral baselines are stronger than the probe suggested); CONTRIBUTING now requires behavioral (never self-report) baseline probes.
+- Added a directional round-two benchmark summary. Its raw runs, scorer, and tested revision identities were not preserved, so it supports no effectiveness claim. The exercise still prompted CONTRIBUTING to require behavioral rather than self-report baselines.
 
 ## 0.4.1 — 2026-07-09
 
 - Every skill now carries `license: MIT` frontmatter (cherry-picked skills travel without the repo LICENSE); enforced by `check`.
 - CONTRIBUTING.md: the probe-before-draft, eval-after, evidence-or-silence process, written down so it survives the founding session.
-- README: the pipeline explained as an optional composition; benchmark artifacts linked as the worked example.
+- README: the pipeline explained as an optional composition and linked to the then-current benchmark archive.
 
 ## 0.4.0 — 2026-07-09
 
@@ -65,7 +64,7 @@ Retroactive scope interview (15 user-answered questions; docs/specs/2026-07-10-r
 
 ## 0.3.0 — 2026-07-09
 
-- Ground-truth benchmark: 2 planted-defect scenarios × 3 arms (none / plain prompt / skill) × k=3, 18 runs on Opus 4.8, artifacts preserved. Results in `docs/evidence/benchmark-2026-07-09/`. Honest headline: detection is model-native; the skills' measured lift is process and interop (0/6 → 3/3 on every targeted measure) at a 30–50% token premium.
+- Added a directional benchmark summary and a partial set of Scenario B outputs. The complete raw runs, scorer, tested revisions, and triggering evidence were not preserved, so the archive does not prove effectiveness or token cost.
 
 ## 0.2.1 — 2026-07-09
 
