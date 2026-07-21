@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "suite_version": "lean-pilot-1.0.0",
+  "status": "FROZEN",
+  "frozen_at": "2026-07-12T00:00:00-04:00",
+  "subject": "../SKILL.md",
+  "subject_sha256": "ab58fc4b7b39cb7e012c0bbbf5dedd604b1f8541d56dad163bb64d69615c5c8e",
+  "files": {
+    "../SKILL.md": "ab58fc4b7b39cb7e012c0bbbf5dedd604b1f8541d56dad163bb64d69615c5c8e",
+    "cases.jsonl": "808888f49eabecb2c28196782c9db944acc0ddf6954d8195fa7a461d00d37d76",
+    "rubric.md": "20e41fd4994c95db4bf465c0807b660d7c3cdb648dd4b3867935df456d7630b2",
+    "matrix.json": "d251d378955fc994eb501511ea7e04f65042bc09ea010500edd32bfc7b2c5d43",
+    "run.md": "02ce97ee41edcb161e98a020b004bfe0708f3c85e5f4106f8cf9badc87ef5981",
+    "run-codex.mjs": "9b34e42806171f3b2c5c8f202f174131254159cc5fd4a8a45bbe749fb1d71856",
+    "score.mjs": "d62bd01788d485bf72477dce40015cf9336bb534455d4aaf729c131242018340"
+  },
+  "prior_evidence": {
+    "status": "directional-only",
+    "note": "The skill text and changelog describe earlier probes, but no replayable current-revision comparator runs were preserved. This suite does not treat those summaries as scored evidence."
+  }
+}

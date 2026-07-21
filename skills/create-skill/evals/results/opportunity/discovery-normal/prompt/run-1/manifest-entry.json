@@ -1,0 +1,83 @@
+{
+  "case_id": "discovery-normal",
+  "arm": "prompt",
+  "started_at": "2026-07-10T22:33:00.408Z",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "output": {
+    "path": "results/opportunity/discovery-normal/prompt/run-1/actor-output.md",
+    "sha256": "60dc2ff883180776245cbda1019b272fec8e332a3a0b6c177dafddd95b78145e"
+  },
+  "tool_trace": {
+    "path": "results/opportunity/discovery-normal/prompt/run-1/actor-trace.jsonl",
+    "sha256": "0250a6a8860c7b4557fd270ce10139d7ee35ce1e449a779861e104425a31a2c0"
+  },
+  "artifacts": [
+    {
+      "path": "results/opportunity/discovery-normal/prompt/run-1/artifacts/DIAGNOSE_BUG_PROMPT.md",
+      "sha256": "56b59a403b796fac7d9adfb3d16f790540e203479469ef26349d771c598b7ec5"
+    },
+    {
+      "path": "results/opportunity/discovery-normal/prompt/run-1/artifacts/MECHANISM_DECISION.md",
+      "sha256": "c167f2c1461b6e82a82c082dd155b463a4bc91917946550d7c0f464bfc8ef1f1"
+    }
+  ],
+  "assertions": {
+    "opportunity": {
+      "score": 0,
+      "method": "blinded-judge",
+      "evidence": [
+        {
+          "path": "results/opportunity/discovery-normal/prompt/run-1/actor-output.md",
+          "sha256": "60dc2ff883180776245cbda1019b272fec8e332a3a0b6c177dafddd95b78145e"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/prompt/run-1/artifacts/DIAGNOSE_BUG_PROMPT.md",
+          "sha256": "56b59a403b796fac7d9adfb3d16f790540e203479469ef26349d771c598b7ec5"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/prompt/run-1/artifacts/MECHANISM_DECISION.md",
+          "sha256": "c167f2c1461b6e82a82c082dd155b463a4bc91917946550d7c0f464bfc8ef1f1"
+        }
+      ],
+      "judge_prompt": {
+        "path": "results/opportunity/discovery-normal/prompt/run-1/judge-prompt.md",
+        "sha256": "76feca2853696c18b705fbee332330f059d97609ea836bd065a53dc8e013900d"
+      },
+      "judge_output": {
+        "path": "results/opportunity/discovery-normal/prompt/run-1/judge-output.json",
+        "sha256": "4fb7f3e334ce78d55ed3b2923a72d1896c37a472fa71cbd5bff162fc4d0fe37b"
+      }
+    },
+    "mechanism": {
+      "score": 0,
+      "method": "blinded-judge",
+      "evidence": [
+        {
+          "path": "results/opportunity/discovery-normal/prompt/run-1/actor-output.md",
+          "sha256": "60dc2ff883180776245cbda1019b272fec8e332a3a0b6c177dafddd95b78145e"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/prompt/run-1/artifacts/DIAGNOSE_BUG_PROMPT.md",
+          "sha256": "56b59a403b796fac7d9adfb3d16f790540e203479469ef26349d771c598b7ec5"
+        },
+        {
+          "path": "results/opportunity/discovery-normal/prompt/run-1/artifacts/MECHANISM_DECISION.md",
+          "sha256": "c167f2c1461b6e82a82c082dd155b463a4bc91917946550d7c0f464bfc8ef1f1"
+        }
+      ],
+      "judge_prompt": {
+        "path": "results/opportunity/discovery-normal/prompt/run-1/judge-prompt.md",
+        "sha256": "76feca2853696c18b705fbee332330f059d97609ea836bd065a53dc8e013900d"
+      },
+      "judge_output": {
+        "path": "results/opportunity/discovery-normal/prompt/run-1/judge-output.json",
+        "sha256": "4fb7f3e334ce78d55ed3b2923a72d1896c37a472fa71cbd5bff162fc4d0fe37b"
+      }
+    }
+  },
+  "tokens": 117283,
+  "actor_sessions": 2
+}

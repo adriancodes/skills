@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "evidence_tier": 2,
+  "verdict": "ABANDON",
+  "product_decision": "INCONCLUSIVE",
+  "user_intent_confirmed": false,
+  "claim_scope": "Only the assistant-authored factual read-only current-state map case; not the user's broader intended skill.",
+  "rationale": "The strongest realistic prompt met every critical target; a new skill has no demonstrated opportunity.",
+  "prompt_failures": [],
+  "total_tokens": 109792,
+  "actor_sessions": 2,
+  "within_budget": false,
+  "arms": [
+    {
+      "arm": "none",
+      "checks": {
+        "entrypoint": true,
+        "request-route": true,
+        "service": true,
+        "storage": true,
+        "queue": true,
+        "worker-side-effect": true,
+        "sync-async-boundary": true,
+        "file-citations": true,
+        "no-recommendations": true,
+        "workspace-unchanged": true
+      },
+      "critical_passes": 10,
+      "critical_total": 10,
+      "total_tokens": 53818,
+      "wall_time_ms": 48669
+    },
+    {
+      "arm": "prompt",
+      "checks": {
+        "entrypoint": true,
+        "request-route": true,
+        "service": true,
+        "storage": true,
+        "queue": true,
+        "worker-side-effect": true,
+        "sync-async-boundary": true,
+        "file-citations": true,
+        "no-recommendations": true,
+        "workspace-unchanged": true
+      },
+      "critical_passes": 10,
+      "critical_total": 10,
+      "total_tokens": 55974,
+      "wall_time_ms": 80719
+    }
+  ]
+}

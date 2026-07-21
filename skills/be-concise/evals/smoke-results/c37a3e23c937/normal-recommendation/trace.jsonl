@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019f58bc-8d1f-7ca3-addc-7e663ed66b6f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"PostgreSQL. A multi-user todo app has related data—users, lists, tasks—which fits a relational database cleanly. MongoDB adds flexibility you likely don’t need."}}
+{"type":"turn.completed","usage":{"input_tokens":13863,"cached_input_tokens":9984,"output_tokens":40,"reasoning_output_tokens":0}}

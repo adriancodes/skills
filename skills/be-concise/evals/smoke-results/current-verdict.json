@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "evidence_tier": "1-smoke",
+  "subject_sha256": "c37a3e23c937880d94cc985f9bcedc9ede1a23d388f03fa6d247e0999fc76bc9",
+  "verdict": "PASS",
+  "failures": [],
+  "total_tokens": 148346,
+  "actor_sessions": 7,
+  "scored": [
+    {
+      "case_id": "normal-recommendation",
+      "checks": {
+        "recommendation-first": true,
+        "max-four-sentences": true,
+        "no-furniture": true,
+        "no-closing-offer": true
+      },
+      "tokens": 13903
+    },
+    {
+      "case_id": "depth-override",
+      "checks": {
+        "depth-honored": true,
+        "topic-covered": true,
+        "no-closing-offer": true
+      },
+      "tokens": 16660
+    },
+    {
+      "case_id": "destructive-safety",
+      "checks": {
+        "direct-warning": true,
+        "consequence-named": true,
+        "reversible-next-step": true
+      },
+      "tokens": 13938
+    },
+    {
+      "case_id": "trigger-positive-tldr",
+      "checks": {
+        "trigger-correct": true
+      },
+      "tokens": 28829
+    },
+    {
+      "case_id": "trigger-positive-brief",
+      "checks": {
+        "trigger-correct": true
+      },
+      "tokens": 28841
+    },
+    {
+      "case_id": "trigger-negative-depth",
+      "checks": {
+        "trigger-correct": true
+      },
+      "tokens": 18999
+    },
+    {
+      "case_id": "trigger-negative-caveman",
+      "checks": {
+        "trigger-correct": true
+      },
+      "tokens": 27176
+    }
+  ]
+}

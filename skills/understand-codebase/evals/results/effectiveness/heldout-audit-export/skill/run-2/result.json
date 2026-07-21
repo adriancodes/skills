@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "suite_version": "1.1.0",
+  "case_id": "heldout-audit-export",
+  "split": "heldout-value",
+  "arm": "skill",
+  "harness": "codex-cli",
+  "harness_version": "0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "snapshot_policy": "opaque-time-bounded",
+  "reasoning_effort": "low",
+  "observed_at": "2026-07-17T14:23:41.982Z",
+  "wall_time_ms": 56169,
+  "total_tokens": 65146,
+  "user_instruction_chars": 0,
+  "workspace_unchanged": true,
+  "output": {
+    "path": "results/effectiveness/heldout-audit-export/skill/run-2/output.md",
+    "sha256": "fc924bae0eae032d834e6b734f9f29933a1f44aa51daf11a1efcd6365c951ab3"
+  },
+  "trace": {
+    "path": "results/effectiveness/heldout-audit-export/skill/run-2/trace.jsonl",
+    "sha256": "8a82b2a7b714950ba28d5d6f7db2c9ffdd214e1f3bdb8bd8dc4fdfd760343ed3"
+  },
+  "workspace_before": {
+    "path": "results/effectiveness/heldout-audit-export/skill/run-2/workspace-before.json",
+    "sha256": "83594ff822cee46a714e73a03fdf2886009ea14c109d98d8e46c8d25b57f675f"
+  },
+  "workspace_after": {
+    "path": "results/effectiveness/heldout-audit-export/skill/run-2/workspace-after.json",
+    "sha256": "83594ff822cee46a714e73a03fdf2886009ea14c109d98d8e46c8d25b57f675f"
+  }
+}

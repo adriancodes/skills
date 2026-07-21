@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "case_id": "opportunity-report-flow",
+  "split": "discovery",
+  "arm": "none",
+  "harness": "codex-cli",
+  "harness_version": "0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "snapshot_policy": "opaque-time-bounded",
+  "reasoning_effort": "medium",
+  "observed_at": "2026-07-14T01:08:51.968Z",
+  "wall_time_ms": 48669,
+  "total_tokens": 53818,
+  "workspace_unchanged": true,
+  "output": {
+    "path": "results/opportunity/opportunity-report-flow/none/run-1/output.md",
+    "sha256": "686b7c4a287f78b26fe352fd5e80b2133de4a82a57b2d122a9d37eb346fb1454"
+  },
+  "trace": {
+    "path": "results/opportunity/opportunity-report-flow/none/run-1/trace.jsonl",
+    "sha256": "5c313817e52fada2d37bf8b6d3da489035708482bc2dff76ee2608a6b7f21116"
+  },
+  "stderr": {
+    "path": "results/opportunity/opportunity-report-flow/none/run-1/stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "workspace_before": {
+    "path": "results/opportunity/opportunity-report-flow/none/run-1/workspace-before.json",
+    "sha256": "f14f2fc55efc919b3f9d827fb5e59181d857731dfbe46fc8be22c91a684795d4"
+  },
+  "workspace_after": {
+    "path": "results/opportunity/opportunity-report-flow/none/run-1/workspace-after.json",
+    "sha256": "f14f2fc55efc919b3f9d827fb5e59181d857731dfbe46fc8be22c91a684795d4"
+  }
+}

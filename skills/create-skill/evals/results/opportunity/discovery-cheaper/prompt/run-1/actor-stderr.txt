@@ -1,0 +1,2 @@
+2026-07-10T22:44:22.042150Z ERROR codex_core::tools::router: error=patch rejected: writing outside of the project; rejected by user approval settings
+2026-07-10T22:44:32.123081Z ERROR codex_core::tools::router: error=patch rejected: writing outside of the project; rejected by user approval settings

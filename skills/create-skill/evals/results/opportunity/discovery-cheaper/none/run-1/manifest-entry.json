@@ -1,0 +1,57 @@
+{
+  "case_id": "discovery-cheaper",
+  "arm": "none",
+  "started_at": "2026-07-10T22:43:56.752Z",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "output": {
+    "path": "results/opportunity/discovery-cheaper/none/run-1/actor-output.md",
+    "sha256": "2e3a97aa604266ee6402d78ec11b83584bb70c13112d02c2c2cf9a832be59a0f"
+  },
+  "tool_trace": {
+    "path": "results/opportunity/discovery-cheaper/none/run-1/actor-trace.jsonl",
+    "sha256": "5366d406b4ed7ffa5f4effd145d9b5afa8189a8abb92960c7a701e4290800994"
+  },
+  "artifacts": [
+    {
+      "path": "results/opportunity/discovery-cheaper/none/run-1/artifacts/write-pr-description/SKILL.md",
+      "sha256": "5823f9c57438e6572f331d01a3c17e1057fd9a3631d79040c401402a4b1b79f8"
+    },
+    {
+      "path": "results/opportunity/discovery-cheaper/none/run-1/artifacts/write-pr-description/agents/openai.yaml",
+      "sha256": "3197aed7f761f7a9609150b1d891c1259e34921f2edd890a81dc74afe3eba196"
+    }
+  ],
+  "assertions": {
+    "cheaper": {
+      "score": 0,
+      "method": "blinded-judge",
+      "evidence": [
+        {
+          "path": "results/opportunity/discovery-cheaper/none/run-1/actor-output.md",
+          "sha256": "2e3a97aa604266ee6402d78ec11b83584bb70c13112d02c2c2cf9a832be59a0f"
+        },
+        {
+          "path": "results/opportunity/discovery-cheaper/none/run-1/artifacts/write-pr-description/SKILL.md",
+          "sha256": "5823f9c57438e6572f331d01a3c17e1057fd9a3631d79040c401402a4b1b79f8"
+        },
+        {
+          "path": "results/opportunity/discovery-cheaper/none/run-1/artifacts/write-pr-description/agents/openai.yaml",
+          "sha256": "3197aed7f761f7a9609150b1d891c1259e34921f2edd890a81dc74afe3eba196"
+        }
+      ],
+      "judge_prompt": {
+        "path": "results/opportunity/discovery-cheaper/none/run-1/judge-prompt.md",
+        "sha256": "d26aa6cfe415ad5aeb7b9c9281c04abeaa04fe58af01ef6a873c719095ec8cf0"
+      },
+      "judge_output": {
+        "path": "results/opportunity/discovery-cheaper/none/run-1/judge-output.json",
+        "sha256": "04a2e8ca241dc5f9529552272aa776d73dba60be459fc080f0087d4e7e5bda19"
+      }
+    }
+  },
+  "tokens": 181092,
+  "actor_sessions": 2
+}

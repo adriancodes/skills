@@ -1,0 +1,9 @@
+{
+  "decision": "PROTOTYPE",
+  "strongest_prompt_residual_assertion_ids": [
+    "mechanism",
+    "opportunity",
+    "verdict"
+  ],
+  "reason": "The strongest realistic prompt recovered cheaper-mechanism selection but still failed behavioral opportunity testing, reusable-mechanism quality, and evidence-appropriate verdict recording."
+}

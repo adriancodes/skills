@@ -1,0 +1,49 @@
+{
+  "case_id": "discovery-cheaper",
+  "arm": "prompt",
+  "started_at": "2026-07-10T22:43:55.847Z",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "output": {
+    "path": "results/opportunity/discovery-cheaper/prompt/run-1/actor-output.md",
+    "sha256": "28b1596771c955e267c4e91a4e9d38eaf0dc657b1e3c92d3dd253a7249480e4e"
+  },
+  "tool_trace": {
+    "path": "results/opportunity/discovery-cheaper/prompt/run-1/actor-trace.jsonl",
+    "sha256": "4cf83668bdf8bba5b06dc81464cbc6cdf7002e1930c4801b8255853113c2600f"
+  },
+  "artifacts": [
+    {
+      "path": "results/opportunity/discovery-cheaper/prompt/run-1/artifacts/prompts/write-pr-description.md",
+      "sha256": "c8c80ce39755a834a65776f36a51b31196d477dd4324bd496c915e494e730aa5"
+    }
+  ],
+  "assertions": {
+    "cheaper": {
+      "score": 1,
+      "method": "blinded-judge",
+      "evidence": [
+        {
+          "path": "results/opportunity/discovery-cheaper/prompt/run-1/actor-output.md",
+          "sha256": "28b1596771c955e267c4e91a4e9d38eaf0dc657b1e3c92d3dd253a7249480e4e"
+        },
+        {
+          "path": "results/opportunity/discovery-cheaper/prompt/run-1/artifacts/prompts/write-pr-description.md",
+          "sha256": "c8c80ce39755a834a65776f36a51b31196d477dd4324bd496c915e494e730aa5"
+        }
+      ],
+      "judge_prompt": {
+        "path": "results/opportunity/discovery-cheaper/prompt/run-1/judge-prompt.md",
+        "sha256": "c911e3f1ac12aedb37f63da2711b408341ddd28c4bc16af7f40af79919932777"
+      },
+      "judge_output": {
+        "path": "results/opportunity/discovery-cheaper/prompt/run-1/judge-output.json",
+        "sha256": "de632ac6f0102c6a2b8f7c8ad320050920fca9ed21a18d5e074ae2b1cca21c3b"
+      }
+    }
+  },
+  "tokens": 155983,
+  "actor_sessions": 2
+}

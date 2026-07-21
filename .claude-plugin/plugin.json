@@ -1,0 +1,13 @@
+{
+  "name": "toolbox",
+  "version": "0.7.0",
+  "description": "Adrian's personal skills toolbox — independent, self-contained agent skills for planning, building, and shipping.",
+  "author": {
+    "name": "Adrian",
+    "email": "hello@adrianmartin.dev"
+  },
+  "homepage": "https://github.com/adriancodes/skills",
+  "repository": "https://github.com/adriancodes/skills",
+  "license": "MIT",
+  "keywords": ["skills", "agent-skills", "claude-code", "toolbox", "create-spec", "verify-work", "create-skill"]
+}

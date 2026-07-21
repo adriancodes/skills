@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "suite_version": "lean-pilot-1.0.0",
+  "case_id": "trigger-negative-caveman",
+  "kind": "trigger",
+  "split": "trigger-negative",
+  "arm": "installed",
+  "started_at": "2026-07-12T23:08:28.348Z",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "output": {
+    "path": "results/trigger-negative-caveman/installed/run-1/actor-output.md",
+    "sha256": "671f52bcb5df84352315e63ab363f5c14bbac2603964d4d2ae80959c45d6c4d8"
+  },
+  "tool_trace": {
+    "path": "results/trigger-negative-caveman/installed/run-1/actor-trace.jsonl",
+    "sha256": "5a6bf29159ed95143c7223e2ae9b922ecebebc7c7afd7b4951047b79e67ba183"
+  },
+  "observed_trigger": true,
+  "usage": {
+    "input_tokens": 28234,
+    "cached_input_tokens": 22016,
+    "output_tokens": 356,
+    "total_tokens": 28590
+  }
+}

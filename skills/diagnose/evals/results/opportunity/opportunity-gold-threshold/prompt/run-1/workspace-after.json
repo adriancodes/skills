@@ -1,0 +1,22 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "0ac6fdac35f79127fd68c098bcf2061ca51d3c808bb22a6a38e30d166d00ace2"
+  },
+  {
+    "path": "package.json",
+    "sha256": "0e808b6c378fd1886a2a3cf20475a43578826616d8e1c3fee1305556d10cc71a"
+  },
+  {
+    "path": "src/checkout.js",
+    "sha256": "b4d4a53198ba15f6fff320f00e482cee9fb4ba5681de7114c302d1ce88142795"
+  },
+  {
+    "path": "src/discount.js",
+    "sha256": "0392541c36078cbf2cfd48681ced1d2a586fca8441543d5d10df40cc443b04e9"
+  },
+  {
+    "path": "test/checkout.test.js",
+    "sha256": "de2c85e81dfa07e1ea027483e58b456fa14f1474f6f054e9739e2dab7dccaae6"
+  }
+]

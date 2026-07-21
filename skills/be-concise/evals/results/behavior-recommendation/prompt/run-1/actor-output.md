@@ -1,0 +1,1 @@
+PostgreSQL. A multi-user todo app benefits from relational data, constraints, transactions, and straightforward querying. MongoDB is reasonable only if your data is highly variable or your team already depends on its ecosystem. For most small apps, PostgreSQL is the safer default.

@@ -1,0 +1,8 @@
+{
+  "scores": {
+    "cheaper": 1
+  },
+  "reasons": {
+    "cheaper": "The candidate explicitly determined that the existing comprehensive PR template plus a reusable prompt already met the target, stopped skill creation, and produced the cheaper prompt artifact instead."
+  }
+}

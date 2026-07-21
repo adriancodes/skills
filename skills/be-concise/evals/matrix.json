@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "suite_version": "lean-pilot-1.0.0",
+  "status": "FROZEN",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "snapshot_policy": "opaque-time-bounded",
+  "auth_route": "ChatGPT account via Codex CLI",
+  "observed_at": "2026-07-12T00:00:00-04:00",
+  "model_settings": {
+    "model_reasoning_effort": "medium"
+  },
+  "behavior_repetitions": 1,
+  "trigger_repetitions": 1,
+  "max_actor_sessions": 12,
+  "max_tokens": 1000000,
+  "max_median_token_ratio": 1.5,
+  "min_trigger_precision": 1,
+  "min_trigger_recall": 1,
+  "claim_scope": "Lean directional pilot on the observed Codex CLI route only. Not a SHIP result."
+}

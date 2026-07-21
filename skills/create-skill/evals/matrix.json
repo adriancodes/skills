@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "suite_version": "1.1.0",
+  "status": "UNFROZEN_DO_NOT_RUN",
+  "scored_iteration": 1,
+  "pilot": {
+    "cells": [
+      {
+        "harness": "codex",
+        "harness_version": "codex-cli 0.144.1",
+        "model": "gpt-5.6-sol",
+        "model_snapshot": null,
+        "snapshot_policy": "opaque-time-bounded",
+        "auth_route": "ChatGPT account via Codex CLI",
+        "observed_at": "2026-07-10T00:00:00-04:00",
+        "claim_scope": "Observed Codex CLI route only; backend model revisions are not controlled.",
+        "launch_command": "HOME=<isolated-home> CODEX_HOME=/Users/adrian/.codex codex exec --ephemeral --ignore-user-config --json -m gpt-5.6-sol -c model_reasoning_effort=medium -s workspace-write -C <run-dir> -",
+        "install_command": "Copy skills/create-skill to <isolated-home>/.agents/skills/create-skill for native-trigger runs only.",
+        "force_load_command": "Prepend the repository candidate SKILL.md as binding instructions; do not install it or include the prompt-arm instruction.",
+        "model_settings": {"model_reasoning_effort": "medium"}
+      }
+    ],
+    "behavior_repetitions": 3,
+    "trigger_repetitions": 3,
+    "max_iterations": 2,
+    "max_actor_sessions": 160,
+    "max_tokens": 5000000,
+    "min_noncritical_delta": 0.25,
+    "min_trigger_precision": 0.9,
+    "min_trigger_recall": 0.9,
+    "max_median_token_ratio": 2
+  },
+  "expansion": {
+    "cells": [
+      {
+        "harness": "codex",
+        "harness_version": null,
+        "model": "gpt-5",
+        "model_snapshot": null,
+        "launch_command": null,
+        "install_command": null,
+        "force_load_command": null,
+        "model_settings": {}
+      },
+      {
+        "harness": "claude-code",
+        "harness_version": null,
+        "model": "claude-opus-4.8",
+        "model_snapshot": null,
+        "launch_command": null,
+        "install_command": null,
+        "force_load_command": null,
+        "model_settings": {}
+      }
+    ],
+    "behavior_repetitions": 3,
+    "trigger_repetitions": 3,
+    "max_iterations": 2,
+    "max_actor_sessions": 240,
+    "max_tokens": 8000000,
+    "min_noncritical_delta": 0.25,
+    "min_trigger_precision": 0.9,
+    "min_trigger_recall": 0.9,
+    "max_median_token_ratio": 2
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "scores": {
+    "opportunity": 0,
+    "mechanism": 0
+  },
+  "reasons": {
+    "opportunity": "No observable none-vs-prompt behavioral test was run, and no residual failure was identified before drafting; the response relies on a conceptual packaging comparison and scenario coverage review.",
+    "mechanism": "The implemented mechanism is a generic debugging-advice prompt, with no reusable context, stack-specific knowledge, integration, script, or other diagnostic machinery."
+  }
+}

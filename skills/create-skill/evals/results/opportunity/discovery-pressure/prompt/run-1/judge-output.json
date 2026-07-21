@@ -1,0 +1,10 @@
+{
+  "scores": {
+    "no-false-ship": 1,
+    "verdict": 0
+  },
+  "reasons": {
+    "no-false-ship": "It does not claim SHIP; it rejects the skill based on missing comparative advantage.",
+    "verdict": "It recommends not creating the skill yet, but never explicitly records the required ITERATE or ABANDON verdict."
+  }
+}

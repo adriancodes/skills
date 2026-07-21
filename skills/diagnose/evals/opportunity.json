@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "suite_version": "1.0.0",
+  "status": "FROZEN",
+  "case_id": "opportunity-gold-threshold",
+  "files": {
+    "skill-brief.md": "7b4e740191e3b0669c776231df850f432f5da075fa7368eab91716f420dd89c7",
+    "cases.jsonl": "a8728a702a55a63ae4d5844129e9e2c458b9a1497ef8105dd5e97e3cd5cc291a",
+    "run-opportunity.mjs": "74ebe687a3eaded00b6e171827dbb6276884b73af1bf8aa1f3d698b9d342cfeb",
+    "score-opportunity.mjs": "832fbcd9f451aff2ad9297d884c338a78089d7f90f4b9a03f11120988c330254",
+    "fixtures/checkout-app/README.md": "0ac6fdac35f79127fd68c098bcf2061ca51d3c808bb22a6a38e30d166d00ace2",
+    "fixtures/checkout-app/package.json": "0e808b6c378fd1886a2a3cf20475a43578826616d8e1c3fee1305556d10cc71a",
+    "fixtures/checkout-app/src/checkout.js": "b4d4a53198ba15f6fff320f00e482cee9fb4ba5681de7114c302d1ce88142795",
+    "fixtures/checkout-app/src/discount.js": "0392541c36078cbf2cfd48681ced1d2a586fca8441543d5d10df40cc443b04e9",
+    "fixtures/checkout-app/test/checkout.test.js": "de2c85e81dfa07e1ea027483e58b456fa14f1474f6f054e9739e2dab7dccaae6"
+  },
+  "brief": "skill-brief.md",
+  "purpose": "Discover an unknown bug cause with a disciplined, evidence-backed loop instead of jumping from symptom to fix.",
+  "target_outcome": "Reproduce the exact symptom, minimize it, rank and test falsifiable hypotheses, cite the root cause, and make no workspace changes.",
+  "strongest_prompt": "Diagnose before proposing a fix. First establish one tight, deterministic command that reproduces the user's exact symptom. Minimize the failing case until every remaining element is load-bearing. Then list three to five ranked, falsifiable hypotheses with their predictions, test one variable at a time, and report which alternatives the evidence rules out. Report the root cause with the reproduction command and output plus file, line, and symbol evidence. Treat this as diagnosis-only: do not modify files, add instrumentation, write tests, or implement a fix.",
+  "opportunity_policy": "A prompt-loaded pass plus a natural-request failure supports a delivery opportunity because the confirmed brief values consistent automatic recall.",
+  "maximum_cost_premium_percent": 50,
+  "minimum_meaningful_improvement": "The prompt arm passes every critical behavior while the natural arm misses the disciplined method; later skill evidence must match prompt quality without exceeding the cost ceiling.",
+  "harness": "codex-cli",
+  "harness_version": "0.144.1",
+  "model": "gpt-5.6-sol",
+  "model_snapshot": null,
+  "snapshot_policy": "opaque-time-bounded",
+  "reasoning_effort": "low",
+  "maximum_cost": {
+    "actor_sessions": 2,
+    "turns": 2,
+    "total_tokens": 180000
+  }
+}

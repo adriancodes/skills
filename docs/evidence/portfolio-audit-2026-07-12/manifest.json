@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-07-12",
+  "scope": "existing-repository-evidence-only",
+  "new_model_runs": 0,
+  "subjects": {
+    "build-loop": "f6d165c0d44654548e8025c0932dde1d87626bf5ee1f497ae49242e590357dae",
+    "create-skill": "034f4932f28e56b657efac4d5de608beb13b674ab4c3ab6fe055f24390ddf5b0",
+    "implement-slice": "e21efd7ce3cd8e73906b51c13bf6bec7ab29846a7ce494236929028247d5dcb6",
+    "improve-prompt": "7f112a11469b690abcbb49852aa1d5c14a9d4fbadb8af0cdf874969993c611fe",
+    "ship-feature": "c327c2cd0a6d51659ad60e644d4ecf099f9c4bb97d9404e719564f92d3f0c487",
+    "slice-spec": "554e6d180acf8ff36d2cbf040d711cbb5164e25611493702145dcfd101ba66b2",
+    "spec-plan": "77e4006871abe9ebcb491ae3dae194109249139ee1a2055f945d4c065b6f8bcf",
+    "tldr": "ab58fc4b7b39cb7e012c0bbbf5dedd604b1f8541d56dad163bb64d69615c5c8e",
+    "verify-work": "53092910709732b85e73fa326e0b04122d77293126a94573698c8573d89e29b5",
+    "work-discipline": "91a2b2a4fc2419d8f8967978ec263ab0bba318fa02cb6ba82c08022453370aae"
+  },
+  "evidence_sources": {
+    "benchmark_round_1": "57e626105675763b20fcb8f838e3028c132942f915a94e17ecf5175fe0f99bfd",
+    "benchmark_round_2": "630fef99c1729a079cb02958a93a5fe79f0839418b2ebfb1c9e3ce063430fcbc",
+    "opus_ab_probes": "4983fc3b44bec988f5c0d67f1eb25391c6dc5dfc2aa8390c5496c28ab9be7bec"
+  },
+  "observations": {
+    "create_skill_opportunity_files": 75,
+    "round_1_preserved_artifact_files": 16,
+    "round_2_raw_runs_present": false
+  }
+}

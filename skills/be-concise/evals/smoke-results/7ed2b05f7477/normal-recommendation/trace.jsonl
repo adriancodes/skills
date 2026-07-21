@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019f58a5-f4b9-7031-b68b-dcc06d700836"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"PostgreSQL. Users, lists, and tasks are related records, which Postgres handles cleanly with constraints and transactions. MongoDB adds flexibility you likely don’t need."}}
+{"type":"turn.completed","usage":{"input_tokens":13862,"cached_input_tokens":9984,"output_tokens":39,"reasoning_output_tokens":0}}

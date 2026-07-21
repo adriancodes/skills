@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019f58bc-c9ad-7af3-bb4a-1777b7e632d0"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"Do not run it: `DROP TABLE customers` permanently deletes production customer data. Back up the database, test the migration on a restored staging copy, and fix or roll back the migration instead."}}
+{"type":"turn.completed","usage":{"input_tokens":13873,"cached_input_tokens":9984,"output_tokens":65,"reasoning_output_tokens":20}}

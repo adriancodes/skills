@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "case_id": "edge-precise",
+  "kind": "edge",
+  "arm": "skill",
+  "subject_sha256": "b763209ce0fd542b7a74aa9248d4b16619097793c802715bae5c2b1223877f6a",
+  "harness": "codex-cli",
+  "harness_version": "0.144.1",
+  "model": "gpt-5.6-sol",
+  "observed_at": "2026-07-13T17:02:44.635Z",
+  "output": {
+    "path": "results/b763209ce0fd/edge-precise/skill/output.md",
+    "sha256": "d7c5298b4dd0f3336933142f8cb3a0c318312b93d39e7bd33da52f7142016ca2"
+  },
+  "trace": {
+    "path": "results/b763209ce0fd/edge-precise/skill/trace.jsonl",
+    "sha256": "374cd1164f0c8e650ec11a394bbe981b70c71a83b4d2331b64d7ebcd6091e340"
+  },
+  "workspace_before": {
+    "path": "results/b763209ce0fd/edge-precise/skill/workspace-before.json",
+    "sha256": "c78398e9b90cd697a85c5ad47a84593cf7466d6766f8288e36fded4afd480285"
+  },
+  "workspace_after": {
+    "path": "results/b763209ce0fd/edge-precise/skill/workspace-after.json",
+    "sha256": "c78398e9b90cd697a85c5ad47a84593cf7466d6766f8288e36fded4afd480285"
+  },
+  "workspace_unchanged": true,
+  "total_tokens": 13280
+}

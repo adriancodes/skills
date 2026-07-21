@@ -1,0 +1,8 @@
+{
+  "scores": {
+    "cheaper": 0
+  },
+  "reasons": {
+    "cheaper": "The candidate proceeded to scaffold and validate a new skill even after discovering that the repository already had a comprehensive PR template meeting the target; it did not stop skill creation."
+  }
+}
