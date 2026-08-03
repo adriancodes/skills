@@ -20,6 +20,7 @@ Choose the skills you want during installation. Each works independently in any 
 
 | You're about to… | Reach for |
 |------------------|-----------|
+| Generate non-obvious options for an open decision | [`explore-options`](skills/explore-options/SKILL.md) |
 | Define, challenge, or record a software plan | [`create-spec`](skills/create-spec/SKILL.md) |
 | Turn a confirmed spec into work items | [`create-tasks`](skills/create-tasks/SKILL.md) |
 | Build the next task | [`implement-task`](skills/implement-task/SKILL.md) |
@@ -34,6 +35,7 @@ Choose the skills you want during installation. Each works independently in any 
 | Ship a script, config, or skill | [`verify-work`](skills/verify-work/SKILL.md) |
 | Write or fix an agent skill | [`create-skill`](skills/create-skill/SKILL.md) |
 | Sharpen a vague ask before running it | [`improve-prompt`](skills/improve-prompt/SKILL.md) |
+| Check you understand changes before shipping them | [`quiz-changes`](skills/quiz-changes/SKILL.md) |
 | Get short plain answers, not essays | [`be-concise`](skills/be-concise/SKILL.md) |
 | Everything, all session long | [`work-discipline`](work-discipline/work-discipline.md) (always-on layer) |
 | Ask a quick factual question | No skill — just ask |
