@@ -14,9 +14,9 @@ metadata:
 
 ## Overview
 
-**Condense code without changing observable contracts.** Delete before abstracting: remove unjustified code and concepts while keeping the result direct and maintainable.
+**Condense code without changing observable contracts.** Delete before abstracting: remove unjustified code and concepts, keeping the result direct and maintainable.
 
-Treat simplification intent as authority to edit the requested scope. Ask before expanding it or changing a public API, persisted format, error behavior, or meaningful performance characteristic unless expressly authorized.
+Simplification intent authorizes editing the requested scope. Ask before expanding it or changing a public API, persisted format, error behavior, or meaningful performance characteristic unless expressly authorized.
 
 ## Scope
 
@@ -27,7 +27,7 @@ Use when:
 
 Do not use when:
 
-- New behavior is required; use `tdd` when installed, otherwise implement through the repository's behavior-change workflow.
+- New behavior is required; use `tdd` when installed, otherwise follow the repository's behavior-change workflow.
 - A failure's cause is unknown; use `diagnose`.
 - The request is read-only review; use `code-review`.
 - The goal is architecture direction or codebase-wide realignment; use `engineering-best-practices`.
@@ -93,7 +93,7 @@ Run with `node blocked-email.mjs`. Preserve the export and results; delete the f
 - Observable contracts and user-authored work remain unchanged unless explicitly authorized.
 - Every edit stays inside the approved scope.
 - Unjustified concepts or artifacts are measurably reduced.
-- The implementation remains direct and maintainable rather than clever.
+- The result stays direct and maintainable rather than clever.
 - Available checks pass; missing evidence and reductions are reported.
 
 ## Quick Reference
@@ -109,11 +109,11 @@ Run with `node blocked-email.mjs`. Preserve the export and results; delete the f
 | Mistake | Fix |
 |---------|-----|
 | Optimizing line count | Reduce concepts and coupling; keep explanatory structure and names. |
-| Mixing a behavior change into cleanup | Preserve the contract and request separate approval for the change. |
+| Mixing a behavior change into cleanup | Preserve the contract; request separate approval for the change. |
 
 ## Failure Modes
 
-- **Unknown failure:** Stop simplification and diagnose the cause first.
+- **Unknown failure:** Stop and diagnose the cause first.
 - **Ambiguous contract:** Ask for the expected behavior before editing that path.
 - **Missing tests:** Disclose the gap and offer characterization tests; create none without approval.
 - **Contract or scope change required:** Explain the effect and wait for approval.
@@ -122,4 +122,4 @@ Run with `node blocked-email.mjs`. Preserve the export and results; delete the f
 
 ## Summary
 
-Delete before abstracting, preserve observable contracts, and ask before changing behavior or scope. A smaller diff is successful only when the resulting code is also direct and maintainable.
+Delete before abstracting, preserve observable contracts, and ask before changing behavior or scope. A smaller diff succeeds only when the result stays direct and maintainable.

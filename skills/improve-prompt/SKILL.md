@@ -22,14 +22,14 @@ Do not use when:
 
 - The prompt is already precise: return it unchanged.
 - The request is a multi-decision plan: route it to `create-spec` when installed.
-- The request is conversational rather than text to rewrite: answer it directly.
+- The request is conversational, not text to rewrite: answer it directly.
 
 ## Workflow
 
-1. **Rewrite.** Turn the rough ask into a clear prompt while preserving the original goal, scope, constraints, and key phrases. Add structure only when it clarifies what was already requested. Done when the rewritten prompt stands alone without changing the request.
-2. **Expose inference.** Mark every detail not supported by the request or visible context inline as `[assumed: …]`. List the same assumptions below the prompt for scanning. If useful specificity would require more than three assumptions, ask one load-bearing question instead of fabricating a specification. Done when no invention is hidden and no more than three assumptions remain.
+1. **Rewrite.** Turn the rough ask into a clear prompt, preserving the original goal, scope, constraints, and key phrases. Add structure only where it clarifies what was requested. Done when the rewrite stands alone without changing the request.
+2. **Expose inference.** Mark every detail unsupported by the request or visible context inline as `[assumed: …]`, and list the assumptions below the prompt for scanning. If useful specificity would need more than three assumptions, ask one load-bearing question instead of fabricating a specification. Done when no invention is hidden and at most three assumptions remain.
 3. **Name the target.** Honor a user-named destination. Otherwise name the narrowest matching installed skill or `plain task`; never invent a tool or silently broaden authority. Done when exactly one target is visible.
-4. **Stop or execute.** Stop after showing the rewrite unless the original request explicitly said to run, implement, or otherwise execute it. When execution was authorized, pass a clean prompt beneath a labeled `Assumed:` block and stay within the original scope. Done when no side effect occurs without original authorization.
+4. **Stop or execute.** Stop after showing the rewrite unless the original request explicitly said to run, implement, or otherwise execute it. If it did, pass a clean prompt beneath a labeled `Assumed:` block and stay within the original scope. Done when no side effect occurs without original authorization.
 
 ## Output Format
 
@@ -63,7 +63,7 @@ Output:
 
 - The original intent and constraints remain intact.
 - Every unsupported detail is visibly marked and listed.
-- No more than three assumptions appear before a clarifying question.
+- At most three assumptions appear before a clarifying question.
 - Exactly one target is named.
 - Execution begins only when the original request authorized it.
 

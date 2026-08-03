@@ -16,26 +16,26 @@ metadata:
 
 ## Overview
 
-**No new production implementation before an observed, behaviorally valid red test.** Work in one *red-green-refactor* tracer bullet at a time: prove the test can detect the missing behavior, write the smallest code that makes it green, then improve structure without changing behavior.
+**No new production implementation before an observed, behaviorally valid red test.** Work one *red-green-refactor* tracer bullet at a time: prove the test detects the missing behavior, write the smallest code that turns it green, then improve structure without changing behavior.
 
-A test written after implementation and passing on its first run proves no causal connection between the test and the change. If the agent already wrote its own new implementation in the current task, revert only that attributable work, write and observe the red test, then reimplement. Never remove or overwrite pre-existing user work to manufacture the ordering.
+A test written after implementation that passes on first run proves no causal link between test and change; step 1 restores the ordering.
 
 ## When to Use
 
-- Implement a new user-visible or caller-visible behavior.
-- Fix a bug whose cause and desired behavior are already known.
+- Implement a new user- or caller-visible behavior.
+- Fix a bug whose cause and desired behavior are known.
 - Change an API, workflow, validation rule, state transition, or integration contract.
 - Alter stored, transformed, migrated, serialized, or externally transmitted data.
 - Add behavior to a legacy path that needs a reliable regression seam.
-- Resume work where production code is appearing before a failing test.
+- Resume work where production code appears before a failing test.
 
 ## Do Not Use When
 
-- The bug's cause is unknown; use `diagnose` when installed, otherwise reproduce and establish the cause before implementation.
+- The bug's cause is unknown; use `diagnose` when installed, otherwise reproduce and establish the cause first.
 - A recorded task is being implemented; use `implement-task` as the outer workflow and apply this skill at its test seam.
 - A finished artifact needs adversarial verification; use `verify-work` when installed, otherwise attack the completed behavior separately.
 - The change affects only documentation, generated output, formatting, or a purely mechanical rename with no behavior or data effect.
-- The work is an explicitly throwaway prototype. If the prototype will ship or become a reference implementation, restart it under TDD.
+- The work is an explicitly throwaway prototype; if it will ship or become a reference implementation, restart it under TDD.
 - An operational rollback or feature-flag containment must restore service immediately; contain first, then use TDD for the permanent fix.
 
 ## Required Context
@@ -44,27 +44,27 @@ Establish:
 
 - The requested observable behavior and its source of truth
 - The repository's instructions, test framework, focused command, and affected-suite command
-- Current worktree state, including which edits belong to the agent's current task
+- Current worktree state, including which edits belong to the agent's task
 - The narrowest stable public seam that can prove the behavior
 - Any real data, persistence, serialization, migration, retry, or external-adapter boundary
 
-Use the existing test framework and conventions. Ask one pointed question only when expected behavior or the correct observable seam cannot be inferred safely. Do not install or replace a test framework without authorization. Done when one behavior, one seam, one red command, and the current authority and worktree boundaries are explicit.
+Use the existing test framework and conventions; do not install or replace a framework without authorization. Ask one pointed question only when the expected behavior or correct seam cannot be safely inferred. Done when one behavior, one seam, one red command, and the authority and worktree boundaries are explicit.
 
 ## Workflow
 
 ### 1. Restore red-first ordering
 
-Inspect the current diff before writing a test. When the agent already added production implementation for the active behavior without observing red, revert only those known agent-authored hunks. Do not keep the code commented out, copy it into notes, or use it as a reference while designing the test. If authorship is ambiguous, preserve the code and ask before reverting.
+Inspect the diff before writing a test. If the agent added production code for the active behavior without observing red, revert only those known agent-authored hunks — do not comment the code out, copy it into notes, or consult it while designing the test. If authorship is ambiguous, preserve the code and ask before reverting.
 
-Existing production code is not a violation when fixing a bug or extending legacy behavior. Test that existing behavior directly and make the new expectation red.
+Existing production code is not a violation when fixing a bug or extending legacy behavior; test that behavior directly and make the new expectation red.
 
-Done when no agent-authored implementation for the active behavior remains ahead of its test, while all pre-existing and user-authored work is preserved.
+Done when no agent-authored implementation for the active behavior precedes its test and all pre-existing and user-authored work is preserved.
 
 ### 2. Select one behavioral tracer bullet
 
-Choose the narrowest stable public seam that proves one requested behavior. Prefer a unit seam for pure logic, an integration seam for real component boundaries, and end-to-end only when smaller tests cannot represent the behavior. Test public outcomes rather than private methods, internal call counts, or incidental structure.
+Choose the narrowest stable public seam that proves one requested behavior: a unit seam for pure logic, an integration seam for real component boundaries, end-to-end only when smaller tests cannot represent the behavior. Test public outcomes, not private methods, internal call counts, or incidental structure.
 
-Write one cycle at a time. Avoid drafting an entire imagined test suite before learning from the first implementation. Derive expected values independently from the specification, worked examples, or known literals; never recompute the expectation with the same algorithm under test.
+Write one cycle at a time rather than drafting a whole suite before learning from the first implementation. Derive expected values independently — from the specification, worked examples, or known literals — never by recomputing them with the algorithm under test.
 
 For legacy code without a meaningful seam:
 
@@ -72,37 +72,37 @@ For legacy code without a meaningful seam:
 2. Keep it green while making the smallest behavior-preserving refactor that creates a stable seam.
 3. Write the new behavior test at that seam and observe red.
 
-Stop when no meaningful seam can be created safely; explain the architectural blocker instead of adding a shallow test that proves nothing. Done when the test statement names the observable behavior and the chosen seam can fail specifically when that behavior is absent.
+If no meaningful seam can be created safely, stop and explain the architectural blocker rather than adding a shallow test that proves nothing. Done when the test statement names the observable behavior and the seam can fail specifically when that behavior is absent.
 
 ### 3. Write and prove red
 
-Write the smallest test that expresses the active behavior. Include the boundary and failure case that define it when both are part of one contract. Run the narrowest command and capture its output.
+Write the smallest test that expresses the active behavior, including the boundary and failure case that define it when both belong to one contract. Run the narrowest command and capture its output.
 
-Red is valid only when the assertion fails because the requested behavior is missing or wrong. Syntax errors, import failures, missing dependencies, broken fixtures, timeouts unrelated to the behavior, manual throws, skipped tests, and unrelated failures do not count. Repair test setup without changing production behavior until the test fails for the expected reason.
+Red is valid only when the assertion fails because the requested behavior is missing or wrong. Syntax errors, import failures, missing dependencies, broken fixtures, timeouts unrelated to the behavior, manual throws, skipped tests, and unrelated failures do not count. Repair test setup, without changing production behavior, until the test fails for the expected reason.
 
-If the test passes on its first run, determine whether the behavior already exists or the test is insensitive. Strengthen or correct the test from the contract; never introduce a production defect merely to make it red.
+If the test passes on first run, determine whether the behavior already exists or the test is insensitive; strengthen or correct it from the contract, never by introducing a production defect to force red.
 
-Done when the exact focused command has been run and its captured failure identifies the expected missing behavior.
+Done when the exact focused command has run and its captured failure identifies the expected missing behavior.
 
 ### 4. Make the smallest green change
 
-Write only enough production code to satisfy the red test. Run the focused command after each small change. Avoid speculative options, generalized abstractions, adjacent cleanup, and behavior for tests not yet written.
+Write only enough production code to satisfy the red test, running the focused command after each small change. Avoid speculative options, generalized abstractions, adjacent cleanup, and behavior for tests not yet written.
 
-Preserve the test's behavior contract. Never weaken an assertion, relax input, update a snapshot blindly, mark the test skipped, or redefine expected behavior to manufacture green. When the requirement appears wrong, stop and obtain confirmation before changing the expectation; then re-establish a valid red state against the corrected contract.
+Preserve the test's behavior contract: never weaken an assertion, relax input, update a snapshot blindly, mark the test skipped, or redefine expected behavior to manufacture green. If the requirement appears wrong, stop for confirmation before changing the expectation, then re-establish valid red against the corrected contract.
 
 Done when the same focused command is green because production behavior now satisfies the unchanged test.
 
 ### 5. Refactor while green
 
-Improve names, duplication, boundaries, or structure only after green. Keep behavior fixed and run the focused test after each refactor step. Revert a refactor that breaks green before attempting another.
+Improve names, duplication, boundaries, or structure only after green, keeping behavior fixed and running the focused test after each step. Revert a refactor that breaks green before attempting another.
 
-Do not mix a new behavior into refactoring. Start the next behavior as a new red-green-refactor cycle. Done when the code is as simple as the demonstrated behavior permits and the focused test remains green.
+Do not mix new behavior into refactoring; start it as a new red-green-refactor cycle. Done when the code is as simple as the demonstrated behavior permits and the focused test remains green.
 
 ### 6. Repeat vertically
 
-Select the next smallest behavior or boundary case informed by the completed cycle. Repeat red, green, and refactor. Keep every test independently meaningful and retain only tests that protect observable contracts.
+Pick the next smallest behavior or boundary case informed by the completed cycle and repeat red, green, refactor. Keep every test independently meaningful; retain only tests that protect observable contracts.
 
-Done when all requested behaviors and material boundary cases have completed their own observed red-green-refactor cycle.
+Done when every requested behavior and material boundary case has completed its own observed red-green-refactor cycle.
 
 ### 7. Verify and report evidence
 
@@ -114,7 +114,7 @@ Run, in order:
 
 Inspect the final diff for weakened assertions, skipped or focused-only tests, accidental snapshot changes, unrelated implementation, and temporary fixtures. For data-changing paths, also run every applicable contract check from the Data Boundary Rules.
 
-Report the red command and decisive failure, green command and result, affected-suite result, full-suite result or explicit reason it was not run, and files changed. Do not create a separate TDD report. Done when the evidence is reproducible, the final diff is scoped, and every unrun check is named.
+Report the red command and decisive failure, green command and result, affected-suite result, full-suite result or the explicit reason it was not run, and files changed. Do not create a separate TDD report. Done when the evidence is reproducible, the final diff is scoped, and every unrun check is named.
 
 ## Data Boundary Rules
 
@@ -129,7 +129,7 @@ A valid test must exercise the closest real boundary that proves the data contra
 | Serialization or file output | Write, read back, and validate the emitted representation |
 | External service | Faithful fake or contract-tested adapter; never production |
 
-Mocks may isolate nondeterministic external boundaries, time, or randomness. Mocks alone never prove that stored, migrated, serialized, or transmitted data is correct. Avoid mocking internal collaborators merely to assert calls; test the public outcome instead.
+Mocks may isolate nondeterministic external boundaries, time, or randomness, but alone they never prove stored, migrated, serialized, or transmitted data is correct. Do not mock internal collaborators merely to assert calls; test the public outcome.
 
 ## Core Example
 
@@ -154,7 +154,7 @@ Run `node --test test/shipping.test.js` and capture the expected failure at `5_0
 export const qualifiesForFreeShipping = (subtotalCents) => subtotalCents >= 5_000;
 ```
 
-Run the same command green, refactor only if needed, then run the affected suite. Writing the comparator first and adding a test that passes immediately is forbidden because no red evidence connects the test to the behavior.
+Run the same command green, refactor only if needed, then run the affected suite. Writing the comparator first and adding a test that passes immediately is forbidden: no red evidence connects the test to the behavior.
 
 ## Tool Guidance
 
@@ -174,7 +174,7 @@ Run the same command green, refactor only if needed, then run the affected suite
 
 ## Common Rationalizations
 
-These shortcuts come from the repository's existing test-first baseline evidence and the local TDD skill audit.
+Sourced from the repository's test-first baseline evidence and the local TDD skill audit.
 
 | Shortcut | Reality |
 |----------|---------|
@@ -195,7 +195,7 @@ These shortcuts come from the repository's existing test-first baseline evidence
 - “Keep the implementation nearby as reference.”
 - “Update the snapshot and inspect it later.”
 
-Each thought maps to the Rationalization Table. Return to the unfinished workflow step.
+Each thought maps to the Rationalization Table; return to the unfinished workflow step.
 
 ## Success Criteria
 

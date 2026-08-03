@@ -15,30 +15,30 @@ metadata:
 
 ## Overview
 
-**Prove the cause before proposing a fix.** Treat every plausible explanation as a hypothesis until an executed observation distinguishes it from credible alternatives. Build a *tight*, red-capable reproduction, minimize it, and test one variable at a time.
+**Prove the cause before proposing a fix.** Every plausible explanation is a hypothesis until an executed observation separates it from credible alternatives. Build a *tight*, red-capable reproduction, minimize it, and test one variable at a time.
 
-Diagnosis is read-only by default. A request to diagnose, debug, investigate, or explain authorizes inspection and safe execution, not file edits, instrumentation, regression tests, or fixes. Apply changes only when the user explicitly requests or authorizes them. No tight reproduction means no root-cause claim.
+Diagnosis is read-only by default. A request to diagnose, debug, investigate, or explain authorizes inspection and safe execution — not file edits, instrumentation, regression tests, or fixes, which require explicit authorization. No tight reproduction means no root-cause claim.
 
 ## When to Use
 
-- Functional behavior differs from a stated expectation.
+- Behavior differs from a stated expectation.
 - A test fails, flakes, hangs, times out, or passes only in some environments.
 - A process crashes or throws an unexplained error.
 - Latency, throughput, memory, CPU, query count, or bundle size regressed.
-- A bug report names a symptom but the causal mechanism remains unknown.
-- A requested fix still requires root-cause discovery before implementation.
+- A bug report names a symptom whose causal mechanism is unknown.
+- A requested fix still needs root-cause discovery first.
 
 ## Do Not Use When
 
-- The request asks how working code behaves; use `understand-codebase` when installed, otherwise perform a focused read-only trace.
-- The request asks whether a branch or diff matches standards or a specification; use `code-review` when installed, otherwise review the diff against those contracts.
+- The request asks how working code behaves; use `understand-codebase` when installed, otherwise do a focused read-only trace.
+- The request asks whether a branch or diff meets standards or a spec; use `code-review` when installed, otherwise review the diff against those contracts.
 - A finished artifact needs adversarial readiness testing; use `verify-work` when installed, otherwise execute hostile fixtures against its stated promise.
 - The cause and desired change are already known; use the repository's implementation or TDD workflow.
 - The task is live production experimentation, penetration testing, or incident response without explicit operational authorization.
 
 ## Required Context
 
-Establish the smallest context that can make the symptom falsifiable:
+Establish the smallest context that makes the symptom falsifiable:
 
 - Observed behavior and expected behavior
 - Exact input, environment, version, and timing conditions known to matter
@@ -46,13 +46,13 @@ Establish the smallest context that can make the symptom falsifiable:
 - Applicable repository instructions and current workspace state
 - Authority mode: `diagnosis-only` unless edits or a fix were explicitly requested
 
-Infer available facts from the request and repository. Ask one pointed question only when a missing fact blocks the next discriminating observation. Done when the symptom can be stated as one observable proposition and the authority mode is explicit.
+Infer what you can from the request and repository; ask one pointed question only when a missing fact blocks the next discriminating observation. Done when the symptom is one observable proposition and the authority mode is explicit.
 
 ## Workflow
 
 ### 1. Establish a tight reproduction
 
-Start from the user's exact symptom. Select the narrowest agent-runnable signal that can go red on that symptom:
+From the user's exact symptom, select the narrowest agent-runnable signal that can go red on it:
 
 1. Focused existing test
 2. Direct function or module invocation
@@ -62,37 +62,37 @@ Start from the user's exact symptom. Select the narrowest agent-runnable signal 
 6. Differential command comparing known-good and failing states
 7. Fixed-sample flake or performance harness
 
-Run the command before reading broadly for a theory. Capture the exact invocation, exit status, and relevant output. For intermittent behavior, run a fixed stated sample and report the failure rate, such as `7/20`; improve the signal by controlling time, randomness, concurrency, filesystem, network, and environment.
+Run it before reading broadly for a theory; capture the exact invocation, exit status, and relevant output. For intermittent behavior, run a fixed stated sample and report the failure rate, such as `7/20`; improve the signal by controlling time, randomness, concurrency, filesystem, network, and environment.
 
-Treat an existing broad suite as a starting point, not automatically as the tight loop. Narrow it until one command tests the reported symptom without unrelated failures. Done when one named command has already produced the exact failure, or when the diagnosis stops with a precise account of why reproduction is currently impossible.
+An existing broad suite is not yet the tight loop; narrow it until one command tests the reported symptom without unrelated failures. Done when one named command has produced the exact failure, or the diagnosis stops with a precise account of why reproduction is currently impossible.
 
 ### 2. Minimize the failing case
 
-Remove one input, caller, layer, configuration value, dependency, or step at a time. Re-run the tight command after every removal. Keep a removal only when the same symptom remains red; restore it when the symptom disappears or changes.
+Remove one input, caller, layer, configuration value, dependency, or step at a time, re-running the tight command after each removal. Keep a removal only while the same symptom stays red; restore it when the symptom disappears or changes.
 
-For performance regressions, minimize the measured path and preserve comparable warm-up, workload, and environment conditions. Record both the baseline and failing measurement rather than relying on subjective slowness.
+For performance regressions, minimize the measured path while preserving comparable warm-up, workload, and environment; record both baseline and failing measurements rather than subjective slowness.
 
-Done when every remaining element is load-bearing, or when a named boundary cannot be crossed with available access.
+Done when every remaining element is load-bearing, or a named boundary cannot be crossed with available access.
 
 ### 3. Rank falsifiable hypotheses
 
-Write three to five credible hypotheses before testing the leading one. For each, record the evidence for it, evidence against it, a falsifiable prediction, and the cheapest observation that distinguishes it.
+Write three to five credible hypotheses before testing the leading one. For each, record evidence for and against, a falsifiable prediction, and the cheapest observation that distinguishes it.
 
 | Rank | Hypothesis | Prediction | Cheapest discriminating observation |
 |------|------------|------------|--------------------------------------|
 | 1 | Boundary comparison excludes equality | Adjacent values pass while the exact threshold fails | Probe threshold − 1, threshold, threshold + 1 |
 | 2 | Caller maps the input incorrectly | Direct callee invocation passes while the full path fails | Compare caller and direct inputs |
-| 3 | Configuration disables the behavior | Holding code and input fixed, changing only config changes the verdict | Print or inspect the resolved config |
+| 3 | Configuration disables the behavior | With code and input fixed, changing only config changes the verdict | Print or inspect the resolved config |
 
-Share the list briefly when domain knowledge could re-rank it, but continue with the best available ranking unless an answer is required. Discard any hypothesis that cannot predict an observable difference. Done when three to five ranked predictions cover the credible causal branches left by the minimized reproduction.
+Share the list briefly when domain knowledge could re-rank it; continue with the best available ranking unless an answer is required. Discard any hypothesis that cannot predict an observable difference. Done when three to five ranked predictions cover the credible causal branches left by the minimized reproduction.
 
 ### 4. Falsify one hypothesis at a time
 
-Run the cheapest discriminating observation for the leading hypothesis. Change exactly one variable and preserve the same reproduction signal. Record the result beside the prediction, then confirm, reject, or re-rank the hypothesis.
+Run the cheapest discriminating observation for the leading hypothesis, changing exactly one variable and preserving the same reproduction signal. Record the result beside the prediction, then confirm, reject, or re-rank.
 
-Prefer read-only probes: focused commands, debugger or REPL inspection, existing logs, resolved configuration, query plans, profiles, version history, or known-good comparisons. Use history only when a hypothesis predicts a relevant change. Request authorization before adding logs, probes, tests, feature flags, or other instrumentation; never disguise an edit as inspection.
+Prefer read-only probes: focused commands, debugger or REPL inspection, existing logs, resolved configuration, query plans, profiles, version history, or known-good comparisons. Request authorization before adding logs, probes, tests, feature flags, or other instrumentation; never disguise an edit as inspection.
 
-When evidence contradicts the leading theory, re-rank instead of stacking speculative fixes. Done when one causal explanation accounts for the exact symptom and the strongest alternatives have executed contradictory evidence, or when the remaining uncertainty is explicitly irreducible with current access.
+When evidence contradicts the leading theory, re-rank instead of stacking speculative fixes. Done when one causal explanation accounts for the exact symptom and the strongest alternatives have executed contradictory evidence, or the remaining uncertainty is explicitly irreducible with current access.
 
 ### 5. Report the diagnosis
 
@@ -109,28 +109,28 @@ Report in this order:
 5. File, symbol, configuration, log, trace, profile, or commit evidence
 6. Remaining unknowns and the single highest-value next observation
 
-In diagnosis-only mode, stop after the report. State the authority boundary once and move on; do not lecture or append an unsolicited patch plan. Done when every material claim is supported by an executed observation or labeled as inference or unknown.
+In diagnosis-only mode, stop after the report: state the authority boundary once, without lecturing or appending an unsolicited patch plan. Done when every material claim is backed by an executed observation or labeled as inference or unknown.
 
 ### 6. Fix only with explicit authority
 
-Enter this step only when the original request explicitly includes fixing the bug or the user separately authorizes a fix.
+Enter this step only when the original request explicitly includes a fix or the user separately authorizes one.
 
 1. Turn the minimized reproduction into a regression test at the seam that exercises the real bug pattern.
-2. Run the test and capture its red result before changing production code.
+2. Capture its red result before changing production code.
 3. Apply the smallest causal fix; avoid adjacent refactors.
 4. Run the regression test green.
 5. Re-run the original, unminimized reproduction green.
 6. Run the proportionate surrounding suite and inspect the diff.
 7. Remove every temporary log, probe, flag, fixture, and debug artifact.
 
-If no correct regression seam exists, state that limitation and ask before expanding scope to create one. Done when red-to-green evidence exists, the original symptom is gone, surrounding checks pass, and temporary instrumentation is absent.
+Done when red-to-green evidence exists, the original symptom is gone, surrounding checks pass, and temporary instrumentation is absent.
 
 ## Core Example
 
 Request: “Debug why eligible Gold customers sometimes receive no checkout discount. Do not change files.”
 
 1. Run `npm test -- --test-name-pattern="at the threshold"`; capture `expected 1000, actual 0`.
-2. Minimize to a direct call and vary only the subtotal:
+2. Minimize to a direct call, varying only the subtotal:
 
    ```sh
    node --input-type=module -e 'import {calculateDiscount} from "./src/discount.js"; for (const cents of [9999,10000,10001]) console.log(cents, calculateDiscount({tier:"gold",subtotalCents:cents}))'
@@ -141,7 +141,7 @@ Request: “Debug why eligible Gold customers sometimes receive no checkout disc
 
 3. Rank boundary comparison, caller mapping, tier mismatch, coupon suppression, and rounding as falsifiable hypotheses.
 4. Falsify the caller, tier, coupon, and rounding branches with direct single-variable probes.
-5. Report the strict `subtotalCents > GOLD_MINIMUM_CENTS` comparison as the cause because the requirement includes equality. Cite the function and failing output. Stop without editing files.
+5. Report the strict `subtotalCents > GOLD_MINIMUM_CENTS` comparison as the cause because the requirement includes equality; cite the function and failing output, then stop without editing files.
 
 ## Tool Guidance
 
@@ -162,7 +162,7 @@ Request: “Debug why eligible Gold customers sometimes receive no checkout disc
 
 ## Common Rationalizations
 
-These shortcuts appeared in the no-instruction baseline or are direct loopholes exposed by it.
+These shortcuts appeared in the no-instruction baseline or are loopholes it exposed.
 
 | Shortcut | Reality |
 |----------|---------|
@@ -207,9 +207,9 @@ Each thought maps to the Rationalization Table or the authority boundary. Return
 
 ## Failure Modes
 
-- **No reproduction:** Report every attempted signal and its result. Request the smallest missing artifact, environment access, or authorization needed for the next observation. Stop before hypothesizing a root cause.
+- **No reproduction:** Report every attempted signal and its result, request the smallest missing artifact, environment access, or authorization for the next observation, and stop before hypothesizing a root cause.
 - **Production-only symptom:** Prefer captured logs, traces, profiles, requests, and a safe staging replay. Request explicit operational authorization before any live probe.
-- **Low-rate flake:** Quantify the current rate, control one nondeterministic source at a time, and report the evidence limit when the rate remains too low to discriminate.
+- **Low-rate flake:** Quantify the current rate, control one nondeterministic source at a time, and report the evidence limit when the rate stays too low to discriminate.
 - **Inaccessible dependency:** Prove behavior up to the visible boundary and label behavior beyond it unknown.
 - **Conflicting evidence:** Preserve both results, inspect environment and input differences, and withhold the root-cause label.
 - **No correct test seam after fix authorization:** Demonstrate the original repro, name the missing seam, and ask before expanding implementation scope.
