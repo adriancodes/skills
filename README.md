@@ -53,6 +53,17 @@ cp work-discipline/work-discipline.md ~/.claude/output-styles/
 
 For other agents, add its contents to the agent's project instructions.
 
+## Updating from an older install
+
+Re-run `npx skills add adriancodes/skills` to fetch the current versions. Skills have been renamed across releases (`spec-plan`→`create-spec`, `slice-spec`→`create-tasks`, `implement-slice`→`implement-task`, `ship-feature`→`deliver-feature`, `tldr`/`brevity`→`be-concise`, `diagnosing-bugs`→`diagnose`), and the installer does not remove old-name copies — they will shadow the current skills. Clean them with the migration script (dry-run by default; only dirs whose `SKILL.md` frontmatter matches the old name are touched):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/adriancodes/skills/main/scripts/migrate-install.mjs | node -          # report
+curl -fsSL https://raw.githubusercontent.com/adriancodes/skills/main/scripts/migrate-install.mjs | node - --apply  # remove
+```
+
+Then restart your agent session so skill descriptions reload, and read the [CHANGELOG](CHANGELOG.md) — updates change agent behavior.
+
 ## Verify your install
 
 Model-invoked skills can fail silently when their triggers do not fire. These checks cover the main workflows:
