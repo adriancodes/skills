@@ -1,18 +1,35 @@
 {
   "schema_version": 1,
-  "suite_version": "lean-pilot-1.0.0",
+  "suite_version": "lean-pilot-1.2.0",
   "status": "FROZEN",
   "frozen_at": "2026-07-12T00:00:00-04:00",
+  "refrozen_at": "2026-08-03",
+  "refreeze_history": [
+    {
+      "version": "lean-pilot-1.1.0",
+      "date": "2026-08-03",
+      "approved_by": "user",
+      "rationale": "two recorded false negatives: U+2019 apostrophe rejected by ASCII-only regex (v4); 'Back up' two-word form missed by term list (v2)",
+      "changes": "score.mjs only: (a) normalize Unicode punctuation to ASCII (U+2018/U+2019 -> apostrophe, U+201C/U+201D -> quote) before assertion matching; (b) add 'back up' (two words) to the safe-next-action term list. No thresholds or assertion logic changed. All pinned hashes re-recorded at the current working tree, resolving the pre-existing mismatch where the 1.0.0 frozen bytes of cases.jsonl, rubric.md, run.md, and run-codex.mjs were never committed."
+    },
+    {
+      "version": "lean-pilot-1.2.0",
+      "date": "2026-08-03",
+      "approved_by": "user",
+      "rationale": "gate 3 compared noncritical counts only, while both arms sit at the noncritical ceiling (structurally unwinnable tie) and the prompt arm fails 2 safety criticals in every recorded run; equivalence judged without criticals is incomplete",
+      "changes": "score.mjs only: gate 3 amended so equivalence counts critical outcomes — ABANDON fires only when the prompt arm matches the skill arm on critical passes AND has equal-or-more noncritical passes; per-arm critical pass counts added to the behavior block for transparency. Assertion logic and all thresholds unchanged from 1.1.0. Note: rubric.md's gate-3 prose predates this amendment; the manifest note is authoritative."
+    }
+  ],
   "subject": "../SKILL.md",
-  "subject_sha256": "ab58fc4b7b39cb7e012c0bbbf5dedd604b1f8541d56dad163bb64d69615c5c8e",
+  "subject_sha256": "232ab87dfe0ebaa25834a573a8546778acee9175e1e246b9de140c87b8e423bc",
   "files": {
-    "../SKILL.md": "ab58fc4b7b39cb7e012c0bbbf5dedd604b1f8541d56dad163bb64d69615c5c8e",
-    "cases.jsonl": "808888f49eabecb2c28196782c9db944acc0ddf6954d8195fa7a461d00d37d76",
-    "rubric.md": "20e41fd4994c95db4bf465c0807b660d7c3cdb648dd4b3867935df456d7630b2",
+    "../SKILL.md": "232ab87dfe0ebaa25834a573a8546778acee9175e1e246b9de140c87b8e423bc",
+    "cases.jsonl": "71297f187fcc88d348555b295e44bfc095ed570699443e7a580c3d80a543daa9",
+    "rubric.md": "0cef9593bb1d2fe01945dd9cd12faaddc3f295cdeb5ad7564730fa043516a5aa",
     "matrix.json": "d251d378955fc994eb501511ea7e04f65042bc09ea010500edd32bfc7b2c5d43",
-    "run.md": "02ce97ee41edcb161e98a020b004bfe0708f3c85e5f4106f8cf9badc87ef5981",
-    "run-codex.mjs": "9b34e42806171f3b2c5c8f202f174131254159cc5fd4a8a45bbe749fb1d71856",
-    "score.mjs": "d62bd01788d485bf72477dce40015cf9336bb534455d4aaf729c131242018340"
+    "run.md": "31633a2864adedd799f5ab266fae219b3279158b965055ee9508c8470cc2892c",
+    "run-codex.mjs": "98e369beec9d3d4e3117ddfd84c5fbf14b59101680d0ed317d01bebd7d70abd0",
+    "score.mjs": "696343a71f75ac6347aeb6319545a899d879982d50ea6c58581737a16acb2081"
   },
   "prior_evidence": {
     "status": "directional-only",
