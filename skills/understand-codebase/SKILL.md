@@ -22,17 +22,17 @@ Build a *targeted* mental model from inspected evidence, then answer the actual 
 - Onboard an engineer to an unfamiliar repository or subsystem.
 - Answer "how does this work?", "where does this happen?", or "what calls this?"
 - Trace a feature, request, job, data flow, dependency, configuration path, or state transition.
-- Establish the relevant current-state architecture before a separately requested change.
-- Continue answering related questions from the mental model built in the current conversation.
+- Establish current-state architecture before a separately requested change.
+- Answer follow-up questions from the mental model already built in this conversation.
 
 ## Do Not Use When
 
-- The user explicitly asks for `zoom-out`; let that skill provide its higher-level contextual map.
-- The task is to debug a failure or performance regression; use `diagnose`.
-- The task is to review a diff or branch; use `code-review`.
-- The task is to design or improve module boundaries; use `codebase-design` or `improve-codebase-architecture`.
-- The task is external primary-source research or a persistent research report; use `research`.
-- The request is to refactor, recommend changes, implement, or otherwise act. Use the corresponding action skill; code reading is only its internal prerequisite.
+- The user explicitly asks for `zoom-out`; that skill provides the higher-level contextual map.
+- Debugging a failure or performance regression: use `diagnose`.
+- Reviewing a diff or branch: use `code-review`.
+- Designing or improving module boundaries: use `codebase-design` or `improve-codebase-architecture`.
+- External primary-source research or a persistent research report: use `research`.
+- Refactoring, recommending changes, implementing, or otherwise acting: use the corresponding action skill — code reading is only its internal prerequisite.
 
 ## Required Context
 
@@ -41,21 +41,21 @@ Establish only the context needed to choose a reliable starting seam:
 - The question or learning goal
 - The repository, package, subsystem, or feature in scope
 - Applicable repository instructions and local terminology
-- The desired depth when the request makes it explicit
+- The desired depth when explicitly requested
 
-For a clear question, infer these values and begin. For a vague request such as "help me understand this repo," ask at most two pointed questions: one about the goal and one about the relevant area. Wait for the answers before inspecting the repository. Done when the exploration has a stated or safely inferred question and boundary.
+For a clear question, infer these and begin. For a vague request such as "help me understand this repo," ask at most two pointed questions — one about the goal, one about the relevant area — and wait for answers before inspecting. Done when the exploration has a stated or safely inferred question and boundary.
 
 ## Workflow
 
 ### 1. Choose the exploration mode
 
-Classify the request as onboarding, architecture Q&A, or change preparation. Treat the classification as routing, not a questionnaire:
+Classify the request as onboarding, architecture Q&A, or change preparation — routing, not a questionnaire:
 
 - **Onboarding:** identify the smallest useful system boundary and its main responsibilities.
 - **Architecture Q&A:** start from the named behavior, symbol, boundary, or question.
 - **Change preparation:** explain the current path and affected boundaries; leave change design to the follow-on task.
 
-Ask a question only when two plausible interpretations would lead to materially different exploration. Ask no more than two before inspection. Done when exactly one exploration target is selected.
+Ask only when two plausible interpretations would drive materially different exploration, and never more than two questions before inspection. Done when exactly one exploration target is selected.
 
 ### 2. Find an evidence-bearing starting seam
 
@@ -65,7 +65,7 @@ Start from the strongest available seam: an externally visible entry point, a ca
 
 ### 3. Trace only the relevant path
 
-Follow calls, imports, data transformations, state changes, configuration, and asynchronous boundaries far enough to support the answer. Inspect representative tests to confirm important branches and observable behavior. Stop following a branch when it no longer affects the question.
+Follow calls, imports, data transformations, state changes, configuration, and asynchronous boundaries far enough to support the answer. Inspect representative tests to confirm important branches and observable behavior. Stop when a branch no longer affects the question.
 
 Maintain an evidence ledger while reading:
 
@@ -79,11 +79,11 @@ Record file paths plus symbols, and line numbers when the harness exposes stable
 
 ### 4. Explain the system answer-first
 
-Lead with the direct answer. Then show the shortest code path that makes the answer auditable. Name both symbols at every material transition and cite each symbol's implementation file; write transitions in the form `caller` (`path`) → `callee` (`path`). Treat a filename-only citation or an unnamed helper call as incomplete. Include the entry point, storage or state effects, asynchronous work, and externally visible outcomes that matter to the question.
+Lead with the direct answer, then the shortest code path that makes it auditable. Name both symbols at every material transition and cite each symbol's implementation file, in the form `caller` (`path`) → `callee` (`path`). A filename-only citation or an unnamed helper call is incomplete. Include the entry point, storage or state effects, asynchronous work, and externally visible outcomes that matter to the question.
 
-Use a diagram when three or more components, a non-linear boundary, or a state sequence becomes materially easier to understand visually. For a simple flow, emit Mermaid with a compact ASCII fallback. For a complex relationship, use an available visualization tool when its result will be clearer than Mermaid; otherwise use Mermaid. Keep diagrams in the conversation unless the user explicitly requests a persistent artifact.
+Use a diagram when three or more components, a non-linear boundary, or a state sequence is materially clearer visually. For a simple flow, emit Mermaid with a compact ASCII fallback. For a complex relationship, use an available visualization tool if clearer than Mermaid; otherwise use Mermaid. Keep diagrams in the conversation unless the user explicitly requests a persistent artifact.
 
-Support every diagram node and edge with inspected code cited in the surrounding prose. Remove decorative or speculative elements.
+Ground every diagram node and edge in inspected code cited in the surrounding prose; remove decorative or speculative elements.
 
 Complete the answer with:
 
@@ -97,7 +97,7 @@ Done when the answer is understandable without the diagram, auditable from its c
 
 ### 5. Reuse and revise the mental model
 
-Keep the mental model in the current conversation. For follow-up questions, reuse confirmed evidence, inspect only newly relevant paths, and revise earlier claims when contradictory evidence appears. State corrections explicitly instead of silently changing the explanation.
+Keep the mental model in the current conversation. For follow-ups, reuse confirmed evidence, inspect only newly relevant paths, and revise earlier claims when evidence contradicts them — stating corrections explicitly, never silently changing the explanation.
 
 Do not write repository maps, architecture documents, or notes unless the user starts a separate documentation task. Done when the follow-up is answered from current evidence plus the smallest necessary additional inspection.
 
@@ -119,7 +119,7 @@ If the answers are "onboard" and "report generation," trace the report entry poi
 - Read-only file inspection, `rg --files`, and `rg`
 - Focused test source and existing test results as behavioral evidence
 - Version-control history only when the question is historical
-- Mermaid for simple flows and an available visualization tool for genuinely complex relationships
+- Mermaid for simple flows and an available visualization tool for complex relationships
 
 **Avoid:**
 
@@ -141,12 +141,12 @@ If the answers are "onboard" and "report generation," trace the report entry poi
 
 | Mistake | Fix |
 |---------|-----|
-| Touring the entire repository | Select one question and trace only its supporting paths. |
+| Touring the entire repository | Trace only the paths supporting one question. |
 | Answering a vague request immediately | Ask at most two pointed orientation questions, then wait. |
 | Listing files without explaining behavior | Connect cited symbols into a causal path. |
 | Presenting assumptions as architecture facts | Label inference and unknowns explicitly. |
 | Drawing a generic diagram | Include only inspected, cited nodes and edges. |
-| Adding improvement advice | Explain current behavior and leave action to a follow-on task. |
+| Adding improvement advice | Explain current behavior; leave action to a follow-on task. |
 
 ## Failure Modes
 
