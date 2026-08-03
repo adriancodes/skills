@@ -1,0 +1,16 @@
+/private/tmp/claude-501/-Users-adrian-dev-skills/c5cb18d3-8dd2-4602-90b0-405eb2b2cf7f/scratchpad/turn.sh: line 16: /private/tmp/claude-501/-Users-adrian-dev-skills/c5cb18d3-8dd2-4602-90b0-405eb2b2cf7f/scratchpad/transcripts/value-prompt.txt: No such file or directory
+`★ Insight ─────────────────────────────────────`
+The decision log lists eleven branches, but notice which one goes first: recipients. It's upstream of nearly everything else — the digest design, the preference model, and even the storage shape all change depending on whether one person or several people can be notified per event. Interviewing in dependency order means later answers can't invalidate earlier ones.
+`─────────────────────────────────────────────────`
+
+Using **spec-plan** to run this interview. The log is started at `docs/specs/2026-08-01-email-notifications.md` — every decision gets appended there the moment you make it. I found the repo facts myself (no user model, no email infra, no persistence yet) so I won't waste questions on those.
+
+**Question 1 of ~11 — Recipients: who gets emailed for each event?**
+
+Your plan says "the assignee gets an email." For assignment that's unambiguous, but for comments it's a real choice — often the task creator or earlier commenters care about a comment more than the assignee does.
+
+1. **Assignee only, for both events** *(recommended)* — matches your stated plan, keeps v1 scope minimal, and the recipient logic stays a single lookup; watchers/creators can be added later without reworking anything.
+2. **Assignee + task creator** — creators usually want to know when their task gets discussion, and it's only one more recipient to resolve.
+3. **Assignee + creator + prior commenters (thread participants)** — the "everyone in the conversation" model users know from GitHub/Jira; most useful, but forces per-recipient dedup and a bigger preference model in v1.
+
+Which recipients should each event notify? (Free-text alternatives welcome too.)

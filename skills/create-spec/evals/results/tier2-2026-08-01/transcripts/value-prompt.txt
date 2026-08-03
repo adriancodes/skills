@@ -1,0 +1,161 @@
+=== USER turn 1 ===
+SESSION SETUP (read carefully, then handle the user's message at the end):
+
+You are a coding assistant in a live interactive session with a user. Today is 2026-08-01. Your working repository is the current directory — do all file reads and writes here and only here. Never read or modify anything under /Users/adrian/dev/skills. Do not invoke any installed skill or plugin (e.g. spec-plan) — work only from the standing instruction below.
+
+The user has given you this standing instruction for the session:
+
+"Interview me about this plan one question at a time — never batch. Give each question a recommended answer with a reason. Record every decision in docs/specs/<date>-<slug>.md as it is decided, not at the end. Don't assume product decisions — ask me. When everything is resolved, read back all decisions as a numbered list and get my explicit confirmation before writing any code."
+
+INTERACTION PROTOCOL (critical): this is a turn-based conversation. You may inspect or write files in the repo during your turn, but your printed response is one single message to the user, and then your turn ENDS. The user's reply will arrive as the next message in this same session. Never simulate or assume the user's answers; never ask a question and proceed as if answered; never ask more than the protocol allows in one message.
+
+USER MESSAGE:
+
+Spec this out before we build: add email notifications to our task app. Rough plan: when a task is assigned or commented on, the assignee gets an email. Probably some kind of digest option too. Nothing else is decided.
+
+=== ASSISTANT turn 1 (rc=0) ===
+Spec file created at `docs/specs/2026-08-01-email-notifications.md` with the context and a working list of open questions. Now let's work through them one at a time.
+
+**Question 1 — Recipients for comment notifications:** When someone comments on a task, who should get the email — just the assignee, or also others involved with the task (the person who created it, previous commenters)?
+
+**My recommendation: assignee only for v1.** Your rough plan already frames the assignee as the audience, the current data model (`assigneeId`, but no `creatorId` or watcher concept) supports it without schema changes, and expanding to watchers/participants later is additive — it doesn't force rework of anything we'd build now. Notifying prior commenters also raises noise and threading questions that are better deferred until there's a real demand signal.
+
+`★ Insight ─────────────────────────────────────`
+- Starting the interview with *recipients* rather than *infrastructure* is deliberate: who gets notified defines the event model (what data each event must carry), and that shapes every downstream choice — queueing, digest grouping, preference storage.
+- Your current schema quietly constrains the product here: there's no `creatorId` on tasks, so "notify the creator" isn't just a feature toggle, it's a data-model change. Surfacing that now avoids discovering it mid-implementation.
+`─────────────────────────────────────────────────`
+
+=== USER turn 2 ===
+Assignee only for v1.
+
+=== ASSISTANT turn 2 (rc=0) ===
+Decision 1 recorded in the spec.
+
+**Question 2 — Self-action suppression:** Should a user receive an email for their own actions — e.g., assigning a task to themselves, or commenting on a task they're assigned to?
+
+**My recommendation: no — suppress emails when the actor is the recipient.** Emailing someone about what they just did is pure noise and is the fastest way to train users to ignore (or filter out) all notifications from the app. Nearly every comparable tool (GitHub, Jira, Linear) suppresses self-notifications by default. Implementation-wise it's a one-line check — the event just needs to carry the acting user's ID alongside the assignee's, which is worth baking into the event shape from the start.
+
+=== USER turn 3 ===
+yeah fine
+
+=== ASSISTANT turn 3 (rc=0) ===
+Decision 2 recorded. Next up: the digest.
+
+**Question 3 — Digest scope:** You said "probably some kind of digest option too." Should the digest be part of v1, or should v1 ship immediate-only emails with the digest as a fast-follow?
+
+**My recommendation: defer the digest to v2.** The digest is where most of the hidden cost lives: it needs a scheduler (cron or job queue), a table to accumulate pending notifications between sends, and per-user cadence preferences — none of which the immediate path requires. Shipping immediate emails first validates the whole pipeline (user email addresses, delivery provider, templates, suppression rules) with a much smaller surface, and the digest then becomes "accumulate events instead of sending them," reusing everything. The one thing I'd do now to keep that door open is design around a notification *event* record rather than calling the mailer inline — so v2 is a change in when events flush, not a rewrite.
+
+If the digest is actually the feature your users are asking for (i.e., people are drowning in per-comment emails elsewhere), that flips my recommendation — but that's a demand question only you can answer.
+
+=== USER turn 4 ===
+whatever you think
+
+=== ASSISTANT turn 4 (rc=0) ===
+Decision 3 recorded: digest deferred to v2, with v1 built around notification events so the digest slots in later.
+
+**Question 4 — Notification preferences:** Do users need any control over these emails in v1 — and if so, how granular? Options range from nothing at all, to a single global on/off toggle, to per-event-type settings (assignments vs comments).
+
+**My recommendation: a single global on/off toggle per user, default on.** Shipping with *no* opt-out is a trap — the moment someone wants out, their only recourse is marking you as spam, which damages your sender reputation for everyone. But per-event-type granularity means preference UI, more storage, and more conditional logic for a distinction users rarely exercise at this scale. A single boolean also gives the unsubscribe link in the email footer (which we'll get to) something simple to flip.
+
+=== USER turn 5 ===
+Global on/off toggle per user, default on.
+
+=== ASSISTANT turn 5 (rc=0) ===
+Decision 4 recorded.
+
+**Question 5 — Where do email addresses come from?** The repo's task model references users only by `userId` — there's no user record with an email address anywhere. Does your real app already have a users store with email addresses I should assume exists, or does this feature need to introduce a user model (id, email, name, plus the new notification toggle)?
+
+**My recommendation: introduce a minimal user model as part of this feature** — `id`, `email`, `name`, `emailNotificationsEnabled` — since nothing in the repo provides one, and assume emails are collected at signup and treated as deliverable (no verification flow in v1). But this is really a question about what exists outside this repo: if there's already a users table in your production app, I should match its shape and just add the toggle instead of inventing a parallel one.
+
+=== USER turn 6 ===
+No users store exists yet — introduce the minimal user model like you said.
+
+=== ASSISTANT turn 6 (rc=0) ===
+Decision 5 recorded.
+
+**Question 6 — Email delivery mechanism:** How should emails actually get sent — do you have (or want to sign up for) a transactional email provider like Postmark, SES, or Resend, or should we keep it provider-agnostic?
+
+**My recommendation: a thin `Mailer` interface with two implementations in v1 — a console/dev mailer that just logs, and an SMTP mailer (via Nodemailer) configured entirely by env vars.** SMTP is the lowest-commitment choice: every transactional provider exposes SMTP credentials, so you can point it at Postmark today and SES next year without touching code, and the interface seam means a native provider SDK adapter is a drop-in later if you want delivery webhooks. The dev mailer matters more than it sounds — it lets tests and local development exercise the full notification path without sending anything real. The main reason to choose a specific provider *now* instead is if you want bounce/spam-complaint webhooks in v1, which plain SMTP can't give you.
+
+=== USER turn 7 ===
+Your recommendation is fine.
+
+=== ASSISTANT turn 7 (rc=0) ===
+Decision 6 recorded.
+
+**Question 7 — Delivery timing:** Should sending an email block the user's action (assign/comment waits until the SMTP call finishes), happen asynchronously in-process (fire the action, send in the background of the same process), or go through a real job queue (Redis/BullMQ or similar)?
+
+**My recommendation: asynchronous in-process, no queue infrastructure in v1.** Blocking the user action on an SMTP round-trip means a slow mail server makes commenting feel broken — that's a non-starter. A full job queue gives durability (emails survive a process crash) but drags in Redis and worker processes, which is heavy for an app this size. The middle path — write the notification event with a `pending` status, send it off the request path, mark it `sent`/`failed` — costs almost nothing and gives you an audit trail; and because decision 3 already made events first-class records, a crash loses at most the in-flight send, and upgrading to a real queue later is swapping the dispatcher, not redesigning the flow.
+
+=== USER turn 8 ===
+Async in-process is fine.
+
+=== ASSISTANT turn 8 (rc=0) ===
+Decision 7 recorded.
+
+**Question 8 — Email content and format:** Should these be plain-text emails or HTML templates, and what goes in them?
+
+**My recommendation: plain text in v1.** Concretely: subject `You were assigned: <task title>` / `New comment on: <task title>`, body with the actor's name, the comment text (or assignment note), and a link to the task built from an `APP_BASE_URL` env var. Plain text renders everywhere, can't break, needs no template engine or CSS-inlining pipeline, and — counterintuitively — often lands in the inbox more reliably than HTML. Notification emails are glance-and-click; nobody needs branding on "Sam commented on your task." HTML templates are a purely additive upgrade later. One thing I need from you regardless: does a web UI actually exist to link to? If there's no task page URL yet, I'd drop the link rather than point at nothing.
+
+=== USER turn 9 ===
+Plain text is fine. Yes, tasks have URLs in the web UI.
+
+=== ASSISTANT turn 9 (rc=0) ===
+Decision 8 recorded.
+
+**Question 9 — Failure handling:** When a send fails (SMTP timeout, connection refused, rejected recipient), what should happen?
+
+**My recommendation: one retry after a short backoff (~30s), then mark the event `failed` and log it — nothing more in v1.** A single retry catches the dominant failure mode (transient network/SMTP hiccups) for almost no complexity. Beyond that, elaborate retry ladders and dead-letter queues are queue-infrastructure features we already deferred, and bounce handling is off the table anyway since plain SMTP doesn't report bounces back — that arrives with a provider SDK adapter later. Because every event already carries a status, `failed` events are queryable after the fact, which is your debugging story: no email silently vanishes without a record.
+
+=== USER turn 10 ===
+One retry then mark it failed is fine.
+
+=== ASSISTANT turn 10 (rc=0) ===
+Decision 9 recorded. Last item on the list.
+
+**Question 10 — Unsubscribe link:** Should every email carry an unsubscribe link, and how should it work — a one-click tokenized link that flips the global toggle without logging in, or just a pointer to the in-app settings page?
+
+**My recommendation: a one-click unsubscribe link with a signed token in every email footer, plus the `List-Unsubscribe` header.** The token (HMAC of the user ID with a server secret) means the recipient doesn't need a login session for it to work — which matters, because the person annoyed enough to unsubscribe is exactly the person who won't bother logging in and will hit "mark as spam" instead. It flips the existing global toggle from decision 4, so there's no new state. The `List-Unsubscribe` header additionally makes Gmail/Outlook show their native unsubscribe button, and Gmail effectively requires it for bulk senders these days. The cheaper alternative — "manage notifications in settings" text — is fine for a purely internal team tool; if this app is only ever used by your own company, that would be my fallback.
+
+=== USER turn 11 ===
+It is an internal team tool — the settings-page pointer is fine.
+
+=== ASSISTANT turn 11 (rc=0) ===
+That was the last open question — everything is now recorded in `docs/specs/2026-08-01-email-notifications.md`. Per your ground rules, here's the full read-back. Please confirm before I write any code.
+
+1. **Recipients:** Assignee only, for both assignment and comment notifications. No creator/watcher notifications in v1.
+2. **Self-action suppression:** No email when the actor is the recipient (self-assign, commenting on your own assigned task). Events carry the acting user's ID to make this check possible.
+3. **Digest:** Deferred to v2. V1 is immediate-only, but built around notification *event* records that flush immediately — so the digest later just changes when events flush. (This one was delegated to my judgment.)
+4. **Preferences:** One global email-notifications on/off toggle per user, default on. No per-event-type settings.
+5. **User model:** New minimal users store introduced by this feature: `id`, `email`, `name`, `emailNotificationsEnabled`. Signup emails treated as deliverable; no verification flow.
+6. **Delivery mechanism:** Thin `Mailer` interface with a console/dev mailer (for tests and local dev) and an SMTP mailer via Nodemailer, configured by env vars. Provider-agnostic.
+7. **Delivery timing:** Async in-process — user actions never block on SMTP. Events written as `pending`, sent off the request path, marked `sent`/`failed`. No queue infrastructure in v1.
+8. **Content:** Plain text. Subjects `You were assigned: <title>` / `New comment on: <title>`; body has actor name, comment text, and a task link built from `APP_BASE_URL`.
+9. **Failure handling:** One retry after ~30s, then mark the event `failed` and log. No bounce handling (not possible over plain SMTP).
+10. **Unsubscribe:** Internal tool, so no tokenized one-click unsubscribe — just a footer pointer to the in-app settings page where the global toggle lives.
+
+Do you confirm all ten? Say the word (or flag any number you want to revisit) and I'll start building.
+
+=== USER turn 12 ===
+Confirmed, go ahead.
+
+=== ASSISTANT turn 12 (rc=0) ===
+v1 is built to the confirmed spec. One caveat up front: **I could not execute the test suite** — this session's sandbox requires approval for running `node`, which isn't grantable here. The tests are written and ready; please run `npm test` (all six should pass, no install needed since the dev path doesn't touch Nodemailer) and tell me if anything fails.
+
+What was added:
+
+- **`src/users.js`** — the minimal user store: `id`, `email`, `name`, `emailNotificationsEnabled` (default true), with `setEmailNotificationsEnabled` as the settings-page hook.
+- **`src/notifications.js`** — the heart of the feature. Every trigger creates an event record with a status (`pending` → `sent`/`failed`, or `skipped` with a reason like `self_action` or `notifications_disabled` so suppressed sends still leave an audit trail). Delivery runs off the request path, retries once after a backoff (30s in production, configurable for tests), and never throws into the calling action.
+- **`src/mailer.js`** — console mailer for dev, capture mailer for tests, and an SMTP mailer that lazy-imports Nodemailer and is configured entirely by env vars (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM`). No `SMTP_HOST` set → console mailer.
+- **`src/emails.js`** — plain-text templates with the agreed subjects, a task link from `APP_BASE_URL`, and the settings-page footer.
+- **`src/tasks.js`** — one breaking change to flag: `assignTask(task, assigneeId)` is now `assignTask(task, assigneeId, actorId)`. The actor ID is required by decision 2 (self-action suppression), and there was nowhere else to get it. `addComment` already had the actor. Both now return the notification event, whose `event.delivery` promise resolves when delivery settles.
+- **`test/notifications.test.js`** — six tests: assignment content, comment content, self-suppression, toggle-off suppression, retry-then-success, retry-then-failure.
+- The spec at `docs/specs/2026-08-01-email-notifications.md` now records your confirmation and an implementation summary mapping each file to its decisions.
+
+`★ Insight ─────────────────────────────────────`
+- The `skipped` status is the one thing I added beyond the letter of the spec: rather than silently returning when a send is suppressed, the event is recorded with its reason. This costs nothing now and answers the inevitable "why didn't I get an email?" support question with a query instead of a debugging session.
+- `event.delivery` exists because async fire-and-forget code is otherwise untestable — tests await the promise instead of sleeping. Production code can ignore it entirely.
+`─────────────────────────────────────────────────`
+
+To go live you'll need `npm install` (for Nodemailer) and the SMTP env vars pointed at your provider. The v2 digest slots in by changing when `pending` events flush, per decision 3.
+

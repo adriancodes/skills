@@ -1,7 +1,7 @@
 ---
 name: create-tasks
 description: >
-  Use when a confirmed spec or plan needs breaking into executable work.
+  Use when a confirmed spec or plan needs breaking into executable work —
   the user asks to "create tasks", "break this into tickets", or
   "turn the spec into tasks". Also when implementation tasks keep
   overflowing an agent's context window, or a task list reads
@@ -16,7 +16,7 @@ metadata:
 
 ## Overview
 
-Break a confirmed spec into small vertical tasks. Each task should cross the layers it needs, produce something demonstrable, fit one fresh agent session, and name its blockers. Avoid horizontal plans such as schema, then API, then UI, then tests; those postpone usable behavior until the end.
+Break a confirmed spec into small vertical tasks: each crosses the layers it needs, produces something demonstrable, fits one fresh agent session, and names its blockers. Horizontal plans (schema, then API, then UI, then tests) postpone usable behavior until the end.
 
 ## When to Use
 
@@ -26,10 +26,10 @@ Break a confirmed spec into small vertical tasks. Each task should cross the lay
 
 ## Do Not Use When
 
-- The plan isn't confirmed yet (`status: open`): pin requirements first: `create-spec` if installed (interview, or its zero-question capture mode), otherwise get the plan confirmed explicitly before slicing. `confirmed` and `confirmed-by-override` both count as confirmed.
+- The plan isn't confirmed yet (`status: open`): pin requirements first via `create-spec` if installed (interview or zero-question capture), otherwise get explicit confirmation. `confirmed` and `confirmed-by-override` both count.
 - Executing the slices: this skill plans; each slice is its own implementation session
-- The work already fits one session: one slice is no slices; skip straight to building (with `verify-work` at the end, if installed)
-- The user wants issues published to a tracker: use a tracker-ticket skill when installed; this skill owns the local `*-slices.md` execution contract
+- The work fits one session: one slice is no slices; build directly (with `verify-work` at the end, if installed)
+- The user wants issues in a tracker: use a tracker-ticket skill when installed; this skill owns the local `*-slices.md` execution contract
 
 ## Required Context
 
@@ -38,15 +38,15 @@ Break a confirmed spec into small vertical tasks. Each task should cross the lay
 
 ## Workflow
 
-1. **Anchor.** Read the spec end to end. Check repository instruction files (for example `AGENTS.md` or `CLAUDE.md`) for re-homed artifact paths. Write the list of layers this feature touches (schema, API, UI, jobs, tests: whatever the repo actually has). Done when the layer list is written.
+1. **Anchor.** Read the spec end to end. Check repo instruction files (`AGENTS.md`, `CLAUDE.md`) for re-homed artifact paths. List the layers this feature touches (schema, API, UI, jobs, tests: whatever the repo actually has). Done when the layer list is written.
 
 2. **Draft slices.** Every slice passes all three tests; prefactoring becomes its own first slice ("make the change easy, then make the easy change"):
-   - **Vertical**: it crosses every layer it needs to be demoable. A slice touching one layer is a layer; merge it or recut.
-   - **Demoable**: done means a human can watch it work: a request returns, a screen shows, or: only when the slice's work has no human-visible surface: an observed state change a test proves. Never "the model exists".
+   - **Vertical**: it crosses every layer its demo needs. A one-layer slice is a layer; merge or recut it.
+   - **Demoable**: done means a human can watch it work: a request returns, a screen shows, or: only when nothing is human-visible: a state change a test proves. Never "the model exists".
    - **Sized**: it fits one fresh agent session, exploration included. "Every call site" or "test everything" is unbounded: write the bounding list into the slice, or split it.
-   Done when each slice has been checked against all three, one by one.
+   Done when each slice is checked against all three, one by one.
 
-3. **Draw the edges.** Each slice names the slices that must land first: `blocked by: none` counts and is written. Fewest edges wins: an edge exists because the code demands it, never because the numbering implies it. A fully serial chain is a smell: recut once for parallelism before accepting it. Done when at least one slice is unblocked.
+3. **Draw the edges.** Each slice names the slices that must land first: `blocked by: none` counts and is written. Fewest edges wins: an edge exists because the code demands it, never because numbering implies it. A fully serial chain is a smell: recut once for parallelism before accepting it. Done when at least one slice is unblocked.
 
 4. **Write the file.** `docs/specs/<date>-<slug>-slices.md` in exactly this shape: downstream skills parse it:
 
@@ -74,7 +74,7 @@ Break a confirmed spec into small vertical tasks. Each task should cross the lay
    <!-- user confirmation words and date; empty while status is open -->
    ```
 
-   Ticks are `[x]`; a ticked slice appends `Done: <date>: <one-line outcome>` within that slice. A chat-only breakdown dies with the session; the file is the artifact. Done when every slice has Layers, Bound, Demo, and Blocked by fields and the file exists.
+   Ticks are `[x]`; a ticked slice appends `Done: <date>: <one-line outcome>` inside it. The write is unconditional: when the user asks for chat only, acknowledge in one line, write the file anyway, and read back from it — the request moves where the summary goes, never whether the file exists. Done when every slice has Layers, Bound, Demo, and Blocked by fields and the file exists before the read-back begins.
 
 5. **Read back.** Present the slices, bounds, and edges as a numbered summary and ask for confirmation. Recut on objection; on confirmation, record the user's words and date under `## Confirmation`, then flip `status: confirmed`. Done only when both the confirmation record and confirmed status exist.
 
@@ -88,19 +88,19 @@ Break a confirmed spec into small vertical tasks. Each task should cross the lay
 
 ## Common Rationalizations
 
-Every excuse below was observed verbatim in baseline testing without this skill loaded.
+Every excuse below appeared verbatim in baseline tests without this skill loaded.
 
 | Excuse | Reality |
 |--------|---------|
 | "Schema first: everything depends on the data model" | The first vertical slice carries only the schema *it* needs; the model earns its columns slice by slice. |
-| "I'll batch all the endpoints: they share a controller" | Shared code is not a shared slice; each endpoint ships inside the slice that demos it. |
-| "One pass over all the source sites keeps the context" | "All sites" is the definition of unbounded; bound the list inside the slice or split per site class. |
-| "Tests as their own task at the end, once things stabilize" | A slice without its tests can't demo as done; tests ride inside every slice. |
+| "I'll batch all the endpoints: they share a controller" | Shared code is not a shared slice; each endpoint ships in the slice that demos it. |
+| "One pass over all the source sites keeps the context" | "All sites" is unbounded by definition; bound the list in the slice or split per site class. |
+| "Tests as their own task at the end, once things stabilize" | A slice without its tests can't demo as done; tests ride in every slice. |
 | "UI is a separate concern, cleaner as its own task" | Separate concern, same slice: the UI is how the slice demos. |
 
 ## Success Criteria
 
-- Zero horizontal slices: every slice crosses all the layers its demo needs; a one-layer slice is legitimate only when the work itself has one layer (a retention job with no UI), never because splitting was inconvenient
+- Zero horizontal slices: every slice crosses all layers its demo needs; a one-layer slice is legitimate only when the work has one layer (a retention job with no UI), never because splitting was inconvenient
 - Every slice carries a runnable demo criterion and a written size bound
 - Edges written for every slice; at least one slice unblocked
 - The slices file exists in the repo and ends with the user's confirmation
@@ -116,10 +116,10 @@ Every excuse below was observed verbatim in baseline testing without this skill 
 
 ## Failure Modes
 
-- **A slice can't get a demo criterion:** the spec has an open decision hiding in it: send it back to the spec (or `create-spec`); never settle it inside a slice.
+- **A slice can't get a demo criterion:** an open decision hides in the spec: send it back there (or to `create-spec`); never settle it inside a slice.
 - **Everything blocks everything after a recut:** the work may genuinely be serial: say so explicitly and proceed; never leave it implied.
 - **More than ~10 slices:** the scope is program-sized; split the spec itself before slicing further.
 
 ## Summary
 
-Write a repository work plan made of small, demonstrable vertical tasks with explicit blockers. Do not leave the plan only in chat.
+Write a repo work plan of small, demonstrable vertical tasks with explicit blockers; never leave it only in chat.

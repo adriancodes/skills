@@ -14,7 +14,7 @@ The audit found reusable intent—fixed-point review against standards and a spe
 
 The replacement addresses those gaps and includes a deterministic tenant-authorization fixture supporting its Core Example. Per the confirmed cost constraint, no synthetic skill-loaded model sessions ran in this pass. The subject may be structurally validated and used as a candidate, but it has no Tier-2 comparative SHIP claim yet.
 
-`cases.jsonl` preserves one future prompt/skill value case plus missing-spec and authority-pressure regressions. These cases are intentionally unexecuted and unfrozen; they do not count as evidence until a bounded run is separately authorized.
+`cases.jsonl` preserves one prompt/skill value case plus missing-spec and authority-pressure regressions. A bounded Tier-2 run executed all three cases on 2026-08-01: see `tier2-2026-08-01.md` (21/21 assertions PASS, verdict PASS with recorded caveats — the prompt arm also cleared the value case, and the Core Example mirrors the fixture, so comparative support is limited to report discipline on this fixture).
 
 Current subject SHA-256: `e19d16a07be85ad57a8c2684f0dc3f04d4577502c954e141cbdd5d4cc3c4d56b`.
 

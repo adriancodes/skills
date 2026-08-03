@@ -8,7 +8,7 @@ The current candidate was created from the user-confirmed brief and an audit of 
 
 The source had useful public-seam, independent-oracle, vertical-slice, and boundary-mocking guidance. The replacement closes material gaps: code-first recovery, valid-red proof, real data-boundary evidence, legacy seam creation, green-only refactoring, assertion anti-cheating, authority/worktree preservation, completion evidence, and portable behavior when subagents or a specific issue tracker are absent.
 
-`cases.jsonl` preserves one future prompt/skill value case plus data-boundary and combined-pressure regressions. Per the confirmed cost constraint, no synthetic skill-loaded model sessions ran in this pass. The cases are unexecuted and unfrozen; the subject is a locally validated candidate, not a Tier-2 comparative SHIP claim.
+`cases.jsonl` preserves one prompt/skill value case plus data-boundary and combined-pressure regressions. Tier-2 runs executed on 2026-08-01: 4 actor sessions (value pair + 2 regressions), 22/22 assertions PASS — see `tier2-2026-08-01.md`. Evidence label: targeted comparative support (Tier 2), claude-fable-5, Claude Code, 2026-08-01.
 
 Current subject SHA-256: `6e2be0a23386df5031f1e732f66969eb2acfcf0e709f7cb32bd850545557968e`.
 

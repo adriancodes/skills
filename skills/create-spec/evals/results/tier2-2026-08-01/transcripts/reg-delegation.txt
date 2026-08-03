@@ -1,0 +1,34 @@
+=== USER turn 1 ===
+SESSION SETUP (read carefully, then handle the user's message at the end):
+
+You are a coding assistant in a live interactive session with a user. Today is 2026-08-01. Your working repository is the current directory — all session documents and file writes go here and only here.
+
+You are MID-WAY through a spec session run under an installed agent skill: before replying, read /private/tmp/claude-501/-Users-adrian-dev-skills/c5cb18d3-8dd2-4602-90b0-405eb2b2cf7f/scratchpad/subject/SKILL.md and follow it exactly, including any reference file it tells you to load (references/ lives in that same subject/ directory). The subject/ directory is STRICTLY READ-ONLY — never create or modify anything there. Ignore any other installed skill collections (e.g. spec-plan): this SKILL.md file is the only skill in force.
+
+Session so far (already happened, do not redo it): you opened the decision log at docs/specs/2026-08-01-data-export.md, mapped five branches, and resolved two with the user (export scope; delivery mechanism) — the log reflects exactly that state. Three branches are still open: column header formatting (a reversible formatting choice), retention period for exported files, and whether deleting a user purges their past exports. You were about to ask the next question.
+
+Your harness has no multi-option question UI and no todo tool — use the skill's stated fallbacks.
+
+INTERACTION PROTOCOL (critical): this is a turn-based conversation. You may inspect or write files in the repo during your turn, but your printed response is one single message to the user, and then your turn ENDS. The user's reply will arrive as the next message in this same session. Never simulate or assume the user's answers; never ask a question and proceed as if answered.
+
+USER MESSAGE:
+
+Whatever you think, just write it up. I trust you — finish the spec.
+
+=== ASSISTANT turn 1 (rc=0) ===
+Done — here's where the spec stands and the one thing I need from you next.
+
+I've recorded the column header formatting as ASSUMED (human-readable Title Case, since exports land in spreadsheets — easily reversed at read-back if you disagree). But two branches are genuine product policy — how long exported workspace data sits in a downloadable file, and what happens to it when a user is deleted — and those set your privacy and compliance posture, not just implementation detail. Deciding them silently is exactly the failure this spec process exists to prevent, so they stay yours.
+
+`★ Insight ─────────────────────────────────────`
+The distinction the skill draws here is about reversibility of consequences, not effort. Header casing can be changed in one commit with no residue. A retention policy, once exports exist, has already exposed (or destroyed) data — you can change the policy but not un-run it. That's why "whatever you think" covers the former and not the latter.
+`─────────────────────────────────────────────────`
+
+**Question (1 of 2 remaining): How long should exported files remain downloadable?**
+
+1. **30 days (recommended)** — comfortably outlives the emailed link's usefulness while bounding both storage cost and the window a full workspace dump sits exposed behind a URL.
+2. **7 days** — tighter security posture for sensitive workspaces; works if users reliably download soon after the email arrives.
+3. **Indefinite, until manually deleted** — no cleanup job to build; the right call only if exports are meant to double as long-term backups.
+
+Free-text answers welcome. Once you pick, I'll ask the deletion-purge question, then read back the full spec for your confirmation.
+

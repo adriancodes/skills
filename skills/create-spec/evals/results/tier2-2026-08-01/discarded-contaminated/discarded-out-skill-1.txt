@@ -1,0 +1,26 @@
+/private/tmp/claude-501/-Users-adrian-dev-skills/c5cb18d3-8dd2-4602-90b0-405eb2b2cf7f/scratchpad/turn.sh: line 16: /private/tmp/claude-501/-Users-adrian-dev-skills/c5cb18d3-8dd2-4602-90b0-405eb2b2cf7f/scratchpad/transcripts/value-skill.txt: No such file or directory
+Using **spec-plan** to pin this down before any code gets written. (One note on setup: the session pointed me at `create-spec` under `/Users/adrian/dev/skills`, but that directory is read-blocked in this sandbox — the registered `spec-plan` skill matches the "spec this out" trigger exactly, so I'm running that.)
+
+**Topic, restated:** users currently have no way to learn that a task now involves them without opening the app — this session decides how email notifications close that gap.
+
+I scanned the repo before asking anything. Decision log created at `docs/specs/2026-08-01-email-notifications.md` with 12 open branches. Two facts worth knowing up front, recorded in the log:
+
+- The whole app core is `src/tasks.js:1-3` — tasks are `{ id, title, assigneeId, comments[] }`, comments store a bare `userId`.
+- **There is no user model.** Users are opaque ids; no email addresses exist anywhere. So "where do addresses come from" is a real branch (#7), not a detail.
+
+`★ Insight ─────────────────────────────────────`
+- The repo scan reshaped the branch map: "send an email to the assignee" silently assumes an address lookup that this codebase can't do yet — the biggest schema decision here isn't about notifications at all, it's introducing a user store.
+- Your plan's "the assignee gets an email" is itself a design choice, not a given — comment notifications commonly go to *participants* (prior commenters), and that choice decides whether per-user preferences are needed in v1.
+`─────────────────────────────────────────────────`
+
+One question per turn, upstream decisions first. First branch:
+
+**Q1 — When a comment lands on a task, who gets the email?**
+
+1. **Assignee only** *(recommended)* — matches your stated plan, smallest v1 surface, and nobody receives mail they never opted into.
+2. **Assignee + everyone who previously commented on the task** — keeps a conversation alive for all participants; costs more scope now (participant tracking, and per-user preferences become urgent).
+3. **Assignee + task creator** — creators often care about progress; a middle ground, though the current schema doesn't record a creator, so it adds a field.
+
+Concrete check for option 1: Bob commented on a task yesterday but isn't the assignee — when Carol comments today, Bob gets **nothing**. Correct?
+
+(Free-text answers are always fine if none of these fit.)

@@ -1,0 +1,46 @@
+=== USER turn 1 ===
+SESSION SETUP (read carefully, then handle the user's message at the end):
+
+You are a coding assistant in a live interactive session with a user. Today is 2026-08-01. Your working repository is the current directory — all session documents and file writes go here and only here.
+
+You have an installed agent skill that applies to this session: before replying, read /private/tmp/claude-501/-Users-adrian-dev-skills/c5cb18d3-8dd2-4602-90b0-405eb2b2cf7f/scratchpad/subject/SKILL.md and follow it exactly, including any reference file it tells you to load (references/ lives in that same subject/ directory). The subject/ directory is STRICTLY READ-ONLY — never create or modify anything there. Ignore any other installed skill collections (e.g. spec-plan): this SKILL.md file is the only skill in force.
+
+Your harness has no multi-option question UI and no todo tool — use the skill's stated fallbacks.
+
+INTERACTION PROTOCOL (critical): this is a turn-based conversation. You may inspect or write files in the repo during your turn, but your printed response is one single message to the user, and then your turn ENDS. The user's reply will arrive as the next message in this same session. Never simulate or assume the user's answers; never ask a question and proceed as if answered.
+
+USER MESSAGE:
+
+Resume the spec session for the export retention work — the decision log in docs/specs is still open. Pick up where it left off.
+
+=== ASSISTANT turn 1 (rc=0) ===
+The log is updated. One more repo observation worth recording for later: decision #1 (CSV with UTF-8 BOM) isn't implemented yet either — the stream sends no BOM — but unimplemented isn't contradicted, so that decision stands as the target state.
+
+`★ Insight ─────────────────────────────────────`
+- A spec log records *intent*; the repo records *reality*. Code that hasn't caught up to a decision (missing BOM) leaves the decision valid — code that was deliberately changed *away* from a decision (the streaming refactor) invalidates its premise, so the branch reopens rather than being silently trusted.
+- Reopening uses an annotation, not deletion: the original entry and its "why" stay intact so history shows what was believed and when it stopped being true.
+`─────────────────────────────────────────────────`
+
+Now resuming the interview where dependency order points: **Storage** is upstream of Cleanup (and of the naming assumption), so it goes first — one question:
+
+**Q: The July refactor made exports stream-only. Should that stand, or should stored exports come back?**
+
+1. **Keep streaming-only (recommended)** — the refactor was a deliberate, recent change; no stored files means no retention risk, no disk growth, and the Cleanup branch dissolves entirely. The cost: an interrupted download means re-running the export.
+2. **Restore persisted files in `var/exports/`** — reinstates the original decision and its re-download benefit for large exports; Cleanup schedule then becomes a real branch to decide.
+3. **Hybrid: stream the response and persist a copy** — download is instant *and* re-downloadable; costs the disk space and still requires a cleanup policy.
+
+Free-text is welcome if none of these fits. (Confirm-line for option 1, since it draws a boundary: an enterprise customer's 2 GB export dies at 90% — they re-run the whole export from scratch, and that's acceptable.)
+
+=== USER turn 2 ===
+Keep streaming-only. And yes — a dead 2 GB download re-runs from scratch, that is acceptable.
+
+=== ASSISTANT turn 2 (rc=0) ===
+Logged. Storage is settled and Cleanup is gone with it. Two branches remain: the download filename (whose inherited assumption the code contradicts) and failure notification. Filename is the smaller, already-flagged one — one question:
+
+**Q: What should the streamed download be named?** The old session assumed `<workspace>-<yyyy-mm-dd>.csv` to match existing report downloads, but the code today sends `<slug>.csv` with no date (`src/export.js:10`).
+
+1. **`<slug>-<yyyy-mm-dd>.csv` (recommended)** — keeps the dated convention your other report downloads use, so a customer exporting weekly doesn't silently overwrite last week's file in their Downloads folder.
+2. **Keep `<slug>.csv`** — matches the code as it stands, zero change; right if customers treat each export as transient and dates in filenames are noise.
+
+Free-text welcome if you want a different shape entirely.
+

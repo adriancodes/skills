@@ -1,0 +1,169 @@
+=== USER turn 1 ===
+SESSION SETUP (read carefully, then handle the user's message at the end):
+
+You are a coding assistant in a live interactive session with a user. Today is 2026-08-01. Your working repository is the current directory — all session documents and file writes go here and only here.
+
+You have an installed agent skill that applies to this session: before replying, read /private/tmp/claude-501/-Users-adrian-dev-skills/c5cb18d3-8dd2-4602-90b0-405eb2b2cf7f/scratchpad/subject/SKILL.md and follow it exactly, including any reference file it tells you to load (references/ lives in that same subject/ directory). The subject/ directory is STRICTLY READ-ONLY — never create or modify anything there. Ignore any other installed skill collections (e.g. spec-plan): this SKILL.md file is the only skill in force.
+
+Your harness has no multi-option question UI and no todo tool — use the skill's stated fallbacks.
+
+INTERACTION PROTOCOL (critical): this is a turn-based conversation. You may inspect or write files in the repo during your turn, but your printed response is one single message to the user, and then your turn ENDS. The user's reply will arrive as the next message in this same session. Never simulate or assume the user's answers; never ask a question and proceed as if answered.
+
+USER MESSAGE:
+
+Spec this out before we build: add email notifications to our task app. Rough plan: when a task is assigned or commented on, the assignee gets an email. Probably some kind of digest option too. Nothing else is decided.
+
+=== ASSISTANT turn 1 (rc=0) ===
+Using **create-spec** to pin this down before building. Restating the problem: assignees currently have no way to learn about activity on their tasks without opening the app.
+
+I've opened the decision log at `docs/specs/2026-08-01-email-notifications.md` with eight branches. One repo fact worth flagging before we start: `src/tasks.js` stores only an `assigneeId` — there's no user model, so email addresses don't exist anywhere in the system yet. That's now a branch of its own.
+
+`★ Insight ─────────────────────────────────────`
+- The most common failure in notification specs is treating the trigger list as settled ("assign + comment") and discovering mid-build that half the events people actually care about (reassignment away, task completion, mentions) were never discussed. So we start upstream, at events — everything else (recipients, digest grouping, templates) depends on it.
+- The decision log lives in the repo, not chat scrollback, so decisions survive this session and stop getting relitigated later.
+`─────────────────────────────────────────────────`
+
+**Question 1 of ~8 — Trigger events.** Which activities should generate a notification?
+
+1. **Assignment + new comment only (recommended)** — matches your stated plan; the smallest set that covers "something needs my attention," and adding events later is cheap.
+2. **Also notify on reassignment *away*** — the previous assignee learns they're off the hook; useful if tasks get shuffled between people often.
+3. **Broader set (status changes, due-date changes, completion)** — right if the app already has those events and users treat email as their primary activity feed.
+
+You can also answer in your own words if none of these fit.
+
+=== USER turn 2 ===
+Just assignment and comments for now, like the plan says.
+
+=== ASSISTANT turn 2 (rc=0) ===
+Logged: **#1 Trigger events — assignment and new comments only.**
+
+**Question 2 of ~8 — Recipient rules.** The plan says "the assignee gets an email." The boundary case is the actor's own actions:
+
+1. **Suppress self-notifications (recommended)** — if you comment on a task assigned to you, or assign a task to yourself, no email; you already know what you did. This is what nearly every user expects, and skipping it is the #1 source of "why is this app spamming me" complaints.
+2. **Always email the assignee, even for their own actions** — simplest logic and gives a paper-trail-by-email; right only if email doubles as an audit record.
+
+Concrete check for option 1: Alice is assigned task T and adds a comment to it — she gets **no** email, and nobody else does either (commenters other than the assignee get nothing). Correct?
+
+=== USER turn 3 ===
+yeah fine
+
+=== ASSISTANT turn 3 (rc=0) ===
+Logged: **#2 Recipient rules — only the assignee, self-notifications suppressed.**
+
+**Question 3 of ~8 — Email address source.** The repo has no user model — tasks reference a bare `assigneeId` and nothing maps that to an email address. Where do addresses come from?
+
+1. **Add a minimal user record with an email field (recommended)** — a `users` store (`id`, `email`, later prefs) is the natural home; the preferences branch will need a per-user home anyway, so this pays for itself immediately.
+2. **External lookup at send time** — resolve `assigneeId` → email via an existing directory/auth provider (if your real app has one this repo doesn't show); right if user identity already lives elsewhere and duplicating it invites drift.
+3. **Email address *is* the user ID** — treat `assigneeId` as an email string; zero new storage, but couples identity to a mutable address and makes address changes a data migration.
+
+If the real system already has a user store this minimal repo doesn't show, say so and option 2 likely wins.
+
+=== USER turn 4 ===
+whatever you think
+
+=== ASSISTANT turn 4 (rc=0) ===
+Done — "whatever you think" covers reversible implementation defaults, so I've recorded three as ASSUMED (you'll see them at the read-back): a minimal user record with an email field, plain transactional email content with a task link, and async sending through a provider adapter. Three branches are product policy, though, and those I can't decide for you — they change what users experience, not how it's coded.
+
+`★ Insight ─────────────────────────────────────`
+- The immediate-vs-digest choice is the one that dictates the architecture here: pure immediate sending needs no storage at all (fire on event), while any digest option forces a persisted notification queue plus a scheduler. That's why it can't be a "default I'll pick" — it decides whether this feature has a database table and a cron job.
+`─────────────────────────────────────────────────`
+
+**Question 4 — Delivery mode.** Your plan says immediate emails "plus probably some kind of digest option." What does that look like?
+
+1. **Immediate-only now; design the send path so a digest can be added later (recommended)** — ships the core value fast, and the queue/scheduler work waits until you know users want it.
+2. **Immediate by default, per-user switch to a daily digest** — the full "digest option" now; one scheduled job per day batches that user's pending notifications into one email.
+3. **Digest-only** — no per-event emails at all; right if you fear notification fatigue more than latency.
+
+If you pick 2 (or want digest later), I'll follow up on the digest's timing and grouping.
+
+=== USER turn 5 ===
+Option 2 — immediate by default, per-user switch to a daily digest.
+
+=== ASSISTANT turn 5 (rc=0) ===
+Logged: **#3 Delivery mode — immediate by default, per-user daily digest switch.** This commits us to a persisted notification queue and a daily scheduler, which I noted in the log. I split the digest's own behavior into its next question:
+
+**Question 5 — Digest details.** When does the daily digest go out, and what happens on an empty day?
+
+1. **Fixed time for everyone, e.g. 8:00 in the app's timezone; skip the email entirely when there's nothing to report (recommended)** — one scheduler run, no per-user timezone storage, and empty digests are the fastest route to unsubscribes.
+2. **Per-user send time (and timezone)** — nicer for distributed teams, but adds a timezone field, a rolling scheduler, and more edge cases; worth it only if your users span many zones today.
+3. **Fixed time, but send even when empty ("no activity today")** — a heartbeat that proves the system works; most users read it as noise.
+
+Concrete check for option 1: a user on digest mode gets assigned 3 tasks and receives 5 comments between two 8:00 runs — they get exactly **one** email at the next 8:00 listing all 8 items, and none of those 8 events sent an immediate email. Correct?
+
+=== USER turn 6 ===
+Option 1. And yes, correct — one email at 8:00, none of those events send immediately.
+
+=== ASSISTANT turn 6 (rc=0) ===
+Logged: **#4 Digest details — fixed 8:00 send, empty digests skipped, digest fully replaces immediate.** Two product-policy branches remain: preferences and failure handling.
+
+**Question 6 — User preferences.** Beyond the immediate/digest switch, can users turn task emails off entirely, and what's the default for a brand-new user?
+
+1. **Three-state preference — immediate (default) / daily digest / off (recommended)** — a full opt-out is table stakes for email features (and required in spirit by anti-spam norms even for transactional-ish mail); defaulting new users to immediate matches decision #3.
+2. **No "off" state — only immediate or digest** — everyone gets something; defensible only if these emails are considered operationally mandatory, and it tends to generate mark-as-spam instead of opt-outs.
+
+Concrete check for option 1: a user sets "off," then someone assigns them a task — no email now, and that event is also **not** stored up to appear in any future digest if they later switch back. Correct?
+
+=== USER turn 7 ===
+Option 1. Correct — off means gone, not queued for later.
+
+=== ASSISTANT turn 7 (rc=0) ===
+Logged: **#5 Preferences — immediate (default) / daily digest / off, where "off" discards events permanently.** One branch left before the read-back.
+
+`★ Insight ─────────────────────────────────────`
+- Retry policy sounds like plumbing, but it sets a user-visible guarantee: "at-least-once" retrying can double-send an email after an ambiguous failure, while "at-most-once" can silently drop one. You're choosing which failure users see, which is why it's a spec decision and not an implementation detail.
+`─────────────────────────────────────────────────`
+
+**Question 7 — Failure handling.** When a send fails (provider down, address bouncing), what's the guarantee?
+
+1. **Retry transient failures a few times with backoff, then drop and log; no user-facing dead-letter handling (recommended)** — accepts rare missed emails to guarantee no duplicate spam; the task app itself remains the source of truth, so a lost email isn't lost data.
+2. **Retry until delivered (persistent queue, at-least-once)** — no notification is ever silently lost, at the cost of occasional duplicates and a stuck-queue failure mode; right if people rely on email alone to know their work.
+3. **No retries — one attempt, log failures** — simplest possible; fine only while the feature is experimental.
+
+Also part of this branch: on a hard bounce (address permanently invalid), I'd stop sending to that address and surface it as a flag on the user record rather than retrying forever. That rides with whichever option you pick unless you object.
+
+=== USER turn 8 ===
+Option 1, and the bounce flag is fine.
+
+=== ASSISTANT turn 8 (rc=0) ===
+Logged: **#6 Failure handling — retry with backoff then drop-and-log; hard bounces flag the user and stop sends.** Every branch is now resolved, so here's the exit-gate read-back.
+
+**Decided (your words, in the log):**
+
+1. **Trigger events** — assignment and new comments only.
+2. **Recipient rules** — only the assignee is emailed; self-notifications suppressed (your own comment or self-assignment sends nothing; non-assignee commenters get nothing).
+3. **Delivery mode** — immediate emails by default, with a per-user switch to a daily digest.
+4. **Digest details** — fixed 8:00 send in the app's timezone; empty digests skipped; digest mode fully replaces immediate sends.
+5. **User preferences** — three-state setting: immediate (default) / daily digest / off. "Off" discards events permanently — nothing queues for a later digest.
+6. **Failure handling** — transient failures retry a few times with backoff, then drop and log (no duplicates, rare missed email acceptable); hard bounces flag the user record and stop sends to that address.
+
+**ASSUMED under your "whatever you think" delegation — flag any you want changed:**
+
+7. **Email address source** — a minimal user record (`id`, `email`, notification preference) that `assigneeId` references.
+8. **Email content** — plain transactional email: subject names the task; body has the event summary (who assigned / who commented plus the comment body) and a link to the task; outbound-only, replies not ingested.
+9. **Delivery mechanism** — sends go through a small provider-agnostic adapter and are dispatched asynchronously, so assigning or commenting never blocks on email.
+
+**Deferred:** none.
+
+Do you confirm this spec as written? A "confirmed" marks the log final and building can start; an objection to any numbered item reopens just that branch.
+
+=== USER turn 9 ===
+Confirmed, go ahead.
+
+=== ASSISTANT turn 9 (rc=0) ===
+The sandbox is denying `node` execution, so I couldn't run the test suite — that's the one unverified piece. Everything else is done.
+
+## Summary
+
+**Spec session (create-spec) — complete.** The confirmed decision log lives at `docs/specs/2026-08-01-email-notifications.md` with your verbatim confirmation recorded; no glossary terms or ADRs were warranted. Six decided branches (triggers, recipients, delivery mode, digest details, preferences, failure handling) plus three delegated assumptions (user record, email content, provider adapter).
+
+**Build — complete, tests written but not executed.** Four files implement the spec:
+
+- `src/users.js` — minimal user record: `id`, `email`, `notificationPref` (`immediate` default / `digest` / `off`), `emailBounced` flag.
+- `src/mailer.js` — provider-agnostic adapter; transient failures retry 3× with exponential backoff then drop-and-log (at-most-once, no duplicates); permanent failures are reported to the caller and never retried.
+- `src/notifications.js` — routing in spec order (self-suppression → `off` discards before queueing → bounce check → digest queue or immediate send), `runDailyDigest()` (one batched email per user, empty runs skipped), and `startDigestScheduler()` which fires at the next 8:00 local time and every 24h after.
+- `src/tasks.js` — `assignTask` gained an `actorId` parameter (needed to suppress self-notifications; existing two-argument callers still work but can't be self-suppressed). Mutations stay synchronous; notification promises are returned so nothing blocks on email.
+
+`test/notifications.test.js` covers all six decisions — immediate sends, self-suppression, digest batching with empty-day skip, off-means-discarded (including the no-replay-after-switching-back scenario you confirmed), retry-then-succeed, retry-exhaustion without duplicates, and hard-bounce flagging. Run it with `node --test test/` when you get a chance — I couldn't execute it here because the sandbox requires approval for `node` commands, so treat the suite as unverified until it passes on your machine.
+
+One wiring note: the app needs to call `configureMailer(provider)` at startup with a real provider (anything exposing `async send({to, subject, body})`) and `startDigestScheduler()` if any users will use digest mode — neither is invoked automatically.
+
