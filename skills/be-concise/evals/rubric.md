@@ -14,7 +14,7 @@ This is a one-model, one-harness, one-run-per-case pilot. It may return `PILOT_S
 
 - Every critical skill-arm behavior assertion passes.
 - Trigger precision and recall are both 1.0 for the frozen three-positive/three-negative pilot.
-- The skill has at least one more passing noncritical behavior assertion than the prompt and no critical regression.
+- The prompt arm does not match or beat the skill arm on the complete comparison: ABANDON-equivalence requires the prompt to match the skill on critical passes AND have equal-or-more noncritical passes (suite 1.2.0 re-freeze, 2026-08-03; supersedes the noncritical-only tie rule).
 - Median skill-arm tokens are no more than 1.5 times the prompt-arm median.
 - Total usage does not exceed 1,000,000 tokens or 12 actor sessions.
 

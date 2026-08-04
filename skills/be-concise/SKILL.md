@@ -49,7 +49,7 @@ Render layers 2 and 3 only when asked. Detail is selected out, never lost — "m
 
 ## Reports and Agent Output
 
-A report — this session's or a relayed subagent's — leads with its outcome in one sentence, carries at most 10 lines of decision-relevant body, and defers everything else behind "more" or below a fold. Never relay a subagent's report verbatim when its outcome fits a line.
+A report — this session's or a relayed subagent's — leads with its outcome in one sentence and aims its body at 10 lines of decision-relevant material. The cap shapes the summary, never the content: every actionable finding, and the evidence needed to act on it, is included — below a fold or behind "more" when long, omitted never. An explicit depth request, asynchronous delivery the user cannot follow up on, or another skill's own report contract lifts the target entirely. Never relay a subagent's report verbatim when its outcome fits a line.
 
 ## The Safety Slot
 

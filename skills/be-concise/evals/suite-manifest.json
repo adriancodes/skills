@@ -18,14 +18,21 @@
       "approved_by": "user",
       "rationale": "gate 3 compared noncritical counts only, while both arms sit at the noncritical ceiling (structurally unwinnable tie) and the prompt arm fails 2 safety criticals in every recorded run; equivalence judged without criticals is incomplete",
       "changes": "score.mjs only: gate 3 amended so equivalence counts critical outcomes — ABANDON fires only when the prompt arm matches the skill arm on critical passes AND has equal-or-more noncritical passes; per-arm critical pass counts added to the behavior block for transparency. Assertion logic and all thresholds unchanged from 1.1.0. Note: rubric.md's gate-3 prose predates this amendment; the manifest note is authoritative."
+    },
+    {
+      "version": "lean-pilot-1.2.0",
+      "date": "2026-08-03",
+      "approved_by": "user",
+      "rationale": "editorial alignment following adversarial review: rubric.md's gate-3 prose lagged the 1.2.0 amendment",
+      "changes": "rubric.md only: gate-3 prose synced to the criticals-inclusive equivalence rule the 1.2.0 scorer already implements. No logic change anywhere; suite version unchanged. rubric.md and subject hashes re-recorded."
     }
   ],
   "subject": "../SKILL.md",
-  "subject_sha256": "232ab87dfe0ebaa25834a573a8546778acee9175e1e246b9de140c87b8e423bc",
+  "subject_sha256": "3f9190fcb96007d211339d77440413920e57cfa5d5aec3ef8866788352dc619e",
   "files": {
-    "../SKILL.md": "232ab87dfe0ebaa25834a573a8546778acee9175e1e246b9de140c87b8e423bc",
+    "../SKILL.md": "3f9190fcb96007d211339d77440413920e57cfa5d5aec3ef8866788352dc619e",
     "cases.jsonl": "71297f187fcc88d348555b295e44bfc095ed570699443e7a580c3d80a543daa9",
-    "rubric.md": "0cef9593bb1d2fe01945dd9cd12faaddc3f295cdeb5ad7564730fa043516a5aa",
+    "rubric.md": "42f98e2ae478b14910b9cb12dffc6fb0c13aec737a12fe51228099d1991fdec0",
     "matrix.json": "d251d378955fc994eb501511ea7e04f65042bc09ea010500edd32bfc7b2c5d43",
     "run.md": "31633a2864adedd799f5ab266fae219b3279158b965055ee9508c8470cc2892c",
     "run-codex.mjs": "98e369beec9d3d4e3117ddfd84c5fbf14b59101680d0ed317d01bebd7d70abd0",
