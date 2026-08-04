@@ -64,10 +64,10 @@ function discover() {
     }
     items.push({ dir: name, kind: "skill", file, text, fm, parseError, rel: `skills/${name}/SKILL.md` });
   }
-  const layerFile = path.join(ROOT, "work-discipline", "work-discipline.md");
+  const layerFile = path.join(ROOT, "ground-rules", "ground-rules.md");
   if (fs.existsSync(layerFile)) {
     const text = fs.readFileSync(layerFile, "utf8");
-    items.push({ dir: "work-discipline", kind: "layer", file: layerFile, text, fm: parseFrontmatter(text, layerFile), rel: "work-discipline/work-discipline.md" });
+    items.push({ dir: "ground-rules", kind: "layer", file: layerFile, text, fm: parseFrontmatter(text, layerFile), rel: "ground-rules/ground-rules.md" });
   }
   return items;
 }

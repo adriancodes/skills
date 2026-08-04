@@ -20,7 +20,7 @@ Answer in layers: the first layer is short, plain, and complete enough to act on
 ## When to Use
 
 - "tldr", "keep it short", "be brief", "just tell me", "in plain english"
-- `/be-concise` activates it explicitly; an always-on installation requires the work-discipline layer or equivalent harness instructions — installation alone is not activation
+- `/be-concise` activates it explicitly; an always-on installation requires the ground-rules layer or equivalent harness instructions — installation alone is not activation
 - Replies keep arriving as essays with furniture when the question was one line
 
 ## Do Not Use When
