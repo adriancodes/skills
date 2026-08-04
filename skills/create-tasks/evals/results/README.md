@@ -25,4 +25,4 @@ case is re-run. The subject carries no Tier-2 SHIP claim.
   scored assertion outcomes.
 
 Subject SHA-256 at authoring time (2026-08-01), verified unchanged at run
-time: `e3b4f7db3b5d569e66561cbc45162127a937b8ae30097f3845e3e35ec3b18dad`.
+time: `e3b4f7db… (original) — current subject after the 2026-08-03 authority correction: 529179b93e7a59a91be3ea53dbdc3cfc3e8c0e962e9094528eea3ce45bdba561`.

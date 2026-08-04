@@ -74,7 +74,7 @@ Break a confirmed spec into small vertical tasks: each crosses the layers it nee
    <!-- user confirmation words and date; empty while status is open -->
    ```
 
-   Ticks are `[x]`; a ticked slice appends `Done: <date>: <one-line outcome>` inside it. The write is unconditional: when the user asks for chat only, acknowledge in one line, write the file anyway, and read back from it — the request moves where the summary goes, never whether the file exists. Done when every slice has Layers, Bound, Demo, and Blocked by fields and the file exists before the read-back begins.
+   Ticks are `[x]`; a ticked slice appends `Done: <date>: <one-line outcome>` inside it. A chat-only *preference* ("just list them here") changes where the summary goes, never whether the file exists: acknowledge in one line, write the file, and read back from it. An explicit *prohibition* ("do not write any file") is the user's boundary and wins: write nothing, deliver the complete parseable contract in chat instead, state in one line that the downstream pipeline reads the file, and offer to write it when implementation starts. Done when the file exists before the read-back begins — or, under an explicit prohibition, when the chat carries the complete contract, the consequence, and the offer.
 
 5. **Read back.** Present the slices, bounds, and edges as a numbered summary and ask for confirmation. Recut on objection; on confirmation, record the user's words and date under `## Confirmation`, then flip `status: confirmed`. Done only when both the confirmation record and confirmed status exist.
 
