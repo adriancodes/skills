@@ -24,9 +24,9 @@ _Avoid_: Design brief, session notes, transcript
 A session run by the `verify-work` skill: rounds of executed adversarial attacks against a finished artifact, each finding patched in the artifact, ending only after two consecutive rounds surface nothing new.
 _Avoid_: Testing, QA, review, hardening
 
-**Discipline layer**:
-The always-on behavior file (`work-discipline/work-discipline.md`) carrying the rules a baseline model empirically failed — nothing more. Not a skill; installed as an output style or CLAUDE.md content.
-_Avoid_: Fable layer, system prompt, persona, style guide
+**Ground rules**:
+The always-on behavior file (`ground-rules/ground-rules.md`) carrying the rules a baseline model empirically failed — nothing more. Not a skill; installed as an output style or CLAUDE.md content.
+_Avoid_: discipline layer, Fable layer, system prompt, persona, style guide
 
 **Soft reference**:
 How a toolbox skill mentions another skill: by name, with an inline fallback that works when the other skill isn't installed. The only permitted form of composition between skills.

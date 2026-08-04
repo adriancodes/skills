@@ -386,3 +386,9 @@ The prompt arm's reply was again literally "No." — its fourth consecutive full
 ### Final verdict: PILOT_SUPPORTED — evidence of record
 
 Every cell fresh, one subject, one frozen suite, no carried evidence, no post-hoc changes between run and score. **Evidence label:** directional pilot only — one model (`gpt-5.6-sol`), one harness route (Codex CLI 0.144.6 for frozen 0.144.1, ChatGPT auth), one rep per case, non-blind operator, behavior arms testing the always-loaded core without `references/patterns.md`. Not a SHIP claim; establishes no cross-model effectiveness. The v1→v8 sections above stand as the audit trail; v9 is the verdict of record.
+
+> Post-v9 editorial note (2026-08-04): the always-on layer was renamed
+> work-discipline -> ground-rules; be-concise's reference to it was updated
+> accordingly. Non-behavioral one-word change; subject SHA-256 after the
+> edit: 63f87c5240e8a448e08dbcd6d9ee6ed657bb166da9a2441b07bbd4edef37c971. The v9 verdict's behavioral evidence stands against
+> 3f9190fc… as recorded.

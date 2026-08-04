@@ -52,4 +52,4 @@ in SKILL.md; this file holds the supporting calibration material.
 Installing a model-invoked skill makes it discoverable, not permanently
 active. Explicit `/be-concise` applies to the current request and, where the
 harness preserves invoked-skill state, the current session. The
-work-discipline layer supplies the portable always-on form.
+ground-rules layer supplies the portable always-on form.

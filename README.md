@@ -37,18 +37,18 @@ Choose the skills you want during installation. Each works independently in any 
 | Sharpen a vague ask before running it | [`improve-prompt`](skills/improve-prompt/SKILL.md) |
 | Check you understand changes before shipping them | [`quiz-changes`](skills/quiz-changes/SKILL.md) |
 | Get short plain answers, not essays | [`be-concise`](skills/be-concise/SKILL.md) |
-| Everything, all session long | [`work-discipline`](work-discipline/work-discipline.md) (always-on layer) |
+| Everything, all session long | [`ground-rules`](ground-rules/ground-rules.md) (always-on layer) |
 | Ask a quick factual question | No skill — just ask |
 
 Five skills form an optional pipeline: `create-spec` → `create-tasks` → `implement-task` → `verify-work`, coordinated by `deliver-feature`. They hand work between sessions and teammates through files in `docs/specs/`. Each skill also works independently.
 
-## Work Discipline
+## Ground Rules
 
-[`work-discipline`](work-discipline/work-discipline.md) is an optional always-on behavior layer, not an installable skill. Copy it into Claude Code as an output style:
+[`ground-rules`](ground-rules/ground-rules.md) is an optional always-on behavior layer, not an installable skill. Copy it into Claude Code as an output style:
 
 ```bash
 mkdir -p ~/.claude/output-styles
-cp work-discipline/work-discipline.md ~/.claude/output-styles/
+cp ground-rules/ground-rules.md ~/.claude/output-styles/
 ```
 
 For other agents, add its contents to the agent's project instructions.
@@ -62,7 +62,7 @@ curl -fsSL https://raw.githubusercontent.com/adriancodes/skills/main/scripts/mig
 curl -fsSL https://raw.githubusercontent.com/adriancodes/skills/main/scripts/migrate-install.mjs | node - --apply  # move to trash
 ```
 
-Then restart your agent session so skill descriptions reload, and read the [CHANGELOG](CHANGELOG.md) — updates change agent behavior.
+If you installed the always-on layer under its old name, replace it: `rm ~/.claude/output-styles/work-discipline.md` and copy `ground-rules/ground-rules.md` per the Ground Rules section. Then restart your agent session so skill descriptions reload, and read the [CHANGELOG](CHANGELOG.md) — updates change agent behavior.
 
 ## Verify your install
 
@@ -70,7 +70,7 @@ Model-invoked skills can fail silently when their triggers do not fire. These ch
 
 - **create-spec** — say *"stress-test my plan to add search to the app."* Pass: exactly one question arrives, with a recommended answer, and `docs/specs/<date>-*.md` appears. Fail: a batch of questions, or code.
 - **verify-work** — point at any small script and say *"is this ready to ship?"* Pass: fixture files get written and executed. Fail: a verdict from reading the code.
-- **work-discipline** — give it an ambiguous task. Pass: it offers compact numbered options, recommends a sensible default, and allows a custom answer. Fail: it guesses instead of asking.
+- **ground-rules** — give it an ambiguous task. Pass: it offers compact numbered options, recommends a sensible default, and allows a custom answer. Fail: it guesses instead of asking.
 
 ## For teams
 
