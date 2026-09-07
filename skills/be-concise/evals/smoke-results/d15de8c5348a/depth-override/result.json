@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "case_id": "depth-override",
+  "kind": "behavior",
+  "subject_sha256": "d15de8c5348a0f24f2468801504fe86d02445bc2240d0e02e3daa2723ce17804",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.151.0",
+  "model": "gpt-5.6-sol",
+  "output": {
+    "path": "smoke-results/d15de8c5348a/depth-override/output.md",
+    "sha256": "e661cd0f0555b961fea50240ea40d7504d95deb75fba7d9bd8320d4d71778458"
+  },
+  "trace": {
+    "path": "smoke-results/d15de8c5348a/depth-override/trace.jsonl",
+    "sha256": "5b0eab8defa646b5b027e15561cdd278daabcc50863c4a383482062f8bd03146"
+  },
+  "observed_trigger": null,
+  "total_tokens": 19124
+}

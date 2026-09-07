@@ -1,5 +1,7 @@
 # Verify Work evidence status
 
+Historical Phase-6 observation (UNVERIFIED; raw transcripts, route, and scoring records unavailable): 5/5 for subject `4e50a5804e40…`; one finding round and one fresh dry round found all planted failures without editing the fixture outside disposable `.attacks/`. See the [Phase-6 report](../../../../docs/evidence/phase6-atomic-rewrite-2026-08-29.md). This does not fill the Tier-3 gap below.
+
 **One Tier-2-scope run is recorded: [`tier2scope-2026-08-01.md`](tier2scope-2026-08-01.md)** — held-out prompt-vs-skill pair plus both regressions (4 actor sessions, claude-fable-5, Claude Code, 2026-08-01; non-blind scorer, n=1 per arm). Its label is fixed: **Tier-2-scope evidence against a Tier-3 declaration — claim capped at targeted comparative support; full Tier-3 suite outstanding.** Skill-governed arms passed all critical assertions; the prompt arm failed promise-pinned, stop-bar-stated, and report-contract while matching the skill arm 3/3 on planted-flaw discovery. Evidence claims never exceed the recorded tier, harness, model, and date; this run does not upgrade the subject beyond a targeted-comparative candidate.
 
 ## Declared tier

@@ -16,7 +16,7 @@ metadata:
 
 ## Overview
 
-An engineer who ships code they cannot explain has outsourced their judgment, not their typing. Close the gap with retrieval practice: an adaptive quiz on the pending changes, one question at a time, answer before explanation. The skill tests the human, never the code — and it is advisory: it ends in an honest readiness read-back, never a verdict or a block.
+Use retrieval practice to expose gaps in an engineer's understanding. Ask one adaptive question at a time. Require an answer before explaining. Test the human, never the code. End with advisory readiness notes, never a gate.
 
 ## When to Use
 
@@ -27,26 +27,46 @@ An engineer who ships code they cannot explain has outsourced their judgment, no
 ## Do Not Use When
 
 - No pending changes exist: for general codebase comprehension, use `understand-codebase` (if installed)
-- The code itself needs judging: that is `code-review`'s job — this skill assumes the code is staying and tests whether the human understands it
+- The code needs judging: use `code-review`. This skill tests whether the human understands code that is staying.
 - Enforcement is wanted (block the PR, record a score): this skill never gates; say so and stop
 
 ## Required Context
 
-- The change set, resolved in this order: an explicit range the user names, else the branch diff against the merge-base, else staged plus unstaged changes. State which was used.
+- The change set. Prefer an explicit range, then the branch diff against the merge-base, then staged plus unstaged changes. State which source was used.
 - The user's focus area, when given — it bounds the whole session.
 - The repo's run/test commands, for executing prediction questions.
 
 ## Workflow
 
-1. **Scope the material.** Read the full change set plus enough surrounding code to understand what the changes interact with. Honor a stated focus exactly. Done when the changed behaviors and their interactions with existing code are identified — privately; reveal nothing yet.
+1. **Scope the material.** Read the full change set and relevant surrounding code. Honor a stated focus exactly. Identify changed behavior and its interactions privately.
 
-2. **Design the question set — privately.** Plan 5–8 questions, scaled down (2–3) for small diffs. Every question must pass the **lookup test**: if re-reading the diff text answers it, it is banned. Draw from five types: *counterfactual* ("what breaks if this lock is removed?"), *trace* ("a request with a stale token arrives — walk me through which branch handles it"), *prediction* ("what does this return for input X?" — executable), *justification* ("why streaming here instead of buffering?"), and *interaction* ("how does this change what the existing cache sees?"). Order warm-up to gotcha. Done when each planned question names the specific misunderstanding it would expose.
+   Done when the quiz has an evidence-backed scope.
 
-3. **Run the session, one question per message.** Ask exactly one question, then stop and wait. Never reveal an answer before the engineer commits to an attempt — "I don't know" counts as an attempt; a dumped question list is a failed session, not a fast one. Grade every answer with code evidence: quote the deciding lines or cite `file:line`. For prediction questions, run the code when a cheap command exists and show the real output beside the prediction. Adapt: a miss earns one harder follow-up in the same area before moving on; a clean, confident pass skips the remaining planned questions in that area. Done when every planned area is covered or the engineer stops the session.
+2. **Design the questions privately.** Plan 5–8 questions. Use 2–3 for a small diff. Apply the **lookup test**: ban questions answered by rereading the diff.
 
-4. **Read back readiness.** In 8 lines or fewer: the areas that held up, each shaky area with the exact thing to reread (`file:line`), and one advisory sentence on overall readiness. Advisory means advisory — "you'll want another pass over the abort path before someone reviews this", never "not ready to ship". Done when every miss from the session maps to a reread line.
+   Mix five types:
 
-5. **Offer the deck.** One line: offer to write the missed questions to `docs/quizzes/<date>-<slug>.md` as flashcards — question, the answer given, the correct answer with its evidence. Write only on acceptance. Done when the file is written or the offer declined.
+   - *counterfactual:* what breaks if this lock disappears?
+   - *trace:* which branch handles a stale token?
+   - *prediction:* what does this return for input X?
+   - *justification:* why stream instead of buffer?
+   - *interaction:* what does the existing cache now observe?
+
+   Order questions from warm-up to gotcha.
+
+   Done when each question targets one specific misunderstanding.
+
+3. **Run one question per message.** Ask exactly one question, then wait. Never reveal the answer before an attempt. "I don't know" counts as an attempt. Grade with quoted lines or `file:line` evidence. Execute prediction questions when a cheap command exists. Show real output beside the prediction. After a miss, ask one harder follow-up in the same area. After a clean pass, skip redundant questions there.
+
+   Done when every planned area is covered or the engineer stops.
+
+4. **Read back readiness.** Stay within 8 lines. Name strong areas. Map each shaky area to an exact `file:line` reread. End with one advisory readiness sentence. Never issue a shipping verdict.
+
+   Done when every miss maps to a reread line.
+
+5. **Offer the deck.** Offer one flashcard file at `docs/quizzes/<date>-<slug>.md`. Include each missed question, given answer, correct answer, and evidence. Write it only after acceptance.
+
+   Done when the file exists or the offer is declined.
 
 ## Tool Guidance
 
@@ -57,7 +77,9 @@ An engineer who ships code they cannot explain has outsourced their judgment, no
 - Reading only the diff: interaction questions require the surrounding code
 
 **Constraints:**
-- The session is read-only except the accepted deck file — never edit, fix, or comment the code under quiz, even when a question exposes a real bug; name the bug in the read-back and leave the fix to the engineer
+- Keep the session read-only except for an accepted deck file.
+- Never edit, fix, or comment on the code under quiz.
+- Put probable bugs in the read-back and leave fixes to the engineer.
 
 ## Success Criteria
 
@@ -82,9 +104,9 @@ An engineer who ships code they cannot explain has outsourced their judgment, no
 ## Failure Modes
 
 - **No pending changes:** say so and point to `understand-codebase` (if installed) for general comprehension; do not quiz the whole repository.
-- **The diff is too large to quiz honestly (~1,500+ changed lines):** ask which part matters most, or quiz the stated focus only — never pad a session to cover everything thinly.
-- **The engineer demands all questions and answers at once:** name the cost in one sentence — reading answers is not retrieval practice — then provide a self-contained quiz artifact with answers at the bottom. Their session, their call.
-- **A question exposes a probable real bug:** finish the session; put the bug first in the read-back, labeled as a finding for `code-review` or the engineer — not as a quiz item to argue about.
+- **The diff exceeds about 1,500 changed lines:** ask for the most important area. Never cover everything thinly.
+- **The engineer requests all questions and answers:** name the retrieval cost in one sentence. Then provide a self-contained quiz with answers at the bottom.
+- **A question exposes a probable bug:** finish the session. Put the bug first in the read-back. Label it for `code-review` or the engineer.
 
 ## Summary
 

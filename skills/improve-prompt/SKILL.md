@@ -12,24 +12,32 @@ metadata:
 
 ## Overview
 
-Rewrite a rough ask into a clear prompt without changing its intent. Mark every inference, show the result, name its destination, and stop unless the original request explicitly authorized execution. **Rewrite is not authority.**
+**Rewrite is not authority.** Clarify the ask without changing its intent. Expose every inference. Stop unless the original request authorized execution.
 
 ## Scope
 
-Use when explicitly invoked as `/improve-prompt <rough ask>` or by name.
+Use only when explicitly invoked as `/improve-prompt <rough ask>` or by name.
 
 Do not use when:
 
 - The prompt is already precise: return it unchanged.
-- The request is a multi-decision plan: route it to `create-spec` when installed.
+- The request is a multi-decision plan: use `create-spec` when installed.
 - The request is conversational, not text to rewrite: answer it directly.
 
 ## Workflow
 
-1. **Rewrite.** Turn the rough ask into a clear prompt, preserving the original goal, scope, constraints, and key phrases. Add structure only where it clarifies what was requested. Done when the rewrite stands alone without changing the request.
-2. **Expose inference.** Mark every detail unsupported by the request or visible context inline as `[assumed: …]`, and list the assumptions below the prompt for scanning. If useful specificity would need more than three assumptions, ask one load-bearing question instead of fabricating a specification. Done when no invention is hidden and at most three assumptions remain.
-3. **Name the target.** Honor a user-named destination. Otherwise name the narrowest matching installed skill or `plain task`; never invent a tool or silently broaden authority. Done when exactly one target is visible.
-4. **Stop or execute.** Stop after showing the rewrite unless the original request explicitly said to run, implement, or otherwise execute it. If it did, pass a clean prompt beneath a labeled `Assumed:` block and stay within the original scope. Done when no side effect occurs without original authorization.
+1. **Rewrite.** Preserve the goal, scope, constraints, and key phrases. Add structure only when it clarifies the request.
+
+   Done when the prompt stands alone without changing intent.
+2. **Expose inference.** Mark unsupported details inline as `[assumed: …]`. List the same assumptions below the prompt. If useful specificity needs more than three assumptions, ask one load-bearing question.
+
+   Done when no invention is hidden and at most three assumptions remain.
+3. **Name the target.** Honor a named destination. Otherwise name the narrowest matching installed skill or `plain task`. Never invent a tool or broaden authority.
+
+   Done when exactly one target is visible.
+4. **Stop or execute.** Stop after the rewrite unless the original request said to run, implement, or execute it. When authorized, pass a clean prompt beneath `Assumed:` and keep the original scope.
+
+   Done when no side effect occurs without original authorization.
 
 ## Output Format
 
@@ -59,7 +67,7 @@ Output:
 >
 > **Execution:** not started; rewriting did not authorize implementation
 
-## Success Criteria
+## Verification
 
 - The original intent and constraints remain intact.
 - Every unsupported detail is visibly marked and listed.
@@ -67,7 +75,7 @@ Output:
 - Exactly one target is named.
 - Execution begins only when the original request authorized it.
 
-## Common Mistakes
+## Mistakes
 
 | Mistake | Fix |
 |---------|-----|
@@ -76,12 +84,10 @@ Output:
 | Treating `/improve-prompt` as permission to work | Show the rewrite and stop |
 | Routing to several possible skills | Name the narrowest fit or ask one choice question |
 
-## Failure Modes
+## Stop Conditions
 
 - **More than three assumptions are needed:** Ask one question instead of writing a speculative plan.
 - **Intent conflicts with visible context:** Show the conflict; never silently choose a new goal.
 - **No installed skill fits:** Label the target `plain task`.
 
-## Summary
-
-Preserve intent, expose every assumption, and stop after the rewrite unless the original request explicitly authorized execution.
+Preserve intent. Expose every assumption. Stop unless execution was already authorized.

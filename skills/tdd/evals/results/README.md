@@ -10,7 +10,9 @@ The source had useful public-seam, independent-oracle, vertical-slice, and bound
 
 `cases.jsonl` preserves one prompt/skill value case plus data-boundary and combined-pressure regressions. Tier-2 runs executed on 2026-08-01: 4 actor sessions (value pair + 2 regressions), 22/22 assertions PASS — see `tier2-2026-08-01.md`. Evidence label: targeted comparative support (Tier 2), claude-fable-5, Claude Code, 2026-08-01.
 
-Current subject SHA-256: `6e2be0a23386df5031f1e732f66969eb2acfcf0e709f7cb32bd850545557968e`.
+Current subject SHA-256: `81f0678b0ad85524fa633c102132b9ed6f4a24c0055965aa4e4767735f19755f` (2026-09-05: restored the repeat-until-all-behaviors gate and the Genuine Exceptions escalation path dropped by the atomic rewrite). All three frozen cases were rerun fresh on this subject on 2026-09-07: 16/16 assertions PASS on Claude Code, `claude-fable-5`, with raw reports, scored results, and end-state workspaces preserved — see [`atomic-restore-2026-09-07/`](atomic-restore-2026-09-07/README.md). The 2026-08-29 regression below tested the prior subject `8f46a4456491…`.
+
+The 2026-08-29 atomic rewrite reported 16/16 assertions, but raw outputs, route metadata, and scoring records are unavailable. This is an UNVERIFIED historical observation, not accepted current-subject PASS evidence. See `atomic-rewrite-2026-08-29.md`. The original Tier-2 prompt comparison remains historical evidence for its tested subject.
 
 Local checks on 2026-07-18:
 

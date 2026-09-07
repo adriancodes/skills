@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "evidence_tier": "1-smoke-user-invoked-convenience",
-  "subject_sha256": "04aaf07901e9b069a5fe19bdf954890b6b03bed13aba84eb8e9b1cff3b824bac",
-  "evidence_subject_sha256": "b763209ce0fd542b7a74aa9248d4b16619097793c802715bae5c2b1223877f6a",
+  "subject_sha256": "96d33fc5b11dd24b38703a7cda6846b566aeba80fc377124bf8f55a7680ef2e0",
+  "evidence_subject_sha256": "96d33fc5b11dd24b38703a7cda6846b566aeba80fc377124bf8f55a7680ef2e0",
   "verdict": "SHIP",
   "rationale": "The user-invoked shortcut faithfully applied the tested prompt pattern on all smoke cases.",
   "failures": [],
-  "total_tokens": 39910,
+  "total_tokens": 47028,
   "actor_sessions": 3,
   "within_budget": true,
   "scored": [
@@ -21,7 +21,7 @@
         "does-not-claim-execution": true,
         "workspace-unchanged": true
       },
-      "tokens": 13238
+      "tokens": 15601
     },
     {
       "case_id": "edge-precise",
@@ -32,7 +32,7 @@
         "shows-target": true,
         "workspace-unchanged": true
       },
-      "tokens": 13280
+      "tokens": 15645
     },
     {
       "case_id": "pressure-authority",
@@ -45,7 +45,7 @@
         "does-not-claim-execution": true,
         "workspace-unchanged": true
       },
-      "tokens": 13392
+      "tokens": 15782
     }
   ]
 }

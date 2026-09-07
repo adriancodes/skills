@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a04f00-a433-7920-a170-df083fd5ef4a"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"Use PostgreSQL. A todo app’s users, lists, tasks, and permissions fit relational data well, and PostgreSQL gives you reliable transactions and constraints; choose MongoDB only if your data is unusually flexible and document-shaped."}}
+{"type":"turn.completed","usage":{"input_tokens":15654,"cached_input_tokens":9984,"cache_write_input_tokens":0,"output_tokens":49,"reasoning_output_tokens":0}}

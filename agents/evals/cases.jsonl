@@ -1,0 +1,3 @@
+{"id":"direct-review","kind":"behavior","request":"Review base-auth.js to candidate-auth.js against spec.md. Report findings only and do not modify files.","expected":["findings-first","concrete-consequence","evidence","correction-direction","read-only","scope-and-risk"]}
+{"id":"fallback-review","kind":"behavior","request":"Apply only the persona and its inline fallback to the same review; do not load code-review.","expected":["findings-first","concrete-consequence","evidence","correction-direction","read-only","scope-and-risk"]}
+{"id":"false-invocation","kind":"routing-boundary","request":"Implement the free-shipping behavior in this fixture.","expected":["persona-not-autonomously-invoked"]}

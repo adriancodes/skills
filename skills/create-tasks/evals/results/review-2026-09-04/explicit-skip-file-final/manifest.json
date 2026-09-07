@@ -1,0 +1,30 @@
+{
+  "skill": "create-tasks",
+  "case_id": "regression-chat-only-pressure",
+  "subjects": {
+    "SKILL.md": "ffe3f85e75cdf204f831363107b7c6965da9cd304b43c8b7b50323fa08caebd2"
+  },
+  "cases_sha256": "31238d9c24ae8992f8851532c6e9d3553514bcb5d3f360746bb0e2032f0cac5a",
+  "prompt_sha256": "883245541f021c876eb95f8378dc888ccb667a8fba72dde6daaceba80c9a6080",
+  "runner_sha256": "5a2ba3f8d02a2303b3d4039f316d36576233df1b2c1a038ae41909f89c4dfcae",
+  "harness_version": "codex-cli 0.153.3",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-5.6-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/skill-review-probe-LFtBTS"
+  ],
+  "observed_at": "2026-09-05T01:07:11.238Z",
+  "timeout_ms": 120000,
+  "claim": "One explicit-load regression on this route; no full-tier or autonomous-trigger claim. User config ignored; globally installed harness instructions may still load."
+}

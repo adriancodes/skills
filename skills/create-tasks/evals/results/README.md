@@ -1,5 +1,23 @@
 # create-tasks evidence status
 
+Current review corrections: see [the recorded probes and limits](../../../../evals/review-fixes.md). Raw current-subject results are under `review-2026-09-04/`; replay with `node evals/check-review-probes.mjs` from the repository root. These probes do not replace the full declared tier.
+
+## Review correction — 2026-09-04
+
+The old `regression-chat-only-pressure` oracle rewarded violating "skip the file". Its exact prior request and assertions are preserved in [superseded-chat-only-case.json](superseded-chat-only-case.json). The active case keeps that request and now requires zero writes, the full contract in chat, the pipeline consequence, and an offer to save later.
+
+`regression-chat-preference` separately requests a chat summary without prohibiting writes. `regression-no-write-boundary` now uses the same executable case schema as the other behavior cases. No valid authority case was weakened.
+
+Historical recommendations below to make step 4 unconditional are superseded. A write despite "skip the file" is not accepted PASS evidence, including Session A of the 2026-08-03 addendum. Historical actor records remain unchanged; none establishes a current-subject verdict.
+
+## Description change — 2026-08-29
+
+On 2026-08-29 the description gained the explicit trigger phrase "create vertical slices" after the lexical portfolio preflight exposed that miss. The 51-case preflight passes. Installed-harness triggering for this revision remains untested, so the behavioral evidence and current routing evidence are separate claims.
+
+## Historical evidence
+
+Historical Phase-6 observation (UNVERIFIED; raw transcripts, route, and scoring records unavailable): 4/4 for subject `d226abdb718f…`; the chat-pressure actor wrote the full slices file before read-back. See the [Phase-6 report](../../../../docs/evidence/phase6-atomic-rewrite-2026-08-29.md). The result below records the earlier failure that motivated the authority correction.
+
 One Tier-2 run is recorded: `tier2-2026-08-01.md` (targeted comparative
 support, claude-fable-5, Claude Code, 2026-08-01). Outcome: value pair 6/6
 (skill) vs 4/6 (prompt) — margin on the file contract and confirmation gate;

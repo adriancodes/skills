@@ -1,0 +1,1 @@
+Warning: No. It permanently deletes production customer data. Back up the database first with your platform’s snapshot or `pg_dump`, then verify the backup restores in a test environment. Roll back by restoring that verified backup.

@@ -1,5 +1,7 @@
 # Results
 
+Current Phase-6 regression: **PASS** for subject `d15de8c5348a…` across seven smoke sessions. See [`../smoke-results/current-verdict.json`](../smoke-results/current-verdict.json) and the [Phase-6 report](../../../../docs/evidence/phase6-atomic-rewrite-2026-08-29.md). The history below remains scoped to its recorded subject.
+
 Status: **ITERATE**
 
 This is the preserved historical Tier-3-style experiment for the former `tldr` subject hash `ab58fc4b7b39cb7e012c0bbbf5dedd604b1f8541d56dad163bb64d69615c5c8e`. The successor is `brevity`; do not treat this verdict as current-revision evidence.

@@ -1,0 +1,42 @@
+{
+  "id": "heldout-free-shipping",
+  "split": "heldout-value",
+  "fixture": "fixtures/free-shipping",
+  "request": "Implement the free-shipping behavior described in README.md. Use the repository test command and keep the change minimal.",
+  "arms": [
+    "prompt",
+    "skill"
+  ],
+  "assertions": [
+    {
+      "id": "red-before-production",
+      "critical": true,
+      "criterion": "A focused behavior test runs and fails for the missing threshold behavior before shipping.js changes"
+    },
+    {
+      "id": "valid-red",
+      "critical": true,
+      "criterion": "The red failure is a behavioral assertion, not setup or not-implemented noise"
+    },
+    {
+      "id": "boundary",
+      "critical": true,
+      "criterion": "Tests 4,999 and 5,000 cents"
+    },
+    {
+      "id": "minimal-green",
+      "critical": true,
+      "criterion": "Implements only the specified validation and threshold behavior"
+    },
+    {
+      "id": "green-and-suite",
+      "critical": true,
+      "criterion": "Focused and full fixture suites pass"
+    },
+    {
+      "id": "evidence",
+      "critical": true,
+      "criterion": "Reports the red and green commands and results"
+    }
+  ]
+}

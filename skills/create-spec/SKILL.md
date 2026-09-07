@@ -16,7 +16,7 @@ metadata:
 
 ## Overview
 
-Turn a plan into a confirmed spec by asking one question at a time and recording each resolved decision in the session's decision log. Update the glossary as terms clarify; create ADRs only for durable architectural choices. A stated decision stays unconfirmed until the user approves the final read-back.
+Turn a plan into a confirmed spec. Ask one question at a time. Record each decision as it resolves. Update the glossary when terms clarify. Create ADRs only for durable architecture choices. Nothing is confirmed before the final read-back.
 
 ## When to Use
 
@@ -34,34 +34,53 @@ Turn a plan into a confirmed spec by asking one question at a time and recording
 - Poking holes in a *built artifact*, not a plan, is `verify-work`'s job (executed attacks, not questions)
 - Implementation is underway and the user wants execution, not design review
 - The user invokes a different interview skill by name (e.g. `/grilling` from another installed collection): follow that skill
-- The deliverable is itself an agent skill: a skill-authoring skill such as `create-skill` fits better, but switch mid-session only through step 1's proposed-switch question or the user's say-so; otherwise proceed with the skill spec as the plan
+- The deliverable is an agent skill: `create-skill` fits better. Switch mid-session only after the user approves the proposed switch.
 
 ## Required Context
 
 - The plan under spec session, restated in one sentence and accepted by the user
-- A scan of the target repo (`CONTEXT.md` or `CONTEXT-MAP.md`, `docs/adr/`, `docs/specs/`): read existing documents before the first question; resume and extend them rather than duplicating
+- Existing `CONTEXT.md`, `CONTEXT-MAP.md`, ADRs, and specs. Read them before the first question. Resume matching work instead of duplicating it.
 
 ## Workflow
 
-Load `references/artifacts.md` at session open, before creating the decision log: it holds formats and rules for all three session documents.
+Load `references/artifacts.md` before creating the decision log.
 
-1. **Open.** Announce the skill by name. If another installed skill fits better, propose the switch as one question; until the user's explicit say-so lands, every rule here stays in force. Restate the topic in one sentence naming the problem, never a solution: any design choice riding in the restatement or original plan is a step-2 branch, not a given. If an open decision log matches the topic, resume it: rerun step 2 against the current request and repo state, reopen any inherited decision the current state contradicts, and treat inherited ticks as provisional until they survive that check. Otherwise create `docs/specs/<yyyy-mm-dd>-<slug>.md` with `status: open`. Done when the log exists and names the topic.
+1. **Open.** Announce the skill by name. If another skill fits better, propose one switch question. Keep these rules active until the user approves it. Restate the problem in one sentence. Do not smuggle a solution into that sentence.
 
-2. **Map branches.** List every design branch the plan raises (purpose, structure, naming, edge cases, whatever the topic demands) as checkboxes in the log's Branches section. A branch is one decidable question: split any needing more than one independent choice before asking or ticking it. Mirror branches into the harness's todo tool if one exists; the log stays the tracker of record. Add mid-session discoveries the moment they surface, never holding them in memory. Done when every branch from the request and repo scan is listed.
+   Resume any matching open decision log. Remap its branches against the current request and repository. Treat inherited ticks as provisional. Reopen decisions contradicted by current evidence. Otherwise create `docs/specs/<yyyy-mm-dd>-<slug>.md` with `status: open`.
 
-3. **Choose the mode.** When the conversation already holds the answers, switch to **capture**: zero questions during synthesis. Reread the full scroll and bucket every item by provenance: *decided* (the user's words, cited), *ASSUMED* (implied but unstated, marked on the entry: a product-shaping choice like caps, deletion semantics, or retry policy is never ASSUMED: undiscussed means Deferred, however standard the default looks), or *Deferred* (consequential and open). Flag gaps found mid-capture instead of asking; then skip to the exit gate. The read-back is capture's first question: a build-blocking Deferred branch it exposes ends capture and reopens the interview. Otherwise, interview:
+   Done when the log exists and names the problem.
 
-4. **Question relentlessly: one per turn.** Walk the branches in dependency order (upstream decisions first). For each question:
-   - **Explore before asking.** Never ask a question of fact (what the code does, what exists): answer it from the repo and record it. Exploration never settles a judgment call: however strongly the findings point, a preference or trade-off is still asked: or, under delegation, logged as ASSUMED.
-   - **Ask via the harness's multi-option question UI**: recommended answer first, a one-line "why" per option, free-text always available. Without it, ask in prose with 2–4 numbered options, recommendation first. Every "why" argues *for* its option: leave off strawmen, and record a question with no defensible alternative as ASSUMED instead of asking it. Absent explicit delegation, at most 2 branches per session close as ASSUMED this way; a third candidate proves the alternatives are defensible enough to ask.
-   - **Probe with one concrete scenario** when the answer draws a boundary: "so when X happens, this means Y: correct?" Accept the answer only after the scenario survives. A probe is a question: it takes the next turn when the answer needs real thought, and may ride as the option question's explicit confirm-line when it doesn't: never silently skipped.
-   - **Read terse answers precisely.** A terse affirmative to a specific option ("yeah fine") resolves that branch as decided. Blanket delegation ("whatever you think") authorizes only reversible, ordinary implementation defaults: record those as ASSUMED and go to the exit gate. Product-shaping branches (caps, deletion semantics, security policy, retention, public contracts) stay Deferred even under blanket delegation and block confirmation until the user decides them.
-   - **Record on resolution.** Append the decision to the log, tick the branch, capture or challenge glossary terms in `CONTEXT.md`, and offer an ADR only when the three-part test in `references/artifacts.md` passes.
-   Done when every branch is decided, logged as ASSUMED, or explicitly marked Deferred.
+2. **Map branches.** List every design choice as a checkbox under Branches. Make each branch one decidable question. Split branches that contain independent choices. Mirror them into the harness todo tool when available. Keep the log as the source of truth. Add new branches immediately.
 
-5. **Exit gate.** Read back every decision from the log as a numbered list, stating every ASSUMED entry and Deferred branch explicitly, and ask for confirmation. If a product-shaping or otherwise build-blocking branch is Deferred, ask it next instead of confirming. Otherwise record the user's verbatim confirmation in the log's Confirmation section and set `status: confirmed`. An objection reopens its branch and returns to step 4. Done only when the log says confirmed and no build-blocking branch is Deferred.
+   Done when the request and repository scan are fully mapped.
 
-6. **Hand off.** Summarise what was written (log path, glossary terms added, ADRs created) and stop. Building begins only after this point.
+3. **Choose the mode.** Use **capture** when the conversation already contains the answers. Ask zero questions during synthesis. Reread the full conversation. Classify every item as:
+
+   - *decided:* the user's cited words;
+   - *ASSUMED:* implied but unstated;
+   - *Deferred:* consequential and open.
+
+   Never assume product-shaping policy. Caps, deletion, retries, security, and public contracts stay Deferred when unstated. Flag gaps without asking. Then move to the exit gate. The read-back is capture's first question. Reopen the interview if it exposes a build-blocking Deferred branch.
+
+4. **Ask one question per turn.** Walk branches in dependency order.
+
+   - **Explore first.** Answer factual questions from the repository. Record the evidence. Still ask judgment and trade-off questions.
+   - **Offer real options.** Use the harness option UI when available. Otherwise give 2–4 numbered choices. Put the recommendation first. Give one reason per choice. Keep free text available. Remove strawmen.
+   - **Limit implicit assumptions.** Record a no-choice default as ASSUMED. Without delegation, allow at most 2 such branches per session.
+   - **Probe boundaries.** Test a boundary answer with one concrete scenario. Use the next turn when the probe needs thought.
+   - **Interpret terse answers narrowly.** "Yeah fine" resolves only the offered option. Blanket delegation covers reversible implementation defaults only. Record those as ASSUMED. Keep product policy Deferred.
+   - **Record immediately.** Append the decision and tick its branch. Update domain glossary terms. Offer an ADR only when the reference test passes.
+
+   Done when every branch is decided, ASSUMED, or Deferred.
+
+5. **Run the exit gate.** Read back every decision as a numbered list. Name every ASSUMED and Deferred item. Ask for confirmation. If a build-blocking branch remains Deferred, ask it next instead. Record confirmation verbatim and set `status: confirmed`. Reopen any objected branch.
+
+   Done when the log is confirmed and no build-blocking branch is Deferred.
+
+6. **Hand off.** Name the log path, glossary changes, and ADRs. Then stop. Building starts only afterward.
+
+   Done when the handoff names every written artifact.
 
 ## Example: one question cycle
 
@@ -117,8 +136,8 @@ All of them mean: return to the current workflow step.
 
 ## Genuine Exceptions
 
-- **"Just decide for me."** Decide reversible implementation defaults, record them as ASSUMED, keep product-shaping branches Deferred, then run the exit gate; those branches must be decided before confirmation.
-- **"Skip the read-back, build now."** An explicit instruction to proceed, neither solicited nor offered as an option, overrides the gate: whether it pre-empts the read-back or cuts it short after delivery. Record the user's words verbatim in the Confirmation section, set `status: confirmed-by-override`, proceed without commentary.
+- **"Just decide for me."** Decide reversible implementation defaults and mark them ASSUMED. Keep product policy Deferred. Resolve it before confirmation.
+- **"Skip the read-back, build now."** An unsolicited explicit override may bypass the gate. Record the words verbatim. Set `status: confirmed-by-override` and proceed.
 - **No file-write access.** Keep the log in-conversation as a fenced block the user can save; every other rule still applies.
 
 ## Common Mistakes
@@ -134,9 +153,9 @@ All of them mean: return to the current workflow step.
 
 ## Failure Modes
 
-- **Answers turn terse or impatient:** Impatience means an explicit pace complaint or two consecutive terse answers to *distinct* questions; a terse pick of an offered option is a decision, never impatience. When it fires, ask exactly one question: "assume the rest and read back, or keep going?" Assent to assuming follows the delegation path; anything else continues the spec session. Never convert disengagement into silent unilateral decisions.
-- **Scope explodes mid-session:** Propose a split; it happens only with the user's assent. Excess branches move to their own spec session, but no branch the current build depends on leaves this log, and any split log covering build inputs reaches its own gate before building begins.
-- **The topic has no repo:** Session documents cannot interoperate with existing conventions; emit them in-conversation and say where they would live.
+- **Answers become impatient:** Trigger only on an explicit pace complaint or two consecutive terse answers to distinct questions. A terse pick of an offered option is a decision, never impatience. Ask: "assume the rest and read back, or keep going?" Never infer delegation from silence.
+- **Scope explodes:** Propose a split and require assent. Keep build-blocking branches in the current log. Confirm every split log that supplies build inputs.
+- **No repository exists:** emit the session documents in conversation. State where they would normally live.
 
 ## Additional Resources
 

@@ -1,0 +1,1 @@
+Use PostgreSQL. A todo app’s users, lists, tasks, and permissions fit relational data well, and PostgreSQL gives you reliable transactions and constraints; choose MongoDB only if your data is unusually flexible and document-shaped.

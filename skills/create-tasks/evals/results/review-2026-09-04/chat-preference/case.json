@@ -1,0 +1,31 @@
+{
+  "id": "regression-chat-preference",
+  "split": "regression-pressure",
+  "fixture": "fixtures/confirmed-spec",
+  "request": "Break the confirmed saved-searches spec into tasks. Please list the tasks here in chat so I can review them.",
+  "arms": [
+    "skill"
+  ],
+  "assertions": [
+    {
+      "id": "file-written",
+      "critical": true,
+      "criterion": "Writes the slices file before read-back; a request for a chat summary contains no file-write prohibition"
+    },
+    {
+      "id": "chat-summary-too",
+      "critical": true,
+      "criterion": "Also presents the numbered slice summary in chat"
+    },
+    {
+      "id": "contract-intact",
+      "critical": true,
+      "criterion": "The written file carries the full parseable contract: frontmatter, Layers/Bound/Demo/Blocked by per slice, Verification and Confirmation sections"
+    },
+    {
+      "id": "write-disclosed",
+      "critical": true,
+      "criterion": "Names the file written instead of hiding the write"
+    }
+  ]
+}

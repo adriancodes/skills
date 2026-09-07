@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "case_id": "normal-recommendation",
+  "kind": "behavior",
+  "subject_sha256": "d15de8c5348a0f24f2468801504fe86d02445bc2240d0e02e3daa2723ce17804",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.151.0",
+  "model": "gpt-5.6-sol",
+  "output": {
+    "path": "smoke-results/d15de8c5348a/normal-recommendation/output.md",
+    "sha256": "1d271cb3480e55f58e7829b95695e784f8ea795d73a4886effd94ec87eb53449"
+  },
+  "trace": {
+    "path": "smoke-results/d15de8c5348a/normal-recommendation/trace.jsonl",
+    "sha256": "574fef393f30e43f605334ca566dc96812da8c0bd198c6c43d708e4ea9bdb29e"
+  },
+  "observed_trigger": null,
+  "total_tokens": 15703
+}

@@ -12,33 +12,37 @@ metadata:
 
 ## Overview
 
-The first three answers to any open-ended question are the answers every senior engineer gives in thirty seconds: correct, and forgettable. Escape them by fanning out isolated parallel branches under distinct cognitive frames, then converging with a critic that ranks by fit — never by cleverness. Isolation is the mechanism: branches that see each other anchor each other, and the fan-out collapses into one wide thought.
+Obvious answers arrive first. Escape them with isolated parallel branches under distinct frames. Then converge by fit, never cleverness. Branches that see each other anchor, so keep them isolated.
 
 Render the result as a shortlist a skimmer absorbs in one glance. Hold everything else back until asked.
 
 ## When to Use
 
 - Explicit invocation only: `/explore-options <problem>`. Never self-invoke.
-- Fits: architecture choices, API surfaces, naming, product mechanics — any "what are my options" moment where the obvious answer being wrong is expensive.
+- Fits architecture, API, naming, and product decisions where an obvious answer may be costly.
 
 ## Do Not Use When
 
 - One canonical answer exists: give it directly; a fan-out decorates the inevitable.
 - A bug needs a root cause: `diagnose` (if installed) owns hypothesis generation with a reproduction loop.
 - The deliverable is a module interface: `design-an-interface` (if installed) produces full competing designs; this skill produces idea-level options.
-- Requirements are still unpinned: pin them first (`create-spec` if installed, otherwise one direct question) — diverging on an unconfirmed problem explores the wrong space.
+- Requirements are unpinned: use `create-spec` when installed. Otherwise ask one direct question first.
 
 ## Required Context
 
 - The problem statement and its stated constraints: scale, latency, budget, compatibility — whatever bounds a viable answer.
-- When no constraint is stated, ask exactly one question for the binding constraints and success criteria before spawning anything: an unconstrained pool cannot be converged honestly.
+- When constraints are absent, ask exactly one question for constraints and success. Do not fan out first.
 - A harness with parallel subagent dispatch (see Failure Modes when absent).
 
 ## Workflow
 
-1. **Pick 5 frames.** From the table below: 4 whose tags match the problem's shape, plus exactly 1 tagged `wild`. Vary the picks on repeat runs of the same problem. Done when 5 frames are chosen and at least one is wild.
+1. **Pick 5 frames.** Choose 4 matching tags and exactly 1 `wild` tag. Vary repeat runs.
 
-2. **Diverge: parallel and isolated.** Spawn 5 subagent calls in a single message, one frame each. Each branch receives only the problem, the stated constraints, its frame's vantage prompt, and the generator instruction below — nothing else. Never serialize the calls, never pass one branch's output to another, and never simulate branches inside the orchestrator's own context: a simulated fan-out is one wide thought in a costume. Done when all 5 branches return.
+   Done when 5 frames are chosen, including one wild frame.
+
+2. **Diverge in parallel.** Spawn 5 isolated subagents in one message. Give each only the problem, constraints, frame prompt, and generator instruction. Never serialize them. Never share branch output. Never simulate branches in the orchestrator.
+
+   Done when all 5 branches return.
 
    Generator instruction, verbatim per branch:
 
@@ -51,7 +55,7 @@ Render the result as a shortlist a skimmer absorbs in one glance. Hold everythin
    - Run the constraint check: restate the stated constraints and verify the top pick violates none. A pick that fails is demoted — it never ships as the winner, however clever.
    - Fill the ★ wild slot with the strongest novel-but-viable idea. The wild slot never outranks a constraint-passing pick.
 
-   Done when 3 ranked picks pass the constraint check and the wild slot is filled or declared empty.
+   Done when 3 ranked picks pass and the wild slot is filled or declared empty.
 
 4. **Render the shortlist: 15 lines or fewer.** With no preamble or narration, emit exactly, in order:
    - 1 line: the problem and its binding constraint.
@@ -64,7 +68,7 @@ Render the result as a shortlist a skimmer absorbs in one glance. Hold everythin
 
 5. **Expand on demand only.**
    - `map`: render every cluster — one header line per cluster angle, one line per idea. No commentary.
-   - `deepen <pick>`: one subagent call producing a 4–8 sentence build sketch, the load-bearing risk, the first concrete step, and 3 child ideas. Render verbatim.
+   - `deepen <pick>`: call one subagent. Return a 4–8 sentence sketch, key risk, first step, and 3 child ideas.
 
    Done when the requested layer is rendered and nothing beyond it.
 
@@ -103,14 +107,14 @@ Pick 5 per run: 4 matching the problem's tags + 1 wild.
 
 ## Failure Modes
 
-- **No parallel subagent support in the harness:** say so, then offer the fallback — a single-context strong prompt (10 diverse approaches, obvious ones banned, clustered, traps flagged) — labeled as anchored, not isolated. Never silently simulate isolation.
-- **All branches converge on one angle anyway:** the problem is narrower than it looked; report that finding with the direct answer instead of padding the pool.
+- **No parallel subagents:** say so. Offer one strong prompt for 10 clustered approaches with traps. Label it anchored, not isolated.
+- **All branches converge:** report that the problem is narrower than expected. Give the direct answer without padding.
 - **No constraints obtainable:** stop after one question; rank by viability alone and say the constraint check was skipped.
 
 ## Provenance
 
-Adapted from ADHD (github.com/UditAkhourii/adhd, MIT): the isolation invariant and generator/critic split are retained; the ranking policy (fit-first with a constraint-checked winner and quarantined wild slot), the layered 15-line output contract, and the deduped frame table are redesigned. Cost: ~6 agent calls per run, +1 per `deepen`.
+Adapted from ADHD (github.com/UditAkhourii/adhd, MIT). It retains isolation and the generator/critic split. This version adds fit-first ranking, a gated wild slot, and layered output. Cost: about 6 calls, plus 1 per `deepen`.
 
 ## Summary
 
-Fan out 5 isolated frames in parallel, converge fit-first with a constraint-checked winner and one quarantined ★ wild pick, and render 15 lines or fewer. Everything deeper waits to be asked for.
+Fan out 5 isolated frames. Converge by fit. Render at most 15 lines. Hold deeper material until requested.

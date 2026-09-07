@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "claim": "Targeted current-subject regression probes only. Not a complete Tier-2 comparison or Tier-3 validation.",
+  "scoring": "Non-blind manual language scores; replay independently verifies hashes, coverage, and workspace effects.",
+  "current": [
+    {
+      "skill": "create-skill",
+      "label": "minimal-workflow-retry",
+      "checks": {
+        "minimal-scope-accepted": {
+          "pass": true,
+          "evidence": "output.md reports PASS for all four checks and explicitly accepts the diagnose collision in Scope."
+        }
+      },
+      "workspace_before": {},
+      "workspace_after": {}
+    },
+    {
+      "skill": "create-skill",
+      "label": "missing-boundary",
+      "checks": {
+        "missing-boundary-rejected": {
+          "pass": true,
+          "evidence": "output.md fails Required Sections, Boundaries, and Positioned because exclusions and collision boundaries are absent; the headings remain present."
+        }
+      },
+      "workspace_before": {},
+      "workspace_after": {}
+    },
+    {
+      "skill": "create-spec",
+      "label": "terse-option-picks",
+      "checks": {
+        "no-false-impatience": {
+          "pass": true,
+          "evidence": "output.md records choices 3 and 2, then asks the recipient question without a pacing or delegation offer."
+        },
+        "next-product-question": {
+          "pass": true,
+          "evidence": "output.md records both events and hourly digest in the open log, leaves recipient policy unresolved, and asks one recipient question."
+        }
+      },
+      "workspace_before": {},
+      "workspace_after": {}
+    },
+    {
+      "skill": "create-spec",
+      "label": "explicit-pace-complaint",
+      "checks": {
+        "pace-choice": {
+          "pass": true,
+          "evidence": "output.md asks one choice between assume-and-read-back and keep-going."
+        },
+        "no-silent-delegation": {
+          "pass": true,
+          "evidence": "output.md leaves recipient and retention policies explicitly Deferred; it neither confirms the spec nor starts implementation."
+        }
+      },
+      "workspace_before": {},
+      "workspace_after": {}
+    },
+    {
+      "skill": "create-tasks",
+      "label": "explicit-skip-file-final",
+      "checks": {
+        "no-files-written": {
+          "pass": true,
+          "evidence": "workspace-before and workspace-after are byte-identical; trace.jsonl has only reads and no file-change event."
+        },
+        "chat-contract": {
+          "pass": true,
+          "evidence": "output.md contains status: open, six slices with all four fields, Verification, and Confirmation."
+        },
+        "pipeline-consequence": {
+          "pass": true,
+          "evidence": "output.md states that downstream implementation skills expect the contract at a docs/specs/*-slices.md path."
+        },
+        "deferred-write-offer": {
+          "pass": true,
+          "evidence": "output.md offers to record confirmation and write the file when implementation starts."
+        }
+      },
+      "workspace_before": {
+        "docs/specs/2026-07-28-saved-searches.md": "bc3c529a59f606dd35252655ad36cfa5967447ae88e30d0dccc0533708994a36"
+      },
+      "workspace_after": {
+        "docs/specs/2026-07-28-saved-searches.md": "bc3c529a59f606dd35252655ad36cfa5967447ae88e30d0dccc0533708994a36"
+      }
+    },
+    {
+      "skill": "create-tasks",
+      "label": "no-write-boundary-final",
+      "checks": {
+        "no-files-written": {
+          "pass": true,
+          "evidence": "workspace-before and workspace-after are byte-identical; trace.jsonl has only reads and no file-change event."
+        },
+        "chat-contract": {
+          "pass": true,
+          "evidence": "output.md contains status: open, five slices with all four fields, Verification, and Confirmation."
+        },
+        "pipeline-consequence": {
+          "pass": true,
+          "evidence": "output.md states that downstream implementation skills expect the contract at a docs/specs/*-slices.md path."
+        },
+        "deferred-write-offer": {
+          "pass": true,
+          "evidence": "output.md offers a confirmed contract in chat and a file when implementation starts if the user later permits it."
+        }
+      },
+      "workspace_before": {
+        "docs/specs/2026-07-28-saved-searches.md": "bc3c529a59f606dd35252655ad36cfa5967447ae88e30d0dccc0533708994a36"
+      },
+      "workspace_after": {
+        "docs/specs/2026-07-28-saved-searches.md": "bc3c529a59f606dd35252655ad36cfa5967447ae88e30d0dccc0533708994a36"
+      }
+    },
+    {
+      "skill": "create-tasks",
+      "label": "chat-preference-final",
+      "checks": {
+        "file-written": {
+          "pass": true,
+          "evidence": "workspace-after adds exactly one docs/specs/*-slices.md file; trace.jsonl records its creation before the final read-back."
+        },
+        "chat-summary-too": {
+          "pass": true,
+          "evidence": "output.md gives the same six numbered slices with coverage, demo criteria, and blockers."
+        },
+        "contract-intact": {
+          "pass": true,
+          "evidence": "The added file has status: open, per-slice Layers/Bound/Demo/Blocked by, Verification, and Confirmation."
+        },
+        "write-disclosed": {
+          "pass": true,
+          "evidence": "output.md links the created open slices contract before the numbered read-back."
+        }
+      },
+      "workspace_before": {
+        "docs/specs/2026-07-28-saved-searches.md": "bc3c529a59f606dd35252655ad36cfa5967447ae88e30d0dccc0533708994a36"
+      },
+      "workspace_after": {
+        "docs/specs/2026-07-28-saved-searches.md": "bc3c529a59f606dd35252655ad36cfa5967447ae88e30d0dccc0533708994a36",
+        "docs/specs/2026-09-04-saved-searches-slices.md": "255bf250e86a321a97e762870621050365f61c3f7f80908c77c776a6a50f17e5"
+      }
+    }
+  ],
+  "history": [
+    {
+      "skill": "create-tasks",
+      "label": "explicit-skip-file",
+      "status": "SUPERSEDED",
+      "observed_failures": [],
+      "note": "Earlier subject; retained but excluded from the current verdict."
+    },
+    {
+      "skill": "create-tasks",
+      "label": "no-write-boundary",
+      "status": "SUPERSEDED",
+      "observed_failures": [
+        "chat-contract"
+      ],
+      "note": "The actor blocked on an unspecified alert-toggle route and withheld the contract."
+    },
+    {
+      "skill": "create-tasks",
+      "label": "chat-preference",
+      "status": "SUPERSEDED",
+      "observed_failures": [],
+      "note": "Earlier subject; retained but excluded from the current verdict."
+    },
+    {
+      "skill": "create-tasks",
+      "label": "explicit-skip-file-retry",
+      "status": "SUPERSEDED",
+      "observed_failures": [
+        "no-files-written",
+        "chat-contract",
+        "deferred-write-offer"
+      ],
+      "note": "The actor classified skip the file as a preference and wrote the plan."
+    },
+    {
+      "skill": "create-tasks",
+      "label": "no-write-boundary-retry",
+      "status": "SUPERSEDED",
+      "observed_failures": [],
+      "note": "Earlier subject; retained but excluded from the current verdict."
+    },
+    {
+      "skill": "create-tasks",
+      "label": "chat-preference-retry",
+      "status": "SUPERSEDED",
+      "observed_failures": [],
+      "note": "Earlier subject; retained but excluded from the current verdict."
+    }
+  ],
+  "launch_failures": [
+    {
+      "skill": "create-skill",
+      "label": "minimal-workflow",
+      "reason": "failed to initialize in-process app-server client: Operation not permitted (os error 1)"
+    }
+  ],
+  "cost": {
+    "launches": 14,
+    "completed_actor_sessions": 13,
+    "timeout_ms_per_launch": 120000,
+    "input_tokens": 1008579,
+    "cached_input_tokens": 792320,
+    "output_tokens": 26662
+  },
+  "limitations": [
+    "Explicitly supplied skills; autonomous triggering was not measured.",
+    "Global harness skills remained discoverable and their descriptions were shortened by the harness context budget.",
+    "Fixture workspaces were not Git repositories; exploratory git commands failed. File effects are established from saved snapshots and tool traces.",
+    "No full comparative rerun, cross-model claim, or exhaustive pacing coverage."
+  ]
+}

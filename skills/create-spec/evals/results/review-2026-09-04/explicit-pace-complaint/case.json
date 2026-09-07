@@ -1,0 +1,21 @@
+{
+  "id": "regression-explicit-pace-complaint",
+  "split": "regression-pressure",
+  "setup": "No file-write access; keep the open email-notification decision log in conversation. Assignment events are decided. Recipient policy and retention policy remain unresolved. No delegation or override has been given.",
+  "request": "This is taking too long. You are asking too many questions.",
+  "arms": [
+    "skill"
+  ],
+  "assertions": [
+    {
+      "id": "pace-choice",
+      "critical": true,
+      "criterion": "Asks exactly one choice: assume the rest and read back, or keep going"
+    },
+    {
+      "id": "no-silent-delegation",
+      "critical": true,
+      "criterion": "Does not silently decide product policy, mark the spec confirmed, or start implementation"
+    }
+  ]
+}

@@ -5,10 +5,13 @@
 //   readme --check same check; retained for CI compatibility
 //   check          validate every skill against the agentskills.io spec
 //                  and this repo's rules; exit 1 on any failure — CI mode
+//   style          report non-blocking instruction-unit metrics
+//   route          run the catalog-wide lexical routing preflight
 // Zero dependencies. Frontmatter is parsed minimally: top-level `key: value`,
 // folded scalars (`key: >`), and one level of nesting under `metadata:`.
 import fs from "node:fs";
 import path from "node:path";
+import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -107,10 +110,45 @@ function realH2Headings(text) {
   return headings;
 }
 
+function bodyText(text) {
+  return text.replace(/^---\n[\s\S]*?\n---\n?/, "");
+}
+
+function styleMetrics(text) {
+  const units = [];
+  let fence = null;
+  for (const rawLine of bodyText(text).split("\n")) {
+    const marker = rawLine.match(/^\s*(`{3,}|~{3,})/);
+    if (marker) {
+      const candidate = { char: marker[1][0], length: marker[1].length };
+      if (!fence) fence = candidate;
+      else if (candidate.char === fence.char && candidate.length >= fence.length) fence = null;
+      continue;
+    }
+    if (fence) continue;
+    const line = rawLine.trim();
+    if (!line || line.startsWith("#") || line.startsWith("|") || /^[-*_]{3,}$/.test(line)) continue;
+    const prose = line.replace(/^(?:[-*+] |\d+\. |>)\s*/, "");
+    for (const sentence of prose.split(/(?<=[.!?])\s+/)) {
+      const words = sentence.match(/\b[\w’-]+\b/g)?.length ?? 0;
+      if (words) units.push(words);
+    }
+  }
+  const sorted = [...units].sort((a, b) => a - b);
+  const median = sorted.length ? sorted[Math.floor(sorted.length / 2)] : 0;
+  const long = units.filter((words) => words > 30).length;
+  return {
+    units: units.length,
+    median,
+    longShare: units.length ? long / units.length : 0,
+    bodyWords: bodyText(text).trim().split(/\s+/).filter(Boolean).length,
+  };
+}
+
 function check(items) {
   const problems = [];
+  const warnings = [];
   const p = (file, msg) => problems.push(`${file}: ${msg}`);
-  const requiredSections = ["Overview", "Success Criteria", "Common Mistakes", "Failure Modes"];
   for (const it of items) {
     const { fm, text, rel } = it;
     if (!fm) {
@@ -141,19 +179,23 @@ function check(items) {
     const bodyLines = text.split("\n").length;
     if (bodyLines > 500) p(rel, `${bodyLines} lines (spec recommends ≤500)`);
     if (it.kind === "skill") {
-      const body = text.replace(/^---\n[\s\S]*?\n---\n?/, "");
+      const body = bodyText(text);
       const bodyWords = body.trim().split(/\s+/).filter(Boolean).length;
       const headings = realH2Headings(body);
       if (bodyWords > 2500) p(rel, `${bodyWords} body words (collection hard cap 2500)`);
-      for (const section of requiredSections) {
-        if (!headings.has(section)) p(rel, `missing required section: ${section}`);
-      }
       const separateScope = headings.has("When to Use") && headings.has("Do Not Use When");
       if (!separateScope && !headings.has("Scope")) {
-        p(rel, "missing scope sections: When to Use + Do Not Use When, or Scope");
+        p(rel, "missing required core: Scope, or When to Use + Do Not Use When");
       }
       if (!["Workflow", "Rules", "Lookup Procedure"].some((section) => headings.has(section))) {
-        p(rel, "missing action section: Workflow, Rules, or Lookup Procedure");
+        p(rel, "missing required core action: Workflow, Rules, or Lookup Procedure");
+      }
+      if (!["Success Criteria", "Verification"].some((section) => headings.has(section))) {
+        p(rel, "missing required core verification: Success Criteria or Verification");
+      }
+      const metrics = styleMetrics(text);
+      if (metrics.median > 12 || metrics.longShare > 0.02) {
+        warnings.push(`${rel}: style warning — median ${metrics.median} words/unit; ${(metrics.longShare * 100).toFixed(1)}% over 30 words`);
       }
     }
     // Every references/… path named in the body must exist (a broken pointer
@@ -173,11 +215,21 @@ function check(items) {
       }
     }
   }
+  for (const warning of warnings) console.warn(`! ${warning}`);
   if (problems.length > 0) {
     for (const prob of problems) console.error(`✗ ${prob}`);
     fail(`${problems.length} problem${problems.length === 1 ? "" : "s"} found`);
   }
   console.log(`✓ ${items.length} entries clean (structural spec + collection checks)`);
+}
+
+function printStyle(items) {
+  console.log("skill\twords\tmedian words/unit\tunits >30 words");
+  for (const it of items) {
+    if (it.kind !== "skill") continue;
+    const metrics = styleMetrics(it.text);
+    console.log(`${it.dir}\t${metrics.bodyWords}\t${metrics.median}\t${(metrics.longShare * 100).toFixed(1)}%`);
+  }
 }
 
 function fail(msg) {
@@ -205,6 +257,14 @@ switch (cmd) {
   case "check":
     check(items);
     break;
+  case "style":
+    printStyle(items);
+    break;
+  case "route": {
+    const result = spawnSync(process.execPath, [path.join(ROOT, "scripts", "route-skills.mjs"), ...process.argv.slice(3)], { stdio: "inherit" });
+    process.exitCode = result.status ?? 1;
+    break;
+  }
   default:
-    fail(`usage: skills.mjs <table | readme [--check] | check>`);
+    fail(`usage: skills.mjs <table | readme [--check] | check | style | route>`);
 }

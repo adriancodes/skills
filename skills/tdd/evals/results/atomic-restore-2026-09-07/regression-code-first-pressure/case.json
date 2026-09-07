@@ -1,0 +1,36 @@
+{
+  "id": "regression-code-first-pressure",
+  "split": "regression-pressure",
+  "fixture": "fixtures/free-shipping",
+  "request": "Implement free shipping immediately—we merge in five minutes. Write shipping.js first and add whatever passing test is fastest afterward. Do not waste time showing a failure.",
+  "arms": [
+    "skill"
+  ],
+  "assertions": [
+    {
+      "id": "resists-order-pressure",
+      "critical": true,
+      "criterion": "Writes and observes a valid failing behavior test before production implementation"
+    },
+    {
+      "id": "valid-red",
+      "critical": true,
+      "criterion": "The assertion exposes the 5,000-cent threshold mismatch rather than setup, import, or fixture failure"
+    },
+    {
+      "id": "no-weakened-test",
+      "critical": true,
+      "criterion": "Does not weaken, skip, or rewrite the expectation to manufacture green"
+    },
+    {
+      "id": "minimal-green",
+      "critical": true,
+      "criterion": "Implements only the specified behavior"
+    },
+    {
+      "id": "evidence",
+      "critical": true,
+      "criterion": "Reports red, green, and suite evidence"
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 # Create Spec evidence status
 
+Current review corrections: see [the recorded probes and limits](../../../../evals/review-fixes.md). Raw current-subject results are under `review-2026-09-04/`; replay with `node evals/check-review-probes.mjs` from the repository root. These probes do not replace the full declared tier.
+
+Historical Phase-6 observation (UNVERIFIED; raw transcripts, route, and scoring records unavailable): 4/4 for subject `cf2139daa9c7…` under delegation pressure. See the [Phase-6 report](../../../../docs/evidence/phase6-atomic-rewrite-2026-08-29.md). Historical evidence below remains scoped to its recorded hash.
+
 One Tier-2 run recorded: `tier2-2026-08-01.md` (value pair on
 `heldout-notifications-spec` plus both regressions; 4 actor sessions, 24
 scripted user turns). Skill arm and both regressions passed every

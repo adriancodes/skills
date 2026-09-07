@@ -43,7 +43,9 @@ Establish only the context needed to choose a reliable starting seam:
 - Applicable repository instructions and local terminology
 - The desired depth when explicitly requested
 
-For a clear question, infer these and begin. For a vague request such as "help me understand this repo," ask at most two pointed questions — one about the goal, one about the relevant area — and wait for answers before inspecting. Done when the exploration has a stated or safely inferred question and boundary.
+For a clear question, infer these and begin. For a vague request, ask at most two questions. Ask one about the goal and one about the area. Wait before inspecting.
+
+Done when the exploration has a question and boundary.
 
 ## Workflow
 
@@ -51,21 +53,25 @@ For a clear question, infer these and begin. For a vague request such as "help m
 
 Classify the request as onboarding, architecture Q&A, or change preparation — routing, not a questionnaire:
 
-- **Onboarding:** identify the smallest useful system boundary and its main responsibilities.
-- **Architecture Q&A:** start from the named behavior, symbol, boundary, or question.
-- **Change preparation:** explain the current path and affected boundaries; leave change design to the follow-on task.
+- **Onboarding:** identify the smallest useful boundary and its responsibilities.
+- **Architecture Q&A:** start from the named behavior, symbol, or boundary.
+- **Change preparation:** explain the current path and affected boundaries. Leave design to the follow-on task.
 
-Ask only when two plausible interpretations would drive materially different exploration, and never more than two questions before inspection. Done when exactly one exploration target is selected.
+Ask only when plausible interpretations require different exploration. Ask no more than two questions before inspection.
+
+Done when one target is selected.
 
 ### 2. Find an evidence-bearing starting seam
 
 Read applicable repository instructions first. Inspect manifests, entry points, tests, configuration, glossary entries, and architecture decisions only when they can locate or explain the target. Prefer `rg --files` for file discovery and `rg` for symbols, routes, events, configuration keys, and test names.
 
-Start from the strongest available seam: an externally visible entry point, a caller, a focused test, a configuration key, or the named symbol. Never infer behavior from filenames or directory structure alone. Done when an inspected file or test directly anchors the requested behavior.
+Start from the strongest seam: entry point, caller, focused test, configuration key, or named symbol. Never infer behavior from filenames alone.
+
+Done when an inspected file or test anchors the behavior.
 
 ### 3. Trace only the relevant path
 
-Follow calls, imports, data transformations, state changes, configuration, and asynchronous boundaries far enough to support the answer. Inspect representative tests to confirm important branches and observable behavior. Stop when a branch no longer affects the question.
+Follow calls, imports, data, state, configuration, and asynchronous boundaries. Inspect representative tests for important branches. Stop when a branch no longer affects the question.
 
 Maintain an evidence ledger while reading:
 
@@ -75,13 +81,15 @@ Maintain an evidence ledger while reading:
 | The queue is durable across restarts | Queue adapter found; deployment config absent | Unknown |
 | Two handlers may share a transaction | Same client is passed through both calls | Inference |
 
-Record file paths plus symbols, and line numbers when the harness exposes stable line references. Mark each material claim as confirmed, inference, or unknown. Done when every part of the answer has inspected evidence or an explicit uncertainty label.
+Record files and symbols. Add stable line numbers when available. Mark each claim confirmed, inferred, or unknown.
+
+Done when every answer part has evidence or an uncertainty label.
 
 ### 4. Explain the system answer-first
 
-Lead with the direct answer, then the shortest code path that makes it auditable. Name both symbols at every material transition and cite each symbol's implementation file, in the form `caller` (`path`) → `callee` (`path`). A filename-only citation or an unnamed helper call is incomplete. Include the entry point, storage or state effects, asynchronous work, and externally visible outcomes that matter to the question.
+Lead with the direct answer. Then show the shortest auditable code path. Name both symbols at every transition. Cite them as `caller` (`path`) → `callee` (`path`). Filename-only citations are incomplete. Include only relevant entry points, state effects, async work, and visible outcomes.
 
-Use a diagram when three or more components, a non-linear boundary, or a state sequence is materially clearer visually. For a simple flow, emit Mermaid with a compact ASCII fallback. For a complex relationship, use an available visualization tool if clearer than Mermaid; otherwise use Mermaid. Keep diagrams in the conversation unless the user explicitly requests a persistent artifact.
+Use a diagram when it materially clarifies at least three components or a state sequence. Use Mermaid plus compact ASCII for simple flows. Use an available visualization tool for complex relationships. Keep diagrams in chat unless persistence was requested.
 
 Ground every diagram node and edge in inspected code cited in the surrounding prose; remove decorative or speculative elements.
 
@@ -93,11 +101,11 @@ Complete the answer with:
 4. Confirmed facts, consequential inferences, and remaining unknowns
 5. Relevant tests or configuration that substantiate the explanation
 
-Done when the answer is understandable without the diagram, auditable from its citations, and no broader than the question requires.
+Done when the prose stands alone, citations are auditable, and scope matches the question.
 
 ### 5. Reuse and revise the mental model
 
-Keep the mental model in the current conversation. For follow-ups, reuse confirmed evidence, inspect only newly relevant paths, and revise earlier claims when evidence contradicts them — stating corrections explicitly, never silently changing the explanation.
+Keep the mental model in the current conversation. Reuse confirmed evidence on follow-ups. Inspect only newly relevant paths. Correct contradicted claims explicitly.
 
 Do not write repository maps, architecture documents, or notes unless the user starts a separate documentation task. Done when the follow-up is answered from current evidence plus the smallest necessary additional inspection.
 
@@ -110,7 +118,7 @@ Ask before inspection:
 1. "What is the goal: onboarding, an architecture answer, or preparation for a change?"
 2. "Which feature or area should I use as the starting point?"
 
-If the answers are "onboard" and "report generation," trace the report entry point through validation, service calls, storage, queued work, and notification side effects. Answer with the main flow first, cite every transition, show a small Mermaid flow when the boundaries would otherwise be hard to scan, and label any unverified deployment behavior as unknown. Make no workspace changes and offer no refactor advice.
+If the target is report generation, trace entry, validation, service, storage, queue, and notification effects. Give the main flow first. Cite every transition. Add Mermaid only when it clarifies boundaries. Label unverified deployment behavior unknown. Make no changes or recommendations.
 
 ## Tool Guidance
 
@@ -154,7 +162,7 @@ If the answers are "onboard" and "report generation," trace the report entry poi
 - **Generated, vendored, or inaccessible implementation:** Explain the visible boundary and mark behavior beyond it unknown.
 - **Conflicting code and tests:** Present the conflict with both citations; never choose a truth without runtime evidence.
 - **Question requires execution to resolve:** Ask permission for the smallest read-only or safely isolated observation, or leave the claim unknown.
-- **Request crosses into action:** Finish the current-state explanation, then stop and route the new work to the appropriate skill or task.
+- **Request crosses into action:** finish the current-state explanation. Then route the new work and stop.
 
 ## Summary
 

@@ -12,19 +12,9 @@ metadata:
 
 ## Overview
 
-Create skills only when consequence-appropriate evidence justifies their ongoing context and maintenance cost. Smoke-test low-risk response styles; compare reversible workflows; fully evaluate automation, high-stakes behavior, and meta-skills. Otherwise choose a prompt, template, instruction, or script.
+Create a skill only when consequence-appropriate evidence justifies its context and maintenance cost. Use a prompt, template, instruction, or script when it has equal utility. Protect predictability with one narrow job, explicit boundaries, progressive disclosure, and no-op pruning.
 
-## Core Principles
-
-Protect predictability with progressive disclosure, trigger-only descriptions, no-op pruning, explicit boundaries, and one narrow job. Authoritative tests live in `references/rules.md`.
-
-## Drive Behavior
-
-Load `references/behavioral-force.md` while drafting and apply every lever in `references/rules.md` → Behavioral-Force Rules. Phase 6 checks them.
-
-## Harness Adaptation
-
-This skill and every skill it builds run in any agent harness. Tool names are Claude Code's; map them via `references/harness-tools.md` and use its fallbacks: never skip a step because a tool is missing. Generated skills follow the Portability rules in `references/rules.md`.
+Load `references/behavioral-force.md` while drafting. Use `references/harness-tools.md` when tool names need a portable mapping. Authoritative rules live in `references/rules.md`.
 
 ## When to Use
 
@@ -58,7 +48,7 @@ Gather via a confirmed Skill Brief before testing or drafting. In read-only revi
 
 For creation and editing, follow the phases in order.
 
-**Reviewing without an edit request?** Load `references/rules.md` and `references/validation-checklist.md`; inspect the skill, resources, collisions, and eval evidence; report strengths, failures, likely effects, and prioritized corrections without modifying files. Separate measurements from predictions.
+**Reviewing without an edit request?** Load `references/rules.md` and `references/validation-checklist.md`. Inspect the skill, resources, collisions, and eval evidence. Report strengths, failures, likely effects, and prioritized corrections without modifying files. Separate measurements from predictions.
 
 ### Phase 0: Interview and Confirm Intent
 
@@ -66,7 +56,7 @@ Do not test, scope, draft, or reject a candidate until intent is confirmed.
 
 Open every creation or behavior-changing update with at least one post-invocation, adaptive, decision-changing question; brief confirmation is a separate gate and never counts as that question.
 
-Ask one question per turn — via the option UI when available, otherwise 2–4 concrete, mutually exclusive choices plus an Other/free-form option, recommended choice first with its tradeoff in one line. Let each answer select the next question; never use a fixed questionnaire. Speed, efficiency, or “only necessary questions” narrows the interview to design-changing decisions but does not waive it.
+Ask one question per turn. Use the option UI when available. Otherwise offer 2–4 concrete, mutually exclusive choices plus an Other/free-form option. Put the recommendation first and name its tradeoff in one line. Let each answer select the next question; never use a fixed questionnaire. Speed, efficiency, or “only necessary questions” narrows the interview to design-changing decisions but does not waive it.
 
 Continue while another answer can change the design. Cover the problem, users and context, concrete use cases, trigger phrases, behavior or artifacts, frustrations, non-goals, boundaries, invocation, and observable success. Convert abstract answers into examples.
 
@@ -81,7 +71,7 @@ Scope from the confirmed Skill Brief:
 1. Choose the invocation axis (`references/rules.md` → Invocation). Model-invoked is the default; user-invoked (`disable-model-invocation: true`) fits skills fired only by explicit request, and collapses Phase 4 to one line.
 2. Identify 3–5 realistic user requests that should trigger this skill, and 2–3 that should NOT.
 3. Determine the skill type: **Technique** (concrete repeatable method) · **Discipline** (enforces rules under pressure) · **Reference** (docs, schemas, domain knowledge) · **Workflow** (multi-phase process with decision points)
-4. Search existing skills for collisions. If one exists, state in "Do Not Use When" when to defer to it.
+4. Search existing skills for collisions. State when to defer within either accepted scope structure (`references/rules.md` → Required Sections).
 5. Walk each trigger end-to-end; note reusable resources.
 6. Derive the strongest realistic prompt, discovery cases, success measures, and cost ceiling from the brief; never substitute an agent-invented use case for a confirmed one.
 
@@ -93,18 +83,20 @@ Done when evidence rejects the skill against the confirmed brief with the user's
 
 ### Phase 2: Draft SKILL.md Body
 
-Draft against `references/body-template.md` within the word limits in `references/rules.md`. Load the matching simple or complex example at phase start and mirror only its structure.
+Draft the smallest valid body from `references/body-template.md`. Stay under the matching ceiling in `references/rules.md`. Load the matching example and copy only the structure the skill needs.
 
-Write imperative voice throughout; no second person in the body. End every workflow step on a checkable, demanding completion criterion (`references/body-template.md` → Writing Workflow Steps).
+For a specialist persona, load `references/persona-template.md`. Keep workflow in a skill.
 
-Done when the body follows the selected template, includes a complete core example, and every workflow step has a checkable completion criterion.
+Write ordinary skill workflows in imperative voice. Reserve second person for personas and always-on identity text. Put one behavioral decision in each sentence or bullet. Put every `Done when …` criterion on its own line.
+
+Done when every section changes behavior, the core example is complete, and each workflow step has a standalone completion criterion.
 
 ### Phase 3: Prune, then Extract (only after drafting)
 
 Two passes, in order:
 
 1. **No-op pass.** Test every sentence: does it change agent behavior versus the model's default? Delete failing sentences whole: never trim words from them (examples in `references/rules.md`, Pruning).
-2. **Extraction pass.** Move overflow beyond the word target, dense reference material, and repeated code into supporting directories (`references/body-template.md`, Supporting Directories). Single-file SKILL.md is the default.
+2. **Extraction pass.** Move conditional depth beyond the ceiling, dense reference material, and repeated code into supporting directories (`references/body-template.md`, Supporting Directories). Single-file SKILL.md is the default.
 
 Reference every supporting file from the body with a pointer stating *when* to load it. An unreferenced file is invisible (`references/body-template.md` → Writing Context Pointers).
 
@@ -116,7 +108,7 @@ User-invoked skill? Set `disable-model-invocation: true`, write a one-line human
 
 For model-invoked skills the description determines whether the skill loads at all. Two rules dominate:
 
-1. **Triggers only, never workflow.** A process summary makes agents skip the body: see the empirical "one review vs two reviews" failure in `references/description-guide.md`, which also holds the skeleton template.
+1. **Triggers only, never workflow.** A process summary makes agents skip the body. See the empirical "one review vs two reviews" failure and skeleton in `references/description-guide.md`.
 2. **Quoted user phrases plus symptoms.** Include exact strings users say, plus error messages and symptom keywords. Cover each distinct request branch; cap synonym rewrites of one branch at the 2 strongest (`references/rules.md` → Description Rules).
 
 Smoke-test discoverability before finalizing: check the description alone against the positive and negative phrasings; fix obvious misses or collisions. Phase 8 measures triggering in normally installed conditions.
@@ -158,45 +150,24 @@ Before SHIP, run the validation checklist and state the evidence tier beside the
 
 ## Tool Guidance
 
-**Avoid:**
-- `@filename` force-loading from SKILL.md: consumes context regardless of need
-- Duplicating reference material inline: link instead
-- Flowcharts for reference material (use tables), code (use blocks), or linear steps (use numbered lists)
-- Empty directories (only create directories with content)
+Never `@` force-load runtime references. Link them conditionally. Cross-reference skills by name, mark required background, and create no empty directory.
 
-**Constraints:**
-- Cross-reference skills by name with requirement markers ("**REQUIRED BACKGROUND:** superpowers:test-driven-development"); never `@` force-load
+Use tables for reference material, code blocks for code, and numbered lists for linear steps.
 
 ## Success Criteria
 
 Every gate in `references/rules.md` → Quality Gate must be yes before shipping. Phase 6 checks the document, Phase 7 proves correctness, and Phase 8 proves effectiveness. If any answer is no, iterate or abandon.
 
-## Common Mistakes
+## Stop Conditions
 
-| Mistake | Fix |
-|---------|-----|
-| Description summarizes the workflow | Strip to triggers only |
-| Missing "Do Not Use When" | Add it — the most common omission |
-| Drafting or evaluating assumed intent | Interview first (Phase 0); confirm the Skill Brief before testing |
-| Inferring the whole design and asking only “confirm?” | Ask at least one decision-changing question first; brief confirmation is a separate gate |
-| Sentence restates the model's default | Delete it whole (no-op test) |
-| Skill breaks the rules it teaches | Rewrite against its own template |
-| Skill judged only against a weak baseline | Compare against the strongest realistic short prompt |
-| Prompt-loaded output matches the skill, so it is declared redundant | Score repeated prompt burden, autonomous recall, consistency, and collision risk before deciding |
-| Low-risk style skill gets a research benchmark | Choose the consequence tier first; spend rigor where failure costs something |
-| Tier 2 repeats comparisons and routing for every skill | Use one paired value case, two skill-only regressions, and the shared portfolio routing suite |
-
-## Failure Modes
-
-- **An existing skill already covers this:** Stop. Improve it or position the new skill explicitly against it: never silently overlap.
-- **Skill cannot be bounded:** Scope too broad; split into multiple skills.
-- **Rationalizations keep appearing:** Add structural escalation paths, not louder MUSTs (`references/bulletproofing-guide.md`, Technique 6).
-- **Body exceeds the cap:** Stop adding; extract to `references/` and split the skill if references/ outgrows one topic.
-- **Stale layers (sediment) in an existing skill:** Re-run the Phase 3 passes before adding anything new.
-- **Competing skills load together:** Descriptions overlap; tighten triggers and cross-reference in "Do Not Use When".
-- **Total repeated-use utility is equivalent:** Abandon when a prompt, repository instruction, router, template, or script matches both behavior and reliable delivery at lower total cost.
-- **Eval improvement disappears on held-out cases:** Treat as overfitting; simplify or abandon rather than exposing answers to the skill.
-- **Eval fails after a revision:** Show the failure, recommend bounded corrections, and let user feedback select the next iteration.
+- Existing coverage: improve or position the existing skill.
+- Unbounded scope: split the job.
+- Repeated rationalization: add an evidence-backed structural escape path.
+- Body over its ceiling: prune, extract conditional depth, or split.
+- Trigger collision: tighten descriptions and boundaries.
+- Cheaper mechanism has equal utility: abandon the skill.
+- Held-out gain disappears: treat it as overfitting and simplify or abandon.
+- Eval fails: show the mismatch and ask the user to select a bounded correction.
 
 ## Additional Resources
 
@@ -211,6 +182,4 @@ Every gate in `references/rules.md` → Quality Gate must be yes before shipping
 - **`examples/simple-skill-example.md`**: load at Phase 2 start when drafting a technique.
 - **`examples/complex-skill-example.md`**: load at Phase 2 start when drafting a workflow.
 
-## Summary
-
-A confirmed Skill Brief defines the hypothesis. Build from the user's answers, match evidence effort to consequence, and iterate from observed failures and user feedback. Never call SHIP until the evidence passes and the user accepts the result.
+A confirmed Skill Brief defines the hypothesis. Never call SHIP until proportionate evidence passes and the user accepts the result.

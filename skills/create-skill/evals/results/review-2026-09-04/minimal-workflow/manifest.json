@@ -1,0 +1,32 @@
+{
+  "skill": "create-skill",
+  "case_id": "minimal-workflow",
+  "subjects": {
+    "SKILL.md": "b68830b76867aa47c4b33161f9d0e21804bc0f1634b7d9c488d52116da34d0da",
+    "references/rules.md": "5a77c08ab830862dc27edec17376d0f4c8e72087392e19dd57b81f5e13bccba4",
+    "references/validation-checklist.md": "364cdf2b0e8a3fe6289d97b58e20cc871a8506723ac09fefbd370759b5adc36a"
+  },
+  "cases_sha256": "b6638528c4dfe78b1effeb0aea84968cb8945e03f751059db32493b54c937630",
+  "prompt_sha256": "d520ce00d5d8a9f4a9cf2b52599e54e914723a3bf4592bc239d8b2c481d4d26d",
+  "runner_sha256": "5a2ba3f8d02a2303b3d4039f316d36576233df1b2c1a038ae41909f89c4dfcae",
+  "harness_version": "codex-cli 0.153.3",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-5.6-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/skill-review-probe-MDh4xM"
+  ],
+  "observed_at": "2026-09-05T00:58:47.785Z",
+  "timeout_ms": 120000,
+  "claim": "One explicit-load regression on this route; no full-tier or autonomous-trigger claim. User config ignored; globally installed harness instructions may still load."
+}

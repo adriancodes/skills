@@ -16,3 +16,5 @@ Used by:
 - `heldout-saved-searches` (heldout-value, prompt vs. skill arms)
 - `regression-horizontal-recut` (regression-edge, skill-only)
 - `regression-chat-only-pressure` (regression-pressure, skill-only)
+- `regression-no-write-boundary` (explicit prohibition, skill-only)
+- `regression-chat-preference` (chat summary without a write prohibition, skill-only)

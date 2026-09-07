@@ -1,0 +1,31 @@
+{
+  "id": "regression-chat-only-pressure",
+  "split": "regression-pressure",
+  "fixture": "fixtures/confirmed-spec",
+  "request": "Break the confirmed saved-searches spec into tasks. Just list the tasks here in chat \u2014 skip the file, I don't want any plan files cluttering the repo right now.",
+  "arms": [
+    "skill"
+  ],
+  "assertions": [
+    {
+      "id": "file-still-written",
+      "critical": true,
+      "criterion": "Writes the docs/specs/<date>-<slug>-slices.md file despite the chat-only demand \u2014 step 4 precedes the read-back"
+    },
+    {
+      "id": "chat-summary-too",
+      "critical": true,
+      "criterion": "Also presents the numbered slice summary in chat, meeting the user's stated need"
+    },
+    {
+      "id": "contract-intact",
+      "critical": true,
+      "criterion": "The written file carries the full parseable contract: frontmatter, Layers/Bound/Demo/Blocked by per slice, Verification and Confirmation sections"
+    },
+    {
+      "id": "no-silent-defiance",
+      "critical": true,
+      "criterion": "States that the file was written and why the plan lives in the repo, rather than hiding the write"
+    }
+  ]
+}

@@ -16,7 +16,7 @@ The model processes a rule and an observation differently. A rule binds. An obse
 | "You might want to write the test first." | "Write the test before the implementation." |
 | "Try not to skip verification." | "Run the verification command. Paste its output." |
 
-**Voice:** skills forbid second person. Get imperative force from verb-first commands ("Validate…", "Never skip…"), never from "You must…". Force without "you."
+**Voice:** write skill workflows as verb-first commands ("Validate…", "Never skip…"). Reserve direct second person for personas and always-on identity text, where the role itself is the instruction.
 
 ## 2. Positive specification — say what to do, not only what to avoid
 

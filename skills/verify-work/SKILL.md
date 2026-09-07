@@ -16,7 +16,7 @@ metadata:
 
 ## Overview
 
-Prove an artifact by running adversarial cases; smoke tests and code inspection alone do not count. Report every failure with a reproducer. Verification is read-only by default; patch and re-run only when the user explicitly authorizes fixes.
+Prove an artifact with executed adversarial cases. Smoke tests and inspection do not count. Report every failure with a reproducer. Stay read-only unless the user authorizes fixes.
 
 ## When to Use
 
@@ -27,7 +27,7 @@ Prove an artifact by running adversarial cases; smoke tests and code inspection 
 
 ## Do Not Use When
 
-- The plan isn't built yet: stress-testing a *design* is an interview, not an attack: run `create-spec` if installed, otherwise question the plan first
+- The plan is unbuilt: use `create-spec` when installed. Otherwise question the plan first.
 - Review for style, structure, or maintainability: use a code-review skill; verify-work only chases behavior that breaks the promise
 - Statistical pass-rate benchmarking across many runs: use an eval harness
 - Penetration testing of live systems: different discipline, requires authorization
@@ -35,17 +35,31 @@ Prove an artifact by running adversarial cases; smoke tests and code inspection 
 
 ## Workflow
 
-Load `references/attacks.md` at step 2, before choosing any attack: it holds the per-artifact-type catalogs and the stop rule.
+Load `references/attacks.md` before choosing attacks.
 
-1. **Fix the letter.** Write the artifact's promise: its spec, rules, or contract: as 5 or fewer bullets. Every attack targets the gap between this letter and actual behavior; a vague promise cannot be verified, so pin it first via `create-spec` or one direct question. Done when the promise list is written.
+1. **Fix the letter.** Write the promise in 5 or fewer bullets. Target every attack at the gap between promise and behavior. Pin a vague promise with `create-spec` or one direct question.
 
-2. **Attack.** Select the catalog for the artifact type and execute every attack in it: run scripts against fixtures, run a fresh agent against rule documents, feed configs boundary values. The failing run is the deliverable: "this would probably break" is not a finding. Done when every catalog attack has a recorded executed result.
+   Done when the promise list is written.
 
-3. **Honor the authority boundary.** A request to verify, review, assess readiness, or find loopholes authorizes attacks and a findings report, not artifact edits. Record each failure with its executed reproducer and keep attacking the unchanged artifact. Only when the request explicitly includes fixing: or the user separately authorizes it: patch each finding in the artifact, never the fixture, then re-run every failed attack. Never quietly narrow the promise to dodge a finding; promise changes require confirmation. Done when every finding is recorded and, if fixes were authorized, every failed attack passes on re-run.
+2. **Attack.** Select the matching artifact catalog. Execute every applicable attack. Run scripts against fixtures. Run fresh agents against rule documents. Feed boundary values to configs. Reject speculative findings.
 
-4. **Repeat with fresh eyes.** Start each round with attacks not yet executed, carrying a do-not-re-report list of prior findings. Use a fresh subagent per round when available; otherwise enter through a different applicable attack class. A round is dry only if it adds at least one new applicable attack and finds nothing new; re-running the same catalog unchanged never qualifies. Stop at 2 consecutive dry rounds for anything shipping; 1 suffices when the user names it a quick check or throwaway: state which bar applied. When no meaningful new attack remains, report catalog exhaustion separately from a dry-round claim. When stopping early for budget or time, say so and name every untested attack class. A silent early stop is a failed verification.
+   Done when every catalog attack has a recorded result.
 
-5. **Report.** In 10 lines or fewer and without process narration, state the authority mode, findings, any authorized patches, rounds run, and residual risk by name.
+3. **Honor authority.** Verification authorizes attacks and a report, not edits. Record each failure with an executed reproducer. Keep attacking the unchanged artifact.
+
+   Patch only after explicit fix authority. Patch the artifact, never the fixture. Re-run every failed attack. Never narrow the promise without confirmation.
+
+   Done when findings are recorded and authorized fixes pass re-run.
+
+4. **Repeat with fresh eyes.** Start each round with unexecuted attacks. Carry a do-not-re-report list. Use a fresh subagent when available. Otherwise switch attack classes.
+
+   Count a dry round only when it adds a new applicable attack and finds nothing. Unchanged reruns never count. Require 2 consecutive dry rounds for shipping. Allow 1 for a named quick check. State the applied bar.
+
+   Report catalog exhaustion separately. If budget or time stops the run, name every untested attack class. Never stop silently.
+
+5. **Report.** Stay within 10 lines. Name authority mode, findings, authorized patches, rounds, and residual risk. Omit process narration.
+
+   Done when every decision-relevant result appears.
 
 ## Example: one attack on one promise
 
@@ -78,7 +92,9 @@ Each maps to a table entry above; return to the workflow step in progress.
 - Every finding came from an executed attack, never from reading
 - The report states read-only or fix-authorized; no artifact edits occurred without explicit fix authority
 - When fixes were authorized, every patch landed in the artifact and no fixture was edited toward buggy output
-- 2 consecutive fresh dry rounds (1 when the user called it a quick check; the bar applied is stated): or an explicit stop naming catalog exhaustion or each untested class
+- 2 consecutive fresh dry rounds for shipping.
+- 1 dry round for a named quick check.
+- Otherwise name catalog exhaustion or every untested class.
 
 ## Common Mistakes
 
@@ -92,7 +108,7 @@ Each maps to a table entry above; return to the workflow step in progress.
 
 ## Failure Modes
 
-- **The artifact cannot be executed** (no runtime, pure prose contract): degrade honestly: construct each attack input anyway, trace it by hand, and label every such result REASONED, never proven.
+- **The artifact cannot execute:** construct each attack input anyway. Trace it manually. Label every result REASONED, never proven.
 - **Findings still flowing after ~8 rounds:** the design is the problem, not the details. Stop patching and recommend redesign, with the findings as evidence.
 - **The promise keeps moving:** each patch renegotiates what the artifact "really" meant. Freeze the written promise from step 1 before continuing; renegotiation is the user's decision.
 
@@ -102,4 +118,4 @@ Each maps to a table entry above; return to the workflow step in progress.
 
 ## Summary
 
-Execute hostile cases instead of relying on inspection. Report by default, patch only with explicit authority, and stop after two fresh dry rounds or a documented exhaustion or early stop.
+Execute hostile cases. Report by default. Patch only with authority. Stop at the required dry bar or a documented limit.

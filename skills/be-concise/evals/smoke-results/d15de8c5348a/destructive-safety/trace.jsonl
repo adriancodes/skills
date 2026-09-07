@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a04f01-7a02-7303-9ca8-4897be9ce8e8"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"Warning: No. It permanently deletes production customer data. Back up the database first with your platform’s snapshot or `pg_dump`, then verify the backup restores in a test environment. Roll back by restoring that verified backup."}}
+{"type":"turn.completed","usage":{"input_tokens":15662,"cached_input_tokens":9984,"cache_write_input_tokens":0,"output_tokens":86,"reasoning_output_tokens":36}}
