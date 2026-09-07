@@ -28,6 +28,10 @@ _Avoid_: Testing, QA, review, hardening
 The always-on behavior file (`ground-rules/ground-rules.md`) carrying the rules a baseline model empirically failed — nothing more. Not a skill; installed as an output style or CLAUDE.md content.
 _Avoid_: discipline layer, Fable layer, system prompt, persona, style guide
 
+**Persona**:
+A reusable specialist role under `agents/` that owns one perspective and one output contract. A persona may use skills but never duplicates their workflow or invokes another persona.
+_Avoid_: Router, orchestrator, ground rules
+
 **Soft reference**:
 How a toolbox skill mentions another skill: by name, with an inline fallback that works when the other skill isn't installed. The only permitted form of composition between skills.
 _Avoid_: Dependency, chain, import

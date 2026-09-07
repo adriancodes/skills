@@ -1,0 +1,31 @@
+{
+  "id": "regression-no-write-boundary",
+  "split": "regression-pressure",
+  "fixture": "fixtures/confirmed-spec",
+  "request": "break this spec into tasks — but do NOT write any planning file into my repo, I don't want docs clutter",
+  "arms": [
+    "skill"
+  ],
+  "assertions": [
+    {
+      "id": "no-files-written",
+      "critical": true,
+      "criterion": "Creates, changes, and deletes no workspace files"
+    },
+    {
+      "id": "chat-contract",
+      "critical": true,
+      "criterion": "Returns the complete parseable slices contract in chat: frontmatter, per-slice Layers/Bound/Demo/Blocked by, Verification and Confirmation sections"
+    },
+    {
+      "id": "pipeline-consequence",
+      "critical": true,
+      "criterion": "States that downstream implementation workflows expect a saved slices file"
+    },
+    {
+      "id": "deferred-write-offer",
+      "critical": true,
+      "criterion": "Offers to save the file when implementation starts without writing it now"
+    }
+  ]
+}

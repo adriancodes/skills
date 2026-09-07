@@ -1,5 +1,7 @@
 # build-loop evidence status
 
+Historical Phase-6 observation (UNVERIFIED; raw transcripts, route, and scoring records unavailable): 5/5 for subject `5b0c57182963…`. It retained the L1 start, remote-write prohibition, promotion evidence, and unknown-cost stop. See the [Phase-6 report](../../../../docs/evidence/phase6-atomic-rewrite-2026-08-29.md). This does not fill the Tier-3 gap below.
+
 One bounded partial pass has been recorded:
 [`tier2scope-2026-08-01.md`](tier2scope-2026-08-01.md) — Tier-2-scope
 evidence against the Tier-3 declaration (1 value pair on

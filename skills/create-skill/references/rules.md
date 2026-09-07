@@ -8,16 +8,18 @@ Phase 6 loads this file alongside the validation checklist; the checklist's item
 
 ## Word Targets
 
-By skill type. Content beyond the target moves to `references/`.
+No minimum length. Stop when every remaining line changes behavior.
 
-| Skill Type | SKILL.md Target |
-|-----------|-----------------|
-| Simple technique | 500–800 words |
-| Standard workflow | 1,000–1,500 words |
-| Complex domain | 1,500–2,000 words |
-| Discipline (with bulletproofing) | 1,500–2,500 words |
+Use these ceilings to trigger pruning or extraction, not as quotas:
 
-**Hard cap:** 2,500 words for any skill. No SKILL.md body exceeds this.
+| Skill Type | SKILL.md Ceiling |
+|-----------|------------------|
+| Simple technique | 500 words |
+| Standard workflow | 1,000 words |
+| Complex domain | 1,800 words |
+| Discipline (with bulletproofing) | 2,000 words |
+
+Move genuinely conditional depth to `references/`. **Hard cap:** 2,500 words for every skill.
 
 ## Skill Types
 
@@ -60,12 +62,12 @@ Tier 1 may SHIP as **smoke-tested**, Tier 2 as **targeted comparative support**,
 
 Everything a type needs, in one row. Build to the row for the chosen type. The word-tier column names a row in Word Targets above — the numbers live there only.
 
-| Type | Word tier | Section changes | Bulletproofing | Primary guide |
-|------|-----------|-----------------|----------------|---------------|
-| Technique | Simple technique | Merge When/Do-Not into one Scope section; keep Quick Reference | No | `body-template.md` → Simple Technique |
-| Workflow | Standard workflow → Complex domain | Full template, all required sections | No | `body-template.md` |
-| Reference | Complex domain | Workflow becomes Lookup Procedure; Quick Reference is primary content | No | `body-template.md` → Reference/API |
-| Discipline | Discipline | Add Rationalization Table, Red Flags, Foundational Principle | **Yes** — all Bulletproofing Requirements | `bulletproofing-guide.md` |
+| Type | Body ceiling | Section changes | Bulletproofing | Primary guide |
+|------|--------------|-----------------|----------------|---------------|
+| Technique | Simple technique | Use Scope, action, and verification; add Quick Reference only when choices need it | No | `body-template.md` → Simple Technique |
+| Workflow | Standard workflow → Complex domain | Add only context, tools, mistakes, and failures that change execution | No | `body-template.md` |
+| Reference | Complex domain | Use Lookup Procedure as the action section; make Quick Reference primary when needed | No | `body-template.md` → Reference/API |
+| Discipline | Discipline | Add evidence-backed Rationalization Table, Red Flags, and Foundational Principle | **Yes** — all Bulletproofing Requirements | `bulletproofing-guide.md` |
 
 ## Behavioral-Force Rules
 
@@ -77,6 +79,7 @@ The six levers that decide whether an agent obeys a skill. Apply all six to ever
 - [ ] **Concrete anchors** — vague qualifiers are replaced with measurable anchors where a limit is meant ("3 sentences or fewer", not "concise")
 - [ ] **Position** — the most critical instruction sits in the first fifth and the last fifth of the body, and is restated at the end
 - [ ] **Leading words** — each behavioral concept is named with a compact term the model already holds from pretraining (*adversarial*, *tight*, *red/green*) and repeated as that term, never re-explained; a leading word too weak to change behavior ("be thorough") is replaced with a stronger word ("relentless"), not with a longer sentence
+- [ ] **Atomic steering** — write one behavioral decision per sentence or bullet; put rationale in the next sentence instead of packing commands, exceptions, and explanation together
 
 ## Invocation
 
@@ -122,6 +125,7 @@ Per the open Agent Skills spec (agentskills.io/specification). Required: `name` 
 Rules for workflow steps and file references. `body-template.md` (Writing Workflow Steps, Writing Context Pointers) demonstrates each.
 
 - [ ] Every workflow step ends on a **checkable completion criterion** — the agent can tell done from not-done ("all fixtures pass on a full re-run", not "tests look good")
+- [ ] Put each `Done when …` criterion on its own line after the action it closes
 - [ ] Criteria that gate thoroughness are **exhaustive** ("every modified file accounted for", not "produce a change list")
 - [ ] Every context pointer states *when* to load its target, not only what the target contains
 - [ ] A must-have file behind an unreliable pointer is fixed by sharpening the pointer's wording first; the material is inlined only if sharpening fails
@@ -134,14 +138,19 @@ Run in Phase 3 after drafting, and again whenever reviewing an existing skill.
 - [ ] **No-op test** — every sentence changes agent behavior versus the model's default; failing sentences are deleted whole, never trimmed ("handle edge cases carefully" fails; "test the empty string — it classifies as numeric" passes)
 - [ ] **Relevance** — every line still bears on what the skill does today; stale accumulated layers (sediment) are removed, not written around
 - [ ] **Single source of truth** — each rule, number, and list lives in exactly one file; other files point to it, never restate it
+- [ ] **Atomic prose** — one behavioral decision per sentence or bullet; split compound instructions before shortening their words
 
 ## Required Sections
 
-**Required (7):** Overview · When to Use · Do Not Use When · Workflow · Success Criteria · Common Mistakes · Failure Modes
+**Required core:** scope, action, and verification.
 
-*Technique skills may present When to Use + Do Not Use When as one combined **Scope** section (see Per-Type Recipe). The content of both is required; the two separate headings are not.*
+- **Scope:** `Scope`, or both `When to Use` and `Do Not Use When`. Include positive triggers, specific exclusions, and boundaries with colliding skills in either form.
+- **Action:** `Workflow`, `Rules`, or `Lookup Procedure`.
+- **Verification:** `Success Criteria` or `Verification`.
 
-**Conditional (present when applicable):** Required Context · Tool Guidance · Additional Resources · Quick Reference
+**Conditional:** Overview · Required Context · Tool Guidance · Quick Reference · Common Mistakes · Failure Modes · Additional Resources.
+
+Add a conditional section only when it changes execution. Keep a boundary or stop condition inside Scope or the action section when a separate Failure Modes section would repeat it.
 
 ## Quality Gate
 
@@ -151,9 +160,9 @@ The eight-point gate. All must be "yes" before a skill ships. `SKILL.md` names t
 2. **Bounded** — states when NOT to use it, and when to stop
 3. **Actionable** — workflow steps are imperative, specific, executable without guessing
 4. **Verifiable** — success criteria are measurable and unambiguous
-5. **Lean** — body within word target, depth in `references/`
+5. **Lean** — no minimum length, body under its ceiling, conditional depth in `references/`
 6. **Self-consistent** — the skill follows the rules it teaches (most commonly failed)
-7. **Positioned** — collisions with existing skills explicitly addressed in "Do Not Use When"
+7. **Positioned** — collisions with existing skills explicitly addressed within either accepted scope structure
 8. **Evidence-appropriate** — the skill passes the declared Evaluation Tier without making a broader claim; Tiers 2–3 beat the strongest realistic prompt within the declared cost ceiling
 
 ## Bulletproofing Requirements

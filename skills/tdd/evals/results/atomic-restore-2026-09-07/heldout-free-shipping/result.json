@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "case_id": "heldout-free-shipping",
+  "run_date": "2026-09-07",
+  "subject_sha256": "81f0678b0ad85524fa633c102132b9ed6f4a24c0055965aa4e4767735f19755f",
+  "harness": "Claude Code (Agent tool subagent, fresh context, skill body embedded in prompt)",
+  "model": "claude-fable-5",
+  "verdict": "PASS",
+  "checks": {
+    "red-before-production": true,
+    "valid-red": true,
+    "boundary": true,
+    "minimal-green": true,
+    "green-and-suite": true,
+    "evidence": true
+  },
+  "scoring": "Non-blind manual scoring by the orchestrating session; suite results, test contents, implementation scope, and workspace diffs re-verified deterministically by re-running each fixture suite and diffing against the frozen fixture.",
+  "tokens": 43346,
+  "tool_uses": 12
+}

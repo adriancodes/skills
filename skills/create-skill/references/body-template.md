@@ -1,8 +1,8 @@
 # Canonical SKILL.md Body Template
 
-Copy and adapt this template when creating new skills. Every section exists for a specific reason — omit only with explicit justification.
+Start with the smallest valid body. Add a section only when it changes execution.
 
-## Template
+## Smallest valid body
 
 ```markdown
 ---
@@ -15,79 +15,28 @@ description: >
 
 # Skill Name
 
-## Overview
+## Scope
 
-[Core principle in 1–2 sentences. What problem does this skill solve and why does it matter?]
+Use when [specific trigger].
 
-## When to Use
-
-- [Trigger scenario A — specific user request or situation]
-- [Trigger scenario B — symptom or error message]
-- [Trigger scenario C — context that signals this skill applies]
-
-## Do Not Use When
-
-- [Exclusion A — what this skill is NOT for]
-- [Exclusion B — adjacent task that requires a different skill]
-- [Exclusion C — condition where applying this skill would be harmful]
-
-## Required Context
-
-[What the agent must gather or verify before starting the workflow. Pre-flight checks.]
-
-- [Input 1 — files, logs, or information needed]
-- [Input 2 — state that must be true before proceeding]
+Do not use when [specific boundary and replacement].
 
 ## Workflow
 
-1. [First step — imperative voice, specific action]
-2. [Second step — what to do with the gathered context]
-3. [Third step — core execution of the skill's purpose]
-4. [Fourth step — validation or verification]
-5. [Fifth step — summarize results, communicate to user]
+1. [Issue one concrete command.]
 
-## Tool Guidance
+   Done when [checkable completion criterion].
+2. [Issue the next concrete command.]
 
-**Prefer:**
-- [Tool A — and why it's appropriate here]
+   Done when [checkable completion criterion].
 
-**Avoid:**
-- [Tool B — and why it's inappropriate or dangerous here]
-
-**Constraints:**
-- [Safety rule — e.g., "never force-push without user confirmation"]
-
-## Success Criteria
+## Verification
 
 - [Condition 1 — measurable definition of done]
 - [Condition 2 — quality bar that must be met]
-
-## Quick Reference
-
-| Scenario | Action |
-|----------|--------|
-| [Common case 1] | [What to do] |
-| [Common case 2] | [What to do] |
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| [Error pattern 1] | [Correct approach] |
-| [Error pattern 2] | [Correct approach] |
-
-## Failure Modes
-
-- **[Condition A]:** Stop and escalate to the user. [Why this can't be handled automatically.]
-- **[Condition B]:** Ask for more context. [What's missing and why it matters.]
-- **[Condition C]:** Known limitation. [What the skill cannot do and what alternatives exist.]
-
-## Additional Resources
-
-- **`references/detailed-guide.md`** — [What it contains and when to consult it]
-- **`examples/working-example.sh`** — [What it demonstrates]
-- **`scripts/utility.sh`** — [What it does — can be executed without reading]
 ```
+
+Add Overview, Required Context, Tool Guidance, Quick Reference, Common Mistakes, Failure Modes, or Additional Resources only when the content changes behavior. Never add a heading to satisfy symmetry.
 
 Optional frontmatter per the open Agent Skills spec — `license`, `compatibility` (environment requirements like git or Python versions), `metadata`, `allowed-tools` (experimental) — is defined in `references/rules.md` (Frontmatter Fields). Add `compatibility` whenever the skill ships scripts with tooling dependencies.
 

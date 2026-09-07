@@ -1,0 +1,31 @@
+{
+  "skill": "create-spec",
+  "case_id": "regression-explicit-pace-complaint",
+  "subjects": {
+    "SKILL.md": "f4ac1c1b104ba8a03bf785972dd4b0c39d720402fbbc7c10bb899a80329c0842",
+    "references/artifacts.md": "9f09a4378f8bf7d7df8f88b53f616ace5447d6777f3bd711f47c0b12be99beac"
+  },
+  "cases_sha256": "bafcac3c5f75e9989a860640afdc6879d9dd474e0574bd27effabff4b413565e",
+  "prompt_sha256": "724daa9945d579a79aa141475195bc3c0f94e0e20668784f9b3be314f2d4c976",
+  "runner_sha256": "5a2ba3f8d02a2303b3d4039f316d36576233df1b2c1a038ae41909f89c4dfcae",
+  "harness_version": "codex-cli 0.153.3",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-5.6-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/skill-review-probe-FR6m4P"
+  ],
+  "observed_at": "2026-09-05T01:01:14.511Z",
+  "timeout_ms": 120000,
+  "claim": "One explicit-load regression on this route; no full-tier or autonomous-trigger claim. User config ignored; globally installed harness instructions may still load."
+}

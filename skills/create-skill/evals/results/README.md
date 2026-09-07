@@ -1,5 +1,7 @@
 # Results Status
 
+Current review corrections: see [the recorded probes and limits](../../../../evals/review-fixes.md). Raw current-subject results are under `review-2026-09-04/`; replay with `node evals/check-review-probes.mjs` from the repository root. These probes do not replace the full declared tier.
+
 Verdict: **ITERATE**
 
 The recorded Phase-0 runs are historical evidence for suite 1.0.0, collected before the workflow required a user-confirmed Skill Brief. They do not validate the revised 1.1.0 candidate and must not be reused to freeze or ship it. Six isolated actor runs plus six arm-blinded judge runs consumed 1,072,496 tokens.

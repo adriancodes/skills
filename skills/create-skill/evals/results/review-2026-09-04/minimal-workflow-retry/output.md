@@ -1,0 +1,4 @@
+- Required Sections — **PASS**. Scope, action (`Workflow`), and verification are present.
+- Discoverability — **PASS**. It includes realistic user phrases, incident/handoff terminology, and the relevant `diagnose` skill name.
+- Boundaries — **PASS**. It excludes active diagnosis, provides an escalation path, defines measurable success, and stays narrowly focused.
+- Quality Gate 7: Positioned — **PASS**. The collision with `diagnose` is explicitly addressed in `Scope`.

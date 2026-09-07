@@ -1,0 +1,30 @@
+{
+  "skill": "create-tasks",
+  "case_id": "regression-chat-only-pressure",
+  "subjects": {
+    "SKILL.md": "1ab8fa5a9d627074fdb95c0f565756c2b63ef31ca4178a0e29053bb28f60c896"
+  },
+  "cases_sha256": "31238d9c24ae8992f8851532c6e9d3553514bcb5d3f360746bb0e2032f0cac5a",
+  "prompt_sha256": "619894ac0430e7f9e6c614a71831548b6120676875665e051aa9e487035f6f72",
+  "runner_sha256": "5a2ba3f8d02a2303b3d4039f316d36576233df1b2c1a038ae41909f89c4dfcae",
+  "harness_version": "codex-cli 0.153.3",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-5.6-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/skill-review-probe-w0lmpB"
+  ],
+  "observed_at": "2026-09-05T01:04:24.662Z",
+  "timeout_ms": 120000,
+  "claim": "One explicit-load regression on this route; no full-tier or autonomous-trigger claim. User config ignored; globally installed harness instructions may still load."
+}

@@ -42,15 +42,17 @@ Run every item before finalizing a skill. A single "no" means the skill is not r
 
 ## Body: Sections
 
-- [ ] Every Required Section in `references/rules.md` (Required Sections) is present
-- [ ] Each Conditional Section is present when its trigger applies (Required Context for pre-flight inputs; Tool Guidance for tool constraints; Additional Resources when references/, examples/, or scripts/ exist; Quick Reference for many options)
+- [ ] The required core in `references/rules.md` is present: scope, action, and verification
+- [ ] Optional sections appear only when they change behavior
+- [ ] Required Context appears for pre-flight inputs; Tool Guidance appears for tool constraints; Additional Resources appears when runtime resources exist
 
 ## Writing Style
 
-- [ ] Imperative/infinitive voice throughout ("Parse the file", not "You should parse")
-- [ ] No second person ("you", "your") anywhere in the body
+- [ ] Workflow skills use imperative/infinitive voice ("Parse the file", not "You should parse")
+- [ ] Second person is reserved for personas and always-on identity text; ordinary skill workflows remain verb-first
 - [ ] Objective, instructional language — focuses on WHAT to do, not WHO does it
 - [ ] Bullet points and numbered steps, not dense paragraphs
+- [ ] Each sentence or bullet carries one behavioral decision; rationale follows separately
 - [ ] Code examples well-commented explaining WHY, not WHAT
 
 ## Behavioral Force
@@ -59,7 +61,7 @@ Run every item before finalizing a skill. A single "no" means the skill is not r
 
 ## Steps and Pointers
 
-- [ ] Every rule in `references/rules.md` (Steps and Pointers) holds — each workflow step ends on a checkable completion criterion, and each context pointer states when to load its target
+- [ ] Every rule in `references/rules.md` (Steps and Pointers) holds — each workflow step ends with a standalone `Done when …` criterion, and each context pointer states when to load its target
 
 ## Pruning
 
@@ -67,7 +69,7 @@ Run every item before finalizing a skill. A single "no" means the skill is not r
 
 ## Word Count
 
-- [ ] SKILL.md body is within the word target for its skill type (`references/rules.md` → Word Targets)
+- [ ] SKILL.md body has no filler added to meet a minimum and stays under its type ceiling (`references/rules.md` → Word Targets)
 - [ ] No SKILL.md body exceeds the hard cap (`references/rules.md` → Word Targets)
 - [ ] Content beyond target moved to `references/`
 
@@ -90,7 +92,7 @@ Run every item before finalizing a skill. A single "no" means the skill is not r
 
 ## Discoverability (Keyword Optimization)
 
-- [ ] Error messages and symptoms in "When to Use" section
+- [ ] Relevant error messages and symptoms appear within an accepted scope structure (`references/rules.md` → Required Sections)
 - [ ] Synonyms for key concepts used throughout
 - [ ] Tool names and CLI commands mentioned where relevant
 - [ ] User-phrasing variations in description and body
@@ -108,7 +110,7 @@ Run every item before finalizing a skill. A single "no" means the skill is not r
 
 ## Boundaries
 
-- [ ] "Do Not Use When" section is present and specific
+- [ ] Scope contains specific exclusions and collision boundaries (`references/rules.md` → Required Sections)
 - [ ] Failure modes documented with clear escalation guidance
 - [ ] Success criteria are measurable and unambiguous
 - [ ] Skill scope is narrow — one job, not a whole profession

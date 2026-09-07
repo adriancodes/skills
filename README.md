@@ -16,6 +16,18 @@ npx skills add adriancodes/skills
 
 Choose the skills you want during installation. Each works independently in any harness supported by the [skills CLI](https://github.com/vercel-labs/skills).
 
+## How the toolbox fits together
+
+| Layer | Job |
+|---|---|
+| [`ground-rules`](ground-rules/ground-rules.md) | Always-on operating behavior |
+| [`skills`](skills/) | Task workflows: the **how** |
+| [`agents`](agents/) | Specialist perspective and output contracts: the **who** |
+| Native invocation | User intent: the **when** |
+| `evals/` | Routing and behavioral evidence |
+
+See [Toolbox Anatomy](docs/toolbox-anatomy.md) for composition and placement rules. Repository-level `AGENTS.md` configures contributors; it is not installed user behavior.
+
 ## Which skill, when
 
 | You're about to… | Reach for |
@@ -41,6 +53,12 @@ Choose the skills you want during installation. Each works independently in any 
 | Ask a quick factual question | No skill — just ask |
 
 Five skills form an optional pipeline: `create-spec` → `create-tasks` → `implement-task` → `verify-work`, coordinated by `deliver-feature`. They hand work between sessions and teammates through files in `docs/specs/`. Each skill also works independently.
+
+## Agent personas
+
+[`evidence-led-reviewer`](agents/evidence-led-reviewer.md) adopts a Staff Engineer review lens and uses `code-review` for its workflow. Personas own perspective and output shape; skills own process. See [Agent Personas](docs/agents.md).
+
+Select a persona through a harness that supports agent definitions. Otherwise, load its file as the role or subagent instructions; the linked skill still installs independently through the skills CLI.
 
 ## Ground Rules
 

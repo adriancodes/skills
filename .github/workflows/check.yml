@@ -9,3 +9,10 @@ jobs:
         with: { node-version: 20 }
       - run: node scripts/skills.mjs check
       - run: node scripts/skills.mjs readme --check
+      - run: node scripts/validate-personas.mjs
+      - run: node scripts/validate-personas-test.mjs
+      - run: node scripts/route-skills-test.mjs
+      - run: node scripts/skills.mjs route
+      - run: node skills/create-skill/evals/check-workflow-contract.mjs
+      - run: node skills/create-skill/evals/check-lean-authoring-contract.mjs
+      - run: node evals/check-review-probes.mjs

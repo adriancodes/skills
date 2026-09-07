@@ -1,5 +1,7 @@
 # implement-task evidence status
 
+Historical Phase-6 observation (UNVERIFIED; raw transcripts, route, and scoring records unavailable): 5/5 for subject `378c97b5af46…`; valid red, bounded implementation, hostile checks, and focused/full tests all held. See the [Phase-6 report](../../../../docs/evidence/phase6-atomic-rewrite-2026-08-29.md). Historical evidence below remains scoped to its recorded hash.
+
 One Tier-2 run is recorded: `tier2-2026-08-01.md` (raw evidence in
 `tier2-2026-08-01-sessions.md`). 16/16 assertions pass across 4 actor
 sessions; the value pair tied against the brief's gate-naming baseline prompt

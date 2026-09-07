@@ -16,7 +16,7 @@ metadata:
 
 ## Overview
 
-A loop repeatedly discovers work, acts, verifies, records state, and picks the next move without human prompting. Build four portable artifacts: `LOOP.md`, `STATE.md`, the loop prompt, and a rollout plan. Add a runner adapter only when a concrete runner exists. Never give credentials to a bare "keep going until done" prompt. The agent that makes a change never verifies completion, and every new loop starts report-only.
+A loop discovers work, acts, verifies, records state, and chooses the next move. Build four portable artifacts: `LOOP.md`, `STATE.md`, a loop prompt, and a rollout plan. Add a runner adapter only for a concrete runner. Never give credentials to a bare "keep going" prompt. The maker never verifies completion. Start every loop report-only.
 
 ## When to Use
 
@@ -28,37 +28,66 @@ A loop repeatedly discovers work, acts, verifies, records state, and picks the n
 
 - The job runs once: a plain session (ending with `verify-work`, if installed) beats a one-iteration loop
 - The "loop" is multi-step work inside one session: that's a todo list, not a loop
-- The job isn't specified yet: pin it first (`create-spec`, if installed): a loop amplifies a vague goal into vague scheduled changes
+- The job is vague: pin it first with `create-spec` when installed. A loop amplifies vague goals into scheduled mistakes.
 
 ## Required Context
 
 - The job: what the loop discovers, what it may change, what "healthy" looks like
-- The runner: the harness's loop/goal/cron feature, a CI schedule, or OS cron + headless CLI: whichever exists; the design is runner-agnostic
+- The runner: a harness loop, CI schedule, or OS cron plus a headless CLI. Keep the design runner-agnostic.
 - The budget reality: tolerable per-run cost and who reviews the output
 
 ## Workflow
 
 Load `references/loop-formats.md` before writing any artifact (templates, pattern table, runner mapping).
 
-**Repairing an existing loop?** Audit instead: read its files and state ledger, map each misbehavior to its missing guard: token burn → no budget, the same fix retried → no breaker, duplicate branches or PRs → no lock, unreviewed changes → no gate or a self-written level. Retrofit the missing guards (creating LOOP.md/STATE.md if absent), demote to L1 with promotion counters reset, and rejoin step 6 to hand over.
+**Repairing an existing loop?** Read its files and state ledger. Map each failure to its missing guard:
 
-1. **Name the goal as a verifiable condition.** Not "keep CI green" but the check a fresh verifier runs: "latest main CI run green AND the cycle's diff deleted or skipped no test." Beside it, write the anti-gaming clause: every way to satisfy the condition without doing the job. For code loops: deleted tests, loosened thresholds, suppressed failure signals; other domains wear the same move differently: a triage loop closing tickets unread. Done when condition and clause are written.
+- token burn → no budget;
+- repeated failed fix → no breaker;
+- duplicate branch or PR → no lock;
+- unreviewed change → no gate or a self-written level.
 
-2. **Design the run.** One cycle = **triage** (cheap) → **act** (only when triage found something actionable) → **verify** (fresh eyes: a different agent or the human gate, never the maker; one carve-out: a deterministic check may verify only when the goal is machine-checkable *and* the loop provably holds no credential that could alter the checker: the anti-gaming diff review still needs real eyes) → **persist** → **decide**. Every run ends in exactly one of three states: *verified-done*, *progress-with-state-written*, or *escalated*; any other ending is a design bug. Done when the phases and the three endings are in LOOP.md.
+Add the missing guards. Create `LOOP.md` or `STATE.md` when absent. Demote the loop to L1 and reset promotion counters. Then hand over through step 6.
 
-3. **Give it a spine.** STATE.md answers three questions: what is being worked now; what was tried and what happened; what awaits a human. The loop reads state before acting and writes it before every exit, failed ones above all: the failure notes are the ledger's point. Done when STATE.md is seeded with the three sections.
+1. **Name a verifiable goal.** Write the exact check a fresh verifier runs. Replace "keep CI green" with "latest main CI is green." Add an anti-gaming clause. For code, forbid deleted tests, weaker thresholds, and hidden failures. Translate the same risk for other domains.
+
+   Done when the condition and anti-gaming clause are written.
+
+2. **Design the run.** Use **triage → act → verify → persist → decide**. Act only when triage finds actionable work. Give verification to another agent or the human gate. Never let the maker self-certify.
+
+   A deterministic check may verify a machine-checkable goal. The loop must hold no credential that can alter that checker. A human still reviews the anti-gaming diff.
+
+   End every run as *verified-done*, *progress-with-state-written*, or *escalated*. Any other ending is invalid.
+
+   Done when `LOOP.md` contains the phases and three endings.
+
+3. **Give it a spine.** Make `STATE.md` answer three questions:
+
+   - What is active now?
+   - What was tried, and what happened?
+   - What awaits a human?
+
+   Read state before acting. Write it before every exit, especially failures.
+
+   Done when `STATE.md` contains all three sections.
 
 4. **Set all four guards explicitly in LOOP.md:**
-   - **Budget**: worst-case run cost × cadence = daily spend, written *before* choosing the schedule; plus a numeric per-run operational cap (iterations or tokens). When pricing is unknown, write monetary cost as `unknown`, keep the loop unscheduled at L1, and name the measurement needed before choosing cadence: never invent a price. The operational cap stays numeric.
-   - **Circuit breaker**: two consecutive *attempts* at the same failure signature without new progress → stop and escalate; there is no attempt three. Attempts count within and across runs: an iteration cap is no license to retry the same fix inside one run.
+   - **Budget:** Calculate worst-case run cost × cadence before choosing the schedule. Add a numeric per-run cap in iterations or tokens. If pricing is unknown, write `unknown`. Keep the loop unscheduled at L1. Name the measurement needed before choosing cadence. Never invent a price.
+   - **Circuit breaker:** Stop after two attempts at the same failure signature without progress. There is no third attempt. Count attempts within and across runs.
    - **Overlap lock**: a run that finds the previous run alive exits immediately.
-   - **Human gate**: a capability boundary, never a verb list: name the *outcomes* only a human may cause ("main changes", "data is deleted", "users see something new"): a verb list invites the direct-push that technically isn't a "merge". Below L3, absent credentials enforce the gate, not prose: no token that could cause a gated outcome. For an intrinsically read-only loop, the gate is the transition from reporting to any mutation or external publication; `nothing gated` is never valid.
+   - **Human gate:** Name outcomes only a human may cause. Examples: main changes, data deletion, or user-visible publication. Never substitute a verb list. Below L3, enforce the gate by withholding credentials. For a read-only loop, gate any mutation or external publication. `nothing gated` is invalid.
 
-   Done when LOOP.md contains a numeric operational cap and breaker threshold, a concrete lock mechanism, and a capability boundary enforced by absent credentials; monetary cost is numeric or explicitly unknown.
+   Done when `LOOP.md` contains all four guards. Monetary cost is numeric or explicitly unknown.
 
-5. **Stage the rollout.** L1 report-only (findings and would-do written to state; nothing changed) → L2 assisted (changes behind a PR or approval) → L3 unattended (only actions outside the human gate). Promotion needs 5 consecutive clean runs at the current level; only the fresh-eyes verifier or the human certifies a run clean and writes `level:` / `clean-runs-at-level:` (on a personal repo, one human message certifies). The loop reads its level, never writes it; a self-written level is void. Every loop is born L1. Done when LOOP.md carries the ladder and counts.
+5. **Stage the rollout.** Use L1 report-only → L2 assisted → L3 unattended. L3 may perform only actions outside the human gate. Require 5 consecutive clean runs before promotion. Only the independent verifier or human may certify a clean run. Only they write `level:` and `clean-runs-at-level:`. The loop reads its level but never writes it. Treat self-written levels as void. Start every loop at L1.
 
-6. **Hand over.** Deliver the artifacts including the wired runner adapter: the guards live in it as mechanisms (`concurrency:` group or pidfile for the lock, token scope for the gate, the schedule itself for cadence). Say out loud what the loop will *not* do: the human gate and L1 restriction. With known cost, end with the command starting the first scheduled L1 run. With unknown cost, leave scheduling disabled and end with the command for one manual report-only measurement run; schedule only after its cost is recorded. Done when the files and the matching command exist.
+   Done when `LOOP.md` contains the ladder and counters.
+
+6. **Hand over.** Deliver the artifacts and wired runner adapter. Implement guards as mechanisms. Use a concurrency group or pidfile for the lock. Use token scope for the gate. Put cadence in the runner schedule. State the human gate and L1 restriction.
+
+   With known cost, end with the first scheduled L1 command. With unknown cost, leave scheduling disabled. End with one manual report-only measurement command.
+
+   Done when the files and matching command exist.
 
 ## Example: goal, guard, ending
 
@@ -68,7 +97,7 @@ Load `references/loop-formats.md` before writing any artifact (templates, patter
 
 ## Common Rationalizations
 
-Provenance: a *self-report* baseline probe. Behavioral baselines avoid the worst of these (models build PR-only loops unprompted), but the excuses resurface under mid-run pressure: exactly when this table earns its place.
+Provenance: a self-report baseline probe. These excuses recur under mid-run pressure.
 
 | Excuse | Reality |
 |--------|---------|
@@ -82,7 +111,9 @@ Provenance: a *self-report* baseline probe. Behavioral baselines avoid the worst
 ## Success Criteria
 
 - Goal written as an externally verifiable condition with an anti-gaming clause
-- LOOP.md holds all four guards: numeric operational/breaker limits, a concrete lock, and an enforceable capability boundary; monetary cost is numeric or explicitly unknown; STATE.md is seeded with the three questions
+- `LOOP.md` holds all four guards.
+- Monetary cost is numeric or explicitly unknown.
+- `STATE.md` contains the three required sections.
 - The loop is born L1 with promotion counts, and the human gate names at least one gated outcome
 - Every run's ending is one of the three states by construction
 - The loop prompt and rollout plan exist; when a concrete runner exists, its adapter and run-one command exist too
@@ -105,7 +136,7 @@ Provenance: a *self-report* baseline probe. Behavioral baselines avoid the worst
 
 ## Additional Resources
 
-- **`references/loop-formats.md`**: LOOP.md and STATE.md templates, the pattern table (cadence + cost class for seven common loops), and the runner mapping. Load before writing any artifact.
+- **`references/loop-formats.md`:** templates, cadence patterns, cost classes, and runner mappings. Load before writing any artifact.
 
 ## Summary
 

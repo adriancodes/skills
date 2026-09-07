@@ -2,8 +2,8 @@
 name: deliver-feature
 description: >
   Use when a feature should move through the whole pipeline. The user
-  asks to "deliver this feature", "continue the feature", "what's next on
-  X", "run the pipeline". Also when a session resumes work that has
+  asks to "deliver this feature", "build this feature end to end",
+  "continue the feature", or "run the pipeline". Also when a session resumes work that has
   existing spec or slices artifacts, or nobody remembers where a
   feature stands.
 license: MIT
@@ -33,11 +33,15 @@ Move a feature through spec, task creation, implementation, and verification, on
 ## Required Context
 
 - The feature's topic, enough to find its artifacts
-- The artifact scan, read in full: `docs/specs/` (or a path re-homed by repo instructions like `AGENTS.md` or `CLAUDE.md`) for the topic's decision log and `*-slices.md`, including frontmatter `status:` and every tick state
+- The topic's decision log and `*-slices.md`, read in full.
+- Repository instructions that re-home `docs/specs/`.
+- Frontmatter status and every slice tick.
 
 ## Workflow
 
-1. **Read the baton.** Find and fully read the topic's decision log and slices file, frontmatter included; skimming relitigates confirmed decisions and builds on open ones. Two open specs match the topic: ask which. A missing file is a state, not a read failure: quote it as `missing`. Done when each file is quoted as missing, open, confirmed, complete, or invalid with the violated contract named.
+1. **Read the baton.** Find and fully read the decision log and slices file. Include frontmatter. Never infer state from filenames. If two open specs match, ask which. Treat a missing file as state and quote it as `missing`.
+
+   Done when each artifact is classified as missing, open, confirmed, complete, or invalid.
 
 2. **Detect the stage: artifacts only.** First matching row, top to bottom:
 
@@ -51,11 +55,24 @@ Move a feature through spec, task creation, implementation, and verification, on
    | All slices ticked, `## Verification` section empty | Verification: run `verify-work` read-only on the feature's artifacts | If clean, write the report summary + date into `## Verification`; if findings remain, leave it empty and request explicit fix authority |
    | `## Verification` filled | Done: summarize the paper trail (spec, slices, verification) and stop |: |
 
-   An unconfirmed artifact is a stop signal, not a formality: `status: open` runs that artifact's stage, however finished the work looks. `confirmed-by-override` is confirmed. Done when the stage is named to the user before any work starts.
+   Treat `status: open` as a stop signal. Run that artifact's stage, however finished it looks. Treat `confirmed-by-override` as confirmed.
 
-3. **Run the stage through its skill.** Invoke the sibling and follow it fully; never inline a shortcut version of an installed skill. When a sibling is **missing**, degrade loudly: name it and how to install it, then stop or (with the user's say-so) apply the one-line fallback: spec → interview the decisions one question at a time to an explicitly confirmed written log; slicing → split into vertical, demoable, session-sized slices with blockers, in a file; implementation → one slice, test-first, demo run, file ticked; verification → execute the artifact against hostile cases. Done when the stage's own gate is reached.
+   Done when the stage is named before work starts.
 
-4. **Exit clean.** Report the stage run, its outcome, what the artifacts now say, and what the *next* invocation will do; then stop. Exactly one stage runs per invocation, planning stages included; an explicit request to continue begins a new invocation rather than extending this one. Done when the report ends with the next-stage line and no second stage has started.
+3. **Run the owning skill.** Invoke the sibling and follow it fully. Never inline a shortcut when the skill is installed.
+
+   When it is missing, name the gap and installation path. Stop unless the user approves the fallback:
+
+   - spec → ask one decision question at a time and confirm a written log;
+   - tasks → write vertical, demoable, session-sized slices with blockers;
+   - implementation → build one slice test-first, run its demo, and tick it;
+   - verification → execute hostile cases against the artifact.
+
+   Done when the stage's own gate is reached.
+
+4. **Exit clean.** Report the stage, outcome, and current artifact state. Name what the next invocation will do. Then stop. Run exactly one stage per invocation, including planning stages.
+
+   Done when the report ends with the next-stage line.
 
 ## Example: a resumed session
 
@@ -91,8 +108,8 @@ Move a feature through spec, task creation, implementation, and verification, on
 
 ## Failure Modes
 
-- **Artifacts contradict each other** (slices cite decisions the spec lacks): stop at the spec: the upstream file wins; read the mismatch back to the user before anything runs.
-- **No artifacts exist at all:** the pipeline starts at stage one: say so and run the spec stage; "just code it" for pipeline-worthy work recreates the baseline lump.
+- **Artifacts contradict:** stop at the spec because the upstream file wins. Read back the mismatch before work.
+- **No artifacts exist:** start at the spec stage. Say so before running it.
 - **The topic matches nothing findable:** ask for the spec path rather than guessing across features.
 
 ## Summary

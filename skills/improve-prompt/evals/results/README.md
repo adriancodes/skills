@@ -4,12 +4,11 @@
 
 Verdict: **SHIP** as a user-invoked convenience shortcut on the observed Codex `gpt-5.6-sol` route.
 
-The shortcut passed normal, already-precise, and authority-pressure smoke cases. Every unsupported detail was exposed, no run claimed execution without authority, and every temporary workspace remained unchanged.
+The rewritten shortcut passed fresh normal, already-precise, and authority-pressure smoke cases on 2026-08-29. Every unsupported detail was exposed, no run claimed execution without authority, and every temporary workspace remained unchanged.
 
-- Current subject: `04aaf07901e9b069a5fe19bdf954890b6b03bed13aba84eb8e9b1cff3b824bac`
-- Tested subject: `b763209ce0fd542b7a74aa9248d4b16619097793c802715bae5c2b1223877f6a` (formatting-equivalent; only Markdown line-break whitespace changed after the run)
+- Current and tested subject: `96d33fc5b11dd24b38703a7cda6846b566aeba80fc377124bf8f55a7680ef2e0`
 - Actor sessions: 3
-- Total tokens: 39,910
+- Total tokens: 47,028
 - Budget: 3 sessions and 90,000 tokens
 - Invocation: explicit only; autonomous triggering disabled
 - Claim: convenient recall of the tested prompt pattern, not better output than typing that prompt directly

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "case_id": "trigger-negative-depth",
+  "kind": "trigger",
+  "subject_sha256": "d15de8c5348a0f24f2468801504fe86d02445bc2240d0e02e3daa2723ce17804",
+  "harness": "codex",
+  "harness_version": "codex-cli 0.151.0",
+  "model": "gpt-5.6-sol",
+  "output": {
+    "path": "smoke-results/d15de8c5348a/trigger-negative-depth/output.md",
+    "sha256": "f8c9387b9c12f03b1b8a8ed3fe80fecd8acec97cdbf25615f3dafe4dc6861118"
+  },
+  "trace": {
+    "path": "smoke-results/d15de8c5348a/trigger-negative-depth/trace.jsonl",
+    "sha256": "6c1d872f96ad6f9cc3807a72ac5b927c7347c71db0fcb6017ec926c172a2e0be"
+  },
+  "observed_trigger": false,
+  "total_tokens": 23196
+}

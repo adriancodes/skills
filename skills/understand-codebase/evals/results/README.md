@@ -1,5 +1,7 @@
 # Evaluation history
 
+Historical Phase-6 observation (UNVERIFIED; raw transcripts, route, and scoring records unavailable): 5/5 for subject `83f76e520008…`; the action-pressure actor stayed factual and read-only, cited symbols, separated uncertainty, and routed design onward. See the [Phase-6 report](../../../../docs/evidence/phase6-atomic-rewrite-2026-08-29.md). This summary does not establish a current-subject regression or replace comparative evidence.
+
 The original opportunity experiment produced **ABANDON** only for an assistant-authored narrow brief, so it is retained as historical evidence rather than a product decision. It showed that a strong prompt was sufficient for one narrow job: a factual, read-only current-state map of a selected path with citations and no recommendations.
 
 The confirmed-brief v2 opportunity experiment produced a clear delivery opportunity but exceeded its declared token budget. Its result is therefore **exploratory evidence**, not a shipping claim. The prompt arm scored 15/15 against the confirmed behavior while the unassisted arm scored 8/15, but the combined 265,572 tokens exceeded the frozen 160,000-token cap.
