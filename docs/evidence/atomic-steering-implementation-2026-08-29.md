@@ -44,6 +44,8 @@ Phase 6 reduced the ten selected bodies from 12,659 to 10,926 words. Every activ
 | tdd | UNVERIFIED reported 16/16 | Raw audit artifacts unavailable; prior comparison retained for its recorded subject |
 | evidence-led-reviewer | UNVERIFIED reported 6/6 direct and 6/6 fallback | Raw audit artifacts unavailable; structural validation is independently runnable |
 
+**Update — 2026-09-07:** after review restorations to the tdd subject (repeat gate, Genuine Exceptions), its three frozen cases were rerun fresh and verified: 16/16 PASS with preserved raw reports, scores, and workspaces. See `skills/tdd/evals/results/atomic-restore-2026-09-07/`.
+
 Detailed results:
 
 - `ground-rules/evals/results/atomic-rewrite-2026-08-29.md`
