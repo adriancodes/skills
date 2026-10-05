@@ -1,0 +1,6 @@
+{
+  "README.md": "31ac5249ead4b41254b897d2b46229ebd60a2f021445e603883c41d41d654741",
+  "fixtures/customers.json": "f808df972e6150a9deb5ba30e8257f7f9cb42bd6e6b6ca7d1d2b6b6114ff7111",
+  "package.json": "c185d39e6f8d74b0eefb56cdd70bec3181854d3fd8b6c801e00922b00ebf3b98",
+  "src/migrate-customers.js": "bf7503ce4786ca802596a22fdfd8af922702311db984e54bc041a1bcc3f1dc06"
+}

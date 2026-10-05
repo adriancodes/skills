@@ -1,0 +1,14 @@
+{
+  "skill": "be-concise",
+  "request": "Keep it short: Why does runQueue claim the job before sending? Answer from src/queue.js.",
+  "setup": "",
+  "source_case": null,
+  "copy": null,
+  "files": {
+    "src/queue.js": "// claim returns false when another worker owns this job.\nexport async function runQueue(job, store, send) {\n  if (!(await store.claim(job.id))) return false;\n  await send(job);\n  await store.complete(job.id);\n  return true;\n}\n"
+  },
+  "checks": [
+    "Answer first in at most four sentences, plain prose, no optional closing offer.",
+    "Explain ownership gating before the side effect without claiming proven exactly-once recovery."
+  ]
+}

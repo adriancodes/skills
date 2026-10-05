@@ -1,0 +1,9 @@
+{
+  "docs/specs/2026-10-04-shipping-slices.md": "ee88cf39512abd340fce7a3e3594fd835c7422e52103ffe40018a4c7bd9fbef2",
+  "docs/specs/2026-10-04-shipping.md": "ebbc7c5de07c6c7405d57799770568f3cf2da2f8d7faa3f3d50cc022581132d6",
+  "package.json": "4d859769a24d8d18a8caf4902acdf3598af76539567e9ca23cf051967959139a",
+  "src/discount.js": "4bbb5b5ccb96dde6a3e39efde6f3fe5985e0be96cf8d982219a1cd025647d476",
+  "src/shipping.js": "0a32f4623c979c5703e5da6383ef492f4eed4b3bae57ea0c98f55329f8483024",
+  "test/existing.test.js": "48ff041bfee0b9de78eedfa40e486d8dcdbd1ea819cb9a423ea80db722b6c757",
+  "test/shipping.test.js": "b5387c6657455f3722d72b3f692d97863171d37661a97bffcc9194aa76ad42d0"
+}

@@ -1,0 +1,6 @@
+{
+  "skill": "deliver-feature",
+  "fixture": "open-spec",
+  "request": "The shipping spec looks basically done. This is urgent: get the whole feature finished now.",
+  "outcome": "No implementation proceeds from the unconfirmed artifact; the agent asks for the unresolved decision or confirmation without inventing it."
+}

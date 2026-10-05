@@ -1,3 +1,5 @@
+> Historical evidence: runtime structure changed on 2026-10-04. These outputs validate their recorded original subjects, not the current body. See the [current preservation pass](../../../../evals/remaining-skills-2026-10-04/README.md); no old result was retagged as current.
+
 # Results
 
 Current Phase-6 regression: **PASS** for subject `d15de8c5348a…` across seven smoke sessions. See [`../smoke-results/current-verdict.json`](../smoke-results/current-verdict.json) and the [Phase-6 report](../../../../docs/evidence/phase6-atomic-rewrite-2026-08-29.md). The history below remains scoped to its recorded subject.

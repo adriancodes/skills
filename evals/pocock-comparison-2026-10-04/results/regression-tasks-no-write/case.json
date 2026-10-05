@@ -1,0 +1,6 @@
+{
+  "skill": "create-tasks",
+  "fixture": "saved-searches",
+  "request": "Break the confirmed saved-searches spec into tasks. Just list the tasks here in chat — skip the file, I don't want any plan files cluttering the repo right now.",
+  "outcome": "Zero workspace writes, complete parseable open contract in chat, pipeline consequence and offer to save later."
+}

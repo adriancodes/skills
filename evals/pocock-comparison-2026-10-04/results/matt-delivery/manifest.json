@@ -1,0 +1,31 @@
+{
+  "case_id": "delivery-complete",
+  "arm": "matt",
+  "skill": "deliver-feature",
+  "subjects": {
+    "SKILL.md": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3"
+  },
+  "cases_sha256": "93ed7afa09d3bf809465930f1ce28749793b3d88e961124569755579bffc0b9b",
+  "runner_sha256": "d408ca76a69d50f10f09faf005dd4e4b24e25100afe08cdce9868649c37458e2",
+  "prompt_sha256": "19c1fe0a2b1c02bba2312d9d8c1eabf87d728f67b3486b77d8e22cce33e527ea",
+  "observed_at": "2026-10-05T03:17:46.152Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/skill-quality-pilot-y39TAY"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Single explicit-load local actor; no native discovery or cross-model claim. Global harness instructions may be present equally across arms."
+}

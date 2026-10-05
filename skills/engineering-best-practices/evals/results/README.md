@@ -1,3 +1,5 @@
+> Historical evidence: runtime structure changed on 2026-10-04. These outputs validate their recorded original subjects, not the current body. See the [current preservation pass](../../../../evals/remaining-skills-2026-10-04/README.md); no old result was retagged as current.
+
 # Engineering Best Practices evidence status
 
 One Tier-2 run is recorded: [tier2-2026-08-01.md](tier2-2026-08-01.md)

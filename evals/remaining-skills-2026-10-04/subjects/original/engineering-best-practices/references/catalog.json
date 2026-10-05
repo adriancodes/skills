@@ -1,0 +1,3260 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": "_rule-workbench/*/traceability.md#Mini mapping",
+  "books": {
+    "a-philosophy-of-software-design": {
+      "slug": "a-philosophy-of-software-design",
+      "title": "A Philosophy of Software Design",
+      "topics": [
+        "complexity",
+        "deep module",
+        "information hiding",
+        "interface",
+        "abstraction",
+        "comments",
+        "cognitive load"
+      ],
+      "miniPath": "a-philosophy-of-software-design/a-philosophy-of-software-design.mini.md",
+      "fullPath": "a-philosophy-of-software-design/a-philosophy-of-software-design.md",
+      "traceabilityPath": "_rule-workbench/a-philosophy-of-software-design/traceability.md"
+    },
+    "clean-architecture": {
+      "slug": "clean-architecture",
+      "title": "Clean Architecture",
+      "topics": [
+        "architecture",
+        "dependency rule",
+        "boundary",
+        "policy",
+        "framework",
+        "database",
+        "use case"
+      ],
+      "miniPath": "clean-architecture/clean-architecture.mini.md",
+      "fullPath": "clean-architecture/clean-architecture.md",
+      "traceabilityPath": "_rule-workbench/clean-architecture/traceability.md"
+    },
+    "clean-code": {
+      "slug": "clean-code",
+      "title": "Clean Code",
+      "topics": [
+        "readability",
+        "naming",
+        "function",
+        "side effect",
+        "error handling",
+        "tests",
+        "code hygiene"
+      ],
+      "miniPath": "clean-code/clean-code.mini.md",
+      "fullPath": "clean-code/clean-code.md",
+      "traceabilityPath": "_rule-workbench/clean-code/traceability.md"
+    },
+    "code-complete": {
+      "slug": "code-complete",
+      "title": "Code Complete",
+      "topics": [
+        "construction",
+        "routine",
+        "variable",
+        "control flow",
+        "defensive programming",
+        "class",
+        "testing"
+      ],
+      "miniPath": "code-complete/code-complete.mini.md",
+      "fullPath": "code-complete/code-complete.md",
+      "traceabilityPath": "_rule-workbench/code-complete/traceability.md"
+    },
+    "designing-data-intensive-applications": {
+      "slug": "designing-data-intensive-applications",
+      "title": "Designing Data-Intensive Applications",
+      "topics": [
+        "data",
+        "distributed",
+        "concurrency",
+        "idempotency",
+        "replication",
+        "partition",
+        "transaction",
+        "consistency",
+        "stream",
+        "schema evolution"
+      ],
+      "miniPath": "designing-data-intensive-applications/designing-data-intensive-applications.mini.md",
+      "fullPath": "designing-data-intensive-applications/designing-data-intensive-applications.md",
+      "traceabilityPath": "_rule-workbench/designing-data-intensive-applications/traceability.md"
+    },
+    "domain-driven-design": {
+      "slug": "domain-driven-design",
+      "title": "Domain-Driven Design",
+      "topics": [
+        "domain",
+        "bounded context",
+        "aggregate",
+        "entity",
+        "value object",
+        "ubiquitous language",
+        "model"
+      ],
+      "miniPath": "domain-driven-design/domain-driven-design.mini.md",
+      "fullPath": "domain-driven-design/domain-driven-design.md",
+      "traceabilityPath": "_rule-workbench/domain-driven-design/traceability.md"
+    },
+    "domain-driven-design-distilled": {
+      "slug": "domain-driven-design-distilled",
+      "title": "Domain-Driven Design Distilled",
+      "topics": [
+        "domain",
+        "subdomain",
+        "bounded context",
+        "aggregate",
+        "context map",
+        "ubiquitous language"
+      ],
+      "miniPath": "domain-driven-design-distilled/domain-driven-design-distilled.mini.md",
+      "fullPath": "domain-driven-design-distilled/domain-driven-design-distilled.md",
+      "traceabilityPath": "_rule-workbench/domain-driven-design-distilled/traceability.md"
+    },
+    "implementing-domain-driven-design": {
+      "slug": "implementing-domain-driven-design",
+      "title": "Implementing Domain-Driven Design",
+      "topics": [
+        "aggregate",
+        "domain event",
+        "repository",
+        "application service",
+        "bounded context",
+        "integration"
+      ],
+      "miniPath": "implementing-domain-driven-design/implementing-domain-driven-design.mini.md",
+      "fullPath": "implementing-domain-driven-design/implementing-domain-driven-design.md",
+      "traceabilityPath": "_rule-workbench/implementing-domain-driven-design/traceability.md"
+    },
+    "patterns-of-enterprise-application-architecture": {
+      "slug": "patterns-of-enterprise-application-architecture",
+      "title": "Patterns of Enterprise Application Architecture",
+      "topics": [
+        "enterprise",
+        "repository",
+        "unit of work",
+        "data mapper",
+        "service layer",
+        "transaction script",
+        "domain model"
+      ],
+      "miniPath": "patterns-of-enterprise-application-architecture/patterns-of-enterprise-application-architecture.mini.md",
+      "fullPath": "patterns-of-enterprise-application-architecture/patterns-of-enterprise-application-architecture.md",
+      "traceabilityPath": "_rule-workbench/patterns-of-enterprise-application-architecture/traceability.md"
+    },
+    "refactoring": {
+      "slug": "refactoring",
+      "title": "Refactoring",
+      "topics": [
+        "refactor",
+        "simplify",
+        "code smell",
+        "behavior preservation",
+        "extract",
+        "inline",
+        "test"
+      ],
+      "miniPath": "refactoring/refactoring.mini.md",
+      "fullPath": "refactoring/refactoring.md",
+      "traceabilityPath": "_rule-workbench/refactoring/traceability.md"
+    },
+    "refactoring-guru": {
+      "slug": "refactoring-guru",
+      "title": "Refactoring.Guru",
+      "topics": [
+        "refactor",
+        "code smell",
+        "design pattern",
+        "duplicate code",
+        "conditional",
+        "coupling"
+      ],
+      "miniPath": "refactoring-guru/refactoring-guru.mini.md",
+      "fullPath": "refactoring-guru/refactoring-guru.md",
+      "traceabilityPath": "_rule-workbench/refactoring-guru/traceability.md"
+    },
+    "release-it": {
+      "slug": "release-it",
+      "title": "Release It!",
+      "topics": [
+        "production",
+        "reliability",
+        "retry",
+        "timeout",
+        "circuit breaker",
+        "bulkhead",
+        "backpressure",
+        "overload",
+        "observability",
+        "failure"
+      ],
+      "miniPath": "release-it/release-it.mini.md",
+      "fullPath": "release-it/release-it.md",
+      "traceabilityPath": "_rule-workbench/release-it/traceability.md"
+    },
+    "the-pragmatic-programmer": {
+      "slug": "the-pragmatic-programmer",
+      "title": "The Pragmatic Programmer",
+      "topics": [
+        "pragmatic",
+        "dry",
+        "orthogonality",
+        "automation",
+        "feedback",
+        "prototype",
+        "adaptability",
+        "responsibility"
+      ],
+      "miniPath": "the-pragmatic-programmer/the-pragmatic-programmer.mini.md",
+      "fullPath": "the-pragmatic-programmer/the-pragmatic-programmer.md",
+      "traceabilityPath": "_rule-workbench/the-pragmatic-programmer/traceability.md"
+    },
+    "working-effectively-with-legacy-code": {
+      "slug": "working-effectively-with-legacy-code",
+      "title": "Working Effectively with Legacy Code",
+      "topics": [
+        "legacy",
+        "characterization test",
+        "seam",
+        "dependency",
+        "sprout",
+        "wrap",
+        "safe change"
+      ],
+      "miniPath": "working-effectively-with-legacy-code/working-effectively-with-legacy-code.mini.md",
+      "fullPath": "working-effectively-with-legacy-code/working-effectively-with-legacy-code.md",
+      "traceabilityPath": "_rule-workbench/working-effectively-with-legacy-code/traceability.md"
+    }
+  },
+  "principles": [
+    {
+      "id": "a-philosophy-of-software-design:M1",
+      "localId": "M1",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Use reduced complexity as the primary success metric and optimize for local understandability rather than size, line count, or cleverness.",
+      "source": "`Purpose` (3-19), `Primary Directive` (21-34), `Core Complexity Rules` (36-54), `Review Checklist` (345-357), `Final Instruction` (361-370)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M2",
+      "localId": "M2",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Treat design as continuous work; do not accept a working patch that worsens future changeability, and compare plausible alternatives for non-trivial design choices.",
+      "source": "`Strategic Programming over Tactical Programming` (118-131), `Design Alternatives and Comments-First Design` (246-257), `Review Checklist` (345-357)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M3",
+      "localId": "M3",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Prefer deep modules and reject shallow wrappers, pass-through services, thin library wrappers, helper modules, and tiny split-outs that add names without reducing reader burden.",
+      "source": "`Module Depth Rules` (57-77), `Combine or Separate Code` (231-242), `Forbidden Patterns / Shallow Decomposition` (297-302), `Code Generation Rules` (317-332)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M4",
+      "localId": "M4",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Design interfaces around caller knowledge rather than implementation mechanics; avoid fragile staging, setup sequences, flags, and arguments that expose internal choices.",
+      "source": "`Interface Design Rules` (96-114), `Code Generation Rules` (317-332), `Review Checklist` (345-357)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M5",
+      "localId": "M5",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Hide volatile decisions, representations, storage shape, protocols, file formats, performance hacks, bookkeeping, normalization, and messy edge handling inside the owning module.",
+      "source": "`Information Hiding Rules` (81-92), `Forbidden Patterns / Interface Leakage` (303-306), `Code Generation Rules` (317-332)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M6",
+      "localId": "M6",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Pull complexity downward when the lower module owns the detail, even if implementation grows slightly, so callers get a simpler public contract and less repeated reasoning.",
+      "source": "`Pull Complexity Downward` (159-166), `Forbidden Patterns / Complexity Spread` (311-314), `Code Generation Rules` (317-332)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M7",
+      "localId": "M7",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Choose generality at the right level and isolate special behavior instead of overfitting, speculating, or polluting the core path with edge cases.",
+      "source": "`General-Purpose vs Special-Purpose Modules` (135-140), `Special-General Decomposition` (218-227), `Error Handling and Exception Elimination` (144-155)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M8",
+      "localId": "M8",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Combine or split by total complexity, not size, runtime order, habit, or aesthetics; keep related state, behavior, invariants, and design decisions together unless the new boundary is deeper.",
+      "source": "`Function and Variable Rules` (189-200), `Temporal Decomposition Rules` (204-214), `Combine or Separate Code` (231-242)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M9",
+      "localId": "M9",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Reduce exception surface by changing interfaces or invariants where possible instead of making every caller repeat defensive ceremony.",
+      "source": "`Error Handling and Exception Elimination` (144-155), `Special-General Decomposition` (218-227), `Forbidden Patterns / Tactical Complexity Debt` (307-310)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M10",
+      "localId": "M10",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Use comments to reduce complexity through contracts, invariants, hidden design decisions, rationale, and tricky facts; do not narrate code or compensate for bad names, poor decomposition, or confusing flow.",
+      "source": "`Comment Rules` (170-185), `Design Alternatives and Comments-First Design` (250-257), `Review Rules` (281-294)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M11",
+      "localId": "M11",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Treat names, consistency, and obviousness as design information; reveal abstractions rather than mechanisms and treat surprising code as complexity.",
+      "source": "`Interface Design Rules` (98-102), `Naming, Consistency, and Obviousness` (261-267), `Function and Variable Rules` (191-200)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M12",
+      "localId": "M12",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Use tests to protect public behavior, interface contracts, hidden complexity through stable APIs, and isolated special cases; do not let test convenience force shallow or leaky interfaces.",
+      "source": "`Performance, Trends, and Tests` (277-278), `Testing Rules` (336-342)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M13",
+      "localId": "M13",
+      "book": "a-philosophy-of-software-design",
+      "kind": "decision",
+      "directive": "Add performance optimizations, trends, paradigms, patterns, or frameworks only when they reduce complexity in this codebase or evidence shows the tradeoff matters; hide optimization details behind stable interfaces.",
+      "source": "`Information Hiding Rules` (86), `Performance, Trends, and Tests` (271-278)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M14",
+      "localId": "M14",
+      "book": "a-philosophy-of-software-design",
+      "kind": "trigger",
+      "directive": "When a feature feels awkward, one change spreads across files, or reviewers must reconstruct hidden dependencies, look for missing information hiding, shallow modules, temporal coupling, or complexity pushed to callers.",
+      "source": "`Core Complexity Rules` (36-54), `Information Hiding Rules` (81-92), `Review Rules` (281-294), `Forbidden Patterns / Complexity Spread` (311-314)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M15",
+      "localId": "M15",
+      "book": "a-philosophy-of-software-design",
+      "kind": "trigger",
+      "directive": "When adding a module, layer, service, helper, wrapper, facade, pattern, option, callback, or argument, prove that it hides more complexity than it adds.",
+      "source": "`Module Depth Rules` (57-77), `Interface Design Rules` (100-114), `Forbidden Patterns` (297-314), `Code Generation Rules` (317-332)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M16",
+      "localId": "M16",
+      "book": "a-philosophy-of-software-design",
+      "kind": "trigger",
+      "directive": "When touching an API, check whether ordinary callers must know sequencing, representation, storage, transport, caching, protocol, file format, internal workflow, or too many setup steps.",
+      "source": "`Information Hiding Rules` (83-92), `Interface Design Rules` (98-114), `Forbidden Patterns / Interface Leakage` (303-306)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M17",
+      "localId": "M17",
+      "book": "a-philosophy-of-software-design",
+      "kind": "trigger",
+      "directive": "When adding a special case, flag, exception path, conditional, or exposed container, first ask whether the owning module can eliminate the invalid state, isolate unusual behavior, or provide a stronger operation.",
+      "source": "`Interface Design Rules` (110-114), `Error Handling and Exception Elimination` (144-155), `Special-General Decomposition` (218-227), `Forbidden Patterns` (307-314)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M18",
+      "localId": "M18",
+      "book": "a-philosophy-of-software-design",
+      "kind": "trigger",
+      "directive": "When splitting, extracting, or introducing variables, check whether the new boundary or name captures meaning or only adds jumps, pass-through state, and visible intermediate steps.",
+      "source": "`Function and Variable Rules` (189-200), `Combine or Separate Code` (231-242)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M19",
+      "localId": "M19",
+      "book": "a-philosophy-of-software-design",
+      "kind": "trigger",
+      "directive": "When code is organized as `prepare/process/finalize`, staged objects, or execution-order phases, verify that temporal structure is the real concept; otherwise reorganize around stable responsibilities.",
+      "source": "`Temporal Decomposition Rules` (204-214), `Combine or Separate Code` (239-242)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M20",
+      "localId": "M20",
+      "book": "a-philosophy-of-software-design",
+      "kind": "trigger",
+      "directive": "When naming is vague, mechanism-focused, inconsistent, or surprising, reconsider the abstraction boundary instead of accepting a near miss.",
+      "source": "`Interface Design Rules` (102), `Naming, Consistency, and Obviousness` (261-267)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M21",
+      "localId": "M21",
+      "book": "a-philosophy-of-software-design",
+      "kind": "trigger",
+      "directive": "When comments get long, duplicate code, justify a confusing interface, or explain usage by exposing internals, redesign the abstraction or move the missing contract to the interface.",
+      "source": "`Comment Rules` (170-185), `Design Alternatives and Comments-First Design` (250-257), `Review Rules` (292)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M22",
+      "localId": "M22",
+      "book": "a-philosophy-of-software-design",
+      "kind": "trigger",
+      "directive": "When optimizing performance, measure first and hide the optimization; do not sacrifice module depth or information hiding without evidence that the tradeoff matters.",
+      "source": "`Information Hiding Rules` (86), `Performance, Trends, and Tests` (271-275)."
+    },
+    {
+      "id": "a-philosophy-of-software-design:M23",
+      "localId": "M23",
+      "book": "a-philosophy-of-software-design",
+      "kind": "trigger",
+      "directive": "When testing or reviewing, focus on public behavior, interface contracts, hidden complexity through stable APIs, and special cases isolated behind the abstraction.",
+      "source": "`Review Rules` (281-294), `Testing Rules` (336-342)."
+    },
+    {
+      "id": "clean-architecture:M1",
+      "localId": "M1",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Preserve independent business rules, inward dependencies, testability, and replaceable details even when the immediate feature would be shorter without them.",
+      "source": "`Purpose` (3-17), `Architecture Economics and Priority` (257-264), `Final Instruction` (506-515)."
+    },
+    {
+      "id": "clean-architecture:M2",
+      "localId": "M2",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Source dependencies must point inward toward higher-level policy; core policy must not import volatile details.",
+      "source": "`Non-Negotiable Rules` (21-24, 66-70), `Required Layer Responsibilities` (85-96, 106-115, 125-152), `Architecture Heuristics` (214-221), `Paradigm and Component Rules` (270-280), `Forbidden Patterns` (377-380), `Preferred Default Shapes` (487-490), `Final Instruction` (506-515)."
+    },
+    {
+      "id": "clean-architecture:M3",
+      "localId": "M3",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Put enterprise rules and invariants in entities or equivalent domain objects; put application-specific orchestration in focused use cases.",
+      "source": "`Non-Negotiable Rules` (26-29, 56-64), `Required Layer Responsibilities` (76-115), `Architecture Heuristics` (223-230), `Output Expectations` (421-427), `Review Checklist` (448-453)."
+    },
+    {
+      "id": "clean-architecture:M4",
+      "localId": "M4",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Pass plain request and response models across use-case boundaries; do not pass framework, web, ORM, database, or response objects into or out of core policy.",
+      "source": "`Non-Negotiable Rules` (26-44), `Application Layer` (98-115), `Code Generation Rules` (160-180), `Forbidden Patterns` (352-360), `Preferred Default Shapes` (480-485)."
+    },
+    {
+      "id": "clean-architecture:M5",
+      "localId": "M5",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Treat frameworks, databases, web delivery, messaging, filesystems, clocks, service clients, networks, devices, and vendors as outer-layer details behind ports, gateways, presenters, mappers, or adapters.",
+      "source": "`Non-Negotiable Rules` (31-49), `Required Layer Responsibilities` (117-152), `Code Generation Rules` (182-208), `Architecture Heuristics` (232-241), `Services, Distribution, and Embedded Boundaries` (296-302), `Refactoring Rules` (396-405), `Output Expectations` (421-427)."
+    },
+    {
+      "id": "clean-architecture:M6",
+      "localId": "M6",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Inner layers own the interfaces they need; outer layers implement them; concrete wiring belongs in the composition root or outer-layer main component.",
+      "source": "`Non-Negotiable Rules` (46-70), `Infrastructure Layer` (134-152), `Code Generation Rules` (182-203), `Preferred Default Shapes` (487-490)."
+    },
+    {
+      "id": "clean-architecture:M7",
+      "localId": "M7",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Keep adapters humble: translate external formats to use-case calls and back instead of owning business decisions.",
+      "source": "`Non-Negotiable Rules` (41-44), `Interface Adapters Layer` (117-132), `Infrastructure Layer` (134-152), `Services, Distribution, and Embedded Boundaries` (296-302), `Forbidden Patterns` (362-375), `Output Expectations` (434-440)."
+    },
+    {
+      "id": "clean-architecture:M8",
+      "localId": "M8",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Organize by use case, feature, or business capability before generic technical buckets.",
+      "source": "`Non-Negotiable Rules` (51-59), `Architecture Heuristics` (243-253), `Naming Rules` (306-313), `Output Expectations` (421-427), `Review Checklist` (457-459), `Preferred Default Shapes` (468-478)."
+    },
+    {
+      "id": "clean-architecture:M9",
+      "localId": "M9",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Choose boundaries by volatility, policy importance, substitution value, testability, and cost; use the lightest enforceable boundary, including partial boundaries, when full separation is too expensive.",
+      "source": "`Code Generation Rules` (205-208), `Architecture Economics and Priority` (257-264), `Boundary Cost, Deployment, and Operations` (284-292), `When Tradeoffs Are Necessary` (494-502)."
+    },
+    {
+      "id": "clean-architecture:M10",
+      "localId": "M10",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Do not merge unrelated use cases or eliminate duplication when sharing would couple actors, change reasons, team ownership, deployment needs, or release pressure.",
+      "source": "`Architecture Economics and Priority` (264), `Paradigm and Component Rules` (273-280), `Boundary Cost, Deployment, and Operations` (289-291), `Naming Rules` (306-313), `Forbidden Patterns` (367-385)."
+    },
+    {
+      "id": "clean-architecture:M11",
+      "localId": "M11",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Use structured code, dependency inversion, role-sized interfaces, substitutable implementations, controlled mutation, acyclic components, and stability-directed dependencies to protect policy from volatile details.",
+      "source": "`Paradigm and Component Rules` (268-280), `Code Generation Rules` (200-203), `Forbidden Patterns` (377-385)."
+    },
+    {
+      "id": "clean-architecture:M12",
+      "localId": "M12",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Enforce boundaries with package structure, dependency rules, build constraints, tests, visibility, or narrow APIs.",
+      "source": "`Code Generation Rules` (200-208), `Boundary Cost, Deployment, and Operations` (286-292), `Services, Distribution, and Embedded Boundaries` (298-302), `Forbidden Patterns` (372-385)."
+    },
+    {
+      "id": "clean-architecture:M13",
+      "localId": "M13",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Test entities, use cases, and boundary contracts first, without real volatile details; test adapters separately at the seams.",
+      "source": "`Non-Negotiable Rules` (36-39), `Testing Rules` (317-344), `Services, Distribution, and Embedded Boundaries` (301-302), `Refactoring Rules` (410-411), `Review Checklist` (456)."
+    },
+    {
+      "id": "clean-architecture:M14",
+      "localId": "M14",
+      "book": "clean-architecture",
+      "kind": "decision",
+      "directive": "Preserve behavior while improving dependency direction; prefer incremental boundary extraction over rewrites and call out architectural debt when it cannot be fixed safely now.",
+      "source": "`Refactoring Rules` (389-415), `Output Expectations` (429-440), `When Tradeoffs Are Necessary` (494-502)."
+    },
+    {
+      "id": "clean-architecture:M15",
+      "localId": "M15",
+      "book": "clean-architecture",
+      "kind": "trigger",
+      "directive": "When urgent delivery would skip architecture, state the future change, test, replacement, or operational cost before accepting the shortcut.",
+      "source": "`Architecture Economics and Priority` (257-264), `When Tradeoffs Are Necessary` (494-502), `Final Instruction` (506-515)."
+    },
+    {
+      "id": "clean-architecture:M16",
+      "localId": "M16",
+      "book": "clean-architecture",
+      "kind": "trigger",
+      "directive": "When framework annotations, request/response objects, serializers, ORM rows, schemas, vendor SDKs, config, environment reads, device registers, or transport formats enter core policy, move translation outward.",
+      "source": "`Non-Negotiable Rules` (26-49), `Required Layer Responsibilities` (85-152), `Code Generation Rules` (177-180), `Forbidden Patterns` (352-360), `Services, Distribution, and Embedded Boundaries` (301-302)."
+    },
+    {
+      "id": "clean-architecture:M17",
+      "localId": "M17",
+      "book": "clean-architecture",
+      "kind": "trigger",
+      "directive": "When controllers, jobs, handlers, views, presenters, gateways, repositories, SQL, service listeners, scripts, or hardware adapters contain business branching or validation, move the rule inward.",
+      "source": "`Non-Negotiable Rules` (56-64), `Interface Adapters Layer` (117-132), `Infrastructure Layer` (149-152), `Services, Distribution, and Embedded Boundaries` (298-302), `Forbidden Patterns` (357-370), `Refactoring Rules` (393-405)."
+    },
+    {
+      "id": "clean-architecture:M18",
+      "localId": "M18",
+      "book": "clean-architecture",
+      "kind": "trigger",
+      "directive": "When a use case instantiates infrastructure, calls a volatile dependency directly, or depends on a concrete implementation, introduce a policy-owned port and wire the concrete detail at the edge.",
+      "source": "`Code Generation Rules` (182-203), `Forbidden Patterns` (377-380), `Preferred Default Shapes` (487-490)."
+    },
+    {
+      "id": "clean-architecture:M19",
+      "localId": "M19",
+      "book": "clean-architecture",
+      "kind": "trigger",
+      "directive": "When a `*Service`, utility folder, shared module, base package, or generic `core` package becomes an escape hatch, split by use case, role, or ownership and restore dependency direction.",
+      "source": "`Non-Negotiable Rules` (51-59), `Code Generation Rules` (200-203), `Naming Rules` (306-313), `Forbidden Patterns` (367-385), `Refactoring Rules` (406-408)."
+    },
+    {
+      "id": "clean-architecture:M20",
+      "localId": "M20",
+      "book": "clean-architecture",
+      "kind": "trigger",
+      "directive": "When an adapter bypasses a use case, a presenter reads persistence directly, or infrastructure is both imported by and importing inward code, restore the intended boundary.",
+      "source": "`Interface Adapters Layer` (117-132), `Architecture Heuristics` (214-221), `Forbidden Patterns` (372-380), `Review Checklist` (448-460)."
+    },
+    {
+      "id": "clean-architecture:M21",
+      "localId": "M21",
+      "book": "clean-architecture",
+      "kind": "trigger",
+      "directive": "When service boundaries, process boundaries, remote calls, deployment boundaries, or embedded hardware appear, still verify source dependencies, data ownership, I/O cost, and policy independence.",
+      "source": "`Boundary Cost, Deployment, and Operations` (284-292), `Services, Distribution, and Embedded Boundaries` (296-302), `Final Instruction` (508-513)."
+    },
+    {
+      "id": "clean-architecture:M22",
+      "localId": "M22",
+      "book": "clean-architecture",
+      "kind": "trigger",
+      "directive": "When tests need volatile details to verify business rules, move tests to use cases/entities with fakes or add a stable boundary contract.",
+      "source": "`Testing Rules` (317-344), `Services, Distribution, and Embedded Boundaries` (301-302), `Refactoring Rules` (410-411), `Review Checklist` (456)."
+    },
+    {
+      "id": "clean-architecture:M23",
+      "localId": "M23",
+      "book": "clean-architecture",
+      "kind": "trigger",
+      "directive": "When a compromise is unavoidable, keep it at the outermost layer possible, document the violation, avoid normalizing it, and preserve a path to separation.",
+      "source": "`When Tradeoffs Are Necessary` (494-502), `Output Expectations` (429-432), `Final Instruction` (506-515)."
+    },
+    {
+      "id": "clean-code:M1",
+      "localId": "M1",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Treat cleanliness as part of delivery; preserve behavior, leave touched code cleaner within scope, and reject schedule or rewrite excuses for new mess.",
+      "source": "`Priority and behavior` (5-12), `Core clean code principles` (14-22), `Refactoring rules` (188-197), `Emergent design and successive refinement` (199-205), `Hard rules` (290-297)."
+    },
+    {
+      "id": "clean-code:M2",
+      "localId": "M2",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Write for local reasoning so readers do not reconstruct hidden state, wide jumps, or naming trivia.",
+      "source": "`Core clean code principles` (14-22), `Formatting and structure` (81-91), `Class and module design` (104-113), `Implementation preferences` (255-264), `Review checklist` (266-279)."
+    },
+    {
+      "id": "clean-code:M3",
+      "localId": "M3",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Use precise names and one term per concept; rename when vocabulary hides intent, overloads meaning, or forces comments to compensate.",
+      "source": "`Naming rules` (24-42), `Function rules` (44-62), `Comment rules` (64-79), `Refactoring rules` (188-197), `Smells to detect and eliminate` (207-240), `Change Process` (242-253), `Hard rules` (290-297)."
+    },
+    {
+      "id": "clean-code:M4",
+      "localId": "M4",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Keep functions small, focused, top-down, and at one abstraction level.",
+      "source": "`Function rules` (44-62), `Formatting and structure` (81-91), `Smells to detect and eliminate` (207-240), `Review checklist` (266-279)."
+    },
+    {
+      "id": "clean-code:M5",
+      "localId": "M5",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Keep parameters few and meaningful; avoid boolean flags, output parameters, and grab-bag argument lists by modeling the concept.",
+      "source": "`Function rules` (44-62), `Smells to detect and eliminate` (207-240)."
+    },
+    {
+      "id": "clean-code:M6",
+      "localId": "M6",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Separate commands from queries and eliminate hidden side effects.",
+      "source": "`Function rules` (44-62), `Smells to detect and eliminate` (207-240), `Hard rules` (290-297)."
+    },
+    {
+      "id": "clean-code:M7",
+      "localId": "M7",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Keep the happy path readable; isolate error handling, invalid-state handling, and cleanup; prefer explicit optionality or typed results over null-like sentinel flow when supported.",
+      "source": "`Function rules` (44-62), `Error handling` (115-124), `Concurrency and async work` (172-186), `Review checklist` (266-279)."
+    },
+    {
+      "id": "clean-code:M8",
+      "localId": "M8",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Expose behavior rather than raw representation and avoid train-wreck access, utility dumping grounds, and mixed responsibilities.",
+      "source": "`Objects, modules, and data structures` (93-102), `Class and module design` (104-113), `Smells to detect and eliminate` (207-240)."
+    },
+    {
+      "id": "clean-code:M9",
+      "localId": "M9",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Keep construction, framework, persistence, transaction, security, and vendor details outside business behavior.",
+      "source": "`Objects, modules, and data structures` (93-102), `Boundaries and external dependencies` (126-132), `System construction rules` (134-143), `Implementation preferences` (255-264)."
+    },
+    {
+      "id": "clean-code:M10",
+      "localId": "M10",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Make public APIs small, explicit, and hard to misuse; encode boundary logic, required order, and likely changes where readers can see them.",
+      "source": "`Objects, modules, and data structures` (93-102), `Class and module design` (104-113), `Error handling` (115-124), `Boundaries and external dependencies` (126-132), `Implementation preferences` (255-264)."
+    },
+    {
+      "id": "clean-code:M11",
+      "localId": "M11",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Use comments only for rationale, constraints, warnings, or external contracts; never as a bandage for bad names or structure.",
+      "source": "`Naming rules` (24-42), `Comment rules` (64-79), `Change Process` (242-253), `Review checklist` (266-279), `Hard rules` (290-297)."
+    },
+    {
+      "id": "clean-code:M12",
+      "localId": "M12",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Treat tests as production code and back changes with proportionate validation before calling them done.",
+      "source": "`Tests` (145-157), `TDD and clean test rules` (159-170), `Change Process` (242-253), `Review checklist` (266-279), `Output Expectations` (281-288)."
+    },
+    {
+      "id": "clean-code:M13",
+      "localId": "M13",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "Let design emerge through tests, duplication removal, expressiveness, and minimal structure; avoid needless abstractions and infrastructure.",
+      "source": "`Priority and behavior` (5-12), `System construction rules` (134-143), `Refactoring rules` (188-197), `Emergent design and successive refinement` (199-205), `Implementation preferences` (255-264)."
+    },
+    {
+      "id": "clean-code:M14",
+      "localId": "M14",
+      "book": "clean-code",
+      "kind": "decision",
+      "directive": "When touching code, remove the smell that most increases change cost without silently broadening the task beyond the smallest cleanup that keeps the change safe.",
+      "source": "`Priority and behavior` (5-12), `Refactoring rules` (188-197), `Emergent design and successive refinement` (199-205), `Smells to detect and eliminate` (207-240), `Change Process` (242-253), `Hard rules` (290-297)."
+    },
+    {
+      "id": "clean-code:M15",
+      "localId": "M15",
+      "book": "clean-code",
+      "kind": "trigger",
+      "directive": "When a function mixes setup, validation, computation, and side effects, split the phases.",
+      "source": "`Function rules` (44-62), `Smells to detect and eliminate` (207-240)."
+    },
+    {
+      "id": "clean-code:M16",
+      "localId": "M16",
+      "book": "clean-code",
+      "kind": "trigger",
+      "directive": "When a comment explains control flow, simplify names or structure before keeping the comment.",
+      "source": "`Comment rules` (64-79), `Change Process` (242-253), `Hard rules` (290-297)."
+    },
+    {
+      "id": "clean-code:M17",
+      "localId": "M17",
+      "book": "clean-code",
+      "kind": "trigger",
+      "directive": "When a function both mutates and answers, or hides a mode switch behind a flag, separate the responsibilities.",
+      "source": "`Function rules` (44-62), `Smells to detect and eliminate` (207-240), `Hard rules` (290-297)."
+    },
+    {
+      "id": "clean-code:M18",
+      "localId": "M18",
+      "book": "clean-code",
+      "kind": "trigger",
+      "directive": "When duplication, repeated switches, or primitive clusters appear, name the concept with an argument object, polymorphism, special case, or another small abstraction.",
+      "source": "`Function rules` (44-62), `Refactoring rules` (188-197), `Emergent design and successive refinement` (199-205), `Smells to detect and eliminate` (207-240)."
+    },
+    {
+      "id": "clean-code:M19",
+      "localId": "M19",
+      "book": "clean-code",
+      "kind": "trigger",
+      "directive": "When a boundary leaks framework, vendor, or persistence quirks inward, add or strengthen a local adapter.",
+      "source": "`Objects, modules, and data structures` (93-102), `Boundaries and external dependencies` (126-132), `System construction rules` (134-143), `Implementation preferences` (255-264)."
+    },
+    {
+      "id": "clean-code:M20",
+      "localId": "M20",
+      "book": "clean-code",
+      "kind": "trigger",
+      "directive": "When async or concurrency enters, isolate threading policy, minimize shared mutable state, define shutdown, and test timing-sensitive behavior.",
+      "source": "`Error handling` (115-124), `Concurrency and async work` (172-186), `Smells to detect and eliminate` (207-240)."
+    },
+    {
+      "id": "clean-code:M21",
+      "localId": "M21",
+      "book": "clean-code",
+      "kind": "trigger",
+      "directive": "When fixing a bug or changing behavior, add or update the test that protects the intended contract.",
+      "source": "`Tests` (145-157), `TDD and clean test rules` (159-170), `Change Process` (242-253), `Review checklist` (266-279)."
+    },
+    {
+      "id": "clean-code:M22",
+      "localId": "M22",
+      "book": "clean-code",
+      "kind": "trigger",
+      "directive": "When cleanup starts spreading into unrelated areas, cut back to the smallest refactor that keeps the requested change safe and readable.",
+      "source": "`Priority and behavior` (5-12), `Refactoring rules` (188-197), `Emergent design and successive refinement` (199-205), `Change Process` (242-253), `Hard rules` (290-297)."
+    },
+    {
+      "id": "code-complete:M1",
+      "localId": "M1",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Before large construction work, verify requirements, architecture, major risks, coding conventions, language constraints, error policy, data representation, reuse, integration, and testing approach.",
+      "source": "`Construction Prerequisites and Decisions` (45-52), `Purpose` (3-16), `Review Checklist` (327-341)."
+    },
+    {
+      "id": "code-complete:M2",
+      "localId": "M2",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "When upstream uncertainty remains, build a small validated slice instead of speculative code, and make expensive-to-reverse decisions deliberately.",
+      "source": "`Construction Prerequisites and Decisions` (45-52), `Primary Directive` (20-31)."
+    },
+    {
+      "id": "code-complete:M3",
+      "localId": "M3",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Optimize for human readers: clarity, locality, explicitness, visible control flow, consistent conventions, and practical correctness over cleverness, minimal keystrokes, or fashion.",
+      "source": "`Primary Directive` (20-31), `Foundational Construction Rules` (35-42), `Forbidden Patterns / Cleverness over Clarity` (273-278), `Final Instruction` (345-354)."
+    },
+    {
+      "id": "code-complete:M4",
+      "localId": "M4",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "For complex routines, sketch precise pseudocode or intent comments, then keep only comments that still explain intent, constraints, contracts, or rationale.",
+      "source": "`Pseudocode Programming Process` (55-61), `Comment Rules` (207-213)."
+    },
+    {
+      "id": "code-complete:M5",
+      "localId": "M5",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Keep routines cohesive, precisely named, small at the interface, and hard to misuse; separate setup, validation, computation, and side effects.",
+      "source": "`Routine Design Rules` (64-79), `Forbidden Patterns / Routine Bloat` (279-282), `Review Rules` (257-270)."
+    },
+    {
+      "id": "code-complete:M6",
+      "localId": "M6",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Make variable and data meaning explicit through names, small scope, deliberate initialization, constants, stronger types, and visible units or sentinel meanings.",
+      "source": "`Variable and Data Rules` (82-95), `Data Type Rules` (98-107), `Code Generation Rules` (298-315)."
+    },
+    {
+      "id": "code-complete:M7",
+      "localId": "M7",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Choose data types that make invalid or ambiguous values harder to represent; use booleans, enumerations, records, maps, and tables only where they clarify meaning.",
+      "source": "`Data Type Rules` (98-107), `Construction with Preconditions and Postconditions` (198-204)."
+    },
+    {
+      "id": "code-complete:M8",
+      "localId": "M8",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Keep control flow simple enough to verify: shallow nesting, named predicates, clear normal path, clear loops, and no side-effect-dependent expressions or clever one-liners.",
+      "source": "`Control Flow Rules` (110-124), `Statement, Conditional, and Loop Rules` (127-136), `Forbidden Patterns / Cleverness over Clarity` (273-278), `Code Generation Rules` (298-315)."
+    },
+    {
+      "id": "code-complete:M9",
+      "localId": "M9",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Use table-driven or data-driven logic for stable explicit mappings only when the table is clearer, obvious, synchronized with the rules, and validated.",
+      "source": "`Statement, Conditional, and Loop Rules` (127-136), `Table-Driven and Data-Driven Rules` (164-170), `Testing Rules` (318-324)."
+    },
+    {
+      "id": "code-complete:M10",
+      "localId": "M10",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Validate input at trust boundaries; use assertions, invariant checks, and simple contracts for programmer assumptions, and validation or domain errors for expected external or business failures.",
+      "source": "`Defensive Programming Rules` (139-151), `Construction with Preconditions and Postconditions` (198-204), `Testing Rules` (318-324)."
+    },
+    {
+      "id": "code-complete:M11",
+      "localId": "M11",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Handle errors at the right abstraction, preserve diagnostic context, standardize similar failures, keep the normal path readable, and never silently continue from corrupted or impossible state.",
+      "source": "`Defensive Programming Rules` (139-151), `Error Handling Rules` (154-161), `Final Instruction` (345-354)."
+    },
+    {
+      "id": "code-complete:M12",
+      "localId": "M12",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Keep classes and modules focused, cohesive, and bounded by clear contracts; hide representation and internal bookkeeping, and avoid mixed concerns.",
+      "source": "`Class and Module Design Rules` (173-185), `Review Rules` (257-270), `Code Generation Rules` (298-315)."
+    },
+    {
+      "id": "code-complete:M13",
+      "localId": "M13",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Treat rising complexity as defect risk: split tangled routines or modules, remove duplication that multiplies maintenance effort, and reduce maintainer working-memory load.",
+      "source": "`Complexity Management Rules` (188-195), `Review Checklist` (327-341)."
+    },
+    {
+      "id": "code-complete:M14",
+      "localId": "M14",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Build in small, verifiable increments; integrate often enough to expose conflicts, keep partial work from rotting, and review and improve code during construction.",
+      "source": "`Incremental Construction Rules` (225-231), `Performance, Integration, Tools, and Craftsmanship` (245-254)."
+    },
+    {
+      "id": "code-complete:M15",
+      "localId": "M15",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Match reviews, inspections, pair work, tests, static checks, and regression tests to defect risk; debug by reproducing, isolating, explaining, fixing, and verifying root causes.",
+      "source": "`Quality, Collaboration, Debugging, and Refactoring` (234-242), `Review Rules` (257-270), `Testing Rules` (318-324)."
+    },
+    {
+      "id": "code-complete:M16",
+      "localId": "M16",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Refactor when structure hides intent, duplicates knowledge, or raises defect probability, and separate refactoring from behavior change when that improves reviewability.",
+      "source": "`Quality, Collaboration, Debugging, and Refactoring` (234-242)."
+    },
+    {
+      "id": "code-complete:M17",
+      "localId": "M17",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Tune performance only when requirements and evidence justify it; measure before and after, and keep clarity unless an explicit measured tradeoff warrants the cost.",
+      "source": "`Performance, Integration, Tools, and Craftsmanship` (245-254)."
+    },
+    {
+      "id": "code-complete:M18",
+      "localId": "M18",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Use tools, scripts, debuggers, profilers, editors, and build automation to reduce error-prone manual work, not to replace understanding.",
+      "source": "`Performance, Integration, Tools, and Craftsmanship` (245-254)."
+    },
+    {
+      "id": "code-complete:M19",
+      "localId": "M19",
+      "book": "code-complete",
+      "kind": "decision",
+      "directive": "Use layout, comments, documentation, and coding standards to lower reader effort; prefer self-documenting structure first and keep comments accurate and purposeful.",
+      "source": "`Comment Rules` (207-213), `Coding Standards Rules` (216-222), `Performance, Integration, Tools, and Craftsmanship` (245-254), `Forbidden Patterns / Comment-as-Crutch` (288-290), `Forbidden Patterns / Consistency Neglect` (292-294)."
+    },
+    {
+      "id": "code-complete:M20",
+      "localId": "M20",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When coding starts from a proposed solution, restate the requirement, architecture fit, risks, conventions, and success constraints.",
+      "source": "`Construction Prerequisites and Decisions` (45-52), `Review Checklist` (327-341)."
+    },
+    {
+      "id": "code-complete:M21",
+      "localId": "M21",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When a routine is hard to name, mixes phases, has flag arguments, long parameters, or hidden side effects, redesign the interface or split the routine.",
+      "source": "`Routine Design Rules` (64-79), `Forbidden Patterns / Routine Bloat` (279-282), `Review Rules` (257-270)."
+    },
+    {
+      "id": "code-complete:M22",
+      "localId": "M22",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When readers must decode units, ranges, precision, encoding, ownership, status, magic values, or primitive flags, move that meaning into names, constants, types, or structures.",
+      "source": "`Variable and Data Rules` (82-95), `Data Type Rules` (98-107)."
+    },
+    {
+      "id": "code-complete:M23",
+      "localId": "M23",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When input crosses a trust boundary, decide what is validated, rejected, recovered from, asserted, and kept diagnosable.",
+      "source": "`Defensive Programming Rules` (139-151), `Error Handling Rules` (154-161), `Review Checklist` (327-341)."
+    },
+    {
+      "id": "code-complete:M24",
+      "localId": "M24",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When branches, loops, recursion, exits, or exception paths become hard to verify, simplify before adding logic.",
+      "source": "`Control Flow Rules` (110-124), `Statement, Conditional, and Loop Rules` (127-136), `Code Generation Rules` (298-315)."
+    },
+    {
+      "id": "code-complete:M25",
+      "localId": "M25",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When repeated branching maps stable categories, ranges, conversions, validation, dispatch, or configuration-like rules, consider a validated table.",
+      "source": "`Statement, Conditional, and Loop Rules` (127-136), `Table-Driven and Data-Driven Rules` (164-170)."
+    },
+    {
+      "id": "code-complete:M26",
+      "localId": "M26",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When a class or module exposes representation, grows into a god object, or mixes unrelated responsibilities, restore the abstraction boundary.",
+      "source": "`Class and Module Design Rules` (173-185), `Review Rules` (257-270), `Forbidden Patterns` (273-295)."
+    },
+    {
+      "id": "code-complete:M27",
+      "localId": "M27",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When tests cover only the happy path, add normal, boundary, invalid-input, defensive-check, routine-contract, and data-driven edge cases.",
+      "source": "`Testing Rules` (318-324), `Defensive Programming Rules` (139-151)."
+    },
+    {
+      "id": "code-complete:M28",
+      "localId": "M28",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When debugging begins from a guess, first make the failure repeatable, collect evidence, isolate the path, and explain the cause.",
+      "source": "`Quality, Collaboration, Debugging, and Refactoring` (234-242)."
+    },
+    {
+      "id": "code-complete:M29",
+      "localId": "M29",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When refactoring poorly understood or risky code, add tests or analysis first and keep behavior changes separate.",
+      "source": "`Quality, Collaboration, Debugging, and Refactoring` (234-242), `Testing Rules` (318-324)."
+    },
+    {
+      "id": "code-complete:M30",
+      "localId": "M30",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When performance work begins, set a target, measure current behavior, change one thing, remeasure, and document any clarity tradeoff.",
+      "source": "`Performance, Integration, Tools, and Craftsmanship` (245-254)."
+    },
+    {
+      "id": "code-complete:M31",
+      "localId": "M31",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When comments restate obvious mechanics or go stale, rewrite the code or delete the comment; when code cannot express intent, constraints, or usage, add a close accurate comment.",
+      "source": "`Comment Rules` (207-213), `Performance, Integration, Tools, and Craftsmanship` (245-254), `Forbidden Patterns / Comment-as-Crutch` (288-290)."
+    },
+    {
+      "id": "code-complete:M32",
+      "localId": "M32",
+      "book": "code-complete",
+      "kind": "trigger",
+      "directive": "When local style starts to diverge, follow shared formatting, naming, file-structure, and idiom conventions instead of creating a module-specific dialect.",
+      "source": "`Coding Standards Rules` (216-222), `Forbidden Patterns / Consistency Neglect` (292-294)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M1",
+      "localId": "M1",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Make core data-system trade-offs explicit.",
+      "source": "`Purpose` (3-16), `Primary Directive` (20-32), `Final Instruction` (384-393)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M2",
+      "localId": "M2",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Treat crashes, partial writes, duplicate work, timeouts, stale reads, and unknown downstream success as normal inputs; distinguish accepted, persisted, applied, and durable success.",
+      "source": "`Reliability Rules` (36-47), `Primary Directive` (25-32), `Final Instruction` (386-393)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M3",
+      "localId": "M3",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Describe load and performance with concrete workload, bottleneck, contention, and tail-latency facts before changing architecture.",
+      "source": "`Scalability and Maintainability Rules` (50-58)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M4",
+      "localId": "M4",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Choose data models, query models, and ownership boundaries from relationships, access patterns, consistency, update locality, evolution pressure, and primary-vs-derived data status.",
+      "source": "`Data Model and Storage Rules` (61-80), `Query Model and Data Shape Rules` (83-91), `API and Service Boundary Rules` (290-296)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M5",
+      "localId": "M5",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Match storage engines, indexes, and analytical layouts to write/read/range/recovery needs, OLTP-vs-analytics fit, write amplification, and memory-vs-durability assumptions.",
+      "source": "`Storage Engine and Indexing Rules` (94-103)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M6",
+      "localId": "M6",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Treat derived data as derived unless explicitly authoritative, with propagation, lag, observability, repair, and rebuild paths.",
+      "source": "`Data Model and Storage Rules` (65-80), `Derived Data Rules` (251-261), `Review Rules` (309-310), `Code Generation Rules` (342-345)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M7",
+      "localId": "M7",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Define write semantics: durability, visibility, staleness, conflict detection, and conflict resolution.",
+      "source": "`Consistency Rules` (106-125), `Review Checklist` (369-375), `Final Instruction` (386-393)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M8",
+      "localId": "M8",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Make commands, jobs, events, batch jobs, and stream processors safe under retry and replay; do not rely on unproved exactly-once delivery.",
+      "source": "`Reliability Rules` (38-47), `Idempotency and Replay Rules` (128-139), `Batch and Stream Processing Rules` (280-287), `Code Generation Rules` (338-352), `Testing Rules` (357-359)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M9",
+      "localId": "M9",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Preserve only required ordering and scope it to the key, stream, partition, record, or entity history that defines correctness.",
+      "source": "`Primary Directive` (28, 32), `Ordering Rules` (142-157), `Review Rules` (301-307), `Review Checklist` (372)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M10",
+      "localId": "M10",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Separate commands, events, durable logs, streams, and materialized views; design consumers and events for lag, duplicates, restart, replay, stable identifiers, metadata, and versioning.",
+      "source": "`Event, Log, and Stream Rules` (160-178), `Schema Evolution Rules` (181-193), `Review Rules` (302-310)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M11",
+      "localId": "M11",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Design schemas, encodings, APIs, messages, events, and database changes as evolving contracts across mixed versions and migrations.",
+      "source": "`Schema Evolution Rules` (181-193), `Encoding and Data Flow Rules` (196-204), `API and Service Boundary Rules` (294-296), `Code Generation Rules` (344)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M12",
+      "localId": "M12",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Choose replication topology from write topology, latency, failure tolerance, lag, failover, reconfiguration, conflict handling, read guarantees, quorum, and convergence needs.",
+      "source": "`Replication Rules` (221-229)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M13",
+      "localId": "M13",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Partition by workload-relevant locality and consistency keys, with hot-key, skew, routing, secondary-index, rebalancing, and cross-partition costs explicit.",
+      "source": "`Partitioning and Locality Rules` (207-218), `Review Rules` (311)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M14",
+      "localId": "M14",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Match transactions and isolation to invariants, atomicity scope, commit behavior, recovery, reconciliation, anomalies, and side-effect repair.",
+      "source": "`Transaction Rules` (232-248), `Testing Rules` (360), `Review Checklist` (375)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M15",
+      "localId": "M15",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Treat distributed faults, clocks, timeouts, leases, locks, majorities, leadership, and coordination dependencies as assumptions needing a fault model.",
+      "source": "`Distributed Fault, Clock, and Consensus Rules` (265-275)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M16",
+      "localId": "M16",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Use linearizability, total order broadcast, atomic commit, or consensus only where the coordination problem truly requires agreement.",
+      "source": "`Distributed Fault, Clock, and Consensus Rules` (272-274)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M17",
+      "localId": "M17",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Make batch and stream processing recomputable and recoverable, with explicit time semantics, windows, late data, joins, checkpoints, external side effects, and source-to-sink guarantees.",
+      "source": "`Batch and Stream Processing Rules` (278-287), `Testing Rules` (362)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M18",
+      "localId": "M18",
+      "book": "designing-data-intensive-applications",
+      "kind": "decision",
+      "directive": "Align service boundaries with data ownership and update semantics; avoid casual splits of tightly consistent concepts and chatty cross-service joins.",
+      "source": "`API and Service Boundary Rules` (290-296), `Review Checklist` (377)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M19",
+      "localId": "M19",
+      "book": "designing-data-intensive-applications",
+      "kind": "trigger",
+      "directive": "When changing a write path, state source of truth, consistency boundary, durability, visibility, downstream effects, rollback or repair, and unknown-success behavior.",
+      "source": "`Primary Directive` (25-30), `Reliability Rules` (38-47), `Consistency Rules` (114-125), `Transaction Rules` (232-248), `Review Rules` (309)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M20",
+      "localId": "M20",
+      "book": "designing-data-intensive-applications",
+      "kind": "trigger",
+      "directive": "When adding or changing derived representations, define ownership, propagation, staleness, write cost, lag visibility, rebuild, and repair.",
+      "source": "`Data Model and Storage Rules` (65-80), `Storage Engine and Indexing Rules` (99-101), `Derived Data Rules` (251-261), `Review Checklist` (373)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M21",
+      "localId": "M21",
+      "book": "designing-data-intensive-applications",
+      "kind": "trigger",
+      "directive": "When changing a schema, API, message, event, enum, status, or payload meaning, plan compatibility and migration across old readers, old writers, old data, old messages, new writers, and rollout.",
+      "source": "`Schema Evolution Rules` (181-193), `Encoding and Data Flow Rules` (198-203), `Testing Rules` (361)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M22",
+      "localId": "M22",
+      "book": "designing-data-intensive-applications",
+      "kind": "trigger",
+      "directive": "When adding retries, jobs, consumers, queues, CDC, event sourcing, stream processors, or replayable batch work, prove duplicate, replay, ordering, retention, side-effect, and recovery safety.",
+      "source": "`Idempotency and Replay Rules` (128-139), `Event, Log, and Stream Rules` (160-178), `Batch and Stream Processing Rules` (278-287), `Testing Rules` (357-359)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M23",
+      "localId": "M23",
+      "book": "designing-data-intensive-applications",
+      "kind": "trigger",
+      "directive": "When routing reads to replicas or using asynchronous replication, identify read-your-writes, monotonic-read, consistent-prefix, staleness, catch-up, failover, and conflict expectations.",
+      "source": "`Replication Rules` (221-229), `Consistency Rules` (108-125)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M24",
+      "localId": "M24",
+      "book": "designing-data-intensive-applications",
+      "kind": "trigger",
+      "directive": "When partitioning data or work, test the ordinary query path for locality, skew, hot keys, routing metadata, rebalancing, secondary indexes, and cross-partition coordination.",
+      "source": "`Partitioning and Locality Rules` (207-218), `Review Rules` (311)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M25",
+      "localId": "M25",
+      "book": "designing-data-intensive-applications",
+      "kind": "trigger",
+      "directive": "When choosing transaction isolation or weakening consistency, map each anomaly to the invariant it can break and add a compensating design where needed.",
+      "source": "`Transaction Rules` (232-248), `Consistency Rules` (106-125), `Testing Rules` (360)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M26",
+      "localId": "M26",
+      "book": "designing-data-intensive-applications",
+      "kind": "trigger",
+      "directive": "When using timestamps, leases, locks, leadership, majority decisions, coordination services, or consensus-like mechanisms, define the clock assumption, quorum/session semantics, stale-authority behavior, and fencing.",
+      "source": "`Distributed Fault, Clock, and Consensus Rules` (265-275)."
+    },
+    {
+      "id": "designing-data-intensive-applications:M27",
+      "localId": "M27",
+      "book": "designing-data-intensive-applications",
+      "kind": "trigger",
+      "directive": "When reviewing or testing data-intensive code, scan for hidden ownership, missing idempotency, exactly-once assumptions, unscoped ordering, schema drift, unrebuildable projections, unclear multi-writes, and unobservable lag or failure.",
+      "source": "`Review Rules` (299-312), `Forbidden Patterns` (315-332), `Testing Rules` (355-363), `Review Checklist` (366-380)."
+    },
+    {
+      "id": "domain-driven-design:M1",
+      "localId": "M1",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Use a model only when it organizes domain knowledge, clarifies communication, and can be expressed in implementation; iterate through code, expert conversation, scenarios, and refactoring toward deeper insight.",
+      "source": "`Purpose` (3-17), `Primary Directive` (19-34), `What DDD Means in This Repository` (36-56), `Knowledge Crunching and Deep Models` (58-79), `Model-Driven Design` (81-101), `Breakthrough and Deeper Insight` (103-121), `Scenario Walkthroughs` (187-204)."
+    },
+    {
+      "id": "domain-driven-design:M2",
+      "localId": "M2",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Maintain one Ubiquitous Language per Bounded Context across names, tests, documents, diagrams, planning, and feature discussion; keep explanatory models separate from the implementation model.",
+      "source": "`Purpose` (3-17), `Model-Driven Design` (81-101), `Ubiquitous Language` (144-164), `Communication Artifacts` (167-184), `Testing Rules` (806-833), `Review Checklist` (943-968)."
+    },
+    {
+      "id": "domain-driven-design:M3",
+      "localId": "M3",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Put business logic in the domain layer. Keep UI, application coordination, infrastructure, persistence, messaging, and framework constraints outside the model or behind adapters.",
+      "source": "`Primary Directive` (19-34), `What DDD Means in This Repository` (36-56), `Layered Architecture and Smart UI` (207-220), `Application Layer` (593-615), `Infrastructure` (617-630), `Forbidden Patterns` (836-885), `Final Instruction` (970-979)."
+    },
+    {
+      "id": "domain-driven-design:M4",
+      "localId": "M4",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Use tactical patterns for model meaning: Entities for stable identity, Value Objects for immutable descriptive value, Services for important operations with no natural object home, and Modules for conceptual cohesion.",
+      "source": "`Entities` (386-411), `Value Objects` (414-440), `Associations and Modules` (443-467), `Domain Services` (496-517), `Code Generation Rules` (708-757), `Review Rules` (759-804), `Review Checklist` (943-968)."
+    },
+    {
+      "id": "domain-driven-design:M5",
+      "localId": "M5",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Manage lifecycle through Aggregates, Factories, and Repositories: expose only Aggregate roots, enforce invariants inside the boundary, hide complex creation and persistence, and prevent partially formed objects from escaping.",
+      "source": "`Purpose` (3-17), `Aggregates` (470-493), `Repositories` (542-569), `Factories` (572-592), `Code Generation Rules` (708-757), `Forbidden Patterns` (836-885), `Review Checklist` (943-968)."
+    },
+    {
+      "id": "domain-driven-design:M6",
+      "localId": "M6",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Design domain objects for the model first and persistence second; preserve identity, Aggregate boundaries, Value Object semantics, and domain query criteria instead of exposing database structure.",
+      "source": "`Primary Directive` (19-34), `Entities` (386-411), `Value Objects` (414-440), `Aggregates` (470-493), `Repositories` (542-569), `Infrastructure` (617-630), `Code Generation Rules` (708-757), `Final Instruction` (970-979)."
+    },
+    {
+      "id": "domain-driven-design:M7",
+      "localId": "M7",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Refactor toward deeper domain insight, not only mechanical cleanliness. Make constraints, policies, processes, calculations, allocations, and generation rules explicit when they carry domain meaning.",
+      "source": "`Knowledge Crunching and Deep Models` (58-79), `Breakthrough and Deeper Insight` (103-121), `Making Implicit Concepts Explicit` (124-140), `Explicit Concepts and Specifications` (520-539), `Supple Design` (653-678), `Refactoring Rules` (887-905), `Output Expectations` (908-941)."
+    },
+    {
+      "id": "domain-driven-design:M8",
+      "localId": "M8",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Design for model users: name operations by domain purpose, separate side-effect-free functions from state-changing commands, make assertions explicit, and shape boundaries around conceptual contours.",
+      "source": "`Ubiquitous Language` (144-164), `Entities` (386-411), `Explicit Concepts and Specifications` (520-539), `Supple Design` (653-678), `Forbidden Patterns` (836-885), `Review Checklist` (943-968)."
+    },
+    {
+      "id": "domain-driven-design:M9",
+      "localId": "M9",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Define every Bounded Context explicitly. Do not assume a term has the same meaning elsewhere; use context maps, tests, and active communication to protect model integrity.",
+      "source": "`Purpose` (3-17), `Bounded Contexts` (223-242), `Strategic Design` (245-266), `Model Integrity Patterns` (269-302), `Translation at Boundaries` (633-650), `Testing Rules` (806-833), `Review Checklist` (943-968)."
+    },
+    {
+      "id": "domain-driven-design:M10",
+      "localId": "M10",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Choose context relationships deliberately: Shared Kernel, Customer/Supplier, Conformist, Anticorruption Layer, Separate Ways, Open Host Service, Published Language, or incremental legacy replacement.",
+      "source": "`Strategic Design` (245-266), `Model Integrity Patterns` (269-302), `Translation at Boundaries` (633-650), `Code Generation Rules` (708-757), `Forbidden Patterns` (836-885), `Output Expectations` (908-941)."
+    },
+    {
+      "id": "domain-driven-design:M11",
+      "localId": "M11",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Distill and protect the Core Domain by strategic value. Keep generic subdomains, infrastructure, reusable mechanisms, and supporting details from consuming core-domain attention.",
+      "source": "`What DDD Means in This Repository` (36-56), `Strategic Design` (245-266), `Distillation` (305-331), `Strategic Decision Making` (363-383), `Code Generation Rules` (708-757), `Review Rules` (759-804), `Output Expectations` (908-941)."
+    },
+    {
+      "id": "domain-driven-design:M12",
+      "localId": "M12",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Add large-scale structure only when individual objects no longer make a large model understandable; keep structures domain-specific, evolvable, and valid only inside compatible contexts.",
+      "source": "`Large-Scale Structure` (334-360), `Strategic Decision Making` (363-383), `Review Rules` (759-804), `Review Checklist` (943-968)."
+    },
+    {
+      "id": "domain-driven-design:M13",
+      "localId": "M13",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Use analysis patterns, design patterns, specifications, industry formalisms, and prior art only when they clarify the current model and preserve domain language.",
+      "source": "`Making Implicit Concepts Explicit` (124-140), `Explicit Concepts and Specifications` (520-539), `Supple Design` (653-678), `Analysis and Model Patterns` (681-705)."
+    },
+    {
+      "id": "domain-driven-design:M14",
+      "localId": "M14",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Test the model in the Ubiquitous Language: prioritize domain tests for invariants, allowed and forbidden transitions, valid construction, specifications, application orchestration, and boundary translation before generic infrastructure checks.",
+      "source": "`Communication Artifacts` (167-184), `Scenario Walkthroughs` (187-204), `Testing Rules` (806-833), `Review Checklist` (943-968)."
+    },
+    {
+      "id": "domain-driven-design:M15",
+      "localId": "M15",
+      "book": "domain-driven-design",
+      "kind": "decision",
+      "directive": "Make major strategic moves with people who understand both the implementation and the domain; architecture and framework guidance must serve application teams and domain goals.",
+      "source": "`Model-Driven Design` (81-101), `Strategic Decision Making` (363-383), `Review Rules` (759-804), `Output Expectations` (908-941)."
+    },
+    {
+      "id": "domain-driven-design:M16",
+      "localId": "M16",
+      "book": "domain-driven-design",
+      "kind": "trigger",
+      "directive": "Awkward, ambiguous, inconsistent, or repeatedly translated terminology triggers Ubiquitous Language refinement and code renaming.",
+      "source": "`Knowledge Crunching and Deep Models` (58-79), `Making Implicit Concepts Explicit` (124-140), `Ubiquitous Language` (144-164), `Review Rules` (759-804), `Refactoring Rules` (887-905)."
+    },
+    {
+      "id": "domain-driven-design:M17",
+      "localId": "M17",
+      "book": "domain-driven-design",
+      "kind": "trigger",
+      "directive": "Controllers, services, scripts, SQL, jobs, or serializers carrying business decisions trigger moving rules into domain objects, domain services, specifications, or explicit domain concepts.",
+      "source": "`Model-Driven Design` (81-101), `Layered Architecture and Smart UI` (207-220), `Domain Services` (496-517), `Explicit Concepts and Specifications` (520-539), `Application Layer` (593-615), `Review Rules` (759-804), `Forbidden Patterns` (836-885), `Refactoring Rules` (887-905)."
+    },
+    {
+      "id": "domain-driven-design:M18",
+      "localId": "M18",
+      "book": "domain-driven-design",
+      "kind": "trigger",
+      "directive": "UI, persistence, messaging, APIs, or frameworks shaping domain concepts triggers layers, adapters, translation, or an Anticorruption Layer.",
+      "source": "`Primary Directive` (19-34), `Layered Architecture and Smart UI` (207-220), `Repositories` (542-569), `Infrastructure` (617-630), `Translation at Boundaries` (633-650), `Forbidden Patterns` (836-885), `Final Instruction` (970-979)."
+    },
+    {
+      "id": "domain-driven-design:M19",
+      "localId": "M19",
+      "book": "domain-driven-design",
+      "kind": "trigger",
+      "directive": "A change crossing unrelated modules, many objects, or multiple roots triggers Module cohesion, Aggregate ownership, consistency timing, and context-boundary review.",
+      "source": "`Associations and Modules` (443-467), `Aggregates` (470-493), `Application Layer` (593-615), `Review Rules` (759-804), `Refactoring Rules` (887-905)."
+    },
+    {
+      "id": "domain-driven-design:M20",
+      "localId": "M20",
+      "book": "domain-driven-design",
+      "kind": "trigger",
+      "directive": "Client knowledge of creation, lifecycle, persistence, identity generation, or internal mutation details triggers repairs to Factories, Repositories, roots, and encapsulation.",
+      "source": "`Entities` (386-411), `Aggregates` (470-493), `Repositories` (542-569), `Factories` (572-592), `Forbidden Patterns` (836-885)."
+    },
+    {
+      "id": "domain-driven-design:M21",
+      "localId": "M21",
+      "book": "domain-driven-design",
+      "kind": "trigger",
+      "directive": "Behavior that is hard to explain, test, or extend triggers search for a deeper model, missing implicit concept, or breakthrough refactoring instead of adding procedural branches.",
+      "source": "`Knowledge Crunching and Deep Models` (58-79), `Breakthrough and Deeper Insight` (103-121), `Making Implicit Concepts Explicit` (124-140), `Scenario Walkthroughs` (187-204), `Explicit Concepts and Specifications` (520-539), `Refactoring Rules` (887-905)."
+    },
+    {
+      "id": "domain-driven-design:M22",
+      "localId": "M22",
+      "book": "domain-driven-design",
+      "kind": "trigger",
+      "directive": "Cross-model integration triggers explicit relationship, translation strategy, published language or protocol, and boundary tests before boundary code.",
+      "source": "`Bounded Contexts` (223-242), `Strategic Design` (245-266), `Model Integrity Patterns` (269-302), `Translation at Boundaries` (633-650), `Testing Rules` (806-833), `Forbidden Patterns` (836-885)."
+    },
+    {
+      "id": "domain-driven-design:M23",
+      "localId": "M23",
+      "book": "domain-driven-design",
+      "kind": "trigger",
+      "directive": "When changing invariants, lifecycle transitions, specifications, orchestration, or context translation, add domain-language tests that prove valid behavior and block invalid states.",
+      "source": "`Scenario Walkthroughs` (187-204), `Aggregates` (470-493), `Explicit Concepts and Specifications` (520-539), `Application Layer` (593-615), `Testing Rules` (806-833)."
+    },
+    {
+      "id": "domain-driven-design:M24",
+      "localId": "M24",
+      "book": "domain-driven-design",
+      "kind": "trigger",
+      "directive": "Generic mechanisms, reusable frameworks, or supporting subdomains obscuring distinctive value trigger Core Domain distillation or mechanism separation.",
+      "source": "`Strategic Design` (245-266), `Distillation` (305-331), `Large-Scale Structure` (334-360), `Strategic Decision Making` (363-383), `Forbidden Patterns` (836-885)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M1",
+      "localId": "M1",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Identify capability, subdomain class, Bounded Context, Ubiquitous Language, and earned tactical patterns before designing code.",
+      "source": "`Purpose` (3-16), `Primary Directive` (20-35), `Adoption Fit and Modeling Investment` (38-45), `Code Generation Rules` (245-261), `Final Instruction` (308-317)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M2",
+      "localId": "M2",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Put the most modeling effort into the Core Domain and keep Supporting and Generic Subdomains simpler unless complexity proves otherwise.",
+      "source": "`Purpose` (8-14), `Adoption Fit and Modeling Investment` (38-45), `Start with Subdomains` (50-60), `Practicality Rules` (219-230)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M3",
+      "localId": "M3",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Avoid full tactical DDD for simple CRUD, generic subsystems, or mainly technical problems; strengthen the model only when real complexity rises.",
+      "source": "`Primary Directive` (20-35), `Adoption Fit and Modeling Investment` (38-45), `Practicality Rules` (219-230), `Review Rules` (264-278)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M4",
+      "localId": "M4",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Give every meaningful model one explicit Bounded Context that owns language, rules, semantics, code structure, tests, and integration contracts.",
+      "source": "`Purpose` (8-14), `Primary Directive` (25-30), `Define Bounded Contexts Early` (61-66), `Use Context Mapping` (67-77), `Review Checklist` (291-304)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M5",
+      "localId": "M5",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Treat same words across contexts as different until translated; avoid shared domain classes and foreign language leakage.",
+      "source": "`Define Bounded Contexts Early` (61-66), `Use Context Mapping` (67-77), `Ubiquitous Language Rules` (112-124)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M6",
+      "localId": "M6",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Choose context relationships deliberately and honor their ownership and translation implications.",
+      "source": "`Use Context Mapping` (67-77), `Context Relationship Rules` (80-99), `Code Generation Rules` (245-261), `Review Rules` (264-278)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M7",
+      "localId": "M7",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Select integration style from business coupling, latency, failure semantics, resource shape, messaging lag, duplicate handling, and ordering limits.",
+      "source": "`Context Relationship Rules` (80-99), `Integration Style Rules` (101-109)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M8",
+      "localId": "M8",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Keep integration contracts separate from internal models and test translations across boundaries.",
+      "source": "`Use Context Mapping` (67-77), `Integration Style Rules` (101-109), `Architecture and Infrastructure Rules` (191-202), `Testing Rules` (281-288)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M9",
+      "localId": "M9",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Use local domain terms consistently in code, tests, Commands, Domain Events, APIs, and conversations, and rename code when understanding improves.",
+      "source": "`Purpose` (8-14), `Ubiquitous Language Rules` (112-124), `Collaboration Rules` (205-216), `Testing Rules` (281-288)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M10",
+      "localId": "M10",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Use Entities for explicit identity and lifecycle, and protect meaningful state transitions instead of exposing unrestricted setters.",
+      "source": "`Entities` (129-136), `Review Rules` (264-278), `Testing Rules` (281-288)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M11",
+      "localId": "M11",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Use immutable, self-validating Value Objects when primitives hide domain meaning.",
+      "source": "`Value Objects` (137-144), `Collaboration Rules` (205-216), `Review Rules` (264-278), `Testing Rules` (281-288)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M12",
+      "localId": "M12",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Use Aggregates only as invariant and transactional consistency boundaries; keep them small, root-protected, identity-referenced, and usually one Aggregate per transaction.",
+      "source": "`Aggregates` (145-153), `Aggregate Minimalism Rules` (162-174), `Review Checklist` (291-304)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M13",
+      "localId": "M13",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Use Domain Events for meaningful past-tense business facts that clarify collaboration or integration, not noisy field changes.",
+      "source": "`Domain Events` (154-160), `Integration Style Rules` (101-109), `Review Checklist` (291-304)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M14",
+      "localId": "M14",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Keep Application Services in orchestration: load Aggregates, invoke domain behavior, save, and trigger integration work without owning business decisions.",
+      "source": "`Application Service Rules` (177-188), `Code Generation Rules` (245-261), `Review Rules` (264-278), `Review Checklist` (291-304)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M15",
+      "localId": "M15",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Keep frameworks, persistence, REST representations, transport formats, and infrastructure types out of the domain model.",
+      "source": "`Architecture and Infrastructure Rules` (191-202), `Integration Style Rules` (101-109), `Code Generation Rules` (245-261)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M16",
+      "localId": "M16",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Write code that teaches the model by making assumptions explicit and exposing richer concepts instead of flags, status codes, booleans, enums, helpers, or utilities carrying domain meaning.",
+      "source": "`Ubiquitous Language Rules` (112-124), `Collaboration Rules` (205-216), `Review Rules` (264-278)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M17",
+      "localId": "M17",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Use Event Storming, scenarios, acceptance tests, modeling spikes, and domain-expert walkthroughs when workflow, terminology, policies, or criteria are unclear; timebox modeling and track modeling debt.",
+      "source": "`Adoption Fit and Modeling Investment` (38-45), `Accelerated Modeling and Project Rules` (233-242), `Testing Rules` (281-288)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M18",
+      "localId": "M18",
+      "book": "domain-driven-design-distilled",
+      "kind": "decision",
+      "directive": "Estimate and plan DDD work from modeling uncertainty, integration risk, implementation cost, team skill, and expert access.",
+      "source": "`Accelerated Modeling and Project Rules` (233-242)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M19",
+      "localId": "M19",
+      "book": "domain-driven-design-distilled",
+      "kind": "trigger",
+      "directive": "Fuzzy, generic, overloaded, or imported language triggers Ubiquitous Language refinement before more code.",
+      "source": "`Primary Directive` (25-30), `Ubiquitous Language Rules` (112-124), `Collaboration Rules` (205-216)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M20",
+      "localId": "M20",
+      "book": "domain-driven-design-distilled",
+      "kind": "trigger",
+      "directive": "Core drift, code-language mismatch, or supporting complexity hiding the core triggers subdomain and boundary review.",
+      "source": "`Adoption Fit and Modeling Investment` (38-45), `Start with Subdomains` (50-60), `Practicality Rules` (219-230)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M21",
+      "localId": "M21",
+      "book": "domain-driven-design-distilled",
+      "kind": "trigger",
+      "directive": "One model spreading across separate business concerns triggers splitting or translation instead of shared domain classes.",
+      "source": "`Use Context Mapping` (67-77), `Context Relationship Rules` (80-99), `Review Rules` (264-278)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M22",
+      "localId": "M22",
+      "book": "domain-driven-design-distilled",
+      "kind": "trigger",
+      "directive": "Upstream model, schema, UI, framework, API payload, transport object, or database pressure triggers boundary translation.",
+      "source": "`Use Context Mapping` (67-77), `Integration Style Rules` (101-109), `Architecture and Infrastructure Rules` (191-202)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M23",
+      "localId": "M23",
+      "book": "domain-driven-design-distilled",
+      "kind": "trigger",
+      "directive": "Shared Kernel requires small stable overlap, joint ownership, and tests.",
+      "source": "`Context Relationship Rules` (80-99)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M24",
+      "localId": "M24",
+      "book": "domain-driven-design-distilled",
+      "kind": "trigger",
+      "directive": "A claimed Anticorruption Layer requires real translation.",
+      "source": "`Context Relationship Rules` (80-99)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M25",
+      "localId": "M25",
+      "book": "domain-driven-design-distilled",
+      "kind": "trigger",
+      "directive": "Multi-root transactions, large graph loading, or graph mutation triggers Aggregate boundary and consistency timing review.",
+      "source": "`Aggregates` (145-153), `Aggregate Minimalism Rules` (162-174)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M26",
+      "localId": "M26",
+      "book": "domain-driven-design-distilled",
+      "kind": "trigger",
+      "directive": "Controllers, helpers, services, or transport-shaped application services containing business decisions trigger moving behavior into the model or naming the missing concept.",
+      "source": "`Application Service Rules` (177-188), `Collaboration Rules` (205-216), `Review Rules` (264-278)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M27",
+      "localId": "M27",
+      "book": "domain-driven-design-distilled",
+      "kind": "trigger",
+      "directive": "Vague, command-like, trivial, or field-change Domain Events trigger redesign as specific business facts or removal.",
+      "source": "`Domain Events` (154-160), `Review Rules` (264-278)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M28",
+      "localId": "M28",
+      "book": "domain-driven-design-distilled",
+      "kind": "trigger",
+      "directive": "Primitives, flags, status codes, enums, or booleans carrying domain rules trigger richer concepts or Value Objects.",
+      "source": "`Value Objects` (137-144), `Collaboration Rules` (205-216), `Review Rules` (264-278)."
+    },
+    {
+      "id": "domain-driven-design-distilled:M29",
+      "localId": "M29",
+      "book": "domain-driven-design-distilled",
+      "kind": "trigger",
+      "directive": "Delivery pressure that would skip design triggers a short modeling spike, scenario, acceptance test, or explicit modeling debt.",
+      "source": "`Adoption Fit and Modeling Investment` (38-45), `Accelerated Modeling and Project Rules` (233-242), `Practicality Rules` (219-230)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M1",
+      "localId": "M1",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Name the Bounded Context before interpreting model artifacts and reject a global company model.",
+      "source": "`Purpose` (3-17), `Primary Directive` (21-33), `Bounded Context Is Mandatory` (39-44), `Code Generation Rules` (261-270), `Final Instruction` (328-337)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M2",
+      "localId": "M2",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Use one local Ubiquitous Language consistently across implementation artifacts and rename when understanding improves.",
+      "source": "`Purpose` (8-15), `Primary Directive` (25-33), `Ubiquitous Language Rules` (64-75), `Code Generation Rules` (261-264), `Review Checklist` (312-324), `Final Instruction` (330-337)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M3",
+      "localId": "M3",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Protect the Core Domain, spend rich modeling only where complexity warrants it, keep supporting or CRUD areas simpler, and avoid DDD ceremony.",
+      "source": "`Core Domain Protection` (51-55), `Practical Simplicity Rule` (245-255)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M4",
+      "localId": "M4",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Make context interactions explicit through visible relationships, translation responsibility, and upstream/downstream influence.",
+      "source": "`Context Mapping Is a Design Artifact` (45-50), `Context Integration Rules` (212-230)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M5",
+      "localId": "M5",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Translate foreign, legacy, partner, external, and infrastructure models into local language and keep them out of local domain objects.",
+      "source": "`Primary Directive` (25-33), `Context Mapping Is a Design Artifact` (45-50), `Context Integration Rules` (214-230), `Client Representation and Scope Discipline` (236-241)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M6",
+      "localId": "M6",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Treat Aggregates as small immediate consistency boundaries with one root, root-mediated invariant changes, hidden mutable internals, and intention-revealing behavior.",
+      "source": "`Aggregate Rules of Thumb` (78-90), anti-patterns (102-106), `Code Generation Rules` (264-267), `Review Rules` (284-294)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M7",
+      "localId": "M7",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Reference other Aggregates by identity, avoid graph loading, and default to one Aggregate per transaction with eventual coordination outside the boundary.",
+      "source": "`Primary Directive` (25-33), `Reference Other Aggregates by Identity` (92-96), `One Aggregate per Transaction by Default` (97-100), aggregate anti-patterns (102-106), `Domain Event Rules` (161-165), `Final Instruction` (330-337)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M8",
+      "localId": "M8",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Use Entities for identity, lifecycle, meaningful state transitions, and behavior rather than passive ORM containers.",
+      "source": "`Entities` (112-117)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M9",
+      "localId": "M9",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Use immutable Value Objects for meaningful descriptive concepts, validate on construction, compare by value, and avoid primitive obsession for domain values.",
+      "source": "`Value Objects` (118-123), required behavior (124-126)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M10",
+      "localId": "M10",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Use Domain or Transformation Services only for domain-significant operations or transformations that fit no model object, and keep technical mapping outside the domain.",
+      "source": "`Domain and Transformation Service Rules` (130-139)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M11",
+      "localId": "M11",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Provide Repositories for Aggregate Roots with domain-oriented access contracts, not table CRUD, ORM rows, or business-rule implementations.",
+      "source": "`Repository Rules` (143-155)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M12",
+      "localId": "M12",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Publish Domain Events only for meaningful completed business facts, use past-tense names, keep payloads model-local, and avoid property-change or command-like events.",
+      "source": "`Domain Event Rules` (159-166), event anti-patterns (174-178), `Review Rules` (284-294), `Review Checklist` (312-324)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M13",
+      "localId": "M13",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Use Event Sourcing only when event streams are the right persistence model, with Aggregate identity, versioning, deterministic replay, and evolution support.",
+      "source": "`Event Sourcing` (167-172)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M14",
+      "localId": "M14",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Keep Application Services as use-case coordinators that load Aggregates, invoke domain behavior, persist, publish events, and own transaction or integration coordination without holding core decision logic.",
+      "source": "`Application Service Rules` (182-193)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M15",
+      "localId": "M15",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Organize modules by Bounded Context first and by domain or use-case ownership inside the context; avoid giant shared or common domain packages.",
+      "source": "`Module and Package Rules` (197-208), strategic anti-patterns (56-60)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M16",
+      "localId": "M16",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Use DTOs, projections, use-case queries, rendition adapters, mediators, command/query separation, and explicit scope identifiers when client needs differ from Aggregate shape.",
+      "source": "`Client Representation and Scope Discipline` (234-241)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M17",
+      "localId": "M17",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Follow the source code-generation order from context to language, tactical type, Aggregate boundary, identity references, invariants, repositories, Application Services, and translation layers.",
+      "source": "`Code Generation Rules` (259-278)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M18",
+      "localId": "M18",
+      "book": "implementing-domain-driven-design",
+      "kind": "decision",
+      "directive": "Test domain behavior and boundaries directly, including Aggregate invariants, transitions, Value Objects, events, repositories, translation layers, and Application Service orchestration.",
+      "source": "`Testing Rules` (298-306)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M19",
+      "localId": "M19",
+      "book": "implementing-domain-driven-design",
+      "kind": "trigger",
+      "directive": "Ambiguous, reused, or technical-placeholder terms trigger qualification, splitting, or renaming before more code is written.",
+      "source": "`Ubiquitous Language Rules` (66-75), `Review Rules` (284-294)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M20",
+      "localId": "M20",
+      "book": "implementing-domain-driven-design",
+      "kind": "trigger",
+      "directive": "Direct imports of another context's domain package, shared cross-context enums, or database coupling trigger explicit translation instead.",
+      "source": "strategic anti-patterns (56-60), `Context Integration Rules` (222-230), `Review Checklist` (312-324)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M21",
+      "localId": "M21",
+      "book": "implementing-domain-driven-design",
+      "kind": "trigger",
+      "directive": "Legacy, vendor, partner, API, transport, persistence, UI, or foreign-context shapes in local code trigger an Anticorruption Layer or mapping boundary.",
+      "source": "`Context Mapping Is a Design Artifact` (45-50), `Domain and Transformation Service Rules` (134-139), `Context Integration Rules` (214-230), `Client Representation and Scope Discipline` (234-241)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M22",
+      "localId": "M22",
+      "book": "implementing-domain-driven-design",
+      "kind": "trigger",
+      "directive": "Aggregate boundary changes or multi-Aggregate transactions trigger immediate-invariant proof; otherwise coordinate by identity, Domain Events, policies, processes, or Application Services.",
+      "source": "`Aggregate Rules of Thumb` (80-100), `Domain Event Rules` (161-165), `Application Service Rules` (184-188)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M23",
+      "localId": "M23",
+      "book": "implementing-domain-driven-design",
+      "kind": "trigger",
+      "directive": "External mutation of Aggregate internals or read-decide-write behavior outside the root triggers movement behind intention-revealing root behavior.",
+      "source": "`Aggregate Root Discipline` (86-90), aggregate anti-patterns (102-106), `Review Rules` (284-294)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M24",
+      "localId": "M24",
+      "book": "implementing-domain-driven-design",
+      "kind": "trigger",
+      "directive": "Generic CRUD, table-shaped, ORM-row-returning, or rule-owning Repository APIs trigger reshaping around Aggregate access.",
+      "source": "`Repository Rules` (143-155), `Code Generation Rules` (272-278), `Review Rules` (284-294)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M25",
+      "localId": "M25",
+      "book": "implementing-domain-driven-design",
+      "kind": "trigger",
+      "directive": "Command-like events, property-change events, or events carrying framework request objects or persistence artifacts trigger renaming, narrowing, or removal.",
+      "source": "`Domain Event Rules` (159-166), event anti-patterns (174-178), `Review Rules` (284-294), `Review Checklist` (312-324)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M26",
+      "localId": "M26",
+      "book": "implementing-domain-driven-design",
+      "kind": "trigger",
+      "directive": "Application Services or controllers accumulating branching business rules trigger moving decisions back into the domain model.",
+      "source": "`Application Service Rules` (182-193)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M27",
+      "localId": "M27",
+      "book": "implementing-domain-driven-design",
+      "kind": "trigger",
+      "directive": "Client rendering, query speed, or representation pressure triggers DTOs, projections, use-case queries, or adapters instead of exposing or reshaping Aggregates.",
+      "source": "`Client Representation and Scope Discipline` (234-241), `Practical Simplicity Rule` (245-255)."
+    },
+    {
+      "id": "implementing-domain-driven-design:M28",
+      "localId": "M28",
+      "book": "implementing-domain-driven-design",
+      "kind": "trigger",
+      "directive": "Simple CRUD subdomains trigger simpler patterns, while real invariants and lifecycle complexity trigger honest modeling.",
+      "source": "`Practical Simplicity Rule` (245-255)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M1",
+      "localId": "M1",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Make responsibility ownership explicit before naming patterns; one class or layer must not own presentation, workflow, domain, data source, transactions, concurrency, and integration.",
+      "source": "`Purpose` (3-16), `Primary Directive` (20-34)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M2",
+      "localId": "M2",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Use layering by responsibility, with lower layers independent of presentation and no fake pass-through layers.",
+      "source": "`Architectural Baseline` (38-57)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M3",
+      "localId": "M3",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Choose Transaction Script, Table Module, or Domain Model by business complexity, tabular shape, identity, lifecycle, and behavior needs.",
+      "source": "`Choosing the Business Logic Pattern` (60-94)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M4",
+      "localId": "M4",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Keep each business logic pattern within its force: short scripts, honest table modules, and rich behavior in domain models; escalate when duplication, lifecycle, or invariant complexity grows.",
+      "source": "`Choosing the Business Logic Pattern` (62-94), `Code Generation Rules` (310-320)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M5",
+      "localId": "M5",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Use Service Layer for application operations, orchestration, and transaction boundaries without absorbing all domain logic or exposing UI mechanics.",
+      "source": "`Application Workflow Rules` (97-107), `Code Generation Rules` (301-308)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M6",
+      "localId": "M6",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Use Remote Facade and DTOs only at remote or layer/process boundaries, with coarse operations, batching, translation, and no domain behavior in DTOs.",
+      "source": "`Application Workflow Rules` (108-129), `Distribution Rules` (285-295), `Code Generation Rules` (306-308)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M7",
+      "localId": "M7",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Choose Repository, Data Mapper, Row Data Gateway, Table Data Gateway, or Active Record by coupling and domain-separation pressure; repositories must speak domain terms and not become generic gateways.",
+      "source": "`Persistence Pattern Rules` (132-162), `Code Generation Rules` (305, 310-320)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M8",
+      "localId": "M8",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Keep Identity Map, Unit of Work, and Lazy Load explicit so identity scope, logical commits, loading behavior, N+1 risk, hidden persistence, and ad hoc saves do not surprise callers.",
+      "source": "`Identity, Caching, and Unit-of-Work Rules` (166-185)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M9",
+      "localId": "M9",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Choose object-relational mappings by identity, lifecycle, query need, schema shape, and evolution cost.",
+      "source": "`Object-Relational Mapping Pattern Index` (189-202)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M10",
+      "localId": "M10",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Make concurrency and transaction policy explicit in the workflow: conflict detection, merge semantics, justified pessimism, short transactions, remote-call avoidance, and visible transaction ownership.",
+      "source": "`Concurrency and Transaction Rules` (206-228), `Review Checklist` (382, 389)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M11",
+      "localId": "M11",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Use offline locks only when they preserve user-level consistency without hiding ownership, contention, or stale-lock diagnosis.",
+      "source": "`Concurrency and Transaction Rules` (225-228)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M12",
+      "localId": "M12",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Keep presentation responsible for input, rendering, routing, formatting, pagination, UI state, and transport, not business rules.",
+      "source": "`Presentation Layer Rules` (232-248), `Review Rules` (326-329)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M13",
+      "localId": "M13",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Keep external-system access behind boundaries, translate partner formats, and prevent integration messages, vendor DTOs, and serialization code from becoming domain design.",
+      "source": "`Offline and Integration Rules` (252-262)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M14",
+      "localId": "M14",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Choose client, server, or database session state deliberately with security, scaling, cleanup, durability, sharing, and database-load costs explicit.",
+      "source": "`Session State and Base Pattern Index` (266-270)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M15",
+      "localId": "M15",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Use base patterns only for concrete pressure: Gateway, Mapper, Layer Supertype, Separated Interface, Registry, Value Object, Money, Special Case, Plugin, Service Stub, and Record Set.",
+      "source": "`Session State and Base Pattern Index` (271-281)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M16",
+      "localId": "M16",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Avoid distribution by default; when remote boundaries exist, make contracts coarse, separate them from local object design, and budget latency, serialization, versioning, and partial failure.",
+      "source": "`Distribution Rules` (285-295)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M17",
+      "localId": "M17",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Generate code by first choosing the business logic pattern, then placing workflow, domain decisions, persistence, transactions, DTO/facade boundaries, and presentation concerns in their owning layers.",
+      "source": "`Code Generation Rules` (299-320)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M18",
+      "localId": "M18",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "decision",
+      "directive": "Test behavior at the responsibility that owns it: domain, data-access infrastructure, service workflow, concurrency, and DTO/remote boundary mapping.",
+      "source": "`Testing Rules` (367-373)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M19",
+      "localId": "M19",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "trigger",
+      "directive": "Domain behavior in controllers, views, handlers, SQL scripts, triggers, DTOs, framework glue, serialization code, or vendor adapters triggers a responsibility move or explicit exception.",
+      "source": "`Architectural Baseline` (52-56), `Presentation Layer Rules` (232-248), `Offline and Integration Rules` (252-262), `Review Rules` (326-337)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M20",
+      "localId": "M20",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "trigger",
+      "directive": "One class or layer owning rendering, validation, SQL, transactions, domain rules, and external calls triggers a responsibility split.",
+      "source": "`Primary Directive` (25-34), `Forbidden Patterns` (354-363)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M21",
+      "localId": "M21",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "trigger",
+      "directive": "Transaction Script duplication, invariants, or lifecycle complexity triggers a Domain Model and persistence-pattern review.",
+      "source": "`Choosing the Business Logic Pattern` (62-94), `Review Rules` (330-331)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M22",
+      "localId": "M22",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "trigger",
+      "directive": "Table-shaped models in behavior-rich domains, generic CRUD repositories, or pass-through services trigger an ORM/database-ownership review.",
+      "source": "`Persistence Pattern Rules` (134-162), `Forbidden Patterns` (346-352), `Review Checklist` (383, 386)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M23",
+      "localId": "M23",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "trigger",
+      "directive": "Scattered SQL, mapping, transactions, locks, saves, or external resource access triggers the smallest centralizing repository, mapper, gateway, Unit of Work, service boundary, or policy.",
+      "source": "`Persistence Pattern Rules` (132-162), `Identity, Caching, and Unit-of-Work Rules` (166-185), `Concurrency and Transaction Rules` (219-228), `Session State and Base Pattern Index` (271-272), `Review Rules` (332-334)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M24",
+      "localId": "M24",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "trigger",
+      "directive": "Lazy-load surprises, duplicate identities, hidden auto-persistence, N+1 behavior, or ad hoc saves trigger explicit identity scope, Unit of Work, and loading behavior.",
+      "source": "`Identity, Caching, and Unit-of-Work Rules` (168-185), `Review Rules` (334-335), `Review Checklist` (389)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M25",
+      "localId": "M25",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "trigger",
+      "directive": "Concurrency conflicts, stale locks, user-level edits, or long-running workflows trigger explicit optimistic, pessimistic, coarse-grained, or implicit locking semantics.",
+      "source": "`Concurrency and Transaction Rules` (206-228), `Forbidden Patterns` (360-363), `Testing Rules` (372)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M26",
+      "localId": "M26",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "trigger",
+      "directive": "Chatty, object-shaped, or internals-leaking remote APIs trigger a coarse use-case contract with DTO translation.",
+      "source": "`Application Workflow Rules` (108-129), `Distribution Rules` (285-295), `Review Rules` (336-337)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M27",
+      "localId": "M27",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "trigger",
+      "directive": "Unclear session owner, lifetime, storage, security, scaling, failover, durability, or cleanup triggers an explicit session-state pattern choice.",
+      "source": "`Session State and Base Pattern Index` (266-270)."
+    },
+    {
+      "id": "patterns-of-enterprise-application-architecture:M28",
+      "localId": "M28",
+      "book": "patterns-of-enterprise-application-architecture",
+      "kind": "trigger",
+      "directive": "Layering theater, generic repository everywhere, ORM-driven everything, controller-centric enterprise workflow, distributed-object fantasy, or unclear transaction ownership blocks review until pattern ownership is corrected.",
+      "source": "`Forbidden Patterns` (341-363)."
+    },
+    {
+      "id": "refactoring:M1",
+      "localId": "M1",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Preserve observable behavior and isolate behavior changes from structural changes.",
+      "source": "`Purpose` (3-16), `Primary Directive` (20-31), `What Counts as Refactoring` (35-49), `Non-Negotiable Rules` (53-58), `Forbidden Patterns` (329-342), `Review Checklist` (410-414)."
+    },
+    {
+      "id": "refactoring:M2",
+      "localId": "M2",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Work in small reversible, buildable, testable, reviewable steps.",
+      "source": "`Primary Directive` (25-31), `Non-Negotiable Rules` (60-67), `Commit and Patch Discipline` (88-92), `Code Generation Rules` (360-369), `Final Instruction` (429-433)."
+    },
+    {
+      "id": "refactoring:M3",
+      "localId": "M3",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Establish a safety net or characterization before risky refactoring and preserve failing tests.",
+      "source": "`Tests and Verification` (79-87), `Testing Rules` (388-395), `Forbidden Patterns` (353-357), `Review Checklist` (417)."
+    },
+    {
+      "id": "refactoring:M4",
+      "localId": "M4",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Use preparatory and follow-up refactoring around feature work.",
+      "source": "`Primary Directive` (25-29), `Non-Negotiable Rules` (69-75), `Preparatory Refactoring` (94-100), `Code Generation Rules` (360-369)."
+    },
+    {
+      "id": "refactoring:M5",
+      "localId": "M5",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Refactor the current blocking smell instead of detached polish.",
+      "source": "`Code Smell Policy` (104-155), `Review Rules` (310-325), `Review Checklist` (415-418)."
+    },
+    {
+      "id": "refactoring:M6",
+      "localId": "M6",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Prefer the simplest named refactoring move that helps.",
+      "source": "`Preferred Refactoring Moves` (158-187), `Refactoring Catalog Index` (191-255), `Code Generation Rules` (371-379)."
+    },
+    {
+      "id": "refactoring:M7",
+      "localId": "M7",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Make names and functions reveal intent with coherent tasks, consistent abstraction levels, tight scope, and separated phases.",
+      "source": "`Naming Refactorings` (160-165), `Extraction Refactorings` (166-170), `Long Functions` (113-117), `Function-Level Rules` (258-267), `Review Checklist` (421-422)."
+    },
+    {
+      "id": "refactoring:M8",
+      "localId": "M8",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Put behavior and state with the owning concept and split modules by reasons to change.",
+      "source": "`Divergent Change` (128-130), `Shotgun Surgery` (132-134), `Feature Envy` (136-138), `Movement Refactorings` (172-175), `Moving Features` (204-212), `Generalization and Big Refactorings` (243-255), `Class and Module Rules` (270-278), `Review Checklist` (423)."
+    },
+    {
+      "id": "refactoring:M9",
+      "localId": "M9",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Keep data, mutation, and call contracts explicit.",
+      "source": "`Long Parameter Lists` (118-122), `Data Clumps and Primitive Obsession` (140-143), `Data Refactorings` (183-187), `Composing Methods` (193-202), `Organizing Data` (213-225), `Simplifying Calls and Conditionals` (234-241), `Data and Mutation Rules` (291-298)."
+    },
+    {
+      "id": "refactoring:M10",
+      "localId": "M10",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Simplify conditionals without introducing needless indirection.",
+      "source": "`Switch Statements and Conditionals` (144-147), `Simplification Refactorings` (177-181), `Simplifying Calls and Conditionals` (227-233), `Rules for Working with Conditionals` (281-288), `Review Checklist` (422)."
+    },
+    {
+      "id": "refactoring:M11",
+      "localId": "M11",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Use abstraction, inheritance, delegation, and generalization only when current evidence justifies them.",
+      "source": "`Use the Simplest Helpful Refactoring` (73-75), `Middle Man and Speculative Generality` (152-155), `Generalization and Big Refactorings` (243-255), `Class and Module Rules` (274-277), `Forbidden Patterns` (343-351)."
+    },
+    {
+      "id": "refactoring:M12",
+      "localId": "M12",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Preserve error semantics and refactor error handling to reveal the main path.",
+      "source": "`Simplifying Calls and Conditionals` (241), `Error Handling Rules` (301-307)."
+    },
+    {
+      "id": "refactoring:M13",
+      "localId": "M13",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Keep patch intent reviewable and avoid giant mixed changes.",
+      "source": "`Commit and Patch Discipline` (88-92), `Forbidden Patterns` (338-342), `Code Generation Rules` (380-385), `Review Checklist` (420)."
+    },
+    {
+      "id": "refactoring:M14",
+      "localId": "M14",
+      "book": "refactoring",
+      "kind": "decision",
+      "directive": "Stop when the requested change is easy, the blocking smell is removed, and further cleanup would be speculative.",
+      "source": "`Use the Simplest Helpful Refactoring` (73-75), `Stopping Rules` (399-406), `Review Checklist` (425), `Final Instruction` (429-433)."
+    },
+    {
+      "id": "refactoring:M15",
+      "localId": "M15",
+      "book": "refactoring",
+      "kind": "trigger",
+      "directive": "When adding behavior, decide whether a small preparatory refactor should come first.",
+      "source": "`Primary Directive` (25-29), `Preparatory Refactoring` (94-100), `Code Generation Rules` (360-369)."
+    },
+    {
+      "id": "refactoring:M16",
+      "localId": "M16",
+      "book": "refactoring",
+      "kind": "trigger",
+      "directive": "When fixing a bug in unclear code, characterize the failure and refactor only enough to make the fix visible before changing behavior.",
+      "source": "`Tests and Verification` (81-87), `Testing Rules` (388-395), `Code Generation Rules` (360-369)."
+    },
+    {
+      "id": "refactoring:M17",
+      "localId": "M17",
+      "book": "refactoring",
+      "kind": "trigger",
+      "directive": "When tests are absent or weak, make the smallest structural move and improve testability before broader cleanup.",
+      "source": "`Tests and Verification` (81-87), `Testing Rules` (388-395), `Untested Structural Surgery` (353-357)."
+    },
+    {
+      "id": "refactoring:M18",
+      "localId": "M18",
+      "book": "refactoring",
+      "kind": "trigger",
+      "directive": "When the same edit appears for a third time, remove duplication through clearer ownership.",
+      "source": "`Duplicated Code` (108-111), `Shotgun Surgery` (132-134), `Code Generation Rules` (371-379)."
+    },
+    {
+      "id": "refactoring:M19",
+      "localId": "M19",
+      "book": "refactoring",
+      "kind": "trigger",
+      "directive": "When a function mixes responsibilities, levels, phases, or hidden side effects, rename, extract, split phases, or isolate side effects.",
+      "source": "`Long Functions` (113-117), `Extraction Refactorings` (166-170), `Function-Level Rules` (258-267)."
+    },
+    {
+      "id": "refactoring:M20",
+      "localId": "M20",
+      "book": "refactoring",
+      "kind": "trigger",
+      "directive": "When one change spreads across many files, centralize knowledge or introduce a clearer boundary.",
+      "source": "`Shotgun Surgery` (132-134), `Divergent Change` (128-130), `Class and Module Rules` (270-278), `Review Rules` (319-325)."
+    },
+    {
+      "id": "refactoring:M21",
+      "localId": "M21",
+      "book": "refactoring",
+      "kind": "trigger",
+      "directive": "When repeated conditionals or type codes grow, decompose intent before introducing heavier variation mechanisms.",
+      "source": "`Switch Statements and Conditionals` (144-147), `Simplifying Calls and Conditionals` (227-233), `Rules for Working with Conditionals` (281-288)."
+    },
+    {
+      "id": "refactoring:M22",
+      "localId": "M22",
+      "book": "refactoring",
+      "kind": "trigger",
+      "directive": "When UI and domain behavior mix, move rules toward domain objects and verify any required presentation synchronization.",
+      "source": "`Divergent Change` (128-130), `Data Refactorings` (183-187), `Generalization and Big Refactorings` (252-254), `Class and Module Rules` (272-273)."
+    },
+    {
+      "id": "refactoring:M23",
+      "localId": "M23",
+      "book": "refactoring",
+      "kind": "trigger",
+      "directive": "When a patch mixes intents or code motion makes review hard, split the change unless context makes that impractical.",
+      "source": "`Commit and Patch Discipline` (88-92), `Mixed-Intent Patches` (338-342), `Code Generation Rules` (380-385)."
+    },
+    {
+      "id": "refactoring:M24",
+      "localId": "M24",
+      "book": "refactoring",
+      "kind": "trigger",
+      "directive": "When tempted to rewrite, choose the next small behavior-preserving transformation.",
+      "source": "`Primary Directive` (20-31), `Big-Bang Rewrite` (333-337), `Final Instruction` (429-433)."
+    },
+    {
+      "id": "refactoring-guru:M1",
+      "localId": "M1",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Separate refactoring from feature work and bug fixes.",
+      "source": "`Primary Directive` (46-57), `Keep Refactoring Separate` (61-70), `Refactoring Workflow for Agents` (723-750)."
+    },
+    {
+      "id": "refactoring-guru:M2",
+      "localId": "M2",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Diagnose smell, cost, scope, expected end state, verification, and stop condition before choosing a technique.",
+      "source": "`Primary Directive` (46-57), `Smell Detection Process` (141-158), `Diagnose, Treat, Verify, Stop` (160-184), `Refactoring Workflow for Agents` (723-750)."
+    },
+    {
+      "id": "refactoring-guru:M3",
+      "localId": "M3",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Prefer the smallest direct treatment and escalate only when blocked.",
+      "source": "`Primary Directive` (46-57), `Diagnose, Treat, Verify, Stop` (160-184), `Smell-to-Treatment Priority Map` (497-523), `Safety and Tradeoff Rules` (708-719)."
+    },
+    {
+      "id": "refactoring-guru:M4",
+      "localId": "M4",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Work in small named transformations and avoid broad redesign.",
+      "source": "`Work in Small Steps` (72-79), `Technique Selection Rules` (411-493), `Technique Execution Safety` (631-704)."
+    },
+    {
+      "id": "refactoring-guru:M5",
+      "localId": "M5",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Verify continuously after risky structural changes.",
+      "source": "`Verify Continuously` (81-88), `Technique Playbook` (527-607), `Technique Execution Safety` (631-704), `Refactoring Workflow for Agents` (723-750)."
+    },
+    {
+      "id": "refactoring-guru:M6",
+      "localId": "M6",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Stop when the diagnosed smell is materially reduced; do not chase unrelated smells.",
+      "source": "`Diagnose, Treat, Verify, Stop` (160-184), `Decision Anti-Patterns` (611-627), `Refactoring Workflow for Agents` (723-750)."
+    },
+    {
+      "id": "refactoring-guru:M7",
+      "localId": "M7",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Use the Rule of Three without abstracting coincidental similarity.",
+      "source": "`Rule of Three` (99-106), `Duplicate Code` (325-333), `Decision Anti-Patterns` (611-627)."
+    },
+    {
+      "id": "refactoring-guru:M8",
+      "localId": "M8",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Treat technical debt as compounding cost and pay down debt blocking current change, correctness, or understanding.",
+      "source": "`Technical Debt Rules` (130-137), `When to Refactor` (99-126)."
+    },
+    {
+      "id": "refactoring-guru:M9",
+      "localId": "M9",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Scan smells by category before selecting treatment.",
+      "source": "`Smell Detection Process` (141-158), smell sections `Bloaters` through `Couplers` (199-407)."
+    },
+    {
+      "id": "refactoring-guru:M10",
+      "localId": "M10",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "For bloaters, prefer extraction, modeling, and responsibility splits before heavier object or hierarchy moves.",
+      "source": "`Bloaters` (199-247), `Smell-to-Treatment Priority Map` (497-523), `Technique Playbook` (527-607)."
+    },
+    {
+      "id": "refactoring-guru:M11",
+      "localId": "M11",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "For switch/type-code smells, isolate decisions first and use polymorphism or state/strategy only for stable repeated variation.",
+      "source": "`Switch Statements` (253-262), `Organizing Data` technique selection (436-452), `Conditional and Method Call Playbook` (572-595), `Decision Anti-Patterns` (611-627)."
+    },
+    {
+      "id": "refactoring-guru:M12",
+      "localId": "M12",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "For change preventers, move behavior and data toward the owner of the changing concept.",
+      "source": "`Change Preventers` (290-312), `Moving Features Between Objects` (425-434), `Smell-to-Treatment Priority Map` (497-523)."
+    },
+    {
+      "id": "refactoring-guru:M13",
+      "localId": "M13",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "For dispensables, delete or inline unused structure only after compatibility and external reachability checks.",
+      "source": "`Dispensables` (316-366), `Smell-to-Treatment Priority Map` (497-523), `Decision Anti-Patterns` (611-627)."
+    },
+    {
+      "id": "refactoring-guru:M14",
+      "localId": "M14",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "For couplers, reduce navigation and private knowledge while preserving useful boundary layers.",
+      "source": "`Couplers` (370-407), `Moving Features Playbook` (543-552), `Safety and Tradeoff Rules` (708-719)."
+    },
+    {
+      "id": "refactoring-guru:M15",
+      "localId": "M15",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Prefer names, extraction, variables, or assertions over comments that explain unclear code; keep rationale and constraints.",
+      "source": "`Comments` (318-323), `Smell Exception Rules` (186-195), `Technique Selection Rules` (411-493)."
+    },
+    {
+      "id": "refactoring-guru:M16",
+      "localId": "M16",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Keep behavior with the data it changes unless separation intentionally supports interchangeable behavior.",
+      "source": "`Feature Envy` (372-378), `Moving Safety` (651-657), `Safety and Tradeoff Rules` (708-719)."
+    },
+    {
+      "id": "refactoring-guru:M17",
+      "localId": "M17",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Treat encapsulation as behavior and invariant protection, not just getters and setters.",
+      "source": "`Data Class` (342-348), `Encapsulation Safety` (659-665), `Decision Anti-Patterns` (611-627)."
+    },
+    {
+      "id": "refactoring-guru:M18",
+      "localId": "M18",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Avoid speculative abstractions and mechanical wrappers, parameter objects, interfaces, superclasses, or variants.",
+      "source": "`Speculative Generality` (359-366), `Decision Anti-Patterns` (611-627), `Safety and Tradeoff Rules` (708-719)."
+    },
+    {
+      "id": "refactoring-guru:M19",
+      "localId": "M19",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Preserve public compatibility or transition paths for externally reachable structure.",
+      "source": "`Technique Execution Safety` (631-704), `Safety and Tradeoff Rules` (708-719), `Refactoring Workflow for Agents` (723-750)."
+    },
+    {
+      "id": "refactoring-guru:M20",
+      "localId": "M20",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Before extraction or movement, check inputs, outputs, mutation, callers, visibility, construction, and invariants.",
+      "source": "`Technique Execution Safety` (631-657), `Technique Playbook` (527-607)."
+    },
+    {
+      "id": "refactoring-guru:M21",
+      "localId": "M21",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Before condition consolidation or algorithm substitution, check side effects, ordering, truth tables, edge cases, and performance-sensitive behavior.",
+      "source": "`Composing Methods Playbook` (531-541), `Conditional and Method Call Playbook` (572-595), `Conditional Safety` (667-674)."
+    },
+    {
+      "id": "refactoring-guru:M22",
+      "localId": "M22",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Before data reorganization, decide identity, value/reference semantics, mutability, equality, lifecycle, association direction, and synchronization.",
+      "source": "`Organizing Data` (436-452), `Organizing Data Playbook` (554-570), `Data Reorganization Safety` (686-694)."
+    },
+    {
+      "id": "refactoring-guru:M23",
+      "localId": "M23",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Before generalization changes, prove shared behavior is real and preserve substitutability.",
+      "source": "`Dealing With Generalization` (482-493), `Generalization Playbook` (597-607), `Generalization Safety` (696-704)."
+    },
+    {
+      "id": "refactoring-guru:M24",
+      "localId": "M24",
+      "book": "refactoring-guru",
+      "kind": "decision",
+      "directive": "Choose exceptions deliberately when mechanical smell treatment worsens clarity.",
+      "source": "`Smell Exception Rules` (186-195), `Decision Anti-Patterns` (611-627), relevant smell `When to ignore` logic compressed throughout smell sections (199-407)."
+    },
+    {
+      "id": "refactoring-guru:M25",
+      "localId": "M25",
+      "book": "refactoring-guru",
+      "kind": "trigger",
+      "directive": "Long method trigger: extract named methods and handle locals before using a method object.",
+      "source": "`Long Method` (201-209), `Composing Methods Playbook` (531-541), `Extraction Safety` (633-641)."
+    },
+    {
+      "id": "refactoring-guru:M26",
+      "localId": "M26",
+      "book": "refactoring-guru",
+      "kind": "trigger",
+      "directive": "Large class trigger: extract responsibility; subclass/interface only for stable variants or real client subsets.",
+      "source": "`Large Class` (211-219), `Moving Features Playbook` (543-552), `Generalization Playbook` (597-607)."
+    },
+    {
+      "id": "refactoring-guru:M27",
+      "localId": "M27",
+      "book": "refactoring-guru",
+      "kind": "trigger",
+      "directive": "Primitive/type-code trigger: model concepts only when names, validation, behavior, or safer variation handling survive.",
+      "source": "`Primitive Obsession` (221-229), `Organizing Data Playbook` (554-570)."
+    },
+    {
+      "id": "refactoring-guru:M28",
+      "localId": "M28",
+      "book": "refactoring-guru",
+      "kind": "trigger",
+      "directive": "Parameter list trigger: replace derived parameters, preserve whole objects, or introduce parameter objects only for real concepts.",
+      "source": "`Long Parameter List` (231-237), `Data Clumps` (239-247), `Conditional and Method Call Playbook` (572-595)."
+    },
+    {
+      "id": "refactoring-guru:M29",
+      "localId": "M29",
+      "book": "refactoring-guru",
+      "kind": "trigger",
+      "directive": "Shotgun/change-preventer trigger: centralize knowledge with movement or extraction.",
+      "source": "`Change Preventers` (290-312), `Smell-to-Treatment Priority Map` (497-523)."
+    },
+    {
+      "id": "refactoring-guru:M30",
+      "localId": "M30",
+      "book": "refactoring-guru",
+      "kind": "trigger",
+      "directive": "Message-chain/middle-man trigger: hide delegates, move behavior, or remove pass-through layers.",
+      "source": "`Message Chains` (387-392), `Middle Man` (394-399), `Moving Features Playbook` (543-552)."
+    },
+    {
+      "id": "refactoring-guru:M31",
+      "localId": "M31",
+      "book": "refactoring-guru",
+      "kind": "trigger",
+      "directive": "Query/modifier trigger: split mutation from returned information unless atomic read-modify is the contract.",
+      "source": "`Simplifying Method Calls` (465-480), `Conditional and Method Call Playbook` (572-595), `Method Call Safety` (676-684)."
+    },
+    {
+      "id": "refactoring-guru:M32",
+      "localId": "M32",
+      "book": "refactoring-guru",
+      "kind": "trigger",
+      "directive": "Conditional trigger: decompose or consolidate branches only after checking side effects and ordering.",
+      "source": "`Simplifying Conditional Expressions` (454-463), `Conditional and Method Call Playbook` (572-595), `Conditional Safety` (667-674)."
+    },
+    {
+      "id": "refactoring-guru:M33",
+      "localId": "M33",
+      "book": "refactoring-guru",
+      "kind": "trigger",
+      "directive": "Null/error/assertion/value/reference/association trigger: verify semantics before changing structure.",
+      "source": "`Organizing Data Playbook` (554-570), `Conditional and Method Call Playbook` (572-595), `Data Reorganization Safety` (686-694)."
+    },
+    {
+      "id": "refactoring-guru:M34",
+      "localId": "M34",
+      "book": "refactoring-guru",
+      "kind": "trigger",
+      "directive": "Inheritance trigger: push members down or replace inheritance with delegation when inheritance creates refused bequest or intimacy.",
+      "source": "`Refused Bequest` (272-277), `Inappropriate Intimacy` (380-385), `Generalization Safety` (696-704)."
+    },
+    {
+      "id": "refactoring-guru:M35",
+      "localId": "M35",
+      "book": "refactoring-guru",
+      "kind": "trigger",
+      "directive": "Dead/speculative/library trigger: check external reachability and use the narrowest library extension.",
+      "source": "`Dead Code` (350-357), `Speculative Generality` (359-366), `Incomplete Library Class` (401-407)."
+    },
+    {
+      "id": "refactoring-guru:M36",
+      "localId": "M36",
+      "book": "refactoring-guru",
+      "kind": "trigger",
+      "directive": "Cleanup-spread trigger: stop at the diagnosed smell and report the next smell separately.",
+      "source": "`Diagnose, Treat, Verify, Stop` (160-184), `Decision Anti-Patterns` (611-627)."
+    },
+    {
+      "id": "release-it:M1",
+      "localId": "M1",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Assume dependencies, queues, caches, timeouts, callers, and degraded states can fail slowly, partially, or for hours.",
+      "source": "`Purpose` (3-18), `Stability Mindset Rules` (36-45)."
+    },
+    {
+      "id": "release-it:M2",
+      "localId": "M2",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Prefer visible failure, blast-radius limits, load shedding, core-service preservation, and diagnosability over coupled happy-path design.",
+      "source": "`Primary Directive` (21-32), `Final Instruction` (373-382)."
+    },
+    {
+      "id": "release-it:M3",
+      "localId": "M3",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Treat deployment, operations, security, observability, rollback, state visibility, and configuration validation as part of production readiness.",
+      "source": "`Purpose` (8-17), `Production Readiness and Release Risk Rules` (49-55)."
+    },
+    {
+      "id": "release-it:M4",
+      "localId": "M4",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Put explicit, intentional time limits on outbound calls and waits; forbid infinite waits where finite response matters.",
+      "source": "`Dependency Protection Rules / Timeouts Are Mandatory` (59-66), `Code Generation Rules` (323-340), `Review Checklist` (355-360)."
+    },
+    {
+      "id": "release-it:M5",
+      "localId": "M5",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Retry only when safe, bounded, backed off or jittered, and not used for validation or permanent failures.",
+      "source": "`Dependency Protection Rules / Retries Must Be Disciplined` (67-72), `Forbidden Patterns / Retry Storms` (302-305), `Scheduled and Background Work Rules` (270-276), `Review Checklist` (355-360)."
+    },
+    {
+      "id": "release-it:M6",
+      "localId": "M6",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Isolate dependency and workload failures with breakers, fast failure, bulkheads, separate pools, and slow-work isolation.",
+      "source": "`Dependency Protection Rules / Circuit Breakers and Fast Failure` (73-77), `Dependency Protection Rules / Bulkheads and Isolation` (78-88), `Forbidden Patterns / Blast-Radius Amplification` (317-320), `Review Checklist` (355-367)."
+    },
+    {
+      "id": "release-it:M7",
+      "localId": "M7",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Design overload behavior with back pressure, finite queues, demand limits, critical capacity reservation, and load shedding.",
+      "source": "`Load and Capacity Rules` (91-126), `Forbidden Patterns / Collapse by Queue` (307-310), `Review Checklist` (355-367)."
+    },
+    {
+      "id": "release-it:M8",
+      "localId": "M8",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Choose stability patterns by failure mode: steady state, fail fast, let-it-crash only with supervision and isolation, handshaking, monitored decoupling middleware, and governors.",
+      "source": "`Load and Capacity Rules / Additional Stability Patterns` (114-120)."
+    },
+    {
+      "id": "release-it:M9",
+      "localId": "M9",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Make runtime state, external responses, automation progress, migrations, operational assumptions, and boundary data visible and validated, with rollback or roll-forward for partial changes.",
+      "source": "`Runtime State and Restart Safety Rules` (129-148), `Deployment and Startup Rules` (224-230)."
+    },
+    {
+      "id": "release-it:M10",
+      "localId": "M10",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Budget and release scarce resources, avoid holding locks or expensive connections across slow remote calls, and stream or paginate large payloads.",
+      "source": "`Resource Management Rules` (151-169)."
+    },
+    {
+      "id": "release-it:M11",
+      "localId": "M11",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Validate external input and responses before trusting them, and prevent malformed data from poisoning caches, queues, or downstream systems.",
+      "source": "`Runtime State and Restart Safety Rules` (131-135), `Data Boundary Rules` (172-179)."
+    },
+    {
+      "id": "release-it:M12",
+      "localId": "M12",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Build observability into boundaries and failure points with structured logs, correlation, metrics, health, dependency, version, configuration, runtime, saturation, queue, retry, and breaker signals.",
+      "source": "`Operational Visibility Rules` (182-211), `Review Rules` (280-293), `Review Checklist` (355-367)."
+    },
+    {
+      "id": "release-it:M13",
+      "localId": "M13",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Make startup, health checks, migrations, one-time jobs, administrative controls, process code, and delivery tooling safe, authorized, auditable, observable, stoppable, and recoverable.",
+      "source": "`Incidents, Capacity, and Runtime Control` (214-220), `Deployment and Startup Rules` (224-230), `Code Generation Rules` (323-340), `Testing Rules` (344-351)."
+    },
+    {
+      "id": "release-it:M14",
+      "localId": "M14",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Make interconnects, routing, API contracts, caches, scheduled work, and background work production-aware by avoiding concentrated demand, hidden SPOFs, uncontrolled fan-out, fragile chattiness, cache dogpiles, stale data surprises, and synchronized retries.",
+      "source": "`Interconnect, Routing, Security, and Chaos Rules` (234-242), `API and Contract Rules` (246-252), `Cache Rules` (256-266), `Scheduled and Background Work Rules` (270-276)."
+    },
+    {
+      "id": "release-it:M15",
+      "localId": "M15",
+      "book": "release-it",
+      "kind": "decision",
+      "directive": "Include security and hostile traffic in production readiness, and run production tests, game days, chaos, or disaster simulations only with limited blast radius, observability, stop conditions, recovery, and design feedback.",
+      "source": "`Interconnect, Routing, Security, and Chaos Rules` (234-242), `Incidents, Capacity, and Runtime Control` (217-220), `Testing Rules` (344-351)."
+    },
+    {
+      "id": "release-it:M16",
+      "localId": "M16",
+      "book": "release-it",
+      "kind": "trigger",
+      "directive": "Outbound calls, dependency operations, resource checkouts, queue consumes, or thread waits trigger timeout, retry eligibility, retry bounds, fallback or degraded mode, validation, and caller-survival decisions.",
+      "source": "`Dependency Protection Rules` (59-88), `Runtime State and Restart Safety Rules` (131-135), `Code Generation Rules` (323-340)."
+    },
+    {
+      "id": "release-it:M17",
+      "localId": "M17",
+      "book": "release-it",
+      "kind": "trigger",
+      "directive": "Queues, buffers, pools, caches, log streams, background jobs, scheduled jobs, or collection APIs trigger capacity, full behavior, cleanup, miss/stampede/staleness behavior, pacing, pagination or streaming, and saturation monitoring.",
+      "source": "`Load and Capacity Rules` (91-126), `Resource Management Rules` (151-169), `Cache Rules` (256-266), `Scheduled and Background Work Rules` (270-276)."
+    },
+    {
+      "id": "release-it:M18",
+      "localId": "M18",
+      "book": "release-it",
+      "kind": "trigger",
+      "directive": "Deployment, configuration, startup, migrations, one-time jobs, scripts, or operational automation trigger idempotency or restartability, durable state, auditability, verification, and rollback or roll-forward.",
+      "source": "`Production Readiness and Release Risk Rules` (49-55), `Runtime State and Restart Safety Rules` (129-148), `Deployment and Startup Rules` (224-230)."
+    },
+    {
+      "id": "release-it:M19",
+      "localId": "M19",
+      "book": "release-it",
+      "kind": "trigger",
+      "directive": "Health checks, load balancing, service discovery, routing, or inter-service handshakes trigger readiness-aware traffic routing and health signals that reflect real ability to serve.",
+      "source": "`Load and Capacity Rules / Additional Stability Patterns` (114-120), `Deployment and Startup Rules` (224-230), `Interconnect, Routing, Security, and Chaos Rules` (234-242)."
+    },
+    {
+      "id": "release-it:M20",
+      "localId": "M20",
+      "book": "release-it",
+      "kind": "trigger",
+      "directive": "API and integration contracts trigger explicit failure modes, retryable/non-retryable outcomes, resilient interaction granularity, versioning, compatibility, and documented timeout or retry expectations.",
+      "source": "`API and Contract Rules` (246-252)."
+    },
+    {
+      "id": "release-it:M21",
+      "localId": "M21",
+      "book": "release-it",
+      "kind": "trigger",
+      "directive": "Incidents, performance failures, or capacity issues trigger failure-chain analysis, missing-defense review, detection-gap review, demand and saturation inspection, queue-age and dependency review, traffic-concentration review, and design changes.",
+      "source": "`Incidents, Capacity, and Runtime Control` (214-220)."
+    },
+    {
+      "id": "release-it:M22",
+      "localId": "M22",
+      "book": "release-it",
+      "kind": "trigger",
+      "directive": "Administrative controls, control planes, delivery tooling, hostile-traffic handling, or chaos/disaster work trigger authorization, auditability, safe defaults, stop mechanisms, bounded blast radius, and recovery paths.",
+      "source": "`Incidents, Capacity, and Runtime Control` (214-220), `Interconnect, Routing, Security, and Chaos Rules` (234-242)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M1",
+      "localId": "M1",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Be pragmatic, not dogmatic; choose practices and stopping points by real outcomes.",
+      "source": "`Purpose` (3-17), `Primary Directive` (21-32), `Core Pragmatic Principles` (53-61), `Project and Team Rules` (248-255), `Forbidden Patterns` (283-287)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M2",
+      "localId": "M2",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Own the result and surface tradeoffs, risks, uncertainty, and avoidable design costs.",
+      "source": "`Purpose` (3-17), `Core Pragmatic Principles` (38-42), `Project and Team Rules` (248-255), `Review Rules` (268-280)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M3",
+      "localId": "M3",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Think beyond the local edit and leave touched areas better where the cost is low.",
+      "source": "`Core Pragmatic Principles` (43-47), `Broken Windows Rule` (259-264), `Review Checklist` (334-346), `Final Instruction` (350-359)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M4",
+      "localId": "M4",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Keep one authoritative representation for each piece of system knowledge.",
+      "source": "`Purpose` (8-15), `Primary Directive` (25-32), `DRY Rules` (64-79), `Code Generation Rules` (306-322), `Review Checklist` (334-346), `Final Instruction` (350-359)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M5",
+      "localId": "M5",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Preserve orthogonality with independent components, narrow interfaces, and separated concerns.",
+      "source": "`Purpose` (8-15), `Primary Directive` (25-32), `Orthogonality Rules` (82-93), `Resource and Coupling Rules` (235-244), `Review Rules` (268-280), `Final Instruction` (350-359)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M6",
+      "localId": "M6",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Keep volatile decisions reversible until evidence justifies commitment.",
+      "source": "`Core Pragmatic Principles` (48-52), `Reversibility, Domain Languages, and Requirements` (110-120), `Text and Data Rules` (189-195), `Final Instruction` (350-359)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M7",
+      "localId": "M7",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Use domain vocabulary and small domain languages only when they clarify rules for their readers.",
+      "source": "`Reversibility, Domain Languages, and Requirements` (110-120), `Naming and Communication Rules` (179-185)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M8",
+      "localId": "M8",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Prefer thin end-to-end tracer bullets to validate architecture, integration, and assumptions early.",
+      "source": "`Purpose` (8-15), `Tracer Bullets and Iterative Delivery` (96-107), `Code Generation Rules` (306-322)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M9",
+      "localId": "M9",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Use prototypes for learning while preventing experimental shortcuts from becoming production defaults.",
+      "source": "`Tracer Bullets and Iterative Delivery` (103-107), `Prototyping Rules` (123-129), `Forbidden Patterns` (301-303), `Review Checklist` (334-346)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M10",
+      "localId": "M10",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Dig for real requirements and separate durable needs from implementation details, solution proposals, stale specs, and unresolved hesitation.",
+      "source": "`Reversibility, Domain Languages, and Requirements` (110-120), `Estimation and Increment Rules` (207-213)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M11",
+      "localId": "M11",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Automate repetitive, error-prone, easy-to-forget, or ritualized work and keep shared checks reproducible.",
+      "source": "`Purpose` (8-15), `DRY Rules` (72-77), `Automation Rules` (132-143), `Tooling Rules` (216-231), `Forbidden Patterns` (285-299), `Code Generation Rules` (306-322), `Testing Rules` (325-331), `Review Checklist` (334-346), `Final Instruction` (350-359)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M12",
+      "localId": "M12",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Shorten feedback loops with relevant tests, automated checks, visible failures, and cheap early signals.",
+      "source": "`Purpose` (8-15), `Primary Directive` (25-32), `Feedback Loop Rules` (146-153), `Code Generation Rules` (306-322), `Testing Rules` (325-331), `Review Checklist` (334-346), `Final Instruction` (350-359)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M13",
+      "localId": "M13",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Make contracts, assumptions, invariants, responsibilities, and obligations explicit and close to the protected abstraction.",
+      "source": "`Design by Contract and Assertions` (156-167), `Code Generation Rules` (306-322), `Review Checklist` (334-346)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M14",
+      "localId": "M14",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Separate failure types, preserve diagnostic context, and contain failure boundaries.",
+      "source": "`Design by Contract and Assertions` (156-167), `Error Handling and Recovery` (170-176), `Review Rules` (268-280)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M15",
+      "localId": "M15",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Treat resource ownership and cleanup as explicit contracts on success and failure paths.",
+      "source": "`Resource and Coupling Rules` (235-244), `Review Checklist` (334-346)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M16",
+      "localId": "M16",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Prefer inspectable text, open formats, scripts, explicit serialization, and version-aware configuration where longevity and automation matter.",
+      "source": "`Text and Data Rules` (189-195), `Tooling Rules` (223-231)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M17",
+      "localId": "M17",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Treat shared mutable state, ambient context, globals, temporal coupling, and async complexity as visible costs.",
+      "source": "`Orthogonality Rules` (82-93), `State and Concurrency Rules` (198-204), `Resource and Coupling Rules` (235-244)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M18",
+      "localId": "M18",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Use tools as leverage, but understand generated code, formal methods, specifications, and tool output before relying on them.",
+      "source": "`Tooling Rules` (216-231), `Forbidden Patterns` (285-303)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M19",
+      "localId": "M19",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Debug from reproduced facts by observing, isolating, explaining, fixing, and verifying.",
+      "source": "`Tooling Rules` (230-231)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M20",
+      "localId": "M20",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Break work into small deliverable increments with honest uncertainty, visible risk, and estimates corrected by feedback.",
+      "source": "`Tracer Bullets and Iterative Delivery` (96-107), `Estimation and Increment Rules` (207-213)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M21",
+      "localId": "M21",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Communicate engineering intent through code, names, docs, comments, commit messages, scripts, tests, and artifacts.",
+      "source": "`Core Pragmatic Principles` (53-61), `Naming and Communication Rules` (179-185), `Project and Team Rules` (248-255), `Review Rules` (268-280)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M22",
+      "localId": "M22",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Build teams and work around shared responsibility, explicit expectations, automation, fast feedback, visible quality, and defensible artifacts.",
+      "source": "`Project and Team Rules` (248-255)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M23",
+      "localId": "M23",
+      "book": "the-pragmatic-programmer",
+      "kind": "decision",
+      "directive": "Apply the broken windows rule by fixing or visibly containing quality decay.",
+      "source": "`Core Pragmatic Principles` (53-61), `Broken Windows Rule` (259-264), `Review Checklist` (334-346)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M24",
+      "localId": "M24",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Copied facts trigger source-of-truth ownership and derivation, generation, validation, or traceability.",
+      "source": "`DRY Rules` (64-79), `Forbidden Patterns` (289-292), `Review Rules` (268-280), `Review Checklist` (334-346)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M25",
+      "localId": "M25",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Unrelated places changing together trigger boundary repair and hidden-coupling removal.",
+      "source": "`Orthogonality Rules` (82-93), `Forbidden Patterns` (293-295), `Review Rules` (268-280)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M26",
+      "localId": "M26",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Hard-coded volatile details trigger validated, controlled, versioned configuration, metadata, or an explicit abstraction.",
+      "source": "`Reversibility, Domain Languages, and Requirements` (110-120), `Text and Data Rules` (189-195)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M27",
+      "localId": "M27",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "High uncertainty or irreversible decisions trigger tracer feedback, prototypes, smaller reversible steps, or delayed commitment.",
+      "source": "`Core Pragmatic Principles` (48-52), `Tracer Bullets and Iterative Delivery` (96-107), `Reversibility, Domain Languages, and Requirements` (110-120), `Estimation and Increment Rules` (207-213)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M28",
+      "localId": "M28",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Prototype code, generated scaffolds, diagrams, specs, formal models, or tool output becoming production truth triggers deliberate inspection, understanding, hardening, replacement, or rejection.",
+      "source": "`Tracer Bullets and Iterative Delivery` (103-107), `Prototyping Rules` (123-129), `Tooling Rules` (229-231), `Forbidden Patterns` (301-303)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M29",
+      "localId": "M29",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Prose specifications growing without reduced uncertainty trigger a working slice, example, or prototype.",
+      "source": "`Reversibility, Domain Languages, and Requirements` (116-119), `Tracer Bullets and Iterative Delivery` (96-107)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M30",
+      "localId": "M30",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Hidden assumptions in comments, caller folklore, or setup rituals trigger code, contracts, tests, scripts, or checked configuration.",
+      "source": "`Design by Contract and Assertions` (156-167), `Automation Rules` (132-143), `Review Rules` (268-280)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M31",
+      "localId": "M31",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Errors or resources crossing boundaries trigger recovery, diagnostic-context, and cleanup ownership decisions.",
+      "source": "`Error Handling and Recovery` (170-176), `Resource and Coupling Rules` (235-244)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M32",
+      "localId": "M32",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Shared state, async behavior, locks, ordering, or temporal coupling trigger explicit ownership, synchronization, cleanup, and ordering requirements.",
+      "source": "`State and Concurrency Rules` (198-204), `Resource and Coupling Rules` (235-244)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M33",
+      "localId": "M33",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Repeated manual steps, human checks, environment rituals, or release procedures trigger automation and versioning.",
+      "source": "`DRY Rules` (72-77), `Automation Rules` (132-143), `Forbidden Patterns` (285-299)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M34",
+      "localId": "M34",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Slow, flaky, environment-dependent, or setup-heavy tests trigger feedback-path improvement instead of skipped checks.",
+      "source": "`Feedback Loop Rules` (146-153), `Testing Rules` (325-331)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M35",
+      "localId": "M35",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Human-found bugs trigger automatic regression tests around the protected contract.",
+      "source": "`Testing Rules` (325-331), `Feedback Loop Rules` (146-153)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M36",
+      "localId": "M36",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Unexplained working behavior triggers proof with data before dependency.",
+      "source": "`Tooling Rules` (230-231), `Design by Contract and Assertions` (156-167)."
+    },
+    {
+      "id": "the-pragmatic-programmer:M37",
+      "localId": "M37",
+      "book": "the-pragmatic-programmer",
+      "kind": "trigger",
+      "directive": "Local decay in touched code triggers a cheap fix or explicit containment and cleanup path.",
+      "source": "`Core Pragmatic Principles` (43-47), `Broken Windows Rule` (259-264), `Review Checklist` (334-346)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M1",
+      "localId": "M1",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "Treat any area without trustworthy tests as legacy code; avoid rewrite-first and module-wide cleanup.",
+      "source": "`Purpose` (3-16), `Primary Directive` (20-35), `Non-Negotiable Rules` (39-58), `Default Workflow for Legacy Changes` (61-74), `Forbidden Patterns` (286-305), `Final Instruction` (362-371)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M2",
+      "localId": "M2",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "State the behavior delta and characterize uncertain, suspicious, or ugly current behavior before modification.",
+      "source": "`Primary Directive` (20-35), `Non-Negotiable Rules` (39-58), `Testing Strategy Rules` (78-99), `Forbidden Patterns` (286-305), `Review Checklist` (345-358)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M3",
+      "localId": "M3",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "Follow the legacy loop from change point through seam, dependency break, test, change, and local refactor.",
+      "source": "`Primary Directive` (20-35), `Default Workflow for Legacy Changes` (61-74), `Code Generation Rules` (308-332), `Final Instruction` (362-371)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M4",
+      "localId": "M4",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "Prefer fast focused tests; use broader interception or integration tests only as the safest first observation point.",
+      "source": "`Testing Strategy Rules` (78-99), `Test Selection and Understanding Rules` (164-174), `Testing Rules` (335-342)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M5",
+      "localId": "M5",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "Choose test points by tracing effects from the change point through values, calls, fields, outputs, collaborators, interception points, and pinch points.",
+      "source": "`Test Selection and Understanding Rules` (164-174)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M6",
+      "localId": "M6",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "Use the smallest seam for substitution, observation, or interception, with sensing vs separation explicit.",
+      "source": "`Seam Rules` (102-125), `Review Checklist` (345-358)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M7",
+      "localId": "M7",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "Break dependencies deliberately only where hidden inputs, hard outputs, hard construction, globals, statics, ambient context, or framework callbacks block testing or safe change.",
+      "source": "`Non-Negotiable Rules` (39-58), `Dependency Breaking Rules` (128-161), `Handling Risky Areas` (240-267), `Forbidden Patterns` (286-305)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M8",
+      "localId": "M8",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "Keep behavior changes, refactorings, and cleanup separate; verify small steps and discard unsupported exploratory restructuring.",
+      "source": "`Test Selection and Understanding Rules` (164-174), `Legacy Refactoring Heuristics` (228-237), `Review Rules` (271-283), `Review Checklist` (345-358)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M9",
+      "localId": "M9",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "Use sprout, wrap, and extract-and-override style moves for risky additions, then fold temporary structures into better design under tests.",
+      "source": "`Preferred Legacy Techniques` (178-205), `Code Generation Rules` (308-332)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M10",
+      "localId": "M10",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "For hard-to-test methods, split construction from use, extract side effects, carve pure computation first, and isolate policy from runtime, persistence, UI, or framework mechanisms.",
+      "source": "`Dependency Breaking Rules` (128-161), `Legacy Refactoring Heuristics` (228-237), `Handling Risky Areas` (240-267), `Code Generation Rules` (308-332)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M11",
+      "localId": "M11",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "Match dependency-breaking techniques to the actual barrier and use link/preprocessing seams only when ordinary object seams are impractical.",
+      "source": "`Seam Rules` (102-125), `Dependency-Breaking Technique Index` (208-224), `Code Generation Rules` (308-332)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M12",
+      "localId": "M12",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "In large code, sketch effects and group responsibilities before moving behavior; let setup pain, impossible observation, and repeated changes point to smaller responsibilities.",
+      "source": "`Test Selection and Understanding Rules` (164-174), `Legacy Refactoring Heuristics` (228-237), `Handling Risky Areas` (240-267)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M13",
+      "localId": "M13",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "Review legacy changes for missing tests, mixed edit intent, broad edits, hard-coded collaborators, global/static reach-through, constructor side effects, and framework-trapped business logic.",
+      "source": "`Review Rules` (271-283), `Review Checklist` (345-358)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M14",
+      "localId": "M14",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "Reject hidden dependency expansion, mocking around untestable structure without improving it, cosmetic cleanup, and large architecture before basic seams exist.",
+      "source": "`Forbidden Patterns` (286-305), `Code Generation Rules` (308-332)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M15",
+      "localId": "M15",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "decision",
+      "directive": "Leave the touched area easier to understand, test, or change without mistaking temporary seams or build tricks for design improvement.",
+      "source": "`Primary Directive` (20-35), `Non-Negotiable Rules` (39-58), `Seam Rules` (102-125), `Review Checklist` (345-358), `Final Instruction` (362-371)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M16",
+      "localId": "M16",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "trigger",
+      "directive": "Uncertain behavior, consumer reliance on ugly behavior, or hard-to-prove paths trigger characterization or another explicit observation path.",
+      "source": "`Testing Strategy Rules` (78-99), `Forbidden Patterns` (286-305)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M17",
+      "localId": "M17",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "trigger",
+      "directive": "Excessive test setup or instantiation failure triggers breaking the first real barrier: constructor work, hidden allocation, factory call, global/static state, framework object, or hard parameter.",
+      "source": "`Dependency Breaking Rules` (128-161), `Dependency-Breaking Technique Index` (208-224), `Handling Risky Areas` (240-267)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M18",
+      "localId": "M18",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "trigger",
+      "directive": "Time, randomness, environment, thread-local state, user/request context, files, networks, process exits, database writes, messages, or control-flow logging that block repeatable tests trigger wrapping or injection.",
+      "source": "`Dependency Breaking Rules` (128-161), `Handling Risky Areas` (240-267)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M19",
+      "localId": "M19",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "trigger",
+      "directive": "Large methods or classes that defeat local reasoning trigger effect sketches, interception or pinch points, pure-computation extraction, and branch-count restraint.",
+      "source": "`Test Selection and Understanding Rules` (164-174), `Handling Risky Areas` (240-267)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M20",
+      "localId": "M20",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "trigger",
+      "directive": "Database-heavy, UI, framework, or API-boundary code triggers separating policy from boundary mechanisms while keeping real-boundary integration tests where they matter.",
+      "source": "`Handling Risky Areas` (240-267), `Testing Rules` (335-342)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M21",
+      "localId": "M21",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "trigger",
+      "directive": "Magical, temporary, public-for-test, subclass-only, link/preprocessor, or probe/sensing seams trigger cleanup obligations.",
+      "source": "`Testing Strategy Rules` (78-99), `Seam Rules` (102-125), `Preferred Legacy Techniques` (178-205), `Dependency-Breaking Technique Index` (208-224)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M22",
+      "localId": "M22",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "trigger",
+      "directive": "Repeated edits across places trigger incremental duplication removal under tests rather than broad redesign.",
+      "source": "`Legacy Refactoring Heuristics` (228-237), `Final Instruction` (362-371)."
+    },
+    {
+      "id": "working-effectively-with-legacy-code:M23",
+      "localId": "M23",
+      "book": "working-effectively-with-legacy-code",
+      "kind": "trigger",
+      "directive": "Rewrite or heroic-cleanup pressure triggers the smallest sprout, wrap, seam, characterization, or refactoring step that makes today's change safer.",
+      "source": "`Primary Directive` (20-35), `Default Workflow for Legacy Changes` (61-74), `Forbidden Patterns` (286-305), `Final Instruction` (362-371)."
+    }
+  ]
+}

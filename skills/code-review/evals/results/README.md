@@ -1,3 +1,5 @@
+> Historical evidence: runtime structure changed on 2026-10-04. These outputs validate their recorded original subjects, not the current body. See the [current preservation pass](../../../../evals/remaining-skills-2026-10-04/README.md); no old result was retagged as current.
+
 # Code Review evidence status
 
 The current subject was created from the user-confirmed brief and a structural audit of the existing local `code-review` skill. The source skill at `/Users/adrian/.agents/skills/code-review/SKILL.md` had SHA-256 `6a65cc61114f96db07ec41e3920e67c9c5bf70dd6e0901eb9460ebcb2bdc209f` when inspected on 2026-07-18.

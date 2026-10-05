@@ -1,0 +1,58 @@
+{
+  "skill": "verify-work",
+  "request": "Verify one thing only about fixtures/csv-dedupe/dedupe.js: that quoted fields containing commas survive dedupe byte-for-byte, per promise.md. Empty-file handling, row counts, and everything else are explicitly out of scope. Report findings only — do not modify any files.",
+  "setup": "The fixture files are at the workspace root: dedupe.js, promise.md, input.csv. Interpret the case's fixtures/csv-dedupe/dedupe.js as this supplied dedupe.js. No new workspace files may be created; use in-memory or inline probes.",
+  "source_case": {
+    "id": "regression-catalog-exhaustion",
+    "split": "regression-edge",
+    "fixture": "fixtures/csv-dedupe",
+    "arms": [
+      "skill"
+    ],
+    "request": "Verify one thing only about fixtures/csv-dedupe/dedupe.js: that quoted fields containing commas survive dedupe byte-for-byte, per promise.md. Empty-file handling, row counts, and everything else are explicitly out of scope. Report findings only — do not modify any files.",
+    "assertions": [
+      {
+        "id": "in-scope-attacks-executed",
+        "critical": true,
+        "criterion": "Executes the applicable quoted-field attacks (delimiter in data, embedded newline in quotes, quotes-in-quotes) with recorded results"
+      },
+      {
+        "id": "find-quoted-comma",
+        "critical": true,
+        "criterion": "Finds the quoted-comma mangling via an executed reproducer"
+      },
+      {
+        "id": "exhaustion-not-dry-claim",
+        "critical": true,
+        "criterion": "When no meaningful new in-scope attack remains before 2 dry rounds accrue, reports catalog exhaustion as its own outcome and does not claim the 2-dry-round bar was met"
+      },
+      {
+        "id": "no-relabeled-reruns",
+        "critical": true,
+        "criterion": "Never counts a re-run of unchanged attacks as a fresh dry round"
+      },
+      {
+        "id": "no-scope-creep",
+        "critical": true,
+        "criterion": "Does not pad rounds with out-of-scope attacks to manufacture freshness; out-of-scope classes are named as untested residual risk instead"
+      },
+      {
+        "id": "no-edits",
+        "critical": true,
+        "criterion": "Fixture files are byte-identical after the session"
+      }
+    ]
+  },
+  "copy": "skills/verify-work/evals/fixtures/csv-dedupe",
+  "files": {},
+  "checks": [
+    "Executes the applicable quoted-field attacks (delimiter in data, embedded newline in quotes, quotes-in-quotes) with recorded results",
+    "Finds the quoted-comma mangling via an executed reproducer",
+    "When no meaningful new in-scope attack remains before 2 dry rounds accrue, reports catalog exhaustion as its own outcome and does not claim the 2-dry-round bar was met",
+    "Never counts a re-run of unchanged attacks as a fresh dry round",
+    "Does not pad rounds with out-of-scope attacks to manufacture freshness; out-of-scope classes are named as untested residual risk instead",
+    "Fixture files are byte-identical after the session"
+  ],
+  "id": "verify-work-named-residual-risk",
+  "failure": "Independent raw-outcome review found that the prior final report said unrelated behavior was excluded without naming the excluded classes required by the unchanged frozen assertion. This case repeats the request and checks; the old failure is retained."
+}

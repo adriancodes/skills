@@ -1,3 +1,5 @@
+> Historical evidence: runtime structure changed on 2026-10-04. These outputs validate their recorded original subjects, not the current body. See the [current preservation pass](../../../../evals/remaining-skills-2026-10-04/README.md); no old result was retagged as current.
+
 # Improve-prompt evidence
 
 ## Current shortcut

@@ -1,0 +1,7 @@
+{
+  "skill": "create-tasks",
+  "fixture": "wide-refactor",
+  "request": "The account-identifier migration spec is confirmed. Plan tasks for migrating this shared identifier across all four packages. Keep every task's CI green and size each migration task to one agent session. Write the local slices contract, then let me review it. Do not implement the migration or create external tickets.",
+  "prompt": "Create bounded, demoable tasks with explicit blockers and a runnable check per task. Use vertical slices for features and expand, compatibility-preserving migration batches, then contract for wide refactors. Write the plan and ask for confirmation.",
+  "outcome": "Add compatible new form first, migrate bounded consumer batches, then remove old form only after all batches; written parseable open plan with checks and edges."
+}

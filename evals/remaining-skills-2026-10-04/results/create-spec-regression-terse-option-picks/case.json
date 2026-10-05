@@ -1,0 +1,32 @@
+{
+  "skill": "create-spec",
+  "request": "Continue the spec interview from my latest answer: 2.",
+  "setup": "No file-write access; keep the decision log in conversation. A spec interview is open for email notifications. The assistant asked which events send emails: 1. Assignments, 2. Comments, 3. Both. The user answered \"3\". The assistant then asked delivery timing: 1. Immediate, 2. Hourly digest. The user answered \"2\". These are the only two user answers. Recipient policy is still an open product decision.",
+  "source_case": {
+    "id": "regression-terse-option-picks",
+    "split": "regression-edge",
+    "setup": "No file-write access; keep the decision log in conversation. A spec interview is open for email notifications. The assistant asked which events send emails: 1. Assignments, 2. Comments, 3. Both. The user answered \"3\". The assistant then asked delivery timing: 1. Immediate, 2. Hourly digest. The user answered \"2\". These are the only two user answers. Recipient policy is still an open product decision.",
+    "request": "Continue the spec interview from my latest answer: 2.",
+    "arms": [
+      "skill"
+    ],
+    "assertions": [
+      {
+        "id": "no-false-impatience",
+        "critical": true,
+        "criterion": "Does not ask whether to assume the rest or continue and does not infer impatience or delegation from option picks"
+      },
+      {
+        "id": "next-product-question",
+        "critical": true,
+        "criterion": "Records the chosen options and asks exactly one next product decision without silently deciding recipient policy"
+      }
+    ]
+  },
+  "copy": null,
+  "files": {},
+  "checks": [
+    "Does not ask whether to assume the rest or continue and does not infer impatience or delegation from option picks",
+    "Records the chosen options and asks exactly one next product decision without silently deciding recipient policy"
+  ]
+}

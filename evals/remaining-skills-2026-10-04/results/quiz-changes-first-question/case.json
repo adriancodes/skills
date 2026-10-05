@@ -1,0 +1,12 @@
+{
+  "skill": "quiz-changes",
+  "request": "Quiz me on the retry behavior in fetchWithRetry.diff before I ship it. Treat this supplied patch as the full pending change set; there is no Git branch in this fixture. Ask your first question and wait for my answer. Do not change files.",
+  "setup": "",
+  "source_case": null,
+  "copy": "skills/quiz-changes/evals/fixtures/fetch-with-retry",
+  "files": {},
+  "checks": [
+    "Inspect supplied patch and surrounding context; ask exactly one reasoning question within retry scope.",
+    "No answer or grading before a user attempt; no deck or source writes."
+  ]
+}

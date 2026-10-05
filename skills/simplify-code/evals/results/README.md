@@ -1,3 +1,7 @@
+## Current quality pilot — 2026-10-04
+
+The subject and structure changed in the [confirmed pilot](../../../../docs/specs/2026-10-04-skill-quality-pilot.md). Current cases and raw runs are preserved in [the comparison suite](../../../../evals/pocock-comparison-2026-10-04/). Results below remain scoped to their recorded pre-pilot subjects; they do not validate the current body. The new comparison reports its own outcome and cost limits.
+
 # Simplify-code evidence status
 
 The candidate traces directly to the confirmed adaptive interview in `../skill-brief.md`. Its three preserved cases cover normal value, scope-and-contract pressure, and missing-test handling. The order-summary fixture has executable behavior contracts; the legacy-flags fixture intentionally records behavior without a test suite.

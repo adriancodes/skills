@@ -1,0 +1,32 @@
+{
+  "id": "be-concise-behavior-depth-override",
+  "skill": "be-concise",
+  "subjects": {
+    "SKILL.md": "d9ab8f29f382f0331722ac94189cdaa5f535e37feead55512e10bbcd62833628",
+    "references/patterns.md": "ce34dc6ba5830c61c85401afe84b11e0238d68e8027ab0e051676c5170a33897"
+  },
+  "fixtures": {},
+  "cases_sha256": "9637aa1dacffb0dcaddae2559d48cc39391e3db3697b0c22523763aec6a58f28",
+  "runner_sha256": "c78f015b8926b43d8d08eedc179876860b678715ca316ab3c29daa4d145d0633",
+  "prompt_sha256": "e396c7830cd529b33043339e2f7432ff3a067db2338ffe1e5cef00ec6b6e7215",
+  "observed_at": "2026-10-05T03:54:12.828Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/remaining-skills-probe-RBRHF8"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Structural consolidation with targeted preservation probes; not full Tier-2 or Tier-3 effectiveness validation."
+}

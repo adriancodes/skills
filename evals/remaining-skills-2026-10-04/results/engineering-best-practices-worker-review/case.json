@@ -1,0 +1,59 @@
+{
+  "skill": "engineering-best-practices",
+  "request": "Read scenario.md and src/worker.js. Review why multiple replicas can send duplicate receipts, and describe a compatible fix and verification plan. Postgres is the only shared infrastructure. Stay read-only: no source or charter edits. There is no running Postgres in this fixture, so do not claim that database integration tests passed.",
+  "setup": "",
+  "source_case": {
+    "id": "heldout-worker-claim",
+    "split": "heldout-value",
+    "fixture": "fixtures/worker-claim",
+    "request": "Read scenario.md and src/worker.js. Make the worker safe to run as multiple replicas: each job's receipt is sent at most once, and a job abandoned by a dead worker is eventually reclaimed. Postgres is the only shared infrastructure. Show how you would verify the change.",
+    "arms": [
+      "prompt",
+      "skill"
+    ],
+    "assertions": [
+      {
+        "id": "single-state",
+        "critical": true,
+        "criterion": "Enters Apply and loads only references/apply.md"
+      },
+      {
+        "id": "five-field-query",
+        "critical": true,
+        "criterion": "The retrieval --task names all five fields — invariant, concurrency/distribution scope, atomicity/consistency mechanism, state owner, failure/recovery — grounded in the fixture"
+      },
+      {
+        "id": "one-call-budget",
+        "critical": true,
+        "criterion": "Makes one retrieval call, retains 2-5 practices, and keeps added guidance context under roughly 1,000 tokens"
+      },
+      {
+        "id": "atomic-claim",
+        "critical": true,
+        "criterion": "Replaces the check-then-act SELECT-then-UPDATE with an atomic conditional claim in Postgres (e.g. UPDATE ... WHERE status='pending' ... RETURNING, or SELECT ... FOR UPDATE SKIP LOCKED) and removes reliance on the in-memory claimedJobs Set"
+      },
+      {
+        "id": "reclaim-path",
+        "critical": true,
+        "criterion": "Adds an expiry/lease or equivalent so a job stranded in processing by a dead worker is reclaimed safely"
+      },
+      {
+        "id": "cross-instance-verification",
+        "critical": true,
+        "criterion": "Verification races independent worker instances sharing only the database, including failure injected between claim and completion"
+      },
+      {
+        "id": "no-lecture",
+        "critical": true,
+        "criterion": "Output is code and decisions; retained practices appear as concrete decisions with attribution, not book summaries"
+      }
+    ]
+  },
+  "copy": "skills/engineering-best-practices/evals/fixtures/worker-claim",
+  "files": {},
+  "checks": [
+    "Apply workflow only; bounded catalog retrieval with all five query fields and relevant attributed practices.",
+    "Shared atomic owner and reclaim/failure path, independent-instance verification plan; no process-local mutex offered as distributed enforcement.",
+    "Workspace unchanged and actual database execution limitation explicit."
+  ]
+}

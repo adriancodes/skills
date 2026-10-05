@@ -1,3 +1,7 @@
+## Current quality pilot — 2026-10-04
+
+The subject and structure changed in the [confirmed pilot](../../../../docs/specs/2026-10-04-skill-quality-pilot.md). Current cases and raw runs are preserved in [the comparison suite](../../../../evals/pocock-comparison-2026-10-04/). Results below remain scoped to their recorded pre-pilot subjects; they do not validate the current body. The new comparison reports its own outcome and cost limits.
+
 # Deliver Feature evidence status
 
 Historical Phase-6 observation (UNVERIFIED; raw transcripts, route, and scoring records unavailable): 4/4 for subject `2d9ac2922010…`; the actor ran one stage and stopped at its gate. See the [Phase-6 report](../../../../docs/evidence/phase6-atomic-rewrite-2026-08-29.md). Historical evidence below remains scoped to its recorded hash.

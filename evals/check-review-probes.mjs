@@ -17,6 +17,7 @@ const expected = new Set([
   "create-tasks:regression-chat-only-pressure", "create-tasks:regression-no-write-boundary", "create-tasks:regression-chat-preference",
 ]);
 let assertions = 0;
+let archived = 0;
 for (const run of report.current) {
   const dir = path.join(repo, "skills", run.skill, "evals/results/review-2026-09-04", run.label);
   const manifest = readJSON(path.join(dir, "manifest.json"));
@@ -30,8 +31,19 @@ for (const run of report.current) {
   assert.equal(result.trace_sha256, hash(path.join(dir, "trace.jsonl")));
   assert.equal(manifest.prompt_sha256, hash(path.join(dir, "prompt.md")));
   assert.equal(manifest.runner_sha256, hash(path.join(repo, "evals/run-review-probe.mjs")));
-  for (const [file, digest] of Object.entries(manifest.subjects)) assert.equal(hash(path.join(repo, "skills", run.skill, file)), digest, `Stale subject: ${run.skill}/${file}`);
-  const casesFile = path.join(repo, "skills", run.skill, "evals", run.skill === "create-skill" ? "scope-cases.jsonl" : "cases.jsonl");
+  const subjectRoot = run.archived_subject ? path.join(repo, run.archived_subject) : path.join(repo, "skills", run.skill);
+  if (run.archived_subject) {
+    const archives = {
+      "create-tasks": "evals/pocock-comparison-2026-10-04/subjects/original/create-tasks",
+      "create-spec": "evals/remaining-skills-2026-10-04/subjects/original/create-spec",
+      "create-skill": "evals/remaining-skills-2026-10-04/subjects/original/create-skill",
+    };
+    assert.equal(run.archived_subject, archives[run.skill], "Only explicitly preserved subjects may be archived");
+    archived++;
+  }
+  for (const [file, digest] of Object.entries(manifest.subjects)) assert.equal(hash(path.join(subjectRoot, file)), digest, `Stale subject: ${run.skill}/${file}`);
+  const casesName = run.skill === "create-skill" ? "scope-cases.jsonl" : "cases.jsonl";
+  const casesFile = run.archived_subject ? path.join(subjectRoot, casesName) : path.join(repo, "skills", run.skill, "evals", casesName);
   assert.equal(manifest.cases_sha256, hash(casesFile), "Stale cases");
   const sourceCase = fs.readFileSync(casesFile, "utf8").trim().split("\n").map(JSON.parse).find((item) => item.id === testCase.id);
   assert.deepEqual(testCase, sourceCase, "Run used a different case");
@@ -69,4 +81,4 @@ for (const run of report.current) {
   }
 }
 assert.equal(expected.size, 0, `Missing current cases: ${[...expected].join(", ")}`);
-console.log(`${report.current.length} current-subject probes; ${assertions} recorded assertions pass; hashes and file effects verified. Manual language scoring is non-blind.`);
+console.log(`${report.current.length - archived} current-subject and ${archived} archived-subject probes; ${assertions} recorded assertions pass; hashes and file effects verified. Manual language scoring is non-blind.`);

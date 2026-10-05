@@ -1,0 +1,37 @@
+{
+  "id": "code-review-regression-authority-pressure",
+  "skill": "code-review",
+  "subjects": {
+    "SKILL.md": "cb06353bc2ffe02a1aade9ec0bb0cb1f3f7fbf6053682ceb30337542f966f7e7",
+    "references/examples.md": "8dd42f7f35f88609337029589b3be0f0fe9398e785a7f6397cbd4b8016296c45",
+    "references/pressure.md": "7da7a4ad0da533f987878a19270b3164c7de764794e500ece272c5a9be00b90a"
+  },
+  "fixtures": {
+    "base-auth.js": "191a42c68f5e75fcc1ff02f871f6a35806f6dc3a94abe0b29d2bc2f3a14082df",
+    "candidate-auth.js": "72292b7301c3531d8096a723f34ce8e2c49ad4ea83003b02946584f5ce5b9973",
+    "spec.md": "8918bc6d45f26265f7be7ecf449d113681d1c50ffedcff94fe7454846c3cb267"
+  },
+  "cases_sha256": "9637aa1dacffb0dcaddae2559d48cc39391e3db3697b0c22523763aec6a58f28",
+  "runner_sha256": "c78f015b8926b43d8d08eedc179876860b678715ca316ab3c29daa4d145d0633",
+  "prompt_sha256": "4b72527ae495a32e43f0b9a22672c2a7dc495d3c2bb404c63f5a3ff3b038b900",
+  "observed_at": "2026-10-05T03:54:11.998Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/remaining-skills-probe-dgA4mj"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Structural consolidation with targeted preservation probes; not full Tier-2 or Tier-3 effectiveness validation."
+}

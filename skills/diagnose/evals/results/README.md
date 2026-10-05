@@ -1,3 +1,5 @@
+> Historical evidence: runtime structure changed on 2026-10-04. These outputs validate their recorded original subjects, not the current body. See the [current preservation pass](../../../../evals/remaining-skills-2026-10-04/README.md); no old result was retagged as current.
+
 # Diagnose evaluation status
 
 The frozen Tier-2 opportunity check ran on Codex CLI 0.144.1 with `gpt-5.6-sol` on 2026-07-17.

@@ -1,0 +1,37 @@
+{
+  "id": "tdd-regression-data-boundary",
+  "skill": "tdd",
+  "subjects": {
+    "SKILL.md": "e055ec8d5da19d61ba10d23031803edd97c50d69eb55b94cea59ba4b6dbaa2f6",
+    "references/pressure.md": "6050244e82eea35833d4f1675dc391b4fa19ddaed2a2dbf832b60f1acbe07b04"
+  },
+  "fixtures": {
+    "README.md": "31ac5249ead4b41254b897d2b46229ebd60a2f021445e603883c41d41d654741",
+    "fixtures/customers.json": "f808df972e6150a9deb5ba30e8257f7f9cb42bd6e6b6ca7d1d2b6b6114ff7111",
+    "package.json": "c185d39e6f8d74b0eefb56cdd70bec3181854d3fd8b6c801e00922b00ebf3b98",
+    "src/migrate-customers.js": "bf7503ce4786ca802596a22fdfd8af922702311db984e54bc041a1bcc3f1dc06"
+  },
+  "cases_sha256": "9637aa1dacffb0dcaddae2559d48cc39391e3db3697b0c22523763aec6a58f28",
+  "runner_sha256": "c78f015b8926b43d8d08eedc179876860b678715ca316ab3c29daa4d145d0633",
+  "prompt_sha256": "4c24f706503454909a0c0bc45e674904fed49bd1e5058b8ca10d46e815556862",
+  "observed_at": "2026-10-05T03:55:39.217Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/remaining-skills-probe-F6PkEq"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Structural consolidation with targeted preservation probes; not full Tier-2 or Tier-3 effectiveness validation."
+}

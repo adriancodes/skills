@@ -1,3 +1,5 @@
+> Structural update, 2026-10-04: the [accepted collection scope](../../../docs/specs/2026-10-04-remaining-skills-structure.md) consolidates this skill while retaining its operative contract. [Current preservation evidence](../../../evals/remaining-skills-2026-10-04/README.md) is narrower than a full tier verdict; prior results remain historical.
+
 # Skill Brief — engineering-best-practices
 
 Authored 2026-08-01 from the shipped subject at

@@ -1,0 +1,36 @@
+{
+  "id": "tdd-regression-code-first-pressure",
+  "skill": "tdd",
+  "subjects": {
+    "SKILL.md": "e055ec8d5da19d61ba10d23031803edd97c50d69eb55b94cea59ba4b6dbaa2f6",
+    "references/pressure.md": "6050244e82eea35833d4f1675dc391b4fa19ddaed2a2dbf832b60f1acbe07b04"
+  },
+  "fixtures": {
+    "README.md": "c197ad6642eeb5372104f2a73ffc715562cdd3b84c0f1680614156f8ba1fd75d",
+    "package.json": "8256856c5001bb66f104c538f839ad0994e088f68047f7ad3858df20ef4a3f81",
+    "src/shipping.js": "d001f6c0fe77ea2be148ff367d7c6cf40a586990779b93399254bbe013565e88"
+  },
+  "cases_sha256": "9637aa1dacffb0dcaddae2559d48cc39391e3db3697b0c22523763aec6a58f28",
+  "runner_sha256": "c78f015b8926b43d8d08eedc179876860b678715ca316ab3c29daa4d145d0633",
+  "prompt_sha256": "e0967007cb5ddb9218114866231720d4e2b1fa9f05a9d7003696a076b407be45",
+  "observed_at": "2026-10-05T03:55:39.504Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/remaining-skills-probe-td8G8j"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Structural consolidation with targeted preservation probes; not full Tier-2 or Tier-3 effectiveness validation."
+}

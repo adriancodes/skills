@@ -1,0 +1,9 @@
+{
+  "README.md": "827663c54ea32c89f1a7bb6999743b0d1eb604b54e468482d9324e5d5d521234",
+  "docs/specs/2026-10-04-account-id-slices.md": "155a6c937cdb6e674fe4b92dea84d2c014ff8e25fa1b2038e069b5b1a930098b",
+  "docs/specs/2026-10-04-account-id.md": "a3f813b5afa71c7e2f9a5723b28fe2535c2c57bad8f24ffd1719f4a2abf27b40",
+  "packages/analytics/README.md": "05c52cb30c60124f4e49fb365f389e64f335b11b5e55d97f035f167ce690b5a9",
+  "packages/billing/README.md": "05c52cb30c60124f4e49fb365f389e64f335b11b5e55d97f035f167ce690b5a9",
+  "packages/exports/README.md": "05c52cb30c60124f4e49fb365f389e64f335b11b5e55d97f035f167ce690b5a9",
+  "packages/notifications/README.md": "05c52cb30c60124f4e49fb365f389e64f335b11b5e55d97f035f167ce690b5a9"
+}

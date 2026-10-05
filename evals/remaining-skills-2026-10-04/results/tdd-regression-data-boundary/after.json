@@ -1,0 +1,7 @@
+{
+  "README.md": "31ac5249ead4b41254b897d2b46229ebd60a2f021445e603883c41d41d654741",
+  "fixtures/customers.json": "f808df972e6150a9deb5ba30e8257f7f9cb42bd6e6b6ca7d1d2b6b6114ff7111",
+  "package.json": "c185d39e6f8d74b0eefb56cdd70bec3181854d3fd8b6c801e00922b00ebf3b98",
+  "src/migrate-customers.js": "0b8dbd02f875cca60df5a16452a85fdc47af54aaed45dc7f556e44e3a6d9a920",
+  "test/migrate-customers.test.js": "ee1a95c612e66ef3cfe37751d2a0bbbf79c0209be8f964e4a603cca7cd06c780"
+}

@@ -1,0 +1,29 @@
+{
+  "case_id": "simplify-untested",
+  "arm": "prompt",
+  "skill": "simplify-code",
+  "subjects": {},
+  "cases_sha256": "93ed7afa09d3bf809465930f1ce28749793b3d88e961124569755579bffc0b9b",
+  "runner_sha256": "d408ca76a69d50f10f09faf005dd4e4b24e25100afe08cdce9868649c37458e2",
+  "prompt_sha256": "55b86cff004fdf70ef79f0569517141f139cde74ddddb262c1ced9b0ef7437ee",
+  "observed_at": "2026-10-05T03:14:20.821Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/skill-quality-pilot-HpmhTD"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Single explicit-load local actor; no native discovery or cross-model claim. Global harness instructions may be present equally across arms."
+}

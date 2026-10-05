@@ -1,0 +1,3 @@
+I’m applying the supplied quiz-changes skill, using `fetchWithRetry.diff` as the full pending change set and focusing on retry behavior. I’ll read the patch and surrounding code, then ask one question and wait for your answer.
+
+With `retries: 2`, `timeoutMs: 1000`, and `baseMs: 0`, suppose every fetch hangs until its signal aborts. What would the caller observe—how many fetch attempts, roughly how long before rejection, and what final error?

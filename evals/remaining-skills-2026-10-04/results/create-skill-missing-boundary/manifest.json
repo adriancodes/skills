@@ -1,0 +1,45 @@
+{
+  "id": "create-skill-missing-boundary",
+  "skill": "create-skill",
+  "subjects": {
+    "SKILL.md": "af899a57a000ed8cffcb1062942e8e2e1f932ec96f3088ec26518e162c483ab1",
+    "examples/complex-skill-example.md": "18a22e49d58f9f5e5b31d9713c190850a49588da75229cc85708ab6e2c887f2b",
+    "examples/simple-skill-example.md": "095663876b1690010a2a6430b8f94baa73bdee644eccbc1536bab74302a001b6",
+    "references/behavioral-force.md": "c9d7bc456e5cc9ca8453ff01a1d666bbc90b51499a28a42ee279709b282e5259",
+    "references/body-template.md": "89cea46d40f8434af2e9db39305a6f83559cfc2028c8f7b2115df7b37dfcca0d",
+    "references/bulletproofing-guide.md": "457beb29a60afab13f0dbda4e024f250886c64a8b8a64acf981b6e518b22be1c",
+    "references/description-guide.md": "3af50f401ea8dc356fb6f4c33df4cc922371dbdb8dbe80a3a7653cb64f6958b4",
+    "references/eval-loop.md": "f4bb4fce569513c007bb1595c34639b0edee28ddc5ad6750ad05d5a5d3afa6ac",
+    "references/harness-tools.md": "f7edab7e3e1e1904e6e4569a912070123444dcecb53a1d8f779decbe9d4bee7c",
+    "references/persona-template.md": "f3f588c26a5a99ce198745cc498703f69b6445e025236488b4ec5476fca7d51a",
+    "references/rules.md": "5a77c08ab830862dc27edec17376d0f4c8e72087392e19dd57b81f5e13bccba4",
+    "references/validation-checklist.md": "364cdf2b0e8a3fe6289d97b58e20cc871a8506723ac09fefbd370759b5adc36a"
+  },
+  "fixtures": {
+    "candidate/SKILL.md": "c699d02d930c4d813d5f60cb8dff8df262ef0071ac819c04cbecd00448f7529c"
+  },
+  "cases_file": "cases.json",
+  "cases_sha256": "9637aa1dacffb0dcaddae2559d48cc39391e3db3697b0c22523763aec6a58f28",
+  "runner_sha256": "c1dbbffe0aa4a0291a26b5b7935a9103b2c9d43119a92d627851506a3ceffe8e",
+  "prompt_sha256": "6090b0fe12d28d7df92fe48d18846511dd866f22f3a4d89d8f24f3ab0c84f307",
+  "observed_at": "2026-10-05T04:01:27.108Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/remaining-skills-probe-A6Pkvy"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Structural consolidation with targeted preservation probes; not full Tier-2 or Tier-3 effectiveness validation."
+}

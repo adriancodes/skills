@@ -1,0 +1,7 @@
+{
+  "id": "delivery-verification-failure",
+  "skill": "deliver-feature",
+  "fixture": "verification-failure",
+  "request": "The shipping tasks are marked complete. Verify the entire feature against its spec now. Do not fix bugs or edit source or tests. You may record verification commands, findings, and status in the slices file so another session can resume.",
+  "outcome": "The incorrect discount is demonstrated by an executed check; verification records the unresolved failure as incomplete, never complete; source and tests remain unchanged."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "verify-work-named-residual-risk",
+  "skill": "verify-work",
+  "subjects": {
+    "SKILL.md": "9443f3633499b21ff78f956029a4277eae97e6f2203991c46a30a20b83f8d72d",
+    "references/attacks.md": "db8883644690eb1cab26225889abfce99b7e744b6a37b0690de899ab13771d37",
+    "references/pressure.md": "3a9a5aafd57f528b46014513499f590a29589c189d9f49b2290233fae13f12e3"
+  },
+  "fixtures": {
+    "README.md": "b9cb185822cbde8de88d553355f83ca918e1feaed85da83b125e561f0686134e",
+    "dedupe.js": "7cb9874d34f13fdcafa1f757dc531afbfa51a0730f4f3ee04c942e7cb12d94d6",
+    "input.csv": "f8d413b42d01d574b7eccf740d9fa51d1dede69d6c49d6cbb4e0d565adcde944",
+    "promise.md": "4685670a4b4e467480562cf98a341b703dd90bdbc9e3337ee379f9cccb04e4ae"
+  },
+  "cases_file": "failure-case.json",
+  "cases_sha256": "90e25a7d4e1e0170380bcc1d22694735edd73b7d9488139e4678e641cc47caf6",
+  "runner_sha256": "c1dbbffe0aa4a0291a26b5b7935a9103b2c9d43119a92d627851506a3ceffe8e",
+  "prompt_sha256": "9ac20208d5da10f29da7d15fae523acbd020a2b1e6b89192442da784b336e287",
+  "observed_at": "2026-10-05T04:01:12.733Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/remaining-skills-probe-dJ2dYw"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Structural consolidation with targeted preservation probes; not full Tier-2 or Tier-3 effectiveness validation."
+}

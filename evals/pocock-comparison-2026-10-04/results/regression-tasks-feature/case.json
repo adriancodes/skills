@@ -1,0 +1,6 @@
+{
+  "skill": "create-tasks",
+  "fixture": "saved-searches",
+  "request": "Write up the slices file for the confirmed saved-searches spec from my breakdown: 1. Create the saved_searches table and model. 2. Build the API endpoints. 3. Build the results-page button and sidebar list. 4. Build the alert job and unsubscribe link. 5. Write the tests. Let me review the resulting plan before implementation.",
+  "outcome": "Recut vertical feature tasks, tests included per task, bounds and demos explicit, open parseable plan with confirmation request, no code changes."
+}

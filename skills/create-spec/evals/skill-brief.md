@@ -1,3 +1,5 @@
+> Structural update, 2026-10-04: the [accepted collection scope](../../../docs/specs/2026-10-04-remaining-skills-structure.md) consolidates this skill while retaining its operative contract. [Current preservation evidence](../../../evals/remaining-skills-2026-10-04/README.md) is narrower than a full tier verdict; prior results remain historical.
+
 # Skill Brief — create-spec
 
 Reconstructed from `SKILL.md`, `references/artifacts.md`, and the toolbox

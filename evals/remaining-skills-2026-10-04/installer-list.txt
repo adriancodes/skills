@@ -1,0 +1,84 @@
+
+│
+●   codex  Agent detected — installing non-interactively
+[?25l│
+◇  Source: /Users/adrian/dev/skills
+[?25h[?25l│
+◇  Local path validated
+[?25h[?25l│
+◇  Found 17 skills
+[?25h
+│
+◇  Available Skills
+│
+│    be-concise
+│
+│      Use when the user wants brief, complete-sentence answers: says "tldr", "keep it short", "be brief", or "in plain english", including /be-concise. Also when replies keep arriving as multi-header essays to one-line questions.
+│
+│    build-loop
+│
+│      Use when an agent should work continuously or on a schedule. The user asks to "build a loop", "set up a self-directed cycle", "run this nightly", or "keep X green/tidy automatically". Also when an existing loop burns tokens, repeats failed fixes, opens duplicate PRs, or ships unreviewed changes.
+│
+│    code-review
+│
+│      Use when a user asks to "review this branch", "review this PR", "review my changes", or "review since main". Also use for pre-merge review, work-in-progress diffs, staged changes, suspected regressions in a patch, or checking implementation against a specification.
+│
+│    create-skill
+│
+│      Maintainer workflow for creating, improving, reviewing, and evaluating an agent skill.
+│
+│    create-spec
+│
+│      Use when requirements need pinning down before anything is built: the user asks to "spec this out", "stress-test my design", "poke holes in this plan", or says "write this up as a spec" after a design discussion. Also when a plan is vague, rests on unstated assumptions, or decisions keep getting relitigated from scrollback.
+│
+│    create-tasks
+│
+│      Use when a confirmed spec or plan needs breaking into executable work — the user asks to "create tasks", "break this into tickets", or "turn the spec into tasks" or "create vertical slices". Also when implementation tasks keep overflowing an agent's context window, or a task list reads layer-by-layer: schema, then API, then UI.
+│
+│    deliver-feature
+│
+│      Use when a feature should move through the whole pipeline. The user asks to "deliver this feature", "build this feature end to end", "continue the feature", or "run the pipeline". Also when a session resumes work that has existing spec or slices artifacts, or nobody remembers where a feature stands.
+│
+│    diagnose
+│
+│      Use when a user asks to "diagnose this bug", "debug this failure", "why is this throwing?", or "investigate this regression". Also use for flaky tests, intermittent failures, incorrect behavior, crashes, hangs, and performance regressions whose cause is unknown.
+│
+│    engineering-best-practices
+│
+│      Use when starting a substantive codebase, making or reviewing a non-trivial code change, or deliberately improving a codebase's architecture. Also use when the user asks to "follow best practices", "start a new application", "review this codebase", or "refactor this codebase", or when architecture is inconsistent or has no coherent patterns.
+│
+│    explore-options
+│
+│      Fan out isolated parallel perspectives on an open-ended decision, then converge on a fit-checked, skimmable shortlist. User-invoked.
+│
+│    implement-task
+│
+│      Use when a task — a slice from a slices file — needs building. The user asks to "implement task 3", "implement slice 3", "build the next task", or "work through the slices". Also when implementation keeps wandering past its slice's bound, or slices get coded but the slices file never reflects it.
+│
+│    improve-prompt
+│
+│      User-invoked shortcut that rewrites a rough ask with visible assumptions and never treats rewriting as authority to execute.
+│
+│    quiz-changes
+│
+│      Use when an engineer wants their understanding of pending changes tested before shipping: the user asks to "quiz me on these changes", "test my knowledge", "do I actually understand this", or wants to check they understand AI-generated code before opening a PR. Also when someone is about to ship code they didn't write themselves.
+│
+│    simplify-code
+│
+│      Use when the user asks to "simplify this code", "remove the fluff", or wants bloated, superfluous, duplicated, over-abstracted, or dependency-heavy code reduced without changing behavior.
+│
+│    tdd
+│
+│      Use when implementing a feature, fixing a known bug, changing application behavior, or altering stored, transformed, migrated, serialized, or externally transmitted data. Also use when a user says "use TDD", "test first", "red-green-refactor", or "add this behavior", and when code is being written before a failing test.
+│
+│    understand-codebase
+│
+│      Use when the user asks to "understand this codebase", "how does this work?", "trace this feature", or needs onboarding, an architecture explanation, or answers about unfamiliar code. Also use for read-only code-path questions before a change.
+│
+│    verify-work
+│
+│      Use when an artifact must survive hostile input before shipping: the user asks to "verify this", "is this ready to ship", "test this properly", or "find the loopholes". Also when a shipped artifact failed on an input nobody tried, or when verification so far is a happy-path smoke test.
+
+│
+└  Use --skill <name> to install specific skills
+

@@ -1,0 +1,10 @@
+{
+  "exit_code": null,
+  "error": "spawnSync codex ETIMEDOUT",
+  "completed": false,
+  "wall_ms": 180023,
+  "usage": null,
+  "output_sha256": "e27b382fec15c222f8723b99ad5245aff4b8e706b2044035aa8ee01230283e8f",
+  "trace_sha256": "8b4bbb22d4833e44e576cbdfa1e43154d7445bef81147fbff0c67a91fd248584",
+  "scoring": "UNSCORED"
+}

@@ -1,0 +1,31 @@
+{
+  "case_id": "simplify-untested",
+  "arm": "original",
+  "skill": "simplify-code",
+  "subjects": {
+    "SKILL.md": "39aedaf0c9d32d0d1dc0b12992b482ae848fdb214bfb83cb5d9cd16f5b25928f"
+  },
+  "cases_sha256": "93ed7afa09d3bf809465930f1ce28749793b3d88e961124569755579bffc0b9b",
+  "runner_sha256": "7ca05e86da3e07b2afd66095d83dceac33069e806c7d276fe8ef48499ef4069c",
+  "prompt_sha256": "711531860a44b6ff318ddff4626ed34440e05604f503ea43701f007947060748",
+  "observed_at": "2026-10-05T03:06:04.984Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/Users/adrian/dev/skills/evals/pocock-comparison-2026-10-04/results/original-simplify/workspace"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Single explicit-load local actor; no native discovery or cross-model claim. Global harness instructions may be present equally across arms."
+}

@@ -1,0 +1,31 @@
+{
+  "case_id": "delivery-complete",
+  "arm": "original",
+  "skill": "deliver-feature",
+  "subjects": {
+    "SKILL.md": "2d9ac2922010cbde150a642d328ba436000d4aa61d4b684843179555de8e3c4e"
+  },
+  "cases_sha256": "93ed7afa09d3bf809465930f1ce28749793b3d88e961124569755579bffc0b9b",
+  "runner_sha256": "7ca05e86da3e07b2afd66095d83dceac33069e806c7d276fe8ef48499ef4069c",
+  "prompt_sha256": "3d48a2d15faa0380fc791aab0002d906c91a22b4ed92aa34f1015f71be873edb",
+  "observed_at": "2026-10-05T03:05:50.699Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/Users/adrian/dev/skills/evals/pocock-comparison-2026-10-04/results/original-delivery-authorized/workspace"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Single explicit-load local actor; no native discovery or cross-model claim. Global harness instructions may be present equally across arms."
+}

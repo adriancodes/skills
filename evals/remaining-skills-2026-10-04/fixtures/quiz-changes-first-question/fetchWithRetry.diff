@@ -1,0 +1,46 @@
+--- /dev/null
++++ b/src/fetchWithRetry.js
+@@ -0,0 +1,42 @@
++const inflight = new Map();
++
++async function fetchWithRetry(url, opts = {}) {
++  const { retries = 3, baseMs = 200, timeoutMs = 5000, ...init } = opts;
++  const method = (init.method || "GET").toUpperCase();
++
++  if (method === "GET" && inflight.has(url)) return inflight.get(url);
++
++  const attempt = async () => {
++    for (let i = 0; i <= retries; i++) {
++      const ctrl = new AbortController();
++      const timer = setTimeout(() => ctrl.abort(), timeoutMs);
++      try {
++        const res = await fetch(url, { ...init, signal: ctrl.signal });
++        if (res.ok) return res;
++        if (res.status === 429 || res.status >= 500) {
++          if (i === retries) throw new Error(`HTTP ${res.status} after ${retries + 1} attempts`);
++          await sleep(Math.random() * baseMs * 2 ** i);
++          continue;
++        }
++        throw new Error(`HTTP ${res.status}`);
++      } catch (err) {
++        if (err.name !== "AbortError" && i === retries) throw err;
++        if (err.name === "AbortError" && i === retries) throw new Error(`timeout after ${retries + 1} attempts`);
++        await sleep(Math.random() * baseMs * 2 ** i);
++      } finally {
++        clearTimeout(timer);
++      }
++    }
++  };
++
++  if (method !== "GET") return attempt();
++
++  const p = attempt().finally(() => {
++    if (inflight.get(url) === p) inflight.delete(url);
++  });
++  inflight.set(url, p);
++  return p;
++}
++
++const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
++
++module.exports = { fetchWithRetry };

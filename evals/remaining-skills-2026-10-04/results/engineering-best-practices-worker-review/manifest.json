@@ -1,0 +1,44 @@
+{
+  "id": "engineering-best-practices-worker-review",
+  "skill": "engineering-best-practices",
+  "subjects": {
+    "SKILL.md": "91444e66ad1751eb8bafe2826bc5962729d9c05b94f619bebe0c5c44a14e9434",
+    "assets/engineering-practices-template.md": "711dcb846fbbcb04334460d4d0f4646d59963fdeee8b51801f4b27fb9eaeb332",
+    "references/align.md": "927ef4fad1ad7e27efbb9c7a5c6336701d4baeddf0fea0eaff543a5d7684cc15",
+    "references/apply.md": "4754752630b13db7661b69f02b04eb6beb651c87a3b5d6234a7b17b6bd9415b1",
+    "references/catalog.json": "02d6e9647bacee63b0c68433d2d5ed28ce92a2ec47bbc237372c1b52a1530e7b",
+    "references/establish.md": "983022b9187c32d05d38dcb404df07957f2275a95a887ccbb0a70769b2a16f91",
+    "references/examples.md": "9bca0418bf60ddddff72fd8a8dab80db7f0e7141c4f608e8668a13592ab1e2b5",
+    "references/pressure.md": "b4bdf3698f5c0e5a56d5e68ddcefdd073e148ddc81c63aa021989372b27395d7",
+    "scripts/retrieve-guidance.mjs": "554c464a7bcf957a93b2f287433e337af323439aeb613cfc36955a28a76ee0f7"
+  },
+  "fixtures": {
+    "README.md": "eabca61381b3f18d1c426186e87c2831a81a474ab052441a26f83925bd1788a7",
+    "scenario.md": "e90c090d71455170007804683a1dcf8826f31be148a96030c488492402f5de52",
+    "src/worker.js": "c30b87e9bda70a1a2e399c389f28870096d65488f0401fab5677f46516c60737"
+  },
+  "cases_file": "cases.json",
+  "cases_sha256": "9637aa1dacffb0dcaddae2559d48cc39391e3db3697b0c22523763aec6a58f28",
+  "runner_sha256": "c1dbbffe0aa4a0291a26b5b7935a9103b2c9d43119a92d627851506a3ceffe8e",
+  "prompt_sha256": "eb318ac6ccecfbf50a0ecd130dcfbd17680134dd987dea691462f97a3543bb19",
+  "observed_at": "2026-10-05T04:01:29.537Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/remaining-skills-probe-cfW4Z8"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Structural consolidation with targeted preservation probes; not full Tier-2 or Tier-3 effectiveness validation."
+}

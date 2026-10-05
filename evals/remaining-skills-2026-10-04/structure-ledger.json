@@ -1,0 +1,354 @@
+[
+  {
+    "skill": "be-concise",
+    "original_body_words": 787,
+    "revised_body_words": 621,
+    "removed_duplicates": [
+      {
+        "section": "Success Criteria",
+        "reason": "Duplicates the retained workflow completion criteria and verification/exception rules."
+      },
+      {
+        "section": "Summary",
+        "reason": "Restates the retained opening mechanism and workflow."
+      },
+      {
+        "section": "Common Mistakes",
+        "reason": "Duplicate fixes are retained in workflow, scope, or failures; the one-cluster retry is retained explicitly for explore-options."
+      }
+    ],
+    "extracted": [],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer.",
+    "example_correction": "Independent review exposed retained example inconsistencies; examples now obey four sentences and immediate separate decision recording."
+  },
+  {
+    "skill": "build-loop",
+    "original_body_words": 1342,
+    "revised_body_words": 952,
+    "removed_duplicates": [
+      {
+        "section": "When to Use",
+        "reason": "Positive routing repeats frontmatter; operating modes and resumption remain in Scope/context/workflow."
+      },
+      {
+        "section": "Success Criteria",
+        "reason": "Duplicates the retained workflow completion criteria and verification/exception rules."
+      },
+      {
+        "section": "Summary",
+        "reason": "Restates the retained opening mechanism and workflow."
+      }
+    ],
+    "extracted": [
+      {
+        "sections": [
+          "Common Rationalizations",
+          "Common Mistakes"
+        ],
+        "resource": "references/pressure.md"
+      }
+    ],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer."
+  },
+  {
+    "skill": "code-review",
+    "original_body_words": 2308,
+    "revised_body_words": 1767,
+    "removed_duplicates": [
+      {
+        "section": "When to Use",
+        "reason": "Positive routing repeats frontmatter; operating modes and resumption remain in Scope/context/workflow."
+      },
+      {
+        "section": "Success Criteria",
+        "reason": "Duplicates the retained workflow completion criteria and verification/exception rules."
+      },
+      {
+        "section": "Summary",
+        "reason": "Restates the retained opening mechanism and workflow."
+      }
+    ],
+    "extracted": [
+      {
+        "sections": [
+          "Common Rationalizations",
+          "Stop Conditions",
+          "Common Mistakes"
+        ],
+        "resource": "references/pressure.md"
+      },
+      {
+        "sections": [
+          "Core Example"
+        ],
+        "resource": "references/examples.md"
+      }
+    ],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer."
+  },
+  {
+    "skill": "create-skill",
+    "original_body_words": 1994,
+    "revised_body_words": 1698,
+    "removed_duplicates": [
+      {
+        "section": "When to Use",
+        "reason": "Positive routing repeats frontmatter; operating modes and resumption remain in Scope/context/workflow."
+      },
+      {
+        "section": "Required Context expansion and Additional Resources",
+        "reason": "Authoritative brief fields remain in rules.md and Phase 0; all guides retain phase-specific pointers, including explicit example paths."
+      }
+    ],
+    "extracted": [],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer."
+  },
+  {
+    "skill": "create-spec",
+    "original_body_words": 1603,
+    "revised_body_words": 1025,
+    "removed_duplicates": [
+      {
+        "section": "When to Use",
+        "reason": "Positive routing repeats frontmatter; operating modes and resumption remain in Scope/context/workflow."
+      },
+      {
+        "section": "Success Criteria",
+        "reason": "Duplicates the retained workflow completion criteria and verification/exception rules."
+      },
+      {
+        "section": "Summary",
+        "reason": "Restates the retained opening mechanism and workflow."
+      }
+    ],
+    "extracted": [
+      {
+        "sections": [
+          "Common Rationalizations",
+          "Stop Conditions",
+          "Common Mistakes"
+        ],
+        "resource": "references/pressure.md"
+      },
+      {
+        "sections": [
+          "Example: one question cycle"
+        ],
+        "resource": "references/examples.md"
+      }
+    ],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer.",
+    "example_correction": "Independent review exposed retained example inconsistencies; examples now obey four sentences and immediate separate decision recording."
+  },
+  {
+    "skill": "diagnose",
+    "original_body_words": 1950,
+    "revised_body_words": 1452,
+    "removed_duplicates": [
+      {
+        "section": "When to Use",
+        "reason": "Positive routing repeats frontmatter; operating modes and resumption remain in Scope/context/workflow."
+      },
+      {
+        "section": "Success Criteria",
+        "reason": "Duplicates the retained workflow completion criteria and verification/exception rules."
+      },
+      {
+        "section": "Summary",
+        "reason": "Restates the retained opening mechanism and workflow."
+      }
+    ],
+    "extracted": [
+      {
+        "sections": [
+          "Common Rationalizations",
+          "Stop Conditions",
+          "Common Mistakes"
+        ],
+        "resource": "references/pressure.md"
+      },
+      {
+        "sections": [
+          "Core Example"
+        ],
+        "resource": "references/examples.md"
+      }
+    ],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer."
+  },
+  {
+    "skill": "engineering-best-practices",
+    "original_body_words": 2094,
+    "revised_body_words": 1542,
+    "removed_duplicates": [
+      {
+        "section": "When to Use",
+        "reason": "Positive routing repeats frontmatter; operating modes and resumption remain in Scope/context/workflow."
+      }
+    ],
+    "extracted": [
+      {
+        "sections": [
+          "Common Mistakes"
+        ],
+        "resource": "references/pressure.md"
+      },
+      {
+        "sections": [
+          "Lifecycle example"
+        ],
+        "resource": "references/examples.md"
+      }
+    ],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer."
+  },
+  {
+    "skill": "explore-options",
+    "original_body_words": 1143,
+    "revised_body_words": 731,
+    "removed_duplicates": [
+      {
+        "section": "Success Criteria",
+        "reason": "Duplicates the retained workflow completion criteria and verification/exception rules."
+      },
+      {
+        "section": "Summary",
+        "reason": "Restates the retained opening mechanism and workflow."
+      },
+      {
+        "section": "Common Mistakes",
+        "reason": "Duplicate fixes are retained in workflow, scope, or failures; the one-cluster retry is retained explicitly for explore-options."
+      }
+    ],
+    "extracted": [
+      {
+        "sections": [
+          "Frames"
+        ],
+        "resource": "references/frames.md"
+      }
+    ],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer."
+  },
+  {
+    "skill": "improve-prompt",
+    "original_body_words": 497,
+    "revised_body_words": 430,
+    "removed_duplicates": [
+      {
+        "section": "Mistakes",
+        "reason": "Duplicate fixes are retained in workflow, scope, or failures; the one-cluster retry is retained explicitly for explore-options."
+      }
+    ],
+    "extracted": [],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer."
+  },
+  {
+    "skill": "quiz-changes",
+    "original_body_words": 850,
+    "revised_body_words": 602,
+    "removed_duplicates": [
+      {
+        "section": "When to Use",
+        "reason": "Positive routing repeats frontmatter; operating modes and resumption remain in Scope/context/workflow."
+      },
+      {
+        "section": "Success Criteria",
+        "reason": "Duplicates the retained workflow completion criteria and verification/exception rules."
+      },
+      {
+        "section": "Summary",
+        "reason": "Restates the retained opening mechanism and workflow."
+      },
+      {
+        "section": "Common Mistakes",
+        "reason": "Duplicate fixes are retained in workflow, scope, or failures; the one-cluster retry is retained explicitly for explore-options."
+      }
+    ],
+    "extracted": [],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer."
+  },
+  {
+    "skill": "tdd",
+    "original_body_words": 1388,
+    "revised_body_words": 1242,
+    "removed_duplicates": [],
+    "extracted": [
+      {
+        "sections": [
+          "Common Rationalizations",
+          "Red Flags"
+        ],
+        "resource": "references/pressure.md"
+      }
+    ],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer."
+  },
+  {
+    "skill": "understand-codebase",
+    "original_body_words": 1210,
+    "revised_body_words": 897,
+    "removed_duplicates": [
+      {
+        "section": "When to Use",
+        "reason": "Positive routing repeats frontmatter; operating modes and resumption remain in Scope/context/workflow."
+      },
+      {
+        "section": "Success Criteria",
+        "reason": "Duplicates the retained workflow completion criteria and verification/exception rules."
+      },
+      {
+        "section": "Summary",
+        "reason": "Restates the retained opening mechanism and workflow."
+      },
+      {
+        "section": "Common Mistakes",
+        "reason": "Duplicate fixes are retained in workflow, scope, or failures; the one-cluster retry is retained explicitly for explore-options."
+      },
+      {
+        "section": "Illustrative evidence ledger rows",
+        "reason": "The ledger requirement and three evidence statuses remain; invented sample symbols do not guide this repository."
+      }
+    ],
+    "extracted": [
+      {
+        "sections": [
+          "Core Example"
+        ],
+        "resource": "references/examples.md"
+      }
+    ],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer."
+  },
+  {
+    "skill": "verify-work",
+    "original_body_words": 950,
+    "revised_body_words": 615,
+    "removed_duplicates": [
+      {
+        "section": "When to Use",
+        "reason": "Positive routing repeats frontmatter; operating modes and resumption remain in Scope/context/workflow."
+      },
+      {
+        "section": "Success Criteria",
+        "reason": "Duplicates the retained workflow completion criteria and verification/exception rules."
+      },
+      {
+        "section": "Summary",
+        "reason": "Restates the retained opening mechanism and workflow."
+      }
+    ],
+    "extracted": [
+      {
+        "sections": [
+          "Common Rationalizations",
+          "Stop Conditions",
+          "Common Mistakes"
+        ],
+        "resource": "references/pressure.md"
+      }
+    ],
+    "note": "Frontmatter and core workflow gates preserved; be-concise example no longer ends with an unsolicited offer.",
+    "behavior_correction": "After a preserved failed report, explicitly require names for excluded and untested attack classes; existing residual-risk obligation retained."
+  }
+]

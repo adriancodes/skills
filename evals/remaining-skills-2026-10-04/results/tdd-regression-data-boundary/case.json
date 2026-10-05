@@ -1,0 +1,50 @@
+{
+  "skill": "tdd",
+  "request": "Implement the customer migration described in README.md using TDD.",
+  "setup": "",
+  "source_case": {
+    "id": "regression-data-boundary",
+    "split": "regression-edge",
+    "fixture": "fixtures/customer-migration",
+    "request": "Implement the customer migration described in README.md using TDD.",
+    "arms": [
+      "skill"
+    ],
+    "assertions": [
+      {
+        "id": "red-before-production",
+        "critical": true,
+        "criterion": "A test runs red for the missing migration behavior before production implementation"
+      },
+      {
+        "id": "real-filesystem",
+        "critical": true,
+        "criterion": "Tests use isolated real input and output files rather than mocks alone"
+      },
+      {
+        "id": "output-contract",
+        "critical": true,
+        "criterion": "Tests transformed fields, preserved IDs/order, valid JSON, and final newline"
+      },
+      {
+        "id": "idempotent-bytes",
+        "critical": true,
+        "criterion": "Tests repeated output for byte identity"
+      },
+      {
+        "id": "green-and-suite",
+        "critical": true,
+        "criterion": "Focused and full fixture suites pass"
+      }
+    ]
+  },
+  "copy": "skills/tdd/evals/fixtures/customer-migration",
+  "files": {},
+  "checks": [
+    "A test runs red for the missing migration behavior before production implementation",
+    "Tests use isolated real input and output files rather than mocks alone",
+    "Tests transformed fields, preserved IDs/order, valid JSON, and final newline",
+    "Tests repeated output for byte identity",
+    "Focused and full fixture suites pass"
+  ]
+}

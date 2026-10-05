@@ -1,0 +1,16 @@
+{
+  "exit_code": 0,
+  "error": null,
+  "completed": true,
+  "usage": {
+    "input_tokens": 179754,
+    "cached_input_tokens": 157824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2271,
+    "reasoning_output_tokens": 86
+  },
+  "wall_ms": 91137,
+  "output_sha256": "d6c2be94816733cdfed156e5d31c929f636d581086dbbd7f2d92af5cb173dc25",
+  "trace_sha256": "78e89942dff7f551925730a1ba2a97b714d40c845fd576fc6d1236f721f15903",
+  "scoring": "UNSCORED"
+}

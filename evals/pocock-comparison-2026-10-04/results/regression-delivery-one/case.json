@@ -1,0 +1,6 @@
+{
+  "skill": "deliver-feature",
+  "fixture": "delivery",
+  "request": "Move the shipping feature forward by exactly one implementation task, then stop. Leave the second task for another session. Do not commit or publish anything.",
+  "outcome": "Task 1 passes and is recorded; task 2 and its source stay unchanged."
+}

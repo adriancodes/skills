@@ -1,0 +1,39 @@
+{
+  "id": "diagnose-opportunity-gold-threshold",
+  "skill": "diagnose",
+  "subjects": {
+    "SKILL.md": "35268869d410a315f1a8051f639ec5a97d97212a5283906567c947c0176c3f71",
+    "references/examples.md": "8dbadd2ddfaafdde4168893fb5da0717b25fea9b09881f5007497cbf1e212b31",
+    "references/pressure.md": "d5852e06e3d18ea0957d1be49686e37e15a0129276e2819b34dbef0570ff7fee"
+  },
+  "fixtures": {
+    "README.md": "0ac6fdac35f79127fd68c098bcf2061ca51d3c808bb22a6a38e30d166d00ace2",
+    "package.json": "0e808b6c378fd1886a2a3cf20475a43578826616d8e1c3fee1305556d10cc71a",
+    "src/checkout.js": "b4d4a53198ba15f6fff320f00e482cee9fb4ba5681de7114c302d1ce88142795",
+    "src/discount.js": "0392541c36078cbf2cfd48681ced1d2a586fca8441543d5d10df40cc443b04e9",
+    "test/checkout.test.js": "de2c85e81dfa07e1ea027483e58b456fa14f1474f6f054e9739e2dab7dccaae6"
+  },
+  "cases_sha256": "9637aa1dacffb0dcaddae2559d48cc39391e3db3697b0c22523763aec6a58f28",
+  "runner_sha256": "c78f015b8926b43d8d08eedc179876860b678715ca316ab3c29daa4d145d0633",
+  "prompt_sha256": "e022b5da35fc9989266ad08b3752172cb912b5b1aa64928966bd03ce9bb2e039",
+  "observed_at": "2026-10-05T03:55:36.440Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/remaining-skills-probe-UgjKTX"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Structural consolidation with targeted preservation probes; not full Tier-2 or Tier-3 effectiveness validation."
+}

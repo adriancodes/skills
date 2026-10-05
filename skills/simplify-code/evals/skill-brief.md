@@ -1,3 +1,7 @@
+## Current revision — 2026-10-04
+
+The [confirmed quality-pilot brief](../../../docs/specs/2026-10-04-skill-quality-pilot.md) supersedes the affected fields below. Current cases and preserved runs are in [the pilot suite](../../../evals/pocock-comparison-2026-10-04/cases.json). The prior brief remains historical context; it does not define a current-subject verdict.
+
 # Confirmed Skill Brief: simplify-code
 
 Confirmed through adaptive Q&A with the user on 2026-07-18.

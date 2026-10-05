@@ -1,0 +1,31 @@
+{
+  "case_id": "tasks-wide-refactor",
+  "arm": "original",
+  "skill": "create-tasks",
+  "subjects": {
+    "SKILL.md": "ffe3f85e75cdf204f831363107b7c6965da9cd304b43c8b7b50323fa08caebd2"
+  },
+  "cases_sha256": "93ed7afa09d3bf809465930f1ce28749793b3d88e961124569755579bffc0b9b",
+  "runner_sha256": "7ca05e86da3e07b2afd66095d83dceac33069e806c7d276fe8ef48499ef4069c",
+  "prompt_sha256": "c09daa331544b32a72bd4a84cecdcd3b1ab8b01ce0548a3f7b04e99e5e4de7e4",
+  "observed_at": "2026-10-05T03:06:22.201Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/Users/adrian/dev/skills/evals/pocock-comparison-2026-10-04/results/original-tasks/workspace"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Single explicit-load local actor; no native discovery or cross-model claim. Global harness instructions may be present equally across arms."
+}

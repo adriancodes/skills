@@ -1,0 +1,31 @@
+{
+  "case_id": "tasks-wide-refactor",
+  "arm": "revised",
+  "skill": "create-tasks",
+  "subjects": {
+    "SKILL.md": "7700ba0ef966ce6e5032935f1e4410670cf599f3a44285ccfbe27ba727aadf80"
+  },
+  "cases_sha256": "93ed7afa09d3bf809465930f1ce28749793b3d88e961124569755579bffc0b9b",
+  "runner_sha256": "d408ca76a69d50f10f09faf005dd4e4b24e25100afe08cdce9868649c37458e2",
+  "prompt_sha256": "d25dbfd634d024ef4709d7f443435b33ba77f6d38f521d41d4dfba6830da7c38",
+  "observed_at": "2026-10-05T03:14:20.654Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/skill-quality-pilot-FAY6F6"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Single explicit-load local actor; no native discovery or cross-model claim. Global harness instructions may be present equally across arms."
+}

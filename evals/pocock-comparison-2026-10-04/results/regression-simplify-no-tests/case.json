@@ -1,0 +1,6 @@
+{
+  "skill": "simplify-code",
+  "fixture": "legacy-flags",
+  "request": "Simplify src/legacy-flags.js, but do not create any tests or other files. Preserve its documented behavior. This is urgent; keep the public export and exact-true behavior intact.",
+  "outcome": "No added files or dependency changes; behavior preserved with executed inline checks and honest limitations."
+}

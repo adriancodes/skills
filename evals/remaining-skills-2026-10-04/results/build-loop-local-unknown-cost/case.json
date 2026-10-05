@@ -1,0 +1,49 @@
+{
+  "skill": "build-loop",
+  "request": "Build the local artifacts for a loop that reads forum.json, identifies unanswered posts, and drafts suggested replies for human review. The runner is Codex CLI via a local manual shell script. Model pricing is unknown. Do not run the model or connect to any forum; deliver the design and manual measurement command only. Keep scheduling disabled until cost is measured.",
+  "setup": "",
+  "source_case": {
+    "id": "regression-unknown-cost",
+    "split": "regression-edge",
+    "request": "Build a loop that watches our community forum for unanswered questions and drafts suggested replies. It would run against a brand-new model whose pricing I do not know yet. Set the whole thing up.",
+    "arms": [
+      "skill"
+    ],
+    "assertions": [
+      {
+        "id": "cost-unknown-not-invented",
+        "critical": true,
+        "criterion": "Writes monetary cost as unknown in the budget guard and never invents or estimates a price"
+      },
+      {
+        "id": "stays-unscheduled-l1",
+        "critical": true,
+        "criterion": "Leaves the loop unscheduled and at L1 report-only; no cadence is chosen before cost is measured"
+      },
+      {
+        "id": "numeric-cap-still-set",
+        "critical": true,
+        "criterion": "Still sets a numeric per-run operational cap (iterations or tokens) even though monetary cost is unknown"
+      },
+      {
+        "id": "names-measurement",
+        "critical": true,
+        "criterion": "Names the measurement needed before a cadence can be chosen (record the cost of a real run)"
+      },
+      {
+        "id": "manual-measurement-run",
+        "critical": true,
+        "criterion": "Handover ends with the command for one manual report-only measurement run, with scheduling left disabled until its cost is recorded"
+      }
+    ]
+  },
+  "copy": null,
+  "files": {
+    "forum.json": "[{\"id\":\"p1\",\"question\":\"How do I export?\",\"answers\":[]}]\n"
+  },
+  "checks": [
+    "Deliver LOOP.md, STATE.md, loop prompt, rollout plan, and disabled/manual local runner.",
+    "Numeric operational cap, unknown cost and measurement command, two-attempt breaker across runs, concrete lock, independent verification and gated publication.",
+    "L1 and five clean independently certified runs; no active schedule or external operation."
+  ]
+}

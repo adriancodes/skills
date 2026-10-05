@@ -1,0 +1,7 @@
+{
+  "skill": "implement-task",
+  "fixture": "delivery",
+  "request": "Implement task 1 only from docs/specs/2026-10-04-shipping-slices.md. Run its written demo, record completion, and leave task 2 alone. Do not commit or publish anything.",
+  "prompt": "Read the confirmed spec and task bound, check blockers, test-drive task 1, execute the demo and relevant tests, update its completion record, and leave other tasks unchanged.",
+  "outcome": "Only task 1 completes with observed red/green and literal demo; task 2 unchanged."
+}

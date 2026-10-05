@@ -1,0 +1,7 @@
+{
+  "docs/specs/2026-10-04-shipping.md": "6f8fcdd88e4b4242de3fd34ded513527299149fbb348afd4e75eafaff368e2eb",
+  "package.json": "4d859769a24d8d18a8caf4902acdf3598af76539567e9ca23cf051967959139a",
+  "src/discount.js": "4bbb5b5ccb96dde6a3e39efde6f3fe5985e0be96cf8d982219a1cd025647d476",
+  "src/shipping.js": "30e394a16872a6584bfb1d3111c5fdab46eb1e27e65e84b699fb0aa1c0229c26",
+  "test/existing.test.js": "48ff041bfee0b9de78eedfa40e486d8dcdbd1ea819cb9a423ea80db722b6c757"
+}

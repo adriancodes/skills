@@ -1,0 +1,306 @@
+{
+  "date": "2026-10-04",
+  "comparison": "local installed snapshot; not latest upstream or behavioral benchmark",
+  "repo_head": "f334a510f053da744c2d8cd58f2ac40037d4d497",
+  "provenance_file": "/Users/adrian/.agents/.skill-lock.json",
+  "provenance_sha256": "39181bfa0ebb0c12e851b9c125616b66dfd8d085034b6066fb3eea34543e15c8",
+  "word_method": "Whitespace-separated words after YAML frontmatter; entrypoint bodies only, references excluded.",
+  "adrian": [
+    {
+      "name": "be-concise",
+      "path": "/Users/adrian/dev/skills/skills/be-concise/SKILL.md",
+      "sha256": "d15de8c5348a0f24f2468801504fe86d02445bc2240d0e02e3daa2723ce17804",
+      "body_words": 787
+    },
+    {
+      "name": "build-loop",
+      "path": "/Users/adrian/dev/skills/skills/build-loop/SKILL.md",
+      "sha256": "5b0c571829636d9c1bc6c6508ad1565cb23c4b2484d8c9bd67752a686c101c13",
+      "body_words": 1342
+    },
+    {
+      "name": "code-review",
+      "path": "/Users/adrian/dev/skills/skills/code-review/SKILL.md",
+      "sha256": "38ad58577e701c9ec2f37842fea89c974f35217379933bee2569e6b2de7ff96b",
+      "body_words": 2308
+    },
+    {
+      "name": "create-skill",
+      "path": "/Users/adrian/dev/skills/skills/create-skill/SKILL.md",
+      "sha256": "b68830b76867aa47c4b33161f9d0e21804bc0f1634b7d9c488d52116da34d0da",
+      "body_words": 1994
+    },
+    {
+      "name": "create-spec",
+      "path": "/Users/adrian/dev/skills/skills/create-spec/SKILL.md",
+      "sha256": "f4ac1c1b104ba8a03bf785972dd4b0c39d720402fbbc7c10bb899a80329c0842",
+      "body_words": 1603
+    },
+    {
+      "name": "create-tasks",
+      "path": "/Users/adrian/dev/skills/skills/create-tasks/SKILL.md",
+      "sha256": "ffe3f85e75cdf204f831363107b7c6965da9cd304b43c8b7b50323fa08caebd2",
+      "body_words": 1094
+    },
+    {
+      "name": "deliver-feature",
+      "path": "/Users/adrian/dev/skills/skills/deliver-feature/SKILL.md",
+      "sha256": "2d9ac2922010cbde150a642d328ba436000d4aa61d4b684843179555de8e3c4e",
+      "body_words": 1069
+    },
+    {
+      "name": "diagnose",
+      "path": "/Users/adrian/dev/skills/skills/diagnose/SKILL.md",
+      "sha256": "6bfa963add98b9b34256f5736b1591e194a318070b5680ca8992aff27ec297a1",
+      "body_words": 1950
+    },
+    {
+      "name": "engineering-best-practices",
+      "path": "/Users/adrian/dev/skills/skills/engineering-best-practices/SKILL.md",
+      "sha256": "e0c4b5cbccc62976ef7035545e73fc60c24b0df9581f51a7d666721de5321646",
+      "body_words": 2094
+    },
+    {
+      "name": "explore-options",
+      "path": "/Users/adrian/dev/skills/skills/explore-options/SKILL.md",
+      "sha256": "3ddc55887f4218015e89ab15c9a9e916b46cea57828d5f346942c979e1905d42",
+      "body_words": 1143
+    },
+    {
+      "name": "implement-task",
+      "path": "/Users/adrian/dev/skills/skills/implement-task/SKILL.md",
+      "sha256": "378c97b5af46475fe22807c21b2a72b7bce071110e910ed1be5a41007fe23d93",
+      "body_words": 955
+    },
+    {
+      "name": "improve-prompt",
+      "path": "/Users/adrian/dev/skills/skills/improve-prompt/SKILL.md",
+      "sha256": "96d33fc5b11dd24b38703a7cda6846b566aeba80fc377124bf8f55a7680ef2e0",
+      "body_words": 497
+    },
+    {
+      "name": "quiz-changes",
+      "path": "/Users/adrian/dev/skills/skills/quiz-changes/SKILL.md",
+      "sha256": "db6c6d61b9d7ba3f260da9787f9ad83ff966666463cc2008ff75d84716cddd08",
+      "body_words": 850
+    },
+    {
+      "name": "simplify-code",
+      "path": "/Users/adrian/dev/skills/skills/simplify-code/SKILL.md",
+      "sha256": "39aedaf0c9d32d0d1dc0b12992b482ae848fdb214bfb83cb5d9cd16f5b25928f",
+      "body_words": 786
+    },
+    {
+      "name": "tdd",
+      "path": "/Users/adrian/dev/skills/skills/tdd/SKILL.md",
+      "sha256": "81f0678b0ad85524fa633c102132b9ed6f4a24c0055965aa4e4767735f19755f",
+      "body_words": 1388
+    },
+    {
+      "name": "understand-codebase",
+      "path": "/Users/adrian/dev/skills/skills/understand-codebase/SKILL.md",
+      "sha256": "83f76e5200083781a87286f26225d0f2178e0341b84b42087156fe2402fe1396",
+      "body_words": 1210
+    },
+    {
+      "name": "verify-work",
+      "path": "/Users/adrian/dev/skills/skills/verify-work/SKILL.md",
+      "sha256": "4e50a5804e40f9d52ff200f7b4398cd7083b23382d3fce7c63f3ae44d657dbcf",
+      "body_words": 950
+    }
+  ],
+  "matt_installed": [
+    {
+      "name": "ask-matt",
+      "path": "/Users/adrian/.agents/skills/ask-matt/SKILL.md",
+      "sha256": "3f0f34614070aba3d9a7e2bd210718d78b9b942dd0f9af0c5869234fe34e16af",
+      "body_words": 1895
+    },
+    {
+      "name": "claude-handoff",
+      "path": "/Users/adrian/.agents/skills/claude-handoff/SKILL.md",
+      "sha256": "6738e8b7c7899ea0038fb7a5c859ca1b90c7b1eb40123dcdbe94c51b5b119f12",
+      "body_words": 167
+    },
+    {
+      "name": "codebase-design",
+      "path": "/Users/adrian/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "body_words": 806
+    },
+    {
+      "name": "diagnosing-bugs",
+      "path": "/Users/adrian/.agents/skills/diagnosing-bugs/SKILL.md",
+      "sha256": "9168404abda0967a5d32977e3498cd95fda6807018852f3de736a78357c82b40",
+      "body_words": 1378
+    },
+    {
+      "name": "domain-modeling",
+      "path": "/Users/adrian/.agents/skills/domain-modeling/SKILL.md",
+      "sha256": "7b925d7b1e341a2eeae33ad68a8a8c0ab889a38ddd22a7598e4c240e5a7556a3",
+      "body_words": 465
+    },
+    {
+      "name": "git-guardrails-claude-code",
+      "path": "/Users/adrian/.agents/skills/git-guardrails-claude-code/SKILL.md",
+      "sha256": "69b291d655626a01602b998a1836fcb93c058ede68dfafddfd71e87f17074764",
+      "body_words": 257
+    },
+    {
+      "name": "grill-me",
+      "path": "/Users/adrian/.agents/skills/grill-me/SKILL.md",
+      "sha256": "caaf8b8de1684f96e26b28f3c29189db5c89cce4b73e1c93d86164f66ef88637",
+      "body_words": 6
+    },
+    {
+      "name": "grill-with-docs",
+      "path": "/Users/adrian/.agents/skills/grill-with-docs/SKILL.md",
+      "sha256": "7de372c13488f1ee96cc11cd8907b56b6809cc93eef776eeddd37de6b6cbe3fe",
+      "body_words": 9
+    },
+    {
+      "name": "grilling",
+      "path": "/Users/adrian/.agents/skills/grilling/SKILL.md",
+      "sha256": "10ff989e7498b23b5acb49d5048f11dcd906757d2f79c5cdf8a00001381296f2",
+      "body_words": 289
+    },
+    {
+      "name": "handoff",
+      "path": "/Users/adrian/.agents/skills/handoff/SKILL.md",
+      "sha256": "7c62de979fdc7ac32fb5ddb2146156c917f80ee070d30fadc9d40343c4b6ed25",
+      "body_words": 108
+    },
+    {
+      "name": "implement",
+      "path": "/Users/adrian/.agents/skills/implement/SKILL.md",
+      "sha256": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3",
+      "body_words": 50
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "path": "/Users/adrian/.agents/skills/improve-codebase-architecture/SKILL.md",
+      "sha256": "552240a5ab5cec6b67c15dd1ad6e9f6962b1bca6ce870059a8c2713760c20392",
+      "body_words": 872
+    },
+    {
+      "name": "loop-me",
+      "path": "/Users/adrian/.agents/skills/loop-me/SKILL.md",
+      "sha256": "e44d1cc3e760fb86ac42964c2a5f1fcac511715db50fb375f3f7be814de1eaa7",
+      "body_words": 383
+    },
+    {
+      "name": "migrate-to-shoehorn",
+      "path": "/Users/adrian/.agents/skills/migrate-to-shoehorn/SKILL.md",
+      "sha256": "de4da4c11d924fac79c924b2ee3d2db4a5cb98386eb490a599119463d036ae72",
+      "body_words": 385
+    },
+    {
+      "name": "prototype",
+      "path": "/Users/adrian/.agents/skills/prototype/SKILL.md",
+      "sha256": "714de632d116bb73f65cdb5a882db15b9369a6713b9a47c0fad827848f0bfbe3",
+      "body_words": 450
+    },
+    {
+      "name": "research",
+      "path": "/Users/adrian/.agents/skills/research/SKILL.md",
+      "sha256": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4",
+      "body_words": 87
+    },
+    {
+      "name": "scaffold-exercises",
+      "path": "/Users/adrian/.agents/skills/scaffold-exercises/SKILL.md",
+      "sha256": "75f5c9d771606fb9762f16522efc954df11c324f87148d8ff069bce166257de9",
+      "body_words": 407
+    },
+    {
+      "name": "setup-matt-pocock-skills",
+      "path": "/Users/adrian/.agents/skills/setup-matt-pocock-skills/SKILL.md",
+      "sha256": "9a0c21694be19fa3eefc39343355d3af7414716ba364882c7432c2f821eac3e9",
+      "body_words": 972
+    },
+    {
+      "name": "setup-pre-commit",
+      "path": "/Users/adrian/.agents/skills/setup-pre-commit/SKILL.md",
+      "sha256": "c9819d7f1e3b198064edc1faa3154224ed67395e9f07f5d3cea4b67cf0a11a98",
+      "body_words": 294
+    },
+    {
+      "name": "setup-ts-deep-modules",
+      "path": "/Users/adrian/.agents/skills/setup-ts-deep-modules/SKILL.md",
+      "sha256": "29acca66ac99d4532e2a6f0370d8125d7cba1e87c9ac66573203c75189d3e6c7",
+      "body_words": 1077
+    },
+    {
+      "name": "teach",
+      "path": "/Users/adrian/.agents/skills/teach/SKILL.md",
+      "sha256": "a32df9dcdfc0c4fdc1c98e1ed3940c5f56b84c1aa90ff60346f32b8b53915b43",
+      "body_words": 1462
+    },
+    {
+      "name": "to-questionnaire",
+      "path": "/Users/adrian/.agents/skills/to-questionnaire/SKILL.md",
+      "sha256": "b5eb929842ee0e93d867c5e906d183d350f2f2d149eaeaa86967d94d8eda1d3b",
+      "body_words": 447
+    },
+    {
+      "name": "to-spec",
+      "path": "/Users/adrian/.agents/skills/to-spec/SKILL.md",
+      "sha256": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
+      "body_words": 462
+    },
+    {
+      "name": "to-tickets",
+      "path": "/Users/adrian/.agents/skills/to-tickets/SKILL.md",
+      "sha256": "5c9fba69845c2519b9b35b9af42ae5142c21f8ca15ac2123dc2722002c8058ae",
+      "body_words": 846
+    },
+    {
+      "name": "triage",
+      "path": "/Users/adrian/.agents/skills/triage/SKILL.md",
+      "sha256": "917b0baf74be583e74f110857ed45df2766617f75c00baf61fd136d7af515edf",
+      "body_words": 962
+    },
+    {
+      "name": "wayfinder",
+      "path": "/Users/adrian/.agents/skills/wayfinder/SKILL.md",
+      "sha256": "fee6e1d0c50f0e736b4ef8a599060c959afae904c9a97d82c97f049fcc3aa0f1",
+      "body_words": 1954
+    },
+    {
+      "name": "wizard",
+      "path": "/Users/adrian/.agents/skills/wizard/SKILL.md",
+      "sha256": "bdf31d48211ea559878f95a4f344aeabf8d85897488ba564382bab0b000daac1",
+      "body_words": 621
+    },
+    {
+      "name": "writing-beats",
+      "path": "/Users/adrian/.agents/skills/writing-beats/SKILL.md",
+      "sha256": "a96abafa2372eede8267d770138b322d6125da8adaa7ccf0a5e08e4ee13ee71e",
+      "body_words": 826
+    },
+    {
+      "name": "writing-fragments",
+      "path": "/Users/adrian/.agents/skills/writing-fragments/SKILL.md",
+      "sha256": "298b0edd23df229183630de592ed8aa4289233560f2040691f6eb77caeaad4ea",
+      "body_words": 580
+    },
+    {
+      "name": "writing-shape",
+      "path": "/Users/adrian/.agents/skills/writing-shape/SKILL.md",
+      "sha256": "f5e6c57bdd85178ace4a260c92f46da6b64ddee18215b461d875739c68976f72",
+      "body_words": 1008
+    }
+  ],
+  "summary": {
+    "adrian": {
+      "count": 17,
+      "body_words": 22020,
+      "median_body_words": 1143
+    },
+    "matt_installed": {
+      "count": 30,
+      "body_words": 19525,
+      "median_body_words": 463.5
+    }
+  }
+}

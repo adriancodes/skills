@@ -1,0 +1,36 @@
+{
+  "skill": "be-concise",
+  "request": "Walk me through B-tree database indexes thoroughly. Explain the structure, lookup path, page splits, and the main read/write trade-off. I want the detailed version, not a summary.",
+  "setup": "",
+  "source_case": {
+    "id": "behavior-depth-override",
+    "split": "heldout",
+    "kind": "behavior",
+    "class": "edge",
+    "request": "Walk me through B-tree database indexes thoroughly. Explain the structure, lookup path, page splits, and the main read/write trade-off. I want the detailed version, not a summary.",
+    "assertions": [
+      {
+        "id": "depth-honored",
+        "critical": true,
+        "criterion": "The explicit depth request receives at least 120 words and six sentences."
+      },
+      {
+        "id": "topic-covered",
+        "critical": true,
+        "criterion": "The answer covers tree structure, lookup, page splits, reads, and writes."
+      },
+      {
+        "id": "no-closing-offer",
+        "critical": false,
+        "criterion": "The answer has no optional closing offer."
+      }
+    ]
+  },
+  "copy": null,
+  "files": {},
+  "checks": [
+    "The explicit depth request receives at least 120 words and six sentences.",
+    "The answer covers tree structure, lookup, page splits, reads, and writes.",
+    "The answer has no optional closing offer."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "delivery-verification-failure",
+  "arm": "revised",
+  "skill": "deliver-feature",
+  "subjects": {
+    "SKILL.md": "6f3150ca1cd9683c47b502dcd743193321a96f8e9802a9dd485af625c694f223"
+  },
+  "cases_file": "failure-case.json",
+  "cases_sha256": "0a161635a5d0eec3e5a147dd69b2466cc1a89badbfc0a3646df0c26f6410ec90",
+  "runner_sha256": "1a5a49829a02b6e831032c2d0f7e93bdc60b345ab2580772d0b4c64343158510",
+  "prompt_sha256": "b00b2eac9cfe0b8b84d89c4b47febbc847996e756355b520d017ae8d0471be47",
+  "observed_at": "2026-10-05T03:23:04.460Z",
+  "harness_version": "codex-cli 0.160.0",
+  "args": [
+    "exec",
+    "-",
+    "--ephemeral",
+    "--ignore-user-config",
+    "--json",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-s",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "-C",
+    "/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/skill-quality-pilot-xB7KBH"
+  ],
+  "timeout_ms": 180000,
+  "claim": "Single explicit-load local actor; no native discovery or cross-model claim. Global harness instructions may be present equally across arms."
+}
