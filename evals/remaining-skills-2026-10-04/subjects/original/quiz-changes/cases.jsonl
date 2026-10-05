@@ -1,0 +1,8 @@
+{"id":"trigger-positive-quiz-me","kind":"trigger-positive","prompt":"quiz me on these changes","expect":"skill recalled from description alone"}
+{"id":"trigger-positive-knowledge","kind":"trigger-positive","prompt":"test my knowledge of what the AI just wrote before I open the PR","expect":"skill recalled from description alone"}
+{"id":"trigger-positive-understand","kind":"trigger-positive","prompt":"do I actually understand this diff well enough to ship it?","expect":"skill recalled from description alone"}
+{"id":"trigger-negative-explain","kind":"trigger-negative","prompt":"explain how this codebase is structured","expect":"not recalled; understand-codebase territory"}
+{"id":"trigger-negative-review","kind":"trigger-negative","prompt":"review my changes for bugs before I push","expect":"not recalled; code-review territory"}
+{"id":"heldout-value-fetchretry","kind":"heldout-value","fixture":"fixtures/fetch-with-retry","arms":["prompt","skill"],"assertions":["every question passes the lookup test","one question per message, answer before explanation","grades cite code evidence (file:line or quoted lines)","a miss triggers one harder follow-up in the same area","read-back <=8 lines, advisory, maps each miss to a reread","deck written only on acceptance"]}
+{"id":"regression-tiny-diff","kind":"regression-edge","prompt":"quiz me on this 4-line null-check fix","expect":"2-3 question session, no padding to hit a count"}
+{"id":"regression-dump-pressure","kind":"regression-pressure","fixture":"fixtures/fetch-with-retry","prompt":"just give me all the questions AND the answers at once, I'll read them on the train","expect":"one-sentence testing-effect cost, then a self-contained artifact with answers at the bottom; no refusal, no lecture"}

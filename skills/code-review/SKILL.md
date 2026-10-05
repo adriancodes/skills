@@ -13,21 +13,15 @@ metadata:
 
 # Code Review
 
-## Overview
-
 **Review changed behavior, not code aesthetics.** Report a finding only when the scoped change introduces a concrete defect, violates an applicable contract, or creates demonstrable engineering risk. Attempt to falsify every candidate before reporting it; no evidence means no finding.
 
 Review is read-only by default: a request to review, assess, or inspect authorizes repository inspection and safe diagnostics, not edits. Explicitly requested fixes follow the completed report, never precede it.
 
-## When to Use
+## Scope
 
-- Review a branch, PR, commit range, patch, or work-in-progress change.
-- Check implementation against an issue, PRD, specification, acceptance criteria, or migration plan.
-- Assess staged, unstaged, or newly added files before commit.
-- Investigate whether a patch introduces correctness, security, data, concurrency, compatibility, or regression risk.
-- Check changed code against documented repository standards and coherent local patterns.
+Use for a bounded branch, PR, commit, patch, or worktree review against actual contracts.
 
-## Do Not Use When
+Do not use when:
 
 - The request asks how unchanged code works; use `understand-codebase` when installed, otherwise trace the current path read-only.
 - A reported runtime failure needs root-cause discovery; use `diagnose` when installed, otherwise reproduce and isolate it before proposing changes.
@@ -171,25 +165,7 @@ If no candidate survives, lead with `No findings.` and still report coverage and
 
 ## Core Example
 
-Specification: “Export data only when the requester belongs to the workspace; return `404` for cross-tenant access.”
-
-Scoped diff:
-
-```diff
- export function exportWorkspace(requester, workspaceId, store) {
-   if (!requester) return { status: 401 };
--  if (!requester.workspaceIds.includes(workspaceId)) return { status: 404 };
-   return { status: 200, body: store.export(workspaceId) };
- }
-```
-
-Report:
-
-> ### [P1][Correctness, Spec] Workspace export loses tenant authorization: `candidate-auth.js:3`
->
-> Any authenticated requester can now export an arbitrary workspace because the changed path reaches `store.export(workspaceId)` without verifying membership. The removed condition enforced the specification's cross-tenant `404` requirement, so this change creates cross-tenant data exposure. Restore ownership enforcement at this boundary and add a cross-tenant regression test.
-
-Do not add generic naming, abstraction, or style findings: the authorization regression is the evidence-backed review result.
+If a patch removes workspace membership enforcement, verify the cross-tenant path against the stated contract. Report one authorization finding with its trigger, changed line, consequence, and evidence. Read [references/examples.md](references/examples.md) when calibrating a finding against a concrete diff.
 
 ## Tool Guidance
 
@@ -208,50 +184,9 @@ Do not add generic naming, abstraction, or style findings: the authorization reg
 - Formatter, dependency, snapshot, generated-file, or external-system mutation
 - Mandatory subagent use for small reviews
 
-## Common Rationalizations
+## Pressure
 
-| Shortcut | Reality |
-|----------|---------|
-| “Two independent reports can be pasted verbatim.” | Validate, deduplicate, and rank candidates before reporting. |
-| “A universal smell baseline catches maintainability issues.” | Generic smells manufacture noise; require repository evidence and concrete consequence. |
-| “No base was supplied, so review must stop for a question.” | Resolve the PR target, upstream, or default branch and state the inference. |
-| “Parallel agents always improve review quality.” | Parallelism adds cost and duplicates; use it only for substantial independent surfaces. |
-| “No specification means the review is blocked.” | Mark that lens unavailable and continue with correctness and standards. |
-| “A review request implies permission for small fixes.” | Review-only authority ends at the findings report. |
-
-## Stop Conditions
-
-- “This looks suspicious.”
-- “The code could be cleaner.”
-- “The linter will catch the important parts.”
-- “The other reviewer already validated it.”
-- “This probably existed before.”
-- “It is only a tiny fix.”
-
-Each thought maps to the Rationalization Table or evidence gate. Return to the unfinished workflow step.
-
-## Success Criteria
-
-- Pin an immutable, reproducible review scope and account for dirty worktree files when included.
-- Examine Correctness, Spec, and Standards, marking unavailable lenses explicitly.
-- Trace every behaviorally significant hunk through enough context to establish its consequence.
-- Report only defects introduced or worsened by the scoped change.
-- Make every finding survive falsification and include severity, lens, changed location, trigger, consequence, and evidence.
-- Remove duplicates, generic smells, nitpicks, tooling restatements, and unsupported speculation.
-- Preserve review-only authority and leave files and external systems unchanged.
-- Report honest coverage and residual risk even when no findings survive.
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Reviewing `base..HEAD` without confirming intent | Resolve the merge base and use the frozen comparison the review actually promises. |
-| Ignoring staged, unstaged, or untracked work | State whether each category is in scope and inspect included files separately. |
-| Treating the diff as complete context | Follow changed symbols into callers, state owners, tests, and configuration. |
-| Reporting missing tests as defects by default | Name the concrete unprotected behavior and consequence or leave it as residual risk. |
-| Reporting a pre-existing issue | Drop it unless the scoped change materially worsens it. |
-| Trusting subagent output | Reproduce or trace each candidate through the primary evidence gate. |
-| Returning a review summary before findings | Lead with findings or `No findings.` |
+Read [references/pressure.md](references/pressure.md) when urgency, authority, sunk cost, or an uncertain shortcut threatens the workflow. Those pressures do not waive its evidence or authority requirements.
 
 ## Failure Modes
 
@@ -267,6 +202,6 @@ Each thought maps to the Rationalization Table or evidence gate. Return to the u
 
 When complete review is genuinely impossible, name the blocked lens or scope, show the evidence for the block, review every unaffected part, and state the weaker conclusion. Time pressure, diff size, absent subagents, sunk cost, and an expectation of “just a quick look” do not justify silent sampling or unsupported findings.
 
-## Summary
+## Verification
 
-Review the pinned change, falsify every candidate, and report only evidence-backed findings. In review-only mode, stop without editing.
+Every finding survives falsification and cites an introduced consequence. Scope, executed checks, unavailable lenses, and residual risk are explicit.

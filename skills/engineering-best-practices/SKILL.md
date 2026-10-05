@@ -12,20 +12,13 @@ metadata:
 
 # Engineering Best Practices
 
-## Overview
-
 Apply established engineering practices without loading the full source corpus into context: identify the repository's state and direction, then retrieve only the practices the current task needs.
 
-## When to Use
+## Scope
 
-Use for:
+Use for substantive engineering work that needs project alignment and bounded practice retrieval.
 
-- starting a substantive application or codebase;
-- non-trivial design, implementation, testing, review, refactoring, or simplification;
-- explicit requests to assess or improve architecture, paradigms, or patterns;
-- work where consistency, failure behavior, changeability, or ownership boundaries matter.
-
-## Do Not Use When
+Do not use when:
 
 Skip prose-only work, trivial mechanical edits, generated files, dependency lockfiles, and questions unrelated to software design. A tiny standalone script needs no architectural interview unless its choices materially affect safety or maintainability. When a specialized testing, debugging, security, or refactoring skill governs the task, use it first, applying this skill inside it only for practice retrieval and project alignment.
 
@@ -139,6 +132,7 @@ Write the charter to `docs/engineering-practices.md`. Add or update only this ma
 ```markdown
 <!-- engineering-best-practices:start -->
 ## Engineering best practices
+
 For non-trivial software design, implementation, review, or refactoring, use the `engineering-best-practices` skill and follow `docs/engineering-practices.md`.
 <!-- engineering-best-practices:end -->
 ```
@@ -147,20 +141,7 @@ Do not write or replace the charter before the direction is approved, unless rec
 
 ## Lifecycle example
 
-A new queue-processing service with only framework scaffolding enters **Establish**. Repository evidence answers the language and deployment questions; multiple-choice questions settle consistency and reliability priorities. The skill recommends a modular service with explicit ownership, idempotent message handling, bounded retries, and integration tests; after approval, the charter records those decisions and their source principle IDs.
-
-A later request to add a consumer enters **Apply**. Run the exact local lookup:
-
-```bash
-node skills/engineering-best-practices/scripts/retrieve-guidance.mjs \
-  --intent implement \
-  --task "invariant: one side effect per delivery; concurrency/distribution scope: concurrent workers and processes; atomicity/consistency mechanism: conditional transaction for claim, complete, and release; state owner: durable message-state database; failure/recovery: an interrupted claim expires and a retry reclaims it" \
-  --max 4
-```
-
-Retain only the returned directives that change the consumer design, then implement atomic lifecycle transitions in the durable owner without loading unrelated architecture guidance. Test with independent consumers whose only shared coordination is the database. The example is complete when concurrent duplicates produce one side effect and an interrupted claim can be retried safely.
-
-An explicit request to reorganize the entire service enters **Align**. The agent audits actual change friction, offers a few coherent target directions, records the choice, and migrates in behavior-preserving slices rather than rewriting at once.
+A new queue service enters Establish. Adding a consumer to established code enters Apply. An explicitly requested codebase migration enters Align. Read [references/examples.md](references/examples.md) for the attributed retrieval and independent-worker test example.
 
 ## Working discipline
 
@@ -172,40 +153,9 @@ An explicit request to reorganize the entire service enters **Align**. The agent
 - Record exceptions and reconsideration triggers instead of pretending decisions are permanent.
 - Preserve source attribution when a retrieved practice influences a durable decision.
 
-## Common Mistakes
+## Pressure
 
-| Rationalization | Required response |
-|---|---|
-| "The repository uses it once, so it is the pattern." | Inspect analogous locations and test the coherence criteria. |
-| "Best practice says to replace the local design." | Apply the decision precedence and show concrete harm before proposing change. |
-| "Ask every architecture question to be safe." | Infer answered facts; ask only decisions that materially change the solution. |
-| "Load every related book for completeness." | Retrieve a small relevant packet and discard weak matches. |
-| "A codebase review authorizes a rewrite." | Recommend a target and incremental migration; preserve behavior in bounded slices. |
-| "The defaults were delegated, but approval is still required." | Apply the recommended coherent direction and document the assumptions. |
-| "The patch is green and nearly finished, so retrieval is unnecessary." | Retrieve before accepting a non-trivial design; green tests may omit the governing failure mode. |
-| "The relevant best practices are already obvious." | Run the bounded lookup; its purpose is to expose principles outside immediate recall. |
-| "A process-local lock prevents the race in tests." | Put the transition in the durable state owner and race independent instances whose only shared coordination is that dependency. |
-
-### Stop Conditions
-
-These thoughts signal an imminent shortcut:
-
-- "This pattern exists somewhere."
-- "The tests are already green."
-- "The user wants this quickly."
-- "Retrieval can wait until review."
-- "More sources will be safer."
-- "The workers normally run in one process."
-
-Return to the workflow and use the rationalization table: state the rule once, produce the compliant result, and move on.
-
-### Closed loopholes
-
-- Never substitute a generic best-practices checklist for the bounded catalog lookup; run the lookup for non-trivial work.
-- Never load all three state references "for context"; load exactly the selected workflow.
-- Never treat passing tests as proof a local pattern is coherent; check recurrence, boundaries, support, and material defects.
-- Never continue an architecture interview after recommended defaults are explicitly delegated; document assumptions and proceed.
-- Never accept process-local coordination for an invariant spanning workers, processes, or machines; require atomic lifecycle operations in the durable shared owner.
+Read [references/pressure.md](references/pressure.md) when urgency, authority, sunk cost, or an uncertain shortcut threatens the workflow. Those pressures do not waive its evidence or authority requirements.
 
 ## Failure Modes
 

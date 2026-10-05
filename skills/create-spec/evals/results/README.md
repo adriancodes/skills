@@ -1,3 +1,5 @@
+> Historical evidence: runtime structure changed on 2026-10-04. These outputs validate their recorded original subjects, not the current body. See the [current preservation pass](../../../../evals/remaining-skills-2026-10-04/README.md); no old result was retagged as current.
+
 # Create Spec evidence status
 
 Current review corrections: see [the recorded probes and limits](../../../../evals/review-fixes.md). Raw current-subject results are under `review-2026-09-04/`; replay with `node evals/check-review-probes.mjs` from the repository root. These probes do not replace the full declared tier.

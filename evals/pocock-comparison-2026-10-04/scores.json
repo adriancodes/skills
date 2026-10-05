@@ -1,0 +1,207 @@
+{
+  "method": "Non-blind manual outcome judgments plus executable provenance, scope, graph, and downstream checks. A separate blinded artifact review is recorded independently. No result is labeled statistically superior.",
+  "runs": {
+    "original-delivery-isolated": {
+      "task-records": {
+        "pass": false,
+        "evidence": "Completed work lacks per-task dated outcome notes. The record score stays FAIL even when code behavior passes."
+      },
+      "behavior": {
+        "pass": true,
+        "evidence": "The threshold implementations pass independent boundary probes and unchanged surrounding tests. Artifact completion is scored separately rather than inferred from correct code."
+      },
+      "completion-markers": {
+        "pass": true,
+        "evidence": "Required task checkboxes reflect implemented behavior."
+      },
+      "verification-records": {
+        "pass": true,
+        "evidence": "A dated whole-feature verification record exists."
+      }
+    },
+    "original-tasks-isolated": {
+      "behavior": {
+        "pass": true,
+        "evidence": "Written open slices plan has additive compatibility first, four bounded package migrations gated on expansion, and old-form removal gated on all migration tasks. It requests review and does not implement code."
+      },
+      "plan-contract": {
+        "pass": true,
+        "evidence": "Plan uses the toolbox's open checkbox contract, task fields, and trailing sections."
+      }
+    },
+    "original-simplify-isolated": {
+      "behavior": {
+        "pass": true,
+        "evidence": "Four private helpers removed while retaining two-pass getter/error order. Trace records executable characterization before and after editing. Public export, strict boolean condition, output order, package.json, and dependencies preserved; no reliable project suite is claimed. Independent differential probes replayed by check.mjs."
+      }
+    },
+    "revised-delivery-references": {
+      "task-records": {
+        "pass": true,
+        "evidence": "Every completed task has its own dated outcome note; the frozen criterion does not require a particular label."
+      },
+      "behavior": {
+        "pass": true,
+        "evidence": "The threshold implementations pass independent boundary probes and unchanged surrounding tests. Artifact completion is scored separately rather than inferred from correct code."
+      },
+      "completion-markers": {
+        "pass": true,
+        "evidence": "Required task checkboxes reflect implemented behavior."
+      },
+      "verification-records": {
+        "pass": true,
+        "evidence": "A dated whole-feature verification record exists."
+      }
+    },
+    "revised-tasks-references": {
+      "behavior": {
+        "pass": true,
+        "evidence": "Written open slices plan has additive compatibility first, four bounded package migrations gated on expansion, and old-form removal gated on all migration tasks. It requests review and does not implement code."
+      },
+      "plan-contract": {
+        "pass": true,
+        "evidence": "Plan uses the toolbox's open checkbox contract, task fields, and trailing sections."
+      }
+    },
+    "revised-simplify": {
+      "behavior": {
+        "pass": true,
+        "evidence": "Four private helpers removed while retaining two-pass getter/error order. Trace records executable characterization before and after editing. Public export, strict boolean condition, output order, package.json, and dependencies preserved; no reliable project suite is claimed. Independent differential probes replayed by check.mjs."
+      }
+    },
+    "prompt-delivery": {
+      "task-records": {
+        "pass": false,
+        "evidence": "Completed work lacks per-task dated outcome notes. The record score stays FAIL even when code behavior passes."
+      },
+      "behavior": {
+        "pass": true,
+        "evidence": "The threshold implementations pass independent boundary probes and unchanged surrounding tests. Artifact completion is scored separately rather than inferred from correct code."
+      },
+      "completion-markers": {
+        "pass": true,
+        "evidence": "Required task checkboxes reflect implemented behavior."
+      },
+      "verification-records": {
+        "pass": true,
+        "evidence": "A dated whole-feature verification record exists."
+      }
+    },
+    "prompt-tasks": {
+      "behavior": {
+        "pass": true,
+        "evidence": "Written open slices plan has additive compatibility first, four bounded package migrations gated on expansion, and old-form removal gated on all migration tasks. It requests review and does not implement code."
+      },
+      "plan-contract": {
+        "pass": false,
+        "evidence": "The plan is useful and semantically judged separately, but its format omits the toolbox's exact downstream contract."
+      }
+    },
+    "prompt-simplify": {
+      "behavior": {
+        "pass": true,
+        "evidence": "Four private helpers removed while retaining two-pass getter/error order. Trace records executable characterization before and after editing. Public export, strict boolean condition, output order, package.json, and dependencies preserved; no reliable project suite is claimed. Independent differential probes replayed by check.mjs."
+      }
+    },
+    "matt-delivery": {
+      "task-records": {
+        "pass": false,
+        "evidence": "Completed work lacks per-task dated outcome notes. The record score stays FAIL even when code behavior passes."
+      },
+      "behavior": {
+        "pass": true,
+        "evidence": "The threshold implementations pass independent boundary probes and unchanged surrounding tests. Artifact completion is scored separately rather than inferred from correct code."
+      },
+      "completion-markers": {
+        "pass": false,
+        "evidence": "The implementation is correct, but both task checkboxes remain unchecked; actor explicitly left the plan unchanged."
+      },
+      "verification-records": {
+        "pass": false,
+        "evidence": "Verification section remains empty; actor left the plan unchanged."
+      }
+    },
+    "matt-tasks": {
+      "behavior": {
+        "pass": true,
+        "evidence": "Written open slices plan has additive compatibility first, four bounded package migrations gated on expansion, and old-form removal gated on all migration tasks. It requests review and does not implement code."
+      },
+      "plan-contract": {
+        "pass": false,
+        "evidence": "The plan is useful and semantically judged separately, but its format omits the toolbox's exact downstream contract."
+      }
+    },
+    "regression-delivery-one": {
+      "task-records": {
+        "pass": true,
+        "evidence": "Every completed task has its own dated outcome note; the frozen criterion does not require a particular label."
+      },
+      "behavior": {
+        "pass": true,
+        "evidence": "The threshold implementations pass independent boundary probes and unchanged surrounding tests. Artifact completion is scored separately rather than inferred from correct code."
+      },
+      "completion-markers": {
+        "pass": true,
+        "evidence": "Required task checkboxes reflect implemented behavior."
+      }
+    },
+    "regression-delivery-open": {
+      "behavior": {
+        "pass": true,
+        "evidence": "Output asks for the unresolved discount decision or confirmation; before.json equals after.json, so no code or confirmation was invented."
+      }
+    },
+    "regression-tasks-feature": {
+      "behavior": {
+        "pass": true,
+        "evidence": "Open saved-searches plan recuts horizontal phases into demoable behavior slices, embeds tests per slice, names bounds and blockers, and asks for breakdown approval. No source changes."
+      },
+      "plan-contract": {
+        "pass": true,
+        "evidence": "Plan uses the toolbox's open checkbox contract, task fields, and trailing sections."
+      }
+    },
+    "regression-tasks-no-write": {
+      "behavior": {
+        "pass": true,
+        "evidence": "Complete open contract appears in output.md, alongside downstream-file consequence and later-save offer; before.json equals after.json."
+      }
+    },
+    "regression-tasks-chat-preference": {
+      "behavior": {
+        "pass": true,
+        "evidence": "One open slices file is added and disclosed; output gives numbered task summary and asks for confirmation. Original spec remains unchanged."
+      },
+      "plan-contract": {
+        "pass": true,
+        "evidence": "Plan uses the toolbox's open checkbox contract, task fields, and trailing sections."
+      }
+    },
+    "regression-simplify-no-tests": {
+      "behavior": {
+        "pass": true,
+        "evidence": "Four private helpers removed while retaining two-pass getter/error order. Trace records executable characterization before and after editing. Public export, strict boolean condition, output order, package.json, and dependencies preserved; no reliable project suite is claimed. Independent differential probes replayed by check.mjs."
+      }
+    },
+    "regression-implement-one": {
+      "task-records": {
+        "pass": true,
+        "evidence": "Every completed task has its own dated outcome note; the frozen criterion does not require a particular label."
+      },
+      "behavior": {
+        "pass": true,
+        "evidence": "The threshold implementations pass independent boundary probes and unchanged surrounding tests. Artifact completion is scored separately rather than inferred from correct code."
+      },
+      "completion-markers": {
+        "pass": true,
+        "evidence": "Required task checkboxes reflect implemented behavior."
+      }
+    },
+    "regression-delivery-failure": {
+      "behavior": {
+        "pass": true,
+        "evidence": "Executed boundary check fails because discount remains 0 at 10,000 cents. Output reports the defect; slices verification records Status: incomplete and reproducer. Source and tests remain unchanged."
+      }
+    }
+  }
+}

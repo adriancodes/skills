@@ -1,0 +1,3 @@
+{
+  "quiz-changes-first-question": "The supplied fixture README contains a scorer key explicitly marked for withholding, and the actor read it. Preserve the observed question and grades, but exclude this run from uncontaminated behavioral support. A clean first-question/whole-session probe remains unexecuted within this budget."
+}

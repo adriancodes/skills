@@ -1,0 +1,9 @@
+{
+  "original-delivery": "Runner setup failed before actor launch; copy filter accidentally excluded the source.",
+  "original-delivery-retry": "Sandbox blocked Codex runtime initialization before actor completion.",
+  "original-delivery-authorized": "Fixture nested inside source repo inherited unrelated repository AGENTS.md. Kept as unscored observation.",
+  "original-tasks": "Fixture nested inside source repo inherited unrelated repository AGENTS.md. Kept as unscored observation.",
+  "original-simplify": "Fixture nested inside source repo inherited unrelated repository AGENTS.md. Kept as unscored observation.",
+  "revised-tasks": "Harness permitted writes only in workspace but accidentally made supplied references inaccessible; no completed plan, excluded from skill scoring.",
+  "revised-delivery": "Same reference access defect; completed work is preserved as unscored observation."
+}

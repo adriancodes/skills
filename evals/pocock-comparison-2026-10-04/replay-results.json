@@ -1,0 +1,595 @@
+{
+  "claim": "Targeted explicit-load outcomes and preserved evidence; no statistical superiority, native discovery, or cross-model claim.",
+  "records": [
+    {
+      "label": "original-delivery-isolated",
+      "case_id": "delivery-complete",
+      "skill": "deliver-feature",
+      "arm": "original",
+      "current_body": null,
+      "current_resources": null,
+      "manual": {
+        "task-records": {
+          "pass": false,
+          "evidence": "Completed work lacks per-task dated outcome notes. The record score stays FAIL even when code behavior passes."
+        },
+        "behavior": {
+          "pass": true,
+          "evidence": "The threshold implementations pass independent boundary probes and unchanged surrounding tests. Artifact completion is scored separately rather than inferred from correct code."
+        },
+        "completion-markers": {
+          "pass": true,
+          "evidence": "Required task checkboxes reflect implemented behavior."
+        },
+        "verification-records": {
+          "pass": true,
+          "evidence": "A dated whole-feature verification record exists."
+        }
+      },
+      "downstream": [
+        "shipping boundaries pass",
+        "Per-task completion records: FAIL (comparison arm)",
+        "discount boundaries pass",
+        "Whole-feature verification record: PASS",
+        "# suites 0\n# pass 3\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 39.637625"
+      ],
+      "wall_ms": 88332,
+      "usage": {
+        "input_tokens": 236902,
+        "cached_input_tokens": 213120,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2174,
+        "reasoning_output_tokens": 62
+      }
+    },
+    {
+      "label": "original-tasks-isolated",
+      "case_id": "tasks-wide-refactor",
+      "skill": "create-tasks",
+      "arm": "original",
+      "current_body": null,
+      "current_resources": null,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "Written open slices plan has additive compatibility first, four bounded package migrations gated on expansion, and old-form removal gated on all migration tasks. It requests review and does not implement code."
+        },
+        "plan-contract": {
+          "pass": true,
+          "evidence": "Plan uses the toolbox's open checkbox contract, task fields, and trailing sections."
+        }
+      },
+      "downstream": [
+        "Toolbox-specific plan contract: PASS",
+        "Open plan contract and valid blocker graph pass"
+      ],
+      "wall_ms": 68879,
+      "usage": {
+        "input_tokens": 100208,
+        "cached_input_tokens": 72576,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1702,
+        "reasoning_output_tokens": 203
+      }
+    },
+    {
+      "label": "original-simplify-isolated",
+      "case_id": "simplify-untested",
+      "skill": "simplify-code",
+      "arm": "original",
+      "current_body": null,
+      "current_resources": null,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "Four private helpers removed while retaining two-pass getter/error order. Trace records executable characterization before and after editing. Public export, strict boolean condition, output order, package.json, and dependencies preserved; no reliable project suite is claimed. Independent differential probes replayed by check.mjs."
+        }
+      },
+      "downstream": [
+        "11 differential inputs, getter order, and independent strict-boolean check pass"
+      ],
+      "wall_ms": 66549,
+      "usage": {
+        "input_tokens": 129328,
+        "cached_input_tokens": 100224,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1683,
+        "reasoning_output_tokens": 234
+      }
+    },
+    {
+      "label": "revised-delivery-references",
+      "case_id": "delivery-complete",
+      "skill": "deliver-feature",
+      "arm": "revised",
+      "current_body": true,
+      "current_resources": false,
+      "manual": {
+        "task-records": {
+          "pass": true,
+          "evidence": "Every completed task has its own dated outcome note; the frozen criterion does not require a particular label."
+        },
+        "behavior": {
+          "pass": true,
+          "evidence": "The threshold implementations pass independent boundary probes and unchanged surrounding tests. Artifact completion is scored separately rather than inferred from correct code."
+        },
+        "completion-markers": {
+          "pass": true,
+          "evidence": "Required task checkboxes reflect implemented behavior."
+        },
+        "verification-records": {
+          "pass": true,
+          "evidence": "A dated whole-feature verification record exists."
+        }
+      },
+      "downstream": [
+        "shipping boundaries pass",
+        "Per-task completion records: PASS",
+        "discount boundaries pass",
+        "Whole-feature verification record: PASS",
+        "# suites 0\n# pass 3\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 40.424209"
+      ],
+      "wall_ms": 119628,
+      "usage": {
+        "input_tokens": 267747,
+        "cached_input_tokens": 204800,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2933,
+        "reasoning_output_tokens": 106
+      }
+    },
+    {
+      "label": "revised-tasks-references",
+      "case_id": "tasks-wide-refactor",
+      "skill": "create-tasks",
+      "arm": "revised",
+      "current_body": true,
+      "current_resources": false,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "Written open slices plan has additive compatibility first, four bounded package migrations gated on expansion, and old-form removal gated on all migration tasks. It requests review and does not implement code."
+        },
+        "plan-contract": {
+          "pass": true,
+          "evidence": "Plan uses the toolbox's open checkbox contract, task fields, and trailing sections."
+        }
+      },
+      "downstream": [
+        "Toolbox-specific plan contract: PASS",
+        "Open plan contract and valid blocker graph pass"
+      ],
+      "wall_ms": 97184,
+      "usage": {
+        "input_tokens": 129097,
+        "cached_input_tokens": 90752,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2699,
+        "reasoning_output_tokens": 147
+      }
+    },
+    {
+      "label": "revised-simplify",
+      "case_id": "simplify-untested",
+      "skill": "simplify-code",
+      "arm": "revised",
+      "current_body": true,
+      "current_resources": true,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "Four private helpers removed while retaining two-pass getter/error order. Trace records executable characterization before and after editing. Public export, strict boolean condition, output order, package.json, and dependencies preserved; no reliable project suite is claimed. Independent differential probes replayed by check.mjs."
+        }
+      },
+      "downstream": [
+        "11 differential inputs, getter order, and independent strict-boolean check pass"
+      ],
+      "wall_ms": 66837,
+      "usage": {
+        "input_tokens": 127319,
+        "cached_input_tokens": 99328,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1652,
+        "reasoning_output_tokens": 162
+      }
+    },
+    {
+      "label": "prompt-delivery",
+      "case_id": "delivery-complete",
+      "skill": "deliver-feature",
+      "arm": "prompt",
+      "current_body": null,
+      "current_resources": null,
+      "manual": {
+        "task-records": {
+          "pass": false,
+          "evidence": "Completed work lacks per-task dated outcome notes. The record score stays FAIL even when code behavior passes."
+        },
+        "behavior": {
+          "pass": true,
+          "evidence": "The threshold implementations pass independent boundary probes and unchanged surrounding tests. Artifact completion is scored separately rather than inferred from correct code."
+        },
+        "completion-markers": {
+          "pass": true,
+          "evidence": "Required task checkboxes reflect implemented behavior."
+        },
+        "verification-records": {
+          "pass": true,
+          "evidence": "A dated whole-feature verification record exists."
+        }
+      },
+      "downstream": [
+        "shipping boundaries pass",
+        "Per-task completion records: FAIL (comparison arm)",
+        "discount boundaries pass",
+        "Whole-feature verification record: PASS",
+        "# suites 0\n# pass 3\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 38.7245"
+      ],
+      "wall_ms": 59318,
+      "usage": {
+        "input_tokens": 139210,
+        "cached_input_tokens": 120704,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1433,
+        "reasoning_output_tokens": 29
+      }
+    },
+    {
+      "label": "prompt-tasks",
+      "case_id": "tasks-wide-refactor",
+      "skill": "create-tasks",
+      "arm": "prompt",
+      "current_body": null,
+      "current_resources": null,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "Written open slices plan has additive compatibility first, four bounded package migrations gated on expansion, and old-form removal gated on all migration tasks. It requests review and does not implement code."
+        },
+        "plan-contract": {
+          "pass": false,
+          "evidence": "The plan is useful and semantically judged separately, but its format omits the toolbox's exact downstream contract."
+        }
+      },
+      "downstream": [
+        "Toolbox-specific plan contract: FAIL (comparison arm; not a generic planning defect)",
+        "Open plan contract and valid blocker graph pass"
+      ],
+      "wall_ms": 115152,
+      "usage": {
+        "input_tokens": 141155,
+        "cached_input_tokens": 114432,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3215,
+        "reasoning_output_tokens": 262
+      }
+    },
+    {
+      "label": "prompt-simplify",
+      "case_id": "simplify-untested",
+      "skill": "simplify-code",
+      "arm": "prompt",
+      "current_body": null,
+      "current_resources": null,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "Four private helpers removed while retaining two-pass getter/error order. Trace records executable characterization before and after editing. Public export, strict boolean condition, output order, package.json, and dependencies preserved; no reliable project suite is claimed. Independent differential probes replayed by check.mjs."
+        }
+      },
+      "downstream": [
+        "11 differential inputs, getter order, and independent strict-boolean check pass"
+      ],
+      "wall_ms": 85837,
+      "usage": {
+        "input_tokens": 117160,
+        "cached_input_tokens": 91520,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1642,
+        "reasoning_output_tokens": 174
+      }
+    },
+    {
+      "label": "matt-delivery",
+      "case_id": "delivery-complete",
+      "skill": "deliver-feature",
+      "arm": "matt",
+      "current_body": null,
+      "current_resources": null,
+      "manual": {
+        "task-records": {
+          "pass": false,
+          "evidence": "Completed work lacks per-task dated outcome notes. The record score stays FAIL even when code behavior passes."
+        },
+        "behavior": {
+          "pass": true,
+          "evidence": "The threshold implementations pass independent boundary probes and unchanged surrounding tests. Artifact completion is scored separately rather than inferred from correct code."
+        },
+        "completion-markers": {
+          "pass": false,
+          "evidence": "The implementation is correct, but both task checkboxes remain unchecked; actor explicitly left the plan unchanged."
+        },
+        "verification-records": {
+          "pass": false,
+          "evidence": "Verification section remains empty; actor left the plan unchanged."
+        }
+      },
+      "downstream": [
+        "shipping boundaries pass",
+        "Per-task completion records: FAIL (comparison arm)",
+        "discount boundaries pass",
+        "Whole-feature verification record: FAIL (comparison arm)",
+        "# suites 0\n# pass 3\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 50.025834"
+      ],
+      "wall_ms": 70622,
+      "usage": {
+        "input_tokens": 169568,
+        "cached_input_tokens": 148736,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1653,
+        "reasoning_output_tokens": 85
+      }
+    },
+    {
+      "label": "matt-tasks",
+      "case_id": "tasks-wide-refactor",
+      "skill": "create-tasks",
+      "arm": "matt",
+      "current_body": null,
+      "current_resources": null,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "Written open slices plan has additive compatibility first, four bounded package migrations gated on expansion, and old-form removal gated on all migration tasks. It requests review and does not implement code."
+        },
+        "plan-contract": {
+          "pass": false,
+          "evidence": "The plan is useful and semantically judged separately, but its format omits the toolbox's exact downstream contract."
+        }
+      },
+      "downstream": [
+        "Toolbox-specific plan contract: FAIL (comparison arm; not a generic planning defect)",
+        "Open plan contract and valid blocker graph pass"
+      ],
+      "wall_ms": 78343,
+      "usage": {
+        "input_tokens": 124771,
+        "cached_input_tokens": 96896,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2059,
+        "reasoning_output_tokens": 92
+      }
+    },
+    {
+      "label": "regression-delivery-one",
+      "case_id": "delivery-one-stage",
+      "skill": "deliver-feature",
+      "arm": "revised",
+      "current_body": true,
+      "current_resources": false,
+      "manual": {
+        "task-records": {
+          "pass": true,
+          "evidence": "Every completed task has its own dated outcome note; the frozen criterion does not require a particular label."
+        },
+        "behavior": {
+          "pass": true,
+          "evidence": "The threshold implementations pass independent boundary probes and unchanged surrounding tests. Artifact completion is scored separately rather than inferred from correct code."
+        },
+        "completion-markers": {
+          "pass": true,
+          "evidence": "Required task checkboxes reflect implemented behavior."
+        }
+      },
+      "downstream": [
+        "shipping boundaries pass",
+        "Per-task completion records: PASS",
+        "# suites 0\n# pass 2\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 36.493584"
+      ],
+      "wall_ms": 54522,
+      "usage": {
+        "input_tokens": 150147,
+        "cached_input_tokens": 135936,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1135,
+        "reasoning_output_tokens": 25
+      }
+    },
+    {
+      "label": "regression-delivery-open",
+      "case_id": "delivery-open-spec",
+      "skill": "deliver-feature",
+      "arm": "revised",
+      "current_body": true,
+      "current_resources": false,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "Output asks for the unresolved discount decision or confirmation; before.json equals after.json, so no code or confirmation was invented."
+        }
+      },
+      "downstream": [
+        "Unconfirmed-spec case changed no files"
+      ],
+      "wall_ms": 27951,
+      "usage": {
+        "input_tokens": 97170,
+        "cached_input_tokens": 78848,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 460,
+        "reasoning_output_tokens": 90
+      }
+    },
+    {
+      "label": "regression-tasks-feature",
+      "case_id": "tasks-feature",
+      "skill": "create-tasks",
+      "arm": "revised",
+      "current_body": true,
+      "current_resources": true,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "Open saved-searches plan recuts horizontal phases into demoable behavior slices, embeds tests per slice, names bounds and blockers, and asks for breakdown approval. No source changes."
+        },
+        "plan-contract": {
+          "pass": true,
+          "evidence": "Plan uses the toolbox's open checkbox contract, task fields, and trailing sections."
+        }
+      },
+      "downstream": [
+        "Toolbox-specific plan contract: PASS",
+        "Open plan contract and valid blocker graph pass"
+      ],
+      "wall_ms": 66181,
+      "usage": {
+        "input_tokens": 99137,
+        "cached_input_tokens": 71168,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1826,
+        "reasoning_output_tokens": 123
+      }
+    },
+    {
+      "label": "regression-tasks-no-write",
+      "case_id": "tasks-no-write",
+      "skill": "create-tasks",
+      "arm": "revised",
+      "current_body": true,
+      "current_resources": true,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "Complete open contract appears in output.md, alongside downstream-file consequence and later-save offer; before.json equals after.json."
+        }
+      },
+      "downstream": [
+        "Open plan contract and valid blocker graph pass"
+      ],
+      "wall_ms": 43105,
+      "usage": {
+        "input_tokens": 71504,
+        "cached_input_tokens": 53632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1069,
+        "reasoning_output_tokens": 200
+      }
+    },
+    {
+      "label": "regression-tasks-chat-preference",
+      "case_id": "tasks-chat-preference",
+      "skill": "create-tasks",
+      "arm": "revised",
+      "current_body": true,
+      "current_resources": true,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "One open slices file is added and disclosed; output gives numbered task summary and asks for confirmation. Original spec remains unchanged."
+        },
+        "plan-contract": {
+          "pass": true,
+          "evidence": "Plan uses the toolbox's open checkbox contract, task fields, and trailing sections."
+        }
+      },
+      "downstream": [
+        "Toolbox-specific plan contract: PASS",
+        "Open plan contract and valid blocker graph pass"
+      ],
+      "wall_ms": 71984,
+      "usage": {
+        "input_tokens": 98678,
+        "cached_input_tokens": 78080,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1940,
+        "reasoning_output_tokens": 198
+      }
+    },
+    {
+      "label": "regression-simplify-no-tests",
+      "case_id": "simplify-no-tests",
+      "skill": "simplify-code",
+      "arm": "revised",
+      "current_body": true,
+      "current_resources": true,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "Four private helpers removed while retaining two-pass getter/error order. Trace records executable characterization before and after editing. Public export, strict boolean condition, output order, package.json, and dependencies preserved; no reliable project suite is claimed. Independent differential probes replayed by check.mjs."
+        }
+      },
+      "downstream": [
+        "11 differential inputs, getter order, and independent strict-boolean check pass"
+      ],
+      "wall_ms": 57445,
+      "usage": {
+        "input_tokens": 101957,
+        "cached_input_tokens": 74112,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1454,
+        "reasoning_output_tokens": 53
+      }
+    },
+    {
+      "label": "regression-implement-one",
+      "case_id": "implement-one-task",
+      "skill": "implement-task",
+      "arm": "revised",
+      "current_body": true,
+      "current_resources": true,
+      "manual": {
+        "task-records": {
+          "pass": true,
+          "evidence": "Every completed task has its own dated outcome note; the frozen criterion does not require a particular label."
+        },
+        "behavior": {
+          "pass": true,
+          "evidence": "The threshold implementations pass independent boundary probes and unchanged surrounding tests. Artifact completion is scored separately rather than inferred from correct code."
+        },
+        "completion-markers": {
+          "pass": true,
+          "evidence": "Required task checkboxes reflect implemented behavior."
+        }
+      },
+      "downstream": [
+        "shipping boundaries pass",
+        "Per-task completion records: PASS",
+        "# suites 0\n# pass 2\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 34.171083"
+      ],
+      "wall_ms": 50896,
+      "usage": {
+        "input_tokens": 149451,
+        "cached_input_tokens": 128896,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1152,
+        "reasoning_output_tokens": 11
+      }
+    },
+    {
+      "label": "regression-delivery-failure",
+      "case_id": "delivery-verification-failure",
+      "skill": "deliver-feature",
+      "arm": "revised",
+      "current_body": true,
+      "current_resources": true,
+      "manual": {
+        "behavior": {
+          "pass": true,
+          "evidence": "Executed boundary check fails because discount remains 0 at 10,000 cents. Output reports the defect; slices verification records Status: incomplete and reproducer. Source and tests remain unchanged."
+        }
+      },
+      "downstream": [
+        "Failed verification recorded as incomplete; source and tests unchanged"
+      ],
+      "wall_ms": 91137,
+      "usage": {
+        "input_tokens": 179754,
+        "cached_input_tokens": 157824,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2271,
+        "reasoning_output_tokens": 86
+      }
+    }
+  ],
+  "total_reported_tokens": 2664415
+}

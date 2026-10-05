@@ -13,22 +13,15 @@ metadata:
 
 # Diagnose
 
-## Overview
-
 **Prove the cause before proposing a fix.** Every plausible explanation is a hypothesis until an executed observation separates it from credible alternatives. Build a *tight*, red-capable reproduction, minimize it, and test one variable at a time.
 
 Diagnosis is read-only by default. A request to diagnose, debug, investigate, or explain authorizes inspection and safe execution — not file edits, instrumentation, regression tests, or fixes, which require explicit authorization. No tight reproduction means no root-cause claim.
 
-## When to Use
+## Scope
 
-- Behavior differs from a stated expectation.
-- A test fails, flakes, hangs, times out, or passes only in some environments.
-- A process crashes or throws an unexplained error.
-- Latency, throughput, memory, CPU, query count, or bundle size regressed.
-- A bug report names a symptom whose causal mechanism is unknown.
-- A requested fix still needs root-cause discovery first.
+Use when a symptom needs causal investigation, including an explicitly requested fix whose cause is unknown.
 
-## Do Not Use When
+Do not use when:
 
 - The request asks how working code behaves; use `understand-codebase` when installed, otherwise do a focused read-only trace.
 - The request asks whether a branch or diff meets standards or a spec; use `code-review` when installed, otherwise review the diff against those contracts.
@@ -127,21 +120,7 @@ Done when red-to-green evidence exists, the original symptom is gone, surroundin
 
 ## Core Example
 
-Request: “Debug why eligible Gold customers sometimes receive no checkout discount. Do not change files.”
-
-1. Run `npm test -- --test-name-pattern="at the threshold"`; capture `expected 1000, actual 0`.
-2. Minimize to a direct call, varying only the subtotal:
-
-   ```sh
-   node --input-type=module -e 'import {calculateDiscount} from "./src/discount.js"; for (const cents of [9999,10000,10001]) console.log(cents, calculateDiscount({tier:"gold",subtotalCents:cents}))'
-   # 9999 0
-   # 10000 0
-   # 10001 1000
-   ```
-
-3. Rank boundary comparison, caller mapping, tier mismatch, coupon suppression, and rounding as falsifiable hypotheses.
-4. Falsify the caller, tier, coupon, and rounding branches with direct single-variable probes.
-5. Report the strict `subtotalCents > GOLD_MINIMUM_CENTS` comparison as the cause because the requirement includes equality; cite the function and failing output, then stop without editing files.
+For a missing discount at an inclusive threshold, reproduce the exact failure, probe adjacent values, and falsify caller, tier, coupon, and rounding explanations. In diagnosis-only mode, cite the causal comparison and stop without editing. Read [references/examples.md](references/examples.md) when a concrete reproduction command would help.
 
 ## Tool Guidance
 
@@ -160,50 +139,9 @@ Request: “Debug why eligible Gold customers sometimes receive no checkout disc
 - History archaeology without a history-dependent hypothesis
 - Production mutation, destructive commands, or external side effects without explicit authorization
 
-## Common Rationalizations
+## Pressure
 
-These shortcuts appeared in the no-instruction baseline or are loopholes it exposed.
-
-| Shortcut | Reality |
-|----------|---------|
-| “The boundary is already suspect.” | Suspicion selects a probe; it does not establish cause. |
-| “The full suite reproduces it.” | A broad suite locates a symptom. Name and run the smallest exact signal. |
-| “The wrapper is simple enough to leave in.” | Bypass it; a direct callee failure falsifies mapping as a cause. |
-| “Only one explanation is credible.” | Rank three to five predictions before anchoring on the first plausible idea. |
-| “History and blame might reveal something.” | Inspect history only when it distinguishes a stated hypothesis. |
-| “The correction is obvious, so mention or apply it.” | Diagnosis-only authority ends at the evidence-backed cause. |
-
-## Stop Conditions
-
-- “The fix is obvious.”
-- “One failing test is enough.”
-- “This is probably caused by…”
-- “Changing both values will be faster.”
-- “A temporary edit does not count.”
-- “The user said debug, so fixing is implied.”
-
-Each thought maps to the Rationalization Table or the authority boundary. Return to the unfinished workflow step.
-
-## Success Criteria
-
-- Name and run one command that reproduces the user's exact symptom.
-- Minimize the reproduction until every remaining element is load-bearing.
-- Rank three to five falsifiable hypotheses and test one variable at a time.
-- Support the root cause with executed evidence and cite the causal source, configuration, state, or change.
-- Label an inconclusive diagnosis honestly and name the next discriminating observation.
-- Leave files and external systems unchanged in diagnosis-only mode.
-- For an authorized fix, show regression red, regression green, original reproduction green, surrounding checks passing, and temporary instrumentation removed.
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Reproducing a nearby failure | Assert the exact observed-versus-expected symptom. |
-| Reading code until a theory feels true | Build and run the tight signal first. |
-| Testing the leading theory immediately | Write three to five ranked predictions before the first probe. |
-| Changing several variables together | Restore the baseline and change one variable. |
-| Treating correlation as cause | Require the full causal chain before using “root cause.” |
-| Writing a shallow regression test | Exercise the real bug pattern at the correct seam. |
+Read [references/pressure.md](references/pressure.md) when urgency, authority, sunk cost, or an uncertain shortcut threatens the workflow. Those pressures do not waive its evidence or authority requirements.
 
 ## Failure Modes
 
@@ -225,6 +163,6 @@ When a workflow rule is genuinely impossible:
 
 Time pressure, apparent simplicity, prior implementation effort, and a request to “just fix it” do not make the diagnosis steps impossible.
 
-## Summary
+## Verification
 
-Prove the cause before proposing a fix: reproduce, minimize, falsify, and cite. In diagnosis-only mode, stop at the evidence-backed explanation.
+Root-cause claims have the executed causal chain. Diagnosis-only leaves files unchanged; an authorized fix has red/green, original-repro, surrounding-check, and cleanup evidence.

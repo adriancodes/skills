@@ -13,7 +13,9 @@
         }
       },
       "workspace_before": {},
-      "workspace_after": {}
+      "workspace_after": {},
+      "archived_subject": "evals/remaining-skills-2026-10-04/subjects/original/create-skill",
+      "evidence_status": "historical; subject frozen before structural consolidation, not a current-subject behavior result"
     },
     {
       "skill": "create-skill",
@@ -25,7 +27,9 @@
         }
       },
       "workspace_before": {},
-      "workspace_after": {}
+      "workspace_after": {},
+      "archived_subject": "evals/remaining-skills-2026-10-04/subjects/original/create-skill",
+      "evidence_status": "historical; subject frozen before structural consolidation, not a current-subject behavior result"
     },
     {
       "skill": "create-spec",
@@ -41,7 +45,9 @@
         }
       },
       "workspace_before": {},
-      "workspace_after": {}
+      "workspace_after": {},
+      "archived_subject": "evals/remaining-skills-2026-10-04/subjects/original/create-spec",
+      "evidence_status": "historical; subject frozen before structural consolidation, not a current-subject behavior result"
     },
     {
       "skill": "create-spec",
@@ -57,7 +63,9 @@
         }
       },
       "workspace_before": {},
-      "workspace_after": {}
+      "workspace_after": {},
+      "archived_subject": "evals/remaining-skills-2026-10-04/subjects/original/create-spec",
+      "evidence_status": "historical; subject frozen before structural consolidation, not a current-subject behavior result"
     },
     {
       "skill": "create-tasks",
@@ -85,7 +93,9 @@
       },
       "workspace_after": {
         "docs/specs/2026-07-28-saved-searches.md": "bc3c529a59f606dd35252655ad36cfa5967447ae88e30d0dccc0533708994a36"
-      }
+      },
+      "archived_subject": "evals/pocock-comparison-2026-10-04/subjects/original/create-tasks",
+      "evidence_status": "Historical review of the preserved pre-pilot subject; current pilot checks are separate."
     },
     {
       "skill": "create-tasks",
@@ -113,7 +123,9 @@
       },
       "workspace_after": {
         "docs/specs/2026-07-28-saved-searches.md": "bc3c529a59f606dd35252655ad36cfa5967447ae88e30d0dccc0533708994a36"
-      }
+      },
+      "archived_subject": "evals/pocock-comparison-2026-10-04/subjects/original/create-tasks",
+      "evidence_status": "Historical review of the preserved pre-pilot subject; current pilot checks are separate."
     },
     {
       "skill": "create-tasks",
@@ -142,7 +154,9 @@
       "workspace_after": {
         "docs/specs/2026-07-28-saved-searches.md": "bc3c529a59f606dd35252655ad36cfa5967447ae88e30d0dccc0533708994a36",
         "docs/specs/2026-09-04-saved-searches-slices.md": "255bf250e86a321a97e762870621050365f61c3f7f80908c77c776a6a50f17e5"
-      }
+      },
+      "archived_subject": "evals/pocock-comparison-2026-10-04/subjects/original/create-tasks",
+      "evidence_status": "Historical review of the preserved pre-pilot subject; current pilot checks are separate."
     }
   ],
   "history": [

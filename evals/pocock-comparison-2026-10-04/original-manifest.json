@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-04",
+  "frozen_subjects": {
+    "subjects/matt/create-tasks/SKILL.md": "5c9fba69845c2519b9b35b9af42ae5142c21f8ca15ac2123dc2722002c8058ae",
+    "subjects/matt/deliver-feature/SKILL.md": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3",
+    "subjects/original/create-tasks/SKILL.md": "ffe3f85e75cdf204f831363107b7c6965da9cd304b43c8b7b50323fa08caebd2",
+    "subjects/original/deliver-feature/SKILL.md": "2d9ac2922010cbde150a642d328ba436000d4aa61d4b684843179555de8e3c4e",
+    "subjects/original/implement-task/SKILL.md": "378c97b5af46475fe22807c21b2a72b7bce071110e910ed1be5a41007fe23d93",
+    "subjects/original/simplify-code/SKILL.md": "39aedaf0c9d32d0d1dc0b12992b482ae848fdb214bfb83cb5d9cd16f5b25928f"
+  }
+}

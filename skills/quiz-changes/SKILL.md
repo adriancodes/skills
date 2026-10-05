@@ -14,17 +14,13 @@ metadata:
 
 # Quiz Changes
 
-## Overview
-
 Use retrieval practice to expose gaps in an engineer's understanding. Ask one adaptive question at a time. Require an answer before explaining. Test the human, never the code. End with advisory readiness notes, never a gate.
 
-## When to Use
+## Scope
 
-- "quiz me on these changes", "test my knowledge", "do I actually understand this"
-- Before opening a PR containing substantial AI-generated code
-- A focus is welcome: "quiz me on the retry logic" narrows the session to it
+Use to test an engineer's understanding of pending changes within their stated focus.
 
-## Do Not Use When
+Do not use when:
 
 - No pending changes exist: for general codebase comprehension, use `understand-codebase` (if installed)
 - The code needs judging: use `code-review`. This skill tests whether the human understands code that is staying.
@@ -81,26 +77,6 @@ Use retrieval practice to expose gaps in an engineer's understanding. Ask one ad
 - Never edit, fix, or comment on the code under quiz.
 - Put probable bugs in the read-back and leave fixes to the engineer.
 
-## Success Criteria
-
-- Every question passes the lookup test — none is answerable by re-reading the diff text
-- Exactly one question per message; no answer revealed before an attempt
-- Every grade cites code evidence; executed predictions show real output
-- At least one harder follow-up was asked in each missed area
-- The read-back maps every miss to a specific reread and stays advisory
-- The deck file exists only if the engineer accepted the offer
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Trivia the diff answers ("what is the function called?") | Apply the lookup test; replace with a counterfactual or trace |
-| Dumping the full question list | One question per message; wait |
-| Grading a wrong answer as "close enough" | Score it a miss, show the deciding lines, follow up harder |
-| Marching to the next topic after a miss | One harder follow-up in the same area first |
-| Verdict language ("not ready", "failed") | Advisory read-back with rereads; the engineer decides |
-| Fixing the bug a question exposed | Read-only: name it in the read-back, leave the code alone |
-
 ## Failure Modes
 
 - **No pending changes:** say so and point to `understand-codebase` (if installed) for general comprehension; do not quiz the whole repository.
@@ -108,6 +84,6 @@ Use retrieval practice to expose gaps in an engineer's understanding. Ask one ad
 - **The engineer requests all questions and answers:** name the retrieval cost in one sentence. Then provide a self-contained quiz with answers at the bottom.
 - **A question exposes a probable bug:** finish the session. Put the bug first in the read-back. Label it for `code-review` or the engineer.
 
-## Summary
+## Verification
 
-One question per message, answer before explanation, evidence in every grade, a harder follow-up behind every miss. End with an advisory read-back that maps each gap to a reread, offer the flashcards, and never touch the code.
+Questions require reasoning, answers precede explanations, and grades cite code. Readiness stays advisory; deck writes require acceptance.

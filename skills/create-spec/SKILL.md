@@ -14,19 +14,13 @@ metadata:
 
 # Create Spec
 
-## Overview
-
 Turn a plan into a confirmed spec. Ask one question at a time. Record each decision as it resolves. Update the glossary when terms clarify. Create ADRs only for durable architecture choices. Nothing is confirmed before the final read-back.
 
-## When to Use
+## Scope
 
-- A plan exists but its requirements are unstated: "spec this plan", "pin down the requirements", "stress-test this", "poke holes in it"
-- The conversation already holds the answers and needs writing down: "write this up as a spec", "capture what we decided" (capture mode: step 3)
-- Requirements are vague, assumption-laden, or keep being relitigated from scrollback
-- A design conversation is producing decisions nobody writes down
-- A previous spec session was interrupted: a log in `docs/specs/` still has `status: open`
+Use to pin down requirements, stress-test a plan, capture prior decisions, or resume an open spec.
 
-## Do Not Use When
+Do not use when:
 
 - The user wants a quick fact or one-shot opinion: answer directly
 - Only the wording needs work, not decisions: use `improve-prompt` when installed; never turn copy-editing into a spec session
@@ -84,13 +78,7 @@ Load `references/artifacts.md` before creating the decision log.
 
 ## Example: one question cycle
 
-> **Q (via option UI):** Where should notification state live?
-> 1. **New `notifications` table (recommended)**: survives restarts; the poller needs durable cursor state anyway.
-> 2. **Redis**: no migration and the cheapest writes; right when losing unread state on a cache restart is acceptable.
->
-> **User picks 1.** **Probe:** "A user has 40,000 unread notifications: does the bell show 40000, 99+, or cap the query?" **User:** "Cap at 99+."
->
-> **Appended to log:** `3. **Storage**: new notifications table; unread badge capped at 99+. _Why:_ durability beats write cost; unbounded counts break the navbar.`
+A storage choice and an unread-count policy are separate decisions. Ask about storage first, record the answer, then probe the count boundary in the next turn. Read [references/examples.md](references/examples.md) when calibrating an interview turn.
 
 ## Tool Guidance
 
@@ -101,55 +89,15 @@ Load `references/artifacts.md` before creating the decision log.
 - Never batch questions, even when many branches are open
 - State a rule once, then proceed with the compliant behaviour; never lecture
 
-## Success Criteria
+## Pressure
 
-- Every question asked singly, each carrying a recommended answer with a reason
-- Every resolved decision in the log, appended at resolution time, not reconstructed at the end
-- Zero open branches at the gate; user confirmation recorded verbatim in the log
-- No non-document file created or modified before `status: confirmed`
-
-## Common Rationalizations
-
-Each excuse was observed verbatim in baseline testing without this skill loaded.
-
-| Excuse | Reality |
-|--------|---------|
-| "Every question I ask is a cost I'm imposing on a user in a hurry" | One question per turn costs seconds; a wrong schema costs a migration. Hurry raises the stakes of asking, not the case for skipping. |
-| "They said the plan is basically solid: validate, don't interrogate" | "Solid" is the claim under test. Agreeing with it is not testing it. |
-| "Listing my assumptions as I go is effectively the same as asking" | Stated is not confirmed. Assumptions enter the log as ASSUMED and are read back at the gate; they never self-ratify. |
-| "They said 'then build it', so pausing for confirmation disobeys them" | The instruction authorises building *after* the gate. The gate is one turn, not disobedience. |
-| "'Yeah fine' / 'whatever you think' lets me choose product policy" | A specific affirmative decides one offered option; blanket delegation covers only reversible implementation defaults. Product-shaping branches stay Deferred until decided. |
-| "The chat history already records everything; a file is overhead" | Scrollback dies with the session. The log survives it: that is its entire job. |
-| "A wrong assumption can be refactored later" | True for code; false for the schema, contract, and naming decisions spec sessions exist to settle. |
-
-## Stop Conditions
-
-These thoughts signal imminent violation; each maps to a table entry above:
-
-- "I have enough context to start building"
-- "Batching the remaining questions saves time"
-- "These all have obvious defaults"
-- "Silence is agreement"
-- "I'll write the docs once decisions settle"
-
-All of them mean: return to the current workflow step.
+Read [references/pressure.md](references/pressure.md) when urgency, authority, sunk cost, or an uncertain shortcut threatens the workflow. Those pressures do not waive its evidence or authority requirements.
 
 ## Genuine Exceptions
 
 - **"Just decide for me."** Decide reversible implementation defaults and mark them ASSUMED. Keep product policy Deferred. Resolve it before confirmation.
 - **"Skip the read-back, build now."** An unsolicited explicit override may bypass the gate. Record the words verbatim. Set `status: confirmed-by-override` and proceed.
 - **No file-write access.** Keep the log in-conversation as a fenced block the user can save; every other rule still applies.
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Two questions in one turn | Ask the upstream one; the other waits |
-| Asking what a file could answer | Explore first; record the found answer in the log |
-| Glossary filling with general programming terms | Domain terms only; delete the rest |
-| Every decision offered as an ADR | Run the three-part test; the log is the default home |
-| Ending on "sounds good" | Not the gate: read back the numbered list and get explicit confirmation |
-| Scaffolding "just the obvious parts" before the gate | No building means none: no scaffolds, drafts, or "starting points" |
 
 ## Failure Modes
 
@@ -161,6 +109,6 @@ All of them mean: return to the current workflow step.
 
 - **`references/artifacts.md`**: formats and rules for the decision log, glossary, and ADR, including the ADR three-part test. Loaded at session open (see Workflow).
 
-## Summary
+## Verification
 
-Ask one question per turn and record decisions as they resolve. Do not treat the spec as confirmed until the user approves the read-back.
+Decisions are recorded on resolution. Confirmation or its explicit override is recorded. No build-blocking branch remains Deferred and no implementation precedes the gate.

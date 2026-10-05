@@ -1,0 +1,13 @@
+{
+  "delivery/A": "prompt-delivery",
+  "delivery/B": "matt-delivery",
+  "delivery/C": "original-delivery-isolated",
+  "delivery/D": "revised-delivery-references",
+  "planning/A": "prompt-tasks",
+  "planning/B": "original-tasks-isolated",
+  "planning/C": "revised-tasks-references",
+  "planning/D": "matt-tasks",
+  "simplification/A": "revised-simplify",
+  "simplification/B": "original-simplify-isolated",
+  "simplification/C": "prompt-simplify"
+}

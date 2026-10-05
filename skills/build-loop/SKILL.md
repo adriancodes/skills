@@ -14,17 +14,13 @@ metadata:
 
 # Build Loop
 
-## Overview
-
 A loop discovers work, acts, verifies, records state, and chooses the next move. Build four portable artifacts: `LOOP.md`, `STATE.md`, a loop prompt, and a rollout plan. Add a runner adapter only for a concrete runner. Never give credentials to a bare "keep going" prompt. The maker never verifies completion. Start every loop report-only.
 
-## When to Use
+## Scope
 
-- "build a loop", "run this on a schedule", "keep CI green automatically", "continuous self-directed cycle"
-- A recurring job is re-prompted by hand every session
-- An existing loop misbehaves: token burn, the same failed fix retried forever, duplicate branches, silent stalls
+Use for recurring or unattended work, including repairing an existing loop.
 
-## Do Not Use When
+Do not use when:
 
 - The job runs once: a plain session (ending with `verify-work`, if installed) beats a one-iteration loop
 - The "loop" is multi-step work inside one session: that's a todo list, not a loop
@@ -95,38 +91,9 @@ Add the missing guards. Create `LOOP.md` or `STATE.md` when absent. Demote the l
 > **Breaker:** same failure signature two runs running → escalate, both attempt diffs linked from STATE.md.
 > **Endings:** green+verified → *verified-done* · fix pushed as PR → *progress, state written* · breaker tripped → *escalated*.
 
-## Common Rationalizations
+## Pressure
 
-Provenance: a self-report baseline probe. These excuses recur under mid-run pressure.
-
-| Excuse | Reality |
-|--------|---------|
-| "CI is the source of truth: no state file needed" | CI stores results, not intent: run 2 re-diagnoses from scratch, duplicates branches, abandons run 1's PR. The spine records what was *tried*. |
-| "Each run is idempotent: re-running is harmless" | Harmless on green; on red, two overlapping runs fight over the same fix. Lock plus ledger. |
-| "The tests are the verifier" | The loop can edit the tests. Fresh eyes verify: a different agent, or the human at the gate. |
-| "Auto-merge waits for checks: that's my safety net" | A gate the loop can satisfy itself is no gate. The human gate names what never merges alone. |
-| "It's low-stakes plumbing; report-only is overkill" | Every loop is born L1. A week of reports proves "low-stakes" instead of assuming it. |
-| "Cost is near zero on green runs" | Budget the red weeks, not the green days: worst-case run × cadence, written down first. |
-
-## Success Criteria
-
-- Goal written as an externally verifiable condition with an anti-gaming clause
-- `LOOP.md` holds all four guards.
-- Monetary cost is numeric or explicitly unknown.
-- `STATE.md` contains the three required sections.
-- The loop is born L1 with promotion counts, and the human gate names at least one gated outcome
-- Every run's ending is one of the three states by construction
-- The loop prompt and rollout plan exist; when a concrete runner exists, its adapter and run-one command exist too
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| "Keep going until done" as the whole design | The five-phase run and three endings, written in LOOP.md |
-| Verifier is the maker rereading its work | Different agent with different instructions, or the human gate |
-| Schedule chosen before cost | Budget math first; cadence follows from it |
-| State written only on success | Written before every exit: the failure notes are the ledger |
-| Broad credentials "to be safe" | The loop gets the tools its L-level needs, nothing ahead of promotion |
+Read [references/pressure.md](references/pressure.md) when urgency, authority, sunk cost, or an uncertain shortcut threatens the workflow. Those pressures do not waive its evidence or authority requirements.
 
 ## Failure Modes
 
@@ -138,6 +105,6 @@ Provenance: a self-report baseline probe. These excuses recur under mid-run pres
 
 - **`references/loop-formats.md`:** templates, cadence patterns, cost classes, and runner mappings. Load before writing any artifact.
 
-## Summary
+## Verification
 
-A safe loop has a verifiable goal, independent verification, persisted state, numeric guards, and a report-only first stage. Do not automate it until those controls work.
+Confirm the goal, four guards, state spine, independent verification, L1 rollout, and runnable handover. Unknown pricing leaves scheduling disabled.

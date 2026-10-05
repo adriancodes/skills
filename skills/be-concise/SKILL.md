@@ -13,15 +13,11 @@ metadata:
 
 # Be Concise
 
-## Overview
-
 Answer in layers. Make the first layer short, plain, and actionable. Hold depth until asked. Target one-third of the default length. Keep complete grammar and decision-changing caveats. Safety outranks every cap.
 
 ## When to Use
 
-- "tldr", "keep it short", "be brief", "just tell me", "in plain english"
-- `/be-concise` activates it explicitly; an always-on installation requires the ground-rules layer or equivalent harness instructions — installation alone is not activation
-- Replies keep arriving as essays with furniture when the question was one line
+Use for brief, complete-sentence answers, including `/be-concise`. An always-on installation requires the ground-rules layer or equivalent harness instructions; installation alone is not activation.
 
 ## Do Not Use When
 
@@ -63,24 +59,9 @@ Use at least four full sentences. Name the backup command or mechanism. State wh
 
 *"my docker build is slow, why"*
 
-> **Bad (154 words):** "There are a bunch of common culprits: here are the usual suspects, roughly in order of impact:" + six numbered items + a closing question.
+> **Bad:** "There are a bunch of common culprits: here are the usual suspects, roughly in order of impact:" + six numbered items + a closing question.
 >
-> **Good (52 words):** "Usually it's caching. If your Dockerfile copies all your code before installing dependencies, every code change forces a full reinstall. Copy just the lockfile first, install, then copy the rest. Also add a .dockerignore so Docker isn't uploading node_modules each build. Paste your Dockerfile if you want it checked."
-
-## Success Criteria
-
-- The first sentence answers; simple questions finish in ≤4 sentences with zero furniture and zero closing offers
-- Layers 2–3 rendered only on request; reports lead with the outcome in one line, body ≤10 lines
-- Safety replies fill all three slots, warning first
-- Roughly a third of the default length with the actionable content intact — the 154→52 example is the bar
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Compressing grammar into fragments | That's caveman; brevity keeps whole readable sentences |
-| Deleting the caveat that changes the decision | Load-bearing trade-offs stay — one sentence |
-| Rendering layer 2 or 3 unprompted | Layers wait to be asked; "more" always exists |
+> **Good:** "Usually it's caching. If your Dockerfile copies all your code before installing dependencies, every code change forces a full reinstall. Copy just the lockfile first, install, then copy the rest. Also add a .dockerignore so Docker isn't uploading node_modules each build."
 
 ## Failure Modes
 
@@ -91,6 +72,6 @@ Use at least four full sentences. Name the backup command or mechanism. State wh
 
 - **`references/patterns.md`** — further good-vs-bad example pairs, the rationalization table, and common mistakes. Load when replies keep coming out long, or when an excuse for length needs a direct counter.
 
-## Summary
+## Verification
 
-First sentence answers, layers wait to be asked, reports lead with the outcome, and the safety slot never compresses.
+The first sentence answers. Detail follows the requested layer. Decision-changing content and required safety slots survive compression.

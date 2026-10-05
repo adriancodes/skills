@@ -1,0 +1,13 @@
+{
+  "subjects": {
+    "skills/deliver-feature/SKILL.md": "6f3150ca1cd9683c47b502dcd743193321a96f8e9802a9dd485af625c694f223",
+    "skills/deliver-feature/references/stages.md": "551899b7954ef022f488f310c06bbed683d305899d78f3659e57ab329bf9f865",
+    "skills/create-tasks/SKILL.md": "7700ba0ef966ce6e5032935f1e4410670cf599f3a44285ccfbe27ba727aadf80",
+    "skills/create-tasks/references/slices-contract.md": "3b6fd6e10822a28b8b8eba48f0b481063627c3f86067c794e59bcbda3f62a1d8",
+    "skills/simplify-code/SKILL.md": "790f3aa374b2765e3974fcd9984e1eebe056b09319ef106d1de6dbdff7df5f45",
+    "skills/implement-task/SKILL.md": "85422dba3b2e48c9a3061a314c74deb159e66f5564cfdcf48c9e585b996ffac1"
+  },
+  "cases_sha256": "93ed7afa09d3bf809465930f1ce28749793b3d88e961124569755579bffc0b9b",
+  "runner_sha256": "1a5a49829a02b6e831032c2d0f7e93bdc60b345ab2580772d0b4c64343158510",
+  "failure_case_sha256": "0a161635a5d0eec3e5a147dd69b2466cc1a89badbfc0a3646df0c26f6410ec90"
+}

@@ -14,100 +14,72 @@ metadata:
 
 # Implement Task
 
-## Overview
+Build one bounded task to its written acceptance criterion. For changed production behavior, observe a valid failing check before implementation. Record completion before reporting it.
 
-Implement one recorded slice per session. Stay inside its bound. Completion requires a successful demo and a ticked slices file. Green tests alone are insufficient.
+## Scope
 
-## When to Use
+Use for one named task, the next unblocked slice, or a task whose completion record has fallen behind its code.
 
-- "implement slice N", "build the next slice", "keep working through the slices"
-- A slices file exists (from `create-tasks` or hand-written) with an unblocked, unticked slice
-- Slices keep getting coded while the slices file silently rots
+Read the slices file and linked spec. Use the named task, otherwise the first unblocked unfinished task. A delivery coordinator may invoke this workflow again for the next task covered by the user's request.
 
-## Do Not Use When
-
-- No slices file exists: use `create-tasks` when installed. Otherwise write demoable, session-sized pieces. Build directly only when the work truly fits one session.
-- More than one slice is wanted: one invocation, one slice; the next gets a fresh session
-- The slice needs replanning: change the slices file first. Reopen spec decisions through a new superseding entry with the user's approval.
-
-## Required Context
-
-- The slices file and linked spec, read in full before code.
-- Each slice needs Layers, Bound, Demo, and Blocked-by fields.
-- The file needs `status:`, `## Confirmation`, and `## Verification`.
-- The target slice: the one named, else the first unblocked unticked slice
-- The repo's test and build commands
+For several tasks, use `deliver-feature` when installed. Otherwise repeat this workflow in dependency order within the authorized scope. If no plan exists, create one only when the work needs decomposition; build a small, clear task directly.
 
 ## Workflow
 
-1. **Anchor.** Read the slices file and linked spec. Check every blocker. If one is open, stop and name it. Restate the slice's layers, demo, and bound.
+1. **Read the contract.** Check the spec's confirmation, task bounds, demo, blockers, and current worktree. Honor repository path overrides.
 
-   Done when the restatement is in the conversation.
+   Stop dependent work when a blocker is incomplete. State the target task and bound. Preserve user-authored and pre-existing work.
 
-2. **Encode the demo as a failing check.** Write a test or executable check before implementation. Make it express the demo criterion. Run it and observe the intended failure. Follow `tdd` when installed. Without it, preserve the same red-first order.
+   Done when the task is confirmed, unblocked, and bounded.
 
-   Done when the check fails for the right reason.
+2. **Encode the acceptance check.** For changed production behavior, write the test first. Run it and observe the intended behavioral assertion fail. Use `tdd` when installed; otherwise retain that red-first order.
 
-3. **Build inside the bound.** Treat `Bound` as authoritative. `Layers` describes coverage, not permission to touch every file. Record adjacent work for a later slice.
+   For documentation, formatting, or mechanical changes without a behavior effect, use proportionate existing checks. Record why a failing behavior test is inapplicable. Repair broken test setup instead of counting it as red.
 
-   When reality contradicts the bound, stop. Correct the slices file before code. The correction may shrink or clarify this slice. Put new scope in a fresh slice. If the demo needs that new scope, narrow the demo or stop at a clean seam. Urgency never expands the active slice.
+   Done when valid red is observed or a non-behavioral verification choice is recorded.
 
-   Done when the check passes and every changed surface is inside `Bound`.
+3. **Implement inside the bound.** Make the smallest change that satisfies the unchanged check. Treat `Bound` as permission; `Layers` describes coverage only. Record adjacent work for a later task.
 
-4. **Run the demo literally.** Execute the written criterion. Then run focused tests and the full suite once.
+   When evidence contradicts the plan, record a correction before code relies on it. Clarify or shrink the active bound. Put expanded scope in a new task; ask before changing confirmed behavior or scope. Leave incomplete work unticked.
 
-   Done when the demo is observed and both test levels pass.
+   Done when the check passes and every changed surface belongs to the active task.
 
-5. **Verify hostile surfaces.** For scripts, configs, parsers, prompts, or similar artifacts, run `verify-work` when installed. Pass explicit authority for fixes inside the bound. Stop before any fix that expands it. Without `verify-work`, execute at least 3 hostile cases: empty, malformed, and boundary.
+4. **Run the acceptance criterion.** Execute the written demo literally. Run focused tests and the affected package or subsystem suite. Run the full suite when proportionate and available; name unrun checks.
 
-   Done when scope-bound fixes pass re-attack. Otherwise leave the slice unticked and record residual findings.
+   For scripts, configurations, parsers, or rule documents, use `verify-work` when installed. Pass along only existing in-scope fix authority. Otherwise execute applicable adversarial cases against the changed promise, including empty, malformed, and boundary inputs when meaningful.
 
-6. **Tick before telling.** After steps 4 and 5 pass, tick the slice. Add a dated one-line outcome note. Report the slice, demo, suites, hostile checks, changed files, and later notes. Commit when the repository commits per work unit.
+   If the exact demo cannot run, use the closest executable observation and record the weaker evidence. Leave the task incomplete when its acceptance promise is unproven.
 
-   Done when the file shows the tick and the report links it. Failed verification leaves the slice unticked.
+   Done when the acceptance criterion and applicable surrounding checks pass.
 
-## Example: the two orderings
+5. **Record before reporting.** Tick the task only after verification. Add `Done: <date>: <one-line outcome>`. Clear or supersede whole-feature verification invalidated by these edits.
 
-> **Baseline order (forbidden):** endpoints → UI wiring → test written against finished code → passes first run → "done, tests green."
-> **This skill's order:** failing badge test → implementation → observed demo → hostile checks → file tick → report.
+   Report the task, observed demo, commands, changed files, and remaining work. Commit only when authorized by the request or binding repository workflow.
 
-## Common Rationalizations
+   Done when the completion record matches the demonstrated result.
 
-The usual ways implementation escapes its slice's bound.
+## Example
 
-| Excuse | Reality |
-|--------|---------|
-| "While I'm in this file anyway, I'll wire the other event source: two lines" | Those are the next slice's two lines. Note them there; the bound holds. |
-| "I'll add mark-all-read too, it's basically the same handler" | "Basically the same" turns a two-endpoint slice into four. The bound names two. |
-| "The demo is obvious from the code; no need to click through" | Obvious demos fail on the seam nobody typed: run it, watch it. |
-| "Tests are green, so the demo criterion is effectively satisfied" | The test is the criterion *encoded*; the demo is the criterion *executed*. Both, in that order. |
-| "I'll tick the slices file at the end" | "The end" is after the report, which is never. Tick before telling. |
+Task 2 adds mark-read behavior for an existing notification list. Its bound names two endpoints, the list interaction, and focused tests. Observe a failing unread-count assertion first. Implement the two endpoints and interaction. Run the written “badge 1 → mark-read → badge 0” demo. Tick task 2 after checks pass; leave an unrequested event source for its own task.
 
-## Success Criteria
+## Pressure checks
 
-- The demo-criterion check existed and failed before implementation code
-- Zero changes outside the slice's bound.
-- Record any bound correction before code relies on it. Never build an expansion in the same session.
-- The demo criterion was literally executed and observed
-- Relevant tests and the full suite passed
-- Hostile-input verification passed or was explicitly inapplicable
-- The slices file is ticked with an outcome note before the final message
+| Shortcut | Required action |
+|---|---|
+| “The neighboring handler is only two lines.” | Keep it outside this task unless the bound includes it. |
+| “Tests are green, so the demo is obvious.” | Execute the written acceptance criterion. |
+| “Write the test after this small change.” | Observe valid red first for production behavior. |
+| “I'll tick the plan after the report.” | Update the completion record first. |
+| “Urgency lets the bound expand.” | Correct the plan and obtain any missing scope decision. |
 
-## Common Mistakes
+Follow the workflow silently. When a step is genuinely blocked, name the evidence, use the closest valid alternative, and state its limitation.
 
-| Mistake | Fix |
-|---------|-----|
-| Starting from the slice title alone | Read the slices file and the spec it links, in full |
-| Test written after the code | Delete it as evidence; red first (step 2) |
-| Bound violation reported as a bonus | It's a plan defect: slices file first, then code |
-| "Done" in chat, `[ ]` in the file | The file is the pipeline's state; chat is not |
+## Verification
 
-## Failure Modes
+- Changed production behavior has valid red-to-green evidence.
+- The patch stays inside the confirmed task bound.
+- The demo and applicable checks actually ran.
+- Unproven acceptance leaves the task unticked.
+- The plan records completion before the final report.
 
-- **A blocker is unticked:** stop and name it; the blocker's slice comes first.
-- **The demo cannot run:** use the closest executable observation. Label the substitution in the outcome note. Never silently downgrade to "tests pass."
-- **The slice exceeds one session:** stop at a clean seam. Add the remainder as a new blocked slice. Tick nothing.
-
-## Summary
-
-Implement one bounded slice at a time. Observe the failing test first, run the demo, and tick the slices file before reporting completion.
+Build one bounded task, demonstrate its result, and record the evidence before claiming completion.

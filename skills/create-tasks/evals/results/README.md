@@ -1,3 +1,7 @@
+## Current quality pilot — 2026-10-04
+
+The subject and structure changed in the [confirmed pilot](../../../../docs/specs/2026-10-04-skill-quality-pilot.md). Current cases and raw runs are preserved in [the comparison suite](../../../../evals/pocock-comparison-2026-10-04/). Results below remain scoped to their recorded pre-pilot subjects; they do not validate the current body. The new comparison reports its own outcome and cost limits.
+
 # create-tasks evidence status
 
 Current review corrections: see [the recorded probes and limits](../../../../evals/review-fixes.md). Raw current-subject results are under `review-2026-09-04/`; replay with `node evals/check-review-probes.mjs` from the repository root. These probes do not replace the full declared tier.

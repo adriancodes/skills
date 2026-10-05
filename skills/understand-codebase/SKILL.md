@@ -13,19 +13,13 @@ metadata:
 
 # Understand Codebase
 
-## Overview
-
 Build a *targeted* mental model from inspected evidence, then answer the actual question. Stay read-only: explain the current system without drifting into review, diagnosis, recommendations, or implementation.
 
-## When to Use
+## Scope
 
-- Onboard an engineer to an unfamiliar repository or subsystem.
-- Answer "how does this work?", "where does this happen?", or "what calls this?"
-- Trace a feature, request, job, data flow, dependency, configuration path, or state transition.
-- Establish current-state architecture before a separately requested change.
-- Answer follow-up questions from the mental model already built in this conversation.
+Use for onboarding, current-state questions, feature tracing, or explanation before a separately requested change.
 
-## Do Not Use When
+Do not use when:
 
 - The user explicitly asks for `zoom-out`; that skill provides the higher-level contextual map.
 - Debugging a failure or performance regression: use `diagnose`.
@@ -75,11 +69,7 @@ Follow calls, imports, data, state, configuration, and asynchronous boundaries. 
 
 Maintain an evidence ledger while reading:
 
-| Claim | Evidence | Status |
-|-------|----------|--------|
-| Request validation happens before persistence | `src/http/router.ts` → `createReport` | Confirmed |
-| The queue is durable across restarts | Queue adapter found; deployment config absent | Unknown |
-| Two handlers may share a transaction | Same client is passed through both calls | Inference |
+Record each claim with its evidence and status.
 
 Record files and symbols. Add stable line numbers when available. Mark each claim confirmed, inferred, or unknown.
 
@@ -111,14 +101,7 @@ Do not write repository maps, architecture documents, or notes unless the user s
 
 ## Core Example
 
-Request: "Help me understand this repository."
-
-Ask before inspection:
-
-1. "What is the goal: onboarding, an architecture answer, or preparation for a change?"
-2. "Which feature or area should I use as the starting point?"
-
-If the target is report generation, trace entry, validation, service, storage, queue, and notification effects. Give the main flow first. Cite every transition. Add Mermaid only when it clarifies boundaries. Label unverified deployment behavior unknown. Make no changes or recommendations.
+For report generation, trace the inspected entry, validation, service, storage, queue, and notification symbols. Cite transitions and label unverified deployment behavior unknown. Read [references/examples.md](references/examples.md) for an onboarding example.
 
 ## Tool Guidance
 
@@ -136,26 +119,6 @@ If the target is report generation, trace entry, validation, service, storage, q
 - Guessing runtime behavior from names, types, or folder layout
 - Running commands that mutate files, dependencies, caches, generated output, or external systems
 
-## Success Criteria
-
-- Answer the user's actual question before presenting background.
-- Cite every material behavioral claim to an inspected file and symbol.
-- Trace all relevant synchronous, asynchronous, state, configuration, and test boundaries.
-- Separate confirmed facts, inferences, and unknowns.
-- Use visuals only when they materially improve comprehension; ground every node and edge.
-- Leave the workspace and external systems unchanged.
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Touring the entire repository | Trace only the paths supporting one question. |
-| Answering a vague request immediately | Ask at most two pointed orientation questions, then wait. |
-| Listing files without explaining behavior | Connect cited symbols into a causal path. |
-| Presenting assumptions as architecture facts | Label inference and unknowns explicitly. |
-| Drawing a generic diagram | Include only inspected, cited nodes and edges. |
-| Adding improvement advice | Explain current behavior; leave action to a follow-on task. |
-
 ## Failure Modes
 
 - **No reliable starting seam:** Report what was searched and ask one targeted question that can locate the behavior.
@@ -164,6 +127,6 @@ If the target is report generation, trace entry, validation, service, storage, q
 - **Question requires execution to resolve:** Ask permission for the smallest read-only or safely isolated observation, or leave the claim unknown.
 - **Request crosses into action:** finish the current-state explanation. Then route the new work and stop.
 
-## Summary
+## Verification
 
-Build the smallest evidence-backed mental model that answers the question. Stay read-only, cite the path, distinguish facts from uncertainty, and stop when the explanation is complete.
+Answer the actual question with cited symbols and transitions. Label consequential uncertainty and leave the workspace and external systems unchanged.

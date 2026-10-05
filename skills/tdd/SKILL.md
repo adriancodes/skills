@@ -14,8 +14,6 @@ metadata:
 
 # Test-Driven Development
 
-## Overview
-
 **No new production behavior before an observed, behaviorally valid red test.** Work one *red-green-refactor* tracer bullet at a time. Prove the test detects missing behavior. Write the smallest green change. Refactor only while green.
 
 ## Scope
@@ -162,28 +160,9 @@ export const qualifiesForFreeShipping = (subtotalCents) => subtotalCents >= 5_00
 
 Run the same command green, then the affected suite. A comparator written first followed by a first-run-green test has no red evidence and fails this workflow.
 
-## Common Rationalizations
+## Pressure
 
-| Shortcut | Reality |
-|---|---|
-| “The implementation is tiny; test afterward.” | First-run green does not prove sensitivity to missing behavior. |
-| “Existing tests are green.” | They do not encode the new contract. |
-| “The test failed, so red counts.” | Only the expected behavioral assertion counts. |
-| “A database mock is enough.” | A mock does not prove persistence. |
-| “Reverting code wastes time.” | Restore causal evidence by reverting only premature agent work. |
-| “Refactor while making it pass.” | Reach minimal green first. |
-| “Relaxing the assertion is equivalent.” | The contract controls the expectation. |
-
-## Red Flags
-
-- “Tests can come after this small part.”
-- “Any failure counts as red.”
-- “Keep the implementation nearby as reference.”
-- “Update the snapshot and inspect it later.”
-- “This mock is close enough to the real boundary.”
-- “The deadline overrides test order.”
-
-Return to the unfinished workflow step when any red flag appears.
+Read [references/pressure.md](references/pressure.md) when urgency, authority, sunk cost, or an uncertain shortcut threatens the workflow. Those pressures do not waive its evidence or authority requirements.
 
 ## Genuine Exceptions
 

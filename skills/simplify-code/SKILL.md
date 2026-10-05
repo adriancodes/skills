@@ -12,72 +12,53 @@ metadata:
 
 # Simplify Code
 
-## Overview
-
-**Condense code without changing observable contracts.** Delete before abstracting: remove unjustified code and concepts, keeping the result direct and maintainable.
-
-Simplification intent authorizes editing the requested scope. Ask before expanding it or changing a public API, persisted format, error behavior, or meaningful performance characteristic unless expressly authorized.
+Delete unjustified concepts while preserving observable behavior. Prefer a direct implementation over fewer characters.
 
 ## Scope
 
-Use when:
+Use for explicit requests to simplify working code, remove duplication, or eliminate shallow wrappers and speculative abstractions.
 
-- The user asks to simplify, condense, remove fluff, or reduce complexity.
-- Code contains dead paths, duplication, shallow wrappers, speculative abstractions, or redundant supporting artifacts.
+Simplification authorizes local edits and meaningful verification within the requested scope. Preserve public APIs, persisted formats, errors, and meaningful performance characteristics unless the user authorizes their change.
 
-Do not use when:
-
-- New behavior is required; use `tdd` when installed, otherwise follow the repository's behavior-change workflow.
-- A failure's cause is unknown; use `diagnose`.
-- The request is read-only review; use `code-review`.
-- The goal is architecture direction or codebase-wide realignment; use `engineering-best-practices`.
-- A finished change needs adversarial validation; use `verify-work`.
-
-## Required Context
-
-Read binding instructions, requested files, callers, dependencies, the diff, and tests. Identify exported interfaces, persisted formats, errors, and performance contracts.
-
-When tests are absent, disclose the gap and offer characterization tests. Generate none without approval. Continue only when repository evidence makes behavior concrete. Done when scope, contracts, checks, and ownership are explicit.
+Use `diagnose`, when installed, for unknown failures; otherwise establish the cause first. Use `code-review`, when installed, for read-only assessment. Handle new behavior through the project's implementation workflow. Broad architectural redesign needs a separate scope.
 
 ## Workflow
 
-### 1. Pin the boundary
+1. **Pin the contracts.** Read repository instructions, the requested code, callers, tests, and current diff. Preserve user-authored work. Identify exports, outputs, error behavior, mutation, and persistence that callers rely on.
 
-Define the boundary and contracts. Preserve user-authored work. Ask before changing a contract or crossing the boundary. Done when every proposed edit is in scope and every contract is named or absent.
+   When behavior tests are absent, disclose the gap. Characterize the relevant behavior before editing using existing tools. Add local checks when they meaningfully protect this cleanup. Honor an explicit no-test or no-write restriction; use inline probes where allowed.
 
-### 2. Build a deletion ledger
+   Ask before installing tooling, crossing scope, or selecting an ambiguous behavior contract. Continue unaffected cleanup while a separate decision is pending.
 
-Inspect references and runtime paths. Record removal evidence for each candidate: unreachable use, duplication, pass-through wrapper, single-use abstraction, unnecessary branch, replaceable dependency, stale comment, or duplicate behavior test. Prefer fewer concepts over fewer characters.
+   Done when the cleanup has a known boundary and a preservation check or explicit evidence limit.
 
-Reject candidates that relocate complexity, hide behavior, compress names, or use clever syntax. Done when every candidate has evidence beyond line count.
+2. **Find deletions that earn their keep.** Check references and runtime paths before removing code. Target dead paths, duplicate behavior, pass-through wrappers, single-use machinery, and obsolete supporting artifacts.
 
-### 3. Apply the smallest coherent reduction
+   Keep abstractions that own an invariant or isolate actual variation. Reject changes that hide behavior, obscure names, or relocate complexity.
 
-Edit directly. Delete dead code, inline shallow indirection, collapse equivalent branches, use existing primitives, and remove newly unused artifacts. Retain domain names and abstractions that own an invariant or isolate volatility.
+   Done when each proposed removal has evidence beyond line count.
 
-Keep the patch behavior-preserving and scoped. Present contract changes or broader redesigns separately for approval. Done when no evidenced candidate remains, no unjustified replacement abstraction appears, and no reference dangles.
+3. **Apply the reduction.** Delete dead code, inline shallow indirection, collapse equivalent branches, and reuse existing primitives. Remove newly unused artifacts only within the authorized scope.
 
-### 4. Prove preservation
+   Keep error order, side effects, return shapes, and boundary values intact. Ask before an unrequested contract change. For generated output, change its source or generator instead.
 
-Run focused tests, then affected type, lint, build, or integration checks. Compare contractual exports, outputs, errors, bytes, and performance. Inspect the diff for behavior changes and unrelated cleanup.
+   Done when the scoped reduction is coherent and no reference dangles.
 
-When tests remain absent, run the strongest static and executable checks and label the evidence weaker. Claim no more than the checks prove. Done when every contract has evidence or an explicit limitation.
+4. **Prove preservation.** Run the same characterization checks after editing. Run existing focused tests and affected type, lint, build, or integration checks. Inspect the diff for contract drift and unrelated changes.
 
-### 5. Report the reduction
+   Separate tested behavior from static reasoning. Name missing evidence instead of claiming full preservation from inspection.
 
-Lead with the outcome. Report changed files, checks, and reductions in lines, branches, abstractions, configuration, or dependencies. Done when measurements are separate from judgment and every evidence gap is named.
+   Done when checks pass and each material contract has evidence or a named limitation.
 
-## Core Example
+## Example
 
-Replace a one-use class and factory with the public function callers need:
+A factory constructs a one-use class whose only method normalizes an email and checks a list. After confirming no caller imports the class or factory, preserve the public function and replace the machinery with:
 
 ```js
 import assert from "node:assert/strict";
 
-const normalize = (value) => String(value).trim().toLowerCase();
-
 export function isBlockedEmail(email, blockedEmails) {
-  // Keep normalization at the public comparison boundary.
+  const normalize = value => String(value).trim().toLowerCase();
   const blocked = new Set(blockedEmails.map(normalize));
   return blocked.has(normalize(email));
 }
@@ -86,40 +67,10 @@ assert.equal(isBlockedEmail(" X@Example.com ", ["x@example.com"]), true);
 assert.equal(isBlockedEmail("y@example.com", ["x@example.com"]), false);
 ```
 
-Run with `node blocked-email.mjs`. Preserve the export and results; delete the factory and class only after confirming no caller imports them. This removes concepts without compressing names.
+Run the checks before and after the change. Preserve any additional mutation or performance contract revealed by callers; this example is not permission to change it.
 
-## Success Criteria
+## Verification
 
-- Observable contracts and user-authored work remain unchanged unless explicitly authorized.
-- Every edit stays inside the approved scope.
-- Unjustified concepts or artifacts are measurably reduced.
-- The result stays direct and maintainable rather than clever.
-- Available checks pass; missing evidence and reductions are reported.
+Report the concrete reduction, changed files, executed checks, and evidence limits. Every edit must preserve the authorized contracts and reduce concepts without making the result harder to read.
 
-## Quick Reference
-
-| Signal | Action |
-|--------|--------|
-| Dead path or shallow wrapper | Delete or inline after checking references. |
-| Contract or scope pressure | Preserve it or ask for approval. |
-| Missing tests | Disclose the gap and offer characterization tests. |
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Optimizing line count | Reduce concepts and coupling; keep explanatory structure and names. |
-| Mixing a behavior change into cleanup | Preserve the contract; request separate approval for the change. |
-
-## Failure Modes
-
-- **Unknown failure:** Stop and diagnose the cause first.
-- **Ambiguous contract:** Ask for the expected behavior before editing that path.
-- **Missing tests:** Disclose the gap and offer characterization tests; create none without approval.
-- **Contract or scope change required:** Explain the effect and wait for approval.
-- **Generated code:** Simplify the source or generator instead of derived output.
-- **Maintainability loss:** Keep the clearer form and explain why condensation stopped.
-
-## Summary
-
-Delete before abstracting, preserve observable contracts, and ask before changing behavior or scope. A smaller diff succeeds only when the result stays direct and maintainable.
+Delete before abstracting. Stop where further reduction would change a contract or reduce clarity.

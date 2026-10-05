@@ -1,0 +1,7 @@
+{
+  "skill": "deliver-feature",
+  "fixture": "delivery",
+  "request": "Finish the shipping feature end to end from its confirmed spec and confirmed slices. Complete all remaining tasks and verify the feature in this session. Stay within their bounds. Do not commit or publish anything.",
+  "prompt": "Read the confirmed spec and plan, implement every unblocked task within its bound, execute its demo and checks, update completion records, and continue until the requested feature is verified. Stop only for a genuine missing decision or authorization.",
+  "outcome": "Both shipping functions satisfy their specified boundaries, both slices have completion notes, and whole-feature verification records executed evidence."
+}

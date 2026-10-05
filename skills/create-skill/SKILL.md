@@ -10,21 +10,15 @@ metadata:
 
 # Create Skill
 
-## Overview
-
 Create a skill only when consequence-appropriate evidence justifies its context and maintenance cost. Use a prompt, template, instruction, or script when it has equal utility. Protect predictability with one narrow job, explicit boundaries, progressive disclosure, and no-op pruning.
 
 Load `references/behavioral-force.md` while drafting. Use `references/harness-tools.md` when tool names need a portable mapping. Authoritative rules live in `references/rules.md`.
 
-## When to Use
+## Scope
 
-- User asks to "create a skill", "write a skill", "improve this skill", or to review skill quality
-- Skills produce inconsistent results, go undiscovered, or get ignored
-- A discipline skill (TDD, code review, verification) is being rationalized around
-- Deciding whether a skill should be model-invoked or user-invoked
-- Symptoms: "the skill didn't trigger", "the skill is too long", "description is wrong"
+Use for creating, improving, reviewing, or evaluating a skill and its invocation policy.
 
-## Do Not Use When
+Do not use when:
 
 - Large-scale benchmarking beyond the declared target matrix: use an external eval harness for the extra runs, keeping this skill's cases, rubric, raw results, and ship decision authoritative
 - Claude Code plugin packaging: use `plugin-dev:skill-development`
@@ -34,15 +28,7 @@ Load `references/behavioral-force.md` while drafting. Use `references/harness-to
 
 ## Required Context
 
-Gather via a confirmed Skill Brief before testing or drafting. In read-only review, infer from the existing skill and flag material ambiguity instead:
-
-- Skill type (technique, discipline, reference, or workflow: defined in Phase 1)
-- Invocation axis: model-invoked (agent discovers it) or user-invoked (human-only): `references/rules.md`, Invocation
-- 3–5 realistic phrasings that should trigger the skill (model-invoked only), and 2–3 adjacent requests that should NOT
-- Existing skills that may collide (search local plugins and built-ins first)
-- Whether the skill enforces a discipline under pressure: that changes Phase 5
-- Evidence tier from `references/rules.md` → Evaluation Tiers; uncertainty selects the higher tier
-- The strongest realistic short prompt, target engineering outcome, maximum acceptable cost premium, and target harness/model matrix
+Use the confirmed Skill Brief as the source of truth. In read-only review, infer its fields from the existing artifact and label material ambiguity. The required fields and tier rules live in `references/rules.md`.
 
 ## Workflow
 
@@ -83,7 +69,7 @@ Done when evidence rejects the skill against the confirmed brief with the user's
 
 ### Phase 2: Draft SKILL.md Body
 
-Draft the smallest valid body from `references/body-template.md`. Stay under the matching ceiling in `references/rules.md`. Load the matching example and copy only the structure the skill needs.
+Draft the smallest valid body from `references/body-template.md`. Stay under the matching ceiling in `references/rules.md`. For a technique, consult `examples/simple-skill-example.md`; for a workflow, consult `examples/complex-skill-example.md`. Copy only the structure the skill needs.
 
 For a specialist persona, load `references/persona-template.md`. Keep workflow in a skill.
 
@@ -156,7 +142,7 @@ Use tables for reference material, code blocks for code, and numbered lists for 
 
 ## Success Criteria
 
-Every gate in `references/rules.md` → Quality Gate must be yes before shipping. Phase 6 checks the document, Phase 7 proves correctness, and Phase 8 proves effectiveness. If any answer is no, iterate or abandon.
+Run the Quality Gate in `references/rules.md` before shipping. Phase 6 checks the document; Phase 7 proves correctness; Phase 8 proves effectiveness. Iterate when an applicable gate fails.
 
 ## Stop Conditions
 
@@ -168,18 +154,3 @@ Every gate in `references/rules.md` → Quality Gate must be yes before shipping
 - Cheaper mechanism has equal utility: abandon the skill.
 - Held-out gain disappears: treat it as overfitting and simplify or abandon.
 - Eval fails: show the mismatch and ask the user to select a bounded correction.
-
-## Additional Resources
-
-- **`references/rules.md`**: the rule registry, single source of truth. Load in Phase 6 and for any authoritative value.
-- **`references/behavioral-force.md`**: the six levers, before/after rewrites. Load while drafting (Phase 2).
-- **`references/harness-tools.md`**: tool mapping and fallbacks. Load when the harness is not Claude Code.
-- **`references/body-template.md`**: body template, step and pointer guidance, extraction table. Load at Phase 2 start.
-- **`references/description-guide.md`**: description skeleton and anti-patterns. Load in Phase 4.
-- **`references/bulletproofing-guide.md`**: six hardening techniques. Load in Phase 5.
-- **`references/validation-checklist.md`**: the binary gate. Load in Phase 6.
-- **`references/eval-loop.md`**: opportunity, correctness, comparative eval, anti-gaming, and user-acceptance loop. Load in Phase 1 and keep through Phase 8.
-- **`examples/simple-skill-example.md`**: load at Phase 2 start when drafting a technique.
-- **`examples/complex-skill-example.md`**: load at Phase 2 start when drafting a workflow.
-
-A confirmed Skill Brief defines the hypothesis. Never call SHIP until proportionate evidence passes and the user accepts the result.

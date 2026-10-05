@@ -52,7 +52,9 @@ See [Toolbox Anatomy](docs/toolbox-anatomy.md) for composition and placement rul
 | Everything, all session long | [`ground-rules`](ground-rules/ground-rules.md) (always-on layer) |
 | Ask a quick factual question | No skill — just ask |
 
-Five skills form an optional pipeline: `create-spec` → `create-tasks` → `implement-task` → `verify-work`, coordinated by `deliver-feature`. They hand work between sessions and teammates through files in `docs/specs/`. Each skill also works independently.
+Five skills form an optional pipeline: `create-spec` → `create-tasks` → `implement-task` → `verify-work`, coordinated by `deliver-feature`. They hand work between sessions and teammates through files in `docs/specs/`. Each skill also works independently. An end-to-end request continues through authorized, unblocked work; an explicit one-stage or one-task request stops at that boundary. Task planning supports vertical feature slices and compatibility-preserving wide refactors.
+
+The October 2026 quality pass covers all seventeen skills: a [four-skill outcome comparison](evals/pocock-comparison-2026-10-04/README.md) and [thirteen-skill structural consolidation](evals/remaining-skills-2026-10-04/README.md). The reports preserve both gains and validation gaps; shorter instructions alone do not establish better results.
 
 ## Agent personas
 

@@ -10,8 +10,6 @@ metadata:
 
 # Explore Options
 
-## Overview
-
 Obvious answers arrive first. Escape them with isolated parallel branches under distinct frames. Then converge by fit, never cleverness. Branches that see each other anchor, so keep them isolated.
 
 Render the result as a shortlist a skimmer absorbs in one glance. Hold everything else back until asked.
@@ -36,7 +34,7 @@ Render the result as a shortlist a skimmer absorbs in one glance. Hold everythin
 
 ## Workflow
 
-1. **Pick 5 frames.** Choose 4 matching tags and exactly 1 `wild` tag. Vary repeat runs.
+1. **Pick 5 frames.** Read [references/frames.md](references/frames.md) when selecting branch perspectives. Choose 4 matching tags and exactly 1 `wild` tag. Vary repeat runs.
 
    Done when 5 frames are chosen, including one wild frame.
 
@@ -55,6 +53,8 @@ Render the result as a shortlist a skimmer absorbs in one glance. Hold everythin
    - Run the constraint check: restate the stated constraints and verify the top pick violates none. A pick that fails is demoted — it never ships as the winner, however clever.
    - Fill the ★ wild slot with the strongest novel-but-viable idea. The wild slot never outranks a constraint-passing pick.
 
+   If clustering yields only one underlying angle, respawn the weakest two frames; surface variations do not establish breadth.
+
    Done when 3 ranked picks pass and the wild slot is filled or declared empty.
 
 4. **Render the shortlist: 15 lines or fewer.** With no preamble or narration, emit exactly, in order:
@@ -72,39 +72,6 @@ Render the result as a shortlist a skimmer absorbs in one glance. Hold everythin
 
    Done when the requested layer is rendered and nothing beyond it.
 
-## Frames
-
-Pick 5 per run: 4 matching the problem's tags + 1 wild.
-
-| Frame | Vantage prompt | Tags |
-|---|---|---|
-| **inversion** | Ask the opposite question: if the goal is X, how would X be guaranteed to fail? Negate each answer back into an idea. | code, design |
-| **adversary** | Attack the obvious solution — exploit it, break it, abuse the legal-but-unintended path. Invert each attack into a design idea. | code, design |
-| **transplant** | Pick one distant domain — immune systems, markets, logistics, game design — and force-fit its core mechanism onto this problem literally. | wild |
-| **extremes** | Design both ends: the $0, one-hour crudest thing that still does the load-bearing job, and the infinite-budget decade version. The range exposes the middle. | code, general |
-| **remove the assumption** | Name the one thing every answer treats as fixed — the framework, the database, request-response itself. Delete it. What becomes possible? | code, design, wild |
-| **operator at 3am** | Design so the on-call engineer never gets paged and the auditor can prove what happened. Observability, reversibility, provability first. | code, design |
-| **beginner** | A curious 10-year-old who has never seen software: naive, convention-free approaches. Ignore how it is usually done. | general, wild |
-| **hardware** | Think in latency budgets, memory layout, physical constraints. Re-ask this as a hardware or systems problem: what do the bus, cache, and clock say? | code |
-
-## Success Criteria
-
-- The shortlist is 15 lines or fewer and every line carries a decision-relevant fact
-- All 3 ranked picks pass the constraint check against the stated constraints
-- The ★ wild slot holds a viable out-of-playbook idea or is declared empty — it never outranks a constraint-passing pick
-- Branches ran as parallel, isolated subagent calls; nothing was simulated in the orchestrator's context
-- `map` and `deepen` layers were rendered only when requested
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Simulating branches sequentially in one context | Spawn real parallel subagents; isolation is the mechanism |
-| Clever pick wins over fitting pick | Fit and viability rank; novelty breaks ties; the constraint check gates the winner |
-| Rendering the full pool unprompted | 15-line shortlist; `map` and `deepen` are opt-in layers |
-| Ten variations of one idea presented as breadth | Cluster by underlying angle; one cluster means the divergence failed — respawn the weakest 2 frames |
-| "Here are 30 ideas, you decide" | Converge with a real ranking; refusing to commit is a cop-out |
-
 ## Failure Modes
 
 - **No parallel subagents:** say so. Offer one strong prompt for 10 clustered approaches with traps. Label it anchored, not isolated.
@@ -115,6 +82,6 @@ Pick 5 per run: 4 matching the problem's tags + 1 wild.
 
 Adapted from ADHD (github.com/UditAkhourii/adhd, MIT). It retains isolation and the generator/critic split. This version adds fit-first ranking, a gated wild slot, and layered output. Cost: about 6 calls, plus 1 per `deepen`.
 
-## Summary
+## Verification
 
-Fan out 5 isolated frames. Converge by fit. Render at most 15 lines. Hold deeper material until requested.
+Verify real isolated dispatch, constraint-passing ranked picks, a viable or empty wild slot, and the requested output layer. Label any unavailable-parallel fallback honestly.

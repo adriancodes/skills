@@ -14,18 +14,13 @@ metadata:
 
 # Verify Work
 
-## Overview
-
 Prove an artifact with executed adversarial cases. Smoke tests and inspection do not count. Report every failure with a reproducer. Stay read-only unless the user authorizes fixes.
 
-## When to Use
+## Scope
 
-- A finished script, agent skill, prompt, config, schema, or rule document needs proof it holds
-- "verify this", "is this ready to ship", "test this properly", "poke holes in the implementation"
-- A shipped artifact failed on an input nobody tried; silent corruption or failure is suspected
-- Verification so far is one happy-path run, or a careful reading
+Use to attack a finished artifact against its stated behavioral promise.
 
-## Do Not Use When
+Do not use when:
 
 - The plan is unbuilt: use `create-spec` when installed. Otherwise question the plan first.
 - Review for style, structure, or maintainability: use a code-review skill; verify-work only chases behavior that breaks the promise
@@ -59,6 +54,8 @@ Load `references/attacks.md` before choosing attacks.
 
 5. **Report.** Stay within 10 lines. Name authority mode, findings, authorized patches, rounds, and residual risk. Omit process narration.
 
+   Name the concrete out-of-scope and untested attack classes. “Unrelated behavior was excluded” does not tell the user what remains unverified.
+
    Done when every decision-relevant result appears.
 
 ## Example: one attack on one promise
@@ -70,41 +67,9 @@ Load `references/attacks.md` before choosing attacks.
 > **Patch:** replace hand-split with the stdlib CSV parser; re-run fixture: passes.
 > **Round note:** finding added to do-not-re-report; dry counter reset to 0.
 
-## Common Rationalizations
+## Pressure
 
-| Excuse | Reality |
-|--------|---------|
-| "Tests are green, so it's effectively verified" | The happy-path fixture proves the happy path. The catalog exists because data is hostile. |
-| "The user needs it in minutes: a smoke test will do" | The baseline's smoke test missed silent data loss. Deadlines raise the cost of shipping broken, not the case for skipping the attack. |
-| "I can see from the code it handles that case" | Reading is not running. The baseline read its parser as correct; execution found three bugs. |
-| "One clean round is enough" | In this repo's own history, round two kept finding what round one missed. Two dry rounds for anything shipping. |
-
-## Stop Conditions
-
-- "It's basically done, just ship it"
-- "The code obviously handles that"
-- "One fixture already passed"
-
-Each maps to a table entry above; return to the workflow step in progress.
-
-## Success Criteria
-
-- Every finding came from an executed attack, never from reading
-- The report states read-only or fix-authorized; no artifact edits occurred without explicit fix authority
-- When fixes were authorized, every patch landed in the artifact and no fixture was edited toward buggy output
-- 2 consecutive fresh dry rounds for shipping.
-- 1 dry round for a named quick check.
-- Otherwise name catalog exhaustion or every untested class.
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Reading the code and declaring it safe | Execute; runs catch what reads miss |
-| One happy-path fixture as "tested" | Run the full catalog; the happy path proves nothing |
-| Editing a fixture until output matches | Preserve the fixture; report the finding, patching the artifact only when fixes were authorized |
-| Re-arguing old findings each round | Do-not-re-report list; only new findings reset the dry counter |
-| Stopping after the first clean round | Dry means 2 consecutive rounds, not 1 |
+Read [references/pressure.md](references/pressure.md) when urgency, authority, sunk cost, or an uncertain shortcut threatens the workflow. Those pressures do not waive its evidence or authority requirements.
 
 ## Failure Modes
 
@@ -116,6 +81,6 @@ Each maps to a table entry above; return to the workflow step in progress.
 
 - **`references/attacks.md`**: per-artifact-type attack catalogs and the dry-round stop rule (loaded at step 2).
 
-## Summary
+## Verification
 
-Execute hostile cases. Report by default. Patch only with authority. Stop at the required dry bar or a documented limit.
+Findings have executed reproducers. Record the authority mode, fresh-round bar, and every untested class or catalog limit; never infer completion from repeated old attacks.

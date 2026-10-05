@@ -10,8 +10,6 @@ metadata:
 
 # Improve Prompt
 
-## Overview
-
 **Rewrite is not authority.** Clarify the ask without changing its intent. Expose every inference. Stop unless the original request authorized execution.
 
 ## Scope
@@ -74,15 +72,6 @@ Output:
 - At most three assumptions appear before a clarifying question.
 - Exactly one target is named.
 - Execution begins only when the original request authorized it.
-
-## Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Adding a plausible detail silently | Mark it `[assumed: …]` or omit it |
-| Decorating an already precise prompt | Return it unchanged |
-| Treating `/improve-prompt` as permission to work | Show the rewrite and stop |
-| Routing to several possible skills | Name the narrowest fit or ask one choice question |
 
 ## Stop Conditions
 

@@ -14,128 +14,70 @@ metadata:
 
 # Create Tasks
 
-## Overview
+Turn a confirmed spec into bounded, independently verifiable tasks with explicit blockers. Use vertical slices for features. Use expand–migrate–contract when a wide refactor cannot land safely as feature slices.
 
-Break a confirmed spec into small vertical tasks. Each task crosses required layers, produces a demo, fits one session, and names blockers. Reject horizontal schema → API → UI → tests plans.
+## Scope
 
-## When to Use
+Use for task planning, recutting horizontal feature plans, and work that overflows an agent session.
 
-- A confirmed spec, plan, or decision log needs to become executable work: "slice this spec", "break it into tickets", "make tasks from this"
-- Implementation keeps overflowing a session's context mid-task
-- An existing task list reads schema → API → UI → tests
+Confirm unresolved requirements before planning. Use `create-spec` when installed; otherwise ask for the missing decisions directly. Accept `confirmed` and a recorded `confirmed-by-override`.
 
-## Do Not Use When
-
-- The plan is open: pin it with `create-spec` when installed. Otherwise get explicit confirmation. Both confirmed statuses count.
-- Executing the slices: this skill plans; each slice is its own implementation session
-- The work fits one session: one slice is no slices; build directly (with `verify-work` at the end, if installed)
-- The user wants tracker issues: use a tracker-ticket skill when installed. This skill owns the local `*-slices.md` contract.
-
-## Required Context
-
-- The confirmed spec: a decision log under `docs/specs/`, a document the user names, or this conversation's confirmed decisions
-- The repo explored enough to name the layers a slice must cross, and any prefactoring worth doing first
+Build directly when the work fits one task and the user requested implementation. Route external issue creation to an installed tracker skill. Otherwise offer a local plan; publishing requires its own authority.
 
 ## Workflow
 
-1. **Anchor.** Read the full spec. Check repository instructions for re-homed artifacts. List every layer the feature actually touches.
+1. **Anchor the plan.** Read the confirmed spec and relevant repository paths, code, and tests. Identify the surfaces the work actually touches.
 
-   Done when the layer list is written.
+   Name confirmed behavior when routes or files remain implementation choices. Ask only when missing behavior prevents an executable acceptance check.
 
-2. **Draft slices.** Make prefactoring its own first slice. Test every slice against all three rules:
-   - **Vertical**: it crosses every layer its demo needs. A one-layer slice is a layer; merge or recut it.
-   - **Demoable:** a human can watch a request, screen, or state change work. Use a test only when nothing is human-visible. Never use "the model exists."
-   - **Sized**: it fits one fresh agent session, exploration included. "Every call site" or "test everything" is unbounded: write the bounding list into the slice, or split it.
+   Done when the plan's behavior and affected surfaces are grounded.
 
-   Name the confirmed behavior when its route or file is unspecified. Leave that implementation choice to the slice. Reopen the spec only when missing behavior prevents a runnable demo.
+2. **Choose the task shape.** For a feature, cut a narrow end-to-end path through every layer its demo needs. Include tests within that task. Allow one-layer tasks when the actual work has one layer.
 
-   Done when every slice passes all three rules.
+   Add prefactoring only when it makes the requested change easier and has its own preservation check. Avoid a standalone schema, API, UI, wiring, or test phase when it is only one part of a feature.
 
-3. **Draw the edges.** Give every slice a `Blocked by` value. Write `none` explicitly. Add only dependencies the code requires. Recut a fully serial chain once before accepting it.
+   For a wide mechanical refactor, use this sequence:
 
-   Done when at least one slice is unblocked.
+   - **Expand:** add the new form alongside the old. Prove compatibility with existing consumers.
+   - **Migrate:** name bounded consumer batches, each small enough for a fresh session. Preserve compatibility and green checks between batches.
+   - **Contract:** remove the old form after every migration batch passes and no consumer remains.
 
-4. **Write the file.** `docs/specs/<date>-<slug>-slices.md` in exactly this shape: downstream skills parse it:
+   If independently green batches are impossible, name an integration branch and final integration gate. Do not promise each batch is independently releasable.
 
-   ```md
-   ---
-   spec: docs/specs/<date>-<slug>.md
-   status: open   # open | confirmed
-   ---
-   ## Slices
-   - [ ] 1. <title>
-     - Layers: <a · b · test>
-     - Bound: <explicit files, surfaces, or cases included>
-     - Demo: <runnable criterion>
-     - Blocked by: none
-   - [ ] 2. <title>
-     - Layers: <…>
-     - Bound: <…>
-     - Demo: <…>
-     - Blocked by: 1
+   Done when each task has a runnable demo or preservation check and an explicit size bound.
 
-   ## Verification
-   <!-- written by the whole-feature verification pass when it runs; empty until then -->
+3. **Write real dependencies.** Give every task a `Blocked by` field. Write `none` where appropriate. Add only prerequisites required by the code or acceptance check.
 
-   ## Confirmation
-   <!-- user confirmation words and date; empty while status is open -->
-   ```
+   Check for missing IDs and cycles. Ensure at least one task can start. Explain genuinely serial work rather than inventing parallelism.
 
-   Use `[x]` for completed slices. Append `Done: <date>: <one-line outcome>` inside each ticked slice.
+   Done when the dependency graph is valid and each task's prerequisites are explicit.
 
-   An explicit file-write prohibition wins. Treat "skip the file" and "do not write files" as prohibitions. Write nothing. Return the complete parseable contract in chat. State that downstream skills expect the file. Offer to write it when implementation starts.
+4. **Save the contract.** Read `references/slices-contract.md` before writing the plan. Honor repository path overrides. Preserve its fields so delivery and implementation can resume from it.
 
-   A request to list tasks in chat does not itself prohibit files. When no prohibition exists, write the file and summarize it in chat.
+   Treat “skip the file” and explicit no-write instructions as prohibitions. Return the full contract in chat instead. Explain that downstream workflows expect a saved file and offer to save it when implementation starts.
 
-   Done when the file exists before read-back. Under prohibition, chat must contain the contract, consequence, and offer.
+   A chat summary alone is not a write prohibition. Save the file and summarize it when writing is allowed.
 
-5. **Read back.** Summarize slices, bounds, and edges. Ask for confirmation. Recut on objection. On approval, record the words and date. Then set `status: confirmed`.
+   Done when the open contract exists in the repository, or appears completely in chat under a write prohibition.
 
-   Done when both the record and status exist.
+5. **Confirm the breakdown.** Summarize tasks, bounds, demos, and blockers. Ask for approval when it has not already been given for this breakdown. Recut on objection.
 
-## Example: one slice
+   Record the user's actual confirmation and date before setting `status: confirmed`. Preserve an open status while awaiting a reply. Do not treat approval of the spec as approval of a newly invented breakdown.
 
-> ### 2. Mark-read closes the loop
-> **Layers:** API (mark-read endpoints) · UI (mark-read interaction on the bell list) · test
-> **Bound:** `POST /notifications/:id/read`, `POST /notifications/read-all`, bell-list interaction, and their focused tests; no emitter or preferences work.
-> **Demo:** badge at "1" → click mark-read → badge drops to 0, `read_at` set.
-> **Blocked by:** 1 (the tracer slice: table, first emitter, badge: rides in slice 1, never as its own schema slice).
+   Done when the plan is ready for review or its actual approval is recorded.
 
-## Common Rationalizations
+## Example
 
-Every excuse below appeared verbatim in baseline tests without this skill loaded.
+For notifications, the first task includes the minimum storage, emitter, badge, and tests that demonstrate one notification. Mark-read follows as its own end-to-end behavior.
 
-| Excuse | Reality |
-|--------|---------|
-| "Schema first: everything depends on the data model" | The first vertical slice carries only the schema *it* needs; the model earns its columns slice by slice. |
-| "I'll batch all the endpoints: they share a controller" | Shared code is not a shared slice; each endpoint ships in the slice that demos it. |
-| "One pass over all the source sites keeps the context" | "All sites" is unbounded by definition; bound the list in the slice or split per site class. |
-| "Tests as their own task at the end, once things stabilize" | A slice without its tests can't demo as done; tests ride in every slice. |
-| "UI is a separate concern, cleaner as its own task" | Separate concern, same slice: the UI is how the slice demos. |
+For a shared identifier rename, first support both names. Then migrate billing and exports in bounded tasks. Remove the old name only after both migrations and their compatibility checks pass.
 
-## Success Criteria
+## Verification
 
-- Zero horizontal slices.
-- Allow one-layer slices only when the work truly has one layer.
-- Every slice carries a runnable demo criterion and a written size bound
-- Edges written for every slice; at least one slice unblocked
-- The slices contract exists in the repo, or in chat under an explicit write prohibition. Record confirmation only after the user gives it.
+- Feature tasks are vertical across their real layers.
+- Wide refactors preserve compatibility through expand, bounded migration, and contract.
+- Every task has a bound, runnable acceptance check, and explicit blockers.
+- The plan honors write restrictions and the downstream contract.
+- Approval is recorded only when the user actually gives it.
 
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Numbering as a secret dependency order | Edges are written per slice, or the slice says `blocked by: none` |
-| "Wire A to B" as its own slice | Wiring belongs to the slice whose demo needs it |
-| Slices delivered in chat only | Follow step 4's file rule and explicit-prohibition exception |
-| Recutting silently during implementation | New knowledge edits the slices file first, then the code |
-
-## Failure Modes
-
-- **A slice lacks a demo:** return the hidden decision to the spec. Never settle it inside a slice.
-- **Everything still blocks everything:** state that the work is genuinely serial. Never leave it implied.
-- **More than ~10 slices:** the scope is program-sized; split the spec itself before slicing further.
-
-## Summary
-
-Write a repo work plan of small, demonstrable vertical tasks with explicit blockers. Under an explicit write prohibition, deliver the complete contract in chat.
+Plan the smallest independently verifiable work units that preserve the confirmed outcome.
