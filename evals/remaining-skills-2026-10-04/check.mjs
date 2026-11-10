@@ -11,7 +11,7 @@ import {isDeepStrictEqual} from 'node:util';
 const here = path.dirname(fileURLToPath(import.meta.url)), repo = path.resolve(here,'../..');
 const json = file => JSON.parse(fs.readFileSync(file,'utf8'));
 const hash = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
-const tree = (dir,include=()=>true) => Object.fromEntries(fs.readdirSync(dir,{recursive:true}).filter(file => include(file) && fs.statSync(path.join(dir,file)).isFile()).sort().map(file => [file,hash(path.join(dir,file))]));
+const tree = (dir,include=()=>true) => Object.fromEntries((fs.existsSync(dir)?fs.readdirSync(dir,{recursive:true}):[]).filter(file => include(file) && fs.statSync(path.join(dir,file)).isFile()).sort().map(file => [file,hash(path.join(dir,file))]));
 const original = json(path.join(here,'original-manifest.json'));
 const revised = json(path.join(here,'revised-manifest.json'));
 const suite = json(path.join(here,'cases.json'));
@@ -122,7 +122,7 @@ const cleanQuiz=path.join(repo,'skills/quiz-changes/evals/fixtures/fetch-with-re
 assert(!/scorer['’]s key[\s\S]*?withhold from\s+actor/i.test(fs.readFileSync(path.join(cleanQuiz,'README.md'),'utf8')));
 assert.equal(hash(path.join(cleanQuiz,'fetchWithRetry.diff')),hash(path.join(here,'fixtures/quiz-changes-first-question/fetchWithRetry.diff')),'Quizzed patch changed while withholding its key');
 assert(fs.existsSync(path.join(repo,'skills/quiz-changes/evals/scorer-notes.md')));
-for(const id of Object.keys(suite.cases).filter(id=>id!=='quiz-changes-first-question')) command([path.join(here,'run.mjs'),'--preflight',id],repo);
+for(const id of Object.keys(suite.cases).filter(id=>id!=='quiz-changes-first-question')) fs.mkdirSync(path.join(here,'fixtures',id),{recursive:true}),command([path.join(here,'run.mjs'),'--preflight',id],repo);
 const report={claim:suite.claim,counts:{runs:records.length,pass:records.filter(r=>r.status==='PASS').length,fail:records.filter(r=>r.status==='FAIL').length,incomplete:records.filter(r=>r.status==='INCOMPLETE').length,excluded:records.filter(r=>r.status==='EXCLUDED').length},records};
 fs.writeFileSync(path.join(here,'replay-results.json'),JSON.stringify(report,null,2)+'\n');
 console.log(`${records.length} records replayed across 13 skills: ${report.counts.pass} PASS, ${report.counts.fail} preserved FAIL, ${report.counts.incomplete} INCOMPLETE, ${report.counts.excluded} EXCLUDED. No full-tier or superiority claim.`);

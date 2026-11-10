@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const readJSON = (file) => JSON.parse(fs.readFileSync(file, "utf8"));
 const hash = (file) => crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");
-const tree = (dir) => Object.fromEntries(fs.readdirSync(dir, { recursive: true }).filter((file) => fs.statSync(path.join(dir, file)).isFile()).sort().map((file) => [file, hash(path.join(dir, file))]));
+const tree = (dir) => Object.fromEntries((fs.existsSync(dir) ? fs.readdirSync(dir, { recursive: true }) : []).filter((file) => fs.statSync(path.join(dir, file)).isFile()).sort().map((file) => [file, hash(path.join(dir, file))]));
 const report = readJSON(path.join(repo, "evals/review-results.json"));
 const expected = new Set([
   "create-skill:minimal-workflow", "create-skill:missing-boundary",
