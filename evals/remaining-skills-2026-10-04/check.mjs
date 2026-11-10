@@ -104,8 +104,12 @@ for (const id of dirs.sort()) {
     }
   }
   if(manifest.skill==='verify-work') {
-    const probe=spawnSync(process.execPath,['dedupe.js','/dev/stdin','id'],{cwd:workspace,input:'id,value\n1,"x, y"\n',encoding:'utf8'});
-    assert.equal(probe.status,0);assert.equal(probe.stdout,'id,value\n1,"x,y"\n');
+    // Linux pipes stdin through a socket, which /dev/stdin cannot reopen.
+    const probeDir=fs.mkdtempSync(path.join(os.tmpdir(),'verify-probe-')),probeFile=path.join(probeDir,'input.csv');
+    fs.writeFileSync(probeFile,'id,value\n1,"x, y"\n');
+    const probe=spawnSync(process.execPath,['dedupe.js',probeFile,'id'],{cwd:workspace,encoding:'utf8'});
+    fs.rmSync(probeDir,{recursive:true,force:true});
+    assert.equal(probe.status,0,probe.stderr);assert.equal(probe.stdout,'id,value\n1,"x,y"\n');
     downstream.push('Independent quoted-field byte-loss finding reproduced on unchanged artifact');
   }
   if(manifest.skill==='build-loop') {
