@@ -1,0 +1,47 @@
+{
+  "status": "budgeted-evaluation-complete-with-provisional-candidate",
+  "started_at": "2026-10-05T11:47:37.124Z",
+  "finished_at": "2026-10-05T14:41:14.088Z",
+  "elapsed_ms": 10416964,
+  "cli_records": 296,
+  "judging_turns": 17,
+  "evidence_gate_passes": [
+    "research-question",
+    "build-prototype",
+    "create-handoff",
+    "prepare-pr",
+    "review-session",
+    "map-decisions",
+    "write-agent-instructions"
+  ],
+  "provisional": [
+    "create-setup-guide"
+  ],
+  "tested_body_revisions": {
+    "research-question": 1,
+    "build-prototype": 1,
+    "create-handoff": 1,
+    "prepare-pr": 1,
+    "review-session": 2,
+    "create-setup-guide": 2,
+    "map-decisions": 1,
+    "write-agent-instructions": 2
+  },
+  "unknown_cli_usage_runs": 45,
+  "judging_usage": null,
+  "complete_total_cost_compliance": "Unproven: incomplete CLI and collaboration usage unavailable.",
+  "artifacts": {
+    "summary.json": "46bd3d1edbca2f9a1a84554203bc30aa1b75cc71da3cde3fa5128d1bbe2c78a5",
+    "judgments/outcomes.json": "8e8e05a938d6d16cb249dd3b583e10e27a952b0f4c0cd013958f86693ed813b7",
+    "judgments/setup-replays.json": "ce41e7a964b44c8a345d50ba46178100c5f78d30a1bc223ebd612de21d096356",
+    "judgment-mapping.json": "411676a79763c74f390d6c585a11ebbdf8f0d80255abcb131fa4e1d9b874b19e",
+    "matrix.json": "e3f59799374695d7b8fe6287861700ccfbf3d520674fa9ead62b568c8b03b1fe",
+    "budget.json": "73c6465488b5522a12edd7aa27c04d203c92ffe62757659d277a6cb2e067f285",
+    "score.mjs": "f6778dcc66e5226442cd1c852a5fa6e264ae3142df6a59277cb1d806eeeadab3",
+    "validate-record.mjs": "bbe63b7d54a1c2e4b0cb14ce74ce7280c1d4d2e80991a7b8ca5d7e0610c66b97",
+    "check-scorer.mjs": "31eb887555f57243e2033710d02b3042050c5bb4860ada0c5db30053b82746ba",
+    "check-integrity.mjs": "a918f46cd8d1c6533b1ebf0435d40a6dbace14bb7140392be1effc3ef192bfec",
+    "pack-judgments.mjs": "1fac30a7962811a984f2992b577051f8a87a96dc8529bd21e337cc34c2789d1b"
+  },
+  "next_step": "User review; proposed setup-only extension is not authorized. No installation, commit or push."
+}

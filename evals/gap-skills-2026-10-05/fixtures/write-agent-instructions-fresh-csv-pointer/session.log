@@ -1,0 +1,1 @@
+Agent read root and packages/api/AGENTS.md, then implemented contact export as JSON-lines. User pointed to docs/contact-export.md, which the owning instructions never linked. Agent removed the wrong implementation. No deployment occurred. The canonical CSV contract remains current.

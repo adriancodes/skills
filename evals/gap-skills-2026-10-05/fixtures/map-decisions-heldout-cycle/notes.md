@@ -1,0 +1,1 @@
+Destination: authentication decisions. Open A: identity provider, owner Product, depends on B. Open B: account migration approach, owner Platform, depends on A. Settled: existing account IDs remain stable. Neither owner has answered.

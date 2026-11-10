@@ -1,0 +1,22 @@
+{
+  "skill": "create-handoff",
+  "positive": [
+    "Create a handoff for a fresh recipient with artifact pointers",
+    "Make a resume packet for the next agent",
+    "Leave this for the next agent with a bounded next action"
+  ],
+  "negative": [
+    {
+      "prompt": "Review this pull request before merge",
+      "owner": "code-review"
+    },
+    {
+      "prompt": "Implement the next task from the slices file",
+      "owner": "implement-task"
+    }
+  ],
+  "behavior": {
+    "prompt": "Create a handoff for a fresh recipient with artifact pointers",
+    "expect": "Apply the scoped workflow and verify its actual artifact; follow the per-skill frozen outcome suite."
+  }
+}

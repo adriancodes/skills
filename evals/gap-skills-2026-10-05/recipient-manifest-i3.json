@@ -1,0 +1,472 @@
+{
+  "frozen": true,
+  "prepared_at": "2026-10-05T14:14:57.964Z",
+  "records": [
+    {
+      "case_id": "recipient-a824a4632d71",
+      "case_sha256": "10089634c8248c87edbbbf1e8c651f874f1c50454fb72fd74533cc48a44dc812",
+      "parent": "create-handoff-heldout-blocked-secret--skill--r1--i1",
+      "control_for": null,
+      "fixture": {
+        ".env.local": "385225e0f540fc8d13c1144889da40d26b507f1d77c43e7dd5762b037ff8bb17",
+        "docs/handoffs/connect.md": "27a39c52f1e3946e164ef44c8bfce5c9ae3b420ad2ce4ec6d64d74849d00b82e",
+        "docs/specs/connect.md": "1b3feb29fdc3e1f1b27c18c0c1871da9b5dcebef53dcfb382d5d62997eeba8cf",
+        "notes.md": "dbf539286580d04623882b41758da4eb61760413f054acd1026930137cd9af23"
+      }
+    },
+    {
+      "case_id": "recipient-68ecd97baf7b",
+      "case_sha256": "e7f56a50d4c2b05dd56018c0aca39a6071dfd228d980c3dc6d77b03e87bd5d21",
+      "parent": "create-handoff-heldout-dirty-resume--prompt--r1--i1",
+      "control_for": null,
+      "fixture": {
+        "docs/checks.md": "1d4b3f4845fc48d89d5c28b912766d78b65c2446c88a981cb051e2aba5accbd9",
+        "docs/handoffs/search.md": "fce01b789956898f62369ec19d66f9d0c0ff3a2d10cd69ed2d2c70c1f6b72054",
+        "docs/specs/search.md": "b434b58baf22cf36dde54de289b62453b0a037bb8e101317be86ec2e9e6a7f2b",
+        "src/search.mjs": "4201b674ab5f349a1a646aa90e19a03a76f9fb9762c847e6295b285ac43e4367",
+        "test.mjs": "eb4fb0bbc305502f343bee8a8ee6be1caf5d11cbc9a28f69295920bda8496a55"
+      }
+    },
+    {
+      "case_id": "recipient-f76b323fe17f",
+      "case_sha256": "048a276599c7725ad5ee7cb1ec372e7cdb6a80bf2e3b31d4b2e24cf756036d16",
+      "parent": "create-handoff-heldout-dirty-resume--skill--r1--i1",
+      "control_for": null,
+      "fixture": {
+        "docs/checks.md": "1d4b3f4845fc48d89d5c28b912766d78b65c2446c88a981cb051e2aba5accbd9",
+        "docs/handoffs/search.md": "ee6d784c3d8aa2e1b8dcc7485d2928835ed1b6464d0e3066d566e475fbb1271a",
+        "docs/specs/search.md": "b434b58baf22cf36dde54de289b62453b0a037bb8e101317be86ec2e9e6a7f2b",
+        "src/search.mjs": "4201b674ab5f349a1a646aa90e19a03a76f9fb9762c847e6295b285ac43e4367",
+        "test.mjs": "eb4fb0bbc305502f343bee8a8ee6be1caf5d11cbc9a28f69295920bda8496a55"
+      }
+    },
+    {
+      "case_id": "recipient-121abe7ef6f0",
+      "case_sha256": "b27a3535c3474250a104af35a0e409ef44071484d7e8a524d1587baae17edf25",
+      "parent": "create-handoff-heldout-misleading-log--skill--r1--i1",
+      "control_for": null,
+      "fixture": {
+        "docs/handoffs/cache.md": "cd5c13b342245765182157bd6cf614222be39ecf45919004ea8cfcffc0ece3eb",
+        "docs/specs/cache.md": "656083e7702cf79bc9e68101ba31666325b6fcae70cdc6d1a44ea0e3fb6e7a61",
+        "notes.md": "37f1d62503b3f76790e0e08be62bf2916b0a7668b767da9c079b43381639b964",
+        "src/cache.mjs": "21c332b8464d514add19e1188d8f1da556b99d5d10f1f2de2ba2f42b05837ef2",
+        "test.mjs": "6ef8adf7eeb9aff243d6e42d6dceb68cc29f047bb90619f1f32c62b248994066"
+      }
+    },
+    {
+      "case_id": "recipient-a058824ad96e",
+      "case_sha256": "1a07fa40f43add4f0c89966b4aa42ef855418d658e1005457cf7fe9805f4e22c",
+      "parent": "write-agent-instructions-heldout-edge--prompt--r1--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "6a90c57e366f1dd5ab9e3f8967f1f70997f8fe0f4077e7153df64be297edccee",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "control-3d23b9ca70ec",
+      "case_sha256": "9bcff61baf660c0b627058d615b308681af7b1952ad2034ba028a7d47a4ced5e",
+      "parent": null,
+      "control_for": "write-agent-instructions-heldout-edge",
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "0e7da8ea02f0a9def67ed01a75aff811834a7fb0d0b5ba0057e4ec2ea4f454c1",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "recipient-fa9acc757cd4",
+      "case_sha256": "01807b7bd19a5abb514a104efe2a7cf01d3edf68083d285a043bad4b26786112",
+      "parent": "write-agent-instructions-heldout-edge--prompt--r2--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "fd6cd25dd60cecdfe199876891855f482e4a9ba55ba4159eb7e2c614e2d2e3fb",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "recipient-d812c272caad",
+      "case_sha256": "bb0e3df0af8e8cd1cfa48a40c79c85a9ae60142368391a18b247afafc8cc01f9",
+      "parent": "write-agent-instructions-heldout-edge--prompt--r3--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "ad78e8bd3733d81a0b8aea672cc5e485a57107ced208e15def0422392cb277ff",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "recipient-80006d57c92d",
+      "case_sha256": "6e6a3f097e0f1f7b871d7a580cbf17c9b24b1ad352a274d0b4cde4d0e67f02c2",
+      "parent": "write-agent-instructions-heldout-edge--skill--r1--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "cf49c861d7a451cf66c194032dd7b1488c8919b03413b03bc8e457a49052b520",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "recipient-a4b505e78987",
+      "case_sha256": "0f69cb9cd4f7b564df08f22965dc13e69aa9088545439899071e4e4c20b05f87",
+      "parent": "write-agent-instructions-heldout-edge--skill--r2--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "d58a59860f8621781970cbfee55f5f70c37d3503d1cd1dea32093460e6294c05",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "recipient-7db6293b830a",
+      "case_sha256": "336c2138960f5af0131f376eca689f134f44aafa29bf2f028ed00601f2bdda0b",
+      "parent": "write-agent-instructions-heldout-edge--skill--r3--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "fb293929ed4da92d75dcd5eb989ef8c5499fac1dbef98bacdbd06beffc7a6131",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "recipient-cfeb510c62f8",
+      "case_sha256": "25ff1424f7731e5c09b7d2161b10f9778de933894743c67ba01eb87f0c99997d",
+      "parent": "write-agent-instructions-heldout-normal--prompt--r1--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8913146853de0190f644bd5f2c572b3defa904bfd675b9f878e1eb0ac8dfafac",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "control-9823bcc98621",
+      "case_sha256": "17f30d24e2f4a352d3a9163979a580d99b7b402e588bd543bb2da31a97a4c227",
+      "parent": null,
+      "control_for": "write-agent-instructions-heldout-normal",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "recipient-65f773120b16",
+      "case_sha256": "7122002065c6f2e63815875a3c2117feca471b04e5e79192fe22be725b44d1ab",
+      "parent": "write-agent-instructions-heldout-normal--prompt--r2--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8913146853de0190f644bd5f2c572b3defa904bfd675b9f878e1eb0ac8dfafac",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "recipient-4f7b1146317c",
+      "case_sha256": "3862cef8c6ca4e5b4656db8ad3074d797c2983a13c5fb20eaed6757064e2a104",
+      "parent": "write-agent-instructions-heldout-normal--prompt--r3--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "3ede80ac89eeabc855ea90cea08a51f0d6dc13999e3e28b2ccf5d1c23c2d8325",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "recipient-233effc9a8c6",
+      "case_sha256": "606f0fb222e652cf877ad86d7babd1786a2d5267c016e839638fcd544c4f17cc",
+      "parent": "write-agent-instructions-heldout-normal--skill--r1--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "c6f85e244b1817971bb583d8fc172b9554f0277b94fc6c31167078af4f5e33ec",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "recipient-1d7401d1598f",
+      "case_sha256": "52ee2a2cbb3cd3b4e34127c6410b728f5a7493321eefe869bb3448cb3f8bf124",
+      "parent": "write-agent-instructions-heldout-normal--skill--r2--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "f4021c5d4d20beee03f1a25a41f0dd93a88cdce487055cca828fcfc4ed6cc141",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "recipient-79ee1716c8ec",
+      "case_sha256": "cf54e4793fc43a110ab77f759ba8847385638977e05d9ad9683d4686055d99d5",
+      "parent": "write-agent-instructions-heldout-normal--skill--r3--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "f4021c5d4d20beee03f1a25a41f0dd93a88cdce487055cca828fcfc4ed6cc141",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "recipient-9273a8a19590",
+      "case_sha256": "18eed6a626e981fc16e27767341833ecb3a5412206cca68eb29ba40535949abf",
+      "parent": "write-agent-instructions-heldout-pressure--prompt--r1--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "control-03b29675e6eb",
+      "case_sha256": "0f2ea7024ac907c6b346413aa4614fcea90040dafec546da6246c0278628e3d0",
+      "parent": null,
+      "control_for": "write-agent-instructions-heldout-pressure",
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "recipient-4d809dcc1f59",
+      "case_sha256": "21d8ac0857d4bb04a582ddf0c6f241c05ca6f9d6c8aa30e36c441f5f48e60426",
+      "parent": "write-agent-instructions-heldout-pressure--prompt--r2--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "recipient-08c68de55a80",
+      "case_sha256": "21d59364dce1b1df9b228768b16563c546c7f8c3e09bae655cba1f7cd87fd212",
+      "parent": "write-agent-instructions-heldout-pressure--prompt--r3--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "recipient-b7854ed4e515",
+      "case_sha256": "c0d24d5a183a75098e4461e704656fcdb677ab4b8d98ac2c53cbb98bfe381670",
+      "parent": "write-agent-instructions-heldout-pressure--skill--r1--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "recipient-365c21a6200a",
+      "case_sha256": "964b677ecdf80ab796444c446317e515530a9d8161b3183469b271ca528e9d0f",
+      "parent": "write-agent-instructions-heldout-pressure--skill--r2--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "recipient-dd76b0e70c62",
+      "case_sha256": "38e96d5ea2f94079772056aa999f87b8ee87a559c6929ee959cd1208f9fd1279",
+      "parent": "write-agent-instructions-heldout-pressure--skill--r3--i1",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "recipient-1168df6bbb38",
+      "case_sha256": "205a9d13754a5705687745707c6a72742c8bceecfa65498d07b7ef7a5940d282",
+      "parent": "write-agent-instructions-heldout-edge--prompt--r1--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "2355336ecdd3d3ad58ad10a922031ba2553b1b056b9f6c1cf8fabc15eb6beca8",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "recipient-aa16aac1fa22",
+      "case_sha256": "7de1a66f733b083c160e30eaae410ae984c30b0773eaeea02723f97c614d25a4",
+      "parent": "write-agent-instructions-heldout-edge--prompt--r2--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "dfc97c30131ffbd95ac68dd61d3936da35957035a5ffab9981acc8828075c79d",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "recipient-1bac85cdba35",
+      "case_sha256": "de50d6aef866dc26d8a0776aa9844515765f7f8cc466bf50218911d0e9e309b3",
+      "parent": "write-agent-instructions-heldout-edge--prompt--r3--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "71218eb060ccdd32cff6557ca35827ced0b99ee7b890484494f3c11e576d5e88",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "recipient-a5cb7e77c002",
+      "case_sha256": "5ba8dbdcc2a8b8c14e46b548c2e5bacd3bf1518e740e0ea501e39d605abf8ff3",
+      "parent": "write-agent-instructions-heldout-edge--skill--r1--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "4bc16cccd1755e45f97c17379cd54018daebf185731e906ee9194ad31d887f62",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "recipient-8bf65ab30cce",
+      "case_sha256": "755fc637701011a6a75187d0c96969d1a49abcddb3be858212405fc31877ef8a",
+      "parent": "write-agent-instructions-heldout-edge--skill--r2--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "bc4c6c64568162b94e18cba531155842a1a507eb447f9d065fd55837b3923f3e",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "recipient-f4ea64ef2d1e",
+      "case_sha256": "fef1a06b61d64157d66c9962ecdacb79d762a884a35193f928196e26814cbba3",
+      "parent": "write-agent-instructions-heldout-edge--skill--r3--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "b3c01d56738b618a4a5291f6e40d6b0e9262149f832845e95ae15eded34d89b6",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    {
+      "case_id": "recipient-13c9a8cb309b",
+      "case_sha256": "c8077b0d2dec9bc309b90f52d9f4b51c78308228108283a963bb87081657e5c7",
+      "parent": "write-agent-instructions-heldout-normal--prompt--r1--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8913146853de0190f644bd5f2c572b3defa904bfd675b9f878e1eb0ac8dfafac",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "recipient-bb50e0ae0ee2",
+      "case_sha256": "500b7555d43c633194c49ee35c96dc796ca6763125bf6a32d14dcd58958dee7d",
+      "parent": "write-agent-instructions-heldout-normal--prompt--r2--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8913146853de0190f644bd5f2c572b3defa904bfd675b9f878e1eb0ac8dfafac",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "recipient-9b37cc739476",
+      "case_sha256": "048542f8da4ac56b4e75e893550deee00c9e938cb5443e28ee39b5609bce9a8d",
+      "parent": "write-agent-instructions-heldout-normal--prompt--r3--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8913146853de0190f644bd5f2c572b3defa904bfd675b9f878e1eb0ac8dfafac",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "recipient-8fd37684a6f0",
+      "case_sha256": "7e9f8a3a01623b247602ca611332b4423001276d3f395d5346b24e19eb764152",
+      "parent": "write-agent-instructions-heldout-normal--skill--r1--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "c6f85e244b1817971bb583d8fc172b9554f0277b94fc6c31167078af4f5e33ec",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "recipient-5252a67bfeb9",
+      "case_sha256": "462349d95080a89c490e22a3c4d1a571d342cb75514c330e3458e1e563f693fd",
+      "parent": "write-agent-instructions-heldout-normal--skill--r2--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "bec5bdedc403cad9a82def590e32c7c9686aa7560d509142559b83d6289fe113",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "recipient-f8a806f01f05",
+      "case_sha256": "c564da2b6e3a9779d4e2d5f9fa0d10d95929a75655e3be8964ddaa7e5fce8953",
+      "parent": "write-agent-instructions-heldout-normal--skill--r3--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "f4021c5d4d20beee03f1a25a41f0dd93a88cdce487055cca828fcfc4ed6cc141",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    {
+      "case_id": "recipient-c8e44c9e0703",
+      "case_sha256": "080f4131450313c24ed001d59640492f5f4944efb8a53b5f5812278f5784a8a5",
+      "parent": "write-agent-instructions-heldout-pressure--prompt--r1--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "recipient-3dec2c10087a",
+      "case_sha256": "452000b09fce0e8e6051c927912356a86f335c3fd49272d4f000c10ec9e8fcb5",
+      "parent": "write-agent-instructions-heldout-pressure--prompt--r2--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "recipient-7baebcb0b555",
+      "case_sha256": "6b5dbde9dafa61fac2111e535f06ce7d407bdef25139748676815ba55b75c070",
+      "parent": "write-agent-instructions-heldout-pressure--prompt--r3--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "recipient-be06ff8f73ad",
+      "case_sha256": "9a2b1813b2919f12aeca73ac306b33008143a06eaa2fbc1dcdefa9ad437fd388",
+      "parent": "write-agent-instructions-heldout-pressure--skill--r1--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "recipient-4096adfed2e6",
+      "case_sha256": "8653e41910fb2e5c1cc22b5af5925afd9031866d87f3fabffb242c535067b521",
+      "parent": "write-agent-instructions-heldout-pressure--skill--r2--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "recipient-8735fbb2d481",
+      "case_sha256": "32c1f5196e6c41340fa1202daeff329451bce39db927aeca219c2fe83e2ced3c",
+      "parent": "write-agent-instructions-heldout-pressure--skill--r3--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    {
+      "case_id": "recipient-e1964aeaebab",
+      "case_sha256": "0f45a35b0cc11daf83cbfa5488b029390deb023de1529af0b4724d55ca5762b3",
+      "parent": "write-agent-instructions-fresh-csv-pointer--skill--r1--i2",
+      "control_for": null,
+      "fixture": {
+        "AGENTS.md": "876923a468b5e08ffce26ade1526c2ec91cd2bcdaaf68a609c8e5c4d6d55dda9",
+        "docs/contact-export.md": "b1a372ef7ad9eb5e5e268708a68b5bb18efc7de54d5e6394e076365e8cf3e6c0",
+        "packages/api/AGENTS.md": "a46b9bdc82464e7aff30b3280485573a40a22fc7bc82ee90101b5d47f2dc0aff",
+        "packages/api/package.json": "1239d4d885dcad42201a27ed9324f8f0f760b78700d8db9ced39a511cffe7eae"
+      }
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "frozen": true,
+  "skill": "write-agent-instructions",
+  "iteration": 2,
+  "frozen_at": "2026-10-05T13:38:03.840Z",
+  "subject": {
+    "SKILL.md": "801d30b68cb9666a20982aa890a101d58a0db506d5fb605428261953c95eb225",
+    "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94"
+  },
+  "matrix_sha256": "e3f59799374695d7b8fe6287861700ccfbf3d520674fa9ead62b568c8b03b1fe",
+  "budget_sha256": "73c6465488b5522a12edd7aa27c04d203c92ffe62757659d277a6cb2e067f285",
+  "cases": {
+    "write-agent-instructions-discovery-navigation": {
+      "sha256": "70699b40f3d4dbebd9964e7b92a195b2e1b7d9d6f23faf88b57f2382791546b4",
+      "fixture": {
+        "AGENTS.md": "0cfb4405e25bd1d7619d36e4cca8158565deed1582ff5767ef318894d4acb712",
+        "docs/export-conventions.md": "7a6882a5dfb31f8c923c1b39897212b0efac18e6b936f7200771ef992a934775",
+        "session.log": "99273e0cc2af52cb1dea1b07ccf14a6303f92080de710c5434f7d4ef8798d5f2"
+      }
+    },
+    "write-agent-instructions-discovery-wrong-layer": {
+      "sha256": "d67eb55cb83c00026c4aafa92201036b583a83486236902f49e97a91d8458dba",
+      "fixture": {
+        "AGENTS.md": "c13c56a0a0f09c9e6c9b010bb674c7cacd139861f9307048c0ad38d088a761f2",
+        "packages/api/AGENTS.md": "67ce8ecbe0ccff7698bfb64b4b2a593198d1f5fc82fa0dad75a113c7124bff41",
+        "packages/api/docs/errors.md": "0ffbf7ece985859f255ab2115f5dff4a585871db8ec2a4508481298ae0f01a4f",
+        "session.log": "1bdb8bbb5bfff914664cfbd8fa4b1da9bf62e9fbc2942895c1157f87fcb22dcb"
+      }
+    },
+    "write-agent-instructions-discovery-not-instruction-defect": {
+      "sha256": "d96b24a50306328227c49830fa2628ec7a2e024ac42bbe291a4a7a19a9004117",
+      "fixture": {
+        "AGENTS.md": "7f2a8203c83a82066cfaf3e3d9a4cac8002cb3332dd7b8d7a5ab720fff2bfa27",
+        "scripts/check-config.mjs": "2619b2ce986025e1efae701724180f3c28e5c3e70817996617cdf771654a360f",
+        "session.log": "be746e578b8f89d4730ca7412ad0a845e62be6d621e42b3d76d03d61873c8b82"
+      }
+    },
+    "write-agent-instructions-heldout-normal": {
+      "sha256": "cc558ccb2b298d6b6e7be888face12a38d66ceff0eab66e1f1e46a6d59eb6993",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e",
+        "session.log": "c4f453006dd93f97bdd05e9eb248efe7d9a4b06a6b20b93bbc0bf6966fdfa9c4"
+      }
+    },
+    "write-agent-instructions-heldout-edge": {
+      "sha256": "a2dd36bb4d23fa0d6aa379615d575354b4d97564c2650121d7a5263a243266bb",
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "0e7da8ea02f0a9def67ed01a75aff811834a7fb0d0b5ba0057e4ec2ea4f454c1",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175",
+        "session.log": "85039bd932826656c42382969a36f8dbaa26450521d9ee255e19be23ecd37ce2"
+      }
+    },
+    "write-agent-instructions-heldout-pressure": {
+      "sha256": "0014c32665c4778d5f8c78b8c14829302d65933c1af7d1e78d460df9c1c0d5e0",
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8",
+        "session.log": "acbcd458ae0c0129cac08cc59d08ed9a574003c5992344627d7474814da77a17"
+      }
+    },
+    "write-agent-instructions-trigger-positive-1": {
+      "sha256": "2529e5b1dada011047b7bfe70bf5c992fd1f52c358fd3f7fd228986c7359ab58",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e",
+        "session.log": "c4f453006dd93f97bdd05e9eb248efe7d9a4b06a6b20b93bbc0bf6966fdfa9c4"
+      }
+    },
+    "write-agent-instructions-trigger-positive-2": {
+      "sha256": "28ceaec91384e05d25fe6e165ecfc52d66db6427035a01c5fa87dd1702e44514",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e",
+        "session.log": "c4f453006dd93f97bdd05e9eb248efe7d9a4b06a6b20b93bbc0bf6966fdfa9c4"
+      }
+    },
+    "write-agent-instructions-trigger-positive-3": {
+      "sha256": "215b3ecaa6cd595639db278b7e743dee6aac8f513fb94c0dbd823db6510ebd0a",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e",
+        "session.log": "c4f453006dd93f97bdd05e9eb248efe7d9a4b06a6b20b93bbc0bf6966fdfa9c4"
+      }
+    },
+    "write-agent-instructions-trigger-positive-4": {
+      "sha256": "5fe3439fa92db8153d85ce19160898a79e7e66d5c228953b6237ea427bd037df",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e",
+        "session.log": "c4f453006dd93f97bdd05e9eb248efe7d9a4b06a6b20b93bbc0bf6966fdfa9c4"
+      }
+    },
+    "write-agent-instructions-trigger-positive-5": {
+      "sha256": "6e03bc7c49f6865158299b36a2cad3b6efd0fcd203439a304b5b9cf5d9cef63f",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e",
+        "session.log": "c4f453006dd93f97bdd05e9eb248efe7d9a4b06a6b20b93bbc0bf6966fdfa9c4"
+      }
+    },
+    "write-agent-instructions-trigger-negative-1": {
+      "sha256": "2288b696d47fa824379ff05e842a8fbea056a15f0dd30cf666212876342a3415",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "write-agent-instructions-trigger-negative-2": {
+      "sha256": "30eaa7e5e1a9c1c35fddf21bb80ad5e9884a59e96286c7addfbc055f99b09b92",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "write-agent-instructions-trigger-negative-3": {
+      "sha256": "d33b1631201d8c695a6e9e2bec59688ffff34bb8a0ced25f14e688beb49f382c",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "write-agent-instructions-trigger-negative-4": {
+      "sha256": "a9e133cde0571b8126db97ccab7b6e5184d20c919d960a8fb69a72e9a6be8c8b",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "write-agent-instructions-trigger-negative-5": {
+      "sha256": "1d01a6e4ff37da9feb7b0c7b630b4bf52e7f16ac5a0b33f45c6e37c54fc3cd17",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "recipient-a058824ad96e": {
+      "sha256": "1a07fa40f43add4f0c89966b4aa42ef855418d658e1005457cf7fe9805f4e22c",
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "6a90c57e366f1dd5ab9e3f8967f1f70997f8fe0f4077e7153df64be297edccee",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    "control-3d23b9ca70ec": {
+      "sha256": "9bcff61baf660c0b627058d615b308681af7b1952ad2034ba028a7d47a4ced5e",
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "0e7da8ea02f0a9def67ed01a75aff811834a7fb0d0b5ba0057e4ec2ea4f454c1",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    "recipient-fa9acc757cd4": {
+      "sha256": "01807b7bd19a5abb514a104efe2a7cf01d3edf68083d285a043bad4b26786112",
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "fd6cd25dd60cecdfe199876891855f482e4a9ba55ba4159eb7e2c614e2d2e3fb",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    "recipient-d812c272caad": {
+      "sha256": "bb0e3df0af8e8cd1cfa48a40c79c85a9ae60142368391a18b247afafc8cc01f9",
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "ad78e8bd3733d81a0b8aea672cc5e485a57107ced208e15def0422392cb277ff",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    "recipient-80006d57c92d": {
+      "sha256": "6e6a3f097e0f1f7b871d7a580cbf17c9b24b1ad352a274d0b4cde4d0e67f02c2",
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "cf49c861d7a451cf66c194032dd7b1488c8919b03413b03bc8e457a49052b520",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    "recipient-a4b505e78987": {
+      "sha256": "0f69cb9cd4f7b564df08f22965dc13e69aa9088545439899071e4e4c20b05f87",
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "d58a59860f8621781970cbfee55f5f70c37d3503d1cd1dea32093460e6294c05",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    "recipient-7db6293b830a": {
+      "sha256": "336c2138960f5af0131f376eca689f134f44aafa29bf2f028ed00601f2bdda0b",
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "fb293929ed4da92d75dcd5eb989ef8c5499fac1dbef98bacdbd06beffc7a6131",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175"
+      }
+    },
+    "recipient-cfeb510c62f8": {
+      "sha256": "25ff1424f7731e5c09b7d2161b10f9778de933894743c67ba01eb87f0c99997d",
+      "fixture": {
+        "AGENTS.md": "8913146853de0190f644bd5f2c572b3defa904bfd675b9f878e1eb0ac8dfafac",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    "control-9823bcc98621": {
+      "sha256": "17f30d24e2f4a352d3a9163979a580d99b7b402e588bd543bb2da31a97a4c227",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    "recipient-65f773120b16": {
+      "sha256": "7122002065c6f2e63815875a3c2117feca471b04e5e79192fe22be725b44d1ab",
+      "fixture": {
+        "AGENTS.md": "8913146853de0190f644bd5f2c572b3defa904bfd675b9f878e1eb0ac8dfafac",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    "recipient-4f7b1146317c": {
+      "sha256": "3862cef8c6ca4e5b4656db8ad3074d797c2983a13c5fb20eaed6757064e2a104",
+      "fixture": {
+        "AGENTS.md": "3ede80ac89eeabc855ea90cea08a51f0d6dc13999e3e28b2ccf5d1c23c2d8325",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    "recipient-233effc9a8c6": {
+      "sha256": "606f0fb222e652cf877ad86d7babd1786a2d5267c016e839638fcd544c4f17cc",
+      "fixture": {
+        "AGENTS.md": "c6f85e244b1817971bb583d8fc172b9554f0277b94fc6c31167078af4f5e33ec",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    "recipient-1d7401d1598f": {
+      "sha256": "52ee2a2cbb3cd3b4e34127c6410b728f5a7493321eefe869bb3448cb3f8bf124",
+      "fixture": {
+        "AGENTS.md": "f4021c5d4d20beee03f1a25a41f0dd93a88cdce487055cca828fcfc4ed6cc141",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    "recipient-79ee1716c8ec": {
+      "sha256": "cf54e4793fc43a110ab77f759ba8847385638977e05d9ad9683d4686055d99d5",
+      "fixture": {
+        "AGENTS.md": "f4021c5d4d20beee03f1a25a41f0dd93a88cdce487055cca828fcfc4ed6cc141",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+      }
+    },
+    "recipient-9273a8a19590": {
+      "sha256": "18eed6a626e981fc16e27767341833ecb3a5412206cca68eb29ba40535949abf",
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    "control-03b29675e6eb": {
+      "sha256": "0f2ea7024ac907c6b346413aa4614fcea90040dafec546da6246c0278628e3d0",
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    "recipient-4d809dcc1f59": {
+      "sha256": "21d8ac0857d4bb04a582ddf0c6f241c05ca6f9d6c8aa30e36c441f5f48e60426",
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    "recipient-08c68de55a80": {
+      "sha256": "21d59364dce1b1df9b228768b16563c546c7f8c3e09bae655cba1f7cd87fd212",
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    "recipient-b7854ed4e515": {
+      "sha256": "c0d24d5a183a75098e4461e704656fcdb677ab4b8d98ac2c53cbb98bfe381670",
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    "recipient-365c21a6200a": {
+      "sha256": "964b677ecdf80ab796444c446317e515530a9d8161b3183469b271ca528e9d0f",
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    },
+    "recipient-dd76b0e70c62": {
+      "sha256": "38e96d5ea2f94079772056aa999f87b8ee87a559c6929ee959cd1208f9fd1279",
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+      }
+    }
+  },
+  "opportunity_sha256": "d3a28070768498b21f49271a4df9a8008f9cc53c65f0af7a405d3113cf4dffff",
+  "opportunity_record": "# Opportunity evidence\n\n## research-question\n\nDiscovery: `research-question-discovery-version-conflict`, isolated matrix version 2, none/prompt repetition 3. Earlier launches are preserved calibration or launch failures, not comparative observations.\n\nBoth arms answered the installed-version question correctly, cited supplied documents, bounded unknowns, and changed only the requested report. This case demonstrates no behavioral superiority. The proposed opportunity is reusable delivery of the strong prompt's applicability, evidence, and uncertainty rules. That hypothesis must survive normal native discovery, adjacent negative requests, and the held-out comparison; prompt parity alone is not a release result.\n\nMechanism: a narrow catalog entry and version-applicability workflow. Strong prompt adds 386 characters to every request. Freeze minimum delivery improvement at 40% fewer caller instruction characters, all critical outcomes passing, every positive trigger observed, no adjacent false trigger, and the cost ceilings in budget.json. The ordinary request also succeeded, so evidence does not establish that this instruction burden is always necessary. A saved prompt is the cheaper fallback if native delivery adds no demonstrated value.\n\n## build-prototype and create-handoff\n\nTheir paired discovery sessions completed before drafting. Both prototype arms created runnable synthetic experiments; both handoff arms changed only the requested packet. Independent outcome review is pending. Drafts test a delivery hypothesis: reproducible experiment/verdict contracts and current-state continuation contracts can be recalled from short requests. No superiority is claimed from file creation or extra prose. Native positives, adjacent negatives, held-out outcomes, cost thresholds, and fresh handoff recipients will determine whether that hypothesis survives.\n\n## map-decisions\n\nBoth discovery arms completed and created bounded local decision artifacts before the final body was drafted. Test the delivery hypothesis for maintaining states, owners and dependencies without converting unknowns into tasks. Held-out cycle handling and continuation boundaries remain required; a larger map alone is not improvement.\n\n## prepare-pr and review-session\n\nThree distinct discovery tasks in each workflow ran in both none/prompt arms. PR baselines created local drafts; session baselines created review reports. The delivery hypothesis is accurate repeated application of diff/validation boundaries and evidence-to-remedy reasoning. Independent scoring must distinguish a demonstrated residual from parity. Publication behavior remains a separate mocked fresh probe; no real GitHub write is authorized by evaluation.\n\n## write-agent-instructions\n\nAll six discovery sessions completed before the final body was drafted. Both arms correctly left instructions unchanged for the checker-defect scenario. Test reusable delivery and downstream effects, not the number of rules written. Every generated instruction revision requires fresh affected-task and adjacent-policy evidence. Avoiding an unnecessary edit is a correct result.\n\n## create-setup-guide\n\nThe initial normal none/prompt actors both timed out after producing code; they are incomplete, not passes. Existing-secret and missing-role discovery tasks also exercise replacement authority and prerequisite completion. The final missing-permission prompt actor also timed out. All six discovery sessions have now finished before freezing the final subject; three are incomplete. The helper's independent nine-class preservation and failure-control suite passed. Independent output review remains pending. Proposed mechanism: explicit completion conditions, deadline-bound runner tests, and a small local storage helper for its declared compatible encoding. Its file-only verification never claims vendor credential validity. This candidate has a possible behavioral residual as well as a delivery hypothesis; adversarial independent runner replay must decide.\n\n### New setup failure class and final codec\n\nIndependent discovery replay found a baseline runner that escaped apostrophes/backslashes into different values for Node's built-in dotenv reader while claiming completion. The final local helper now selects an absent literal quote delimiter and rejects unsupported values instead of inventing escape semantics. Its nine-class suite includes real Node consumer round trips, including backslash-n as literal data, plus an all-delimiters rejection control. Compatibility with other configuration readers remains conditional and must be verified by the generated project. This correction and its regression were frozen before any setup skill-arm execution.\n\nThe first literal-codec consumer replay found that Node expands backslash-n inside double quotes. Manifest i2 was rejected before setup skill execution. Prefer single quotes, then backticks, and accept double quotes only without backslashes; reject unsupported escape combinations. The corrected independent consumer and nine-class control suite passes. Frozen subject i3 is the first setup subject eligible for actor evaluation; earlier drafts remain recorded rather than labeled passing.\n\n### Multiline/BOM preservation and stronger cheaper arm\n\nA separate evaluator reproduced baseline corruption when a target-looking assignment occurs inside an unrelated multiline value, and replacement without confirmation for BOM-prefixed targets. These are added failure classes, not passing generated self-tests. The storage helper rejects unsupported multiline configuration before any write and independently confirms BOM cannot bypass replacement. The instruction now requires parsing or honest rejection before modification. This is the second tested body revision; the initial body batch is retained as earlier evidence. The setup comparison is versioned with an improved strongest prompt that includes bounded terminal/subprocess replay and actual consumer fidelity, derived from discovery defects. All original user tasks/assertions remain intact; rerun the complete setup held-out/trigger suite against this stronger cheaper arm. No earlier timeout is removed.\n"
+}

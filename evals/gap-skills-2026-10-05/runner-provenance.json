@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "body_batch_loaded_runner_sha256": "52415aabf3a36c203153522778a4eae779c08fcd7c51209e7b431e55fed91505",
+  "snapshot": "runner-snapshots/52415aabf3a36c203153522778a4eae779c08fcd7c51209e7b431e55fed91505.mjs",
+  "scope": "Every heldout run in the initial body batch (iteration 1).",
+  "correction": "Runner source was initially hashed from disk at each actor launch although Node had loaded the module once. Later changes to native catalog capture and iteration selection were not executed by the in-flight batch. This reconstructed exact loaded source matches the first batch manifest hash. Original manifests remain untouched. Use this execution snapshot for initial body-batch provenance, not later disk-file hashes. Later batches capture their loaded source at module initialization.",
+  "iteration_label": "Initial body-batch iteration labels remain 1. The force-loaded subject hashes, not labels, identify the tested revision. Prompt baselines remain immutable because no skill was available. Metadata-only Tier-2 revisions retain identical runtime text and get fresh native discovery tests."
+}

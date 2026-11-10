@@ -1,0 +1,1 @@
+API agent used HTTP 400 and a bare error string because it did not find packages/api/docs/errors.md. Maintainer rejected it and cited that canonical document. No other failure recorded.

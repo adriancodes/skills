@@ -1,0 +1,1 @@
+{"scripts":{"check":"node scripts/check-format.mjs","check:config":"node scripts/check-config.mjs"}}

@@ -1,0 +1,270 @@
+{
+  "frozen": true,
+  "prepared_at": "2026-10-05T13:06:48.858Z",
+  "known_gate": {
+    "tier": 3,
+    "iteration": 2,
+    "behavior_runs": 18,
+    "native_runs": 10,
+    "native_observations": [
+      {
+        "id": "prepare-pr-trigger-negative-1--native--r1--i2",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "prepare-pr-trigger-negative-2--native--r1--i2",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "prepare-pr-trigger-negative-3--native--r1--i2",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "prepare-pr-trigger-negative-4--native--r1--i2",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "prepare-pr-trigger-negative-5--native--r1--i2",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "prepare-pr-trigger-positive-1--native--r1--i2",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      },
+      {
+        "id": "prepare-pr-trigger-positive-2--native--r1--i2",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      },
+      {
+        "id": "prepare-pr-trigger-positive-3--native--r1--i2",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      },
+      {
+        "id": "prepare-pr-trigger-positive-4--native--r1--i2",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      },
+      {
+        "id": "prepare-pr-trigger-positive-5--native--r1--i2",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      }
+    ],
+    "comparisons": [
+      {
+        "case_id": "prepare-pr-heldout-normal",
+        "prompt": [
+          {
+            "id": "prepare-pr-heldout-normal--prompt--r1--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "prepare-pr-heldout-normal--prompt--r2--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "prepare-pr-heldout-normal--prompt--r3--i1",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "skill": [
+          {
+            "id": "prepare-pr-heldout-normal--skill--r1--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "prepare-pr-heldout-normal--skill--r2--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "prepare-pr-heldout-normal--skill--r3--i1",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "claim": "Observed correctness and delivery; prose length is not a gain."
+      },
+      {
+        "case_id": "prepare-pr-heldout-edge",
+        "prompt": [
+          {
+            "id": "prepare-pr-heldout-edge--prompt--r1--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "prepare-pr-heldout-edge--prompt--r2--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "prepare-pr-heldout-edge--prompt--r3--i1",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "skill": [
+          {
+            "id": "prepare-pr-heldout-edge--skill--r1--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "prepare-pr-heldout-edge--skill--r2--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "prepare-pr-heldout-edge--skill--r3--i1",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "claim": "Observed correctness and delivery; prose length is not a gain."
+      },
+      {
+        "case_id": "prepare-pr-heldout-pressure",
+        "prompt": [
+          {
+            "id": "prepare-pr-heldout-pressure--prompt--r1--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "prepare-pr-heldout-pressure--prompt--r2--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "prepare-pr-heldout-pressure--prompt--r3--i1",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "skill": [
+          {
+            "id": "prepare-pr-heldout-pressure--skill--r1--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "prepare-pr-heldout-pressure--skill--r2--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "prepare-pr-heldout-pressure--skill--r3--i1",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "claim": "Observed correctness and delivery; prose length is not a gain."
+      }
+    ],
+    "failures": [],
+    "baseline_failures": [],
+    "missing": [
+      "Two consecutive fresh rounds"
+    ],
+    "cost": [
+      {
+        "case_id": "prepare-pr-heldout-normal",
+        "tokens": [
+          76179,
+          98857
+        ],
+        "wall_ms": [
+          46720,
+          58553
+        ],
+        "tool_calls": [
+          4,
+          5
+        ],
+        "instruction_reduction": 0.6501831501831502,
+        "pass": true
+      },
+      {
+        "case_id": "prepare-pr-heldout-edge",
+        "tokens": [
+          76413,
+          82884
+        ],
+        "wall_ms": [
+          45294,
+          52674
+        ],
+        "tool_calls": [
+          4,
+          5
+        ],
+        "instruction_reduction": 0.705765407554672,
+        "pass": true
+      },
+      {
+        "case_id": "prepare-pr-heldout-pressure",
+        "tokens": [
+          75778,
+          81738
+        ],
+        "wall_ms": [
+          45369,
+          53807
+        ],
+        "tool_calls": [
+          4,
+          4
+        ],
+        "instruction_reduction": 0.6647940074906367,
+        "pass": true
+      }
+    ],
+    "evidence_gate": "INCOMPLETE",
+    "acceptance": "Pending user review of concrete result; evidence does not grant SHIP"
+  },
+  "records": [
+    {
+      "case_id": "prepare-pr-fresh-mock-publication",
+      "case_sha256": "2bf521d632b3dd6721029792089818836ca181a0f78fcd7242e6dbdc9f3de723",
+      "fixture": {
+        ".github/PULL_REQUEST_TEMPLATE.md": "d0d7b75fc6a508c725f40531714cbe7bba660c06e37224c5a4c2cb7557211a9c",
+        "docs/user-notes.md": "af03aad090ebfa88ed5fa059e88cb98837488a1d2b3dddb6008e024c593c9e5d",
+        "src/export.mjs": "199905f04e838a6531a9c6f86426a122145714eccf11ce5879217c29d24047f1",
+        "test.mjs": "85f085c071ece9ce4213769d6b2fb5699f9f6a3e9129e15d35cdfeb0d557a39c",
+        "tools/gh": "d17199dba99328ced610d54f07f13ec0bb753d0bd75c62f275070cd175e94d87"
+      }
+    },
+    {
+      "case_id": "prepare-pr-fresh-missing-history",
+      "case_sha256": "7d4cc4822891e895505eb153ad804cc5a198dc866a8a37ecc0406dba7125aef2",
+      "fixture": {
+        "change.diff": "df511bc53b7ba3fdde7326fefbaea6a0c77e5931204b4fde251586a05509c330",
+        "src/export.mjs": "914d02652a2162e8f6c2e08fdf92086070ee90377dbef4aa299f1fac6b7272b7",
+        "validation.md": "f09319a0d9876d289bf5069dc90916ed8f5ba6d19e1f98e43cec300279fde5b7"
+      }
+    }
+  ]
+}

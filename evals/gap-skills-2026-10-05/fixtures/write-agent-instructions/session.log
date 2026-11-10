@@ -1,0 +1,4 @@
+Agent asked for an export implementation.
+Agent did not locate docs/export-conventions.md and invented a JSON-array format.
+Maintainer rejected the format and pointed to docs/export-conventions.md.
+No release or migration policy failure occurred.

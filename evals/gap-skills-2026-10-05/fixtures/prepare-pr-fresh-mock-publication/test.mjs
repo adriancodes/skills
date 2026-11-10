@@ -1,0 +1,1 @@
+import assert from "node:assert/strict";import {serialize} from "./src/export.mjs";assert.equal(serialize([{x:1},{x:2}]),'{"x":1}\n{"x":2}\n');assert.equal(serialize([]),"");console.log("format checks passed");

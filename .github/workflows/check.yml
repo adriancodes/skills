@@ -18,3 +18,7 @@ jobs:
       - run: node evals/check-review-probes.mjs
       - run: node evals/pocock-comparison-2026-10-04/check.mjs
       - run: node evals/remaining-skills-2026-10-04/check.mjs
+      - run: node evals/gap-skills-2026-10-05/check-scorer.mjs
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: python3 -B skills/create-setup-guide/evals/check-local-env.py

@@ -1,0 +1,5 @@
+--- a/src/export.mjs
++++ b/src/export.mjs
+@@ -1 +1 @@
+-export const serialize = rows => rows.map(JSON.stringify).join("");
++export const serialize = rows => rows.map(JSON.stringify).join("\n");

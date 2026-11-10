@@ -1,0 +1,1 @@
+Agent ran node scripts/check.mjs. The tool exited 1: Missing required field region. Agent wrote “configuration verified” in the result. Maintainer reproduced the missing field. No other checker was available.

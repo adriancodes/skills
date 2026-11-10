@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "frozen": true,
+  "skill": "review-session",
+  "iteration": 1,
+  "frozen_at": "2026-10-05T12:11:39.259Z",
+  "subject": {
+    "SKILL.md": "3db1b58249124f6d3a95c825408ad1a9286f4fdcda32ad4b93dbc211a528d40d",
+    "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94"
+  },
+  "matrix_sha256": "e3f59799374695d7b8fe6287861700ccfbf3d520674fa9ead62b568c8b03b1fe",
+  "budget_sha256": "73c6465488b5522a12edd7aa27c04d203c92ffe62757659d277a6cb2e067f285",
+  "cases": {
+    "review-session-discovery-unwired-check": {
+      "sha256": "e191255b8f33c071bb850378d5c0fe780728921b98659d62942e184a45f8782e",
+      "fixture": {
+        ".github/workflows/check.yml": "269339ccf8de675b77d985d874672a393dbcea55d9c54112826fcc653cf79eda",
+        "config.json": "97c9c5164cc8151da3fbd264c080292acc5e1ed3b0d2f672d471ade2725516f4",
+        "package.json": "00a3c59cdda3c416b61c724117e6e89789080139f5d6994e852e00006667e400",
+        "scripts/check-config.mjs": "6f37cfffad3127cdccfd440813402d49f03eb17314a4d7eef95aac80ce136714",
+        "scripts/check-format.mjs": "8d7cd8c531b903a90251e0f15b549857320168274aead18c3ce20b60e5c8a941",
+        "session.log": "4f9a698298d4952434703b94ccc9591838a90445b6ecd3104627ba3e090918f8"
+      }
+    },
+    "review-session-discovery-decision-gap": {
+      "sha256": "e1da5488302ec44be17f631ebeacd12bcf39415845187ebbf0880eca9c4cdb32",
+      "fixture": {
+        "AGENTS.md": "e3a597b626b4330805a1fdf40b434b0ab17c3aab365db349b0d863dbbc07d7bb",
+        "requirements.md": "7c31e24b078f3934c8387b44287e230a5024b3e6e7b679807c75829eddfad492",
+        "session.log": "ca10a8d3a85e413216a403ce3d77f3421c9a7a0da1d22dca9961767963bc560e"
+      }
+    },
+    "review-session-discovery-environment-failure": {
+      "sha256": "5d064fd048d7d77b75dd4f493df2fc163fcec732ef1d656ab80773b31c2278a0",
+      "fixture": {
+        "package.json": "8c77a49f3db433c0a38024b66bc1d59b78282eb96289656d1f0c42b2c78335b3",
+        "session.log": "c3387090a9f6061a27aaa3746f91b36fd0d47dcc4cea5bdf47bffa1ad10ab657",
+        "test.mjs": "f31f2de0e889e0878a5ba12e15adba73d4a15b32e23599938de95a3a21bfecb6"
+      }
+    },
+    "review-session-heldout-stale-validation": {
+      "sha256": "f13e615bc454bb0119794e804157de3c5242ffd3115faca8f26e1bd74a8a668f",
+      "fixture": {
+        "AGENTS.md": "2a9f4090cb9c54bae3ec5396a6d3df761f8dce7fc522a7fe77cb4557ba8d439b",
+        "session.log": "e7fa818eec5325589f5335cbe04dc38495a2e599e5b6db5c8e81c74e5f0647ef",
+        "test.mjs": "975db7119cd72c0527dca4b9e786412a0ce17dd6eb8bac91d297bec92fda7aa7"
+      }
+    },
+    "review-session-heldout-wrong-command": {
+      "sha256": "8888c6f815101cb88372f4ea36dc2fa999ff13dea4b106d5034bafe1ed8e25b0",
+      "fixture": {
+        "package.json": "deb0d072c217d056e798de5f72b4dff38b483970b46c7ff0bbfaf9014d0bbe6a",
+        "session.log": "49a80ac387551cbdefd4346a002ad5f1c75cec991cad675b7a885ac62d7e1fd7",
+        "verify.mjs": "a78f16c5be1a2feeb8fc9c732bb5de957d1367e512e6cec8e6125808e66eca89"
+      }
+    },
+    "review-session-heldout-pressure": {
+      "sha256": "1429d21c4e5ba63f0b667f8b29c56b21e74604193682802b718fe3db62f377a4",
+      "fixture": {
+        "checks.md": "4907f02e1c088178cad2361dfe8f40e559a9f0576777e61364dedf88adaaf896",
+        "session.log": "f71742174adca8fa579b453112d37cf48c545840e490036ceada4686dd6db7b0"
+      }
+    },
+    "review-session-trigger-positive-1": {
+      "sha256": "d3f9ca02c40bee5d83425f8a53d439913594329c92576fcc49d978bc45c3f2ee",
+      "fixture": {
+        "AGENTS.md": "2a9f4090cb9c54bae3ec5396a6d3df761f8dce7fc522a7fe77cb4557ba8d439b",
+        "session.log": "e7fa818eec5325589f5335cbe04dc38495a2e599e5b6db5c8e81c74e5f0647ef",
+        "test.mjs": "975db7119cd72c0527dca4b9e786412a0ce17dd6eb8bac91d297bec92fda7aa7"
+      }
+    },
+    "review-session-trigger-positive-2": {
+      "sha256": "1a655c4191b5eb7c24fbd6d35412eb9340cfb61f248f802f33839026df3dafe0",
+      "fixture": {
+        "AGENTS.md": "2a9f4090cb9c54bae3ec5396a6d3df761f8dce7fc522a7fe77cb4557ba8d439b",
+        "session.log": "e7fa818eec5325589f5335cbe04dc38495a2e599e5b6db5c8e81c74e5f0647ef",
+        "test.mjs": "975db7119cd72c0527dca4b9e786412a0ce17dd6eb8bac91d297bec92fda7aa7"
+      }
+    },
+    "review-session-trigger-positive-3": {
+      "sha256": "cb6c64af5c470748ab296bfe4f75a899a1923c06bfb4694109ec479c21f270da",
+      "fixture": {
+        "AGENTS.md": "2a9f4090cb9c54bae3ec5396a6d3df761f8dce7fc522a7fe77cb4557ba8d439b",
+        "session.log": "e7fa818eec5325589f5335cbe04dc38495a2e599e5b6db5c8e81c74e5f0647ef",
+        "test.mjs": "975db7119cd72c0527dca4b9e786412a0ce17dd6eb8bac91d297bec92fda7aa7"
+      }
+    },
+    "review-session-trigger-positive-4": {
+      "sha256": "ae09c54065e9304335f1d5550b69485a72976a41a09b47cff8d55fcf75721126",
+      "fixture": {
+        "AGENTS.md": "2a9f4090cb9c54bae3ec5396a6d3df761f8dce7fc522a7fe77cb4557ba8d439b",
+        "session.log": "e7fa818eec5325589f5335cbe04dc38495a2e599e5b6db5c8e81c74e5f0647ef",
+        "test.mjs": "975db7119cd72c0527dca4b9e786412a0ce17dd6eb8bac91d297bec92fda7aa7"
+      }
+    },
+    "review-session-trigger-positive-5": {
+      "sha256": "89cd855ddb7c08de5bdd1b190d7934f62f4a24da4a1f5bd62892302f9f6ceb8f",
+      "fixture": {
+        "AGENTS.md": "2a9f4090cb9c54bae3ec5396a6d3df761f8dce7fc522a7fe77cb4557ba8d439b",
+        "session.log": "e7fa818eec5325589f5335cbe04dc38495a2e599e5b6db5c8e81c74e5f0647ef",
+        "test.mjs": "975db7119cd72c0527dca4b9e786412a0ce17dd6eb8bac91d297bec92fda7aa7"
+      }
+    },
+    "review-session-trigger-negative-1": {
+      "sha256": "0cee847464b11d2a3d3db05eb9770c72d41a18af09bb2c615db171c45500e93e",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "review-session-trigger-negative-2": {
+      "sha256": "91af049482ea6f74880f4bad1e952e1050befcb9191f4f4005d8e74765fd8622",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "review-session-trigger-negative-3": {
+      "sha256": "45e14a1ddbd578557485896e279949764d0fb8b5507adb21d3ce6413fa97aaf3",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "review-session-trigger-negative-4": {
+      "sha256": "6cf12c4837a7437e70982d57a73d795b81ca7ab339a4aec1ea40f689048142f4",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "review-session-trigger-negative-5": {
+      "sha256": "d67a10a1025d9dbb9d08a9c08326696bc7c82f4793727cef7c6a9919ab8a571e",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    }
+  },
+  "opportunity_sha256": "9d39362daaf3ac1722ad7d55c72a704d04cc3de1bfce69f5671adf466bd50977",
+  "opportunity_record": "# Opportunity evidence\n\n## research-question\n\nDiscovery: `research-question-discovery-version-conflict`, isolated matrix version 2, none/prompt repetition 3. Earlier launches are preserved calibration or launch failures, not comparative observations.\n\nBoth arms answered the installed-version question correctly, cited supplied documents, bounded unknowns, and changed only the requested report. This case demonstrates no behavioral superiority. The proposed opportunity is reusable delivery of the strong prompt's applicability, evidence, and uncertainty rules. That hypothesis must survive normal native discovery, adjacent negative requests, and the held-out comparison; prompt parity alone is not a release result.\n\nMechanism: a narrow catalog entry and version-applicability workflow. Strong prompt adds 386 characters to every request. Freeze minimum delivery improvement at 40% fewer caller instruction characters, all critical outcomes passing, every positive trigger observed, no adjacent false trigger, and the cost ceilings in budget.json. The ordinary request also succeeded, so evidence does not establish that this instruction burden is always necessary. A saved prompt is the cheaper fallback if native delivery adds no demonstrated value.\n\n## build-prototype and create-handoff\n\nTheir paired discovery sessions completed before drafting. Both prototype arms created runnable synthetic experiments; both handoff arms changed only the requested packet. Independent outcome review is pending. Drafts test a delivery hypothesis: reproducible experiment/verdict contracts and current-state continuation contracts can be recalled from short requests. No superiority is claimed from file creation or extra prose. Native positives, adjacent negatives, held-out outcomes, cost thresholds, and fresh handoff recipients will determine whether that hypothesis survives.\n\n## map-decisions\n\nBoth discovery arms completed and created bounded local decision artifacts before the final body was drafted. Test the delivery hypothesis for maintaining states, owners and dependencies without converting unknowns into tasks. Held-out cycle handling and continuation boundaries remain required; a larger map alone is not improvement.\n\n## prepare-pr and review-session\n\nThree distinct discovery tasks in each workflow ran in both none/prompt arms. PR baselines created local drafts; session baselines created review reports. The delivery hypothesis is accurate repeated application of diff/validation boundaries and evidence-to-remedy reasoning. Independent scoring must distinguish a demonstrated residual from parity. Publication behavior remains a separate mocked fresh probe; no real GitHub write is authorized by evaluation.\n\n## write-agent-instructions\n\nAll six discovery sessions completed before the final body was drafted. Both arms correctly left instructions unchanged for the checker-defect scenario. Test reusable delivery and downstream effects, not the number of rules written. Every generated instruction revision requires fresh affected-task and adjacent-policy evidence. Avoiding an unnecessary edit is a correct result.\n\n## create-setup-guide\n\nThe initial normal none/prompt actors both timed out after producing code; they are incomplete, not passes. Existing-secret and missing-role discovery tasks also exercise replacement authority and prerequisite completion. The final missing-permission prompt actor also timed out. All six discovery sessions have now finished before freezing the final subject; three are incomplete. The helper's independent nine-class preservation and failure-control suite passed. Independent output review remains pending. Proposed mechanism: explicit completion conditions, deadline-bound runner tests, and a small local storage helper for its declared compatible encoding. Its file-only verification never claims vendor credential validity. This candidate has a possible behavioral residual as well as a delivery hypothesis; adversarial independent runner replay must decide.\n"
+}

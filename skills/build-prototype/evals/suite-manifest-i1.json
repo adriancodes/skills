@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "frozen": true,
+  "skill": "build-prototype",
+  "iteration": 1,
+  "frozen_at": "2026-10-05T12:11:39.147Z",
+  "subject": {
+    "SKILL.md": "45ed8b81cba550c5ad43ef8f08225b67ae8bf55201fc9cd108229d98a9e96cb5"
+  },
+  "matrix_sha256": "e3f59799374695d7b8fe6287861700ccfbf3d520674fa9ead62b568c8b03b1fe",
+  "budget_sha256": "73c6465488b5522a12edd7aa27c04d203c92ffe62757659d277a6cb2e067f285",
+  "cases": {
+    "build-prototype-discovery-retry-state": {
+      "sha256": "a6306760748b75874a90d3943737926d69164dbe179864bb89c6724554884511",
+      "fixture": {
+        "README.md": "81327cbe15c50b12d834e3c036a9ca9906e094cbca57baaeb0dceb21c44b8c84",
+        "src/payment.js": "3714cbfe62ba6673dcafca4b9168983df1a0119ff34caed03381ce2f6dc8b6ce"
+      }
+    },
+    "build-prototype-heldout-search-state": {
+      "sha256": "c164317f9c01705f1cb1cdfe8a2ee3803510caf1a331c03e3c548013a877c5f6",
+      "fixture": {
+        "README.md": "3171355c0af539846cb36b276a19b0db7cf2955ec461deec1d7f594acc5052c6",
+        "src/search.js": "17d6ca2c578731933d101270023f91e37b1bef48bc3c4e49e734fc189ed74b3d"
+      }
+    },
+    "build-prototype-heldout-empty-single": {
+      "sha256": "9c9982e7edca6dd0f545aa2bd72d9b4ec659b88899c488a5e1d59384778ae7bd",
+      "fixture": {
+        "src/labels.js": "08c4b1c70afc99572e8bc61523bec1a5f4c5f5012ff0c7d7228a1e6c3a17b6bc"
+      }
+    },
+    "build-prototype-heldout-production-pressure": {
+      "sha256": "e68ecdf6a2d8e8a0e8329f356f8d0690bdd1f31cdaebbd80415dc0c4baac1e52",
+      "fixture": {
+        "src/client.js": "468190a8643ab1f3d2434ab8c0e0e42c216fd0274109dcebd0c021c98972ca0d"
+      }
+    },
+    "build-prototype-trigger-positive-1": {
+      "sha256": "2d00edcd88908a07021bf28a7f4713655e56ef27fc031bb76fd223ddd0433c88",
+      "fixture": {
+        "README.md": "3171355c0af539846cb36b276a19b0db7cf2955ec461deec1d7f594acc5052c6",
+        "src/search.js": "17d6ca2c578731933d101270023f91e37b1bef48bc3c4e49e734fc189ed74b3d"
+      }
+    },
+    "build-prototype-trigger-positive-2": {
+      "sha256": "dfff4b0b9dfc890376cd422a371a4caa6e8889f54246b32eb63cfa4a01bc47e0",
+      "fixture": {
+        "README.md": "3171355c0af539846cb36b276a19b0db7cf2955ec461deec1d7f594acc5052c6",
+        "src/search.js": "17d6ca2c578731933d101270023f91e37b1bef48bc3c4e49e734fc189ed74b3d"
+      }
+    },
+    "build-prototype-trigger-negative-1": {
+      "sha256": "7543a1c904c60d63aa6be2935245fcb6772fede229aab378588ecd3ada0c09d3",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "build-prototype-trigger-negative-2": {
+      "sha256": "ab33405f56b28cb961f1d8e7c6dde5f7054a86f5dada2c6fe32532c483ee5f9d",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    }
+  },
+  "opportunity_sha256": "9d39362daaf3ac1722ad7d55c72a704d04cc3de1bfce69f5671adf466bd50977",
+  "opportunity_record": "# Opportunity evidence\n\n## research-question\n\nDiscovery: `research-question-discovery-version-conflict`, isolated matrix version 2, none/prompt repetition 3. Earlier launches are preserved calibration or launch failures, not comparative observations.\n\nBoth arms answered the installed-version question correctly, cited supplied documents, bounded unknowns, and changed only the requested report. This case demonstrates no behavioral superiority. The proposed opportunity is reusable delivery of the strong prompt's applicability, evidence, and uncertainty rules. That hypothesis must survive normal native discovery, adjacent negative requests, and the held-out comparison; prompt parity alone is not a release result.\n\nMechanism: a narrow catalog entry and version-applicability workflow. Strong prompt adds 386 characters to every request. Freeze minimum delivery improvement at 40% fewer caller instruction characters, all critical outcomes passing, every positive trigger observed, no adjacent false trigger, and the cost ceilings in budget.json. The ordinary request also succeeded, so evidence does not establish that this instruction burden is always necessary. A saved prompt is the cheaper fallback if native delivery adds no demonstrated value.\n\n## build-prototype and create-handoff\n\nTheir paired discovery sessions completed before drafting. Both prototype arms created runnable synthetic experiments; both handoff arms changed only the requested packet. Independent outcome review is pending. Drafts test a delivery hypothesis: reproducible experiment/verdict contracts and current-state continuation contracts can be recalled from short requests. No superiority is claimed from file creation or extra prose. Native positives, adjacent negatives, held-out outcomes, cost thresholds, and fresh handoff recipients will determine whether that hypothesis survives.\n\n## map-decisions\n\nBoth discovery arms completed and created bounded local decision artifacts before the final body was drafted. Test the delivery hypothesis for maintaining states, owners and dependencies without converting unknowns into tasks. Held-out cycle handling and continuation boundaries remain required; a larger map alone is not improvement.\n\n## prepare-pr and review-session\n\nThree distinct discovery tasks in each workflow ran in both none/prompt arms. PR baselines created local drafts; session baselines created review reports. The delivery hypothesis is accurate repeated application of diff/validation boundaries and evidence-to-remedy reasoning. Independent scoring must distinguish a demonstrated residual from parity. Publication behavior remains a separate mocked fresh probe; no real GitHub write is authorized by evaluation.\n\n## write-agent-instructions\n\nAll six discovery sessions completed before the final body was drafted. Both arms correctly left instructions unchanged for the checker-defect scenario. Test reusable delivery and downstream effects, not the number of rules written. Every generated instruction revision requires fresh affected-task and adjacent-policy evidence. Avoiding an unnecessary edit is a correct result.\n\n## create-setup-guide\n\nThe initial normal none/prompt actors both timed out after producing code; they are incomplete, not passes. Existing-secret and missing-role discovery tasks also exercise replacement authority and prerequisite completion. The final missing-permission prompt actor also timed out. All six discovery sessions have now finished before freezing the final subject; three are incomplete. The helper's independent nine-class preservation and failure-control suite passed. Independent output review remains pending. Proposed mechanism: explicit completion conditions, deadline-bound runner tests, and a small local storage helper for its declared compatible encoding. Its file-only verification never claims vendor credential validity. This candidate has a possible behavioral residual as well as a delivery hypothesis; adversarial independent runner replay must decide.\n"
+}

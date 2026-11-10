@@ -1,0 +1,22 @@
+{
+  "skill": "review-session",
+  "positive": [
+    "Review an agent session for evidence-backed friction",
+    "Review this session and identify the smallest measurable remedies",
+    "Review session effectiveness and its recorded friction"
+  ],
+  "negative": [
+    {
+      "prompt": "Review this pull request before merge",
+      "owner": "code-review"
+    },
+    {
+      "prompt": "Implement the next task from the slices file",
+      "owner": "implement-task"
+    }
+  ],
+  "behavior": {
+    "prompt": "Review an agent session for evidence-backed friction",
+    "expect": "Apply the scoped workflow and verify its actual artifact; follow the per-skill frozen outcome suite."
+  }
+}

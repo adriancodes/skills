@@ -1,0 +1,1 @@
+Destination: confirmed decisions for migration spec. Settled: data stays in EU, owner Adrian. Open: storage provider, owner Platform. Open: backup schedule, owner Ops, depends on provider recovery API. Unspecified: restore exercise details until backup schedule is chosen.

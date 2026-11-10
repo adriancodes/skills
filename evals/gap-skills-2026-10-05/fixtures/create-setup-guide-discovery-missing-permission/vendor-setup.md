@@ -1,0 +1,1 @@
+Synthetic vendor guide. To create TEST_ACCESS_KEY, an owner must grant Sandbox Reader at Team > Members. The current member has no Sandbox role. After grant, open Sandbox > Keys > Create read-only test key. Store only in .env.local. Completion: key exists and role grant has been confirmed by human.

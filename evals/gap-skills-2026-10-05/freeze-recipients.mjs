@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {fileURLToPath} from 'node:url';
+import {sha256} from './validate-record.mjs';
+const here=path.dirname(fileURLToPath(import.meta.url));
+const version=process.argv[2];
+const target=path.join(here,version?`recipient-manifest-${version}.json`:'recipient-manifest.json');assert(!fs.existsSync(target),'Refusing to replace frozen recipient inputs');
+const cases=JSON.parse(fs.readFileSync(path.join(here,'cases.json'))).cases.filter(c=>c.split==='downstream');
+const records=cases.map(c=>{const dir=path.join(here,c.fixture);return {case_id:c.id,case_sha256:sha256(JSON.stringify(c)),parent:c.parent,control_for:c.control_for,fixture:Object.fromEntries(fs.readdirSync(dir,{recursive:true}).filter(f=>fs.statSync(path.join(dir,f)).isFile()).sort().map(f=>[f,sha256(fs.readFileSync(path.join(dir,f)))]))};});
+fs.writeFileSync(target,JSON.stringify({frozen:true,prepared_at:new Date().toISOString(),records},null,2)+'\n');
+console.log(`Frozen ${records.length} fresh-recipient inputs`);

@@ -1,0 +1,332 @@
+{
+  "frozen": true,
+  "prepared_at": "2026-10-05T14:05:17.383Z",
+  "iteration": 2,
+  "known_gate": {
+    "tier": 3,
+    "iteration": 2,
+    "behavior_runs": 18,
+    "native_runs": 10,
+    "native_observations": [
+      {
+        "id": "write-agent-instructions-trigger-negative-1--native--r1--i2",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "write-agent-instructions-trigger-negative-2--native--r1--i2",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "write-agent-instructions-trigger-negative-3--native--r1--i2",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "write-agent-instructions-trigger-negative-4--native--r1--i2",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "write-agent-instructions-trigger-negative-5--native--r1--i2",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "write-agent-instructions-trigger-positive-1--native--r1--i2",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      },
+      {
+        "id": "write-agent-instructions-trigger-positive-2--native--r1--i2",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      },
+      {
+        "id": "write-agent-instructions-trigger-positive-3--native--r1--i2",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      },
+      {
+        "id": "write-agent-instructions-trigger-positive-4--native--r1--i2",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      },
+      {
+        "id": "write-agent-instructions-trigger-positive-5--native--r1--i2",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      }
+    ],
+    "comparisons": [
+      {
+        "case_id": "write-agent-instructions-heldout-normal",
+        "prompt": [
+          {
+            "id": "write-agent-instructions-heldout-normal--prompt--r1--i2",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "write-agent-instructions-heldout-normal--prompt--r2--i2",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "write-agent-instructions-heldout-normal--prompt--r3--i2",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "skill": [
+          {
+            "id": "write-agent-instructions-heldout-normal--skill--r1--i2",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "write-agent-instructions-heldout-normal--skill--r2--i2",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "write-agent-instructions-heldout-normal--skill--r3--i2",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "claim": "Observed correctness and delivery; prose length is not a gain."
+      },
+      {
+        "case_id": "write-agent-instructions-heldout-edge",
+        "prompt": [
+          {
+            "id": "write-agent-instructions-heldout-edge--prompt--r1--i2",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "write-agent-instructions-heldout-edge--prompt--r2--i2",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "write-agent-instructions-heldout-edge--prompt--r3--i2",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "skill": [
+          {
+            "id": "write-agent-instructions-heldout-edge--skill--r1--i2",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "write-agent-instructions-heldout-edge--skill--r2--i2",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "write-agent-instructions-heldout-edge--skill--r3--i2",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "claim": "Observed correctness and delivery; prose length is not a gain."
+      },
+      {
+        "case_id": "write-agent-instructions-heldout-pressure",
+        "prompt": [
+          {
+            "id": "write-agent-instructions-heldout-pressure--prompt--r1--i2",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "write-agent-instructions-heldout-pressure--prompt--r2--i2",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "write-agent-instructions-heldout-pressure--prompt--r3--i2",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "skill": [
+          {
+            "id": "write-agent-instructions-heldout-pressure--skill--r1--i2",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "write-agent-instructions-heldout-pressure--skill--r2--i2",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "write-agent-instructions-heldout-pressure--skill--r3--i2",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "claim": "Observed correctness and delivery; prose length is not a gain."
+      }
+    ],
+    "failures": [],
+    "baseline_failures": [],
+    "missing": [
+      "Two consecutive fresh rounds"
+    ],
+    "cost": [
+      {
+        "case_id": "write-agent-instructions-heldout-normal",
+        "tokens": [
+          60037,
+          63390
+        ],
+        "wall_ms": [
+          33944,
+          45288
+        ],
+        "tool_calls": [
+          3,
+          4
+        ],
+        "instruction_reduction": 0.7332549941245594,
+        "pass": true
+      },
+      {
+        "case_id": "write-agent-instructions-heldout-edge",
+        "tokens": [
+          75766,
+          82230
+        ],
+        "wall_ms": [
+          45213,
+          44454
+        ],
+        "tool_calls": [
+          4,
+          4
+        ],
+        "instruction_reduction": 0.7464114832535885,
+        "pass": true
+      },
+      {
+        "case_id": "write-agent-instructions-heldout-pressure",
+        "tokens": [
+          59810,
+          62406
+        ],
+        "wall_ms": [
+          31770,
+          25610
+        ],
+        "tool_calls": [
+          3,
+          4
+        ],
+        "instruction_reduction": 0.7949044585987262,
+        "pass": true
+      }
+    ],
+    "history": {
+      "runs": 90,
+      "incomplete": [],
+      "prior_or_ineligible": [
+        "control-03b29675e6eb--none--r1--i1",
+        "control-3d23b9ca70ec--none--r1--i1",
+        "control-9823bcc98621--none--r1--i1",
+        "recipient-08c68de55a80--none--r1--i1",
+        "recipient-1d7401d1598f--none--r1--i1",
+        "recipient-233effc9a8c6--none--r1--i1",
+        "recipient-365c21a6200a--none--r1--i1",
+        "recipient-4d809dcc1f59--none--r1--i1",
+        "recipient-4f7b1146317c--none--r1--i1",
+        "recipient-65f773120b16--none--r1--i1",
+        "recipient-79ee1716c8ec--none--r1--i1",
+        "recipient-7db6293b830a--none--r1--i1",
+        "recipient-80006d57c92d--none--r1--i1",
+        "recipient-9273a8a19590--none--r1--i1",
+        "recipient-a058824ad96e--none--r1--i1",
+        "recipient-a4b505e78987--none--r1--i1",
+        "recipient-b7854ed4e515--none--r1--i1",
+        "recipient-cfeb510c62f8--none--r1--i1",
+        "recipient-d812c272caad--none--r1--i1",
+        "recipient-dd76b0e70c62--none--r1--i1",
+        "recipient-fa9acc757cd4--none--r1--i1",
+        "write-agent-instructions-discovery-navigation--none--r1--i1",
+        "write-agent-instructions-discovery-not-instruction-defect--none--r1--i1",
+        "write-agent-instructions-discovery-wrong-layer--none--r1--i1",
+        "write-agent-instructions-heldout-edge--prompt--r1--i1",
+        "write-agent-instructions-heldout-edge--prompt--r2--i1",
+        "write-agent-instructions-heldout-edge--prompt--r3--i1",
+        "write-agent-instructions-heldout-edge--skill--r1--i1",
+        "write-agent-instructions-heldout-edge--skill--r2--i1",
+        "write-agent-instructions-heldout-edge--skill--r3--i1",
+        "write-agent-instructions-heldout-normal--prompt--r1--i1",
+        "write-agent-instructions-heldout-normal--prompt--r2--i1",
+        "write-agent-instructions-heldout-normal--prompt--r3--i1",
+        "write-agent-instructions-heldout-normal--skill--r1--i1",
+        "write-agent-instructions-heldout-normal--skill--r2--i1",
+        "write-agent-instructions-heldout-normal--skill--r3--i1",
+        "write-agent-instructions-heldout-pressure--prompt--r1--i1",
+        "write-agent-instructions-heldout-pressure--prompt--r2--i1",
+        "write-agent-instructions-heldout-pressure--prompt--r3--i1",
+        "write-agent-instructions-heldout-pressure--skill--r1--i1",
+        "write-agent-instructions-heldout-pressure--skill--r2--i1",
+        "write-agent-instructions-heldout-pressure--skill--r3--i1",
+        "write-agent-instructions-trigger-negative-1--native--r1--i1",
+        "write-agent-instructions-trigger-negative-2--native--r1--i1",
+        "write-agent-instructions-trigger-negative-3--native--r1--i1",
+        "write-agent-instructions-trigger-negative-4--native--r1--i1",
+        "write-agent-instructions-trigger-negative-5--native--r1--i1",
+        "write-agent-instructions-trigger-positive-1--native--r1--i1",
+        "write-agent-instructions-trigger-positive-2--native--r1--i1",
+        "write-agent-instructions-trigger-positive-3--native--r1--i1",
+        "write-agent-instructions-trigger-positive-4--native--r1--i1",
+        "write-agent-instructions-trigger-positive-5--native--r1--i1"
+      ],
+      "warning": "Historical failures remain recorded; an untested current revision is incomplete, not a recovery."
+    },
+    "evidence_gate": "INCOMPLETE",
+    "acceptance": "Pending user review of concrete result; evidence does not grant SHIP"
+  },
+  "records": [
+    {
+      "case_id": "write-agent-instructions-fresh-csv-pointer",
+      "case_sha256": "1cba9d18ad8d12bebe9ecd30bd5f9ea22e4359231f25441d018cb4b196938aba",
+      "fixture": {
+        "AGENTS.md": "876923a468b5e08ffce26ade1526c2ec91cd2bcdaaf68a609c8e5c4d6d55dda9",
+        "docs/contact-export.md": "b1a372ef7ad9eb5e5e268708a68b5bb18efc7de54d5e6394e076365e8cf3e6c0",
+        "packages/api/AGENTS.md": "7b34894b7374c6f2bf14e4652913614b1b853148f2aa3e25f2bc8869642f0f8e",
+        "packages/api/package.json": "1239d4d885dcad42201a27ed9324f8f0f760b78700d8db9ced39a511cffe7eae",
+        "session.log": "26fdc2ac2e7d33ead79db0b8cccdc5b8d50337df284a26094acfe7e5ff84ace6"
+      }
+    },
+    {
+      "case_id": "write-agent-instructions-fresh-enum-checker",
+      "case_sha256": "f391f577a23306ea9010899100c1c3886c6ff7cf1150062671f723fe775cdd13",
+      "fixture": {
+        "AGENTS.md": "5b27ba3b960b4b93850b442d5c807860b03653b79c2d72d9cc3fbce4004a2f84",
+        "config.json": "24e9ae9c8057cddc76723d2e60309f64b9966dc4a7b5c7ffb4a1d7e6b3eaf645",
+        "docs/config-schema.md": "688c61875ebdd7e30a2b0a8fa8c4ca643a037a30019150088dc788eaea4fea82",
+        "scripts/check.mjs": "414459dd0a449705767c96f15745ce950071672d199a26c29105568a233f33cb",
+        "session.log": "052d7ba12389b61885b271581b2df040a8c20ef34e95861b0b20d803421c1f56"
+      }
+    }
+  ]
+}

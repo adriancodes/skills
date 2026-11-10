@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "frozen": true,
+  "skill": "create-setup-guide",
+  "iteration": 4,
+  "frozen_at": "2026-10-05T12:39:21.545Z",
+  "subject": {
+    "SKILL.md": "88d2619e95a1f7bf44a1d5233fe279d681384256b31e0259b7706f09b1880a85",
+    "scripts/local_env.py": "91d0b6f015a0a18119f7f99dc9d74e8f41921b77228662491aacc71098c22902"
+  },
+  "matrix_sha256": "e3f59799374695d7b8fe6287861700ccfbf3d520674fa9ead62b568c8b03b1fe",
+  "budget_sha256": "73c6465488b5522a12edd7aa27c04d203c92ffe62757659d277a6cb2e067f285",
+  "cases": {
+    "create-setup-guide-discovery-manual-prerequisite": {
+      "sha256": "0fef09ab8c50beab7896e603f3a76eff4dbd94f80aedebeaff9c218c97e7e331",
+      "fixture": {
+        ".env.example": "bdd2cfe8489107bdb1902b0ee5514851b20d5aab91b8eb47f0ed857c6994bf36",
+        ".env.local": "b7ec7242f303d4b64ffef1d78a96904da2dc8a190577eebec6a44268a79985e5",
+        "README.md": "c8d6dc44351731e9f52ad7c62ca45c8ee0b4455e6c8a7fb0f03d1178794df405",
+        "vendor-setup.md": "6523da71603f5ac881f0f4a17faded4e5687a7cb0e221de9e8ed4046ba45bed2"
+      }
+    },
+    "create-setup-guide-discovery-existing-secret": {
+      "sha256": "59b5ca4e0b5487412e0e6f948ca79ff20ea1df5c892a91664b1c834d3c702801",
+      "fixture": {
+        ".env.example": "7c24844e5778737de348de32975b27afa122f4a58c24e2139a6eae06778a45de",
+        ".env.local": "fe00281e6432a12bf999f1dc5b7d1266ea2e2b260001961279985cef78c12273",
+        "vendor-setup.md": "1db84f286db35163d6eca1b56839ae410e769b164cf551a1cbaefd1a19575e1a"
+      }
+    },
+    "create-setup-guide-discovery-missing-permission": {
+      "sha256": "dabb0fe142b56e2f76280f293bde2e35665dfa666e7670533d8ab2024ac92dca",
+      "fixture": {
+        ".env.local": "72a44e955b4cd69a574dea662b4ad0bd75f1affe565b499cc2211f43e20ede98",
+        "vendor-setup.md": "bd6167e566f39c1ca8abb358025e9e71e39ae3fc094e75db0a916b676304433d"
+      }
+    },
+    "create-setup-guide-heldout-normal": {
+      "sha256": "aab4865261386202cb51d15276b6a248ef11544e9006115bd4300dcf0ab27c38",
+      "fixture": {
+        ".env.local": "3918d98d24df35bba4d332a99a64b258abc91ccdaa43df75df585424ed6cebb7",
+        "vendor.md": "84e9cf3a0b20f283a3f76118c2b66eb3f16782ae9ec3cec47f678c0f1c604fec"
+      }
+    },
+    "create-setup-guide-heldout-edge": {
+      "sha256": "64439ff2e263fe5b69058c3b0aa3035437031fb08f6ad1cfd9ee0f8aeb9619a4",
+      "fixture": {
+        ".env.local": "243364e0fb45586884fe5c0e7bac5fe026075f26c21327d3cac61a09662488ab",
+        "vendor.md": "c8fc30401688ccbb106432badc030d505f6666f8cbd91d380c7c1771af6b5bf6"
+      }
+    },
+    "create-setup-guide-heldout-pressure": {
+      "sha256": "fc3fbb8f2efa0b0861b4bc9c12cdcab35f9a80c457b2c4a2495fd0ba8021c6cf",
+      "fixture": {
+        ".env.local": "db8d4a5c66acecdea40159a1e42a9f74ae94ebb4c3d6492bf8629c3a7f22431c",
+        "vendor.md": "136d58b72baff291d5a86c47ffc691acbc07ae2cebcf8a65f250cbe8a0d5b1b4"
+      }
+    },
+    "create-setup-guide-trigger-positive-1": {
+      "sha256": "4d2f4c2e2a0b86e1771bf7246e9389144cf757656c30e8a0a767780d2cb1c2b6",
+      "fixture": {
+        ".env.local": "3918d98d24df35bba4d332a99a64b258abc91ccdaa43df75df585424ed6cebb7",
+        "vendor.md": "84e9cf3a0b20f283a3f76118c2b66eb3f16782ae9ec3cec47f678c0f1c604fec"
+      }
+    },
+    "create-setup-guide-trigger-positive-2": {
+      "sha256": "ecdc34a5c7e168796d7941c73e98341baf928aba8f55b6a0b3912f218c4f57f2",
+      "fixture": {
+        ".env.local": "3918d98d24df35bba4d332a99a64b258abc91ccdaa43df75df585424ed6cebb7",
+        "vendor.md": "84e9cf3a0b20f283a3f76118c2b66eb3f16782ae9ec3cec47f678c0f1c604fec"
+      }
+    },
+    "create-setup-guide-trigger-positive-3": {
+      "sha256": "630c902abcd27aa459a791fe06ebc49856d7673beb518b812d0146c75091b01a",
+      "fixture": {
+        ".env.local": "3918d98d24df35bba4d332a99a64b258abc91ccdaa43df75df585424ed6cebb7",
+        "vendor.md": "84e9cf3a0b20f283a3f76118c2b66eb3f16782ae9ec3cec47f678c0f1c604fec"
+      }
+    },
+    "create-setup-guide-trigger-positive-4": {
+      "sha256": "2d237b5c117c552629d43a8a633e003a876ff25d83da323f4c32634e8af47ee4",
+      "fixture": {
+        ".env.local": "3918d98d24df35bba4d332a99a64b258abc91ccdaa43df75df585424ed6cebb7",
+        "vendor.md": "84e9cf3a0b20f283a3f76118c2b66eb3f16782ae9ec3cec47f678c0f1c604fec"
+      }
+    },
+    "create-setup-guide-trigger-positive-5": {
+      "sha256": "292124291b7e561c2cbfbe40866e755c374a4e0dc52e1339b7244faab82ab890",
+      "fixture": {
+        ".env.local": "3918d98d24df35bba4d332a99a64b258abc91ccdaa43df75df585424ed6cebb7",
+        "vendor.md": "84e9cf3a0b20f283a3f76118c2b66eb3f16782ae9ec3cec47f678c0f1c604fec"
+      }
+    },
+    "create-setup-guide-trigger-negative-1": {
+      "sha256": "098e27bb1f0aea55aec8e73a4c9309762d53186a9e02cd1cc03f92e6f45a133d",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "create-setup-guide-trigger-negative-2": {
+      "sha256": "24e262d93cb42fb096a16cfe362f6fad07c4a695e29e9c497a9a0926258b37ee",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "create-setup-guide-trigger-negative-3": {
+      "sha256": "1baafae5d97619ed6304d5f3531b16a22a6699979abc13e4042cabdd054d9ad5",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "create-setup-guide-trigger-negative-4": {
+      "sha256": "106df3748215c9c56b4c4efa2262c6eac01935b1debbeb1e8c0db7d15b65f65b",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "create-setup-guide-trigger-negative-5": {
+      "sha256": "e86b5c8be58a0a852a519b1c4b720e0a74edcff6ccef40419b39ed487ce3a8fb",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    }
+  },
+  "opportunity_sha256": "d3a28070768498b21f49271a4df9a8008f9cc53c65f0af7a405d3113cf4dffff",
+  "opportunity_record": "# Opportunity evidence\n\n## research-question\n\nDiscovery: `research-question-discovery-version-conflict`, isolated matrix version 2, none/prompt repetition 3. Earlier launches are preserved calibration or launch failures, not comparative observations.\n\nBoth arms answered the installed-version question correctly, cited supplied documents, bounded unknowns, and changed only the requested report. This case demonstrates no behavioral superiority. The proposed opportunity is reusable delivery of the strong prompt's applicability, evidence, and uncertainty rules. That hypothesis must survive normal native discovery, adjacent negative requests, and the held-out comparison; prompt parity alone is not a release result.\n\nMechanism: a narrow catalog entry and version-applicability workflow. Strong prompt adds 386 characters to every request. Freeze minimum delivery improvement at 40% fewer caller instruction characters, all critical outcomes passing, every positive trigger observed, no adjacent false trigger, and the cost ceilings in budget.json. The ordinary request also succeeded, so evidence does not establish that this instruction burden is always necessary. A saved prompt is the cheaper fallback if native delivery adds no demonstrated value.\n\n## build-prototype and create-handoff\n\nTheir paired discovery sessions completed before drafting. Both prototype arms created runnable synthetic experiments; both handoff arms changed only the requested packet. Independent outcome review is pending. Drafts test a delivery hypothesis: reproducible experiment/verdict contracts and current-state continuation contracts can be recalled from short requests. No superiority is claimed from file creation or extra prose. Native positives, adjacent negatives, held-out outcomes, cost thresholds, and fresh handoff recipients will determine whether that hypothesis survives.\n\n## map-decisions\n\nBoth discovery arms completed and created bounded local decision artifacts before the final body was drafted. Test the delivery hypothesis for maintaining states, owners and dependencies without converting unknowns into tasks. Held-out cycle handling and continuation boundaries remain required; a larger map alone is not improvement.\n\n## prepare-pr and review-session\n\nThree distinct discovery tasks in each workflow ran in both none/prompt arms. PR baselines created local drafts; session baselines created review reports. The delivery hypothesis is accurate repeated application of diff/validation boundaries and evidence-to-remedy reasoning. Independent scoring must distinguish a demonstrated residual from parity. Publication behavior remains a separate mocked fresh probe; no real GitHub write is authorized by evaluation.\n\n## write-agent-instructions\n\nAll six discovery sessions completed before the final body was drafted. Both arms correctly left instructions unchanged for the checker-defect scenario. Test reusable delivery and downstream effects, not the number of rules written. Every generated instruction revision requires fresh affected-task and adjacent-policy evidence. Avoiding an unnecessary edit is a correct result.\n\n## create-setup-guide\n\nThe initial normal none/prompt actors both timed out after producing code; they are incomplete, not passes. Existing-secret and missing-role discovery tasks also exercise replacement authority and prerequisite completion. The final missing-permission prompt actor also timed out. All six discovery sessions have now finished before freezing the final subject; three are incomplete. The helper's independent nine-class preservation and failure-control suite passed. Independent output review remains pending. Proposed mechanism: explicit completion conditions, deadline-bound runner tests, and a small local storage helper for its declared compatible encoding. Its file-only verification never claims vendor credential validity. This candidate has a possible behavioral residual as well as a delivery hypothesis; adversarial independent runner replay must decide.\n\n### New setup failure class and final codec\n\nIndependent discovery replay found a baseline runner that escaped apostrophes/backslashes into different values for Node's built-in dotenv reader while claiming completion. The final local helper now selects an absent literal quote delimiter and rejects unsupported values instead of inventing escape semantics. Its nine-class suite includes real Node consumer round trips, including backslash-n as literal data, plus an all-delimiters rejection control. Compatibility with other configuration readers remains conditional and must be verified by the generated project. This correction and its regression were frozen before any setup skill-arm execution.\n\nThe first literal-codec consumer replay found that Node expands backslash-n inside double quotes. Manifest i2 was rejected before setup skill execution. Prefer single quotes, then backticks, and accept double quotes only without backslashes; reject unsupported escape combinations. The corrected independent consumer and nine-class control suite passes. Frozen subject i3 is the first setup subject eligible for actor evaluation; earlier drafts remain recorded rather than labeled passing.\n\n### Multiline/BOM preservation and stronger cheaper arm\n\nA separate evaluator reproduced baseline corruption when a target-looking assignment occurs inside an unrelated multiline value, and replacement without confirmation for BOM-prefixed targets. These are added failure classes, not passing generated self-tests. The storage helper rejects unsupported multiline configuration before any write and independently confirms BOM cannot bypass replacement. The instruction now requires parsing or honest rejection before modification. This is the second tested body revision; the initial body batch is retained as earlier evidence. The setup comparison is versioned with an improved strongest prompt that includes bounded terminal/subprocess replay and actual consumer fidelity, derived from discovery defects. All original user tasks/assertions remain intact; rerun the complete setup held-out/trigger suite against this stronger cheaper arm. No earlier timeout is removed.\n"
+}

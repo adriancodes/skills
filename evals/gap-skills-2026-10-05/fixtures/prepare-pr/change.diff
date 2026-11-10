@@ -1,0 +1,7 @@
+--- a/src/export.mjs
++++ b/src/export.mjs
+@@ -1,3 +1,3 @@
+ export function exportRecords(records) {
+-  return JSON.stringify(records);
++  return records.length ? records.map(JSON.stringify).join("\n") + "\n" : "";
+ }

@@ -1,0 +1,1 @@
+Synthetic vendor. Missing role: Sandbox Reader. Owner grants it at Team > Members. Then human creates LOCAL_TEST_TOKEN under Sandbox > Tokens. Local .env.local only. Completion requires role confirmation and nonempty token.

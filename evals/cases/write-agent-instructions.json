@@ -1,0 +1,22 @@
+{
+  "skill": "write-agent-instructions",
+  "positive": [
+    "Write persistent project instructions with evidence-backed changes",
+    "Make the smallest change to persistent project instructions",
+    "Write agent instructions and test downstream behavior"
+  ],
+  "negative": [
+    {
+      "prompt": "Review this pull request before merge",
+      "owner": "code-review"
+    },
+    {
+      "prompt": "Implement the next task from the slices file",
+      "owner": "implement-task"
+    }
+  ],
+  "behavior": {
+    "prompt": "Write persistent project instructions with evidence-backed changes",
+    "expect": "Apply the scoped workflow and verify its actual artifact; follow the per-skill frozen outcome suite."
+  }
+}

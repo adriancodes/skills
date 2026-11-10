@@ -1,0 +1,22 @@
+{
+  "skill": "prepare-pr",
+  "positive": [
+    "Prepare my PR from the branch changes",
+    "Write a PR title and body using the repository template",
+    "Make a local PR draft with recorded validation"
+  ],
+  "negative": [
+    {
+      "prompt": "Review this pull request before merge",
+      "owner": "code-review"
+    },
+    {
+      "prompt": "Implement the next task from the slices file",
+      "owner": "implement-task"
+    }
+  ],
+  "behavior": {
+    "prompt": "Prepare my PR from the branch changes",
+    "expect": "Apply the scoped workflow and verify its actual artifact; follow the per-skill frozen outcome suite."
+  }
+}

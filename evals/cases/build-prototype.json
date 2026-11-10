@@ -1,0 +1,22 @@
+{
+  "skill": "build-prototype",
+  "positive": [
+    "Build a throwaway prototype with synthetic inputs",
+    "Run an experiment before production to answer a measurable question",
+    "Test this design with runnable code as a proof of concept"
+  ],
+  "negative": [
+    {
+      "prompt": "Review this pull request before merge",
+      "owner": "code-review"
+    },
+    {
+      "prompt": "Implement the next task from the slices file",
+      "owner": "implement-task"
+    }
+  ],
+  "behavior": {
+    "prompt": "Build a throwaway prototype with synthetic inputs",
+    "expect": "Apply the scoped workflow and verify its actual artifact; follow the per-skill frozen outcome suite."
+  }
+}

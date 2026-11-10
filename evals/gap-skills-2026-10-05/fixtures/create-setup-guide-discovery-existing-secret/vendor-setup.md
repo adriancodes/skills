@@ -1,0 +1,1 @@
+Synthetic primary documentation. Console: Settings > Sandbox > Access. Human creates a read-only test token. Destination FIXTURE_TOKEN in .env.local. No CI or network action required. Completion: nonempty FIXTURE_TOKEN.

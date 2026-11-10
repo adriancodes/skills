@@ -1,0 +1,1 @@
+Agent followed the instruction and ran scripts/check.mjs. Checker passed invalid config because it checks JSON syntax only. Runtime rejected missing required key. Maintainer confirmed checker has no schema validation.

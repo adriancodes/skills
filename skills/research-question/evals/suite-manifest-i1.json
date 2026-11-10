@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "frozen": true,
+  "skill": "research-question",
+  "iteration": 1,
+  "frozen_at": "2026-10-05T12:03:55.846Z",
+  "subject": {
+    "SKILL.md": "5b5cf87c9561bd2ac0fa0821ff66e2909f61a19fead205ea4c45379a2800afc9"
+  },
+  "matrix_sha256": "e3f59799374695d7b8fe6287861700ccfbf3d520674fa9ead62b568c8b03b1fe",
+  "budget_sha256": "73c6465488b5522a12edd7aa27c04d203c92ffe62757659d277a6cb2e067f285",
+  "cases": {
+    "research-question-discovery-version-conflict": {
+      "sha256": "53f6cb4acd590d1050f2780776c7593f31c0c35618799afdaa82d287116c5349",
+      "fixture": {
+        "package.json": "bafaa19d51f04cc32718600fc2d306841cc37f0102a44e41c0471a424ec441c2",
+        "vendor/sdk-1.4.md": "b65abcf9ae10e30213f671537633b536052cd10b59121278f790417bd47f7222",
+        "vendor/sdk-2.0.md": "207e29823758e783f85660ed7922b2ca5954c6c4c45af8a9612baff1908dbb1b"
+      }
+    },
+    "research-question-heldout-deprecation": {
+      "sha256": "2eb8d4c9453e3fd512299fb843d623f5b94ee32e18046654cafeccfd2a388574",
+      "fixture": {
+        "package.json": "d936caf579b0c3ec1ab3e62976211a699c7ed1d735d7e15e530008a770d25bbd",
+        "vendor/v2.md": "123d210494a513373d44ff56b125e01fb2730a75e7e977366e37eefbe796425d",
+        "vendor/v3.md": "5348e39e8fca1b1648f1e3271f6bdab069798d70a3f38d85d021156ceb088c1f"
+      }
+    },
+    "research-question-heldout-unknown-server": {
+      "sha256": "4f173ba7a6f0d416e5f3091ad4ab503f627ece361d00066b9260044633e68c11",
+      "fixture": {
+        "package.json": "ea301457d15847df52c5bef93ef8ec8df4b2b7163c5be872508f637c75b14e2c",
+        "vendor/v4.md": "36a7f19bd137a610de72dda87f91ac48985ee258057efb449aeea8f817ceb431"
+      }
+    },
+    "research-question-heldout-pressure": {
+      "sha256": "814252a6cfb3ec1e05f4d3f76fecac530d5c8082248edde1ef47271dbb97025d",
+      "fixture": {
+        "package.json": "164e29957696ad2c6e1d4564d3cc97ee261fe4869cb1d59f9fc17fa7beda363a",
+        "vendor.md": "d130a00b20f282a5ffda37f05981fffc1e0507f6643ba3901ae35cdb656ec63b"
+      }
+    },
+    "research-question-trigger-positive-1": {
+      "sha256": "ee20e5c909192c309e5d243e0a31bb02b6054b2d5cb713771cc60b4a149076c8",
+      "fixture": {
+        "package.json": "d936caf579b0c3ec1ab3e62976211a699c7ed1d735d7e15e530008a770d25bbd",
+        "vendor/v2.md": "123d210494a513373d44ff56b125e01fb2730a75e7e977366e37eefbe796425d",
+        "vendor/v3.md": "5348e39e8fca1b1648f1e3271f6bdab069798d70a3f38d85d021156ceb088c1f"
+      }
+    },
+    "research-question-trigger-positive-2": {
+      "sha256": "853e137fc028fc042eece430dfd67f1835bb4e90e1a476551c6a25f8ae7f62a4",
+      "fixture": {
+        "package.json": "d936caf579b0c3ec1ab3e62976211a699c7ed1d735d7e15e530008a770d25bbd",
+        "vendor/v2.md": "123d210494a513373d44ff56b125e01fb2730a75e7e977366e37eefbe796425d",
+        "vendor/v3.md": "5348e39e8fca1b1648f1e3271f6bdab069798d70a3f38d85d021156ceb088c1f"
+      }
+    },
+    "research-question-trigger-negative-1": {
+      "sha256": "f56330c4d5157836c514d57ba4a69a90d71c278006648ab26e2e6e2af2a57a13",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "research-question-trigger-negative-2": {
+      "sha256": "d09e81220753ea0ed3fef2560f637cdfce196cb5d7900e8945ed1c372725bb9f",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    }
+  },
+  "opportunity_sha256": "ccf3f5333162b1e4bb84c99e2d5096e5a78191d2a334d3f57b9650cd9c8636e4",
+  "opportunity_record": "# Opportunity evidence\n\n## research-question\n\nDiscovery: `research-question-discovery-version-conflict`, isolated matrix version 2, none/prompt repetition 3. Earlier launches are preserved calibration or launch failures, not comparative observations.\n\nBoth arms answered the installed-version question correctly, cited supplied documents, bounded unknowns, and changed only the requested report. This case demonstrates no behavioral superiority. The proposed opportunity is reusable delivery of the strong prompt's applicability, evidence, and uncertainty rules. That hypothesis must survive normal native discovery, adjacent negative requests, and the held-out comparison; prompt parity alone is not a release result.\n\nMechanism: a narrow catalog entry and version-applicability workflow. Strong prompt adds 386 characters to every request. Freeze minimum delivery improvement at 40% fewer caller instruction characters, all critical outcomes passing, every positive trigger observed, no adjacent false trigger, and the cost ceilings in budget.json. The ordinary request also succeeded, so evidence does not establish that this instruction burden is always necessary. A saved prompt is the cheaper fallback if native delivery adds no demonstrated value.\n\n## build-prototype and create-handoff\n\nTheir paired discovery sessions completed before drafting. Both prototype arms created runnable synthetic experiments; both handoff arms changed only the requested packet. Independent outcome review is pending. Drafts test a delivery hypothesis: reproducible experiment/verdict contracts and current-state continuation contracts can be recalled from short requests. No superiority is claimed from file creation or extra prose. Native positives, adjacent negatives, held-out outcomes, cost thresholds, and fresh handoff recipients will determine whether that hypothesis survives.\n"
+}

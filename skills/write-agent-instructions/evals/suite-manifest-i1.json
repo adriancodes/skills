@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "frozen": true,
+  "skill": "write-agent-instructions",
+  "iteration": 1,
+  "frozen_at": "2026-10-05T12:11:39.322Z",
+  "subject": {
+    "SKILL.md": "e43b23b54d77b210f87c0ab6c6d6c861060aee5dd6ae45a4091ebbf88b1cc3d0",
+    "agents/openai.yaml": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94"
+  },
+  "matrix_sha256": "e3f59799374695d7b8fe6287861700ccfbf3d520674fa9ead62b568c8b03b1fe",
+  "budget_sha256": "73c6465488b5522a12edd7aa27c04d203c92ffe62757659d277a6cb2e067f285",
+  "cases": {
+    "write-agent-instructions-discovery-navigation": {
+      "sha256": "70699b40f3d4dbebd9964e7b92a195b2e1b7d9d6f23faf88b57f2382791546b4",
+      "fixture": {
+        "AGENTS.md": "0cfb4405e25bd1d7619d36e4cca8158565deed1582ff5767ef318894d4acb712",
+        "docs/export-conventions.md": "7a6882a5dfb31f8c923c1b39897212b0efac18e6b936f7200771ef992a934775",
+        "session.log": "99273e0cc2af52cb1dea1b07ccf14a6303f92080de710c5434f7d4ef8798d5f2"
+      }
+    },
+    "write-agent-instructions-discovery-wrong-layer": {
+      "sha256": "d67eb55cb83c00026c4aafa92201036b583a83486236902f49e97a91d8458dba",
+      "fixture": {
+        "AGENTS.md": "c13c56a0a0f09c9e6c9b010bb674c7cacd139861f9307048c0ad38d088a761f2",
+        "packages/api/AGENTS.md": "67ce8ecbe0ccff7698bfb64b4b2a593198d1f5fc82fa0dad75a113c7124bff41",
+        "packages/api/docs/errors.md": "0ffbf7ece985859f255ab2115f5dff4a585871db8ec2a4508481298ae0f01a4f",
+        "session.log": "1bdb8bbb5bfff914664cfbd8fa4b1da9bf62e9fbc2942895c1157f87fcb22dcb"
+      }
+    },
+    "write-agent-instructions-discovery-not-instruction-defect": {
+      "sha256": "d96b24a50306328227c49830fa2628ec7a2e024ac42bbe291a4a7a19a9004117",
+      "fixture": {
+        "AGENTS.md": "7f2a8203c83a82066cfaf3e3d9a4cac8002cb3332dd7b8d7a5ab720fff2bfa27",
+        "scripts/check-config.mjs": "2619b2ce986025e1efae701724180f3c28e5c3e70817996617cdf771654a360f",
+        "session.log": "be746e578b8f89d4730ca7412ad0a845e62be6d621e42b3d76d03d61873c8b82"
+      }
+    },
+    "write-agent-instructions-heldout-normal": {
+      "sha256": "14178eb2040426a75caaad768777ebb07f22f71dd865f0f3d0824d98f53a127c",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e",
+        "session.log": "c4f453006dd93f97bdd05e9eb248efe7d9a4b06a6b20b93bbc0bf6966fdfa9c4"
+      }
+    },
+    "write-agent-instructions-heldout-edge": {
+      "sha256": "d3fc58b7b688bf05ff4be7df912355e7b80a8bdb660209dc1b629dd248e5ade5",
+      "fixture": {
+        "AGENTS.md": "ebb98575c51871847e204f847cef23ea77e4b875aa0ca9b439c0aec0bf8e9f7f",
+        "packages/web/AGENTS.md": "0e7da8ea02f0a9def67ed01a75aff811834a7fb0d0b5ba0057e4ec2ea4f454c1",
+        "packages/web/docs/forms.md": "229a7d6772453f80e44103440b58e4fd1dcd8f899d925beb953195dfab141175",
+        "session.log": "85039bd932826656c42382969a36f8dbaa26450521d9ee255e19be23ecd37ce2"
+      }
+    },
+    "write-agent-instructions-heldout-pressure": {
+      "sha256": "a703646e9292fea8c32af4d39a81f804a9acc02f418c8a5f2f931da600b6308e",
+      "fixture": {
+        "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+        "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8",
+        "session.log": "acbcd458ae0c0129cac08cc59d08ed9a574003c5992344627d7474814da77a17"
+      }
+    },
+    "write-agent-instructions-trigger-positive-1": {
+      "sha256": "2529e5b1dada011047b7bfe70bf5c992fd1f52c358fd3f7fd228986c7359ab58",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e",
+        "session.log": "c4f453006dd93f97bdd05e9eb248efe7d9a4b06a6b20b93bbc0bf6966fdfa9c4"
+      }
+    },
+    "write-agent-instructions-trigger-positive-2": {
+      "sha256": "28ceaec91384e05d25fe6e165ecfc52d66db6427035a01c5fa87dd1702e44514",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e",
+        "session.log": "c4f453006dd93f97bdd05e9eb248efe7d9a4b06a6b20b93bbc0bf6966fdfa9c4"
+      }
+    },
+    "write-agent-instructions-trigger-positive-3": {
+      "sha256": "215b3ecaa6cd595639db278b7e743dee6aac8f513fb94c0dbd823db6510ebd0a",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e",
+        "session.log": "c4f453006dd93f97bdd05e9eb248efe7d9a4b06a6b20b93bbc0bf6966fdfa9c4"
+      }
+    },
+    "write-agent-instructions-trigger-positive-4": {
+      "sha256": "5fe3439fa92db8153d85ce19160898a79e7e66d5c228953b6237ea427bd037df",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e",
+        "session.log": "c4f453006dd93f97bdd05e9eb248efe7d9a4b06a6b20b93bbc0bf6966fdfa9c4"
+      }
+    },
+    "write-agent-instructions-trigger-positive-5": {
+      "sha256": "6e03bc7c49f6865158299b36a2cad3b6efd0fcd203439a304b5b9cf5d9cef63f",
+      "fixture": {
+        "AGENTS.md": "3eb2bfc9d05e0773731ffd1afdbb6058d95d65d0b5de071dc2cfa5474f62e427",
+        "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e",
+        "session.log": "c4f453006dd93f97bdd05e9eb248efe7d9a4b06a6b20b93bbc0bf6966fdfa9c4"
+      }
+    },
+    "write-agent-instructions-trigger-negative-1": {
+      "sha256": "2288b696d47fa824379ff05e842a8fbea056a15f0dd30cf666212876342a3415",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "write-agent-instructions-trigger-negative-2": {
+      "sha256": "30eaa7e5e1a9c1c35fddf21bb80ad5e9884a59e96286c7addfbc055f99b09b92",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "write-agent-instructions-trigger-negative-3": {
+      "sha256": "d33b1631201d8c695a6e9e2bec59688ffff34bb8a0ced25f14e688beb49f382c",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "write-agent-instructions-trigger-negative-4": {
+      "sha256": "a9e133cde0571b8126db97ccab7b6e5184d20c919d960a8fb69a72e9a6be8c8b",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "write-agent-instructions-trigger-negative-5": {
+      "sha256": "1d01a6e4ff37da9feb7b0c7b630b4bf52e7f16ac5a0b33f45c6e37c54fc3cd17",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    }
+  },
+  "opportunity_sha256": "9d39362daaf3ac1722ad7d55c72a704d04cc3de1bfce69f5671adf466bd50977",
+  "opportunity_record": "# Opportunity evidence\n\n## research-question\n\nDiscovery: `research-question-discovery-version-conflict`, isolated matrix version 2, none/prompt repetition 3. Earlier launches are preserved calibration or launch failures, not comparative observations.\n\nBoth arms answered the installed-version question correctly, cited supplied documents, bounded unknowns, and changed only the requested report. This case demonstrates no behavioral superiority. The proposed opportunity is reusable delivery of the strong prompt's applicability, evidence, and uncertainty rules. That hypothesis must survive normal native discovery, adjacent negative requests, and the held-out comparison; prompt parity alone is not a release result.\n\nMechanism: a narrow catalog entry and version-applicability workflow. Strong prompt adds 386 characters to every request. Freeze minimum delivery improvement at 40% fewer caller instruction characters, all critical outcomes passing, every positive trigger observed, no adjacent false trigger, and the cost ceilings in budget.json. The ordinary request also succeeded, so evidence does not establish that this instruction burden is always necessary. A saved prompt is the cheaper fallback if native delivery adds no demonstrated value.\n\n## build-prototype and create-handoff\n\nTheir paired discovery sessions completed before drafting. Both prototype arms created runnable synthetic experiments; both handoff arms changed only the requested packet. Independent outcome review is pending. Drafts test a delivery hypothesis: reproducible experiment/verdict contracts and current-state continuation contracts can be recalled from short requests. No superiority is claimed from file creation or extra prose. Native positives, adjacent negatives, held-out outcomes, cost thresholds, and fresh handoff recipients will determine whether that hypothesis survives.\n\n## map-decisions\n\nBoth discovery arms completed and created bounded local decision artifacts before the final body was drafted. Test the delivery hypothesis for maintaining states, owners and dependencies without converting unknowns into tasks. Held-out cycle handling and continuation boundaries remain required; a larger map alone is not improvement.\n\n## prepare-pr and review-session\n\nThree distinct discovery tasks in each workflow ran in both none/prompt arms. PR baselines created local drafts; session baselines created review reports. The delivery hypothesis is accurate repeated application of diff/validation boundaries and evidence-to-remedy reasoning. Independent scoring must distinguish a demonstrated residual from parity. Publication behavior remains a separate mocked fresh probe; no real GitHub write is authorized by evaluation.\n\n## write-agent-instructions\n\nAll six discovery sessions completed before the final body was drafted. Both arms correctly left instructions unchanged for the checker-defect scenario. Test reusable delivery and downstream effects, not the number of rules written. Every generated instruction revision requires fresh affected-task and adjacent-policy evidence. Avoiding an unnecessary edit is a correct result.\n\n## create-setup-guide\n\nThe initial normal none/prompt actors both timed out after producing code; they are incomplete, not passes. Existing-secret and missing-role discovery tasks also exercise replacement authority and prerequisite completion. The final missing-permission prompt actor also timed out. All six discovery sessions have now finished before freezing the final subject; three are incomplete. The helper's independent nine-class preservation and failure-control suite passed. Independent output review remains pending. Proposed mechanism: explicit completion conditions, deadline-bound runner tests, and a small local storage helper for its declared compatible encoding. Its file-only verification never claims vendor credential validity. This candidate has a possible behavioral residual as well as a delivery hypothesis; adversarial independent runner replay must decide.\n"
+}

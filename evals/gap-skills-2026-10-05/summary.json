@@ -1,0 +1,1728 @@
+{
+  "generated_at": "2026-11-10T20:51:49.279Z",
+  "route": {
+    "version": 2,
+    "model": "gpt-6.1-sol",
+    "model_snapshot": null,
+    "snapshot_policy": "opaque-time-bounded",
+    "auth_route": "Authenticated local Codex CLI product route",
+    "harness": "codex-cli 0.160.0",
+    "reasoning_effort": "medium",
+    "sandbox": "workspace-write",
+    "observed_date": "2026-10-05",
+    "claim": "Observed local route only; no cross-model, snapshot-reproducibility, live-vendor-retrieval, or real-publication claim.",
+    "force_load": "Supplied body in prompt with read-only subject resources.",
+    "native_install": "Project .agents/skills, no body in prompt; observed file reads and outputs recorded.",
+    "args": [
+      "exec",
+      "-",
+      "--ephemeral",
+      "--ignore-user-config",
+      "--json",
+      "-m",
+      "gpt-6.1-sol",
+      "-c",
+      "model_reasoning_effort=\"medium\"",
+      "-s",
+      "workspace-write",
+      "--skip-git-repo-check",
+      "-C",
+      "<disposable-workspace>",
+      "-c",
+      "features.apps=false"
+    ],
+    "global_skill_isolation": "CLI path-scoped disabled entries from disabled-global-skills.json. No active home files changed.",
+    "excluded_discovery": "Version 1 discovery had global skill metadata visible. Preserved as preflight, excluded from comparative evidence; same fixture rerun under version 2."
+  },
+  "budget": {
+    "runs": 296,
+    "input_tokens": 20196710,
+    "output_tokens": 298441,
+    "unknown_usage_runs": [
+      "create-setup-guide-discovery-manual-prerequisite--none--r1--i1",
+      "create-setup-guide-discovery-manual-prerequisite--prompt--r1--i1",
+      "create-setup-guide-discovery-missing-permission--prompt--r1--i1",
+      "create-setup-guide-heldout-edge--prompt--r1--i1",
+      "create-setup-guide-heldout-edge--prompt--r1--i4",
+      "create-setup-guide-heldout-edge--prompt--r2--i1",
+      "create-setup-guide-heldout-edge--prompt--r2--i4",
+      "create-setup-guide-heldout-edge--prompt--r3--i1",
+      "create-setup-guide-heldout-edge--prompt--r3--i4",
+      "create-setup-guide-heldout-edge--skill--r1--i1",
+      "create-setup-guide-heldout-edge--skill--r1--i4",
+      "create-setup-guide-heldout-edge--skill--r2--i1",
+      "create-setup-guide-heldout-edge--skill--r2--i4",
+      "create-setup-guide-heldout-edge--skill--r3--i1",
+      "create-setup-guide-heldout-edge--skill--r3--i4",
+      "create-setup-guide-heldout-normal--prompt--r1--i1",
+      "create-setup-guide-heldout-normal--prompt--r1--i4",
+      "create-setup-guide-heldout-normal--prompt--r2--i1",
+      "create-setup-guide-heldout-normal--prompt--r2--i4",
+      "create-setup-guide-heldout-normal--prompt--r3--i1",
+      "create-setup-guide-heldout-normal--prompt--r3--i4",
+      "create-setup-guide-heldout-normal--skill--r1--i1",
+      "create-setup-guide-heldout-normal--skill--r1--i4",
+      "create-setup-guide-heldout-normal--skill--r2--i1",
+      "create-setup-guide-heldout-normal--skill--r2--i4",
+      "create-setup-guide-heldout-normal--skill--r3--i1",
+      "create-setup-guide-heldout-normal--skill--r3--i4",
+      "create-setup-guide-heldout-pressure--prompt--r1--i1",
+      "create-setup-guide-heldout-pressure--prompt--r1--i4",
+      "create-setup-guide-heldout-pressure--prompt--r2--i1",
+      "create-setup-guide-heldout-pressure--prompt--r2--i4",
+      "create-setup-guide-heldout-pressure--prompt--r3--i1",
+      "create-setup-guide-heldout-pressure--prompt--r3--i4",
+      "create-setup-guide-heldout-pressure--skill--r1--i1",
+      "create-setup-guide-heldout-pressure--skill--r1--i4",
+      "create-setup-guide-heldout-pressure--skill--r2--i1",
+      "create-setup-guide-heldout-pressure--skill--r2--i4",
+      "create-setup-guide-heldout-pressure--skill--r3--i1",
+      "create-setup-guide-heldout-pressure--skill--r3--i4",
+      "create-setup-guide-trigger-positive-1--native--r1--i4",
+      "create-setup-guide-trigger-positive-2--native--r1--i4",
+      "create-setup-guide-trigger-positive-3--native--r1--i4",
+      "create-setup-guide-trigger-positive-5--native--r1--i4",
+      "research-question-discovery-version-conflict--none--r1--i1",
+      "research-question-discovery-version-conflict--prompt--r1--i1"
+    ],
+    "judging_turns": 17,
+    "judging_usage": null,
+    "accounting": "Measured CLI tokens only; incomplete actors and collaboration judging have unknown usage. Full total cost is unproven.",
+    "actor_elapsed_ms": 9800685
+  },
+  "skills": {
+    "research-question": {
+      "tier": 2,
+      "iteration": 1,
+      "tested_body_revisions": 1,
+      "behavior_runs": 4,
+      "native_runs": 4,
+      "native_observations": [
+        {
+          "id": "research-question-trigger-negative-1--native--r1--i1",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "research-question-trigger-negative-2--native--r1--i1",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "research-question-trigger-positive-1--native--r1--i1",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "research-question-trigger-positive-2--native--r1--i1",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        }
+      ],
+      "comparisons": [
+        {
+          "case_id": "research-question-heldout-deprecation",
+          "prompt": [
+            {
+              "id": "research-question-heldout-deprecation--prompt--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "research-question-heldout-deprecation--skill--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        }
+      ],
+      "failures": [],
+      "baseline_failures": [],
+      "missing": [],
+      "cost": [
+        {
+          "case_id": "research-question-heldout-deprecation",
+          "tokens": [
+            76034,
+            81773
+          ],
+          "wall_ms": [
+            54521,
+            56291
+          ],
+          "tool_calls": [
+            5,
+            6
+          ],
+          "instruction_reduction": 0.6350093109869646,
+          "pass": true
+        }
+      ],
+      "history": {
+        "runs": 14,
+        "incomplete": [
+          "research-question-discovery-version-conflict--none--r1--i1",
+          "research-question-discovery-version-conflict--prompt--r1--i1"
+        ],
+        "prior_or_ineligible": [],
+        "warning": "Historical failures remain recorded; an untested current revision is incomplete, not a recovery."
+      },
+      "evidence_gate": "PASS",
+      "acceptance": "Pending user review of concrete result; evidence does not grant SHIP"
+    },
+    "build-prototype": {
+      "tier": 2,
+      "iteration": 2,
+      "tested_body_revisions": 1,
+      "behavior_runs": 4,
+      "native_runs": 4,
+      "native_observations": [
+        {
+          "id": "build-prototype-trigger-negative-1--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "build-prototype-trigger-negative-2--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "build-prototype-trigger-positive-1--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "build-prototype-trigger-positive-2--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        }
+      ],
+      "comparisons": [
+        {
+          "case_id": "build-prototype-heldout-search-state",
+          "prompt": [
+            {
+              "id": "build-prototype-heldout-search-state--prompt--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "build-prototype-heldout-search-state--skill--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        }
+      ],
+      "failures": [],
+      "baseline_failures": [],
+      "missing": [],
+      "cost": [
+        {
+          "case_id": "build-prototype-heldout-search-state",
+          "tokens": [
+            81102,
+            86419
+          ],
+          "wall_ms": [
+            125369,
+            112926
+          ],
+          "tool_calls": [
+            5,
+            6
+          ],
+          "instruction_reduction": 0.5652841781874041,
+          "pass": true
+        }
+      ],
+      "history": {
+        "runs": 10,
+        "incomplete": [],
+        "prior_or_ineligible": [
+          "build-prototype-discovery-retry-state--none--r1--i1"
+        ],
+        "warning": "Historical failures remain recorded; an untested current revision is incomplete, not a recovery."
+      },
+      "evidence_gate": "PASS",
+      "acceptance": "Pending user review of concrete result; evidence does not grant SHIP"
+    },
+    "create-handoff": {
+      "tier": 2,
+      "iteration": 2,
+      "tested_body_revisions": 1,
+      "behavior_runs": 4,
+      "native_runs": 4,
+      "native_observations": [
+        {
+          "id": "create-handoff-trigger-negative-1--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "create-handoff-trigger-negative-2--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "create-handoff-trigger-positive-1--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "create-handoff-trigger-positive-2--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        }
+      ],
+      "comparisons": [
+        {
+          "case_id": "create-handoff-heldout-dirty-resume",
+          "prompt": [
+            {
+              "id": "create-handoff-heldout-dirty-resume--prompt--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "create-handoff-heldout-dirty-resume--skill--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        }
+      ],
+      "failures": [],
+      "baseline_failures": [],
+      "missing": [],
+      "cost": [
+        {
+          "case_id": "create-handoff-heldout-dirty-resume",
+          "tokens": [
+            77954,
+            80812
+          ],
+          "wall_ms": [
+            55714,
+            60394
+          ],
+          "tool_calls": [
+            4,
+            5
+          ],
+          "instruction_reduction": 0.6915077989601386,
+          "pass": true
+        }
+      ],
+      "history": {
+        "runs": 14,
+        "incomplete": [],
+        "prior_or_ineligible": [
+          "create-handoff-discovery-stale-check--none--r1--i1"
+        ],
+        "warning": "Historical failures remain recorded; an untested current revision is incomplete, not a recovery."
+      },
+      "evidence_gate": "PASS",
+      "acceptance": "Pending user review of concrete result; evidence does not grant SHIP"
+    },
+    "prepare-pr": {
+      "tier": 3,
+      "iteration": 2,
+      "tested_body_revisions": 1,
+      "behavior_runs": 18,
+      "native_runs": 10,
+      "native_observations": [
+        {
+          "id": "prepare-pr-trigger-negative-1--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "prepare-pr-trigger-negative-2--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "prepare-pr-trigger-negative-3--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "prepare-pr-trigger-negative-4--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "prepare-pr-trigger-negative-5--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "prepare-pr-trigger-positive-1--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "prepare-pr-trigger-positive-2--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "prepare-pr-trigger-positive-3--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "prepare-pr-trigger-positive-4--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "prepare-pr-trigger-positive-5--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        }
+      ],
+      "comparisons": [
+        {
+          "case_id": "prepare-pr-heldout-normal",
+          "prompt": [
+            {
+              "id": "prepare-pr-heldout-normal--prompt--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "prepare-pr-heldout-normal--prompt--r2--i1",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "prepare-pr-heldout-normal--prompt--r3--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "prepare-pr-heldout-normal--skill--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "prepare-pr-heldout-normal--skill--r2--i1",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "prepare-pr-heldout-normal--skill--r3--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        },
+        {
+          "case_id": "prepare-pr-heldout-edge",
+          "prompt": [
+            {
+              "id": "prepare-pr-heldout-edge--prompt--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "prepare-pr-heldout-edge--prompt--r2--i1",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "prepare-pr-heldout-edge--prompt--r3--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "prepare-pr-heldout-edge--skill--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "prepare-pr-heldout-edge--skill--r2--i1",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "prepare-pr-heldout-edge--skill--r3--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        },
+        {
+          "case_id": "prepare-pr-heldout-pressure",
+          "prompt": [
+            {
+              "id": "prepare-pr-heldout-pressure--prompt--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "prepare-pr-heldout-pressure--prompt--r2--i1",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "prepare-pr-heldout-pressure--prompt--r3--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "prepare-pr-heldout-pressure--skill--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "prepare-pr-heldout-pressure--skill--r2--i1",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "prepare-pr-heldout-pressure--skill--r3--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        }
+      ],
+      "failures": [],
+      "baseline_failures": [],
+      "missing": [],
+      "cost": [
+        {
+          "case_id": "prepare-pr-heldout-normal",
+          "tokens": [
+            76179,
+            98857
+          ],
+          "wall_ms": [
+            46720,
+            58553
+          ],
+          "tool_calls": [
+            4,
+            5
+          ],
+          "instruction_reduction": 0.6501831501831502,
+          "pass": true
+        },
+        {
+          "case_id": "prepare-pr-heldout-edge",
+          "tokens": [
+            76413,
+            82884
+          ],
+          "wall_ms": [
+            45294,
+            52674
+          ],
+          "tool_calls": [
+            4,
+            5
+          ],
+          "instruction_reduction": 0.705765407554672,
+          "pass": true
+        },
+        {
+          "case_id": "prepare-pr-heldout-pressure",
+          "tokens": [
+            75778,
+            81738
+          ],
+          "wall_ms": [
+            45369,
+            53807
+          ],
+          "tool_calls": [
+            4,
+            4
+          ],
+          "instruction_reduction": 0.6647940074906367,
+          "pass": true
+        }
+      ],
+      "history": {
+        "runs": 36,
+        "incomplete": [],
+        "prior_or_ineligible": [
+          "prepare-pr-discovery-failed-validation--none--r1--i1",
+          "prepare-pr-discovery-misleading-title--none--r1--i1",
+          "prepare-pr-discovery-mixed-worktree--none--r1--i1"
+        ],
+        "warning": "Historical failures remain recorded; an untested current revision is incomplete, not a recovery."
+      },
+      "evidence_gate": "PASS",
+      "acceptance": "Pending user review of concrete result; evidence does not grant SHIP"
+    },
+    "review-session": {
+      "tier": 3,
+      "iteration": 2,
+      "tested_body_revisions": 2,
+      "behavior_runs": 18,
+      "native_runs": 10,
+      "native_observations": [
+        {
+          "id": "review-session-trigger-negative-1--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "review-session-trigger-negative-2--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "review-session-trigger-negative-3--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "review-session-trigger-negative-4--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "review-session-trigger-negative-5--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "review-session-trigger-positive-1--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "review-session-trigger-positive-2--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "review-session-trigger-positive-3--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "review-session-trigger-positive-4--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "review-session-trigger-positive-5--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        }
+      ],
+      "comparisons": [
+        {
+          "case_id": "review-session-heldout-stale-validation",
+          "prompt": [
+            {
+              "id": "review-session-heldout-stale-validation--prompt--r1--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "review-session-heldout-stale-validation--prompt--r2--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "review-session-heldout-stale-validation--prompt--r3--i2",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "review-session-heldout-stale-validation--skill--r1--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "review-session-heldout-stale-validation--skill--r2--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "review-session-heldout-stale-validation--skill--r3--i2",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        },
+        {
+          "case_id": "review-session-heldout-wrong-command",
+          "prompt": [
+            {
+              "id": "review-session-heldout-wrong-command--prompt--r1--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "review-session-heldout-wrong-command--prompt--r2--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "review-session-heldout-wrong-command--prompt--r3--i2",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "review-session-heldout-wrong-command--skill--r1--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "review-session-heldout-wrong-command--skill--r2--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "review-session-heldout-wrong-command--skill--r3--i2",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        },
+        {
+          "case_id": "review-session-heldout-pressure",
+          "prompt": [
+            {
+              "id": "review-session-heldout-pressure--prompt--r1--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "review-session-heldout-pressure--prompt--r2--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "review-session-heldout-pressure--prompt--r3--i2",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "review-session-heldout-pressure--skill--r1--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "review-session-heldout-pressure--skill--r2--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "review-session-heldout-pressure--skill--r3--i2",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        }
+      ],
+      "failures": [],
+      "baseline_failures": [],
+      "missing": [],
+      "cost": [
+        {
+          "case_id": "review-session-heldout-stale-validation",
+          "tokens": [
+            94208,
+            80083
+          ],
+          "wall_ms": [
+            91758,
+            69071
+          ],
+          "tool_calls": [
+            6,
+            5
+          ],
+          "instruction_reduction": 0.8205128205128205,
+          "pass": true
+        },
+        {
+          "case_id": "review-session-heldout-wrong-command",
+          "tokens": [
+            95674,
+            115160
+          ],
+          "wall_ms": [
+            85099,
+            65842
+          ],
+          "tool_calls": [
+            5,
+            7
+          ],
+          "instruction_reduction": 0.7906976744186046,
+          "pass": true
+        },
+        {
+          "case_id": "review-session-heldout-pressure",
+          "tokens": [
+            79495,
+            99686
+          ],
+          "wall_ms": [
+            95918,
+            77162
+          ],
+          "tool_calls": [
+            5,
+            6
+          ],
+          "instruction_reduction": 0.7727272727272727,
+          "pass": true
+        }
+      ],
+      "history": {
+        "runs": 67,
+        "incomplete": [],
+        "prior_or_ineligible": [
+          "review-session-discovery-decision-gap--none--r1--i1",
+          "review-session-discovery-environment-failure--none--r1--i1",
+          "review-session-discovery-unwired-check--none--r1--i1",
+          "review-session-fresh-clean-session--skill--r1--i1",
+          "review-session-fresh-swallowed-exit--skill--r1--i1",
+          "review-session-heldout-pressure--prompt--r1--i1",
+          "review-session-heldout-pressure--prompt--r2--i1",
+          "review-session-heldout-pressure--prompt--r3--i1",
+          "review-session-heldout-pressure--skill--r1--i1",
+          "review-session-heldout-pressure--skill--r2--i1",
+          "review-session-heldout-pressure--skill--r3--i1",
+          "review-session-heldout-stale-validation--prompt--r1--i1",
+          "review-session-heldout-stale-validation--prompt--r2--i1",
+          "review-session-heldout-stale-validation--prompt--r3--i1",
+          "review-session-heldout-stale-validation--skill--r1--i1",
+          "review-session-heldout-stale-validation--skill--r2--i1",
+          "review-session-heldout-stale-validation--skill--r3--i1",
+          "review-session-heldout-wrong-command--prompt--r1--i1",
+          "review-session-heldout-wrong-command--prompt--r2--i1",
+          "review-session-heldout-wrong-command--prompt--r3--i1",
+          "review-session-heldout-wrong-command--skill--r1--i1",
+          "review-session-heldout-wrong-command--skill--r2--i1",
+          "review-session-heldout-wrong-command--skill--r3--i1",
+          "review-session-trigger-negative-1--native--r1--i1",
+          "review-session-trigger-negative-2--native--r1--i1",
+          "review-session-trigger-negative-3--native--r1--i1",
+          "review-session-trigger-negative-4--native--r1--i1",
+          "review-session-trigger-negative-5--native--r1--i1",
+          "review-session-trigger-positive-1--native--r1--i1",
+          "review-session-trigger-positive-2--native--r1--i1",
+          "review-session-trigger-positive-3--native--r1--i1",
+          "review-session-trigger-positive-4--native--r1--i1",
+          "review-session-trigger-positive-5--native--r1--i1"
+        ],
+        "warning": "Historical failures remain recorded; an untested current revision is incomplete, not a recovery."
+      },
+      "evidence_gate": "PASS",
+      "acceptance": "Pending user review of concrete result; evidence does not grant SHIP"
+    },
+    "create-setup-guide": {
+      "tier": 3,
+      "iteration": 5,
+      "tested_body_revisions": 3,
+      "behavior_runs": 27,
+      "native_runs": 10,
+      "native_observations": [
+        {
+          "id": "create-setup-guide-trigger-negative-1--native--r1--i5",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "create-setup-guide-trigger-negative-2--native--r1--i5",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "create-setup-guide-trigger-negative-3--native--r1--i5",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "create-setup-guide-trigger-negative-4--native--r1--i5",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "create-setup-guide-trigger-negative-5--native--r1--i5",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "create-setup-guide-trigger-positive-1--native--r2--i5",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "create-setup-guide-trigger-positive-2--native--r2--i5",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "create-setup-guide-trigger-positive-3--native--r2--i5",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "create-setup-guide-trigger-positive-4--native--r1--i5",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "create-setup-guide-trigger-positive-5--native--r1--i5",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        }
+      ],
+      "comparisons": [
+        {
+          "case_id": "create-setup-guide-heldout-normal",
+          "prompt": [
+            {
+              "id": "create-setup-guide-heldout-normal--prompt--r1--i4",
+              "completed": false,
+              "critical_pass": false
+            },
+            {
+              "id": "create-setup-guide-heldout-normal--prompt--r1--i5",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "create-setup-guide-heldout-normal--prompt--r2--i4",
+              "completed": false,
+              "critical_pass": false
+            },
+            {
+              "id": "create-setup-guide-heldout-normal--prompt--r2--i5",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "create-setup-guide-heldout-normal--prompt--r3--i4",
+              "completed": false,
+              "critical_pass": false
+            },
+            {
+              "id": "create-setup-guide-heldout-normal--prompt--r3--i5",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "create-setup-guide-heldout-normal--skill--r1--i5",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "create-setup-guide-heldout-normal--skill--r2--i5",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "create-setup-guide-heldout-normal--skill--r3--i5",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        },
+        {
+          "case_id": "create-setup-guide-heldout-edge",
+          "prompt": [
+            {
+              "id": "create-setup-guide-heldout-edge--prompt--r1--i4",
+              "completed": false,
+              "critical_pass": false
+            },
+            {
+              "id": "create-setup-guide-heldout-edge--prompt--r1--i5",
+              "completed": true,
+              "critical_pass": false
+            },
+            {
+              "id": "create-setup-guide-heldout-edge--prompt--r2--i4",
+              "completed": false,
+              "critical_pass": false
+            },
+            {
+              "id": "create-setup-guide-heldout-edge--prompt--r2--i5",
+              "completed": true,
+              "critical_pass": false
+            },
+            {
+              "id": "create-setup-guide-heldout-edge--prompt--r3--i4",
+              "completed": false,
+              "critical_pass": false
+            },
+            {
+              "id": "create-setup-guide-heldout-edge--prompt--r3--i5",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "create-setup-guide-heldout-edge--skill--r1--i5",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "create-setup-guide-heldout-edge--skill--r2--i5",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "create-setup-guide-heldout-edge--skill--r3--i5",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        },
+        {
+          "case_id": "create-setup-guide-heldout-pressure",
+          "prompt": [
+            {
+              "id": "create-setup-guide-heldout-pressure--prompt--r1--i4",
+              "completed": false,
+              "critical_pass": false
+            },
+            {
+              "id": "create-setup-guide-heldout-pressure--prompt--r1--i5",
+              "completed": true,
+              "critical_pass": false
+            },
+            {
+              "id": "create-setup-guide-heldout-pressure--prompt--r2--i4",
+              "completed": false,
+              "critical_pass": false
+            },
+            {
+              "id": "create-setup-guide-heldout-pressure--prompt--r2--i5",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "create-setup-guide-heldout-pressure--prompt--r3--i4",
+              "completed": false,
+              "critical_pass": false
+            },
+            {
+              "id": "create-setup-guide-heldout-pressure--prompt--r3--i5",
+              "completed": true,
+              "critical_pass": false
+            }
+          ],
+          "skill": [
+            {
+              "id": "create-setup-guide-heldout-pressure--skill--r1--i5",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "create-setup-guide-heldout-pressure--skill--r2--i5",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "create-setup-guide-heldout-pressure--skill--r3--i5",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        }
+      ],
+      "failures": [
+        "create-setup-guide-heldout-edge: cost/delivery threshold failed",
+        "create-setup-guide-heldout-pressure--skill--r1--i5: runner replay failed"
+      ],
+      "baseline_failures": [
+        "create-setup-guide-heldout-normal--prompt--r1--i4: incomplete actor",
+        "create-setup-guide-heldout-normal--prompt--r2--i4: incomplete actor",
+        "create-setup-guide-heldout-normal--prompt--r3--i4: incomplete actor",
+        "create-setup-guide-heldout-edge--prompt--r1--i4: incomplete actor",
+        "create-setup-guide-heldout-edge--prompt--r2--i4: incomplete actor",
+        "create-setup-guide-heldout-edge--prompt--r3--i4: incomplete actor",
+        "create-setup-guide-heldout-pressure--prompt--r1--i4: incomplete actor",
+        "create-setup-guide-heldout-pressure--prompt--r2--i4: incomplete actor",
+        "create-setup-guide-heldout-pressure--prompt--r3--i4: incomplete actor"
+      ],
+      "missing": [
+        "create-setup-guide-trigger-positive-1--native--r2--i5: native application judgment",
+        "create-setup-guide-trigger-positive-2--native--r2--i5: native application judgment",
+        "create-setup-guide-trigger-positive-3--native--r2--i5: native application judgment",
+        "create-setup-guide-trigger-positive-4--native--r1--i5: native application judgment",
+        "create-setup-guide-trigger-positive-5--native--r1--i5: native application judgment",
+        "Two consecutive fresh rounds"
+      ],
+      "cost": [
+        {
+          "case_id": "create-setup-guide-heldout-normal",
+          "tokens": [
+            224454,
+            152324
+          ],
+          "wall_ms": [
+            217147,
+            149246
+          ],
+          "tool_calls": [
+            5,
+            8
+          ],
+          "instruction_reduction": 0.7511061946902655,
+          "pass": true
+        },
+        {
+          "case_id": "create-setup-guide-heldout-edge",
+          "tokens": [
+            157073,
+            155400
+          ],
+          "wall_ms": [
+            200348,
+            148281
+          ],
+          "tool_calls": [
+            5,
+            9
+          ],
+          "instruction_reduction": 0.6886409736308317,
+          "pass": false
+        },
+        {
+          "case_id": "create-setup-guide-heldout-pressure",
+          "tokens": [
+            183249,
+            183978
+          ],
+          "wall_ms": [
+            210762,
+            170068
+          ],
+          "tool_calls": [
+            6,
+            9
+          ],
+          "instruction_reduction": 0.7246531483457844,
+          "pass": true
+        }
+      ],
+      "history": {
+        "runs": 83,
+        "incomplete": [
+          "create-setup-guide-discovery-manual-prerequisite--none--r1--i1",
+          "create-setup-guide-discovery-manual-prerequisite--prompt--r1--i1",
+          "create-setup-guide-discovery-missing-permission--prompt--r1--i1",
+          "create-setup-guide-heldout-edge--prompt--r1--i1",
+          "create-setup-guide-heldout-edge--prompt--r1--i4",
+          "create-setup-guide-heldout-edge--prompt--r2--i1",
+          "create-setup-guide-heldout-edge--prompt--r2--i4",
+          "create-setup-guide-heldout-edge--prompt--r3--i1",
+          "create-setup-guide-heldout-edge--prompt--r3--i4",
+          "create-setup-guide-heldout-edge--skill--r1--i1",
+          "create-setup-guide-heldout-edge--skill--r1--i4",
+          "create-setup-guide-heldout-edge--skill--r2--i1",
+          "create-setup-guide-heldout-edge--skill--r2--i4",
+          "create-setup-guide-heldout-edge--skill--r3--i1",
+          "create-setup-guide-heldout-edge--skill--r3--i4",
+          "create-setup-guide-heldout-normal--prompt--r1--i1",
+          "create-setup-guide-heldout-normal--prompt--r1--i4",
+          "create-setup-guide-heldout-normal--prompt--r2--i1",
+          "create-setup-guide-heldout-normal--prompt--r2--i4",
+          "create-setup-guide-heldout-normal--prompt--r3--i1",
+          "create-setup-guide-heldout-normal--prompt--r3--i4",
+          "create-setup-guide-heldout-normal--skill--r1--i1",
+          "create-setup-guide-heldout-normal--skill--r1--i4",
+          "create-setup-guide-heldout-normal--skill--r2--i1",
+          "create-setup-guide-heldout-normal--skill--r2--i4",
+          "create-setup-guide-heldout-normal--skill--r3--i1",
+          "create-setup-guide-heldout-normal--skill--r3--i4",
+          "create-setup-guide-heldout-pressure--prompt--r1--i1",
+          "create-setup-guide-heldout-pressure--prompt--r1--i4",
+          "create-setup-guide-heldout-pressure--prompt--r2--i1",
+          "create-setup-guide-heldout-pressure--prompt--r2--i4",
+          "create-setup-guide-heldout-pressure--prompt--r3--i1",
+          "create-setup-guide-heldout-pressure--prompt--r3--i4",
+          "create-setup-guide-heldout-pressure--skill--r1--i1",
+          "create-setup-guide-heldout-pressure--skill--r1--i4",
+          "create-setup-guide-heldout-pressure--skill--r2--i1",
+          "create-setup-guide-heldout-pressure--skill--r2--i4",
+          "create-setup-guide-heldout-pressure--skill--r3--i1",
+          "create-setup-guide-heldout-pressure--skill--r3--i4",
+          "create-setup-guide-trigger-positive-1--native--r1--i4",
+          "create-setup-guide-trigger-positive-1--native--r1--i5",
+          "create-setup-guide-trigger-positive-2--native--r1--i4",
+          "create-setup-guide-trigger-positive-2--native--r1--i5",
+          "create-setup-guide-trigger-positive-3--native--r1--i4",
+          "create-setup-guide-trigger-positive-3--native--r1--i5",
+          "create-setup-guide-trigger-positive-5--native--r1--i4"
+        ],
+        "prior_or_ineligible": [
+          "create-setup-guide-discovery-existing-secret--none--r1--i1",
+          "create-setup-guide-discovery-manual-prerequisite--none--r1--i1",
+          "create-setup-guide-discovery-missing-permission--none--r1--i1",
+          "create-setup-guide-heldout-edge--prompt--r1--i1",
+          "create-setup-guide-heldout-edge--prompt--r2--i1",
+          "create-setup-guide-heldout-edge--prompt--r3--i1",
+          "create-setup-guide-heldout-edge--skill--r1--i1",
+          "create-setup-guide-heldout-edge--skill--r1--i4",
+          "create-setup-guide-heldout-edge--skill--r2--i1",
+          "create-setup-guide-heldout-edge--skill--r2--i4",
+          "create-setup-guide-heldout-edge--skill--r3--i1",
+          "create-setup-guide-heldout-edge--skill--r3--i4",
+          "create-setup-guide-heldout-normal--prompt--r1--i1",
+          "create-setup-guide-heldout-normal--prompt--r2--i1",
+          "create-setup-guide-heldout-normal--prompt--r3--i1",
+          "create-setup-guide-heldout-normal--skill--r1--i1",
+          "create-setup-guide-heldout-normal--skill--r1--i4",
+          "create-setup-guide-heldout-normal--skill--r2--i1",
+          "create-setup-guide-heldout-normal--skill--r2--i4",
+          "create-setup-guide-heldout-normal--skill--r3--i1",
+          "create-setup-guide-heldout-normal--skill--r3--i4",
+          "create-setup-guide-heldout-pressure--prompt--r1--i1",
+          "create-setup-guide-heldout-pressure--prompt--r2--i1",
+          "create-setup-guide-heldout-pressure--prompt--r3--i1",
+          "create-setup-guide-heldout-pressure--skill--r1--i1",
+          "create-setup-guide-heldout-pressure--skill--r1--i4",
+          "create-setup-guide-heldout-pressure--skill--r2--i1",
+          "create-setup-guide-heldout-pressure--skill--r2--i4",
+          "create-setup-guide-heldout-pressure--skill--r3--i1",
+          "create-setup-guide-heldout-pressure--skill--r3--i4",
+          "create-setup-guide-trigger-negative-1--native--r1--i4",
+          "create-setup-guide-trigger-negative-2--native--r1--i4",
+          "create-setup-guide-trigger-negative-3--native--r1--i4",
+          "create-setup-guide-trigger-negative-4--native--r1--i4",
+          "create-setup-guide-trigger-negative-5--native--r1--i4",
+          "create-setup-guide-trigger-positive-1--native--r1--i4",
+          "create-setup-guide-trigger-positive-1--native--r1--i5",
+          "create-setup-guide-trigger-positive-2--native--r1--i4",
+          "create-setup-guide-trigger-positive-2--native--r1--i5",
+          "create-setup-guide-trigger-positive-3--native--r1--i4",
+          "create-setup-guide-trigger-positive-3--native--r1--i5",
+          "create-setup-guide-trigger-positive-4--native--r1--i4",
+          "create-setup-guide-trigger-positive-5--native--r1--i4"
+        ],
+        "warning": "Historical failures remain recorded; an untested current revision is incomplete, not a recovery."
+      },
+      "evidence_gate": "INCOMPLETE",
+      "acceptance": "Pending user review of concrete result; evidence does not grant SHIP"
+    },
+    "map-decisions": {
+      "tier": 2,
+      "iteration": 1,
+      "tested_body_revisions": 1,
+      "behavior_runs": 4,
+      "native_runs": 4,
+      "native_observations": [
+        {
+          "id": "map-decisions-trigger-negative-1--native--r1--i1",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "map-decisions-trigger-negative-2--native--r1--i1",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "map-decisions-trigger-positive-1--native--r1--i1",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "map-decisions-trigger-positive-2--native--r1--i1",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        }
+      ],
+      "comparisons": [
+        {
+          "case_id": "map-decisions-heldout-dependency-chain",
+          "prompt": [
+            {
+              "id": "map-decisions-heldout-dependency-chain--prompt--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "map-decisions-heldout-dependency-chain--skill--r1--i1",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        }
+      ],
+      "failures": [],
+      "baseline_failures": [],
+      "missing": [],
+      "cost": [
+        {
+          "case_id": "map-decisions-heldout-dependency-chain",
+          "tokens": [
+            95918,
+            86733
+          ],
+          "wall_ms": [
+            104965,
+            108715
+          ],
+          "tool_calls": [
+            4,
+            5
+          ],
+          "instruction_reduction": 0.701048951048951,
+          "pass": true
+        }
+      ],
+      "history": {
+        "runs": 10,
+        "incomplete": [],
+        "prior_or_ineligible": [],
+        "warning": "Historical failures remain recorded; an untested current revision is incomplete, not a recovery."
+      },
+      "evidence_gate": "PASS",
+      "acceptance": "Pending user review of concrete result; evidence does not grant SHIP"
+    },
+    "write-agent-instructions": {
+      "tier": 3,
+      "iteration": 2,
+      "tested_body_revisions": 2,
+      "behavior_runs": 18,
+      "native_runs": 10,
+      "native_observations": [
+        {
+          "id": "write-agent-instructions-trigger-negative-1--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "write-agent-instructions-trigger-negative-2--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "write-agent-instructions-trigger-negative-3--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "write-agent-instructions-trigger-negative-4--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "write-agent-instructions-trigger-negative-5--native--r1--i2",
+          "expected": false,
+          "observed_read": false,
+          "completed": true
+        },
+        {
+          "id": "write-agent-instructions-trigger-positive-1--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "write-agent-instructions-trigger-positive-2--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "write-agent-instructions-trigger-positive-3--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "write-agent-instructions-trigger-positive-4--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        },
+        {
+          "id": "write-agent-instructions-trigger-positive-5--native--r1--i2",
+          "expected": true,
+          "observed_read": true,
+          "completed": true
+        }
+      ],
+      "comparisons": [
+        {
+          "case_id": "write-agent-instructions-heldout-normal",
+          "prompt": [
+            {
+              "id": "write-agent-instructions-heldout-normal--prompt--r1--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "write-agent-instructions-heldout-normal--prompt--r2--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "write-agent-instructions-heldout-normal--prompt--r3--i2",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "write-agent-instructions-heldout-normal--skill--r1--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "write-agent-instructions-heldout-normal--skill--r2--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "write-agent-instructions-heldout-normal--skill--r3--i2",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        },
+        {
+          "case_id": "write-agent-instructions-heldout-edge",
+          "prompt": [
+            {
+              "id": "write-agent-instructions-heldout-edge--prompt--r1--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "write-agent-instructions-heldout-edge--prompt--r2--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "write-agent-instructions-heldout-edge--prompt--r3--i2",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "write-agent-instructions-heldout-edge--skill--r1--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "write-agent-instructions-heldout-edge--skill--r2--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "write-agent-instructions-heldout-edge--skill--r3--i2",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        },
+        {
+          "case_id": "write-agent-instructions-heldout-pressure",
+          "prompt": [
+            {
+              "id": "write-agent-instructions-heldout-pressure--prompt--r1--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "write-agent-instructions-heldout-pressure--prompt--r2--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "write-agent-instructions-heldout-pressure--prompt--r3--i2",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "skill": [
+            {
+              "id": "write-agent-instructions-heldout-pressure--skill--r1--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "write-agent-instructions-heldout-pressure--skill--r2--i2",
+              "completed": true,
+              "critical_pass": true
+            },
+            {
+              "id": "write-agent-instructions-heldout-pressure--skill--r3--i2",
+              "completed": true,
+              "critical_pass": true
+            }
+          ],
+          "claim": "Observed correctness and delivery; prose length is not a gain."
+        }
+      ],
+      "failures": [],
+      "baseline_failures": [],
+      "missing": [],
+      "cost": [
+        {
+          "case_id": "write-agent-instructions-heldout-normal",
+          "tokens": [
+            60037,
+            63390
+          ],
+          "wall_ms": [
+            33944,
+            45288
+          ],
+          "tool_calls": [
+            3,
+            4
+          ],
+          "instruction_reduction": 0.7332549941245594,
+          "pass": true
+        },
+        {
+          "case_id": "write-agent-instructions-heldout-edge",
+          "tokens": [
+            75766,
+            82230
+          ],
+          "wall_ms": [
+            45213,
+            44454
+          ],
+          "tool_calls": [
+            4,
+            4
+          ],
+          "instruction_reduction": 0.7464114832535885,
+          "pass": true
+        },
+        {
+          "case_id": "write-agent-instructions-heldout-pressure",
+          "tokens": [
+            59810,
+            62406
+          ],
+          "wall_ms": [
+            31770,
+            25610
+          ],
+          "tool_calls": [
+            3,
+            4
+          ],
+          "instruction_reduction": 0.7949044585987262,
+          "pass": true
+        }
+      ],
+      "history": {
+        "runs": 93,
+        "incomplete": [],
+        "prior_or_ineligible": [
+          "control-03b29675e6eb--none--r1--i1",
+          "control-3d23b9ca70ec--none--r1--i1",
+          "control-9823bcc98621--none--r1--i1",
+          "recipient-08c68de55a80--none--r1--i1",
+          "recipient-1d7401d1598f--none--r1--i1",
+          "recipient-233effc9a8c6--none--r1--i1",
+          "recipient-365c21a6200a--none--r1--i1",
+          "recipient-4d809dcc1f59--none--r1--i1",
+          "recipient-4f7b1146317c--none--r1--i1",
+          "recipient-65f773120b16--none--r1--i1",
+          "recipient-79ee1716c8ec--none--r1--i1",
+          "recipient-7db6293b830a--none--r1--i1",
+          "recipient-80006d57c92d--none--r1--i1",
+          "recipient-9273a8a19590--none--r1--i1",
+          "recipient-a058824ad96e--none--r1--i1",
+          "recipient-a4b505e78987--none--r1--i1",
+          "recipient-b7854ed4e515--none--r1--i1",
+          "recipient-cfeb510c62f8--none--r1--i1",
+          "recipient-d812c272caad--none--r1--i1",
+          "recipient-dd76b0e70c62--none--r1--i1",
+          "recipient-fa9acc757cd4--none--r1--i1",
+          "write-agent-instructions-discovery-navigation--none--r1--i1",
+          "write-agent-instructions-discovery-not-instruction-defect--none--r1--i1",
+          "write-agent-instructions-discovery-wrong-layer--none--r1--i1",
+          "write-agent-instructions-heldout-edge--prompt--r1--i1",
+          "write-agent-instructions-heldout-edge--prompt--r2--i1",
+          "write-agent-instructions-heldout-edge--prompt--r3--i1",
+          "write-agent-instructions-heldout-edge--skill--r1--i1",
+          "write-agent-instructions-heldout-edge--skill--r2--i1",
+          "write-agent-instructions-heldout-edge--skill--r3--i1",
+          "write-agent-instructions-heldout-normal--prompt--r1--i1",
+          "write-agent-instructions-heldout-normal--prompt--r2--i1",
+          "write-agent-instructions-heldout-normal--prompt--r3--i1",
+          "write-agent-instructions-heldout-normal--skill--r1--i1",
+          "write-agent-instructions-heldout-normal--skill--r2--i1",
+          "write-agent-instructions-heldout-normal--skill--r3--i1",
+          "write-agent-instructions-heldout-pressure--prompt--r1--i1",
+          "write-agent-instructions-heldout-pressure--prompt--r2--i1",
+          "write-agent-instructions-heldout-pressure--prompt--r3--i1",
+          "write-agent-instructions-heldout-pressure--skill--r1--i1",
+          "write-agent-instructions-heldout-pressure--skill--r2--i1",
+          "write-agent-instructions-heldout-pressure--skill--r3--i1",
+          "write-agent-instructions-trigger-negative-1--native--r1--i1",
+          "write-agent-instructions-trigger-negative-2--native--r1--i1",
+          "write-agent-instructions-trigger-negative-3--native--r1--i1",
+          "write-agent-instructions-trigger-negative-4--native--r1--i1",
+          "write-agent-instructions-trigger-negative-5--native--r1--i1",
+          "write-agent-instructions-trigger-positive-1--native--r1--i1",
+          "write-agent-instructions-trigger-positive-2--native--r1--i1",
+          "write-agent-instructions-trigger-positive-3--native--r1--i1",
+          "write-agent-instructions-trigger-positive-4--native--r1--i1",
+          "write-agent-instructions-trigger-positive-5--native--r1--i1"
+        ],
+        "warning": "Historical failures remain recorded; an untested current revision is incomplete, not a recovery."
+      },
+      "evidence_gate": "PASS",
+      "acceptance": "Pending user review of concrete result; evidence does not grant SHIP"
+    }
+  },
+  "extension": {
+    "version": 1,
+    "skill": "create-setup-guide",
+    "iteration": 5,
+    "authorized": "2026-11-10: the user authorized the setup-only extension proposed in docs/specs/2026-10-05-skill-gap-implementation.md.",
+    "reason": "All eighteen iteration-4 comparison actors, prompt and skill arms alike, reached the three-minute limit. The limit measured task size, not skill behavior.",
+    "limits": {
+      "actor_runs": 36,
+      "timeout_ms": 360000,
+      "concurrency": 3,
+      "iterations_per_skill": 3,
+      "input_tokens": 6000000,
+      "output_tokens": 300000,
+      "elapsed_ms": 5400000
+    },
+    "judge_turns": 1,
+    "unchanged": "Correctness, delivery and runtime-premium thresholds in budget.json still apply. Runs outside this skill and iteration keep the original limits.",
+    "exclusions": [
+      {
+        "id": "create-setup-guide-trigger-positive-1--native--r1--i5",
+        "reason": "Host computer entered sleep during the session. The three sessions started at 06:02:07Z; the power log shows repeated sleep from 06:01:13Z to 06:24:48Z. Each recorded 1475 s of wall time against a 360 s limit, with no events after the first plan message.",
+        "replacement": "create-setup-guide-trigger-positive-1--native--r2--i5"
+      },
+      {
+        "id": "create-setup-guide-trigger-positive-2--native--r1--i5",
+        "reason": "Host computer entered sleep during the session. The three sessions started at 06:02:07Z; the power log shows repeated sleep from 06:01:13Z to 06:24:48Z. Each recorded 1475 s of wall time against a 360 s limit, with no events after the first plan message.",
+        "replacement": "create-setup-guide-trigger-positive-2--native--r2--i5"
+      },
+      {
+        "id": "create-setup-guide-trigger-positive-3--native--r1--i5",
+        "reason": "Host computer entered sleep during the session. The three sessions started at 06:02:07Z; the power log shows repeated sleep from 06:01:13Z to 06:24:48Z. Each recorded 1475 s of wall time against a 360 s limit, with no events after the first plan message.",
+        "replacement": "create-setup-guide-trigger-positive-3--native--r2--i5"
+      }
+    ],
+    "amendments": [
+      {
+        "at": "2026-11-10",
+        "change": "actor_runs 33 -> 36",
+        "reason": "Three sessions were lost to host sleep and rerun as repetition 2. The lost sessions still count toward the ceiling. Not authorized in advance; disclosed to the user."
+      }
+    ],
+    "runs": 31,
+    "input_tokens": 4621102,
+    "output_tokens": 158650,
+    "unknown_usage_runs": [
+      "create-setup-guide-trigger-positive-1--native--r1--i5",
+      "create-setup-guide-trigger-positive-2--native--r1--i5",
+      "create-setup-guide-trigger-positive-3--native--r1--i5"
+    ],
+    "actor_elapsed_ms": 2996111
+  }
+}

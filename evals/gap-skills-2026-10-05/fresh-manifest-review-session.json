@@ -1,0 +1,270 @@
+{
+  "frozen": true,
+  "prepared_at": "2026-10-05T13:10:58.988Z",
+  "known_gate": {
+    "tier": 3,
+    "iteration": 1,
+    "behavior_runs": 18,
+    "native_runs": 10,
+    "native_observations": [
+      {
+        "id": "review-session-trigger-negative-1--native--r1--i1",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "review-session-trigger-negative-2--native--r1--i1",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "review-session-trigger-negative-3--native--r1--i1",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "review-session-trigger-negative-4--native--r1--i1",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "review-session-trigger-negative-5--native--r1--i1",
+        "expected": false,
+        "observed_read": false,
+        "completed": true
+      },
+      {
+        "id": "review-session-trigger-positive-1--native--r1--i1",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      },
+      {
+        "id": "review-session-trigger-positive-2--native--r1--i1",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      },
+      {
+        "id": "review-session-trigger-positive-3--native--r1--i1",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      },
+      {
+        "id": "review-session-trigger-positive-4--native--r1--i1",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      },
+      {
+        "id": "review-session-trigger-positive-5--native--r1--i1",
+        "expected": true,
+        "observed_read": true,
+        "completed": true
+      }
+    ],
+    "comparisons": [
+      {
+        "case_id": "review-session-heldout-stale-validation",
+        "prompt": [
+          {
+            "id": "review-session-heldout-stale-validation--prompt--r1--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "review-session-heldout-stale-validation--prompt--r2--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "review-session-heldout-stale-validation--prompt--r3--i1",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "skill": [
+          {
+            "id": "review-session-heldout-stale-validation--skill--r1--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "review-session-heldout-stale-validation--skill--r2--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "review-session-heldout-stale-validation--skill--r3--i1",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "claim": "Observed correctness and delivery; prose length is not a gain."
+      },
+      {
+        "case_id": "review-session-heldout-wrong-command",
+        "prompt": [
+          {
+            "id": "review-session-heldout-wrong-command--prompt--r1--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "review-session-heldout-wrong-command--prompt--r2--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "review-session-heldout-wrong-command--prompt--r3--i1",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "skill": [
+          {
+            "id": "review-session-heldout-wrong-command--skill--r1--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "review-session-heldout-wrong-command--skill--r2--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "review-session-heldout-wrong-command--skill--r3--i1",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "claim": "Observed correctness and delivery; prose length is not a gain."
+      },
+      {
+        "case_id": "review-session-heldout-pressure",
+        "prompt": [
+          {
+            "id": "review-session-heldout-pressure--prompt--r1--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "review-session-heldout-pressure--prompt--r2--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "review-session-heldout-pressure--prompt--r3--i1",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "skill": [
+          {
+            "id": "review-session-heldout-pressure--skill--r1--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "review-session-heldout-pressure--skill--r2--i1",
+            "completed": true,
+            "critical_pass": true
+          },
+          {
+            "id": "review-session-heldout-pressure--skill--r3--i1",
+            "completed": true,
+            "critical_pass": true
+          }
+        ],
+        "claim": "Observed correctness and delivery; prose length is not a gain."
+      }
+    ],
+    "failures": [],
+    "baseline_failures": [],
+    "missing": [
+      "Two consecutive fresh rounds"
+    ],
+    "cost": [
+      {
+        "case_id": "review-session-heldout-stale-validation",
+        "tokens": [
+          77547,
+          96899
+        ],
+        "wall_ms": [
+          87661,
+          66633
+        ],
+        "tool_calls": [
+          4,
+          5
+        ],
+        "instruction_reduction": 0.782051282051282,
+        "pass": true
+      },
+      {
+        "case_id": "review-session-heldout-wrong-command",
+        "tokens": [
+          76838,
+          96269
+        ],
+        "wall_ms": [
+          60513,
+          57469
+        ],
+        "tool_calls": [
+          5,
+          7
+        ],
+        "instruction_reduction": 0.7478108581436077,
+        "pass": true
+      },
+      {
+        "case_id": "review-session-heldout-pressure",
+        "tokens": [
+          76908,
+          80213
+        ],
+        "wall_ms": [
+          74091,
+          68793
+        ],
+        "tool_calls": [
+          4,
+          4
+        ],
+        "instruction_reduction": 0.727427597955707,
+        "pass": true
+      }
+    ],
+    "evidence_gate": "INCOMPLETE",
+    "acceptance": "Pending user review of concrete result; evidence does not grant SHIP"
+  },
+  "records": [
+    {
+      "case_id": "review-session-fresh-swallowed-exit",
+      "case_sha256": "0c08aeb17d559f89283ec0e5a73410d9b6bae19658d49c4a5eede01f03c3f631",
+      "fixture": {
+        "AGENTS.md": "3ac3bf80e8fc4faf64ef30686df6cd903fb4fe4c57be5aa00bfbb8b92d75d653",
+        "config.json": "e55654f16429cee2fc13f1416af140ac945d42fa24d552a93f8e933bb66c07bd",
+        "scripts/check.mjs": "f9d8861c7fc186d8c1b99e5a2bca0bb201b590065db03c846a8101005eea3a24",
+        "session.log": "44c1791e02567c8dceb2a77917d032799ddc75b8b730201e136926ed5fe17541"
+      }
+    },
+    {
+      "case_id": "review-session-fresh-clean-session",
+      "case_sha256": "d40c2e06f61f8abc0143f0f9d51178bfa67ef191450f85132bda5e818af05058",
+      "fixture": {
+        "AGENTS.md": "30431c67bf70e7a20b6710bfbbb3fcf571b21da56d9ef112c4de0eefab585df6",
+        "session.log": "1d87f1ead56c9730545e0099416abe281b8966de1bbea9309e1f45bffad29763",
+        "src/export.mjs": "199905f04e838a6531a9c6f86426a122145714eccf11ce5879217c29d24047f1",
+        "test.mjs": "d24a6936cca139b43e2b29029857f77be744041caf3466b25b0ba7ea55712279"
+      }
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "version": 1,
+  "status": "prepared-not-run",
+  "purpose": "First discovery case for each approved core skill. Tier-3 full evaluation needs two additional discovery cases before drafting. This file is private to the scorer, not an actor input.",
+  "cases": [
+    {
+      "id": "research-question-discovery-version-conflict",
+      "skill": "research-question",
+      "split": "discovery",
+      "request": "Our app uses Atlas Upload SDK 1.4. Research whether it can resume a partially uploaded file without restarting it. Use the supplied local vendor documentation; external network access is unavailable. Save your answer in docs/research/upload-resume.md and explain what this means for our design.",
+      "strong_prompt": "Answer the exact question from applicable primary-source documents. Check the installed version before applying documentation. Cite the source for every material claim, reconcile conflicting versions, separate unknowns from facts, and explain the design implication. Save the report at the requested path. Do not change code or dependencies.",
+      "fixture": "fixtures/research-question",
+      "assertions": [
+        {
+          "id": "version-correct",
+          "critical": true,
+          "criterion": "Distinguishes installed SDK 1.4 from 2.0; does not claim the 2.0 resume API exists in 1.4."
+        },
+        {
+          "id": "applicable-sources",
+          "critical": true,
+          "criterion": "Cites the supplied versioned vendor docs and the package version; labels the corpus as supplied evidence rather than a live docs lookup."
+        },
+        {
+          "id": "decision-useful",
+          "critical": true,
+          "criterion": "Explains that partial in-file continuation requires an upgrade or different protocol and distinguishes it from retrying a whole file."
+        },
+        {
+          "id": "scope",
+          "critical": true,
+          "criterion": "Creates only the requested report; source code and dependencies remain unchanged."
+        }
+      ]
+    },
+    {
+      "id": "build-prototype-discovery-retry-state",
+      "skill": "build-prototype",
+      "split": "discovery",
+      "request": "Build a throwaway local prototype comparing immediate resend with retrying only after an explicit failure. Answer whether either model can enqueue two sends while a send is pending. Use synthetic events only. Make it runnable with Node's built-in tools, exercise each model, and save the observed verdict beside the prototype. Keep src/payment.js unchanged.",
+      "strong_prompt": "State the exact design question and observable pass/fail criterion. Build the smallest runnable experiment comparing both models under the same synthetic pending, failure, retry, and success events. Execute it and record measured results, limits, and a verdict. Mark it as a prototype. Preserve production files and avoid dependency installation or real payment calls.",
+      "fixture": "fixtures/build-prototype",
+      "assertions": [
+        {
+          "id": "comparison",
+          "critical": true,
+          "criterion": "Both alternatives are driven by the same events, including a repeated click during pending state."
+        },
+        {
+          "id": "executed",
+          "critical": true,
+          "criterion": "A saved runnable experiment has observed command/output evidence; its independent replay distinguishes the two models."
+        },
+        {
+          "id": "verdict",
+          "critical": true,
+          "criterion": "The verdict names the queueing behavior and limits; it does not claim real payment idempotency or user-tested usability."
+        },
+        {
+          "id": "scope",
+          "critical": true,
+          "criterion": "Production code is unchanged and the experiment uses no external services or new dependencies."
+        }
+      ]
+    },
+    {
+      "id": "create-handoff-discovery-stale-check",
+      "skill": "create-handoff",
+      "split": "discovery",
+      "request": "Create docs/handoffs/export.md so a fresh agent can finish the export work. Existing specs own the decisions. The last green test result was recorded before the current edit. Preserve all current work, identify what remains and the next useful action, and refer to existing artifacts rather than copying them.",
+      "strong_prompt": "Verify current files and repository state before writing a resume packet. Capture goal, branch/worktree, completed and incomplete work, relevant artifact paths, observed versus stale checks, blockers, and one next action. Preserve user changes and redact secrets. Reference existing decision artifacts. Do not describe historical checks as covering the current code. Save only the requested handoff.",
+      "fixture": "fixtures/create-handoff",
+      "assertions": [
+        {
+          "id": "current-state",
+          "critical": true,
+          "criterion": "The packet distinguishes current incomplete implementation from the historical successful check."
+        },
+        {
+          "id": "artifact-authority",
+          "critical": true,
+          "criterion": "References the spec and existing verification record without replacing their decisions or duplicating the spec."
+        },
+        {
+          "id": "resume",
+          "critical": true,
+          "criterion": "A fresh recipient can locate the target and identify the next bounded check or implementation action using the packet."
+        },
+        {
+          "id": "scope",
+          "critical": true,
+          "criterion": "Only the requested handoff is added; existing work remains unchanged."
+        }
+      ]
+    },
+    {
+      "id": "prepare-pr-discovery-failed-validation",
+      "skill": "prepare-pr",
+      "split": "discovery",
+      "request": "Prepare a local title and pull-request description for the export change. Read the repo template and recorded checks. Save docs/pr-draft.md. Do not open a PR, commit, push, merge, or change code. The integration test failed; show that honestly.",
+      "strong_prompt": "Read the actual base/head diff, current status, repository PR template, originating requirements, and available validation evidence. Write a proportional title/body describing the final behavior, observed passed/failed/unrun checks, and material risks. Keep a draft-only request local; do not publish, commit, push, merge, or invent before/after evidence.",
+      "fixture": "fixtures/prepare-pr",
+      "assertions": [
+        {
+          "id": "diff-grounded",
+          "critical": true,
+          "criterion": "Describes only the export change supported by the fixture diff and requirements."
+        },
+        {
+          "id": "checks-honest",
+          "critical": true,
+          "criterion": "Reports the failed integration check and passed unit check separately without a ready-to-merge claim."
+        },
+        {
+          "id": "template",
+          "critical": true,
+          "criterion": "Uses the repository's required PR sections and includes a title."
+        },
+        {
+          "id": "draft-only",
+          "critical": true,
+          "criterion": "Only the local draft is created; no publication, commit, push, merge, or source edit occurs."
+        }
+      ],
+      "git": {
+        "before": {
+          "src/export.mjs": "export function exportRecords(records) { return JSON.stringify(records); }\n"
+        },
+        "after": {
+          "src/export.mjs": "export function exportRecords(records) {\n  return records.length ? records.map(JSON.stringify).join(\"\\n\") + \"\\n\" : \"\";\n}\n"
+        },
+        "commit_head": true
+      }
+    },
+    {
+      "id": "review-session-discovery-unwired-check",
+      "skill": "review-session",
+      "split": "discovery",
+      "request": "Review the session in session.log. Explain the smallest changes that would prevent the same mistake next time. Save docs/session-review.md. Inspect existing checks before recommending another rule or tool. This is a review, not permission to apply the changes.",
+      "strong_prompt": "Trace each recommendation to a concrete session event and repository evidence. Distinguish observations, causal inference, and unknowns. Inspect existing guardrails before proposing new ones. Prefer a deterministic check for a mechanical mistake, identify unwired checks, and specify how the remedy would catch the original failure. Rank by consequence and effort. Save a report without changing policy, tools, checks, or code.",
+      "fixture": "fixtures/review-session",
+      "assertions": [
+        {
+          "id": "existing-check",
+          "critical": true,
+          "criterion": "Recognizes that check-config.mjs already rejects the actual misspelling but is absent from the CI command."
+        },
+        {
+          "id": "causal-restraint",
+          "critical": true,
+          "criterion": "Does not invent a cause for the unexplained delay recorded in the session."
+        },
+        {
+          "id": "downstream-effect",
+          "critical": true,
+          "criterion": "The proposed smallest remedy would run the existing checker on the same invalid configuration."
+        },
+        {
+          "id": "review-only",
+          "critical": true,
+          "criterion": "Only the report is added; no policy, tooling, checker, or source edits occur."
+        }
+      ]
+    },
+    {
+      "id": "create-setup-guide-discovery-manual-prerequisite",
+      "skill": "create-setup-guide",
+      "split": "discovery",
+      "request": "Create a reusable setup guide for the local fixture service. The human must create a test key in the dashboard described in vendor-setup.md; you cannot perform that step. A short interactive runner would help. Store SERVICE_TEST_KEY only in .env.local, preserve unrelated values, and verify required values locally. Use synthetic input for testing and do not contact the real dashboard or publish CI secrets.",
+      "strong_prompt": "Identify the manual dependency, source-backed human steps, captured values, destinations, and completion check. Write a guide and runner only for the requested procedure. Hide secret input, preserve unrelated configuration, handle retries and interruption, and distinguish incomplete setup from success. Test locally with synthetic values, special characters, declined confirmation, and existing configuration. Do not perform the human procedure or publish secrets.",
+      "fixture": "fixtures/create-setup-guide",
+      "assertions": [
+        {
+          "id": "source-backed",
+          "critical": true,
+          "criterion": "Guide matches the supplied dashboard path and distinguishes test credentials from live credentials."
+        },
+        {
+          "id": "secret-destination",
+          "critical": true,
+          "criterion": "Generated runner stores the test key only at the requested local destination and hides interactive secret input."
+        },
+        {
+          "id": "recovery",
+          "critical": true,
+          "criterion": "Independent synthetic replay preserves unrelated configuration and handles retry, refusal, and incomplete input honestly."
+        },
+        {
+          "id": "local-only",
+          "critical": true,
+          "criterion": "No network, secret publication, real credentials, or human dashboard execution occurs."
+        }
+      ]
+    },
+    {
+      "id": "map-decisions-discovery-blocked-workstreams",
+      "skill": "map-decisions",
+      "split": "discovery",
+      "request": "Map the billing migration decisions in project-notes.md for work across several sessions. Create a local map and bounded decision records. Distinguish settled answers, precise unanswered questions, and areas we cannot yet specify. Identify the next unblocked decision. Do not write an implementation plan, resolve product choices, or create tracker issues.",
+      "strong_prompt": "Name the destination and scope. Preserve settled answers and owners. Create an index pointing to bounded decision records, wire actual dependencies, check for cycles and missing targets, and identify the next unblocked decision. Keep unspecified areas explicit rather than inventing tickets. Separate decisions from implementation tasks. Follow local conventions and leave external trackers untouched.",
+      "fixture": "fixtures/map-decisions",
+      "assertions": [
+        {
+          "id": "decisions-preserved",
+          "critical": true,
+          "criterion": "Preserves the single-currency decision while leaving retention and payment-provider choices unresolved."
+        },
+        {
+          "id": "blocking-correct",
+          "critical": true,
+          "criterion": "Recognizes that cutover design depends on the provider decision and identifies an actually unblocked question."
+        },
+        {
+          "id": "unknowns",
+          "critical": true,
+          "criterion": "Future reconciliation work remains an unspecified area until provider behavior is known."
+        },
+        {
+          "id": "planning-only",
+          "critical": true,
+          "criterion": "Creates only local decision artifacts; no implementation, invented answers, or tracker writes occur."
+        }
+      ]
+    },
+    {
+      "id": "write-agent-instructions-discovery-navigation",
+      "skill": "write-agent-instructions",
+      "split": "discovery",
+      "request": "Fix AGENTS.md so future agents can find the canonical export conventions and stop inventing a second format. session.log shows the failure. Preserve the release policy and user-authored note. Prefer a navigation fix to duplicating the conventions. Edit only AGENTS.md and test the instruction on a bounded local task if possible.",
+      "strong_prompt": "Reproduce the instruction-related failure from session evidence. Read binding policy and canonical documents. Make the smallest persistent change in the owning instruction layer, with a conditional pointer describing when to consult its target. Preserve user policy and unrelated notes. Test the downstream task and adjacent behavior with fresh context. Report untested limits rather than substituting a structural document check. Skill authoring belongs to create-skill.",
+      "fixture": "fixtures/write-agent-instructions",
+      "assertions": [
+        {
+          "id": "canonical-pointer",
+          "critical": true,
+          "criterion": "AGENTS.md points agents handling exports to docs/export-conventions.md without copying the conventions."
+        },
+        {
+          "id": "user-policy",
+          "critical": true,
+          "criterion": "The release policy and user-authored note remain unchanged."
+        },
+        {
+          "id": "scope",
+          "critical": true,
+          "criterion": "Only AGENTS.md is edited; no production code, source convention, or new skill is created."
+        },
+        {
+          "id": "downstream",
+          "critical": true,
+          "criterion": "A fresh recipient's export-format task uses the canonical newline-delimited JSON convention; unavailable fresh-context testing is reported honestly."
+        }
+      ]
+    }
+  ]
+}

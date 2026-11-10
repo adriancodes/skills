@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "skill": "create-setup-guide",
+  "iteration": 5,
+  "authorized": "2026-11-10: the user authorized the setup-only extension proposed in docs/specs/2026-10-05-skill-gap-implementation.md.",
+  "reason": "All eighteen iteration-4 comparison actors, prompt and skill arms alike, reached the three-minute limit. The limit measured task size, not skill behavior.",
+  "limits": {
+    "actor_runs": 36,
+    "timeout_ms": 360000,
+    "concurrency": 3,
+    "iterations_per_skill": 3,
+    "input_tokens": 6000000,
+    "output_tokens": 300000,
+    "elapsed_ms": 5400000
+  },
+  "judge_turns": 1,
+  "unchanged": "Correctness, delivery and runtime-premium thresholds in budget.json still apply. Runs outside this skill and iteration keep the original limits.",
+  "exclusions": [
+    {
+      "id": "create-setup-guide-trigger-positive-1--native--r1--i5",
+      "reason": "Host computer entered sleep during the session. The three sessions started at 06:02:07Z; the power log shows repeated sleep from 06:01:13Z to 06:24:48Z. Each recorded 1475 s of wall time against a 360 s limit, with no events after the first plan message.",
+      "replacement": "create-setup-guide-trigger-positive-1--native--r2--i5"
+    },
+    {
+      "id": "create-setup-guide-trigger-positive-2--native--r1--i5",
+      "reason": "Host computer entered sleep during the session. The three sessions started at 06:02:07Z; the power log shows repeated sleep from 06:01:13Z to 06:24:48Z. Each recorded 1475 s of wall time against a 360 s limit, with no events after the first plan message.",
+      "replacement": "create-setup-guide-trigger-positive-2--native--r2--i5"
+    },
+    {
+      "id": "create-setup-guide-trigger-positive-3--native--r1--i5",
+      "reason": "Host computer entered sleep during the session. The three sessions started at 06:02:07Z; the power log shows repeated sleep from 06:01:13Z to 06:24:48Z. Each recorded 1475 s of wall time against a 360 s limit, with no events after the first plan message.",
+      "replacement": "create-setup-guide-trigger-positive-3--native--r2--i5"
+    }
+  ],
+  "amendments": [
+    {
+      "at": "2026-11-10",
+      "change": "actor_runs 33 -> 36",
+      "reason": "Three sessions were lost to host sleep and rerun as repetition 2. The lost sessions still count toward the ceiling. Not authorized in advance; disclosed to the user."
+    }
+  ]
+}

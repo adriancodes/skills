@@ -33,6 +33,9 @@ See [Toolbox Anatomy](docs/toolbox-anatomy.md) for composition and placement rul
 | You're about to… | Reach for |
 |------------------|-----------|
 | Generate non-obvious options for an open decision | [`explore-options`](skills/explore-options/SKILL.md) |
+| Research an external question or version-dependent claim | [`research-question`](skills/research-question/SKILL.md) |
+| Test a design choice with a runnable disposable experiment | [`build-prototype`](skills/build-prototype/SKILL.md) |
+| Map unresolved project decisions across sessions | [`map-decisions`](skills/map-decisions/SKILL.md) (explicit invocation) |
 | Define, challenge, or record a software plan | [`create-spec`](skills/create-spec/SKILL.md) |
 | Turn a confirmed spec into work items | [`create-tasks`](skills/create-tasks/SKILL.md) |
 | Build the next task | [`implement-task`](skills/implement-task/SKILL.md) |
@@ -42,10 +45,15 @@ See [Toolbox Anatomy](docs/toolbox-anatomy.md) for composition and placement rul
 | Understand an unfamiliar repository | [`understand-codebase`](skills/understand-codebase/SKILL.md) |
 | Diagnose a bug, flake, or regression | [`diagnose`](skills/diagnose/SKILL.md) |
 | Review a branch, PR, or work-in-progress diff | [`code-review`](skills/code-review/SKILL.md) |
+| Prepare a local PR draft or requested publication | [`prepare-pr`](skills/prepare-pr/SKILL.md) |
+| Leave verified work for a fresh agent | [`create-handoff`](skills/create-handoff/SKILL.md) |
+| Generate a guide for human-only setup steps | [`create-setup-guide`](skills/create-setup-guide/SKILL.md) |
 | Apply maintainability and design guidance | [`engineering-best-practices`](skills/engineering-best-practices/SKILL.md) |
 | Remove unnecessary code or abstractions | [`simplify-code`](skills/simplify-code/SKILL.md) |
 | Ship a script, config, or skill | [`verify-work`](skills/verify-work/SKILL.md) |
 | Write or fix an agent skill | [`create-skill`](skills/create-skill/SKILL.md) |
+| Fix demonstrated persistent project-instruction failures | [`write-agent-instructions`](skills/write-agent-instructions/SKILL.md) (explicit invocation) |
+| Review session friction and propose a bounded remedy | [`review-session`](skills/review-session/SKILL.md) (explicit invocation) |
 | Sharpen a vague ask before running it | [`improve-prompt`](skills/improve-prompt/SKILL.md) |
 | Check you understand changes before shipping them | [`quiz-changes`](skills/quiz-changes/SKILL.md) |
 | Get short plain answers, not essays | [`be-concise`](skills/be-concise/SKILL.md) |
@@ -55,6 +63,8 @@ See [Toolbox Anatomy](docs/toolbox-anatomy.md) for composition and placement rul
 Five skills form an optional pipeline: `create-spec` → `create-tasks` → `implement-task` → `verify-work`, coordinated by `deliver-feature`. They hand work between sessions and teammates through files in `docs/specs/`. Each skill also works independently. An end-to-end request continues through authorized, unblocked work; an explicit one-stage or one-task request stops at that boundary. Task planning supports vertical feature slices and compatibility-preserving wide refactors.
 
 The October 2026 quality pass covers all seventeen skills: a [four-skill outcome comparison](evals/pocock-comparison-2026-10-04/README.md) and [thirteen-skill structural consolidation](evals/remaining-skills-2026-10-04/README.md). The reports preserve both gains and validation gaps; shorter instructions alone do not establish better results.
+
+The [skill gap map](docs/skill-gap-map.md) defines eight original additions and their boundaries with the existing toolbox. The [full consequence-tier evaluation](docs/evidence/2026-10-05-gap-skills.md) produced seven passing local evidence gates and a provisional `create-setup-guide`. User review remains pending; this batch is not installed or released. The two conditional additions remain deferred.
 
 ## Agent personas
 

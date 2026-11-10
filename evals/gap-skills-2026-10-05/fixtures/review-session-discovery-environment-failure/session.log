@@ -1,0 +1,3 @@
+09:00 npm test returned EACCES opening /restricted/cache.
+09:01 Agent reran npm test three times unchanged; same EACCES.
+09:05 Session ended. No test assertions executed.

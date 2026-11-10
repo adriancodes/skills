@@ -1,0 +1,123 @@
+{
+  "recipient-13c9a8cb309b": {
+    "source_result": "recipient-65f773120b16--none--r1--i1",
+    "source_observation": "observation-1ef9727699c5",
+    "case_sha256": "c8077b0d2dec9bc309b90f52d9f4b51c78308228108283a963bb87081657e5c7",
+    "fixture": {
+      "AGENTS.md": "8913146853de0190f644bd5f2c572b3defa904bfd675b9f878e1eb0ac8dfafac",
+      "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+    },
+    "request_sha256": "b61a6fd3a5ee4899b44c236d4fd215300cdd6115ea444625cfb1ff3f0570bdef",
+    "reason": "Byte-identical disposable project, request and assertions; existing independent fresh result applies unchanged."
+  },
+  "recipient-bb50e0ae0ee2": {
+    "source_result": "recipient-65f773120b16--none--r1--i1",
+    "source_observation": "observation-1ef9727699c5",
+    "case_sha256": "500b7555d43c633194c49ee35c96dc796ca6763125bf6a32d14dcd58958dee7d",
+    "fixture": {
+      "AGENTS.md": "8913146853de0190f644bd5f2c572b3defa904bfd675b9f878e1eb0ac8dfafac",
+      "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+    },
+    "request_sha256": "b61a6fd3a5ee4899b44c236d4fd215300cdd6115ea444625cfb1ff3f0570bdef",
+    "reason": "Byte-identical disposable project, request and assertions; existing independent fresh result applies unchanged."
+  },
+  "recipient-9b37cc739476": {
+    "source_result": "recipient-65f773120b16--none--r1--i1",
+    "source_observation": "observation-1ef9727699c5",
+    "case_sha256": "048542f8da4ac56b4e75e893550deee00c9e938cb5443e28ee39b5609bce9a8d",
+    "fixture": {
+      "AGENTS.md": "8913146853de0190f644bd5f2c572b3defa904bfd675b9f878e1eb0ac8dfafac",
+      "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+    },
+    "request_sha256": "b61a6fd3a5ee4899b44c236d4fd215300cdd6115ea444625cfb1ff3f0570bdef",
+    "reason": "Byte-identical disposable project, request and assertions; existing independent fresh result applies unchanged."
+  },
+  "recipient-8fd37684a6f0": {
+    "source_result": "recipient-233effc9a8c6--none--r1--i1",
+    "source_observation": "observation-ff7feb39720a",
+    "case_sha256": "7e9f8a3a01623b247602ca611332b4423001276d3f395d5346b24e19eb764152",
+    "fixture": {
+      "AGENTS.md": "c6f85e244b1817971bb583d8fc172b9554f0277b94fc6c31167078af4f5e33ec",
+      "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+    },
+    "request_sha256": "b61a6fd3a5ee4899b44c236d4fd215300cdd6115ea444625cfb1ff3f0570bdef",
+    "reason": "Byte-identical disposable project, request and assertions; existing independent fresh result applies unchanged."
+  },
+  "recipient-f8a806f01f05": {
+    "source_result": "recipient-1d7401d1598f--none--r1--i1",
+    "source_observation": "observation-ad09911f0b23",
+    "case_sha256": "c564da2b6e3a9779d4e2d5f9fa0d10d95929a75655e3be8964ddaa7e5fce8953",
+    "fixture": {
+      "AGENTS.md": "f4021c5d4d20beee03f1a25a41f0dd93a88cdce487055cca828fcfc4ed6cc141",
+      "docs/audit-format.md": "3b38ffd126283ad6f059a3f7980cc691e3b0ce18b953fda47583e43814f5b03e"
+    },
+    "request_sha256": "b61a6fd3a5ee4899b44c236d4fd215300cdd6115ea444625cfb1ff3f0570bdef",
+    "reason": "Byte-identical disposable project, request and assertions; existing independent fresh result applies unchanged."
+  },
+  "recipient-c8e44c9e0703": {
+    "source_result": "control-03b29675e6eb--none--r1--i1",
+    "source_observation": "observation-3856f68244a4",
+    "case_sha256": "080f4131450313c24ed001d59640492f5f4944efb8a53b5f5812278f5784a8a5",
+    "fixture": {
+      "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+      "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+    },
+    "request_sha256": "91d969d01c65d3401e66f2d31f59f3e1de77dfbcd3ee27a9edf550618222f95a",
+    "reason": "Byte-identical disposable project, request and assertions; existing independent fresh result applies unchanged."
+  },
+  "recipient-3dec2c10087a": {
+    "source_result": "control-03b29675e6eb--none--r1--i1",
+    "source_observation": "observation-3856f68244a4",
+    "case_sha256": "452000b09fce0e8e6051c927912356a86f335c3fd49272d4f000c10ec9e8fcb5",
+    "fixture": {
+      "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+      "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+    },
+    "request_sha256": "91d969d01c65d3401e66f2d31f59f3e1de77dfbcd3ee27a9edf550618222f95a",
+    "reason": "Byte-identical disposable project, request and assertions; existing independent fresh result applies unchanged."
+  },
+  "recipient-7baebcb0b555": {
+    "source_result": "control-03b29675e6eb--none--r1--i1",
+    "source_observation": "observation-3856f68244a4",
+    "case_sha256": "6b5dbde9dafa61fac2111e535f06ce7d407bdef25139748676815ba55b75c070",
+    "fixture": {
+      "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+      "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+    },
+    "request_sha256": "91d969d01c65d3401e66f2d31f59f3e1de77dfbcd3ee27a9edf550618222f95a",
+    "reason": "Byte-identical disposable project, request and assertions; existing independent fresh result applies unchanged."
+  },
+  "recipient-be06ff8f73ad": {
+    "source_result": "control-03b29675e6eb--none--r1--i1",
+    "source_observation": "observation-3856f68244a4",
+    "case_sha256": "9a2b1813b2919f12aeca73ac306b33008143a06eaa2fbc1dcdefa9ad437fd388",
+    "fixture": {
+      "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+      "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+    },
+    "request_sha256": "91d969d01c65d3401e66f2d31f59f3e1de77dfbcd3ee27a9edf550618222f95a",
+    "reason": "Byte-identical disposable project, request and assertions; existing independent fresh result applies unchanged."
+  },
+  "recipient-4096adfed2e6": {
+    "source_result": "control-03b29675e6eb--none--r1--i1",
+    "source_observation": "observation-3856f68244a4",
+    "case_sha256": "8653e41910fb2e5c1cc22b5af5925afd9031866d87f3fabffb242c535067b521",
+    "fixture": {
+      "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+      "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+    },
+    "request_sha256": "91d969d01c65d3401e66f2d31f59f3e1de77dfbcd3ee27a9edf550618222f95a",
+    "reason": "Byte-identical disposable project, request and assertions; existing independent fresh result applies unchanged."
+  },
+  "recipient-8735fbb2d481": {
+    "source_result": "control-03b29675e6eb--none--r1--i1",
+    "source_observation": "observation-3856f68244a4",
+    "case_sha256": "32c1f5196e6c41340fa1202daeff329451bce39db927aeca219c2fe83e2ced3c",
+    "fixture": {
+      "AGENTS.md": "8e3b6c488f4a090ad316d6d4c6ecd9a464bcdd89c948e4689241033244fbcd03",
+      "scripts/check.mjs": "37a8b249609736d2cfff237be2df30d9abb843c36b3d1606d767d66da7eca5e8"
+    },
+    "request_sha256": "91d969d01c65d3401e66f2d31f59f3e1de77dfbcd3ee27a9edf550618222f95a",
+    "reason": "Byte-identical disposable project, request and assertions; existing independent fresh result applies unchanged."
+  }
+}

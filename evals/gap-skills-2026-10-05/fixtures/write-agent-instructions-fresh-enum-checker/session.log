@@ -1,0 +1,1 @@
+Agent followed AGENTS.md, read the schema, ran node scripts/check.mjs and reported syntax-only coverage. Runtime rejected region moon. The existing checker accepts that invalid enum. All discovery instructions were followed.

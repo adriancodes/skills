@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "frozen": true,
+  "skill": "prepare-pr",
+  "iteration": 1,
+  "frozen_at": "2026-10-05T12:11:39.228Z",
+  "subject": {
+    "SKILL.md": "22a6ca3aff041827827d1d20cbe8f0b20d6778bb7203560fdc5e4e82ce2b11c8"
+  },
+  "matrix_sha256": "e3f59799374695d7b8fe6287861700ccfbf3d520674fa9ead62b568c8b03b1fe",
+  "budget_sha256": "73c6465488b5522a12edd7aa27c04d203c92ffe62757659d277a6cb2e067f285",
+  "cases": {
+    "prepare-pr-discovery-failed-validation": {
+      "sha256": "4fae873541bacf663a9901f421adb8b8ab723728147ed8991629fa60906dd905",
+      "fixture": {
+        ".github/pull_request_template.md": "4151fea62c646e311002d2259727b8de95f4c0e21de1ff575a6ccf97fbeea861",
+        "change.diff": "6a7e0bb6e3c5807662aee5949a62ec8517bcc75e9bc08311736d4110fc1de431",
+        "requirements.md": "7efffe2796f6dbcecf6a97ec0f59209161e8ee4eb15a007605e63e517cb4371b",
+        "src/export.mjs": "e0d8d60be0c5ddfbc53ab852d473d54fc246b949745bbb7a1472d162d81cbf46",
+        "validation.md": "1b1bbf67608c5c538dfeb1323690df86c648e6cc54e646cb149eabb54c8e6a27"
+      }
+    },
+    "prepare-pr-discovery-mixed-worktree": {
+      "sha256": "8b2a7b87fb2d8ac503ac0191845a89f9209a1a410b085d02a2be601fe09e9574",
+      "fixture": {
+        ".github/pull_request_template.md": "b8a0307341631a5801ce68923ad5e03a58b330df12ceea2aef7eb5ab19b284e7",
+        "checks.md": "968bb7f4b1e79f6e1f3dc6d0e7b7684bfa4e438c1f77cb854546dbe3a9d51f7d",
+        "src/csv.mjs": "580e63bc2acd8fd725ab331e53d421d18b2498a922f95588bf11072e4e4c2d3f",
+        "src/logger.mjs": "4fb1f5903be009f8c44b5baa40f0ce0219aac3b93a513f2c53fa3e4d88d13e76"
+      }
+    },
+    "prepare-pr-discovery-misleading-title": {
+      "sha256": "97e346f2df8eba52ae32158e224916f2145f33c591b228cd9627186e031a39cb",
+      "fixture": {
+        "old-pr.md": "3f23ea8b68c088237046c75c1ca261d71be2532ba305d5ffebe7b6d18595cb7c",
+        "src/status.js": "32d93a5cc1c0a7ad01268c7bf690af79b95d4bb88ba8bde399853e0f2af8e8bc",
+        "tests.md": "6922868d52cc0d8e7894fb19c3f162e1d24a529185344d2ec50d6d1b52af09dd"
+      }
+    },
+    "prepare-pr-heldout-normal": {
+      "sha256": "e6061d7d7f22d931b408101585967cbc9d1b48ed58b3a09f0db7ed30dd26aa4c",
+      "fixture": {
+        ".github/pull_request_template.md": "7fdfffff89cde1b0896c58f5b8ae3415674560cc08819ac4be2731c8d06e5810",
+        "checks.md": "9f6fdd189b43312e3a2430228ad370cf528c6733e6847663c9eb9d58b2011f33",
+        "requirements.md": "1ebf8760bfe45d015813b81ce44827cdaefd94c7a2d669d62a53ca21ef822ea9",
+        "src/stream.mjs": "86eb4cec5015b7e56f2d2dc86c985e056c7fcf86cfc5acf5b2fa934d033e074e"
+      }
+    },
+    "prepare-pr-heldout-edge": {
+      "sha256": "149a906adff27ae463d77bf6178f6929281d667e2d092526fe41c552d9b0c2d3",
+      "fixture": {
+        "checks.md": "a068b8ab4b3a60e2356c4553ed8a3c92684b88da61575453cf750e0fec17052c",
+        "src/cache.mjs": "5b6ce5c7a89d93df8a8d7c95008b7368131d1a48a630161f50a2144505dfb6a0",
+        "src/user.mjs": "2cdf7bd0d6438d17b1e436acbad88279381df162ec3b75a6df534403c91a2644"
+      }
+    },
+    "prepare-pr-heldout-pressure": {
+      "sha256": "8118c4180dfcf9c9ac38780df34125aff065434990148264694afaad177c17ff",
+      "fixture": {
+        "checks.md": "822073497d2e9d3a5bc830dd27a24551f711b104866d97208825e9254096a097",
+        "old-title.md": "78d132420433a77e8cb4e81fc962aff9d78831b7c8a54138d22b1ae9e5b64b48",
+        "src/flag.mjs": "815b7674473e9387622d7bf39b35873c41c5c1238fbcc5fa23663505fb122647"
+      }
+    },
+    "prepare-pr-trigger-positive-1": {
+      "sha256": "b61c2dc0985a326faf00dc4146ca27ce05a7c6c2e5088e7f9eaf481be9d4e05e",
+      "fixture": {
+        ".github/pull_request_template.md": "7fdfffff89cde1b0896c58f5b8ae3415674560cc08819ac4be2731c8d06e5810",
+        "checks.md": "9f6fdd189b43312e3a2430228ad370cf528c6733e6847663c9eb9d58b2011f33",
+        "requirements.md": "1ebf8760bfe45d015813b81ce44827cdaefd94c7a2d669d62a53ca21ef822ea9",
+        "src/stream.mjs": "86eb4cec5015b7e56f2d2dc86c985e056c7fcf86cfc5acf5b2fa934d033e074e"
+      }
+    },
+    "prepare-pr-trigger-positive-2": {
+      "sha256": "bdcd54d1e7972ba2a9649cbfff5f3ccced5063082317c2298986e866a062e5b4",
+      "fixture": {
+        ".github/pull_request_template.md": "7fdfffff89cde1b0896c58f5b8ae3415674560cc08819ac4be2731c8d06e5810",
+        "checks.md": "9f6fdd189b43312e3a2430228ad370cf528c6733e6847663c9eb9d58b2011f33",
+        "requirements.md": "1ebf8760bfe45d015813b81ce44827cdaefd94c7a2d669d62a53ca21ef822ea9",
+        "src/stream.mjs": "86eb4cec5015b7e56f2d2dc86c985e056c7fcf86cfc5acf5b2fa934d033e074e"
+      }
+    },
+    "prepare-pr-trigger-positive-3": {
+      "sha256": "f3a7b9b08d1cefca494bde0abf669ac4e7800a06101c453887f5f9f68cd866f5",
+      "fixture": {
+        ".github/pull_request_template.md": "7fdfffff89cde1b0896c58f5b8ae3415674560cc08819ac4be2731c8d06e5810",
+        "checks.md": "9f6fdd189b43312e3a2430228ad370cf528c6733e6847663c9eb9d58b2011f33",
+        "requirements.md": "1ebf8760bfe45d015813b81ce44827cdaefd94c7a2d669d62a53ca21ef822ea9",
+        "src/stream.mjs": "86eb4cec5015b7e56f2d2dc86c985e056c7fcf86cfc5acf5b2fa934d033e074e"
+      }
+    },
+    "prepare-pr-trigger-positive-4": {
+      "sha256": "8fb10821baa151a9988b01c55bcda79b833fbd0725f65bc221bca546e08f80a3",
+      "fixture": {
+        ".github/pull_request_template.md": "7fdfffff89cde1b0896c58f5b8ae3415674560cc08819ac4be2731c8d06e5810",
+        "checks.md": "9f6fdd189b43312e3a2430228ad370cf528c6733e6847663c9eb9d58b2011f33",
+        "requirements.md": "1ebf8760bfe45d015813b81ce44827cdaefd94c7a2d669d62a53ca21ef822ea9",
+        "src/stream.mjs": "86eb4cec5015b7e56f2d2dc86c985e056c7fcf86cfc5acf5b2fa934d033e074e"
+      }
+    },
+    "prepare-pr-trigger-positive-5": {
+      "sha256": "f0795d3175f12061a695876d2111b4ffd8e8e24d8e4d39010ce65baf29a49efe",
+      "fixture": {
+        ".github/pull_request_template.md": "7fdfffff89cde1b0896c58f5b8ae3415674560cc08819ac4be2731c8d06e5810",
+        "checks.md": "9f6fdd189b43312e3a2430228ad370cf528c6733e6847663c9eb9d58b2011f33",
+        "requirements.md": "1ebf8760bfe45d015813b81ce44827cdaefd94c7a2d669d62a53ca21ef822ea9",
+        "src/stream.mjs": "86eb4cec5015b7e56f2d2dc86c985e056c7fcf86cfc5acf5b2fa934d033e074e"
+      }
+    },
+    "prepare-pr-trigger-negative-1": {
+      "sha256": "d7dae17d1831a92fea46f508549be90a064a75e15c8a6d4bfb0ca9474fc4a984",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "prepare-pr-trigger-negative-2": {
+      "sha256": "c7ad3ddfe257e92235e357dd7daf80edf43033e4ba036821e30bf69e0516e36b",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "prepare-pr-trigger-negative-3": {
+      "sha256": "e32e411349f6be284c53d67027855c7d9ea0935d442c729560d096acc749f48c",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "prepare-pr-trigger-negative-4": {
+      "sha256": "9a601392271d6882477f8fc7a3ec2a5ccb99083a2d0bcd2daa3945d4bb8914b1",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "prepare-pr-trigger-negative-5": {
+      "sha256": "9c2803ff445993aa9676894f1186f549e9e78389665135efdf5d725ce607dc0f",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    }
+  },
+  "opportunity_sha256": "9d39362daaf3ac1722ad7d55c72a704d04cc3de1bfce69f5671adf466bd50977",
+  "opportunity_record": "# Opportunity evidence\n\n## research-question\n\nDiscovery: `research-question-discovery-version-conflict`, isolated matrix version 2, none/prompt repetition 3. Earlier launches are preserved calibration or launch failures, not comparative observations.\n\nBoth arms answered the installed-version question correctly, cited supplied documents, bounded unknowns, and changed only the requested report. This case demonstrates no behavioral superiority. The proposed opportunity is reusable delivery of the strong prompt's applicability, evidence, and uncertainty rules. That hypothesis must survive normal native discovery, adjacent negative requests, and the held-out comparison; prompt parity alone is not a release result.\n\nMechanism: a narrow catalog entry and version-applicability workflow. Strong prompt adds 386 characters to every request. Freeze minimum delivery improvement at 40% fewer caller instruction characters, all critical outcomes passing, every positive trigger observed, no adjacent false trigger, and the cost ceilings in budget.json. The ordinary request also succeeded, so evidence does not establish that this instruction burden is always necessary. A saved prompt is the cheaper fallback if native delivery adds no demonstrated value.\n\n## build-prototype and create-handoff\n\nTheir paired discovery sessions completed before drafting. Both prototype arms created runnable synthetic experiments; both handoff arms changed only the requested packet. Independent outcome review is pending. Drafts test a delivery hypothesis: reproducible experiment/verdict contracts and current-state continuation contracts can be recalled from short requests. No superiority is claimed from file creation or extra prose. Native positives, adjacent negatives, held-out outcomes, cost thresholds, and fresh handoff recipients will determine whether that hypothesis survives.\n\n## map-decisions\n\nBoth discovery arms completed and created bounded local decision artifacts before the final body was drafted. Test the delivery hypothesis for maintaining states, owners and dependencies without converting unknowns into tasks. Held-out cycle handling and continuation boundaries remain required; a larger map alone is not improvement.\n\n## prepare-pr and review-session\n\nThree distinct discovery tasks in each workflow ran in both none/prompt arms. PR baselines created local drafts; session baselines created review reports. The delivery hypothesis is accurate repeated application of diff/validation boundaries and evidence-to-remedy reasoning. Independent scoring must distinguish a demonstrated residual from parity. Publication behavior remains a separate mocked fresh probe; no real GitHub write is authorized by evaluation.\n\n## write-agent-instructions\n\nAll six discovery sessions completed before the final body was drafted. Both arms correctly left instructions unchanged for the checker-defect scenario. Test reusable delivery and downstream effects, not the number of rules written. Every generated instruction revision requires fresh affected-task and adjacent-policy evidence. Avoiding an unnecessary edit is a correct result.\n\n## create-setup-guide\n\nThe initial normal none/prompt actors both timed out after producing code; they are incomplete, not passes. Existing-secret and missing-role discovery tasks also exercise replacement authority and prerequisite completion. The final missing-permission prompt actor also timed out. All six discovery sessions have now finished before freezing the final subject; three are incomplete. The helper's independent nine-class preservation and failure-control suite passed. Independent output review remains pending. Proposed mechanism: explicit completion conditions, deadline-bound runner tests, and a small local storage helper for its declared compatible encoding. Its file-only verification never claims vendor credential validity. This candidate has a possible behavioral residual as well as a delivery hypothesis; adversarial independent runner replay must decide.\n"
+}

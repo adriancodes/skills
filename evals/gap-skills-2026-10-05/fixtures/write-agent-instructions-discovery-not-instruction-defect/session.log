@@ -1,0 +1,1 @@
+Agent ran required checker, which accepted typo due to its own defect. Runtime ignored the misspelled key. Maintainer confirmed the checker uses an incomplete allowlist.

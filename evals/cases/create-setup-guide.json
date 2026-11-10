@@ -1,0 +1,22 @@
+{
+  "skill": "create-setup-guide",
+  "positive": [
+    "Create a setup guide for human-only dashboard credential steps",
+    "Write a reusable setup walkthrough that survives retries",
+    "Make an interactive setup runner preserving existing configuration"
+  ],
+  "negative": [
+    {
+      "prompt": "Review this pull request before merge",
+      "owner": "code-review"
+    },
+    {
+      "prompt": "Implement the next task from the slices file",
+      "owner": "implement-task"
+    }
+  ],
+  "behavior": {
+    "prompt": "Create a setup guide for human-only dashboard credential steps",
+    "expect": "Apply the scoped workflow and verify its actual artifact; follow the per-skill frozen outcome suite."
+  }
+}

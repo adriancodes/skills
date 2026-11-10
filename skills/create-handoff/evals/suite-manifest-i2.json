@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "frozen": true,
+  "skill": "create-handoff",
+  "iteration": 2,
+  "frozen_at": "2026-10-05T12:18:16.788Z",
+  "subject": {
+    "SKILL.md": "8b3f95e9d325a961e905a6dd8e35015811ef406eeb1f3bd7ed8f9fece6b8dad6"
+  },
+  "matrix_sha256": "e3f59799374695d7b8fe6287861700ccfbf3d520674fa9ead62b568c8b03b1fe",
+  "budget_sha256": "73c6465488b5522a12edd7aa27c04d203c92ffe62757659d277a6cb2e067f285",
+  "cases": {
+    "create-handoff-discovery-stale-check": {
+      "sha256": "d01c9ace8303240232e5031cbf52edcc2dcad74de012ce0c472d1a8414c012ba",
+      "fixture": {
+        "docs/specs/export.md": "d450e6ed34bf9cf6e3e34597beaa53f695b8e8279ab697569b1de07a67707528",
+        "docs/verification.md": "ede98904a4645e5e877c14cee336db0daf7f56e303ed56b237b4db358a554222",
+        "src/export.mjs": "374eda9a58662535ff3e41b5444c66890aaaaed77bd12016bd954ffb8586944c",
+        "test.mjs": "8c637316e049bfd140710fb97470cabd9f88c9dff73cf9ed7707cdb301ce8a32"
+      }
+    },
+    "create-handoff-heldout-dirty-resume": {
+      "sha256": "f1f72c1ba3f888a16820fb001113d9d368d1599d799d3d8d9ef704fb771cd4a4",
+      "fixture": {
+        "docs/checks.md": "1d4b3f4845fc48d89d5c28b912766d78b65c2446c88a981cb051e2aba5accbd9",
+        "docs/specs/search.md": "b434b58baf22cf36dde54de289b62453b0a037bb8e101317be86ec2e9e6a7f2b",
+        "src/search.mjs": "4201b674ab5f349a1a646aa90e19a03a76f9fb9762c847e6295b285ac43e4367",
+        "test.mjs": "eb4fb0bbc305502f343bee8a8ee6be1caf5d11cbc9a28f69295920bda8496a55"
+      }
+    },
+    "create-handoff-heldout-blocked-secret": {
+      "sha256": "2192ebfda3c289dc55fcbcdbc4b59127c4376211c115caea4e7f4bf42421db28",
+      "fixture": {
+        ".env.local": "385225e0f540fc8d13c1144889da40d26b507f1d77c43e7dd5762b037ff8bb17",
+        "docs/specs/connect.md": "1b3feb29fdc3e1f1b27c18c0c1871da9b5dcebef53dcfb382d5d62997eeba8cf",
+        "notes.md": "dbf539286580d04623882b41758da4eb61760413f054acd1026930137cd9af23"
+      }
+    },
+    "create-handoff-heldout-misleading-log": {
+      "sha256": "750949a844043bc4cbf5951bbee5bb09bc91a056d4244bf98769e2e5d92eab16",
+      "fixture": {
+        "docs/specs/cache.md": "656083e7702cf79bc9e68101ba31666325b6fcae70cdc6d1a44ea0e3fb6e7a61",
+        "notes.md": "37f1d62503b3f76790e0e08be62bf2916b0a7668b767da9c079b43381639b964",
+        "src/cache.mjs": "21c332b8464d514add19e1188d8f1da556b99d5d10f1f2de2ba2f42b05837ef2",
+        "test.mjs": "6ef8adf7eeb9aff243d6e42d6dceb68cc29f047bb90619f1f32c62b248994066"
+      }
+    },
+    "create-handoff-trigger-positive-1": {
+      "sha256": "301a10b621a23af259780f6bc8d8cd69de569a378c200cd01b3105ffd0262825",
+      "fixture": {
+        "docs/checks.md": "1d4b3f4845fc48d89d5c28b912766d78b65c2446c88a981cb051e2aba5accbd9",
+        "docs/specs/search.md": "b434b58baf22cf36dde54de289b62453b0a037bb8e101317be86ec2e9e6a7f2b",
+        "src/search.mjs": "4201b674ab5f349a1a646aa90e19a03a76f9fb9762c847e6295b285ac43e4367",
+        "test.mjs": "eb4fb0bbc305502f343bee8a8ee6be1caf5d11cbc9a28f69295920bda8496a55"
+      }
+    },
+    "create-handoff-trigger-positive-2": {
+      "sha256": "0473ac985f2264521601147753c45fa37211611f379607bcb6a7bdf26e05f9de",
+      "fixture": {
+        "docs/checks.md": "1d4b3f4845fc48d89d5c28b912766d78b65c2446c88a981cb051e2aba5accbd9",
+        "docs/specs/search.md": "b434b58baf22cf36dde54de289b62453b0a037bb8e101317be86ec2e9e6a7f2b",
+        "src/search.mjs": "4201b674ab5f349a1a646aa90e19a03a76f9fb9762c847e6295b285ac43e4367",
+        "test.mjs": "eb4fb0bbc305502f343bee8a8ee6be1caf5d11cbc9a28f69295920bda8496a55"
+      }
+    },
+    "create-handoff-trigger-negative-1": {
+      "sha256": "f4eecf6d67daa10a3b51ff918f24dea6ee5951c3dd4e07160c721fe44a42cff4",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    },
+    "create-handoff-trigger-negative-2": {
+      "sha256": "cffab7321daab38d10a93eacd90e333df05024c7d401f5acb091c11452fa81e4",
+      "fixture": {
+        "docs/specs/export.md": "4c6631ef6dd277e97e11ccb789aced09288ad8ed0c48dc48b33c5ef360dc978a",
+        "src/export.mjs": "60943f0692b2d74e493b1a8162705aed6264dc9dab9336482f7119e90742236c",
+        "test.mjs": "47845da87f974dd4a17697c9dc734bec1ac0abf5a91bfd2430593fa098001cfb"
+      }
+    }
+  },
+  "opportunity_sha256": "9d39362daaf3ac1722ad7d55c72a704d04cc3de1bfce69f5671adf466bd50977",
+  "opportunity_record": "# Opportunity evidence\n\n## research-question\n\nDiscovery: `research-question-discovery-version-conflict`, isolated matrix version 2, none/prompt repetition 3. Earlier launches are preserved calibration or launch failures, not comparative observations.\n\nBoth arms answered the installed-version question correctly, cited supplied documents, bounded unknowns, and changed only the requested report. This case demonstrates no behavioral superiority. The proposed opportunity is reusable delivery of the strong prompt's applicability, evidence, and uncertainty rules. That hypothesis must survive normal native discovery, adjacent negative requests, and the held-out comparison; prompt parity alone is not a release result.\n\nMechanism: a narrow catalog entry and version-applicability workflow. Strong prompt adds 386 characters to every request. Freeze minimum delivery improvement at 40% fewer caller instruction characters, all critical outcomes passing, every positive trigger observed, no adjacent false trigger, and the cost ceilings in budget.json. The ordinary request also succeeded, so evidence does not establish that this instruction burden is always necessary. A saved prompt is the cheaper fallback if native delivery adds no demonstrated value.\n\n## build-prototype and create-handoff\n\nTheir paired discovery sessions completed before drafting. Both prototype arms created runnable synthetic experiments; both handoff arms changed only the requested packet. Independent outcome review is pending. Drafts test a delivery hypothesis: reproducible experiment/verdict contracts and current-state continuation contracts can be recalled from short requests. No superiority is claimed from file creation or extra prose. Native positives, adjacent negatives, held-out outcomes, cost thresholds, and fresh handoff recipients will determine whether that hypothesis survives.\n\n## map-decisions\n\nBoth discovery arms completed and created bounded local decision artifacts before the final body was drafted. Test the delivery hypothesis for maintaining states, owners and dependencies without converting unknowns into tasks. Held-out cycle handling and continuation boundaries remain required; a larger map alone is not improvement.\n\n## prepare-pr and review-session\n\nThree distinct discovery tasks in each workflow ran in both none/prompt arms. PR baselines created local drafts; session baselines created review reports. The delivery hypothesis is accurate repeated application of diff/validation boundaries and evidence-to-remedy reasoning. Independent scoring must distinguish a demonstrated residual from parity. Publication behavior remains a separate mocked fresh probe; no real GitHub write is authorized by evaluation.\n\n## write-agent-instructions\n\nAll six discovery sessions completed before the final body was drafted. Both arms correctly left instructions unchanged for the checker-defect scenario. Test reusable delivery and downstream effects, not the number of rules written. Every generated instruction revision requires fresh affected-task and adjacent-policy evidence. Avoiding an unnecessary edit is a correct result.\n\n## create-setup-guide\n\nThe initial normal none/prompt actors both timed out after producing code; they are incomplete, not passes. Existing-secret and missing-role discovery tasks also exercise replacement authority and prerequisite completion. The final missing-permission prompt actor also timed out. All six discovery sessions have now finished before freezing the final subject; three are incomplete. The helper's independent nine-class preservation and failure-control suite passed. Independent output review remains pending. Proposed mechanism: explicit completion conditions, deadline-bound runner tests, and a small local storage helper for its declared compatible encoding. Its file-only verification never claims vendor credential validity. This candidate has a possible behavioral residual as well as a delivery hypothesis; adversarial independent runner replay must decide.\n"
+}

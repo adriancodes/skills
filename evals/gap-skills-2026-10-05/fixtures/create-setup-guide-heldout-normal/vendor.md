@@ -1,0 +1,1 @@
+Synthetic primary doc revision2026-10-02. Team console > Environments > Sandbox > API keys > Create read-only key. Never use a live key. Required local destination SANDBOX_READ_KEY=.env.local. Completion: nonempty key saved locally after human confirms sandbox origin.

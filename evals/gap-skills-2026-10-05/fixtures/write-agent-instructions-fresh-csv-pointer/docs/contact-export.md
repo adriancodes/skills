@@ -1,0 +1,2 @@
+# Contact export
+The owning API serialize(rows) contract is CSV. Input is an array of records with id, email and note, all strings. Emit header id,email,note followed by LF, then rows in input order, each with LF. Quote fields containing comma, double quote, CR or LF; double embedded double quotes. Empty input emits only the header. Preserve Unicode, BOM within data, leading zeros and numeric-looking strings. Reject nonarrays, missing fields and nonstring fields. No coercion.

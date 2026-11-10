@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "updated_at": "2026-10-05T14:24:00Z",
+  "judge_turns": {
+    "gap_outcome_judge": 10,
+    "gap_setup_replay": 7
+  },
+  "usage": null,
+  "accounting": "Evaluation-only collaboration turns, including followups, are counted separately from CLI result directories. Initial counts are reconstructed from the retained session history; subsequent followups increment this ledger. Actual model token usage is not exposed. Root supervision and deterministic local replay commands are not target actor sessions. Complete total-token accounting cannot be asserted."
+}

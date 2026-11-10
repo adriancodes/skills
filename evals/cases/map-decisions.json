@@ -1,0 +1,22 @@
+{
+  "skill": "map-decisions",
+  "positive": [
+    "Map settled unanswered and unspecified project decisions",
+    "Map decisions across bounded workstreams and sessions",
+    "Organize the project decision map and its unresolved workstreams"
+  ],
+  "negative": [
+    {
+      "prompt": "Review this pull request before merge",
+      "owner": "code-review"
+    },
+    {
+      "prompt": "Implement the next task from the slices file",
+      "owner": "implement-task"
+    }
+  ],
+  "behavior": {
+    "prompt": "Map settled unanswered and unspecified project decisions",
+    "expect": "Apply the scoped workflow and verify its actual artifact; follow the per-skill frozen outcome suite."
+  }
+}
