@@ -12,7 +12,7 @@
   },
   "tool_trace": {
     "path": "results/opportunity/discovery-pressure/prompt/run-1/actor-trace.jsonl",
-    "sha256": "220b3fd987fe86fb4332f921b202160890cde8ef77efad372732e40fe8e5aa7b"
+    "sha256": "66b5844e42c2f3536d8fde884268fb8150ef9022e722ca809fd62f923bde9c01"
   },
   "artifacts": [
     {

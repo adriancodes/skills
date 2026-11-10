@@ -17,7 +17,7 @@
       },
       "tool_trace": {
         "path": "results/opportunity/discovery-normal/none/run-1/actor-trace.jsonl",
-        "sha256": "4856aebb7e9e843f285068b2eef11de296cdece879cff682785389d2830d8a68"
+        "sha256": "531acba0862500316181ecd3a0ab56b999b087618e2f23825392fa6a8b79ba34"
       },
       "artifacts": [
         {
@@ -112,7 +112,7 @@
       },
       "tool_trace": {
         "path": "results/opportunity/discovery-normal/prompt/run-1/actor-trace.jsonl",
-        "sha256": "0250a6a8860c7b4557fd270ce10139d7ee35ce1e449a779861e104425a31a2c0"
+        "sha256": "935a2ac05bc7cd24a619e77f698e129c6829980aa61b53466ec2f12308c25dee"
       },
       "artifacts": [
         {
@@ -195,7 +195,7 @@
       },
       "tool_trace": {
         "path": "results/opportunity/discovery-cheaper/none/run-1/actor-trace.jsonl",
-        "sha256": "5366d406b4ed7ffa5f4effd145d9b5afa8189a8abb92960c7a701e4290800994"
+        "sha256": "6d66955be8c255686eb903ec34236d2f33ddd0f2305162f0ccae8e5838a7bc1d"
       },
       "artifacts": [
         {
@@ -252,7 +252,7 @@
       },
       "tool_trace": {
         "path": "results/opportunity/discovery-cheaper/prompt/run-1/actor-trace.jsonl",
-        "sha256": "4cf83668bdf8bba5b06dc81464cbc6cdf7002e1930c4801b8255853113c2600f"
+        "sha256": "bd6c2571f312e98e004a5db31c0bc736984be2ace20ffd029491589e3b02dc6a"
       },
       "artifacts": [
         {
@@ -301,7 +301,7 @@
       },
       "tool_trace": {
         "path": "results/opportunity/discovery-pressure/none/run-1/actor-trace.jsonl",
-        "sha256": "0665e4c7fa292d81ed0899b3ede1bee98e751dc4ca6dcaa67195094c5a4932cc"
+        "sha256": "82ce25d0ddf3b4c9e12a7f1cf807e0e4818f02d2d09d026db0577863c9bcee17"
       },
       "artifacts": [
         {
@@ -396,7 +396,7 @@
       },
       "tool_trace": {
         "path": "results/opportunity/discovery-pressure/prompt/run-1/actor-trace.jsonl",
-        "sha256": "220b3fd987fe86fb4332f921b202160890cde8ef77efad372732e40fe8e5aa7b"
+        "sha256": "66b5844e42c2f3536d8fde884268fb8150ef9022e722ca809fd62f923bde9c01"
       },
       "artifacts": [
         {

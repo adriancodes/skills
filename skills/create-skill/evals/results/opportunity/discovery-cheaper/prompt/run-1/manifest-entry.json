@@ -12,7 +12,7 @@
   },
   "tool_trace": {
     "path": "results/opportunity/discovery-cheaper/prompt/run-1/actor-trace.jsonl",
-    "sha256": "4cf83668bdf8bba5b06dc81464cbc6cdf7002e1930c4801b8255853113c2600f"
+    "sha256": "bd6c2571f312e98e004a5db31c0bc736984be2ace20ffd029491589e3b02dc6a"
   },
   "artifacts": [
     {

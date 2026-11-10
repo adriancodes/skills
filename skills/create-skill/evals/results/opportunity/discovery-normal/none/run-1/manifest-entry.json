@@ -12,7 +12,7 @@
   },
   "tool_trace": {
     "path": "results/opportunity/discovery-normal/none/run-1/actor-trace.jsonl",
-    "sha256": "4856aebb7e9e843f285068b2eef11de296cdece879cff682785389d2830d8a68"
+    "sha256": "531acba0862500316181ecd3a0ab56b999b087618e2f23825392fa6a8b79ba34"
   },
   "artifacts": [
     {

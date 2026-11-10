@@ -18,3 +18,7 @@ The 2026-07-09 benchmark files are historical summaries, not reproducible effect
 ## Skill-specific evidence
 
 - [`understand-codebase`](../../skills/understand-codebase/evals/results/README.md) — preserved opportunity and Tier 2 results, including the tested subject hash, raw runs, scorer output, and claim limits.
+
+## Redaction
+
+On 2026-11-10 the local home directory and account name in published evidence across this repository were replaced with `/Users/user` and `user`. Recorded hashes of the redacted files were recomputed. Verdicts, scores and skill files are unchanged. Earlier commits still contain the original text.
