@@ -68,6 +68,14 @@ A vague criterion invites **premature completion**: the agent's attention slips 
 1. **Sharpen the criterion first** — cheap and local. A checkable bound resists the pull no matter how many later steps are visible.
 2. **Split the sequence only if** the criterion is irreducibly fuzzy *and* the rush is actually observed — move the later steps behind a subagent dispatch or a follow-on skill so they leave the agent's view. Splitting on suspicion alone fragments the skill for nothing.
 
+### Example of a gated comparison
+
+In a regression-test review, run the documented suite against the current code first in a separate tool call. If it fails or collects zero tests, report the full-suite verdict as **inconclusive**. Stop before restoring the bug. If the brief authorizes a focused investigation, give that investigation a separate branch and verdict.
+
+With a green baseline, restore the reported bug in a disposable copy. Inspect the diff to verify the intended edit and check that the tests are unchanged. Run the same witness on both versions in a tool call that ends after printing the witness results. Read those results before issuing a command for the regressed suite. If the witness does not reproduce the reported difference or cannot run, report **inconclusive** and stop before the regressed suite.
+
+With a reproduced witness, run the same suite on the regressed copy. A failure at the intended assertion supports **protected**. A passing run supports **coverage gap**. A failure that prevents observing the intended assertion leaves the verdict **inconclusive**. A failed prerequisite takes precedence over any suite result obtained out of order. Report the exact command, diff, witness results, and observed suite outcomes under the matching verdict.
+
 ## Writing Context Pointers
 
 Every entry in "Additional Resources" — and every inline file reference — is a **context pointer**: its *wording*, not its target, decides whether the agent ever loads the material. State when to load, not only what the target contains.

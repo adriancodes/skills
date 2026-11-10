@@ -1,0 +1,22 @@
+{
+  "arm": "creator",
+  "exit": 0,
+  "fixture_hashes_after": {
+    "README.md": "db877f1902c5ebd9eeb9e712ea71559c72dc5088a491287fa8a0c5f1c32ca1d7",
+    "app.py": "9bfe30d0894d3541bbf987809c1650f76332cbe3387bcdfadfb820e024ecb0d6",
+    "test_app.py": "576714cc606e8ac88ed59d0052bc9c46a42c5c24ffa863a7384a53df0da991a4"
+  },
+  "fixture_hashes_before": {
+    "README.md": "db877f1902c5ebd9eeb9e712ea71559c72dc5088a491287fa8a0c5f1c32ca1d7",
+    "app.py": "9bfe30d0894d3541bbf987809c1650f76332cbe3387bcdfadfb820e024ecb0d6",
+    "test_app.py": "576714cc606e8ac88ed59d0052bc9c46a42c5c24ffa863a7384a53df0da991a4"
+  },
+  "id": "claimed-bug-absent-2-creator",
+  "original_files_intact": true,
+  "prompt_sha256": "c1a0d95be5cea40556c1dcb44aa43f7b9ec2f39d24749eea682684cb91303032",
+  "seconds": 24.458,
+  "started_utc": "2026-11-10T03:22:18.311672+00:00",
+  "status": "completed",
+  "task": "claimed-bug-absent",
+  "trial": 2
+}

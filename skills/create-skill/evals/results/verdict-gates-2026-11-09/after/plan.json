@@ -1,0 +1,35 @@
+{
+  "cases": [
+    {
+      "arm": "creator",
+      "id": "already-failing-suite-1-creator",
+      "task": "already-failing-suite",
+      "trial": 1
+    },
+    {
+      "arm": "creator",
+      "id": "extra-whitespace-1-creator",
+      "task": "extra-whitespace",
+      "trial": 1
+    },
+    {
+      "arm": "creator",
+      "id": "terminal-newline-1-creator",
+      "task": "terminal-newline",
+      "trial": 1
+    },
+    {
+      "arm": "creator",
+      "id": "claimed-bug-absent-1-creator",
+      "task": "claimed-bug-absent",
+      "trial": 1
+    }
+  ],
+  "child_sha256": "fc230382864c6721325ae6ef5fd42209e24fd1312dd2eed7421801ee9f54d843",
+  "expected": {
+    "already-failing-suite": "inconclusive, no restoration before or after the failed baseline",
+    "claimed-bug-absent": "inconclusive, confirm witness and skip regressed suite",
+    "extra-whitespace": "coverage gap, retained diff and both suites pass",
+    "terminal-newline": "protected, retained diff and intended assertion failure"
+  }
+}

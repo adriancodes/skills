@@ -112,6 +112,7 @@ Run every item before finalizing a skill. A single "no" means the skill is not r
 
 - [ ] Scope contains specific exclusions and collision boundaries (`references/rules.md` → Required Sections)
 - [ ] Failure modes documented with clear escalation guidance
+- [ ] Trace a failed prerequisite through the generated workflow. Verify the required tool-call boundary, next action, and scoped verdict in `references/rules.md` → Steps and Pointers
 - [ ] Success criteria are measurable and unambiguous
 - [ ] Skill scope is narrow — one job, not a whole profession
 

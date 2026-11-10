@@ -65,6 +65,8 @@ node evals/check-review-probes.mjs
 
 The new replay validates original/current hashes, unchanged frontmatter, cases, launch-time resource hashes, runner snapshots, raw outputs, before/after trees, read-only effects, TDD ordering, independent behavior probes, and the contaminated-fixture rejection control. It writes [replay-results.json](replay-results.json). A passing replay means evidence matches its recorded outcome; it does not turn failures, exclusions, or incomplete runs into successes.
 
+The `create-skill` probe replays against its archived subject. The replay reports separately whether those resources match the live skill.
+
 Independent scores remain in [outcomes-interaction.json](outcomes-interaction.json), [outcomes-safety.json](outcomes-safety.json), and [outcomes-followup.json](outcomes-followup.json). The correction uses [failure-case.json](failure-case.json); the quiz exclusion is preserved in [exclusions.json](exclusions.json). Current verifier hashes differ from its failed pre-correction run and are reported separately. No historical record was rehashed to appear current.
 
 CI replays local evidence without launching a model. Repository structural, catalog, routing, persona, authoring-contract, and historical-provenance checks pass locally. Lexical routing remains 51/51 positives across 17 skills; this is a preflight, not native triggering proof. A read-only local `skills` CLI 1.5.19 listing also found the 17 active skills, with telemetry disabled and no installation; its output is preserved in [installer-list.txt](installer-list.txt).

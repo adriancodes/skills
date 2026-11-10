@@ -296,7 +296,7 @@
       "skill": "create-skill",
       "status": "PASS",
       "exclusion": null,
-      "current_resources": true,
+      "current_resources": false,
       "grade": {
         "id": "create-skill-missing-boundary",
         "status": "PASS",

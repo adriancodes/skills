@@ -127,6 +127,9 @@ Rules for workflow steps and file references. `body-template.md` (Writing Workfl
 - [ ] Every workflow step ends on a **checkable completion criterion** — the agent can tell done from not-done ("all fixtures pass on a full re-run", not "tests look good")
 - [ ] Put each `Done when …` criterion on its own line after the action it closes
 - [ ] Criteria that gate thoroughness are **exhaustive** ("every modified file accounted for", not "produce a change list")
+- [ ] In a verification workflow, check each prerequisite before the action it gates. For a failed, missing, or unexecuted check, name the affected verdict and the action to stop before. Put any permitted narrower investigation on a separate branch with its own verdict
+- [ ] If the next action depends on interpreting a check result, require a separate tool call for that check. Read the result before issuing the next action. A single command is acceptable when it enforces the actual prerequisite in code
+- [ ] For a before-and-after check, identify the changed input or temporary diff, hold the comparison conditions fixed, and record both outcomes. Give one evidence-backed verdict per scope. Use the same verdict in the headline and details
 - [ ] Every context pointer states *when* to load its target, not only what the target contains
 - [ ] A must-have file behind an unreliable pointer is fixed by sharpening the pointer's wording first; the material is inlined only if sharpening fails
 - [ ] File references use relative paths and stay one level deep from SKILL.md — no nested reference chains (open-spec rule)
@@ -187,6 +190,7 @@ Run in Phase 7. Proves the skill's *output* works, not just that the document is
 - [ ] **Discipline skill** — Tier 1 runs its boundary/override smoke; Tier 2 uses the pressure/authority regression as the combined-pressure Bulletproofing re-test; Tier 3 runs the matching combined-pressure re-test
 - [ ] **Reference skill** — a fresh agent performs and applies 1 real lookup at Tier 1, the 2 skill-only regression lookups at Tier 2, or 3 real lookups at Tier 3
 - [ ] **Pure technique/workflow, no artifact** — a fresh agent executes the declared correctness cases with no critical gap or deviation; at Tier 2 these are the value-pair skill arm and 2 skill-only regressions, not extra sessions
+- [ ] When a prerequisite gates a verdict, use a blocked case within the tier's existing cases. Score the actual stop or continuation from the trace and the scoped verdict from the answer as separate assertions. A correct verdict alone does not prove the agent stopped
 - [ ] A clean known suite requires no additional fresh probe at Tiers 1–2; Tier 3 requires 2 consecutive fresh probe rounds
 - [ ] Any input class left untested — and any non-obvious semantic decision the artifact makes on an ambiguous spec (sort order, tie-breaking, type coercion) — is named in the skill's Failure Modes (no silent coverage caps, no silent judgment calls)
 

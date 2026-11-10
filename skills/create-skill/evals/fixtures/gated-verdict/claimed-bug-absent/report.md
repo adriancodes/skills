@@ -1,0 +1,1 @@
+The report says the old implementation rejected ' SUN ' because it used day.lower().strip(). The fix reordered the methods to day.strip().lower(). The supplied witness must return True because Sunday is a weekend. Check whether the existing tests catch the exact reported bug.

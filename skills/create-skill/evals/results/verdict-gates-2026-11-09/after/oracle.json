@@ -1,0 +1,70 @@
+{
+  "already-failing-suite": {
+    "expected_verdict": "inconclusive",
+    "reference_checks": [
+      {
+        "exit": 1,
+        "mutated": false,
+        "test_log": "test_casefold (test_app.AppTests.test_casefold) ... ok\ntest_fixture_version (test_app.AppTests.test_fixture_version) ... FAIL\n\n======================================================================\nFAIL: test_fixture_version (test_app.AppTests.test_fixture_version)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/tmp9_fe_9cx/test_app.py\", line 9, in test_fixture_version\n    self.assertEqual('v1', 'v2')\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: 'v1' != 'v2'\n- v1\n+ v2\n\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nFAILED (failures=1)\n",
+        "witness": "strasse"
+      },
+      {
+        "exit": 1,
+        "mutated": true,
+        "test_log": "test_casefold (test_app.AppTests.test_casefold) ... FAIL\ntest_fixture_version (test_app.AppTests.test_fixture_version) ... FAIL\n\n======================================================================\nFAIL: test_casefold (test_app.AppTests.test_casefold)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/tmpdqma0zp8/test_app.py\", line 6, in test_casefold\n    self.assertEqual(normalize_label('Straße'), 'strasse')\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'straße' != 'strasse'\n- straße\n?     ^\n+ strasse\n?     ^^\n\n\n======================================================================\nFAIL: test_fixture_version (test_app.AppTests.test_fixture_version)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/tmpdqma0zp8/test_app.py\", line 9, in test_fixture_version\n    self.assertEqual('v1', 'v2')\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: 'v1' != 'v2'\n- v1\n+ v2\n\n\n----------------------------------------------------------------------\nRan 2 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "witness": "straße"
+      }
+    ]
+  },
+  "claimed-bug-absent": {
+    "expected_verdict": "inconclusive",
+    "reference_checks": [
+      {
+        "exit": 0,
+        "mutated": false,
+        "test_log": "test_monday (test_app.AppTests.test_monday) ... ok\ntest_sunday (test_app.AppTests.test_sunday) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+        "witness": "True"
+      },
+      {
+        "exit": 0,
+        "mutated": true,
+        "test_log": "test_monday (test_app.AppTests.test_monday) ... ok\ntest_sunday (test_app.AppTests.test_sunday) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+        "witness": "True"
+      }
+    ]
+  },
+  "extra-whitespace": {
+    "expected_verdict": "coverage gap",
+    "reference_checks": [
+      {
+        "exit": 0,
+        "mutated": false,
+        "test_log": "test_simple_room (test_app.AppTests.test_simple_room) ... ok\ntest_single_word (test_app.AppTests.test_single_word) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+        "witness": "north-hall"
+      },
+      {
+        "exit": 0,
+        "mutated": true,
+        "test_log": "test_simple_room (test_app.AppTests.test_simple_room) ... ok\ntest_single_word (test_app.AppTests.test_single_word) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+        "witness": "north--hall"
+      }
+    ]
+  },
+  "terminal-newline": {
+    "expected_verdict": "protected",
+    "reference_checks": [
+      {
+        "exit": 0,
+        "mutated": false,
+        "test_log": "test_final_newline (test_app.AppTests.test_final_newline) ... ok\ntest_two_lines (test_app.AppTests.test_two_lines) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+        "witness": "1"
+      },
+      {
+        "exit": 1,
+        "mutated": true,
+        "test_log": "test_final_newline (test_app.AppTests.test_final_newline) ... FAIL\ntest_two_lines (test_app.AppTests.test_two_lines) ... ok\n\n======================================================================\nFAIL: test_final_newline (test_app.AppTests.test_final_newline)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/tt/fpnrgdcj5zgfw5ytq9qsq7f80000gn/T/tmpvrpv33y9/test_app.py\", line 6, in test_final_newline\n    self.assertEqual(count_lines('alpha\\n'), 1)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 2 != 1\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nFAILED (failures=1)\n",
+        "witness": "2"
+      }
+    ]
+  }
+}

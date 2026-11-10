@@ -1,0 +1,78 @@
+Use the following exact skill for this task.
+
+---
+name: check-regression-test-protection
+description: Check whether an existing test suite would catch a specific reported bug if it returned, using a disposable copy and a concrete regression witness.
+disable-model-invocation: true
+license: MIT
+metadata:
+  category: Testing
+  summary: Compares test results before and after a reported regression is restored in a disposable project copy.
+---
+
+# Check Regression Test Protection
+
+## Scope
+
+Use when the user asks whether existing tests would catch a specific reported regression if it returned and supplies a bug report, behavior contract, or fix diff.
+
+Do not use for general test coverage audits, test-driven implementation, debugging an active failure, or broad verification of a completed change. Use the relevant testing, debugging, or verification workflow instead.
+
+Keep the supplied project unchanged. Run only local, reversible commands in a disposable copy.
+
+## Workflow
+
+1. Identify the reported behavior, the corrected behavior, and the smallest change that would restore the reported bug. Read the relevant source, tests, project instructions, and documented test command.
+
+   Done when the failure condition, expected behavior, affected code, and applicable test command are recorded.
+
+2. Confirm that the reversal is concrete and isolated. Stop and report the limitation if the report or diff does not identify a safe, bounded reversal, or if restoring the bug requires external services, secrets, destructive operations, or changes outside the disposable copy.
+
+   Done when the reversal can be applied only to a disposable copy without external side effects.
+
+3. Create a disposable copy containing the files required to run the relevant existing tests. Apply only the reported bug reversal in that copy, then inspect the diff to confirm no other behavior changed.
+
+   Done when the original project is untouched and the disposable diff contains only the intended reversal.
+
+4. State a concrete witness input and its expected results under both corrected and regressed behavior. Confirm the current implementation produces the corrected result and the reversed implementation produces the reported failure.
+
+   Done when the witness distinguishes the two implementations as expected.
+
+5. Run the same existing test command against the current version and the regressed copy. Preserve the exact command and each exit status and output. Do not add tests or change test selection for this comparison.
+
+   Done when both runs have complete recorded results, or a specific environment failure is recorded.
+
+6. Compare outcomes. If the regressed run fails because an existing test detects the reported bug, report protection. If it passes, report a coverage gap. If the witness, reversal, or either test run is inconclusive, report inconclusive evidence and name the missing evidence.
+
+   Done when the verdict follows from the witness and both test outcomes, with no unsupported claim about broader coverage.
+
+## Verification
+
+- Name the bug report or behavior contract and the exact test command.
+- Record the disposable-copy reversal and its diff scope.
+- Show the witness and expected versus observed corrected/regressed behavior.
+- Report both test outcomes and the verdict: protected, not protected, or inconclusive.
+- Cite project evidence by file and line when available.
+- State that the supplied project was left unchanged.
+
+## Example
+
+Reported bug: eligibility used `age > 18`, incorrectly rejecting age 18. The corrected contract is `age >= 18`.
+
+The witness is `eligible(18)`: corrected code returns true; regressed code returns false. Existing tests check ages 20 and 17 only. Run `python3 -m unittest -v` in the original project and in a disposable copy where only `age >= 18` is changed to `age > 18`. If both runs pass and the witness changes as expected, report **not protected**: the existing suite misses the age-18 boundary.
+
+## Stop Conditions
+
+- If the disposable copy cannot be isolated from the supplied project, stop before applying the reversal.
+- If the witness does not demonstrate the reported failure, report inconclusive evidence.
+- If the test command cannot run for an environment reason, report that result without inferring protection or a coverage gap.
+- If unrelated files or behavior change in the disposable diff, discard that copy and rebuild it before testing.
+
+The verdict must come from the concrete witness and the same existing test command run against corrected and regressed copies.
+
+User request
+
+Please check whether our existing test suite would catch the exact reported bug if it returned. Report your verdict and the evidence from this project. This is a review request. Leave the supplied project unchanged.
+
+Reported behavior
+The report says the old implementation rejected ' SUN ' because it used day.lower().strip(). The fix reordered the methods to day.strip().lower(). The supplied witness must return True because Sunday is a weekend. Check whether the existing tests catch the exact reported bug.

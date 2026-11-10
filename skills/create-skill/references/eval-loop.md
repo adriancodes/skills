@@ -83,6 +83,8 @@ Run the matching type-and-tier correctness method from `rules.md` → Eval Loop 
 
 At Tier 2, design the four behavior sessions to carry this correctness evidence too: the skill arm of the paired value case covers normal operation, while the two skill-only regressions cover edge and pressure/authority behavior. Do not add a second agent-run correctness suite.
 
+For a gated comparison, exercise the success path and a blocked path in those cases. For example, keep a case where the reported bug is real and a case where the supplied witness behaves identically on both versions. Check that the trace ends before the gated action and that the headline agrees with the recorded outcome. If a narrower investigation is permitted, score its evidence and verdict separately from the full check.
+
 For Tier-2 structured data, select the two boundary classes most likely to expose the mechanism's failure. At Tier 3, begin with empty, singleton, delimiter-in-data, embedded newline, ragged, escape-character, Unicode/BOM, numeric-boundary, and type-ambiguity cases. Add domain-specific cases; the catalog is a floor, not a claim of completeness.
 
 ## Stage 4: Compare Prompt and Skill

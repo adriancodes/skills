@@ -1,0 +1,52 @@
+Explicitly invoke $verifying-regression-tests for this task. Its skill file is .agents/skills/verifying-regression-tests/SKILL.md. Use the following exact skill for this task.
+
+---
+name: verifying-regression-tests
+description: "Explicitly invoked when a user asks whether existing tests would catch a reported bug if it returned, whether a regression is covered, or requests a clean-versus-bug-restored test comparison."
+disable-model-invocation: true
+---
+
+# Verifying Regression Tests
+
+Use a controlled regression check to decide whether the existing test suite detects a specific reported bug. Preserve the supplied project and report one scoped verdict with evidence.
+
+## Scope
+
+- Use for a reported, reproducible behavior change in an existing codebase when the user asks whether tests would catch it.
+- Do not use for general test coverage audits, writing a new test suite, fixing the bug, or changing project files.
+- Stop if the report does not identify an observable behavior or the original faulty behavior cannot be reconstructed; report **inconclusive** and state the missing evidence.
+
+## Workflow
+
+1. Identify the project instructions, test command, relevant implementation, and relevant tests. Record the initial working-tree state and the files that the check may copy or edit.
+   Done when the command and target behavior are grounded in project evidence, or the missing prerequisite is recorded as inconclusive.
+2. Run the documented or established test command on the unchanged project in a separate tool call. Record its exact command and complete result.
+   Done when the baseline is green and runs at least one test; otherwise report **inconclusive baseline** and stop before restoring the bug.
+3. Create a disposable copy containing the needed project files. Restore only the reported bug there, then inspect and record the exact diff and verify the tests are unchanged.
+   Done when the disposable diff implements the reported faulty behavior and contains no unrelated changes.
+4. Define a concrete witness input and expected difference from the behavior contract. Run that same witness against the unchanged version and disposable regressed version in a tool call that ends after recording both results.
+   Done when the witness demonstrates the reported difference; otherwise report **inconclusive witness** and stop before running the regressed suite.
+5. Run the same test command in the disposable regressed copy. Keep command, environment, and test files fixed against the baseline run.
+   Done when the suite result is recorded and classified as **protected**, **coverage gap**, or **inconclusive**.
+6. Report the verdict in the headline and details. Include the exact test command, temporary diff, witness and both witness results, baseline and regressed suite outcomes, and any relevant limits.
+   Done when each reported claim points to observed evidence and the supplied project remains unchanged.
+
+## Verification
+
+- **Protected:** the baseline passes and the regressed suite fails at the assertion that detects the reproduced behavior.
+- **Coverage gap:** the baseline passes and the regressed suite passes despite the witness reproducing the bug.
+- **Inconclusive:** a required prerequisite, witness, or interpretable suite result is missing or fails outside the intended assertion.
+- Claim protection only for the reported regression and executed suite.
+
+## Example
+
+For eligibility beginning at 18, the faulty condition is `age > 18` and the witness is `eligible(18)`. If the current implementation returns true and the restored implementation returns false, but both the baseline suite and regressed suite pass, report **Coverage gap**. Cite the observed test outcomes and recommend adding an assertion that age 18 is eligible.
+
+Run the baseline first, prove the bug with the same witness on both versions, then run the unchanged suite against the disposable regression and report only the verdict the evidence supports.
+
+User request
+
+Please check whether our existing test suite would catch the exact reported bug if it returned. Report your verdict and the evidence from this project. This is a review request. Leave the supplied project unchanged.
+
+Reported behavior
+A room slug collapses consecutive spaces into one hyphen. The old implementation used label.lower().replace(' ', '-') and returned north--hall for 'North  Hall'.

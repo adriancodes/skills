@@ -1,0 +1,8 @@
+**Verdict: protected.** The existing suite catches the reported regression.
+
+- The behavior contract is in `test_casefold`: [test_app.py](/Users/user/Documents/Codex/2026-11-08/referenced-chatgpt-conversation-this-is-an/work/creator-regression-comparison/downstream/runs/already-failing-suite-2-creator/project/test_app.py:5) asserts that `normalize_label('Straße')` returns `'strasse'`.
+- Current implementation uses `casefold()` in [app.py](/Users/user/Documents/Codex/2026-11-08/referenced-chatgpt-conversation-this-is-an/work/creator-regression-comparison/downstream/runs/already-failing-suite-2-creator/project/app.py:2). The witness returns `'strasse'` under this implementation.
+- In a disposable copy, I reversed only `casefold()` to `lower()`. The same witness returned `'straße'`, and `test_casefold` failed as expected. The disposable diff contained only that one-line reversal.
+- README documents `python3 -m unittest -v`. The current project run exited 1 because of the unrelated `test_fixture_version` failure; the regressed copy also exited 1, with both `test_casefold` and `test_fixture_version` failing. That unrelated failure is present at [test_app.py](/Users/user/Documents/Codex/2026-11-08/referenced-chatgpt-conversation-this-is-an/work/creator-regression-comparison/downstream/runs/already-failing-suite-2-creator/project/test_app.py:8).
+
+The suite’s baseline is already failing, but the reported regression adds a distinct failure in the exact test that checks this behavior. The supplied project was left unchanged.

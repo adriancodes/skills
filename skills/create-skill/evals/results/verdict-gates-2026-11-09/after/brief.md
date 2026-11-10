@@ -1,0 +1,5 @@
+# Confirmed authoring brief
+
+Create a reusable skill for verifying whether existing Python tests would catch a specific reported regression if it returned. The user supplies a bug report, behavior contract, or fix diff. The deliverable is a review verdict and evidence. Preserve the supplied project. Use a disposable copy to restore only the reported bug, check a concrete witness, and run the same tests against both versions. Account for clean protection, coverage gaps, and inconclusive evidence. Report the test command, temporary change, witness, and results. A repeated workflow justifies packaging when it saves the user from restating the verification procedure.
+
+Invocation is explicit for this experiment. Use the targeted tier appropriate for local, reversible verification. No release is requested. The experiment coordinator accepted this reconstruction of the earlier brief and waives follow-up interview turns for this isolated authoring session. External evaluation will run the generated draft on unseen tasks. Produce a draft only, including any strictly necessary support files. Do not access unrelated directories or run additional model sessions.

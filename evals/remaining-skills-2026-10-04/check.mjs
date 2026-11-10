@@ -7,19 +7,26 @@ import os from 'node:os';
 import crypto from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath,pathToFileURL} from 'node:url';
+import {isDeepStrictEqual} from 'node:util';
 const here = path.dirname(fileURLToPath(import.meta.url)), repo = path.resolve(here,'../..');
 const json = file => JSON.parse(fs.readFileSync(file,'utf8'));
 const hash = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
-const tree = dir => Object.fromEntries(fs.readdirSync(dir,{recursive:true}).filter(file => fs.statSync(path.join(dir,file)).isFile()).sort().map(file => [file,hash(path.join(dir,file))]));
+const tree = (dir,include=()=>true) => Object.fromEntries(fs.readdirSync(dir,{recursive:true}).filter(file => include(file) && fs.statSync(path.join(dir,file)).isFile()).sort().map(file => [file,hash(path.join(dir,file))]));
 const original = json(path.join(here,'original-manifest.json'));
 const revised = json(path.join(here,'revised-manifest.json'));
 const suite = json(path.join(here,'cases.json'));
+const createSkillPrefix = 'skills/create-skill/';
+const archivedCreateSkill = path.join(here,'results/create-skill-missing-boundary/subject');
+const liveCreateSkill = tree(path.join(repo,createSkillPrefix),file=>!file.startsWith(`evals${path.sep}`));
+const recordedSubjectPath = file => file.startsWith(createSkillPrefix)
+  ? path.join(archivedCreateSkill,file.slice(createSkillPrefix.length))
+  : path.join(repo,file);
 for (const [file,digest] of Object.entries(original.original)) assert.equal(hash(path.join(here,file)),digest,`Original drifted: ${file}`);
-for (const [file,digest] of Object.entries(revised.subjects)) assert.equal(hash(path.join(repo,file)),digest,`Current subject changed: ${file}`);
+for (const [file,digest] of Object.entries(revised.subjects)) assert.equal(hash(recordedSubjectPath(file)),digest,`Recorded subject changed: ${file}`);
 for (const [file,key] of [['cases.json','cases_sha256'],['failure-case.json','failure_case_sha256'],['run.mjs','runner_sha256']]) assert.equal(hash(path.join(here,file)),revised[key],`Frozen input changed: ${file}`);
 for (const name of original.skills) {
   const before = fs.readFileSync(path.join(here,'subjects/original',name,'SKILL.md'),'utf8');
-  const after = fs.readFileSync(path.join(repo,'skills',name,'SKILL.md'),'utf8');
+  const after = fs.readFileSync(recordedSubjectPath(`skills/${name}/SKILL.md`),'utf8');
   assert.equal(before.split('---\n')[1],after.split('---\n')[1],`Discovery or invocation changed: ${name}`);
   assert(after.split('---\n',3)[2].split(/\s+/).length < before.split('---\n',3)[2].split(/\s+/).length,`No entrypoint reduction: ${name}`);
 }
@@ -67,9 +74,12 @@ for (const id of dirs.sort()) {
   for(const check of grade.checks) {assert(check.evidence?.length,'Missing evidence');assert(status==='INCOMPLETE' && check.pass===null || typeof check.pass==='boolean','Invalid check score');}
   if(status!=='INCOMPLETE') assert.equal(grade.pass,grade.checks.every(check=>check.pass),'Grade does not match checks');
   const prefix=`skills/${manifest.skill}/`;
-  const current=Object.fromEntries(Object.entries(revised.subjects).filter(([file])=>file.startsWith(prefix)).map(([file,digest])=>[file.slice(prefix.length),digest]));
-  const currentResources=Object.keys(current).length===Object.keys(manifest.subjects).length && Object.entries(current).every(([file,digest])=>manifest.subjects[file]===digest);
-  if(id!=='verify-work-regression-catalog-exhaustion') assert(currentResources,`No current-resource match: ${id}`);
+  const recordedSubject=Object.fromEntries(Object.entries(revised.subjects).filter(([file])=>file.startsWith(prefix)).map(([file,digest])=>[file.slice(prefix.length),digest]));
+  const recordedResources=isDeepStrictEqual(recordedSubject,manifest.subjects);
+  if(id!=='verify-work-regression-catalog-exhaustion') assert(recordedResources,`No recorded-resource match: ${id}`);
+  const currentResources=manifest.skill==='create-skill'
+    ? isDeepStrictEqual(liveCreateSkill,manifest.subjects)
+    : recordedResources;
   const workspace=path.join(dir,'workspace');
   const downstream=[];
   if(!['tdd','build-loop'].includes(manifest.skill)) assert.deepEqual(after,before,`Read-only boundary violated: ${id}`);

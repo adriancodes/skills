@@ -1,0 +1,5 @@
+**Inconclusive baseline.** The documented suite command, `python3 -m unittest -v`, runs 2 tests but already fails on the unrelated `test_fixture_version` assertion (`'v1' != 'v2'`). Per the verification workflow, I stopped before restoring the bug in a disposable copy.
+
+The project’s reported regression is identifiable: [app.py](/Users/user/Documents/Codex/2026-11-08/referenced-chatgpt-conversation-this-is-an/work/create-skill-verdict-final-probe/downstream/runs/already-failing-suite-1-creator/project/app.py:2) currently uses `casefold()`, and [test_app.py](/Users/user/Documents/Codex/2026-11-08/referenced-chatgpt-conversation-this-is-an/work/create-skill-verdict-final-probe/downstream/runs/already-failing-suite-1-creator/project/test_app.py:5) asserts that `normalize_label('Straße')` returns `'strasse'`. But without a green baseline, there is no controlled comparison to determine whether the suite catches the bug if it returns.
+
+The supplied project files were left unchanged.

@@ -75,6 +75,8 @@ For a specialist persona, load `references/persona-template.md`. Keep workflow i
 
 Write ordinary skill workflows in imperative voice. Reserve second person for personas and always-on identity text. Put one behavioral decision in each sentence or bullet. Put every `Done when …` criterion on its own line.
 
+For verification workflows, put prerequisite checks and tool-call boundaries directly in the generated workflow. Follow the scoped-verdict rules in `references/rules.md` → Steps and Pointers.
+
 Done when every section changes behavior, the core example is complete, and each workflow step has a standalone completion criterion.
 
 ### Phase 3: Prune, then Extract (only after drafting)
