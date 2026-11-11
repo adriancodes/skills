@@ -71,7 +71,7 @@ Load `references/artifacts.md` before creating the decision log.
 
    Done when every branch is decided, ASSUMED, or Deferred.
 
-5. **Run the exit gate.** Read back every decision as a numbered list. Name every ASSUMED and Deferred item. Ask for confirmation. If a build-blocking branch remains Deferred, ask it next instead. Record confirmation verbatim and set `status: confirmed`. Reopen any objected branch.
+5. **Run the exit gate.** Check the decisions for design gaps first: state with no owner, an operation with no decided behaviour when it fails or runs twice, and a boundary with no stated contract. Use `engineering-best-practices` for this when installed. Ask each build-blocking gap as a branch. Name the rest at the read-back. Read back every decision as a numbered list. Name every ASSUMED and Deferred item. Ask for confirmation. If a build-blocking branch remains Deferred, ask it next instead. Record confirmation verbatim and set `status: confirmed`. Reopen any objected branch.
 
    Done when the log is confirmed and no build-blocking branch is Deferred.
 

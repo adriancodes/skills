@@ -76,6 +76,7 @@ Done when each lens has named sources or an explicit `unavailable` status:
 | Correctness | Runtime contracts, callers, tests, types, schemas, invariants |
 | Spec | Issue, PRD, specification, acceptance criteria |
 | Standards | Binding repository docs and coherent analogous code |
+| Security | The trust boundaries the diff touches |
 
 ### 3. Understand the changed behavior
 
@@ -87,7 +88,7 @@ Run focused read-only or safely isolated diagnostics when they can confirm a can
 
 Done when every changed file is classified and every behaviorally significant hunk is traced to its contract and observable consequence.
 
-### 4. Generate candidates through three lenses
+### 4. Generate candidates through the lenses
 
 Review the same frozen scope through all available lenses:
 
@@ -109,11 +110,21 @@ Review the same frozen scope through all available lenses:
 - When the request explicitly includes maintainability or architecture, use `engineering-best-practices` if installed; otherwise apply project-local evidence directly.
 - Report maintainability issues only when the diff creates a concrete defect risk or demonstrable change cost. Never manufacture findings from a generic smell checklist.
 
+**Security**
+
+Apply this lens when the diff touches sign-in or sessions, authorization, user-controlled input, secrets, personal data, or dependencies. Otherwise mark it `not applicable`.
+
+- Trace each user-controlled value from entry to its sink: query, command, file path, template, redirect, or deserializer.
+- Check that every new or changed entry point authenticates the caller and authorizes them for the specific object.
+- Flag secrets, tokens, or personal data written to code, logs, errors, or responses.
+- Flag a new or upgraded dependency only for a cited vulnerability or an unpinned source.
+- Report a Security finding only with a concrete attack: who, with what input, gains what.
+
 For each candidate, record the trigger, actual behavior, consequence, changed location, and supporting contract. Done when every available lens is examined and every candidate has a falsifiable consequence.
 
 ### 5. Use parallel reviewers only when they earn their cost
 
-When the harness supports subagents and the diff spans at least two independent subsystems or more than 500 non-generated changed lines, dispatch at most three reviewers: Correctness, Spec, and Standards. Give each the same frozen scope and only its governing sources. Ask for candidate findings, not a verdict.
+When the harness supports subagents and the diff spans at least two independent subsystems or more than 500 non-generated changed lines, dispatch one reviewer per applicable lens: Correctness, Spec, Standards, and Security. Give each the same frozen scope and only its governing sources. Ask for candidate findings, not a verdict.
 
 For smaller diffs or harnesses without subagents, run the lenses sequentially. Parallel output never becomes a finding automatically; the primary reviewer must validate, deduplicate, and rank every candidate. Done when all reviewer output passes the same evidence gate.
 

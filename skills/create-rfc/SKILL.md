@@ -49,7 +49,7 @@ Do not use when:
 
    Done when every option is workable and distinct.
 
-4. **Compare.** Judge every option against every criterion. State for each option what it costs, what it risks, and what it makes hard to change later.
+4. **Compare.** Judge every option against every criterion. State for each option what it costs, what it risks, and what it makes hard to change later. Check each option's design: who owns each piece of state, what happens when a step fails or runs twice, and what crosses each boundary. Use `engineering-best-practices` for this when installed. Record every design risk against its option.
 
    Done when no option-criterion cell is empty.
 

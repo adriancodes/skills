@@ -39,3 +39,17 @@ No model session ran against this revision. Nothing below is a pass.
 - New case, unrun: `regression-clean-diff` (fixture `fixtures/clean-diff`; premise checked by `node skills/code-review/evals/check-clean-diff.mjs`).
 - New routing prompts in `evals/cases/code-review.json` pass the lexical preflight only; native triggering is unrun.
 - The three existing cases are unrun against this body.
+
+## 2026-11-11 Security lens
+
+Body `dcbfe2aee027` adds a Security lens to step 4 and to the reviewer dispatch in step 5.
+
+- **Route:** Claude Code general-purpose subagent, skill force-loaded by path, one run per case, single turn. Transcripts were not kept in the repository.
+
+| Case | Result |
+|---|---|
+| `regression-security-lens-unscoped-read` | PASS. One P1 finding tagged Security, Spec, and Correctness: any signed-in user can read another account's invoice by id. It names the attacker, the input, and the gain. |
+| `regression-security-lens-not-applicable` | PASS. Leads with `No findings.` and marks Security not applicable. The pre-existing in-place sort is reported as residual risk, not a finding, as `regression-clean-diff` requires. |
+
+Not tested: the other four Security bullets (injection sinks, secrets in logs, dependencies, authentication), the parallel-reviewer path, and every earlier case on this body.
+
