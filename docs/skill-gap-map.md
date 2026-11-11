@@ -6,6 +6,8 @@ repo-baseline: a7e83239a5ba00c05a6aae586b548a8bdd414860
 
 # Skill gap map
 
+> `create-setup-guide` was withdrawn on 2026-11-10 after its evaluation stayed incomplete. This map keeps it as designed; the skill itself is in git history only.
+
 Design original skills around the jobs Adrian's toolbox does not yet own. Keep the existing seventeen skills as the foundation. Use other collections to identify useful capabilities; derive the instructions, artifacts, and tests from this repository's users and conventions.
 
 The user requested this map and explicitly ruled out direct copying. They subsequently approved the eight core additions, requested implementation, and selected full evaluation. All eight are implemented locally. Seven pass their declared local evidence gates; setup remains provisional. The [implementation log](specs/2026-10-05-skill-gap-implementation.md) and [evaluation report](../evals/gap-skills-2026-10-05/README.md) track their evidence and limits. The two conditional additions and optional improvements below remain separate from the core batch.

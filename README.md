@@ -47,7 +47,6 @@ See [Toolbox Anatomy](docs/toolbox-anatomy.md) for composition and placement rul
 | Review a branch, PR, or work-in-progress diff | [`code-review`](skills/code-review/SKILL.md) |
 | Prepare a local PR draft or requested publication | [`prepare-pr`](skills/prepare-pr/SKILL.md) |
 | Leave verified work for a fresh agent | [`create-handoff`](skills/create-handoff/SKILL.md) |
-| Generate a guide for human-only setup steps | [`create-setup-guide`](skills/create-setup-guide/SKILL.md) |
 | Apply maintainability and design guidance | [`engineering-best-practices`](skills/engineering-best-practices/SKILL.md) |
 | Remove unnecessary code or abstractions | [`simplify-code`](skills/simplify-code/SKILL.md) |
 | Ship a script, config, or skill | [`verify-work`](skills/verify-work/SKILL.md) |
@@ -64,7 +63,7 @@ Five skills form an optional pipeline: `create-spec` → `create-tasks` → `imp
 
 The October 2026 quality pass covers all seventeen skills: a [four-skill outcome comparison](evals/pocock-comparison-2026-10-04/README.md) and [thirteen-skill structural consolidation](evals/remaining-skills-2026-10-04/README.md). The reports preserve both gains and validation gaps; shorter instructions alone do not establish better results.
 
-The [skill gap map](docs/skill-gap-map.md) defines eight original additions and their boundaries with the existing toolbox. The [full consequence-tier evaluation](docs/evidence/2026-10-05-gap-skills.md) produced seven passing local evidence gates and a provisional `create-setup-guide`. User review remains pending; this batch is not installed or released. The two conditional additions remain deferred.
+The [skill gap map](docs/skill-gap-map.md) defines the original additions and their boundaries with the existing toolbox. The [full consequence-tier evaluation](docs/evidence/2026-10-05-gap-skills.md) produced seven passing local evidence gates. An eighth candidate, `create-setup-guide`, did not pass and was withdrawn. User review remains pending; this batch is not installed or released. The two conditional additions remain deferred.
 
 ## Agent personas
 

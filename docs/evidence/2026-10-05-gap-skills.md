@@ -16,7 +16,7 @@ PASS below means the declared evidence gate passed on the observed local route. 
 | [create-handoff](../../skills/create-handoff/SKILL.md) | 2 | PASS | 4 | 4/4; 2 positive reads, 0 false reads | 69–69%; 1.04× |
 | [prepare-pr](../../skills/prepare-pr/SKILL.md) | 3 | PASS | 18 | 10/10; 5 positive reads, 0 false reads | 65–71%; 1.30× |
 | [review-session](../../skills/review-session/SKILL.md) | 3 | PASS | 18 | 10/10; 5 positive reads, 0 false reads | 77–82%; 1.25× |
-| [create-setup-guide](../../skills/create-setup-guide/SKILL.md) | 3 | INCOMPLETE | 27 | 10/10; 5 positive reads, 0 false reads | 69–75%; 1.00× |
+| create-setup-guide (withdrawn) | 3 | INCOMPLETE | 27 | 10/10; 5 positive reads, 0 false reads | 69–75%; 1.00× |
 | [map-decisions](../../skills/map-decisions/SKILL.md) | 2 | PASS | 4 | 4/4; 2 positive reads, 0 false reads | 70–70%; 0.90× |
 | [write-agent-instructions](../../skills/write-agent-instructions/SKILL.md) | 3 | PASS | 18 | 10/10; 5 positive reads, 0 false reads | 73–79%; 1.09× |
 
@@ -36,7 +36,7 @@ CLI records: 296 sessions, 20,196,710 measured input tokens, 298,441 measured ou
 
 ## Remaining evidence
 
-Setup remains incomplete. A setup-only extension on 2026-11-10 raised the session limit to six minutes and revised the skill to store values through its bundled helper. All eighteen comparison sessions then completed. All nine force-loaded sessions used the helper and passed the three frozen assertions under independent replay; five of nine strong-prompt sessions did. Native selection read the skill in five of five positive requests and none of five negative ones. Two failures remain: one force-loaded pressure runner saved a key with CI set, and the edge scenario used four more tool calls than its baseline against a limit of three. Application judgments for the five native positives and the two fresh rounds were not run. Three native sessions lost to host sleep are retained and excluded with their replacements, which raised the extension's session ceiling from 33 to 36. The read-back check used each runner's bundled reader in sixteen of eighteen packets, so it is not independent of the generated code. See the [extension record](../specs/2026-10-05-skill-gap-implementation.md).
+Setup was withdrawn on 2026-11-10 with its gate incomplete; the skill is no longer in the toolbox. A setup-only extension on 2026-11-10 raised the session limit to six minutes and revised the skill to store values through its bundled helper. All eighteen comparison sessions then completed. All nine force-loaded sessions used the helper and passed the three frozen assertions under independent replay; five of nine strong-prompt sessions did. Native selection read the skill in five of five positive requests and none of five negative ones. Two failures remain: one force-loaded pressure runner saved a key with CI set, and the edge scenario used four more tool calls than its baseline against a limit of three. Application judgments for the five native positives and the two fresh rounds were not run. Three native sessions lost to host sleep are retained and excluded with their replacements, which raised the extension's session ceiling from 33 to 36. The read-back check used each runner's bundled reader in sixteen of eighteen packets, so it is not independent of the generated code. See the [extension record](../specs/2026-10-05-skill-gap-implementation.md).
 
 ### create-setup-guide
 

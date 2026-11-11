@@ -112,3 +112,7 @@ Deviations from the authorized limits:
 - One independent judging turn was used of three. The replay harness is `judgments/setup-replay-harness-i5.py`. In sixteen packets the declared reader is the runner's own bundled reader, so that read-back is not independent of the generated code; Node read-back is reported separately.
 
 Used: 31 CLI actors, 4,621,102 measured input tokens, 158,650 output tokens, 50 minutes of actor elapsed time. The three-revision ceiling is now reached; another body revision needs new authorization.
+
+## Withdrawal (2026-11-10)
+
+The user withdrew `create-setup-guide` after the extension left its gate incomplete. The skill, its routing case and its helper check were removed. Evaluation records keep it as a tested candidate.
