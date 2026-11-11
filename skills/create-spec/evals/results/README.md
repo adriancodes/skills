@@ -72,3 +72,7 @@ Skill text changed after a review against Anthropic's skill guidance. No model s
 - Step 3 names the alternative to capture mode and gained a `Done when` line. Case: `regression-capture-mode`.
 - Wording only: removed the Prefer/Fallback lines and Additional Resources section that repeated the workflow; merged the two no-repository/no-write entries.
 - Routing near-misses added to `evals/cases/create-spec.json`; the description is unchanged.
+
+## 2026-11-11 loop revision: unrun
+
+Required Context now names an approved RFC or a confirmed requirements read-back as decided input. `regression-accepts-approved-rfc` in `../cases.jsonl` freezes that behaviour and has not been run.

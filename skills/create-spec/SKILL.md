@@ -34,6 +34,7 @@ Do not use when:
 
 - The plan under spec session, restated in one sentence and accepted by the user
 - Existing `CONTEXT.md`, `CONTEXT-MAP.md`, ADRs, and specs. Read them before the first question. Resume matching work instead of duplicating it.
+- An approved RFC in `docs/rfcs/`, or a confirmed requirements read-back in the conversation, when one exists. Record what it decided as decided and cite it. Ask only about what it left open.
 
 ## Workflow
 

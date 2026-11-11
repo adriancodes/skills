@@ -37,6 +37,7 @@ See [Toolbox Anatomy](docs/toolbox-anatomy.md) for composition and placement rul
 | Test a design choice with a runnable disposable experiment | [`build-prototype`](skills/build-prototype/SKILL.md) |
 | Map unresolved project decisions across sessions | [`map-decisions`](skills/map-decisions/SKILL.md) (explicit invocation) |
 | Get interviewed about something you want built, before any spec | [`gather-requirements`](skills/gather-requirements/SKILL.md) |
+| Choose between approaches and record the decision before a spec | [`create-rfc`](skills/create-rfc/SKILL.md) |
 | Define, challenge, or record a software plan | [`create-spec`](skills/create-spec/SKILL.md) |
 | Turn a confirmed spec into work items | [`create-tasks`](skills/create-tasks/SKILL.md) |
 | Build the next task | [`implement-task`](skills/implement-task/SKILL.md) |
