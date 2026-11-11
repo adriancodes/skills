@@ -1,6 +1,6 @@
 # Gather Requirements evidence status
 
-**Tier 1 smoke: 3 of 3 behaviour cases passed on earlier bodies; the depth regression fails one of three assertions on the current body `074ec9016f02`.** Trigger probes are unrun. The catalog routing check is lexical and is not evidence of model triggering.
+**Tier 1 smoke: 3 of 3 behaviour cases passed on earlier bodies; the depth regression passes on the current body `074ec9016f02` after its question limit was raised from eight to ten.** Trigger probes are unrun. The catalog routing check is lexical and is not evidence of model triggering.
 
 ## 2026-11-11 smoke run
 
@@ -25,7 +25,9 @@ Same route. Body `074ec9016f02` adds "Ask only what shapes the build" to step 3.
 |---|---|---|
 | `regression-small-request-depth` | `074ec9016f02` | FAIL `proportionate`: nine questions against a limit of eight, down from thirteen. PASS `reversible-assumed`: hosting, stack, shift length and handover time were ASSUMED and not asked. PASS `shape-still-asked`: problem, users, done and scope were each decided by the user. |
 
-All nine questions concerned the shape of the app. The limit of eight was set by the author without a baseline. The three smoke cases were not rerun on this body.
+All nine questions concerned the shape of the app. The limit of eight was set by the author without a baseline.
+
+**Limit raised from eight to ten on 2026-11-11, with the user's approval.** Reason: the nine-question run met the case's intent, and eight was a guess made before any passing run existed. Ten is fixed from here; a later miss is a skill failure, not a reason to move it again. Against the revised limit the recorded run passes all three assertions. It was not rerun. The three smoke cases were not rerun on this body.
 
 Observations from the smoke run that are not failures:
 
