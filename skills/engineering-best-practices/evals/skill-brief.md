@@ -51,7 +51,7 @@ no external mutation or unattended automation. `ASSUMED`: the distributed
 invariant gate protects against bugs that would be expensive *in
 production*, but the eval consequence tier is judged on what a failed
 session damages, which is local and reversible — matching the tier chosen
-for `tdd` and `code-review`.
+for `tdd` and `review-code`.
 
 ## Baseline comparator (strongest realistic prompt)
 

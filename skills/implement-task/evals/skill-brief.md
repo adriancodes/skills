@@ -29,7 +29,7 @@ final report. The slices file — not chat — is the pipeline's state.
 outside a slice's bound, a stale or mis-ticked slices file) — engineering
 workflow mistakes that cost time but are recoverable in git; no external
 mutation, unattended automation, or irreversible change. (ASSUMED: matches the
-tier already used by the adjacent `tdd` and `code-review` packages.)
+tier already used by the adjacent `tdd` and `review-code` packages.)
 
 ## Baseline comparator (strongest realistic prompt)
 

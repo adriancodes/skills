@@ -22,5 +22,5 @@ Confirmed through adaptive Q&A with the user on 2026-07-18.
 - **Type:** Simple technique with approval guardrails.
 - **Evidence target:** Tier 2 because the skill performs reversible local writes.
 - **Cost tolerance:** Lightweight deterministic checks and realistic fixtures in this pass; no costly multi-session model comparisons.
-- **Collisions:** `engineering-best-practices` owns broad design direction; `tdd` owns behavior changes; `diagnose` owns unknown failures; `code-review` owns read-only review; `verify-work` owns adversarial finished-artifact checks.
+- **Collisions:** `engineering-best-practices` owns broad design direction; `tdd` owns behavior changes; `diagnose` owns unknown failures; `review-code` owns read-only review; `verify-work` owns adversarial finished-artifact checks.
 - **ASSUMED and accepted:** The first version may remain a locally validated candidate until bounded comparative actor sessions are separately authorized.

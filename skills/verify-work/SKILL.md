@@ -25,7 +25,7 @@ Use to attack a finished artifact against its stated behavioral promise.
 Do not use when:
 
 - The plan is unbuilt: use `create-spec` when installed. Otherwise question the plan first.
-- A diff, branch, or PR needs reading against its spec and repository contracts: use `code-review` when installed. Otherwise review the diff read-only. verify-work executes attacks on a runnable artifact.
+- A diff, branch, or PR needs reading against its spec and repository contracts: use `review-code` when installed. Otherwise review the diff read-only. verify-work executes attacks on a runnable artifact.
 - Statistical pass-rate benchmarking across many runs: use an eval harness
 - Penetration testing of live systems: different discipline, requires authorization
 - Writing tests for code as it's built: that is TDD (use a TDD skill); verify-work attacks *finished* artifacts. "Test this properly" about unwritten code means tests, not verification

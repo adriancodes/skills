@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: review-code
 description: >
   Use when a user asks to "review this branch", "review this PR",
   "review my changes", or "review since main". Also use when asked

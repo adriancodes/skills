@@ -22,7 +22,7 @@ Use to test an engineer's understanding of pending changes within their stated f
 Do not use when:
 
 - No pending changes exist.
-- The code needs judging: use `code-review`. This skill tests whether the human understands code that is staying.
+- The code needs judging: use `review-code`. This skill tests whether the human understands code that is staying.
 - Enforcement is wanted (block the PR, record a score): this skill never gates; say so and stop
 
 ## Required Context
@@ -68,7 +68,7 @@ Do not use when:
 - **No pending changes:** say so and point to `understand-codebase` (if installed) for general comprehension; do not quiz the whole repository.
 - **The diff exceeds about 1,500 changed lines:** ask for the most important area. Never cover everything thinly.
 - **The engineer requests all questions and answers:** name the retrieval cost in one sentence. Then provide a self-contained quiz with answers at the bottom.
-- **A question exposes a probable bug:** finish the session. Put the bug first in the read-back. Label it for `code-review` or the engineer.
+- **A question exposes a probable bug:** finish the session. Put the bug first in the read-back. Label it for `review-code` or the engineer.
 
 ## Verification
 

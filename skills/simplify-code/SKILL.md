@@ -21,7 +21,7 @@ Use for explicit requests to simplify working code, remove duplication, or elimi
 
 Simplification authorizes local edits and meaningful verification within the requested scope. Preserve public APIs, persisted formats, errors, and meaningful performance characteristics unless the user authorizes their change.
 
-Use `diagnose`, when installed, for unknown failures; otherwise establish the cause first. Use `code-review`, when installed, for read-only assessment. Handle new behavior through the project's implementation workflow. Broad architectural redesign needs a separate scope.
+Use `diagnose`, when installed, for unknown failures; otherwise establish the cause first. Use `review-code`, when installed, for read-only assessment. Handle new behavior through the project's implementation workflow. Broad architectural redesign needs a separate scope.
 
 ## Workflow
 

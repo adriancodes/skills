@@ -25,7 +25,7 @@ Use when a symptom needs causal investigation, including an explicitly requested
 Do not use when:
 
 - The request asks how working code behaves; use `understand-codebase` when installed, otherwise do a focused read-only trace.
-- The request asks whether a branch or diff meets standards or a spec; use `code-review` when installed, otherwise review the diff against those contracts.
+- The request asks whether a branch or diff meets standards or a spec; use `review-code` when installed, otherwise review the diff against those contracts.
 - A finished artifact needs adversarial readiness testing; use `verify-work` when installed, otherwise execute hostile fixtures against its stated promise.
 - The cause and desired change are already known; use the repository's implementation or TDD workflow.
 - The task is live production experimentation, penetration testing, or incident response without explicit operational authorization.

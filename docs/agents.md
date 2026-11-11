@@ -4,7 +4,7 @@ Personas add one specialist perspective and one output contract. They do not rep
 
 | Persona | Perspective | Workflow |
 |---|---|---|
-| [`evidence-led-reviewer`](../agents/evidence-led-reviewer.md) | Staff Engineer who reports only falsified, consequential findings | `code-review` |
+| [`evidence-led-reviewer`](../agents/evidence-led-reviewer.md) | Staff Engineer who reports only falsified, consequential findings | `review-code` |
 
 ## Contract
 

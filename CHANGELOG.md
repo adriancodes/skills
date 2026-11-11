@@ -4,6 +4,7 @@ Skill updates change your agent's behavior — treat them like dependency upgrad
 
 ## Unreleased
 
+- **Breaking:** renamed `code-review` to `review-code` so every stage of the planned SDLC loop is named verb first. Run `node scripts/migrate-install.mjs` to remove the old install. Recorded evidence keeps the old name. The `engineering-best-practices` description no longer mentions PRs: two `review-code` routing cases had tied with it and passed only on alphabetical order.
 - Retired seven eval cases that asserted behaviour their skills no longer have, each kept verbatim in a `retired-cases.jsonl` with its reason and replacement: five natural-trigger cases for the now explicit-only `create-skill`, one `implement-task` trigger, and one `simplify-code` regression whose test rule predates the October revision.
 - Applied the rest of the catalog review across all 24 skills. None of these text changes has a live eval run yet; each skill's results note lists its frozen, unrun cases.
   - Triggers: `tdd` now covers bugs whose cause is known and sends unknown causes to `diagnose`; `verify-work` is for a finished runnable artifact and `code-review` for a diff; `quiz-changes` no longer fires on any change about to ship; `engineering-best-practices` is for designing a change, with diff review left to `code-review`; `implement-task` takes one task and leaves multi-task work to `deliver-feature`. `build-prototype`, `research-question`, `create-handoff`, `prepare-pr`, `diagnose` and `simplify-code` descriptions were tightened.

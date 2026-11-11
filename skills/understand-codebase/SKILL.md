@@ -22,7 +22,7 @@ Use for onboarding, current-state questions, feature tracing, or explanation bef
 Do not use when:
 
 - Debugging a failure or performance regression; use `diagnose` when installed, otherwise reproduce the failure first.
-- Reviewing a diff or branch; use `code-review` when installed, otherwise review the diff against its stated contract.
+- Reviewing a diff or branch; use `review-code` when installed, otherwise review the diff against its stated contract.
 - Designing or improving module boundaries; use `engineering-best-practices` when installed, otherwise treat it as a separate design task.
 - External research or a persistent report; use `research-question` when installed, otherwise treat it as a separate task.
 - Refactoring, recommending changes, or implementing; code reading is only a prerequisite of that work.

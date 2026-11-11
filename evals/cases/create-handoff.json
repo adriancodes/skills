@@ -10,7 +10,7 @@
   "negative": [
     {
       "prompt": "Review this pull request before merge",
-      "owner": "code-review"
+      "owner": "review-code"
     },
     {
       "prompt": "Implement the next task from the slices file",

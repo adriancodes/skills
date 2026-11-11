@@ -19,7 +19,7 @@ Publish through the repository's normal tooling only when publication is request
 
 Do not use for:
 
-- Reviewing correctness: use `code-review`; inspect the diff for evidence-backed defects if unavailable.
+- Reviewing correctness: use `review-code`; inspect the diff for evidence-backed defects if unavailable.
 - Implementing or repairing the feature: use `deliver-feature`; preserve requirements and verify bounded changes if unavailable.
 - Merging, deployment, or changing branch protection: require those actions in the user's scope.
 

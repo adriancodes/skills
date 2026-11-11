@@ -1,6 +1,6 @@
 ---
 name: engineering-best-practices
-description: Use when starting a substantive codebase, designing a non-trivial change before writing it, or deliberately aligning a codebase's architecture. Also use when the user asks to "follow best practices", "start a new application", or "review this codebase's architecture", or when architecture is inconsistent or has no coherent patterns. For a bounded diff or PR, use a code-review workflow.
+description: Use when starting a substantive codebase, designing a non-trivial change before writing it, or deliberately aligning a codebase's architecture. Also use when the user asks to "follow best practices", "start a new application", or "review this codebase's architecture", or when architecture is inconsistent or has no coherent patterns. For a bounded diff, use `review-code`.
 license: MIT
 compatibility: Requires Node.js 20 or later for local retrieval.
 metadata:

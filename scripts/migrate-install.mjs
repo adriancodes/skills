@@ -30,6 +30,7 @@ const RENAMES = {
   "spec-plan": "create-spec",
   "slice-spec": "create-tasks",
   "implement-slice": "implement-task",
+  "code-review": "review-code",
   "ship-feature": "deliver-feature",
   "diagnosing-bugs": "diagnose",
 };

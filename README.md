@@ -44,7 +44,7 @@ See [Toolbox Anatomy](docs/toolbox-anatomy.md) for composition and placement rul
 | Run an agent on a schedule, safely | [`build-loop`](skills/build-loop/SKILL.md) |
 | Understand an unfamiliar repository | [`understand-codebase`](skills/understand-codebase/SKILL.md) |
 | Diagnose a bug, flake, or regression | [`diagnose`](skills/diagnose/SKILL.md) |
-| Review a branch, PR, or work-in-progress diff | [`code-review`](skills/code-review/SKILL.md) |
+| Review a branch, PR, or work-in-progress diff | [`review-code`](skills/review-code/SKILL.md) |
 | Prepare a local PR draft or requested publication | [`prepare-pr`](skills/prepare-pr/SKILL.md) |
 | Leave verified work for a fresh agent | [`create-handoff`](skills/create-handoff/SKILL.md) |
 | Apply maintainability and design guidance | [`engineering-best-practices`](skills/engineering-best-practices/SKILL.md) |
@@ -67,7 +67,7 @@ The [skill gap map](docs/skill-gap-map.md) defines the original additions and th
 
 ## Agent personas
 
-[`evidence-led-reviewer`](agents/evidence-led-reviewer.md) adopts a Staff Engineer review lens and uses `code-review` for its workflow. Personas own perspective and output shape; skills own process. See [Agent Personas](docs/agents.md).
+[`evidence-led-reviewer`](agents/evidence-led-reviewer.md) adopts a Staff Engineer review lens and uses `review-code` for its workflow. Personas own perspective and output shape; skills own process. See [Agent Personas](docs/agents.md).
 
 Select a persona through a harness that supports agent definitions. Otherwise, load its file as the role or subagent instructions; the linked skill still installs independently through the skills CLI.
 
@@ -84,7 +84,7 @@ For other agents, add its contents to the agent's project instructions.
 
 ## Updating from an older install
 
-Re-run `npx skills add adriancodes/skills` to fetch the current versions. Skills have been renamed across releases (`spec-plan`→`create-spec`, `slice-spec`→`create-tasks`, `implement-slice`→`implement-task`, `ship-feature`→`deliver-feature`, `tldr`/`brevity`→`be-concise`, `diagnosing-bugs`→`diagnose`), and the installer does not remove old-name copies — they will shadow the current skills. Clean them with the migration script (dry-run by default; `--apply` moves stale copies to a recoverable `.migrate-trash/` dir — nothing is ever deleted — and only when the replacement is already installed):
+Re-run `npx skills add adriancodes/skills` to fetch the current versions. Skills have been renamed across releases (`spec-plan`→`create-spec`, `slice-spec`→`create-tasks`, `implement-slice`→`implement-task`, `ship-feature`→`deliver-feature`, `tldr`/`brevity`→`be-concise`, `diagnosing-bugs`→`diagnose`, `code-review`→`review-code`), and the installer does not remove old-name copies — they will shadow the current skills. Clean them with the migration script (dry-run by default; `--apply` moves stale copies to a recoverable `.migrate-trash/` dir — nothing is ever deleted — and only when the replacement is already installed):
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/adriancodes/skills/main/scripts/migrate-install.mjs | node -          # report
