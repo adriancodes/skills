@@ -52,6 +52,7 @@ See [Toolbox Anatomy](docs/toolbox-anatomy.md) for composition and placement rul
 | Apply maintainability and design guidance | [`engineering-best-practices`](skills/engineering-best-practices/SKILL.md) |
 | Remove unnecessary code or abstractions | [`simplify-code`](skills/simplify-code/SKILL.md) |
 | Ship a script, config, or skill | [`verify-work`](skills/verify-work/SKILL.md) |
+| Decide whether a change is safe to release, with a rollback plan | [`check-release`](skills/check-release/SKILL.md) |
 | Write or fix an agent skill | [`create-skill`](skills/create-skill/SKILL.md) (explicit invocation) |
 | Fix demonstrated persistent project-instruction failures | [`write-agent-instructions`](skills/write-agent-instructions/SKILL.md) (explicit invocation) |
 | Review session friction and propose a bounded remedy | [`review-session`](skills/review-session/SKILL.md) (explicit invocation) |
