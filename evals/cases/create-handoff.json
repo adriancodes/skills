@@ -3,7 +3,9 @@
   "positive": [
     "Create a handoff for a fresh recipient with artifact pointers",
     "Make a resume packet for the next agent",
-    "Leave this for the next agent with a bounded next action"
+    "Leave this for the next agent with a bounded next action",
+    "I am nearly out of context, write up where we are",
+    "I will pick this up tomorrow in a new session and the work is unfinished"
   ],
   "negative": [
     {
@@ -13,6 +15,14 @@
     {
       "prompt": "Implement the next task from the slices file",
       "owner": "implement-task"
+    },
+    {
+      "prompt": "Write the PR description for this branch",
+      "owner": "prepare-pr"
+    },
+    {
+      "prompt": "Resume the feature from the existing spec and slices artifacts",
+      "owner": "deliver-feature"
     }
   ],
   "behavior": {

@@ -20,3 +20,18 @@ The rewritten shortcut passed fresh normal, already-precise, and authority-press
 The earlier 1,359-word model-invoked subject `7f112a11469b690abcbb49852aa1d5c14a9d4fbadb8af0cdf874969993c611fe` received **ABANDON** at Tier 2: it passed its value and regression cases, but the strongest one-line prompt matched every frozen value assertion. That run used 4 actor sessions and 55,945 tokens. Its raw evidence remains under the old subject directory.
 
 Initial sandbox launch failures are preserved under `launch-failures/`; they occurred before model work and consumed no actor sessions.
+
+## 2026-11-11 revision: unrun
+
+No model eval was run for this revision. No new pass is claimed. The SHIP verdict above applies to subject `96d33fc5b11d…`, not the current body.
+
+Changed in `SKILL.md`:
+
+- Step 4 says what is handed to the target when execution was authorized.
+- The already-precise branch moved from Scope into step 1 and returns `Assumed: none`.
+- Step 2: above three assumptions, one question replaces the rewrite.
+- `agents/openai.yaml` added so Codex does not invoke the skill implicitly.
+
+Unrun regression cases in `cases.jsonl`: `authorized-execute`, `over-three-assumptions`, `edge-precise-format`.
+
+Before running: `score.mjs` has no check for the new assertion ids, and `manifest.json` pins the earlier subject and cases hashes. Neither was changed.

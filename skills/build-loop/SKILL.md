@@ -14,7 +14,7 @@ metadata:
 
 # Build Loop
 
-A loop discovers work, acts, verifies, records state, and chooses the next move. Build four portable artifacts: `LOOP.md`, `STATE.md`, a loop prompt, and a rollout plan. Add a runner adapter only for a concrete runner. Never give credentials to a bare "keep going" prompt. The maker never verifies completion. Start every loop report-only.
+A loop discovers work, acts, verifies, records state, and chooses the next move. Build four portable artifacts: `LOOP.md`, `STATE.md`, a loop prompt, and a rollout plan. Add a runner adapter only for a concrete runner. A prompt that only says "keep going" is not a loop design. Give a run credentials only once `LOOP.md` defines its guards. The maker never verifies completion. Start every loop report-only.
 
 ## Scope
 
@@ -25,6 +25,7 @@ Do not use when:
 - The job runs once: a plain session (ending with `verify-work`, if installed) beats a one-iteration loop
 - The "loop" is multi-step work inside one session: that's a todo list, not a loop
 - The job is vague: pin it first with `create-spec` when installed. A loop amplifies vague goals into scheduled mistakes.
+- The job only reads and reports within one session, or is a reminder: use the harness's loop or schedule command directly. Come back here when the job mutates anything, holds credentials, or runs unattended.
 
 ## Required Context
 
@@ -36,7 +37,7 @@ Do not use when:
 
 Load `references/loop-formats.md` before writing any artifact (templates, pattern table, runner mapping).
 
-**Repairing an existing loop?** Read its files and state ledger. Map each failure to its missing guard:
+**Repairing an existing loop?** First ask the human to pause the schedule, or give them the exact command. Say what keeps happening until they do. Do not disable it yourself. Then read its files and state ledger. Map each failure to its missing guard:
 
 - token burn → no budget;
 - repeated failed fix → no breaker;
@@ -70,20 +71,22 @@ Add the missing guards. Create `LOOP.md` or `STATE.md` when absent. Demote the l
 4. **Set all four guards explicitly in LOOP.md:**
    - **Budget:** Calculate worst-case run cost × cadence before choosing the schedule. Add a numeric per-run cap in iterations or tokens. If pricing is unknown, write `unknown`. Keep the loop unscheduled at L1. Name the measurement needed before choosing cadence. Never invent a price.
    - **Circuit breaker:** Stop after two attempts at the same failure signature without progress. There is no third attempt. Count attempts within and across runs.
-   - **Overlap lock**: a run that finds the previous run alive exits immediately.
-   - **Human gate:** Name outcomes only a human may cause. Examples: main changes, data deletion, or user-visible publication. Never substitute a verb list. Below L3, enforce the gate by withholding credentials. For a read-only loop, gate any mutation or external publication. `nothing gated` is invalid.
+   - **Overlap lock:** A run that finds the previous run alive exits at once and writes nothing. This is the only exit outside the three endings. A run that hits its budget cap ends *escalated*.
+   - **Human gate:** Name outcomes only a human may cause. Examples: main changes, data deletion, or user-visible publication. Name outcomes, not verbs: a list such as "never force-push" leaves every unlisted verb open. Below L3, enforce the gate by withholding credentials. For a read-only loop, gate any mutation or external publication. `nothing gated` is invalid.
 
    Done when `LOOP.md` contains all four guards. Monetary cost is numeric or explicitly unknown.
 
-5. **Stage the rollout.** Use L1 report-only → L2 assisted → L3 unattended. L3 may perform only actions outside the human gate. Require 5 consecutive clean runs before promotion. Only the independent verifier or human may certify a clean run. Only they write `level:` and `clean-runs-at-level:`. The loop reads its level but never writes it. Treat self-written levels as void. Start every loop at L1.
+5. **Stage the rollout.** Use L1 report-only → L2 assisted → L3 unattended. L3 may perform only actions outside the human gate. Require 5 consecutive clean runs before promotion. Only the independent verifier or human may certify a clean run. Start every loop at L1.
+
+   Keep `level:` and `clean-runs-at-level:` in `LOOP.md` only; the loop rewrites `STATE.md` every run, so a level stored there is one the loop can raise. The loop's credentials must not be able to write `LOOP.md`: use branch protection, CODEOWNERS, or a read-only mount. Only the independent verifier or human edits those fields. Where the runner cannot enforce that, say so in the handover and treat a loop-written level as void.
 
    Done when `LOOP.md` contains the ladder and counters.
 
-6. **Hand over.** Deliver the artifacts and wired runner adapter. Implement guards as mechanisms. Use a concurrency group or pidfile for the lock. Use token scope for the gate. Put cadence in the runner schedule. State the human gate and L1 restriction.
+6. **Hand over.** Write the artifacts and runner adapter. Do not activate the loop: install no crontab entry, enable or push no schedule, and run no first cycle. The human starts it, so an unreviewed design never runs unattended. Implement guards as mechanisms. Use a concurrency group or pidfile for the lock. Use token scope for the gate. Put cadence in the runner schedule. State the human gate and L1 restriction.
 
-   With known cost, end with the first scheduled L1 command. With unknown cost, leave scheduling disabled. End with one manual report-only measurement command.
+   Say the loop is not running yet. End with two commands for the human: one that starts the loop and one that stops it. With known cost, the start command enables the first scheduled L1 run. With unknown cost, leave the schedule out of the adapter; the start command is one manual report-only measurement run.
 
-   Done when the files and matching command exist.
+   Done when the files exist, nothing is scheduled or running, and the start and stop commands are stated.
 
 ## Example: goal, guard, ending
 
@@ -99,11 +102,7 @@ Read [references/pressure.md](references/pressure.md) when urgency, authority, s
 
 - **The goal resists verifiability:** the job isn't loop-shaped: it's a recurring reminder for a human. Say so instead of shipping a loop with a vibes-based stop condition.
 - **The breaker keeps tripping:** the job is beyond the loop's reach (flaky infra, missing access). The escalation notes are the evidence; hand them to a human rather than widening the loop's permissions.
-- **Review bandwidth saturates:** the ceiling is the human, not the tooling. Slow the cadence; never skip the gate. Cognitive surrender: taking whatever the loop returns: is the comfortable trap.
-
-## Additional Resources
-
-- **`references/loop-formats.md`:** templates, cadence patterns, cost classes, and runner mappings. Load before writing any artifact.
+- **Review bandwidth saturates:** the ceiling is the human, not the tooling. Slow the cadence; never skip the gate.
 
 ## Verification
 

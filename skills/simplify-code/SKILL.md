@@ -2,8 +2,9 @@
 name: simplify-code
 description: >
   Use when the user asks to "simplify this code", "remove the fluff",
-  or wants bloated, superfluous, duplicated,
-  over-abstracted, or dependency-heavy code reduced without changing behavior.
+  or "clean up this over-engineered module", or wants working code that
+  is bloated, duplicated, over-abstracted, or dependency-heavy reduced
+  without changing behavior.
 license: MIT
 metadata:
   category: Quality

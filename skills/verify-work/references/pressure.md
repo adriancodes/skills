@@ -7,9 +7,9 @@ Use when urgency, authority, sunk cost, or an uncertain shortcut threatens the w
 | Excuse | Reality |
 |--------|---------|
 | "Tests are green, so it's effectively verified" | The happy-path fixture proves the happy path. The catalog exists because data is hostile. |
-| "The user needs it in minutes: a smoke test will do" | The baseline's smoke test missed silent data loss. Deadlines raise the cost of shipping broken, not the case for skipping the attack. |
-| "I can see from the code it handles that case" | Reading is not running. The baseline read its parser as correct; execution found three bugs. |
-| "One clean round is enough" | In this repo's own history, round two kept finding what round one missed. Two dry rounds for anything shipping. |
+| "The user needs it in minutes: a smoke test will do" | A smoke test exercises one input; silent data loss shows up on the inputs it did not try. Deadlines raise the cost of shipping broken, not the case for skipping the attack. |
+| "I can see from the code it handles that case" | Reading is not running. Execute the case. |
+| "One clean round is enough" | A second round with new attacks often finds what the first missed. Two dry rounds for anything shipping. |
 
 ## Stop Conditions
 

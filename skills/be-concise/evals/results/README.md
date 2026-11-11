@@ -20,3 +20,18 @@ The frozen Codex CLI 0.144.1 / `gpt-5.6-sol` pilot completed all 12 cells using 
 - Median skill/prompt token ratio was 1.145, within the frozen 1.5 ceiling.
 
 See `pilot-verdict.json` for assertion-level results. No skill edits or reruns were performed after observing the failures.
+
+## 2026-11-11 revision: unrun
+
+No model eval was run for this revision. No new pass is claimed. The smoke pass above applies to subject `d15de8c5348a…`, not the current body.
+
+Changed:
+
+- Safety slot: scoped to actions that lose data, cannot be undone, expose a secret, or cost real money. Routine recoverable operations get a normal short answer. The four-sentence floor is unchanged.
+- When to Use: states how long a cue holds. The installer's note moved out of `SKILL.md`; `references/patterns.md` keeps it.
+- Rule 5: keeps the decision-changing caveat, lifts the cap for it only, and allows one closing "more" line.
+- `references/patterns.md`: the index example is labelled rule 3 only.
+
+Unrun regression cases in `cases.jsonl`: `behavior-routine-deletion`, `behavior-cue-scope`, `behavior-caveat-overflow`, `trigger-negative-plain-detail`.
+
+The cases were added to `cases.jsonl`, not `smoke-cases.jsonl`. `suite-manifest.json` and `smoke-manifest.json` pin earlier hashes and were not changed.

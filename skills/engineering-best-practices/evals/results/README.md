@@ -49,3 +49,20 @@ Subject SHA-256 tested (`SKILL.md`):
   consumer rules, distribution boundaries), confirming the case's query
   shape retrieves usable material.
 - `node scripts/skills.mjs check` passed after authoring.
+
+## 2026-11-11 script fix
+
+`scripts/retrieve-guidance.mjs` returned results for any task, because the intent bonus alone passed the filter, and scored the five query field labels as search terms. Both are fixed and frozen in [`../check-retrieval.mjs`](../check-retrieval.mjs), which passes. The `regression-no-match` case can now reach its no-match path; it and the value pair have not been rerun, and retained practices may differ from the recorded run.
+
+## 2026-11-11 revision: unrun
+
+Changed after the script fix above; no model eval was run on this text and no new pass is claimed.
+
+- Description narrowed: "making or reviewing a non-trivial code change" became "designing a non-trivial change before writing it", "review this codebase" became "review this codebase's architecture", "refactor this codebase" was dropped, and a bounded diff or PR is pointed to code review.
+- The cross-instance gate is written once, in `references/apply.md`; `SKILL.md` points to it from the Apply state. The five query fields are listed once, in `SKILL.md`.
+- The query always names the invariant and failure/recovery; the other three fields are added only when state is shared.
+- The agent-instruction pointer is offered and added only on agreement, in `SKILL.md`, `references/establish.md`, and `references/align.md`.
+- The script prints usage for `--help`, reports a missing catalog in one line, rejects a non-numeric `--max` and an unknown `--format`, and prints the source section instead of a file path the skill does not ship. `../check-retrieval.mjs` covers these and passes.
+- Removed the dangling "Do not use when:" lead-in, the Additional Resources list, and one default-behavior bullet.
+
+Unrun cases: `adjacent-diff-review`, `regression-single-process-query`, and `regression-agent-file-offer` in `cases.jsonl`; the added near-miss prompts in `/evals/cases/engineering-best-practices.json` (lexical preflight only). The earlier cases, including `trigger-nontrivial-change` and `five-field-query`, have not been rerun on this text.

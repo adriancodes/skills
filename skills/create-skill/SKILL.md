@@ -21,8 +21,7 @@ Use for creating, improving, reviewing, or evaluating a skill and its invocation
 Do not use when:
 
 - Large-scale benchmarking beyond the declared target matrix: use an external eval harness for the extra runs, keeping this skill's cases, rubric, raw results, and ship decision authoritative
-- Claude Code plugin packaging: use `plugin-dev:skill-development`
-- A one-off slash command, not a triggered skill: write a slash command instead
+- Claude Code plugin packaging: use `plugin-dev:skill-development`, or package by hand per the harness's plugin docs
 - A project document, not an agent instruction
 - Harness event hooks: they execute outside the agent and are not skills
 
@@ -139,8 +138,6 @@ Before SHIP, run the validation checklist and state the evidence tier beside the
 ## Tool Guidance
 
 Never `@` force-load runtime references. Link them conditionally. Cross-reference skills by name, mark required background, and create no empty directory.
-
-Use tables for reference material, code blocks for code, and numbered lists for linear steps.
 
 ## Success Criteria
 

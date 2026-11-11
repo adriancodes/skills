@@ -1,11 +1,13 @@
 ---
 name: verify-work
 description: >
-  Use when an artifact must survive hostile input before shipping:
-  the user asks to "verify this", "is this ready to ship", "test this
-  properly", or "find the loopholes". Also when a shipped artifact
-  failed on an input nobody tried, or when verification so far is a
-  happy-path smoke test.
+  Use when a finished, runnable artifact (a script, config, parser,
+  prompt, or CLI, not a diff under review) must survive hostile input
+  before shipping: the user asks to "verify this script", "find the
+  loopholes", "test this properly against bad input", or asks "is this
+  ready to ship" about one. Also when a shipped artifact failed on an
+  input nobody tried, or when verification so far is a happy-path smoke
+  test.
 license: MIT
 metadata:
   category: Quality
@@ -23,7 +25,7 @@ Use to attack a finished artifact against its stated behavioral promise.
 Do not use when:
 
 - The plan is unbuilt: use `create-spec` when installed. Otherwise question the plan first.
-- Review for style, structure, or maintainability: use a code-review skill; verify-work only chases behavior that breaks the promise
+- A diff, branch, or PR needs reading against its spec and repository contracts: use `code-review` when installed. Otherwise review the diff read-only. verify-work executes attacks on a runnable artifact.
 - Statistical pass-rate benchmarking across many runs: use an eval harness
 - Penetration testing of live systems: different discipline, requires authorization
 - Writing tests for code as it's built: that is TDD (use a TDD skill); verify-work attacks *finished* artifacts. "Test this properly" about unwritten code means tests, not verification
@@ -32,7 +34,7 @@ Do not use when:
 
 Load `references/attacks.md` before choosing attacks.
 
-1. **Fix the letter.** Write the promise in 5 or fewer bullets. Target every attack at the gap between promise and behavior. Pin a vague promise with `create-spec` or one direct question.
+1. **Pin the promise.** Write the promise in 5 or fewer bullets. Target every attack at the gap between promise and behavior. Pin a vague promise with `create-spec` or one direct question.
 
    Done when the promise list is written.
 
@@ -79,7 +81,7 @@ Read [references/pressure.md](references/pressure.md) when urgency, authority, s
 
 ## Additional Resources
 
-- **`references/attacks.md`**: per-artifact-type attack catalogs and the dry-round stop rule (loaded at step 2).
+- **`references/attacks.md`**: per-artifact-type attack catalogs and round definitions (loaded at step 2).
 
 ## Verification
 

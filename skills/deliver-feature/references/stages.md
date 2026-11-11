@@ -1,6 +1,6 @@
 # Stage checks and standalone fallbacks
 
-Read only the section for the current stage. Use the owning skill when installed; these fallbacks preserve standalone use.
+Read "Artifact validity" first. Read a stage section only when its owning skill is not installed.
 
 ## Requirements — create-spec
 
@@ -12,7 +12,7 @@ Do not infer confirmation from a finished-looking open document. Reuse actual de
 
 Break the confirmed outcome into bounded tasks with runnable acceptance checks and explicit blockers. Use vertical feature slices, genuine one-layer tasks, or expand–migrate–contract for wide refactors.
 
-Write a slices file with `spec`, `status`, task ticks, `Layers`, `Bound`, `Demo`, `Blocked by`, `## Verification`, and `## Confirmation`. Ask for approval of a new breakdown before executing it. A confirmed spec is not approval of a newly authored task graph.
+Write a slices file beside the spec, named after the spec file plus `-slices`, with `spec`, `status`, task ticks, `Layers`, `Bound`, `Demo`, `Blocked by`, `## Verification`, and `## Confirmation`. Ask for approval of a new breakdown before executing it. A confirmed spec is not approval of a newly authored task graph.
 
 ## Implementation — implement-task
 

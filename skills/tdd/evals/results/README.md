@@ -20,7 +20,19 @@ Local checks on 2026-07-18:
 
 - `node scripts/skills.mjs check` — 15 entries clean.
 - `node scripts/skills.mjs readme --check` — README up to date.
-- Body length — 2,216 words, inside the 1,500–2,500 discipline target.
+- Body length — 2,216 words, inside the 1,500–2,500 discipline target. (Superseded: the body has since been cut and `rules.md` sets no minimum.)
 - Second-person and weak-suggestion scans — no matches.
 - Free-shipping baseline — `4,999 → false`, `5,000 → false`; the `5,000 → true` assertion fails behaviorally with `ERR_ASSERTION`.
 - Migration baseline — writes valid but contractually wrong `[]\n`, allowing a future red test to fail on transformed data rather than setup noise.
+
+## 2026-11-11 revision: unrun
+
+Changed in `SKILL.md`; no model eval was run on this text and no new pass is claimed.
+
+- Description narrowed: dropped "changing application behavior" and "add this behavior", limited bug fixes to a known cause, and pointed unknown causes to diagnosis.
+- The data-boundary table moved from a post-green step 6 into step 2, so the seam is chosen before red. "Verify and report" is now step 6.
+- Genuine Exceptions says what to do after a missing-framework stop: ask once per session, then apply the answer.
+- Scope no longer reads as an instruction to run adversarial verification.
+- Core Example changed from the free-shipping fixture to username normalization, so it no longer contains the `heldout-free-shipping` answer.
+
+Unrun cases: `regression-seam-before-red` and `regression-no-test-framework` in `cases.jsonl`; the added near-miss prompts in `/evals/cases/tdd.json` (lexical preflight only). The three earlier cases have not been rerun on this text.

@@ -1,11 +1,12 @@
 ---
 name: tdd
 description: >
-  Use when implementing a feature, fixing a known bug, changing application
-  behavior, or altering stored, transformed, migrated, serialized, or externally
-  transmitted data. Also use when a user says "use TDD", "test first",
-  "red-green-refactor", or "add this behavior", and when code is being written
-  before a failing test.
+  Use when writing or changing production behavior: implementing a feature,
+  fixing a bug whose cause is already known, or altering stored, transformed,
+  migrated, serialized, or externally transmitted data. Also use when a user
+  says "use TDD", "test first", or "red-green-refactor", and when code is being
+  written before a failing test. For a failure whose cause is unknown, diagnose
+  first.
 license: MIT
 metadata:
   category: Building
@@ -21,7 +22,7 @@ metadata:
 Use for:
 
 - New caller- or user-visible behavior.
-- Known bug fixes.
+- Fixes for bugs whose cause is already known.
 - API, validation, workflow, or state changes.
 - Stored, transformed, migrated, serialized, or transmitted data.
 - Legacy behavior that needs a stable test seam.
@@ -34,7 +35,7 @@ Do not use for:
 - Immediate incident containment. Restore service first; test-drive the permanent fix.
 - Throwaway prototypes. Restart under TDD before shipping or using one as a reference implementation.
 
-When another workflow owns the task, use TDD at its implementation seam. Use separate adversarial verification after implementation.
+When another workflow owns the task, use TDD at its implementation seam. Adversarial testing of the finished result is a separate task (`verify-work` when installed); it is not part of this workflow.
 
 ## Required Context
 
@@ -54,7 +55,7 @@ Done when one behavior, one seam, one red command, and worktree authority are ex
 
 ### 1. Restore red-first order
 
-Inspect the diff. If the agent wrote production code for the active behavior before red, revert only those known agent-authored hunks. Never comment them out, copy them into notes, or consult them while designing the test.
+Inspect the diff. If the agent wrote production code for the active behavior before red, revert only those known agent-authored hunks. Never comment them out, copy them into notes, or consult them while designing the test, so the test comes from the contract, not from the implementation.
 
 Preserve pre-existing and user-authored work. Ask before reverting when authorship is ambiguous. Existing legacy code is not a violation; test its new expectation directly.
 
@@ -74,7 +75,20 @@ For legacy code without a stable seam:
 
 Stop when no meaningful seam can be created safely. A shallow test that cannot catch the defect is not progress.
 
-Done when the test names one behavior and can fail specifically when that behavior is absent.
+For data paths, choose the seam from this table before writing the test:
+
+| Path | Evidence |
+|---|---|
+| Pure transformation | Representative inputs, outputs, and boundary values |
+| Database write | Isolated test database or transaction |
+| Migration | Before/after fixture; rollback when supported |
+| Retry or upsert | Duplicate execution without corruption or unintended duplication |
+| Serialization or file output | Write, read back, and validate bytes or representation |
+| External service | Faithful fake or contract-tested adapter; never production |
+
+Mocks may isolate nondeterministic external systems, time, or randomness. Mocks alone never prove stored, migrated, serialized, or transmitted data. Test public results instead of internal collaborator calls.
+
+Done when the test names one behavior, can fail specifically when that behavior is absent, and exercises the closest real boundary of every data contract it changes.
 
 ### 3. Prove valid red
 
@@ -102,24 +116,7 @@ Start every new behavior as a new red-green-refactor cycle. Pick the next smalle
 
 Done when the code is as simple as the proven behavior permits and the test remains green.
 
-### 6. Prove real data boundaries
-
-Exercise the closest real boundary that proves the contract:
-
-| Path | Evidence |
-|---|---|
-| Pure transformation | Representative inputs, outputs, and boundary values |
-| Database write | Isolated test database or transaction |
-| Migration | Before/after fixture; rollback when supported |
-| Retry or upsert | Duplicate execution without corruption or unintended duplication |
-| Serialization or file output | Write, read back, and validate bytes or representation |
-| External service | Faithful fake or contract-tested adapter; never production |
-
-Mocks may isolate nondeterministic external systems, time, or randomness. Mocks alone never prove stored, migrated, serialized, or transmitted data. Test public results instead of internal collaborator calls.
-
-Done when every changed data contract has evidence at its closest real boundary.
-
-### 7. Verify and report
+### 6. Verify and report
 
 Run:
 
@@ -137,28 +134,29 @@ Done when every requested behavior and material boundary case completed its own 
 
 ## Core Example
 
-Request: “Add free shipping for subtotals of 5,000 cents or more.”
+Request: “Treat usernames that differ only by case or surrounding spaces as the same user.”
 
-Write the boundary test first:
+Write the behavior test first:
 
 ```js
 import assert from "node:assert/strict";
 import test from "node:test";
-import { qualifiesForFreeShipping } from "../src/shipping.js";
+import { createUserStore } from "../src/users.js";
 
-test("free shipping begins at 5,000 cents", () => {
-  assert.equal(qualifiesForFreeShipping(4_999), false);
-  assert.equal(qualifiesForFreeShipping(5_000), true);
+test("a username is taken regardless of case or surrounding spaces", () => {
+  const users = createUserStore();
+  users.register("ada");
+  assert.throws(() => users.register("  Ada "), /taken/);
 });
 ```
 
-Run `node --test test/shipping.test.js`. Capture the expected failure at `5_000`. Then implement only:
+Run `node --test test/users.test.js`. Capture the expected failure: the second `register` does not throw. Then implement only the normalization, applied before the existing uniqueness check:
 
 ```js
-export const qualifiesForFreeShipping = (subtotalCents) => subtotalCents >= 5_000;
+const normalize = (name) => name.trim().toLowerCase();
 ```
 
-Run the same command green, then the affected suite. A comparator written first followed by a first-run-green test has no red evidence and fails this workflow.
+Run the same command green, then the affected suite. A normalizer written first followed by a first-run-green test has no red evidence and fails this workflow.
 
 ## Pressure
 
@@ -166,7 +164,7 @@ Read [references/pressure.md](references/pressure.md) when urgency, authority, s
 
 ## Genuine Exceptions
 
-When a rule is genuinely impossible, name the blocked rule and show the evidence. Use the closest safe alternative and state the weaker conclusion. A missing or broken test framework needs reported evidence and authorization before installing or replacing tooling. An unavailable real data boundary takes the closest faithful substitute; never imply a mock proved persistence. Time pressure, tiny size, sunk cost, a green existing suite, and "just code it" never qualify.
+When a rule is genuinely impossible, name the blocked rule and show the evidence. Use the closest safe alternative and state the weaker conclusion. A missing or broken test framework needs reported evidence and authorization before installing or replacing tooling. Ask once per session: add a minimal test setup, or proceed without red and say so in the report. Apply the answer to later changes without asking again. An unavailable real data boundary takes the closest faithful substitute; never imply a mock proved persistence. Time pressure, tiny size, sunk cost, a green existing suite, and "just code it" never qualify.
 
 ## Verification
 

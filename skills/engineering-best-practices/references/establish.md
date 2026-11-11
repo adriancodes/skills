@@ -77,9 +77,9 @@ Create `docs/engineering-practices.md` from the bundled template. Include only d
 - deliberately avoided approaches and why;
 - exceptions and triggers for reconsideration.
 
-Add the marked `AGENTS.md` pointer from the main skill. Preserve unrelated instructions. Verify that the charter is internally coherent and actionable by an agent joining without the interview history.
+Offer the marked agent-instruction pointer from the main skill; add it only when the user agrees. Preserve unrelated instructions. Verify that the charter is internally coherent and actionable by an agent joining without the interview history.
 
-Codification is complete when the approved charter exists, the marked pointer is correct, and every unrelated instruction remains unchanged.
+Codification is complete when the approved charter exists, any agreed pointer is correct, and every unrelated instruction remains unchanged.
 
 ## 6. Begin in a tracer slice
 

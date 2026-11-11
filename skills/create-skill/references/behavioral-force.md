@@ -1,8 +1,8 @@
 # Writing Instructions That Drive Behavior
 
-A skill is only as good as whether the agent obeys it. Structure makes a skill *findable*; these six levers make it *followed*. Apply all six to every skill — they compound. Each lever is a rule in `rules.md` and a check in Phase 6.
+A skill is only as good as whether the agent obeys it. Structure makes a skill *findable*; these seven levers make it *followed*. Apply all seven to every skill — they compound. Each lever is a rule in `rules.md` and a check in Phase 6.
 
-The single highest-leverage habit: **command, don't suggest; specify the action, don't just forbid; show one example; anchor with numbers; put what matters first and last; name behaviors with words the model already knows.**
+The single highest-leverage habit: **command, don't suggest; specify the action, don't just forbid; show one example; anchor with numbers; put what matters first and last; name behaviors with words the model already knows; give each sentence one decision.**
 
 ## 1. Imperative force — command, never observe
 
@@ -74,7 +74,11 @@ Coin a new term only when no pretrained one fits: a made-up word recruits no pri
 
 A leading word also works in the description: when the same word lives in the user's prompts, docs, and codebase, the agent links that shared language to the skill and fires it more reliably.
 
-## All six at once
+## 7. Atomic steering — one decision per sentence
+
+**Write one behavioral decision per sentence or bullet.** Put the rationale in the next sentence. A sentence that packs a command, its exception, and its reason lets the agent keep one and drop the rest.
+
+## All seven at once
 
 The same instruction, before and after applying every lever.
 
@@ -84,4 +88,4 @@ The same instruction, before and after applying every lever.
 **After:**
 > **Always write the test before the implementation.** If implementation exists before its test, delete it and start from the test. (See the worked red-green example below.)
 
-Imperative force (*Always*), a prohibition turned into a positive action (*delete it and start from the test*), a concrete trigger (*if implementation exists before its test*), an example pointer, the binding rule stated first, and a leading word (*red-green*) anchoring the whole loop in one pretrained token.
+Imperative force (*Always*), a prohibition turned into a positive action (*delete it and start from the test*), a concrete trigger (*if implementation exists before its test*), an example pointer, the binding rule stated first, a leading word (*red-green*) anchoring the whole loop in one pretrained token, and one decision per sentence.

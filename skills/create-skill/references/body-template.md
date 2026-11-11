@@ -42,19 +42,19 @@ Optional frontmatter per the open Agent Skills spec — `license`, `compatibilit
 
 ## Section Rationale
 
-| Section | Why It Exists | Source |
-|---------|---------------|--------|
-| Overview | Quick relevance check — should the agent keep reading? | All approaches |
-| When to Use | Confirms the description match; adds keyword surface area | All approaches |
-| Do Not Use When | Prevents misapplication — most commonly missing section | Codex |
-| Required Context | Pre-flight checks prevent wasted work | Gemini, Codex |
-| Workflow | The core value of the skill — procedural, not advisory | All approaches |
-| Tool Guidance | Prevents unsafe or inefficient tool choices | Codex |
-| Success Criteria | Defines "done" — prevents premature completion | Codex, Gemini |
-| Quick Reference | Scannable lookup for repeat use | Opus |
-| Common Mistakes | Preemptive error correction | Opus |
-| Failure Modes | Teaches the agent when to STOP — prevents overreach | Codex |
-| Additional Resources | Makes supporting files discoverable | Opus, Gemini |
+| Section | Why It Exists |
+|---------|---------------|
+| Overview | Quick relevance check — should the agent keep reading? |
+| When to Use | Confirms the description match |
+| Do Not Use When | Prevents misapplication — most commonly missing section |
+| Required Context | Pre-flight checks prevent wasted work |
+| Workflow | The core value of the skill — procedural, not advisory |
+| Tool Guidance | Prevents unsafe or inefficient tool choices |
+| Success Criteria | Defines "done" — prevents premature completion |
+| Quick Reference | Scannable lookup for repeat use |
+| Common Mistakes | Preemptive error correction |
+| Failure Modes | Teaches the agent when to STOP — prevents overreach |
+| Additional Resources | Makes supporting files discoverable |
 
 ## Writing Workflow Steps
 

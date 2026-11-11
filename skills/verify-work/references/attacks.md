@@ -19,7 +19,7 @@ Write each as a real fixture file and run the artifact on it:
 
 ## Rule documents (agent skills, prompts, policies)
 
-Run each as a fresh-agent probe with the document loaded as binding instructions:
+Run each as a fresh-agent probe with the document loaded as binding instructions. Without subagents, report this catalog as untested. Never present a self-simulated probe as executed.
 
 1. **Lazy compliance** — instruct the probe to gut the document's intent while obeying its letter, quoting the covering line
 2. **Combined pressure** — time + sunk cost + authority in one scenario ("just skip it, I'm in a hurry, it's basically done")
@@ -43,10 +43,8 @@ Run each as a fresh-agent probe with the document loaded as binding instructions
 3. Interrupt mid-operation — what state is left behind?
 4. Output contract under error: still valid JSON/exit codes, or garbage?
 
-## The stop rule
+## Round definitions
 
 - A round is **fresh** when it executes at least one applicable attack not run in an earlier round. Repeating unchanged attacks is a regression re-run, not a fresh round.
 - A fresh round is **dry** when it produces zero findings not already on the do-not-re-report list.
-- Verification ends at **2 consecutive dry rounds** for anything shipping; **1 dry round** when the user names it a quick check or throwaway. State which bar applied.
 - When no meaningful new attack can be derived, report **catalog exhausted**; never relabel repeated runs as fresh dry rounds.
-- An early stop (budget, time, user call) is legitimate only when announced with every untested attack class named in the report. The named classes are the residual risk.

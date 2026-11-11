@@ -27,3 +27,15 @@ Local checks on 2026-07-18:
 - Body length — 2,385 words, inside the 1,500–2,500 discipline target.
 - Second-person scan — no matches.
 - Tenant fixture — baseline returns `404` for cross-tenant export; candidate returns `200`, matching the Core Example's P1 finding.
+
+## 2026-11-11 revision: unrun
+
+No model session ran against this revision. Nothing below is a pass.
+
+- Description: added "ready to merge or ship" for a branch, PR, or diff.
+- Scope: `verify-work` bullet restated as executed attacks on a runnable artifact; added `simplify-code` and `prepare-pr` pointers.
+- Body: the inline finding example and `references/examples.md` no longer use the tenant-export fixture. Removed `Core Example`, `Tool Guidance`, `Genuine Exceptions`, and three `Failure Modes` bullets that restated the workflow.
+- `references/pressure.md`: removed five predecessor-audit rows; kept the authority row.
+- New case, unrun: `regression-clean-diff` (fixture `fixtures/clean-diff`; premise checked by `node skills/code-review/evals/check-clean-diff.mjs`).
+- New routing prompts in `evals/cases/code-review.json` pass the lexical preflight only; native triggering is unrun.
+- The three existing cases are unrun against this body.

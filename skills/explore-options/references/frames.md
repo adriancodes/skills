@@ -1,6 +1,6 @@
 # Frame deck
 
-Pick 5 per run: 4 matching the problem's tags + 1 wild.
+Tags: `code` = implementation; `design` = product, API, naming; `general` = any; `wild` = eligible for the wild slot.
 
 | Frame | Vantage prompt | Tags |
 |---|---|---|

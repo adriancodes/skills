@@ -51,7 +51,9 @@ Use Python 3 with `pypdf`. If the package is unavailable, request permission bef
 
 ## Workflow
 
-1. Confirm the target PDF path, output path, desired rotation (90, 180, or 270 degrees), and whether all or selected pages rotate. Done when all four values are explicit.
+1. Confirm the target PDF path, output path, desired rotation (90, 180, or 270 degrees), and whether all or selected pages rotate.
+
+   Done when all four values are explicit.
 2. Save this complete example as `rotate.py`; pass the four confirmed values as arguments. `PAGES` is `all` or comma-separated one-based page numbers:
 
    ```python
@@ -73,9 +75,15 @@ Use Python 3 with `pypdf`. If the package is unavailable, request permission bef
        writer.write(target)
    ```
 
-   Execute as `python3 rotate.py input.pdf output.pdf 90 all`. Done when the command exits zero and writes the new file without modifying the source.
-3. Open or render the output and inspect every rotated page plus one untouched page when present. Done when orientation and preservation are observed.
-4. Report the output path and verified pages. Done when the user can locate the new file.
+   Execute as `python3 rotate.py input.pdf output.pdf 90 all`.
+
+   Done when the command exits zero and writes the new file without modifying the source.
+3. Open or render the output and inspect every rotated page plus one untouched page when present.
+
+   Done when orientation and preservation are observed.
+4. Report the output path and verified pages.
+
+   Done when the user can locate the new file.
 
 ## Success Criteria
 

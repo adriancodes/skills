@@ -14,18 +14,18 @@ Preserve settled decisions. Map what remains unanswered without inventing choice
 
 ## Scope
 
-Use when explicitly invoked for decisions spanning several workstreams or sessions.
+Covers decisions that span several workstreams or sessions.
 
 Do not use for:
 
 - A single bounded feature specification: use `create-spec`; confirm requirements and acceptance criteria if unavailable.
 - Implementation planning from confirmed scope: use `create-tasks`; create bounded tasks from the spec if unavailable.
-- Generating alternatives for one open choice: use `explore-options`; compare distinct approaches under stated criteria if unavailable.
+- Generating alternatives for one open choice: tell the user to run `explore-options`. If it is not installed, compare distinct approaches under stated criteria.
 - External tracker administration: keep this map local unless tracker work is separately requested.
 
 ## Workflow
 
-### 1. Name the destination
+### 1. Name the outcome
 
 Read existing notes, decisions, and project conventions.
 State the outcome these decisions must enable.
@@ -34,11 +34,13 @@ Keep unrelated opportunities outside the map.
 Preserve existing owners and authoritative answers.
 Mark missing owners as unknown rather than assigning them silently.
 
-Done when the destination and decision boundaries are explicit.
+Done when the outcome and decision boundaries are explicit.
 
 ### 2. Create bounded records
 
 Give each decision a stable identifier and one owning record.
+Keep all records in one index file until a record needs more than a few lines.
+Then move that record to its own file and link it from the index.
 Classify it as settled, unanswered, or unspecified.
 For a settled decision, point to its authoritative answer and constraints.
 For an unanswered decision, write the precise question and evidence needed.
@@ -63,7 +65,7 @@ Done when the next decision is genuinely unblocked or the blocking cycle is expl
 ### 4. Save for continuation
 
 Follow local conventions or use `docs/decisions/<topic>/` with an index.
-Include the destination, record links, current blockers, and next question in the index.
+Include the outcome, record links, current blockers, and next question in the index.
 Update existing records in place rather than creating competing maps.
 Hand a settled bounded workstream to `create-spec` when implementation specification is requested.
 Leave product answers and external writes with their authorized owner.
@@ -72,7 +74,7 @@ Done when another session can locate the next question without reopening settled
 
 ## Worked example
 
-> Billing migration destination: enough confirmed decisions to specify each workstream.
+> Billing migration outcome: enough confirmed decisions to specify each workstream.
 > BM-01 currency: settled, USD only, owner Adrian.
 > BM-02 provider: unanswered, owner Adrian, no prerequisite.
 > BM-03 cutover: unanswered, owner Platform, depends on BM-02.

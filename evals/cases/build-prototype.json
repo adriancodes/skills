@@ -3,7 +3,10 @@
   "positive": [
     "Build a throwaway prototype with synthetic inputs",
     "Run an experiment before production to answer a measurable question",
-    "Test this design with runnable code as a proof of concept"
+    "Test this design with runnable code as a proof of concept",
+    "Spike this: try both approaches and see which one holds up",
+    "Quick proof of concept before we commit to production work",
+    "We keep arguing these alternatives from reading code; get a runnable answer"
   ],
   "negative": [
     {
@@ -13,6 +16,10 @@
     {
       "prompt": "Implement the next task from the slices file",
       "owner": "implement-task"
+    },
+    {
+      "prompt": "Build an MVP of the export feature",
+      "owner": "deliver-feature"
     }
   ],
   "behavior": {

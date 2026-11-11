@@ -19,3 +19,14 @@ Local checks on 2026-07-18:
 - `node scripts/skills.mjs readme --check` — README up to date.
 - The focused command in the Core Example reproduced only the threshold failure (`expected 1000`, `actual 0`).
 - The direct boundary probe produced `9999 → 0`, `10000 → 0`, and `10001 → 1000`.
+
+## 2026-11-11 revision: unrun
+
+Changed; no model eval was run on this text and no new pass is claimed.
+
+- Description adds requests to fix a failing test or bug whose cause has not been shown.
+- The worked example in `references/examples.md`, the Core Example line, and rank 1 of the hypothesis table changed from the Gold-threshold boundary bug to a flaky test with shared clock state, so the skill no longer contains the answer to `opportunity-gold-threshold`. The "Local checks on 2026-07-18" lines above describe the earlier example.
+- Tool Guidance was removed as a restatement of the workflow; its two distinct rules moved to step 4 (version history) and Verification (version-control status).
+- Failure Modes keeps only low-rate flake, conflicting evidence, and no test seam; the other three repeated Scope and steps 1, 2, and 4.
+
+Unrun cases: `regression-obvious-cause-pressure` in `../regression-cases.jsonl`, a new file because `cases.jsonl` is hash-frozen by `opportunity.json`; the added near-miss prompts in `/evals/cases/diagnose.json` (lexical preflight only). No flake fixture, held-out value pair, or authorized-fix case exists yet.

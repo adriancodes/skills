@@ -48,3 +48,12 @@ case is re-run. The subject carries no Tier-2 SHIP claim.
 
 Subject SHA-256 at authoring time (2026-08-01), verified unchanged at run
 time: `e3b4f7db… (original) — current subject after the 2026-08-03 authority correction: 529179b93e7a59a91be3ea53dbdc3cfc3e8c0e962e9094528eea3ce45bdba561`.
+
+## 2026-11-11 revision: unrun
+
+Skill text changed after a review against Anthropic's skill guidance. No model session ran against this revision. Every case named below is unrun, and no new pass is claimed.
+
+- The slices file is named after the spec file plus `-slices` (`references/slices-contract.md`). Case: `regression-slices-filename`.
+- Step 2 states the size target: one fresh agent session per task, with its tests. Case: `regression-session-size`.
+- Description: removed the doubled "or" and rewrapped; no trigger phrase changed. Routing near-misses added to `evals/cases/create-tasks.json`.
+- Wording only: the contract's write-prohibition paragraph no longer restates SKILL.md step 4; one sentence ties `## Slices` entries to tasks.

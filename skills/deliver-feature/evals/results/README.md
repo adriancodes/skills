@@ -37,3 +37,13 @@ Historical subject SHA-256
 `4050980764f3003af98ddde154587ca2d0aa31d8511a28578ace66a05044843b`.
 
 On 2026-08-29 the description gained the explicit trigger phrase "build this feature end to end" after the lexical portfolio preflight exposed that miss. The 51-case preflight passes. Installed-harness triggering for this revision remains untested, so the preserved behavioral evidence and current routing evidence are separate claims.
+
+## 2026-11-11 revision: unrun
+
+Skill text changed after a review against Anthropic's skill guidance. No model session ran against this revision. Every case named below is unrun, and no new pass is claimed.
+
+- Step 2 and `references/stages.md` now send the agent to "Artifact validity" first; stage sections are read only when the owning skill is absent. Case: `regression-artifact-validity`.
+- Step 1 asks to save a chat-only plan as the slices file before implementing. Case: `regression-chat-only-plan`.
+- Description: the resume clause requires that no stage is named, and working through the remaining tasks in a slices file routes here. Cases: `trigger-positive-work-through-slices`, `trigger-negative-resume-named-stage`; near-misses added to `evals/cases/deliver-feature.json`.
+- The planning fallback names the slices file after the spec file plus `-slices`.
+- Not changed: `heldout-next-stage` and `regression-momentum-pressure` still assert the superseded one-stage behaviour (`single-stage`, `next-invocation-line`, `gate-stop-and-next`). They await an owner decision.

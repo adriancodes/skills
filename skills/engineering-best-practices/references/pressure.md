@@ -27,7 +27,7 @@ These thoughts signal an imminent shortcut:
 - "More sources will be safer."
 - "The workers normally run in one process."
 
-Return to the workflow and use the rationalization table: state the rule once, produce the compliant result, and move on.
+Return to the workflow and use the table above: state the rule once, produce the compliant result, and move on.
 
 ### Closed loopholes
 

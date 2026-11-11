@@ -1,6 +1,10 @@
 ---
 name: build-prototype
-description: Use when the user asks "build a throwaway prototype", "run an experiment before production", or "test this design with runnable code". Also use for a spike or proof of concept with a measurable question and synthetic inputs.
+description: >
+  Use when a design question needs a runnable answer before production
+  work: the user asks for a "throwaway prototype", a "spike", a "proof of
+  concept", or to "try both approaches and see". Also when alternatives
+  are being argued from reading code instead of from executed output.
 license: MIT
 metadata:
   category: Engineering
@@ -37,6 +41,7 @@ Done when a result could favor either alternative under stated criteria.
 ### 2. Build the minimum model
 
 Write independently runnable code outside production paths.
+Use the existing experiment location or `prototypes/<topic>/` as a fallback.
 Use an existing runtime and built-in tools before adding dependencies.
 Model only the behavior needed by the discriminator.
 Keep production code and user work intact.
@@ -60,14 +65,13 @@ Done when an independent replay reproduces the observations supporting the verdi
 
 Report the result, limitation, and next bounded decision.
 Mark the artifact as disposable prototype code.
-Use the existing experiment location or `prototypes/<topic>/` as a fallback.
 Keep promotion into production as a separate requested implementation.
 
 Done when the user can assess the tradeoff without mistaking the prototype for production readiness.
 
 ## Worked example
 
-For resend behavior, drive both models through `send, click, fail, retry, succeed`.
+For resend behavior, drive both models through the normal path `send, succeed` and two failure paths: `send, click, fail, retry, succeed` and `send, fail, click, click`.
 Count queued sends immediately after the pending-state click.
 An immediate-resend model queues two; a failure-gated model queues one.
 Replay both with the same stub queue.

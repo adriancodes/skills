@@ -4,6 +4,7 @@ description: Fan out isolated parallel perspectives on an open-ended decision, t
 disable-model-invocation: true
 license: MIT
 metadata:
+  attribution: Adapted from ADHD (github.com/UditAkhourii/adhd, MIT).
   category: Design
   summary: Fans out isolated parallel frames, converges fit-first with a constraint-checked winner, and renders a 15-line shortlist that expands on demand.
 ---
@@ -22,23 +23,24 @@ Render the result as a shortlist a skimmer absorbs in one glance. Hold everythin
 ## Do Not Use When
 
 - One canonical answer exists: give it directly; a fan-out decorates the inevitable.
-- A bug needs a root cause: `diagnose` (if installed) owns hypothesis generation with a reproduction loop.
-- The deliverable is a module interface: `design-an-interface` (if installed) produces full competing designs; this skill produces idea-level options.
+- A bug needs a root cause: `diagnose` (if installed) owns hypothesis generation with a reproduction loop. Otherwise reproduce the bug first and test causes one at a time.
+- The deliverable is a full module interface: this skill yields idea-level options only. Say so and ask whether options are what is wanted.
 - Requirements are unpinned: use `create-spec` when installed. Otherwise ask one direct question first.
 
 ## Required Context
 
 - The problem statement and its stated constraints: scale, latency, budget, compatibility — whatever bounds a viable answer.
 - When constraints are absent, ask exactly one question for constraints and success. Do not fan out first.
-- A harness with parallel subagent dispatch (see Failure Modes when absent).
+- A harness with subagents that start from a fresh context (see Failure Modes when absent).
+- Cost: about 6 calls, plus 1 per `deepen`.
 
 ## Workflow
 
-1. **Pick 5 frames.** Read [references/frames.md](references/frames.md) when selecting branch perspectives. Choose 4 matching tags and exactly 1 `wild` tag. Vary repeat runs.
+1. **Pick 5 frames.** Read [references/frames.md](references/frames.md) when selecting branch perspectives. Classify the problem as `code`, `design` (product, API, or naming shape), or `general`. Choose 4 frames tagged for that class, filling from `general` when fewer match. Add 1 different frame for its `wild` tag. Vary the set on repeat runs.
 
    Done when 5 frames are chosen, including one wild frame.
 
-2. **Diverge in parallel.** Spawn 5 isolated subagents in one message. Give each only the problem, constraints, frame prompt, and generator instruction. Never serialize them. Never share branch output. Never simulate branches in the orchestrator.
+2. **Diverge in isolation.** Spawn 5 isolated subagents, in one message where the harness allows it. Run them one at a time otherwise. Give each only the problem, constraints, frame prompt, and generator instruction. Never show one branch another's output, and never write the branches yourself: both reintroduce anchoring.
 
    Done when all 5 branches return.
 
@@ -53,9 +55,9 @@ Render the result as a shortlist a skimmer absorbs in one glance. Hold everythin
    - Run the constraint check: restate the stated constraints and verify the top pick violates none. A pick that fails is demoted — it never ships as the winner, however clever.
    - Fill the ★ wild slot with the strongest novel-but-viable idea. The wild slot never outranks a constraint-passing pick.
 
-   If clustering yields only one underlying angle, respawn the weakest two frames; surface variations do not establish breadth.
+   If clustering yields only one underlying angle, replace the two frames that added least with two unused frames and rerun them once; surface variations do not establish breadth. If one angle remains, apply the All-branches-converge failure mode.
 
-   Done when 3 ranked picks pass and the wild slot is filled or declared empty.
+   Done when up to 3 ranked picks pass the constraint check, with any shortfall stated, and the wild slot is filled or declared empty.
 
 4. **Render the shortlist: 15 lines or fewer.** With no preamble or narration, emit exactly, in order:
    - 1 line: the problem and its binding constraint.
@@ -74,14 +76,10 @@ Render the result as a shortlist a skimmer absorbs in one glance. Hold everythin
 
 ## Failure Modes
 
-- **No parallel subagents:** say so. Offer one strong prompt for 10 clustered approaches with traps. Label it anchored, not isolated.
+- **No subagents:** say so. Offer one strong prompt for 10 clustered approaches with traps. Label it anchored, not isolated.
 - **All branches converge:** report that the problem is narrower than expected. Give the direct answer without padding.
 - **No constraints obtainable:** stop after one question; rank by viability alone and say the constraint check was skipped.
 
-## Provenance
-
-Adapted from ADHD (github.com/UditAkhourii/adhd, MIT). It retains isolation and the generator/critic split. This version adds fit-first ranking, a gated wild slot, and layered output. Cost: about 6 calls, plus 1 per `deepen`.
-
 ## Verification
 
-Verify real isolated dispatch, constraint-passing ranked picks, a viable or empty wild slot, and the requested output layer. Label any unavailable-parallel fallback honestly.
+Verify real isolated dispatch, constraint-passing ranked picks, a viable or empty wild slot, and the requested output layer. Label any no-subagent fallback honestly.

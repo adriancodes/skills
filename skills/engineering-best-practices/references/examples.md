@@ -5,7 +5,7 @@ A new queue-processing service with only framework scaffolding enters **Establis
 A later request to add a consumer enters **Apply**. Run the exact local lookup:
 
 ```bash
-node skills/engineering-best-practices/scripts/retrieve-guidance.mjs \
+node <skill-directory>/scripts/retrieve-guidance.mjs \
   --intent implement \
   --task "invariant: one side effect per delivery; concurrency/distribution scope: concurrent workers and processes; atomicity/consistency mechanism: conditional transaction for claim, complete, and release; state owner: durable message-state database; failure/recovery: an interrupted claim expires and a retry reclaims it" \
   --max 4

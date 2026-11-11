@@ -17,7 +17,7 @@ in SKILL.md; this file holds the supporting calibration material.
 > wins when data has no fixed shape. Either runs a todo app; Postgres leaves
 > less to regret."
 
-**The two ways short goes wrong (rule 3 + safety).** *"can I drop this index?"*
+**The two ways short goes wrong (rule 3).** *"can I drop this index?"*
 
 > **Bad — over-cut:** "Yes." *(deleted the caveat that changes the decision)*
 > **Bad — caveman, not brevity:** "Index unused → drop OK. Check stats
@@ -50,6 +50,5 @@ in SKILL.md; this file holds the supporting calibration material.
 ## Activation detail
 
 Installing a model-invoked skill makes it discoverable, not permanently
-active. Explicit `/be-concise` applies to the current request and, where the
-harness preserves invoked-skill state, the current session. The
-ground-rules layer supplies the portable always-on form.
+active. An always-on installation requires the ground-rules layer or
+equivalent harness instructions.

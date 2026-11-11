@@ -1,6 +1,6 @@
 ---
 name: engineering-best-practices
-description: Use when starting a substantive codebase, making or reviewing a non-trivial code change, or deliberately improving a codebase's architecture. Also use when the user asks to "follow best practices", "start a new application", "review this codebase", or "refactor this codebase", or when architecture is inconsistent or has no coherent patterns.
+description: Use when starting a substantive codebase, designing a non-trivial change before writing it, or deliberately aligning a codebase's architecture. Also use when the user asks to "follow best practices", "start a new application", or "review this codebase's architecture", or when architecture is inconsistent or has no coherent patterns. For a bounded diff or PR, use a code-review workflow.
 license: MIT
 compatibility: Requires Node.js 20 or later for local retrieval.
 metadata:
@@ -17,8 +17,6 @@ Apply established engineering practices without loading the full source corpus i
 ## Scope
 
 Use for substantive engineering work that needs project alignment and bounded practice retrieval.
-
-Do not use when:
 
 Skip prose-only work, trivial mechanical edits, generated files, dependency lockfiles, and questions unrelated to software design. A tiny standalone script needs no architectural interview unless its choices materially affect safety or maintainability. When a specialized testing, debugging, security, or refactoring skill governs the task, use it first, applying this skill inside it only for practice retrieval and project alignment.
 
@@ -69,7 +67,7 @@ One-off code, conflicting conventions, and copied accidents are not established 
 
 ### 3. Retrieve the closest practices
 
-Translate the task into a short retrieval query naming these five fields explicitly:
+Translate the task into a short retrieval query. Always name the invariant and the failure/recovery behavior. Add the other three fields when state is shared across requests, processes, or machines:
 
 1. **Invariant**: the condition that must always hold or the behavior that must never occur.
 2. **Concurrency/distribution scope**: whether coordination stays in one request or process or spans workers, processes, or machines.
@@ -77,7 +75,7 @@ Translate the task into a short retrieval query naming these five fields explici
 4. **State owner**: the durable dependency or authoritative component owning the coordinated state.
 5. **Failure/recovery**: what happens on interruption, retry, timeout, partial completion, and abandoned work.
 
-Use `not applicable` only after inspection confirms the field does not affect the task. A query that names a concurrency symptom without the invariant, shared owner, enforcement mechanism, and recovery behavior is incomplete. Then run:
+Omit a field only after inspection confirms it does not affect the task. A query that names a concurrency symptom without the invariant, shared owner, enforcement mechanism, and recovery behavior is incomplete. Then run:
 
 ```bash
 node <skill-directory>/scripts/retrieve-guidance.mjs \
@@ -88,7 +86,7 @@ node <skill-directory>/scripts/retrieve-guidance.mjs \
 
 Use `--books` or `--principles` only when a source or principle was explicitly requested. Principle IDs stay visible for attribution and durable charter references.
 
-For ordinary work, make one retrieval call, select two to five closely applicable practices, and keep added context under roughly 1,000 tokens. A second call is allowed only for a genuinely distinct phase, such as reviewing a generated implementation. Do not browse the catalog, enumerate books, or load source files speculatively.
+For ordinary work, make one retrieval call, select two to five closely applicable practices, and keep added context under roughly 1,000 tokens. A second call is allowed only for a genuinely distinct phase, such as reviewing a generated implementation. Do not browse `references/catalog.json`, enumerate books, or load source files speculatively.
 
 For each selected practice:
 
@@ -98,13 +96,7 @@ For each selected practice:
 
 Discard weak matches. Retrieval is complete when every retained practice changes a concrete decision, implementation detail, test, or review check.
 
-### Distributed invariant gate
-
-When an invariant spans workers, processes, or machines, never accept process-local coordination as its enforcement mechanism. An in-memory mutex, map, weak map, cache, or singleton coordinates only one process; move enforcement to the durable shared state owner.
-
-Require the shared owner to expose one atomic state transition per lifecycle boundary: claim, complete, and release, or analogous begin, commit, and abandon operations. Use a transaction, conditional write, compare-and-swap, unique constraint, lease, or equivalent owner-supported primitive. A separate read followed by a write is not an atomic claim.
-
-Verify the invariant with adversarial cross-instance tests: construct independent application or worker instances sharing no in-memory lock, cache, singleton, or registry — only the durable dependency. Race the instances at the invariant boundary, inject failure after acquisition and before completion, and prove both single enforcement and recovery. The gate is complete only when the durable owner arbitrates the race and abandoned work can be reclaimed safely.
+In the Apply state, when the invariant spans workers, processes, or machines, follow the cross-instance section of the loaded reference before accepting a design.
 
 ### 4. Execute the loaded workflow
 
@@ -127,7 +119,7 @@ Without structured interaction, present numbered choices and explicitly permit a
 
 Use [assets/engineering-practices-template.md](assets/engineering-practices-template.md) when a direction is approved or recommended defaults are delegated. Keep it concise, repository-specific, and human-readable; do not copy the catalog into it.
 
-Write the charter to `docs/engineering-practices.md`. Add or update only this marked block in the nearest applicable `AGENTS.md`, preserving all unrelated content:
+Write the charter to `docs/engineering-practices.md`. Then offer to add this marked block to the project's agent instruction file (`AGENTS.md`, or the file the harness reads). Add it only when the user agrees, and preserve all unrelated content:
 
 ```markdown
 <!-- engineering-best-practices:start -->
@@ -149,7 +141,6 @@ A new queue service enters Establish. Adding a consumer to established code ente
 - Tie review findings to concrete code evidence and consequences.
 - Preserve behavior during simplification unless a behavior change is requested.
 - Keep architectural decisions coherent; do not assemble a grab bag of fashionable patterns.
-- Prefer the simplest direction that satisfies observed constraints.
 - Record exceptions and reconsideration triggers instead of pretending decisions are permanent.
 - Preserve source attribution when a retrieved practice influences a durable decision.
 
@@ -178,14 +169,5 @@ Before finishing non-trivial work, confirm:
 - durable decisions or approved exceptions were recorded when required.
 
 Success requires every applicable item above; an unverified or unexplained exception is incomplete.
-
-## Additional Resources
-
-- `references/establish.md`: greenfield discovery, recommendations, and charter creation.
-- `references/apply.md`: daily generation, review, refactoring, and simplification.
-- `references/align.md`: codebase assessment and incremental architectural alignment.
-- `references/catalog.json`: generated index of attributed source principles; query through the retrieval script.
-- `scripts/retrieve-guidance.mjs`: bounded local retrieval with no runtime dependencies.
-- `assets/engineering-practices-template.md`: concise repository charter template.
 
 **Always detect the state, establish the direction, and apply only the closest practices.**

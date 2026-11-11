@@ -24,7 +24,7 @@ These shortcuts appeared in the no-instruction baseline or are loopholes it expo
 - “A temporary edit does not count.”
 - “The user said debug, so fixing is implied.”
 
-Each thought maps to the Rationalization Table or the authority boundary. Return to the unfinished workflow step.
+Each thought maps to Common Rationalizations above or to the authority boundary. Return to the unfinished workflow step.
 
 ## Common Mistakes
 

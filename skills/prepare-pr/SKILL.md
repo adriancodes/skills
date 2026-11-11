@@ -1,6 +1,6 @@
 ---
 name: prepare-pr
-description: Use when the user asks "prepare my PR", "write a PR title and body", or "make a local PR draft" from an existing change. Also use for composing a branch-change description using a repository template and recorded validation.
+description: Use when the user asks to "prepare my PR", "write a PR title and body", "open a PR for this branch", or "make a local PR draft" from an existing change. Also when a branch needs a description that follows the repository template.
 license: MIT
 metadata:
   category: Delivery
@@ -40,7 +40,8 @@ Done when the proposed PR scope matches observed Git state and the user's reques
 ### 2. Gather validation evidence
 
 Read recorded commands, results, and their relationship to the current head.
-Run relevant safe checks when authorized and useful.
+Rerun the project's existing test or check command when it only reads.
+Ask before running one that writes, deploys, or calls a network service.
 Distinguish passed, failed, unrun, and historical checks.
 Keep failures visible even when their cause appears environmental.
 Describe a cause as inference unless the evidence establishes it.
@@ -63,11 +64,18 @@ Done when a reviewer can assess the final change without reading this conversati
 ### 4. Publish within scope
 
 For a local draft, report its path and stop.
-For requested publication, inspect the prepared artifact before using the existing PR tooling.
-Use normal authentication and repository permissions.
-Preserve unrelated work while preparing any necessary branch push.
-Record the created or updated PR URL and any failed operation.
-Keep merge and deployment outside PR publication authority.
+For requested publication, state the remote, head branch, base branch, and title in one line before acting.
+Ask first when any of these holds, because each publishes something the user did not review:
+
+- the base was not established;
+- the branch holds commits the draft does not describe;
+- the described change is not fully committed;
+- an open PR for the branch already has a description someone else wrote.
+
+Push only the head branch, without force.
+Create or update the PR with the repository's existing tooling, normal authentication, and repository permissions.
+Report the PR URL and any failed operation.
+Leave merging and deployment to a separate request.
 
 Done when the requested local or published artifact exists and its actual state is reported.
 

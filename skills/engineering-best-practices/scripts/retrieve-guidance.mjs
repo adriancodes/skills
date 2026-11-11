@@ -6,7 +6,14 @@ import { fileURLToPath } from "node:url";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const catalogPath = path.join(scriptDirectory, "..", "references", "catalog.json");
-const catalog = JSON.parse(readFileSync(catalogPath, "utf8"));
+let catalog = null;
+try {
+  catalog = JSON.parse(readFileSync(catalogPath, "utf8"));
+} catch {
+  // Reported from retrieveGuidance so callers get one clear message instead of a stack trace.
+}
+
+const USAGE = `Usage: node retrieve-guidance.mjs --intent <design|implement|review|refactor|simplify|test|operate> --task "<specific engineering problem>" [--max <1-6>] [--books <slugs>] [--principles <ids>] [--format <markdown|json>]`;
 
 const INTENTS = new Set([
   "design",
@@ -22,6 +29,9 @@ const STOP_WORDS = new Set([
   "from", "in", "into", "is", "it", "make", "of", "on", "or", "our", "that",
   "the", "their", "this", "to", "use", "with", "without",
 ]);
+// The five query fields SKILL.md asks for. A label, and a "not applicable" value, is structure rather than a search term.
+const FIELD_LABELS = /(invariant|concurrency\/distribution scope|atomicity\/consistency mechanism|state owner|failure\/recovery)\s*:(\s*not applicable\b)?/gi;
+// Six results at most, and about 1,000 tokens of output: the context budget SKILL.md sets for one lookup.
 const MAX_RESULTS = 6;
 const MAX_OUTPUT_CHARS = 4_000;
 
@@ -50,6 +60,7 @@ function scorePrinciple(principle, query) {
   const title = normalize(book.title);
   const requestedIds = new Set(query.principles.map(normalize));
   const requestedBooks = new Set(query.books.map(normalize));
+  // Weights only order results: an explicit request outranks any term match, and a whole-word directive hit outranks topic, substring, and title hits.
   let score = 0;
   const matchedTerms = [];
 
@@ -82,6 +93,9 @@ function scorePrinciple(principle, query) {
     if (matched) matchedTerms.push(token);
   }
 
+  // Intent ranks real matches; it never qualifies a principle on its own.
+  if (score === 0) return { score, matchedTerms };
+
   if (["implement", "design", "refactor", "simplify"].includes(query.intent) && principle.kind === "decision") score += 2;
   if (["review", "test", "operate"].includes(query.intent) && principle.kind === "trigger") score += 2;
   if (query.intent === "operate" && principle.book === "release-it") score += 5;
@@ -107,15 +121,17 @@ function diversify(scored, limit) {
 }
 
 export function retrieveGuidance({ task, intent, books = [], principles = [], maxResults = 5 }) {
+  if (!catalog) throw new Error(`catalog not found or unreadable at ${catalogPath}; continue without retrieval`);
   if (!INTENTS.has(intent)) throw new Error(`invalid intent: ${intent}`);
+  if (!Number.isFinite(Number(maxResults))) throw new Error(`--max must be a number from 1 to ${MAX_RESULTS}`);
   if (!String(task ?? "").trim()) throw new Error("task must not be empty");
 
-  const limit = Math.max(1, Math.min(MAX_RESULTS, Number(maxResults) || 5));
+  const limit = Math.max(1, Math.min(MAX_RESULTS, Number(maxResults)));
   const query = {
     intent,
     books: splitList(books),
     principles: splitList(principles),
-    tokens: tokenize(`${task} ${splitList(books).join(" ")} ${splitList(principles).join(" ")}`),
+    tokens: tokenize(`${String(task).replace(FIELD_LABELS, " ")} ${splitList(books).join(" ")} ${splitList(principles).join(" ")}`),
   };
 
   const scored = catalog.principles
@@ -151,7 +167,7 @@ export function formatMarkdown(packet) {
     "",
     `Kind: ${match.kind}`,
     `Matched: ${match.matchedTerms.join(", ") || "intent fallback"}`,
-    `Source: ${match.sourcePath} (${match.source})`,
+    `Source: ${match.source}`,
     "",
   ].join("\n"));
 
@@ -181,10 +197,15 @@ function parseArguments(argv) {
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   try {
-    const options = parseArguments(process.argv.slice(2));
-    const packet = retrieveGuidance(options);
-    const output = options.format === "json" ? JSON.stringify(packet, null, 2) : formatMarkdown(packet);
-    process.stdout.write(`${output}\n`);
+    if (process.argv.includes("--help")) {
+      process.stdout.write(`${USAGE}\n`);
+    } else {
+      const options = parseArguments(process.argv.slice(2));
+      if (!["markdown", "json"].includes(options.format)) throw new Error(`invalid format: ${options.format}`);
+      const packet = retrieveGuidance(options);
+      const output = options.format === "json" ? JSON.stringify(packet, null, 2) : formatMarkdown(packet);
+      process.stdout.write(`${output}\n`);
+    }
   } catch (error) {
     process.stderr.write(`${error.message}\n`);
     process.exitCode = 1;

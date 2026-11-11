@@ -55,9 +55,9 @@ Create or update `docs/engineering-practices.md` using the bundled template. Cle
 - source practices and local interpretations;
 - reconsideration triggers.
 
-Add or update the marked `AGENTS.md` pointer while preserving unrelated content.
+Offer the marked agent-instruction pointer from the main skill; add or update it only when the user agrees, preserving unrelated content.
 
-Recording is complete when the charter separates current strengths, target direction, migration rules, exceptions, attribution, and reconsideration triggers, and the pointer preserves unrelated instructions.
+Recording is complete when the charter separates current strengths, target direction, migration rules, exceptions, attribution, and reconsideration triggers, and any agreed pointer preserves unrelated instructions.
 
 ## 6. Plan an incremental migration
 

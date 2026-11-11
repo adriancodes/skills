@@ -3,9 +3,8 @@ name: quiz-changes
 description: >
   Use when an engineer wants their understanding of pending changes tested
   before shipping: the user asks to "quiz me on these changes", "test my
-  knowledge", "do I actually understand this", or wants to check they
-  understand AI-generated code before opening a PR. Also when someone is
-  about to ship code they didn't write themselves.
+  knowledge of this diff", "do I actually understand this", or says they
+  could not explain code an agent wrote for them.
 license: MIT
 metadata:
   category: Learning
@@ -14,7 +13,7 @@ metadata:
 
 # Quiz Changes
 
-Use retrieval practice to expose gaps in an engineer's understanding. Ask one adaptive question at a time. Require an answer before explaining. Test the human, never the code. End with advisory readiness notes, never a gate.
+Use retrieval practice to expose gaps in an engineer's understanding. Ask one adaptive question at a time. Require an answer before explaining. Test the human, never the code. End with advisory readiness notes, never a gate. Keep the session read-only except for an accepted deck file. Volunteer no review feedback on the code under quiz; a probable bug goes in the read-back.
 
 ## Scope
 
@@ -22,7 +21,7 @@ Use to test an engineer's understanding of pending changes within their stated f
 
 Do not use when:
 
-- No pending changes exist: for general codebase comprehension, use `understand-codebase` (if installed)
+- No pending changes exist.
 - The code needs judging: use `code-review`. This skill tests whether the human understands code that is staying.
 - Enforcement is wanted (block the PR, record a score): this skill never gates; say so and stop
 
@@ -63,19 +62,6 @@ Do not use when:
 5. **Offer the deck.** Offer one flashcard file at `docs/quizzes/<date>-<slug>.md`. Include each missed question, given answer, correct answer, and evidence. Write it only after acceptance.
 
    Done when the file exists or the offer is declined.
-
-## Tool Guidance
-
-**Prefer:**
-- Executing prediction questions over asserting their answers — real output settles arguments
-
-**Avoid:**
-- Reading only the diff: interaction questions require the surrounding code
-
-**Constraints:**
-- Keep the session read-only except for an accepted deck file.
-- Never edit, fix, or comment on the code under quiz.
-- Put probable bugs in the read-back and leave fixes to the engineer.
 
 ## Failure Modes
 

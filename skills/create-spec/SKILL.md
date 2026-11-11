@@ -49,13 +49,15 @@ Load `references/artifacts.md` before creating the decision log.
 
    Done when the request and repository scan are fully mapped.
 
-3. **Choose the mode.** Use **capture** when the conversation already contains the answers. Ask zero questions during synthesis. Reread the full conversation. Classify every item as:
+3. **Choose the mode.** Use **capture** when the conversation already contains the answers; otherwise skip to step 4. Ask zero questions during synthesis. Reread the full conversation. Classify every item as:
 
    - *decided:* the user's cited words;
    - *ASSUMED:* implied but unstated;
    - *Deferred:* consequential and open.
 
    Never assume product-shaping policy. Caps, deletion, retries, security, and public contracts stay Deferred when unstated. Flag gaps without asking. Then move to the exit gate. The read-back is capture's first question. Reopen the interview if it exposes a build-blocking Deferred branch.
+
+   Done when every item is classified and cited.
 
 4. **Ask one question per turn.** Walk branches in dependency order.
 
@@ -72,7 +74,7 @@ Load `references/artifacts.md` before creating the decision log.
 
    Done when the log is confirmed and no build-blocking branch is Deferred.
 
-6. **Hand off.** Name the log path, glossary changes, and ADRs. Then stop. Building starts only afterward.
+6. **Hand off.** Name the log path, glossary changes, and ADRs. Start no build work inside this skill. Return to the user's workflow when the request already covers later stages. Otherwise stop.
 
    Done when the handoff names every written artifact.
 
@@ -82,9 +84,6 @@ A storage choice and an unread-count policy are separate decisions. Ask about st
 
 ## Tool Guidance
 
-**Prefer:** the harness's multi-option question UI; the harness's todo list mirroring open branches.
-**Fallback:** numbered options in prose; the log's Branches section as the only tracker.
-**Constraints:**
 - Never edit any file other than the three session documents before the gate passes
 - Never batch questions, even when many branches are open
 - State a rule once, then proceed with the compliant behaviour; never lecture
@@ -95,19 +94,14 @@ Read [references/pressure.md](references/pressure.md) when urgency, authority, s
 
 ## Genuine Exceptions
 
-- **"Just decide for me."** Decide reversible implementation defaults and mark them ASSUMED. Keep product policy Deferred. Resolve it before confirmation.
-- **"Skip the read-back, build now."** An unsolicited explicit override may bypass the gate. Record the words verbatim. Set `status: confirmed-by-override` and proceed.
-- **No file-write access.** Keep the log in-conversation as a fenced block the user can save; every other rule still applies.
+- **"Just decide for me."** Decide reversible implementation defaults and mark them ASSUMED. Keep product policy Deferred. Ask every build-blocking Deferred branch before confirmation. Name the rest at the read-back.
+- **"Skip the read-back, build now."** An unsolicited explicit override may bypass the gate. The override skips the read-back only. Ask every build-blocking Deferred branch first. Record the words verbatim. Set `status: confirmed-by-override` and proceed.
+- **No repository or no file-write access.** Keep the session documents in conversation as fenced blocks the user can save. State where they would normally live. Every other rule still applies.
 
 ## Failure Modes
 
 - **Answers become impatient:** Trigger only on an explicit pace complaint or two consecutive terse answers to distinct questions. A terse pick of an offered option is a decision, never impatience. Ask: "assume the rest and read back, or keep going?" Never infer delegation from silence.
 - **Scope explodes:** Propose a split and require assent. Keep build-blocking branches in the current log. Confirm every split log that supplies build inputs.
-- **No repository exists:** emit the session documents in conversation. State where they would normally live.
-
-## Additional Resources
-
-- **`references/artifacts.md`**: formats and rules for the decision log, glossary, and ADR, including the ADR three-part test. Loaded at session open (see Workflow).
 
 ## Verification
 

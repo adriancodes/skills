@@ -13,3 +13,15 @@ The post-draft Tier 2 suite initially found two symbol-citation omissions. After
 Frozen inputs, raw traces, outputs, costs, and executable scorers remain in this `evals/` tree. This evidence supports force-loaded body behavior on Codex CLI 0.144.1 with `gpt-5.6-sol` at low reasoning effort. Autonomous triggering remains deferred to the shared portfolio routing suite.
 
 The user accepted the skill on 2026-07-17. Final verdict: **SHIP — Tier 2 targeted comparative support** for force-loaded body behavior and explicit invocation. Autonomous triggering is not part of the current evidence claim.
+
+## 2026-11-11 revision: unrun
+
+Changed; no model eval was run on this text and no new pass is claimed.
+
+- Description: "how does this work?" became "how does this feature work in this repo?", and "trace this feature" became "trace this feature through the code".
+- Scope no longer names `zoom-out`, `codebase-design`, `improve-codebase-architecture`, or `research`; it names catalog skills with an inline fallback.
+- The evidence-ledger fragment in step 3 is one sentence.
+- The Core Example is a short cited answer in a domain outside both fixtures; `references/examples.md` keeps only the vague-request questions.
+- Tool Guidance and the repeated two-question limit were removed; the history and no-mutation rules moved to step 2.
+
+Unrun cases: `regression-follow-on-routing` in `../regression-cases.jsonl`, a new file because `cases.jsonl` and `effectiveness-cases.jsonl` are hash-frozen by their manifests; the added near-miss prompts in `/evals/cases/understand-codebase.json` (lexical preflight only). The suite 1.1.0 cases have not been rerun on this text or on an Anthropic model.

@@ -71,7 +71,7 @@ Everything a type needs, in one row. Build to the row for the chosen type. The w
 
 ## Behavioral-Force Rules
 
-The six levers that decide whether an agent obeys a skill. Apply all six to every skill. `behavioral-force.md` explains and demonstrates each.
+The seven levers that decide whether an agent obeys a skill. Apply all seven to every skill. `behavioral-force.md` explains and demonstrates each.
 
 - [ ] **Imperative force** — instructions are verb-first commands (Always / Never / `<verb>`), never observations ("is helpful", "consider", "usually")
 - [ ] **Positive specification** — behavioral guidance states the action to take; every prohibition is paired with its replacement ("Never X; do Y instead"). Scope boundaries ("Do Not Use When") are the one allowed exception
@@ -86,7 +86,7 @@ The six levers that decide whether an agent obeys a skill. Apply all six to ever
 Confirm the invocation axis in the Phase-0 Skill Brief and apply it during Phase-1 scoping. Each choice spends a different load; pick the cheaper one for how the skill actually fires.
 
 - **Model-invoked** (default) — the skill keeps a trigger `description`, so the agent fires it autonomously and other skills can reach it by name. Costs *context load*: the description is loaded into every conversation whether or not the skill fires. Choose when the agent must discover the skill from a natural user request.
-- **User-invoked** — set `disable-model-invocation: true` in frontmatter. Only the human typing the skill's name can fire it; zero context load, but the human must remember it exists (*cognitive load*). Choose when the skill only ever fires by explicit request (release rituals, personal checklists, meta-tools). The `description` becomes a human-facing one-liner; the Description Rules below do not apply. *Portability:* the flag is a Claude Code extension, not part of the open Agent Skills spec — in harnesses without it the skill stays model-invoked, so keep even the one-liner accurate as a trigger.
+- **User-invoked** — set `disable-model-invocation: true` in frontmatter. Only the human typing the skill's name can fire it; zero context load, but the human must remember it exists (*cognitive load*). Choose when the skill only ever fires by explicit request (release rituals, personal checklists, meta-tools). The `description` becomes a human-facing one-liner; the Description Rules below do not apply. *Portability:* the flag is a Claude Code extension, not part of the open Agent Skills spec. For Codex, add `agents/openai.yaml` with `policy.allow_implicit_invocation: false`. claude.ai upload and the Skills API reject the flag, so strip it when packaging for them. In any other harness the skill stays model-invoked, so keep even the one-liner accurate as a trigger.
 - **Router skill** — when user-invoked skills multiply past easy recall, add one skill that names each and when to reach for it, so the human remembers one name instead of many.
 
 ## Description Rules

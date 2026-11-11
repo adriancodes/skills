@@ -1,6 +1,8 @@
 # Slices file contract
 
-Write `docs/specs/<date>-<slug>-slices.md` unless repository instructions override the path.
+Write the plan beside its spec. Name it after the spec file with `-slices` before `.md`: `2026-07-28-saved-searches.md` gives `2026-07-28-saved-searches-slices.md`. Repository instructions may override the path.
+
+Each entry under `## Slices` is one task.
 
 ```md
 ---
@@ -30,4 +32,4 @@ Use `[x]` only after a task's demo and checks pass. Append `Done: <date>: <one-l
 
 Leave `## Verification` empty until whole-feature verification. Record failed or unproven attempts as `Status: incomplete`; use `Status: complete` only for supported completion. Clear or supersede stale verification evidence when the feature changes.
 
-Under an explicit write prohibition, return this entire contract in chat, including frontmatter and both trailing sections. Name the expected saved path and offer to save it later. Do not create, edit, or delete files.
+Under an explicit write prohibition, the chat copy includes frontmatter and both trailing sections. Name the expected saved path.

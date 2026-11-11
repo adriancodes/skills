@@ -3,7 +3,9 @@
   "positive": [
     "Prepare my PR from the branch changes",
     "Write a PR title and body using the repository template",
-    "Make a local PR draft with recorded validation"
+    "Make a local PR draft with recorded validation",
+    "Open a PR for this branch",
+    "This branch needs a description that follows the repository template"
   ],
   "negative": [
     {
@@ -13,6 +15,14 @@
     {
       "prompt": "Implement the next task from the slices file",
       "owner": "implement-task"
+    },
+    {
+      "prompt": "Review this PR for bugs",
+      "owner": "code-review"
+    },
+    {
+      "prompt": "Review and describe the defects in this PR",
+      "owner": "code-review"
     }
   ],
   "behavior": {

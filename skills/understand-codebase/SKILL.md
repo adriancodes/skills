@@ -2,9 +2,9 @@
 name: understand-codebase
 description: >
   Use when the user asks to "understand this codebase", "how does this
-  work?", "trace this feature", or needs onboarding, an architecture
-  explanation, or answers about unfamiliar code. Also use for read-only
-  code-path questions before a change.
+  feature work in this repo?", "trace this feature through the code", or
+  needs onboarding, an architecture explanation, or answers about unfamiliar
+  code. Also use for read-only code-path questions before a change.
 license: MIT
 metadata:
   category: Planning
@@ -21,12 +21,11 @@ Use for onboarding, current-state questions, feature tracing, or explanation bef
 
 Do not use when:
 
-- The user explicitly asks for `zoom-out`; that skill provides the higher-level contextual map.
-- Debugging a failure or performance regression: use `diagnose`.
-- Reviewing a diff or branch: use `code-review`.
-- Designing or improving module boundaries: use `codebase-design` or `improve-codebase-architecture`.
-- External primary-source research or a persistent research report: use `research`.
-- Refactoring, recommending changes, implementing, or otherwise acting: use the corresponding action skill — code reading is only its internal prerequisite.
+- Debugging a failure or performance regression; use `diagnose` when installed, otherwise reproduce the failure first.
+- Reviewing a diff or branch; use `code-review` when installed, otherwise review the diff against its stated contract.
+- Designing or improving module boundaries; use `engineering-best-practices` when installed, otherwise treat it as a separate design task.
+- External research or a persistent report; use `research-question` when installed, otherwise treat it as a separate task.
+- Refactoring, recommending changes, or implementing; code reading is only a prerequisite of that work.
 
 ## Required Context
 
@@ -51,13 +50,13 @@ Classify the request as onboarding, architecture Q&A, or change preparation — 
 - **Architecture Q&A:** start from the named behavior, symbol, or boundary.
 - **Change preparation:** explain the current path and affected boundaries. Leave design to the follow-on task.
 
-Ask only when plausible interpretations require different exploration. Ask no more than two questions before inspection.
+Ask only when plausible interpretations require different exploration.
 
 Done when one target is selected.
 
 ### 2. Find an evidence-bearing starting seam
 
-Read applicable repository instructions first. Inspect manifests, entry points, tests, configuration, glossary entries, and architecture decisions only when they can locate or explain the target. Prefer `rg --files` for file discovery and `rg` for symbols, routes, events, configuration keys, and test names.
+Read applicable repository instructions first. Inspect manifests, entry points, tests, configuration, glossary entries, and architecture decisions only when they can locate or explain the target. Prefer `rg --files` for file discovery and `rg` for symbols, routes, events, configuration keys, and test names. Read version-control history only for a historical question. Run no command that changes files, dependencies, caches, generated output, or external systems.
 
 Start from the strongest seam: entry point, caller, focused test, configuration key, or named symbol. Never infer behavior from filenames alone.
 
@@ -67,11 +66,7 @@ Done when an inspected file or test anchors the behavior.
 
 Follow calls, imports, data, state, configuration, and asynchronous boundaries. Inspect representative tests for important branches. Stop when a branch no longer affects the question.
 
-Maintain an evidence ledger while reading:
-
-Record each claim with its evidence and status.
-
-Record files and symbols. Add stable line numbers when available. Mark each claim confirmed, inferred, or unknown.
+While reading, track each claim with its file, symbol, line number when stable, and a status: confirmed, inferred, or unknown.
 
 Done when every answer part has evidence or an uncertainty label.
 
@@ -101,23 +96,19 @@ Do not write repository maps, architecture documents, or notes unless the user s
 
 ## Core Example
 
-For report generation, trace the inspected entry, validation, service, storage, queue, and notification symbols. Cite transitions and label unverified deployment behavior unknown. Read [references/examples.md](references/examples.md) for an onboarding example.
+Request: “How does password reset work here?”
 
-## Tool Guidance
+> A reset request stores a hashed, expiring token and queues the email. The password changes only when the token is redeemed.
+>
+> 1. `requestReset` (`src/http/auth-routes.ts`) → `ResetService.issue` (`src/auth/reset-service.ts`)
+> 2. `ResetService.issue` (`src/auth/reset-service.ts`) → `TokenStore.save` (`src/auth/token-store.ts`)
+> 3. `ResetService.issue` (`src/auth/reset-service.ts`) → `Mailer.enqueue` (`src/mail/mailer.ts`)
+>
+> - Confirmed: tokens expire after `RESET_TTL_MINUTES` (`src/config.ts`), covered by `tests/reset.test.ts`.
+> - Inferred: the email is sent after the response, because `Mailer.enqueue` is not awaited.
+> - Unknown: whether a failed send is retried; no retry configuration was found.
 
-**Prefer:**
-
-- Read-only file inspection, `rg --files`, and `rg`
-- Focused test source and existing test results as behavioral evidence
-- Version-control history only when the question is historical
-- Mermaid for simple flows and an available visualization tool for complex relationships
-
-**Avoid:**
-
-- Whole-repository crawls before a target exists
-- Broad file dumps that replace tracing with summarization
-- Guessing runtime behavior from names, types, or folder layout
-- Running commands that mutate files, dependencies, caches, generated output, or external systems
+Read [references/examples.md](references/examples.md) when the request names no feature or goal.
 
 ## Failure Modes
 

@@ -3,9 +3,10 @@ name: deliver-feature
 description: >
   Use when a feature should move through the whole pipeline. The user
   asks to "deliver this feature", "build this feature end to end",
-  "continue the feature", or "run the pipeline". Also when a session resumes work that has
-  existing spec or slices artifacts, or nobody remembers where a
-  feature stands.
+  "continue the feature", or "run the pipeline". Also when the remaining
+  tasks in a slices file should be worked through, a session resumes a
+  feature with existing spec or slices artifacts and no stage is named,
+  or nobody remembers where a feature stands.
 license: MIT
 metadata:
   category: Building
@@ -30,11 +31,11 @@ Use the named stage skill for a direct stage request. Handle a small fix directl
 
 1. **Read the artifacts.** Find the decision log and slices file. Honor repository path overrides. Read statuses, decisions, bounds, blockers, completion notes, and verification evidence.
 
-   Ask which feature is intended when multiple artifacts plausibly match. Treat a missing file as state. Preserve confirmed decisions and user-authored work.
+   Ask which feature is intended when multiple artifacts plausibly match. Treat a missing file as state. When the plan exists only in chat, ask to save it as the slices file before implementing. Preserve confirmed decisions and user-authored work.
 
    Done when the feature and requested stopping point are known.
 
-2. **Select the next stage.** Validate the artifact contract before choosing work. Read `references/stages.md` for the current stage's checks and standalone fallback.
+2. **Select the next stage.** Validate the artifact contract before choosing work. Read the "Artifact validity" section of `references/stages.md` for the checks.
 
    | State | Next action |
    |---|---|

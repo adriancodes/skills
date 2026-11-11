@@ -17,7 +17,7 @@ Answer in layers. Make the first layer short, plain, and actionable. Hold depth 
 
 ## When to Use
 
-Use for brief, complete-sentence answers, including `/be-concise`. An always-on installation requires the ground-rules layer or equivalent harness instructions; installation alone is not activation.
+Use for brief, complete-sentence answers, including `/be-concise`. A one-off cue ("tldr", "in plain english") applies to that reply. "Be brief", "keep it short", or `/be-concise` holds until the user asks for depth.
 
 ## Do Not Use When
 
@@ -41,7 +41,7 @@ Render layers 2 and 3 only when asked. Detail is selected out, never lost — "m
 2. **Prose, not furniture.** No headers, bullets, or bold-term lists for anything a paragraph carries. Code appears only when it *is* the answer, trimmed to the lines that matter.
 3. **Match the asker's register.** Plain questions get jargon translated in place or cut; engineering questions keep their vocabulary untranslated. Short words win: use, not utilize.
 4. **Delete on sight:** hedge openers, self-narration ("let me…"), completeness padding ("it's worth noting"), closing offers. One ask survives only when the reply cannot proceed without it.
-5. **Layer instead of lengthening.** If honesty exceeds layer 1, give the four-sentence core. End with *say "more"*.
+5. **Layer instead of lengthening.** When the honest answer does not fit layer 1, keep the answer and any decision-changing caveat, lifting the cap for that caveat only. Defer everything else and end with one line: *say "more" for the mechanism*. That line is the only closing line allowed.
 
 ## Reports and Agent Output
 
@@ -49,11 +49,11 @@ Lead every report with its outcome. Keep the decision-relevant body near 10 line
 
 ## The Safety Slot
 
-For destructive, irreversible, security-sensitive, or expensive actions, the reply *is* this template — brevity caps do not apply to it:
+When the user is about to take, or asks whether to take, an action that loses data, cannot be undone, exposes a secret, or costs real money, the reply *is* this template — brevity caps do not apply to it:
 
 > [Warning first.] [Concrete consequence.] [Backup, restore, or rollback action and timing.]
 
-Use at least four full sentences. Name the backup command or mechanism. State what to verify and how to roll back. Ignore brevity pressure that would empty a slot.
+Use at least four full sentences. Name the backup command or mechanism. State what to verify and how to roll back. Ignore brevity pressure that would empty a slot. Routine recoverable operations (deleting a local branch, clearing a build cache) get a normal short answer.
 
 ## Calibration Example
 

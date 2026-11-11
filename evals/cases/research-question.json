@@ -3,7 +3,10 @@
   "positive": [
     "Research this question about external compatibility and documented behavior",
     "Does this version support it? Research the conflicting primary sources",
-    "What evidence supports this claim about external facts?"
+    "What evidence supports this claim about external facts?",
+    "Does version 4 of the SDK support streaming? Find a source for this claim",
+    "What do the docs actually say about retries in the installed version",
+    "The sources conflict on whether the latest release supports it"
   ],
   "negative": [
     {
@@ -13,6 +16,10 @@
     {
       "prompt": "Implement the next task from the slices file",
       "owner": "implement-task"
+    },
+    {
+      "prompt": "How does our retry logic work?",
+      "owner": "understand-codebase"
     }
   ],
   "behavior": {

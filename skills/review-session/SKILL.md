@@ -19,15 +19,17 @@ Use when explicitly invoked to review a session's effectiveness.
 Do not use for:
 
 - Diagnosing a live defect: use `diagnose`; reproduce and discriminate causes if unavailable.
-- Authoring a skill: use `create-skill`; confirm its job and compare it with a cheaper mechanism if unavailable.
-- Editing persistent project instructions: use `write-agent-instructions`; verify the instruction defect and test a minimal change if unavailable.
+- Authoring a skill: tell the user to run `create-skill`. If it is not installed, confirm the skill's job and compare it with a cheaper mechanism.
+- Editing persistent project instructions: tell the user to run `write-agent-instructions`. If it is not installed, verify the instruction defect and test a minimal change.
 - General opinions about agent quality without session evidence: request the missing trace or limit the review to available facts.
 
 ## Workflow
 
 ### 1. Reconstruct the useful sequence
 
-Read the available transcript, tool results, artifacts, and relevant repository state.
+Review the session the user names.
+With none named, review the current conversation and say that turns removed by compaction are not covered.
+Read its tool results, artifacts, and the relevant repository state.
 Identify the intended outcome and what actually happened.
 Separate observations from causal hypotheses.
 Keep gaps, unlogged time, and inaccessible evidence explicit.
@@ -71,11 +73,11 @@ Done when the review is inspectable and application status is unambiguous.
 
 ## Worked example
 
-The agent wrote `retrys`; formatting passed, but the existing configuration checker rejected it.
-CI ran only the formatter.
-Recommend adding the existing configuration check to CI.
-Replay that checker on the misspelling to show the proposed wiring catches the failure.
-Keep an unlogged delay separate because the evidence does not establish its cause.
+> Issue: `retrys` reached main; the formatter passed it.
+> Evidence: the CI log runs only the formatter; `check-config.mjs` exists and is not in the CI command.
+> Remedy: add `check-config.mjs` to the CI command.
+> Effect check: replayed the checker on the misspelled file; it exits non-zero.
+> Limit: the delay before the fix is unlogged; no cause is claimed.
 
 ## Verification
 

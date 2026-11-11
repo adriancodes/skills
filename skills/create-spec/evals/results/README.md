@@ -62,3 +62,13 @@ Re-hash before any run; results recorded against other hashes are stale.
   resume case.
 - Subject SHA-256 hashes, model, harness, and date.
 - Per-assertion scoring against `../cases.jsonl`, costs, and raw results.
+
+## 2026-11-11 revision: unrun
+
+Skill text changed after a review against Anthropic's skill guidance. No model session ran against this revision. Every case named below is unrun, and no new pass is claimed.
+
+- Hand-off no longer ends on an unconditional stop; it starts no build work and returns to a request that already covers later stages. Case: `regression-handoff-covers-later-stages`.
+- Deferred rules aligned: build-blocking Deferred branches are asked before confirmation or override; non-blocking ones are named at the read-back. Cases: `regression-nonblocking-deferred-confirms`, `regression-override-with-blocking-deferred`.
+- Step 3 names the alternative to capture mode and gained a `Done when` line. Case: `regression-capture-mode`.
+- Wording only: removed the Prefer/Fallback lines and Additional Resources section that repeated the workflow; merged the two no-repository/no-write entries.
+- Routing near-misses added to `evals/cases/create-spec.json`; the description is unchanged.

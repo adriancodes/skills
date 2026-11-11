@@ -1,6 +1,12 @@
 ---
 name: research-question
-description: Use when the user asks "research this question", "does this version support it", or "what evidence supports this claim" about external facts, compatibility, or documented behavior. Also use for conflicting sources or uncertain applicability.
+description: >
+  Use when a decision depends on an external fact that needs sources: the
+  user asks "does version X support Y", "what do the docs actually say",
+  or "find a source for this claim". Also when sources conflict or
+  documentation may describe a different version than the one installed.
+  Excludes quick facts answerable directly and questions about this
+  repository's code.
 license: MIT
 metadata:
   category: Research
@@ -55,12 +61,13 @@ Name the smallest next lookup for any decision-changing unknown.
 
 Done when the reader can distinguish the answer from its conditions and limits.
 
-### 4. Save the result
+### 4. Deliver the result
 
-Follow the requested location or existing research convention.
-Use `docs/research/<topic>.md` only when a saved report is requested without a convention.
+Answer in the conversation by default.
+Write a file only when the user asks for a saved report.
+Use the requested location, then the repository's research convention, then `docs/research/<topic>.md`.
 Leave code, dependencies, and settled product decisions untouched unless separately authorized.
-Report the artifact and remaining evidence gap.
+Report any artifact written and the remaining evidence gap.
 
 Done when the answer is inspectable and its authority stays within research.
 

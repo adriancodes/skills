@@ -23,13 +23,15 @@ decide: verified-done | progress-written | escalated
 ## Guards
 budget:  ≤ $X/day — worst-case run ($Y) × cadence (Z/day); max 25 iterations/run
 breaker: 2 attempts at the same failure signature without new progress — in-run or across runs → escalate, link both attempt diffs
-lock:    exit at once if previous run alive (pidfile / in-progress marker in STATE.md)
+lock:    exit at once, writing nothing, if previous run alive (pidfile / in-progress marker in STATE.md)
 gate:    outcomes only a human causes: main changes, files deleted, users see something new.
          Enforced below L3 by credentials: the loop holds no push/merge/admin token.
 
 ## Rollout
 level: L1        # L1 report-only | L2 assisted (PR-gated) | L3 unattended (non-gate actions only)
-promotion: 5 consecutive clean runs at current level; counter lives in STATE.md
+clean-runs-at-level: 0
+promotion: 5 consecutive clean runs at current level; `level:` and the counter live here only,
+           edited by the verifier or the human. The loop's credentials cannot write this file.
 
 ## Runner
 <the actual command/schedule — see Runner mapping below>
@@ -41,7 +43,7 @@ Beside LOOP.md. Read at run start, written before every exit.
 
 ```md
 # State: ci-guardian
-level: L1   clean-runs-at-level: 3   last-run: 2026-07-08T06:00Z ok
+last-run: 2026-07-08T06:00Z ok
 
 ## Now
 Investigating flaky `test_export_retry` — signature: TimeoutError in CI only.
@@ -55,7 +57,7 @@ Investigating flaky `test_export_retry` — signature: TimeoutError in CI only.
 - Flaky-test policy question: quarantine or fix-forward?
 ```
 
-Ledger rules: every run appends to Tried with its ending state; failure notes carry the signature so the breaker can match; nothing is deleted — resolved items move under a `## Done` fold. The header's `level:` and `clean-runs-at-level:` fields are written only by the verifier or the human — never by the loop itself; the loop appends to the ledger and reads its level, nothing more.
+Ledger rules: every run appends to Tried with its ending state; failure notes carry the signature so the breaker can match; nothing is deleted — resolved items move under a `## Done` fold. `level:` and `clean-runs-at-level:` stay out of this file: the loop writes STATE.md every run, so it reads its level from LOOP.md and appends to the ledger, nothing more.
 
 ## Pattern table
 

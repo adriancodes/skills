@@ -1,12 +1,12 @@
 # Harness Adaptation
 
-Create-skill works in any agent harness, not just Claude Code. The skill is written with Claude Code tool names as the shared vocabulary; this file maps each to its equivalent elsewhere, and gives the fallback when a harness lacks the feature.
+Create-skill works in any agent harness, not just Claude Code. `SKILL.md` names tools by role (option UI, subagent). This file maps each role to its Claude Code tool and its equivalent elsewhere, and gives the fallback when a harness lacks the feature.
 
 **Rule for every harness:** if a named tool exists, use it. If it does not, use the fallback in the last column — never skip the step.
 
 ## Tool mapping
 
-| Create-skill says (Claude Code) | What it means | Cursor / Codex / generic | Gemini CLI | Copilot CLI | Fallback if absent |
+| Claude Code tool | Role | Cursor / Codex / generic | Gemini CLI | Copilot CLI | Fallback if absent |
 |-------------------------------|---------------|--------------------------|------------|-------------|--------------------|
 | AskUserQuestion tool | Present 2–4 pickable options + custom | (no native UI) | (no native UI) | (no native UI) | Ask the question in plain text as a numbered list; let the user reply with a number |
 | Agent tool (`subagent_type=…`) | Spawn a fresh subagent for a task | task/sub-agent API if present | `run_shell_command` to launch a fresh session | sub-agent if present | Open a separate clean chat/session and paste the task; treat its reply as the subagent result |
@@ -21,7 +21,7 @@ Create-skill works in any agent harness, not just Claude Code. The skill is writ
 
 ## How the skill loads in each harness
 
-- **Claude Code** — install as a plugin or drop in `~/.claude/skills/`; it auto-triggers on its description.
+- **Claude Code** — install as a plugin or drop in `~/.claude/skills/`. Model-invoked skills auto-trigger on their description; create-skill itself is user-invoked (`/create-skill`).
 - **Claude Agent SDK** — register the skill directory; same auto-trigger model.
 - **Cursor** — reference `SKILL.md` from a project rule, or paste it into `.cursor/rules`.
 - **OpenAI Codex environments** — use the environment's native installed-skill registry when available. `AGENTS.md` routing is a manual fallback for body execution and cannot support trigger-rate claims.
@@ -32,4 +32,4 @@ Create-skill works in any agent harness, not just Claude Code. The skill is writ
 
 ## The honest ceiling
 
-A harness with no concept of "load a skill when a trigger matches" cannot auto-discover create-skill — there, it is a markdown instruction document the user includes deliberately. Everything in the workflow still applies; only the *triggering* is manual. Features the harness genuinely lacks (subagents, a question UI) fall back to the last column above; the steps are never dropped.
+A harness with no concept of "load a skill when a trigger matches" cannot auto-discover a skill — there, it is a markdown instruction document the user includes deliberately. Everything in the workflow still applies; only the *triggering* is manual. Features the harness genuinely lacks (subagents, a question UI) fall back to the last column above; the steps are never dropped.

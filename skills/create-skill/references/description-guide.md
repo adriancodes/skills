@@ -114,15 +114,3 @@ Each quoted phrase is a retrieval key, but every phrase also spends always-loade
 ## Description Checklist
 
 The authoritative checklist lives in `references/rules.md` (Description Rules). This guide explains *why* each rule matters; the registry owns the rules themselves. Run them from the registry, not from a copy here.
-
-## Keyword Placement Strategy
-
-The description is the primary discovery surface, but it has a 500-character limit. Distribute keywords across the full SKILL.md:
-
-| Keyword Type | Primary Location | Secondary Location |
-|-------------|-----------------|-------------------|
-| Trigger phrases | Description | "When to Use" section |
-| Error messages | "When to Use" | "Failure Modes" |
-| Symptoms | Description | "Common Mistakes" |
-| Synonyms | "When to Use" | Throughout body |
-| Tool/library names | Description (if tech-specific) | "Tool Guidance" |

@@ -29,3 +29,17 @@ label: targeted comparative support (Tier 2), claude-fable-5, Claude Code,
   `docs/specs/2026-07-28-notifications-slices.md` from each session, assertion
   judgments with rationale, and token/cost figures — dated files in this
   directory.
+
+## 2026-11-11 revision: unrun
+
+Skill text changed after a review against Anthropic's skill guidance. No model session ran against this revision. Every case named below is unrun, and no new pass is claimed.
+
+- Step 1 checks the slices file's `status` as well as the spec's and asks for a missing confirmation before building. Case: `regression-open-slices-status`.
+- Steps 1 and 5 cover a plan that exists only in chat. Case: `regression-chat-only-plan`.
+- Description: "work through the slices" replaced by "do the next slice"; multi-task requests belong to `deliver-feature`. Cases: `trigger-positive-next-slice`, `trigger-negative-all-remaining`; near-misses added to `evals/cases/implement-task.json`.
+- Added `regression-docs-only-task` for the existing non-behavioural branch of step 2, which had no case.
+- Wording only: `metadata.summary` matches the body; "slice" became "task" in Scope.
+- Not changed: `trigger-positive-work-through` still expects this skill for "Keep working through the slices". It awaits an owner decision.
+- The 2026-08-01 value pair tied its baseline prompt, so the measured value remains a delivery residual, not a behaviour gain.
+
+Retired on 2026-11-11: `trigger-positive-work-through` moved to [`../retired-cases.jsonl`](../retired-cases.jsonl). The description no longer claims "work through the slices"; multi-task work belongs to deliver-feature. Replaced by `trigger-negative-all-remaining`, `trigger-positive-next-slice` (unrun).

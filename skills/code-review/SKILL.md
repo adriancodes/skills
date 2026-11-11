@@ -2,9 +2,10 @@
 name: code-review
 description: >
   Use when a user asks to "review this branch", "review this PR",
-  "review my changes", or "review since main". Also use for pre-merge
-  review, work-in-progress diffs, staged changes, suspected regressions
-  in a patch, or checking implementation against a specification.
+  "review my changes", or "review since main". Also use when asked
+  whether a branch, PR, or diff is ready to merge or ship, and for
+  work-in-progress diffs, staged changes, suspected regressions in a
+  patch, or checking implementation against a specification.
 license: MIT
 metadata:
   category: Quality
@@ -25,9 +26,10 @@ Do not use when:
 
 - The request asks how unchanged code works; use `understand-codebase` when installed, otherwise trace the current path read-only.
 - A reported runtime failure needs root-cause discovery; use `diagnose` when installed, otherwise reproduce and isolate it before proposing changes.
-- A finished artifact needs hostile-input verification; use `verify-work` when installed, otherwise execute adversarial fixtures against its stated promise.
+- A finished, runnable artifact needs executed hostile-input attacks; use `verify-work` when installed, otherwise execute adversarial fixtures against its stated promise. This skill reads a diff against contracts.
+- Working code needs reducing, not assessing; use `simplify-code` when installed, otherwise simplify it under the project's implementation workflow.
 - The request is a broad architecture assessment or refactor plan without a bounded diff; use `engineering-best-practices` when installed, otherwise assess the architecture separately.
-- The task is to summarize changes or draft a pull-request description; write that artifact instead of inventing review findings.
+- The task is to summarize changes or draft a pull-request description; use `prepare-pr` when installed, otherwise write that artifact instead of inventing review findings.
 
 ## Required Context
 
@@ -104,7 +106,7 @@ Review the same frozen scope through all available lenses:
 **Repository standards**
 
 - Apply documented rules and coherent patterns from analogous code.
-- Use `engineering-best-practices` when installed only when the request explicitly includes maintainability or architecture; otherwise apply project-local evidence directly.
+- When the request explicitly includes maintainability or architecture, use `engineering-best-practices` if installed; otherwise apply project-local evidence directly.
 - Report maintainability issues only when the diff creates a concrete defect risk or demonstrable change cost. Never manufacture findings from a generic smell checklist.
 
 For each candidate, record the trigger, actual behavior, consequence, changed location, and supporting contract. Done when every available lens is examined and every candidate has a falsifiable consequence.
@@ -125,7 +127,7 @@ Attempt to disprove each candidate before reporting it:
 4. Confirm a realistic trigger and concrete consequence.
 5. Deduplicate findings that share one root cause.
 
-Drop candidates that are pre-existing, purely stylistic, speculative, automatically enforced, outside scope, or preference without consequence. Record unverified concerns as residual risk, not findings.
+Drop candidates that are pre-existing, purely stylistic, speculative, automatically enforced, outside scope, or preference without consequence. Record unverified concerns as residual risk, not findings. Read [references/examples.md](references/examples.md) when unsure whether a candidate is a finding, residual risk, or nothing.
 
 Assign the lowest defensible severity:
 
@@ -145,12 +147,12 @@ Sort findings by severity, then file location, in one unified list; tag each wit
 Format each finding as:
 
 ```markdown
-### [P1][Correctness, Spec] Cross-tenant export bypass: `src/export.js:3`
+### [P2][Correctness] Retry repeats an accepted charge: `src/billing/charge.js:41`
 
-When an authenticated requester supplies a workspace ID it does not own, the new path calls
-`store.export(workspaceId)` without checking membership. This violates the specification's
-cross-tenant `404` requirement and can expose another tenant's data. Add the ownership predicate
-at this boundary and cover the cross-tenant case.
+When the gateway accepts a charge but the response times out, the new retry loop calls
+`gateway.charge(order)` again without the idempotency key that `refund.js:18` passes. The
+customer is charged twice. Pass `order.id` as the idempotency key and cover the
+timeout-then-success case.
 ```
 
 Keep each finding to one short paragraph with the trigger, behavior, consequence, evidence, and correction direction. Do not praise the patch, narrate the process, or bury findings under a summary.
@@ -163,44 +165,16 @@ After the findings, report:
 
 If no candidate survives, lead with `No findings.` and still report coverage and residual risk. In review-only mode, stop there. If fixes were explicitly requested, apply only supported fixes through the repository's implementation or TDD workflow after the report, then re-review the resulting diff. Done when every finding is actionable and evidenced, every gap is explicit, and no unauthorized edit occurred.
 
-## Core Example
-
-If a patch removes workspace membership enforcement, verify the cross-tenant path against the stated contract. Report one authorization finding with its trigger, changed line, consequence, and evidence. Read [references/examples.md](references/examples.md) when calibrating a finding against a concrete diff.
-
-## Tool Guidance
-
-**Prefer:**
-
-- `git rev-parse`, `git merge-base`, `git status --short`, focused `git diff`, and `git log`
-- `rg --files` and `rg` for contracts, symbols, callers, and tests
-- Read-only issue or PR retrieval when linked context is available
-- Existing focused tests, type checks, linters, and analyzers that do not rewrite files
-- Independent subagents only for genuinely substantial diffs
-
-**Avoid:**
-
-- Reviewing only commit messages, filenames, or the diff without surrounding code
-- Whole-repository audits unrelated to the frozen scope
-- Formatter, dependency, snapshot, generated-file, or external-system mutation
-- Mandatory subagent use for small reviews
-
 ## Pressure
 
 Read [references/pressure.md](references/pressure.md) when urgency, authority, sunk cost, or an uncertain shortcut threatens the workflow. Those pressures do not waive its evidence or authority requirements.
 
 ## Failure Modes
 
-- **Invalid or unavailable base:** Report the failed ref resolution and ask for one valid fixed point; do not guess across materially different histories.
-- **Diff too large for complete review:** Split by independent subsystem or commit range, state the completed partitions, and name every unreviewed one. Never sample silently.
-- **Specification unavailable:** Continue with other lenses and avoid spec-completeness claims.
+- **Diff too large for complete review:** Split by independent subsystem or commit range, state the completed partitions, and name every unreviewed one. Time pressure and “just a quick look” do not justify silent sampling.
 - **External issue or PR inaccessible:** Ask for pasted acceptance criteria only when Spec coverage is required; otherwise mark the lens unavailable.
 - **Generated or binary change:** Review its source and generation contract when available; mark opaque output as residual risk.
-- **Diagnostics would mutate state:** Skip them, use read-only evidence, and report the unexecuted check.
 - **Conflicting standards:** Cite the conflict and apply the more local binding instruction; ask only when precedence remains ambiguous.
-
-## Genuine Exceptions
-
-When complete review is genuinely impossible, name the blocked lens or scope, show the evidence for the block, review every unaffected part, and state the weaker conclusion. Time pressure, diff size, absent subagents, sunk cost, and an expectation of “just a quick look” do not justify silent sampling or unsupported findings.
 
 ## Verification
 

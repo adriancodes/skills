@@ -1,6 +1,6 @@
 ---
 name: create-handoff
-description: Use when the user asks "create a handoff", "make a resume packet", or "leave this for the next agent". Also use for transferring unfinished work to a fresh recipient who needs verified artifact pointers and a bounded next action.
+description: Use when the user asks to "create a handoff", "write up where we are", or "leave this for the next agent". Also when a session is ending or running out of context with work unfinished and someone else must continue it.
 license: MIT
 metadata:
   category: Workflow
@@ -20,7 +20,7 @@ Do not use for:
 - Rewriting requirements: use `create-spec`; retain confirmed requirements and resolve only missing decisions if unavailable.
 - Creating implementation tasks: use `create-tasks`; break confirmed scope into bounded work if unavailable.
 - Publishing a pull request: use `prepare-pr`; prepare an actual-diff draft if unavailable.
-- Reviewing session quality: use `review-session`; trace failures to evidence without changing policy if unavailable.
+- Reviewing session quality: tell the user to run `review-session`. If it is not installed, trace failures to evidence without changing policy.
 
 ## Workflow
 
@@ -30,12 +30,13 @@ Inspect current files and relevant artifact paths.
 Read repository status, branch, and base/head when Git is available.
 Identify dirty user work separately from completed changes.
 Classify checks as current, historical, failed, or unrun.
-Run a safe relevant check when authorized and useful.
+Rerun the project's existing test or check command when it only reads.
+Ask before running one that writes, deploys, or calls a network service.
 Retain a precise unknown when verification is unavailable.
 
-Done when the packet's state claims match observed files and check provenance.
+Done when the handoff's state claims match observed files and check provenance.
 
-### 2. Build the resume packet
+### 2. Build the handoff
 
 State the goal and remaining scope in two or three sentences.
 Point to the canonical spec, task list, decisions, and check evidence.
@@ -53,11 +54,12 @@ Done when a fresh recipient can locate the work and act without reconstructing t
 Follow the requested destination or local handoff convention.
 Use `docs/handoffs/<topic>.md` as a fallback.
 Check every link and command against the current project.
-Use a fresh recipient to attempt the bounded next action when available.
-State explicitly when recipient testing was unavailable.
+When a subagent is available, give a fresh one only the handoff and ask it to report the file, command, and first step it would take, without running anything.
+Fix the handoff where its answer is wrong.
+Otherwise state that recipient testing was not done.
 Leave source, decisions, and Git history unchanged unless separately requested.
 
-Done when the packet is saved, pointers resolve, and continuation evidence is reported honestly.
+Done when the handoff is saved, pointers resolve, and continuation evidence is reported honestly.
 
 ## Worked example
 
@@ -69,7 +71,7 @@ Done when the packet is saved, pointers resolve, and continuation evidence is re
 
 ## Verification
 
-Compare the final packet with actual status and file contents.
+Compare the final handoff with actual status and file contents.
 Check that historical success is not presented as current validation.
-Check that no secret values entered the packet.
+Check that no secret values entered the handoff.
 Transfer current evidence and the next action while preserving existing work.

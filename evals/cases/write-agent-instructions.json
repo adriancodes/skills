@@ -3,7 +3,8 @@
   "positive": [
     "Write persistent project instructions with evidence-backed changes",
     "Make the smallest change to persistent project instructions",
-    "Write agent instructions and test downstream behavior"
+    "Write agent instructions and test downstream behavior",
+    "Use write-agent-instructions to fix the AGENTS.md pointer agents keep missing"
   ],
   "negative": [
     {
@@ -13,6 +14,14 @@
     {
       "prompt": "Implement the next task from the slices file",
       "owner": "implement-task"
+    },
+    {
+      "prompt": "Review this agent session for friction before anyone edits the instructions",
+      "owner": "review-session"
+    },
+    {
+      "prompt": "Create a skill that teaches agents our release checklist",
+      "owner": "create-skill"
     }
   ],
   "behavior": {

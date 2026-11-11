@@ -4,7 +4,8 @@ description: >
   Use when a user asks to "diagnose this bug", "debug this failure",
   "why is this throwing?", or "investigate this regression". Also use
   for flaky tests, intermittent failures, incorrect behavior, crashes,
-  hangs, and performance regressions whose cause is unknown.
+  hangs, and performance regressions whose cause is unknown, including a
+  request to fix a failing test or bug whose cause has not been shown.
 license: MIT
 metadata:
   category: Quality
@@ -73,7 +74,7 @@ Write three to five credible hypotheses before testing the leading one. For each
 
 | Rank | Hypothesis | Prediction | Cheapest discriminating observation |
 |------|------------|------------|--------------------------------------|
-| 1 | Boundary comparison excludes equality | Adjacent values pass while the exact threshold fails | Probe threshold − 1, threshold, threshold + 1 |
+| 1 | State leaks between runs | The case passes alone and fails after a specific neighbor | Run it alone, then directly after each neighbor |
 | 2 | Caller maps the input incorrectly | Direct callee invocation passes while the full path fails | Compare caller and direct inputs |
 | 3 | Configuration disables the behavior | With code and input fixed, changing only config changes the verdict | Print or inspect the resolved config |
 
@@ -83,7 +84,7 @@ Share the list briefly when domain knowledge could re-rank it; continue with the
 
 Run the cheapest discriminating observation for the leading hypothesis, changing exactly one variable and preserving the same reproduction signal. Record the result beside the prediction, then confirm, reject, or re-rank.
 
-Prefer read-only probes: focused commands, debugger or REPL inspection, existing logs, resolved configuration, query plans, profiles, version history, or known-good comparisons. Request authorization before adding logs, probes, tests, feature flags, or other instrumentation; never disguise an edit as inspection.
+Prefer read-only probes: focused commands, debugger or REPL inspection, existing logs, resolved configuration, query plans, profiles, or known-good comparisons. Inspect version history only when a stated hypothesis depends on it. Request authorization before adding logs, probes, tests, feature flags, or other instrumentation; never disguise an edit as inspection.
 
 When evidence contradicts the leading theory, re-rank instead of stacking speculative fixes. Done when one causal explanation accounts for the exact symptom and the strongest alternatives have executed contradictory evidence, or the remaining uncertainty is explicitly irreducible with current access.
 
@@ -120,24 +121,7 @@ Done when red-to-green evidence exists, the original symptom is gone, surroundin
 
 ## Core Example
 
-For a missing discount at an inclusive threshold, reproduce the exact failure, probe adjacent values, and falsify caller, tier, coupon, and rounding explanations. In diagnosis-only mode, cite the causal comparison and stop without editing. Read [references/examples.md](references/examples.md) when a concrete reproduction command would help.
-
-## Tool Guidance
-
-**Prefer:**
-
-- Focused repository search with `rg --files` and `rg`
-- The repository's narrowest test selector or direct executable seam
-- Debuggers, REPLs, profiles, query plans, and differential commands that answer one prediction
-- Existing logs and traces before new instrumentation
-- Workspace hashes or version-control status when verifying read-only behavior
-
-**Avoid:**
-
-- Whole-repository tours before a reproduction exists
-- Blanket logging, speculative patches, and simultaneous variable changes
-- History archaeology without a history-dependent hypothesis
-- Production mutation, destructive commands, or external side effects without explicit authorization
+For a test that fails intermittently, measure the failure rate over a fixed sample, control one nondeterministic source at a time, and falsify the ordering, timeout, and concurrency explanations. In diagnosis-only mode, cite the causal state and stop without editing. Read [references/examples.md](references/examples.md) when a concrete reproduction command would help.
 
 ## Pressure
 
@@ -145,10 +129,7 @@ Read [references/pressure.md](references/pressure.md) when urgency, authority, s
 
 ## Failure Modes
 
-- **No reproduction:** Report every attempted signal and its result, request the smallest missing artifact, environment access, or authorization for the next observation, and stop before hypothesizing a root cause.
-- **Production-only symptom:** Prefer captured logs, traces, profiles, requests, and a safe staging replay. Request explicit operational authorization before any live probe.
 - **Low-rate flake:** Quantify the current rate, control one nondeterministic source at a time, and report the evidence limit when the rate stays too low to discriminate.
-- **Inaccessible dependency:** Prove behavior up to the visible boundary and label behavior beyond it unknown.
 - **Conflicting evidence:** Preserve both results, inspect environment and input differences, and withhold the root-cause label.
 - **No correct test seam after fix authorization:** Demonstrate the original repro, name the missing seam, and ask before expanding implementation scope.
 
@@ -165,4 +146,4 @@ Time pressure, apparent simplicity, prior implementation effort, and a request t
 
 ## Verification
 
-Root-cause claims have the executed causal chain. Diagnosis-only leaves files unchanged; an authorized fix has red/green, original-repro, surrounding-check, and cleanup evidence.
+Root-cause claims have the executed causal chain. Diagnosis-only leaves files unchanged, confirmed with version-control status; an authorized fix has red/green, original-repro, surrounding-check, and cleanup evidence.

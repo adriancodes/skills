@@ -14,7 +14,7 @@ api-endpoint-builder/
     └── validate-routes.sh   # Checks route conflicts and missing handlers
 ```
 
-## SKILL.md Content (abbreviated — showing structure, not full 1,500 words)
+## SKILL.md Content (abbreviated — showing structure, not the full ~1,600 words)
 
 ```markdown
 ---
@@ -57,20 +57,38 @@ Handles routing, validation, error responses, and security considerations.
 
 ## Workflow
 
-1. Read the existing route structure to understand project conventions.
+1. Read the existing route files in full to learn project conventions.
+
+   Done when the framework, URL naming pattern, and middleware chain are identified.
 2. Identify the resource, HTTP methods, and URL patterns needed.
+
+   Done when every new route has a method and a path.
 3. Run `scripts/validate-routes.sh` to check for route conflicts.
+
+   Done when the script exits zero.
 4. Implement the endpoint following patterns in `references/patterns.md`.
+
+   Done when every route from step 2 has a handler.
 5. Add input validation for all user-supplied parameters.
+
+   Done when every path, query, and body parameter is validated at the boundary.
 6. Implement error responses with appropriate HTTP status codes.
+
+   Done when every failure path returns a 4xx or 5xx response without internal details.
 7. Run the security checklist from `references/security-checklist.md`.
+
+   Done when every checklist item passes or has a stated reason.
 8. Write or update tests for the new endpoint.
-9. Verify the endpoint works with a manual test request.
+
+   Done when the happy path and at least 2 error cases pass.
+9. Send one manual test request to the running endpoint.
+
+   Done when the response matches the expected status and body.
 
 ## Tool Guidance
 
 **Prefer:**
-- Read tool for scanning existing routes (not grep — need full context)
+- Read route files in full rather than searching them — conventions need full context
 - Project's existing test runner for validation
 
 **Avoid:**
@@ -108,10 +126,10 @@ Handles routing, validation, error responses, and security considerations.
 
 ## Additional Resources
 
-- **`references/patterns.md`** — REST patterns for CRUD, pagination, filtering, error responses
-- **`references/security-checklist.md`** — OWASP-based endpoint security validation
-- **`examples/crud-endpoint.ts`** — Complete working CRUD endpoint with validation and tests
-- **`scripts/validate-routes.sh`** — Detects route conflicts and missing handlers
+- **`references/patterns.md`** — REST patterns for CRUD, pagination, filtering, error responses. Load before implementing in step 4.
+- **`references/security-checklist.md`** — OWASP-based endpoint security validation. Load at step 7.
+- **`examples/crud-endpoint.ts`** — Complete working CRUD endpoint with validation and tests. Load when the project has no existing endpoint to imitate.
+- **`scripts/validate-routes.sh`** — Detects route conflicts and missing handlers. Run at step 3; read it only when it fails.
 ```
 
 ## Why This Works

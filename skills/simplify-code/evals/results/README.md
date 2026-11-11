@@ -19,3 +19,13 @@ Local checks on 2026-07-18:
 - `node scripts/skills.mjs readme --check` — README up to date.
 - Body length — 797 words, inside the 500–800 simple-technique target.
 - Second-person and weak-suggestion scan — no matches.
+
+## 2026-11-11 revision: unrun
+
+No model session ran against this revision. Nothing below is a pass.
+
+- Description: added the quoted trigger "clean up this over-engineered module" and "working code". The body is unchanged.
+- New routing prompts in `evals/cases/simplify-code.json` (one positive, three near-miss negatives) pass the lexical preflight only; native triggering is unrun.
+- `trigger-cases.jsonl` and `cases.jsonl` are unchanged; `check-candidate.mjs` pins their counts.
+
+Retired on 2026-11-11: `regression-missing-tests` moved to [`../retired-cases.jsonl`](../retired-cases.jsonl). Its `test-authority` assertion ("creates none without approval") predates the 2026-10-04 revision, which permits scoped local characterization checks. Replaced by `regression-missing-tests-scoped-checks` (unrun).

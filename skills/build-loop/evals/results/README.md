@@ -67,3 +67,14 @@ Plus, per suite run: the frozen `cases.jsonl` hash, subject SHA-256s,
 model and harness identifiers, run date, per-session and total cost, and
 the scorer version. Evidence claims never exceed the recorded tier,
 harness, model, and date.
+
+## 2026-11-11 revision: unrun
+
+Step 6 now forbids activating the loop and requires start and stop commands for the human. Step 5 keeps `level:` and `clean-runs-at-level:` in `LOOP.md` only, unwritable by the loop. The frozen cases `regression-no-activation` and `regression-level-not-loop-writable` have not been run, and no recorded result covers this body.
+
+The same revision also changed these, all unrun:
+
+- Step 4: an overlap-lock exit writes nothing and is the only exit outside the three endings; a run that hits its budget cap ends *escalated*. Case: `regression-lock-exit-writes-nothing`.
+- Repair path: ask the human to pause the schedule before analysing. No baseline failure is recorded for this rule. Case: `regression-pause-before-repair`.
+- Scope: a read-only in-session poll or a reminder goes to the harness's loop or schedule command. Case: `trigger-negative-readonly-poll`.
+- Wording only: the "keep going" sentence, the verb-list reason, the removed Additional Resources section, and one deleted sentence in Failure Modes. `regression-skip-l1-pressure` has not been rerun on this wording.

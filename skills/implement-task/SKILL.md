@@ -3,13 +3,13 @@ name: implement-task
 description: >
   Use when a task — a slice from a slices file — needs building. The user
   asks to "implement task 3", "implement slice 3", "build the next task",
-  or "work through the slices". Also when implementation keeps wandering
+  or "do the next slice". Also when implementation keeps wandering
   past its slice's bound, or slices get coded but the slices file never
   reflects it.
 license: MIT
 metadata:
   category: Building
-  summary: Implements one slice to its demo criterion, starting with a failing test and ticking the slices file before reporting completion.
+  summary: Implements one task from a slices file to its demo, test-first for behavior changes, and records completion before reporting.
 ---
 
 # Implement Task
@@ -18,7 +18,7 @@ Build one bounded task to its written acceptance criterion. For changed producti
 
 ## Scope
 
-Use for one named task, the next unblocked slice, or a task whose completion record has fallen behind its code.
+Use for one named task, the next unblocked task, or a task whose completion record has fallen behind its code.
 
 Read the slices file and linked spec. Use the named task, otherwise the first unblocked unfinished task. A delivery coordinator may invoke this workflow again for the next task covered by the user's request.
 
@@ -26,7 +26,9 @@ For several tasks, use `deliver-feature` when installed. Otherwise repeat this w
 
 ## Workflow
 
-1. **Read the contract.** Check the spec's confirmation, task bounds, demo, blockers, and current worktree. Honor repository path overrides.
+1. **Read the contract.** Check the spec's confirmation and the slices file's `status`. When either is open, ask for that confirmation before building. Then check the task's bound, demo, blockers, and the current worktree. Honor repository path overrides.
+
+   When the plan exists only in chat, ask to save it beside the spec as `<spec name>-slices.md` before building.
 
    Stop dependent work when a blocker is incomplete. State the target task and bound. Preserve user-authored and pre-existing work.
 
@@ -52,7 +54,7 @@ For several tasks, use `deliver-feature` when installed. Otherwise repeat this w
 
    Done when the acceptance criterion and applicable surrounding checks pass.
 
-5. **Record before reporting.** Tick the task only after verification. Add `Done: <date>: <one-line outcome>`. Clear or supersede whole-feature verification invalidated by these edits.
+5. **Record before reporting.** Tick the task only after verification. Add `Done: <date>: <one-line outcome>`. Clear or supersede whole-feature verification invalidated by these edits. With no slices file, put the dated outcome in the report instead.
 
    Report the task, observed demo, commands, changed files, and remaining work. Commit only when authorized by the request or binding repository workflow.
 

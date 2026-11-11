@@ -29,9 +29,12 @@ Do not use for:
 
 Read the demonstrated failure and the affected task.
 Inspect binding instructions and the canonical source of the missed behavior.
-Identify whether the instruction was missing, inaccessible, ambiguous, contradictory, or already followed.
+Identify whether the instruction was missing, inaccessible, ambiguous, contradictory, ignored, or already followed.
 Choose a deterministic tooling remedy when the instruction was followed but its checker failed.
 Name the smallest checker repair and a regression exercising the observed failure.
+Recommend a hook or check when a clear, reachable instruction was ignored and the rule must hold every time.
+Otherwise shorten the file or move the ignored rule to where the work happens.
+Do not add emphasis to an ignored instruction.
 Leave instructions unchanged when no instruction defect is supported.
 
 Done when the proposed change has a specific failure it can plausibly prevent.
@@ -81,10 +84,11 @@ Add this conditional pointer to the owning instruction file:
 
 Keep the release policy and user notes unchanged.
 Ask a fresh agent to implement an export from the ordinary request.
-Check its format against the canonical document and its handling of an unrequested publication.
+Check its format against the canonical document.
+As the adjacent boundary, confirm it still does not publish without being asked, because the release policy was left untouched.
 
 ## Verification
 
 Check the diff, pointer resolution, and preserved user policy.
 Check observed downstream behavior and adjacent boundaries.
-Keep persistent instructions limited to the demonstrated defect and supported effect.
+Check that the instruction file gained nothing beyond the demonstrated defect.

@@ -2,9 +2,9 @@
 name: create-tasks
 description: >
   Use when a confirmed spec or plan needs breaking into executable work —
-  the user asks to "create tasks", "break this into tickets", or
-  "turn the spec into tasks" or "create vertical slices". Also when implementation tasks keep
-  overflowing an agent's context window, or a task list reads
+  the user asks to "create tasks", "break this into tickets", "turn the
+  spec into tasks", or "create vertical slices". Also when implementation
+  tasks keep overflowing an agent's context window, or a task list reads
   layer-by-layer: schema, then API, then UI.
 license: MIT
 metadata:
@@ -32,7 +32,7 @@ Build directly when the work fits one task and the user requested implementation
 
    Done when the plan's behavior and affected surfaces are grounded.
 
-2. **Choose the task shape.** For a feature, cut a narrow end-to-end path through every layer its demo needs. Include tests within that task. Allow one-layer tasks when the actual work has one layer.
+2. **Choose the task shape.** For a feature, cut a narrow end-to-end path through every layer its demo needs. Size each task so one fresh agent session can finish it with its tests. Split a task that cannot. Include tests within that task. Allow one-layer tasks when the actual work has one layer.
 
    Add prefactoring only when it makes the requested change easier and has its own preservation check. Avoid a standalone schema, API, UI, wiring, or test phase when it is only one part of a feature.
 

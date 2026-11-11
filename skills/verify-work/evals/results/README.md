@@ -42,3 +42,16 @@ Tier 3 — a false "verified, ready to ship" verdict is high-stakes guidance, an
 
 - All three planted fixture flaws confirmed by direct execution (empty-file `TypeError` crash; `"Smith, Jane"` → `"Smith,Jane"` quoted-comma mangling; last row silently dropped without a trailing newline); happy-path `input.csv` deduplicates correctly, so a smoke test alone finds nothing.
 - `node scripts/skills.mjs check` — 17 entries clean (2026-08-01, after this package was authored).
+
+## 2026-11-11 revision: unrun
+
+No model session ran against this revision. Nothing below is a pass. The hashes above describe the 2026-08-01 subject, not this one.
+
+- Description: limited to a finished, runnable artifact, not a diff under review; "is this ready to ship" now needs that artifact.
+- Scope: the `code-review` bullet now reads diff-against-contracts there, executed attacks here.
+- Step 1 renamed "Pin the promise".
+- `references/attacks.md`: rule-document catalog gained a no-subagent fallback; the stop rule now lives only in `SKILL.md` step 4.
+- `references/pressure.md`: removed references to the eval baseline and to this repository's history.
+- New cases, unrun: `adjacent-negative-branch-ready`, `adjacent-negative-confirm-fix`, `regression-rule-document-no-subagents` (fixture `fixtures/commit-policy`).
+- New routing prompts in `evals/cases/verify-work.json` pass the lexical preflight only; native triggering is unrun.
+- Existing cases are unrun against this body.

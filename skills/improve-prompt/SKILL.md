@@ -18,22 +18,21 @@ Use only when explicitly invoked as `/improve-prompt <rough ask>` or by name.
 
 Do not use when:
 
-- The prompt is already precise: return it unchanged.
 - The request is a multi-decision plan: use `create-spec` when installed.
 - The request is conversational, not text to rewrite: answer it directly.
 
 ## Workflow
 
-1. **Rewrite.** Preserve the goal, scope, constraints, and key phrases. Add structure only when it clarifies the request.
+1. **Rewrite.** Preserve the goal, scope, constraints, and key phrases. Add structure only when it clarifies the request. If the ask is already precise, return it unchanged with `Assumed: none`.
 
    Done when the prompt stands alone without changing intent.
-2. **Expose inference.** Mark unsupported details inline as `[assumed: …]`. List the same assumptions below the prompt. If useful specificity needs more than three assumptions, ask one load-bearing question.
+2. **Expose inference.** Mark unsupported details inline as `[assumed: …]`. List the same assumptions below the prompt. If the rewrite would need more than three assumptions, ask one question in place of the rewrite and wait for the answer.
 
    Done when no invention is hidden and at most three assumptions remain.
 3. **Name the target.** Honor a named destination. Otherwise name the narrowest matching installed skill or `plain task`. Never invent a tool or broaden authority.
 
    Done when exactly one target is visible.
-4. **Stop or execute.** Stop after the rewrite unless the original request said to run, implement, or execute it. When authorized, pass a clean prompt beneath `Assumed:` and keep the original scope.
+4. **Stop or execute.** Stop after the rewrite unless the original request said to run, implement, or execute it. When authorized, hand the target the rewritten prompt with the inline `[assumed: …]` marks removed and the assumptions listed above it under `Assumed:`. Do only what the original request asked for.
 
    Done when no side effect occurs without original authorization.
 

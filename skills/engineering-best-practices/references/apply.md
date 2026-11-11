@@ -31,18 +31,10 @@ Direction selection is complete when the governing precedent is explicit and eve
 
 ## 3. Retrieve the closest practices
 
-Build one specific query from the work rather than from generic terms such as "clean code." Name all five fields in the query:
-
-1. **Invariant** — the condition that must hold.
-2. **Concurrency/distribution scope** — one request or process, or multiple workers, processes, or machines.
-3. **Atomicity/consistency mechanism** — the primitive that enforces the invariant.
-4. **State owner** — the durable dependency or authoritative component that owns the state.
-5. **Failure/recovery** — interruption, retry, timeout, partial completion, and abandoned-work behavior.
-
-Use `not applicable` for a field only after repository evidence establishes that it cannot affect the task. For example:
+Build one specific query from the work rather than from generic terms such as "clean code." Name the fields listed in the main skill's retrieval step. For example:
 
 - "invariant: one ledger entry per accepted request; concurrency/distribution scope: workers on multiple machines; atomicity/consistency mechanism: unique key plus transactional conditional state transitions; state owner: primary database; failure/recovery: a crash after claim permits safe retry without duplicate effects";
-- "invariant: existing public behavior remains stable; concurrency/distribution scope: one process; atomicity/consistency mechanism: characterization tests and a compatibility seam; state owner: existing module; failure/recovery: a failed extraction leaves the old path runnable."
+- "invariant: existing public behavior remains stable; failure/recovery: a failed extraction leaves the old path runnable."
 
 Retrieve two to five practices with the intent matching the work. Discard results that do not change a decision, implementation detail, test, or review check.
 

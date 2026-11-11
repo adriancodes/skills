@@ -57,7 +57,7 @@ Run every item before finalizing a skill. A single "no" means the skill is not r
 
 ## Behavioral Force
 
-- [ ] All six levers in `references/rules.md` (Behavioral-Force Rules) hold: imperative force, positive specification, a load-bearing example, concrete anchors, front/end positioning, and leading words
+- [ ] All seven levers in `references/rules.md` (Behavioral-Force Rules) hold: imperative force, positive specification, a load-bearing example, concrete anchors, front/end positioning, leading words, and atomic steering
 
 ## Steps and Pointers
 
@@ -93,14 +93,11 @@ Run every item before finalizing a skill. A single "no" means the skill is not r
 ## Discoverability (Keyword Optimization)
 
 - [ ] Relevant error messages and symptoms appear within an accepted scope structure (`references/rules.md` → Required Sections)
-- [ ] Synonyms for key concepts used throughout
 - [ ] Tool names and CLI commands mentioned where relevant
-- [ ] User-phrasing variations in description and body
 
 ## Cross-References
 
 - [ ] Other skills referenced by name only (not file path)
-- [ ] Required skills marked with "REQUIRED BACKGROUND:" prefix
 - [ ] No `@` force-loading of external files
 - [ ] Dependencies clearly stated as required vs. optional
 
