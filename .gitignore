@@ -1,2 +1,9 @@
 .DS_Store
 node_modules/
+
+# Raw evaluation sessions and scorer packets stay local
+evals/gap-skills-2026-10-05/results/
+evals/gap-skills-2026-10-05/judgments/
+evals/gap-skills-2026-10-05/downstream.json
+evals/pocock-comparison-2026-10-04/results/
+evals/remaining-skills-2026-10-04/results/

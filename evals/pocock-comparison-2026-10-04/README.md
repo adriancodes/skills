@@ -83,3 +83,7 @@ The runner and frozen cases are retained for inspection. Fresh actor runs would 
 ## Repository validation
 
 Local validation passed after the revisions: structural checks for 18 entries, README catalog coverage, all 51 lexical positive routes across 17 skills, persona validation and its controls, routing controls, both authoring-contract checks, historical review-probe replay, and the 19-run pilot replay. Changed/new report links and pilot JSON parsed cleanly; `git diff --check` passed. Lexical routing is not proof of native model triggering. The new CI step was validated locally; no remote CI run was requested.
+
+## Raw sessions
+
+Raw sessions and scorer packets for this suite are kept outside the repository. Paths under `results/` in this folder refer to that local archive. The checks that replay them run only where the archive is present.

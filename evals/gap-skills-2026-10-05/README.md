@@ -19,3 +19,7 @@ Eleven byte-identical revised recipient inputs reuse earlier independent executi
 ## Redaction
 
 Before publication, the local home directory and account name in prompts, traces, manifests and judgment packets were replaced with `/Users/user` and `user`. Recorded trace, prompt and command hashes were recomputed over the redacted text. Workspace snapshots, subjects, runners, verdicts and scores are unchanged. `disabled-global-skills.json` stores home-relative paths that `run.mjs` expands.
+
+## Raw sessions
+
+Raw sessions and scorer packets for this suite are kept outside the repository. Paths under `results/`, `judgments/` and `downstream.json` in this folder refer to that local archive. The checks that replay them run only where the archive is present.

@@ -70,3 +70,7 @@ The `create-skill` probe replays against its archived subject. The replay report
 Independent scores remain in [outcomes-interaction.json](outcomes-interaction.json), [outcomes-safety.json](outcomes-safety.json), and [outcomes-followup.json](outcomes-followup.json). The correction uses [failure-case.json](failure-case.json); the quiz exclusion is preserved in [exclusions.json](exclusions.json). Current verifier hashes differ from its failed pre-correction run and are reported separately. No historical record was rehashed to appear current.
 
 CI replays local evidence without launching a model. Repository structural, catalog, routing, persona, authoring-contract, and historical-provenance checks pass locally. Lexical routing remains 51/51 positives across 17 skills; this is a preflight, not native triggering proof. A read-only local `skills` CLI 1.5.19 listing also found the 17 active skills, with telemetry disabled and no installation; its output is preserved in [installer-list.txt](installer-list.txt).
+
+## Raw sessions
+
+Raw sessions and scorer packets for this suite are kept outside the repository. Paths under `results/` in this folder refer to that local archive. The checks that replay them run only where the archive is present.
