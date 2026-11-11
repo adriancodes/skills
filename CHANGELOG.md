@@ -4,6 +4,7 @@ Skill updates change your agent's behavior — treat them like dependency upgrad
 
 ## Unreleased
 
+- Added `gather-requirements`, the first stage of the planned SDLC loop. It interviews the user one question at a time through the option UI, recommends an answer each time, and ends with a tagged read-back; it writes no file. Its three Tier-1 behaviour cases passed on one Claude Code subagent run each, after a fix to stop a second request trailing each question. A later depth rule cut a small request from thirteen questions to nine; its regression case allows eight and is recorded as failing. Trigger probes are unrun.
 - **Breaking:** renamed `code-review` to `review-code` so every stage of the planned SDLC loop is named verb first. Run `node scripts/migrate-install.mjs` to remove the old install. Recorded evidence keeps the old name. The `engineering-best-practices` description no longer mentions PRs: two `review-code` routing cases had tied with it and passed only on alphabetical order.
 - Retired seven eval cases that asserted behaviour their skills no longer have, each kept verbatim in a `retired-cases.jsonl` with its reason and replacement: five natural-trigger cases for the now explicit-only `create-skill`, one `implement-task` trigger, and one `simplify-code` regression whose test rule predates the October revision.
 - Applied the rest of the catalog review across all 24 skills. None of these text changes has a live eval run yet; each skill's results note lists its frozen, unrun cases.
